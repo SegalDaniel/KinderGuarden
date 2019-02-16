@@ -13,6 +13,8 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEC22184C2800180600 /* SecularOne-Regular.ttf */; };
+		18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */; };
 		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+		18991FEC22184C2800180600 /* SecularOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SecularOne-Regular.ttf"; sourceTree = "<group>"; };
+		18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 		1818B1CB21E0E905006E1B39 = {
 			isa = PBXGroup;
 			children = (
+				18991FEB22184C0600180600 /* Fonts */,
 				1818B1D621E0E905006E1B39 /* Gmar */,
 				1818B1D521E0E905006E1B39 /* Products */,
 				1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */,
@@ -72,6 +77,15 @@
 				1818B1E321E0E906006E1B39 /* Info.plist */,
 			);
 			path = Gmar;
+			sourceTree = "<group>";
+		};
+		18991FEB22184C0600180600 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */,
+				18991FEC22184C2800180600 /* SecularOne-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		378573E8FF6EE6BEB75C54F7 /* Frameworks */ = {
@@ -154,6 +168,8 @@
 				1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */,
 				1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */,
 				1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */,
+				18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */,
+				18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
