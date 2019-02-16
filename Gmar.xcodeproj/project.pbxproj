@@ -1,22 +1,23 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 50;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 50;
+    objects = {
 
 /* Begin PBXBuildFile section */
-		1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D721E0E905006E1B39 /* AppDelegate.swift */; };
-		1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */; };
-		1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DB21E0E905006E1B39 /* Main.storyboard */; };
-		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
-		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
-		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
-		18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEC22184C2800180600 /* SecularOne-Regular.ttf */; };
-		18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */; };
+        1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D721E0E905006E1B39 /* AppDelegate.swift */; };
+        1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */; };
+        1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DB21E0E905006E1B39 /* Main.storyboard */; };
+        1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
+        1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
+        1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+        18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEC22184C2800180600 /* SecularOne-Regular.ttf */; };
+        18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */; };
 		18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF022185E6600180600 /* TeacherAddEventViewController.swift */; };
 		18991FF422185F6B00180600 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF322185F6B00180600 /* Utility.swift */; };
+<<<<<<< HEAD
 		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,20 +37,52 @@
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
+=======
+		18991FF62218703F00180600 /* AttandanceUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF52218703F00180600 /* AttandanceUpdateViewController.swift */; };
+        BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        1818B1D421E0E905006E1B39 /* Gmar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        1818B1D721E0E905006E1B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+        1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowViewController.swift; sourceTree = "<group>"; };
+        1818B1DC21E0E905006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+        1818B1DE21E0E906006E1B39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+        1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+        18991FEC22184C2800180600 /* SecularOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SecularOne-Regular.ttf"; sourceTree = "<group>"; };
+        18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
+        18991FF022185E6600180600 /* TeacherAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAddEventViewController.swift; sourceTree = "<group>"; };
+        18991FF322185F6B00180600 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+        18991FF52218703F00180600 /* AttandanceUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttandanceUpdateViewController.swift; sourceTree = "<group>"; };
+        3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
+        A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+        A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
+        A8DA55EB22185A410043D580 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+        A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
+        A8DA55EF221864C70043D580 /* SolidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidFood.swift; sourceTree = "<group>"; };
+        A8DA55F1221864E20043D580 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
+        A8DA55F322186E330043D580 /* Feces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feces.swift; sourceTree = "<group>"; };
+        A8DA55F522186F970043D580 /* Urine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urine.swift; sourceTree = "<group>"; };
+        D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+        F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
+>>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1818B1D121E0E905006E1B39 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        1818B1D121E0E905006E1B39 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		1818B1CB21E0E905006E1B39 = {
 			isa = PBXGroup;
 			children = (
@@ -119,102 +152,214 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+=======
+        1818B1CB21E0E905006E1B39 = {
+            isa = PBXGroup;
+            children = (
+                18991FEB22184C0600180600 /* Fonts */,
+                1818B1D621E0E905006E1B39 /* Gmar */,
+                1818B1D521E0E905006E1B39 /* Products */,
+                1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */,
+                E10FAAD4843773E48C946563 /* Pods */,
+                378573E8FF6EE6BEB75C54F7 /* Frameworks */,
+            );
+            sourceTree = "<group>";
+        };
+        1818B1D521E0E905006E1B39 /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                1818B1D421E0E905006E1B39 /* Gmar.app */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        1818B1D621E0E905006E1B39 /* Gmar */ = {
+            isa = PBXGroup;
+            children = (
+                A8DA55E6221858660043D580 /* Model */,
+                1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
+                18991FF222185E8B00180600 /* ViewControllers */,
+                1818B1DB21E0E905006E1B39 /* Main.storyboard */,
+                1818B1DE21E0E906006E1B39 /* Assets.xcassets */,
+                1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
+                1818B1E321E0E906006E1B39 /* Info.plist */,
+                18991FF322185F6B00180600 /* Utility.swift */,
+            );
+            path = Gmar;
+            sourceTree = "<group>";
+        };
+        18991FEB22184C0600180600 /* Fonts */ = {
+            isa = PBXGroup;
+            children = (
+                18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */,
+                18991FEC22184C2800180600 /* SecularOne-Regular.ttf */,
+            );
+            path = Fonts;
+            sourceTree = "<group>";
+        };
+        18991FF222185E8B00180600 /* ViewControllers */ = {
+            isa = PBXGroup;
+            children = (
+                1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */,
+                18991FF022185E6600180600 /* TeacherAddEventViewController.swift */,
+                18991FF52218703F00180600 /* AttandanceUpdateViewController.swift */,
+            );
+            path = ViewControllers;
+            sourceTree = "<group>";
+        };
+        378573E8FF6EE6BEB75C54F7 /* Frameworks */ = {
+            isa = PBXGroup;
+            children = (
+                D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */,
+            );
+            name = Frameworks;
+            sourceTree = "<group>";
+        };
+        A8DA55E6221858660043D580 /* Model */ = {
+            isa = PBXGroup;
+            children = (
+                A8DA55E7221859CD0043D580 /* Child.swift */,
+                A8DA55E922185A1E0043D580 /* Staff.swift */,
+                A8DA55EB22185A410043D580 /* Event.swift */,
+                A8DA55ED221864B00043D580 /* LiquidFood.swift */,
+                A8DA55EF221864C70043D580 /* SolidFood.swift */,
+                A8DA55F1221864E20043D580 /* Water.swift */,
+                A8DA55F322186E330043D580 /* Feces.swift */,
+                A8DA55F522186F970043D580 /* Urine.swift */,
+            );
+            path = Model;
+            sourceTree = "<group>";
+        };
+        E10FAAD4843773E48C946563 /* Pods */ = {
+            isa = PBXGroup;
+            children = (
+                3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */,
+                F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */,
+            );
+            name = Pods;
+            sourceTree = "<group>";
+        };
+>>>>>>> master
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1818B1D321E0E905006E1B39 /* Gmar */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1818B1E621E0E906006E1B39 /* Build configuration list for PBXNativeTarget "Gmar" */;
-			buildPhases = (
-				B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */,
-				1818B1D021E0E905006E1B39 /* Sources */,
-				1818B1D121E0E905006E1B39 /* Frameworks */,
-				1818B1D221E0E905006E1B39 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Gmar;
-			productName = Gmar;
-			productReference = 1818B1D421E0E905006E1B39 /* Gmar.app */;
-			productType = "com.apple.product-type.application";
-		};
+        1818B1D321E0E905006E1B39 /* Gmar */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 1818B1E621E0E906006E1B39 /* Build configuration list for PBXNativeTarget "Gmar" */;
+            buildPhases = (
+                B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */,
+                1818B1D021E0E905006E1B39 /* Sources */,
+                1818B1D121E0E905006E1B39 /* Frameworks */,
+                1818B1D221E0E905006E1B39 /* Resources */,
+                074B3FCC6E909271AAE98A34 /* [CP] Embed Pods Frameworks */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = Gmar;
+            productName = Gmar;
+            productReference = 1818B1D421E0E905006E1B39 /* Gmar.app */;
+            productType = "com.apple.product-type.application";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1818B1CC21E0E905006E1B39 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Final Project";
-				TargetAttributes = {
-					1818B1D321E0E905006E1B39 = {
-						CreatedOnToolsVersion = 10.1;
-					};
-				};
-			};
-			buildConfigurationList = 1818B1CF21E0E905006E1B39 /* Build configuration list for PBXProject "Gmar" */;
-			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 1818B1CB21E0E905006E1B39;
-			productRefGroup = 1818B1D521E0E905006E1B39 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				1818B1D321E0E905006E1B39 /* Gmar */,
-			);
-		};
+        1818B1CC21E0E905006E1B39 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastSwiftUpdateCheck = 1010;
+                LastUpgradeCheck = 1010;
+                ORGANIZATIONNAME = "Final Project";
+                TargetAttributes = {
+                    1818B1D321E0E905006E1B39 = {
+                        CreatedOnToolsVersion = 10.1;
+                    };
+                };
+            };
+            buildConfigurationList = 1818B1CF21E0E905006E1B39 /* Build configuration list for PBXProject "Gmar" */;
+            compatibilityVersion = "Xcode 9.3";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = 1818B1CB21E0E905006E1B39;
+            productRefGroup = 1818B1D521E0E905006E1B39 /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                1818B1D321E0E905006E1B39 /* Gmar */,
+            );
+        };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1818B1D221E0E905006E1B39 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */,
-				1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */,
-				1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */,
-				1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */,
-				18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */,
-				18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        1818B1D221E0E905006E1B39 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */,
+                1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */,
+                1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */,
+                1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */,
+                18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */,
+                18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gmar-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
+        074B3FCC6E909271AAE98A34 /* [CP] Embed Pods Frameworks */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputFileListPaths = (
+            );
+            inputPaths = (
+                "${SRCROOT}/Pods/Target Support Files/Pods-Gmar/Pods-Gmar-frameworks.sh",
+                "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+            );
+            name = "[CP] Embed Pods Frameworks";
+            outputFileListPaths = (
+            );
+            outputPaths = (
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gmar/Pods-Gmar-frameworks.sh\"\n";
+            showEnvVarsInLog = 0;
+        };
+        B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputFileListPaths = (
+            );
+            inputPaths = (
+                "${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+                "${PODS_ROOT}/Manifest.lock",
+            );
+            name = "[CP] Check Pods Manifest.lock";
+            outputFileListPaths = (
+            );
+            outputPaths = (
+                "$(DERIVED_FILE_DIR)/Pods-Gmar-checkManifestLockResult.txt",
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+            showEnvVarsInLog = 0;
+        };
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+<<<<<<< HEAD
 		1818B1D021E0E905006E1B39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,208 +367,222 @@
 				18991FF422185F6B00180600 /* Utility.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
+=======
+        1818B1D021E0E905006E1B39 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                18991FF422185F6B00180600 /* Utility.swift in Sources */,
+                1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
+                A8DA55F0221864C70043D580 /* SolidFood.swift in Sources */,
+                1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
+				A8DA55F2221864E20043D580 /* Water.swift in Sources */,
+				A8DA55F622186F970043D580 /* Urine.swift in Sources */,
+				A8DA55F422186E330043D580 /* Feces.swift in Sources */,
+				A8DA55EE221864B00043D580 /* LiquidFood.swift in Sources */,
+>>>>>>> master
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1818B1DB21E0E905006E1B39 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1818B1DC21E0E905006E1B39 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1818B1E121E0E906006E1B39 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
+        1818B1DB21E0E905006E1B39 /* Main.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                1818B1DC21E0E905006E1B39 /* Base */,
+            );
+            name = Main.storyboard;
+            sourceTree = "<group>";
+        };
+        1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                1818B1E121E0E906006E1B39 /* Base */,
+            );
+            name = LaunchScreen.storyboard;
+            sourceTree = "<group>";
+        };
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1818B1E421E0E906006E1B39 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		1818B1E521E0E906006E1B39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		1818B1E721E0E906006E1B39 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
-				INFOPLIST_FILE = Gmar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Debug;
-		};
-		1818B1E821E0E906006E1B39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
-				INFOPLIST_FILE = Gmar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Release;
-		};
+        1818B1E421E0E906006E1B39 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                ENABLE_TESTABILITY = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_DYNAMIC_NO_PIC = NO;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_OPTIMIZATION_LEVEL = 0;
+                GCC_PREPROCESSOR_DEFINITIONS = (
+                    "DEBUG=1",
+                    "$(inherited)",
+                );
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+                MTL_FAST_MATH = YES;
+                ONLY_ACTIVE_ARCH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            };
+            name = Debug;
+        };
+        1818B1E521E0E906006E1B39 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+                ENABLE_NS_ASSERTIONS = NO;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+                MTL_ENABLE_DEBUG_INFO = NO;
+                MTL_FAST_MATH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_COMPILATION_MODE = wholemodule;
+                SWIFT_OPTIMIZATION_LEVEL = "-O";
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
+        1818B1E721E0E906006E1B39 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = 3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+                INFOPLIST_FILE = Gmar/Info.plist;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_VERSION = 4.2;
+                TARGETED_DEVICE_FAMILY = 2;
+            };
+            name = Debug;
+        };
+        1818B1E821E0E906006E1B39 /* Release */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+                INFOPLIST_FILE = Gmar/Info.plist;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_VERSION = 4.2;
+                TARGETED_DEVICE_FAMILY = 2;
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1818B1CF21E0E905006E1B39 /* Build configuration list for PBXProject "Gmar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1818B1E421E0E906006E1B39 /* Debug */,
-				1818B1E521E0E906006E1B39 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1818B1E621E0E906006E1B39 /* Build configuration list for PBXNativeTarget "Gmar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1818B1E721E0E906006E1B39 /* Debug */,
-				1818B1E821E0E906006E1B39 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        1818B1CF21E0E905006E1B39 /* Build configuration list for PBXProject "Gmar" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                1818B1E421E0E906006E1B39 /* Debug */,
+                1818B1E521E0E906006E1B39 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        1818B1E621E0E906006E1B39 /* Build configuration list for PBXNativeTarget "Gmar" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                1818B1E721E0E906006E1B39 /* Debug */,
+                1818B1E821E0E906006E1B39 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
-	};
-	rootObject = 1818B1CC21E0E905006E1B39 /* Project object */;
+    };
+    rootObject = 1818B1CC21E0E905006E1B39 /* Project object */;
 }
