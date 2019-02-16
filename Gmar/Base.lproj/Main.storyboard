@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SecularOne-Regular.ttf">
+            <string>SecularOne-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main Window View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,12 +22,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-lF-Qkp">
+                                <rect key="frame" x="20" y="28" width="152" height="59"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="32"/>
+                                <state key="normal" title="הגדרות גן">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-Ff-ZfI">
+                                <rect key="frame" x="55.5" y="323" width="1001" height="208.5"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-qU-Xzj">
+                                <rect key="frame" x="480" y="642" width="152" height="152"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bzQ-qU-Xzj" secondAttribute="height" multiplier="1:1" id="NrJ-9x-QRO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
+                                <state key="normal" title="מידע ילדים">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="kidsInfoClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKT-d9-3e7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bg-dr-vG4"/>
+                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GAo-cx-xl1"/>
+                            <constraint firstItem="RtX-Ff-ZfI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="H9b-h4-vQk"/>
+                            <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NVk-DD-nE8"/>
+                            <constraint firstItem="O0Y-lF-Qkp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WyU-DB-NwS"/>
+                            <constraint firstItem="RtX-Ff-ZfI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="g1s-NG-Fh8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" constant="940" id="qDq-kJ-vQR"/>
+                            <constraint firstItem="O0Y-lF-Qkp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="r1t-Qa-TMt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bzQ-qU-Xzj" secondAttribute="bottom" constant="40" id="v0J-ev-OYG"/>
+                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" id="wKa-Er-4Uf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="kgSettingBtn" destination="O0Y-lF-Qkp" id="QJS-uH-fIx"/>
+                        <outlet property="kidsInfoBtn" destination="bzQ-qU-Xzj" id="y6c-2K-pEj"/>
+                        <outlet property="teachersStackView" destination="RtX-Ff-ZfI" id="qyb-U6-TwM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="17.805755395683455" y="21.582733812949641"/>
         </scene>
     </scenes>
 </document>
