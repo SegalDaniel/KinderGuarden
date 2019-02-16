@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-lF-Qkp">
-                                <rect key="frame" x="20" y="78" width="152" height="59"/>
+                                <rect key="frame" x="20" y="78" width="144.5" height="59"/>
                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="32"/>
                                 <state key="normal" title="הגדרות גן">
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-qU-Xzj">
-                                <rect key="frame" x="480" y="619" width="152" height="152"/>
+                                <rect key="frame" x="483.5" y="619" width="145" height="144.5"/>
                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bzQ-qU-Xzj" secondAttribute="height" multiplier="1:1" id="w7p-8O-t7q"/>
@@ -55,14 +55,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bg-dr-vG4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" symbolic="YES" id="A3u-Ib-lSz"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="H9b-h4-vQk"/>
+                            <constraint firstItem="O0Y-lF-Qkp" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.13" id="MaY-u3-VpM"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="NVk-DD-nE8"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NzL-qI-jtj"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="top" secondItem="RtX-Ff-ZfI" secondAttribute="bottom" constant="20" id="PZh-zl-qHE"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WyU-DB-NwS"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" id="ctT-st-Q7J"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="g1s-NG-Fh8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" constant="940" id="qDq-kJ-vQR"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="r1t-Qa-TMt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -87,13 +88,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-HU-OUh">
-                                <rect key="frame" x="55.5" y="116" width="490.5" height="137"/>
-                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                <color key="textColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-Tg-vOc">
                                 <rect key="frame" x="55.5" y="283.5" width="1001" height="417"/>
                                 <subviews>
@@ -106,7 +100,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDV-XR-W9s">
-                                <rect key="frame" x="55.5" y="721.5" width="96.5" height="56"/>
+                                <rect key="frame" x="55.5" y="721.5" width="214.5" height="56"/>
                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="אישור">
@@ -117,42 +111,48 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ניתן להכניס כאן הערות" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UoI-dS-mCU">
-                                <rect key="frame" x="160" y="721.5" width="896.5" height="56"/>
+                                <rect key="frame" x="278" y="721.5" width="778.5" height="56"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O1-5v-PAm">
-                                <rect key="frame" x="566" y="116" width="490.5" height="137"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="137" id="ZLB-Vk-GOS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                <color key="textColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vQH-Rc-b0f">
+                                <rect key="frame" x="55.5" y="90" width="1001" height="173.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-HU-OUh">
+                                        <rect key="frame" x="0.0" y="0.0" width="490.5" height="173.5"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
+                                        <color key="textColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O1-5v-PAm">
+                                        <rect key="frame" x="510.5" y="0.0" width="490.5" height="173.5"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
+                                        <color key="textColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3O1-5v-PAm" firstAttribute="width" secondItem="OI1-lq-WCf" secondAttribute="width" id="2UO-U2-x1I"/>
-                            <constraint firstItem="h6A-Tg-vOc" firstAttribute="top" secondItem="CNj-HU-OUh" secondAttribute="bottom" constant="30.5" id="54n-Mz-Hz6"/>
+                            <constraint firstItem="vQH-Rc-b0f" firstAttribute="top" secondItem="DP1-31-4Zx" secondAttribute="top" constant="20" id="06m-U2-oGm"/>
                             <constraint firstItem="h6A-Tg-vOc" firstAttribute="centerY" secondItem="DP1-31-4Zx" secondAttribute="centerY" constant="40" id="6Pp-4v-4yJ"/>
+                            <constraint firstItem="vQH-Rc-b0f" firstAttribute="width" secondItem="h6A-Tg-vOc" secondAttribute="width" id="9bo-M0-Ucj"/>
                             <constraint firstItem="iDV-XR-W9s" firstAttribute="top" secondItem="h6A-Tg-vOc" secondAttribute="bottom" constant="21" id="CFI-Ic-Oqb"/>
                             <constraint firstItem="h6A-Tg-vOc" firstAttribute="centerX" secondItem="DP1-31-4Zx" secondAttribute="centerX" id="E1u-N3-Guk"/>
+                            <constraint firstItem="vQH-Rc-b0f" firstAttribute="centerX" secondItem="DP1-31-4Zx" secondAttribute="centerX" id="Gxg-nL-iIx"/>
                             <constraint firstItem="UoI-dS-mCU" firstAttribute="centerY" secondItem="iDV-XR-W9s" secondAttribute="centerY" id="JIy-Sj-uO1"/>
-                            <constraint firstItem="CNj-HU-OUh" firstAttribute="height" secondItem="3O1-5v-PAm" secondAttribute="height" id="Lxp-ER-637"/>
                             <constraint firstItem="h6A-Tg-vOc" firstAttribute="height" secondItem="RPd-7e-hrx" secondAttribute="height" multiplier="0.5" id="R6f-uI-zAe"/>
-                            <constraint firstItem="DP1-31-4Zx" firstAttribute="trailing" secondItem="iDV-XR-W9s" secondAttribute="trailing" constant="960" id="RGw-C1-MtZ"/>
                             <constraint firstItem="iDV-XR-W9s" firstAttribute="leading" secondItem="h6A-Tg-vOc" secondAttribute="leading" id="TYq-bS-bFe"/>
-                            <constraint firstItem="3O1-5v-PAm" firstAttribute="centerX" secondItem="OI1-lq-WCf" secondAttribute="centerX" id="VJl-yq-k5q"/>
-                            <constraint firstItem="h6A-Tg-vOc" firstAttribute="top" secondItem="3O1-5v-PAm" secondAttribute="bottom" constant="30.5" id="VkH-WB-1UP"/>
                             <constraint firstItem="h6A-Tg-vOc" firstAttribute="width" secondItem="RPd-7e-hrx" secondAttribute="width" multiplier="0.9" id="ZkQ-xB-xrs"/>
-                            <constraint firstItem="CNj-HU-OUh" firstAttribute="centerX" secondItem="k1K-Ng-2Fh" secondAttribute="centerX" id="hif-OA-XtK"/>
+                            <constraint firstItem="UoI-dS-mCU" firstAttribute="leading" secondItem="iDV-XR-W9s" secondAttribute="trailing" constant="8" id="heQ-mQ-AhQ"/>
                             <constraint firstItem="UoI-dS-mCU" firstAttribute="trailing" secondItem="h6A-Tg-vOc" secondAttribute="trailing" id="ijd-vN-u8Q"/>
-                            <constraint firstItem="UoI-dS-mCU" firstAttribute="leading" secondItem="iDV-XR-W9s" secondAttribute="trailing" constant="8" id="ixK-QW-Rck"/>
-                            <constraint firstItem="CNj-HU-OUh" firstAttribute="width" secondItem="k1K-Ng-2Fh" secondAttribute="width" id="lpp-Yo-mej"/>
                             <constraint firstItem="UoI-dS-mCU" firstAttribute="height" secondItem="iDV-XR-W9s" secondAttribute="height" id="oPt-ie-nuc"/>
+                            <constraint firstItem="UoI-dS-mCU" firstAttribute="width" secondItem="RPd-7e-hrx" secondAttribute="width" multiplier="0.7" id="pIJ-Vg-GGv"/>
+                            <constraint firstItem="h6A-Tg-vOc" firstAttribute="top" secondItem="vQH-Rc-b0f" secondAttribute="bottom" constant="20" id="wob-YF-Vbl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DP1-31-4Zx"/>
                     </view>

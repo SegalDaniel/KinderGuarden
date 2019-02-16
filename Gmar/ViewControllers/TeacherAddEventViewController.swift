@@ -44,8 +44,9 @@ class TeacherAddEventViewController: UIViewController {
     }
     
     func addAttendanceBtn(){
-        let btn = Utility.ourBtnDesign(title: "עדכון נוכחות", radius: 1, tag: 1, withBorder: true)
-        btn.layer.borderColor = UIColor.gray.cgColor
+        let btn = Utility.ourBtnDesign(title: "עדכון נוכחות", radius: 1, tag: 1)
+        btn.backgroundColor = UIColor.black
+        btn.contentVerticalAlignment = .center
         btn.addTarget(self, action: #selector(attendanceBtnClicked), for: .touchUpInside)
         let firstStack = mainStackView.arrangedSubviews[0] as! UIStackView
         firstStack.addArrangedSubview(btn)
