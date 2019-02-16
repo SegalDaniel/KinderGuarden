@@ -10,11 +10,9 @@ import Foundation
 import SQLite
 
 class SqliteCache : CacheService {
-    
-    // MARK: Properties
     var database: OpaquePointer?
     
-    // MARK: Constructor
+
     init() {
         let dbFileName = "db-babyGuard.db"
         guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
@@ -25,7 +23,6 @@ class SqliteCache : CacheService {
         }
     }
     
-    // MARK: Methods
     func create(name: String, data: String?, onSuccess: ()->Void, onError: ()->Void) {
         guard let columns = data else { return }
         var errormsg: UnsafeMutablePointer<Int8>? = nil
