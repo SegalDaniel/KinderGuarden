@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 class SolidFood{
     var id:String
-    let mealType:String //morning..
+    let mealType:String //morning etc
     let mealInMenu:String
     let amount:String
     let consumedAmount:String

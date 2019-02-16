@@ -18,6 +18,8 @@
 		A8DA55EE221864B00043D580 /* LiquidFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55ED221864B00043D580 /* LiquidFood.swift */; };
 		A8DA55F0221864C70043D580 /* SolidFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55EF221864C70043D580 /* SolidFood.swift */; };
 		A8DA55F2221864E20043D580 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F1221864E20043D580 /* Water.swift */; };
+		A8DA55F422186E330043D580 /* Feces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F322186E330043D580 /* Feces.swift */; };
+		A8DA55F622186F970043D580 /* Urine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F522186F970043D580 /* Urine.swift */; };
 		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
 		A8DA55EF221864C70043D580 /* SolidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidFood.swift; sourceTree = "<group>"; };
 		A8DA55F1221864E20043D580 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
+		A8DA55F322186E330043D580 /* Feces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feces.swift; sourceTree = "<group>"; };
+		A8DA55F522186F970043D580 /* Urine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urine.swift; sourceTree = "<group>"; };
 		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +119,8 @@
 				A8DA55ED221864B00043D580 /* LiquidFood.swift */,
 				A8DA55EF221864C70043D580 /* SolidFood.swift */,
 				A8DA55F1221864E20043D580 /* Water.swift */,
+				A8DA55F322186E330043D580 /* Feces.swift */,
+				A8DA55F522186F970043D580 /* Urine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +261,8 @@
 				A8DA55F0221864C70043D580 /* SolidFood.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
 				A8DA55F2221864E20043D580 /* Water.swift in Sources */,
+				A8DA55F622186F970043D580 /* Urine.swift in Sources */,
+				A8DA55F422186E330043D580 /* Feces.swift in Sources */,
 				A8DA55EE221864B00043D580 /* LiquidFood.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
