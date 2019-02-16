@@ -11,16 +11,25 @@ import UIKit
 class TeacherAddEventViewController: UIViewController {
 
     @IBOutlet weak var mainStackView: UIStackView!
-    var first:Bool = true
+    var asAttandance:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNewStackRow()
-        addNewStackRow()
-        addNewStackRow()
-        //addNewStackRow()
-        addAttendanceBtn()
-        addKids()
+        if !asAttandance{
+            addNewStackRow()
+            addNewStackRow()
+            addNewStackRow()
+            addNewStackRow()
+            addAttendanceBtn()
+            addKids()
+        }
+        else{
+            addNewStackRow()
+            addNewStackRow()
+            addNewStackRow()
+            addNewStackRow()
+            addKids()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -51,13 +60,17 @@ class TeacherAddEventViewController: UIViewController {
         let stacks = mainStackView.arrangedSubviews as! [UIStackView]
         for stack in stacks {
             while stack.arrangedSubviews.count < 4{
-                Utility.addBtnToStack(vc: self, title: "kid", tag: 1, stack: stack, action: #selector(attendanceBtnClicked), radius: 80, withBorder: true, backgroundColor: Utility.btnBackColor!)
+                Utility.addBtnToStack(vc: self, title: "kid", tag: 1, stack: stack, action: #selector(kidClicked), radius: 80, withBorder: true, backgroundColor: Utility.btnBackColor!)
             }
         }
     }
 
     @IBAction func attendanceBtnClicked(_ sender: Any){
         print("Attandance btn clicked")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TeacherAddEvent") as! TeacherAddEventViewController
+        vc.asAttandance = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func kidClicked(_ sender: Any) {
