@@ -18,6 +18,11 @@
 		18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF022185E6600180600 /* TeacherAddEventViewController.swift */; };
 		18991FF422185F6B00180600 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF322185F6B00180600 /* Utility.swift */; };
 		18E46551221888CF0030101C /* UpdateAttandanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E46550221888CF0030101C /* UpdateAttandanceViewController.swift */; };
+		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
+		A8DA55FB22187A140043D580 /* DbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FA22187A140043D580 /* DbService.swift */; };
+		A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FC22187BEC0043D580 /* CacheManager.swift */; };
+		A8DA55FF22187C9E0043D580 /* SqliteCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FE22187C9E0043D580 /* SqliteCache.swift */; };
+		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
 		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +49,11 @@
 		A8DA55F1221864E20043D580 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		A8DA55F322186E330043D580 /* Feces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feces.swift; sourceTree = "<group>"; };
 		A8DA55F522186F970043D580 /* Urine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urine.swift; sourceTree = "<group>"; };
+		A8DA55F7221876200043D580 /* Vomitus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vomitus.swift; sourceTree = "<group>"; };
+		A8DA55FA22187A140043D580 /* DbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbService.swift; sourceTree = "<group>"; };
+		A8DA55FC22187BEC0043D580 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		A8DA55FE22187C9E0043D580 /* SqliteCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteCache.swift; sourceTree = "<group>"; };
+		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +118,7 @@
 			children = (
 				1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */,
 				18991FF022185E6600180600 /* TeacherAddEventViewController.swift */,
-				18E46550221888CF0030101C /* UpdateAttandanceViewController.swift */,
+				18991FF52218703F00180600 /* AttandanceUpdateViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,7 +134,6 @@
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				18991FF322185F6B00180600 /* Utility.swift */,
 				A8DA55E7221859CD0043D580 /* Child.swift */,
 				A8DA55E922185A1E0043D580 /* Staff.swift */,
 				A8DA55EB22185A410043D580 /* Event.swift */,
@@ -133,6 +142,11 @@
 				A8DA55F1221864E20043D580 /* Water.swift */,
 				A8DA55F322186E330043D580 /* Feces.swift */,
 				A8DA55F522186F970043D580 /* Urine.swift */,
+				A8DA55F7221876200043D580 /* Vomitus.swift */,
+				A8DA55FA22187A140043D580 /* DbService.swift */,
+				A8F7F380221888CB00F21DAD /* Utility.swift */,
+				A8DA55FC22187BEC0043D580 /* CacheManager.swift */,
+				A8DA55FE22187C9E0043D580 /* SqliteCache.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,11 +283,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18991FF422185F6B00180600 /* Utility.swift in Sources */,
+				A8DA55FB22187A140043D580 /* DbService.swift in Sources */,
+				A8DA55FF22187C9E0043D580 /* SqliteCache.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
+				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
+				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				18E46551221888CF0030101C /* UpdateAttandanceViewController.swift in Sources */,
+				A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
