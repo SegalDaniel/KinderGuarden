@@ -13,6 +13,9 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		A8DA55E8221859CD0043D580 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55E7221859CD0043D580 /* Child.swift */; };
+		A8DA55EA22185A1E0043D580 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55E922185A1E0043D580 /* Staff.swift */; };
+		A8DA55EC22185A410043D580 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55EB22185A410043D580 /* Event.swift */; };
 		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
+		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
+		A8DA55EB22185A410043D580 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +70,7 @@
 		1818B1D621E0E905006E1B39 /* Gmar */ = {
 			isa = PBXGroup;
 			children = (
+				A8DA55E6221858660043D580 /* Model */,
 				1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
 				1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */,
 				1818B1DB21E0E905006E1B39 /* Main.storyboard */,
@@ -80,6 +87,16 @@
 				D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8DA55E6221858660043D580 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8DA55E7221859CD0043D580 /* Child.swift */,
+				A8DA55E922185A1E0043D580 /* Staff.swift */,
+				A8DA55EB22185A410043D580 /* Event.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E10FAAD4843773E48C946563 /* Pods */ = {
@@ -102,6 +119,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
+				074B3FCC6E909271AAE98A34 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +178,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		074B3FCC6E909271AAE98A34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Gmar/Pods-Gmar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gmar/Pods-Gmar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +231,9 @@
 			files = (
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
+				A8DA55EA22185A1E0043D580 /* Staff.swift in Sources */,
+				A8DA55E8221859CD0043D580 /* Child.swift in Sources */,
+				A8DA55EC22185A410043D580 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
