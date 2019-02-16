@@ -35,10 +35,10 @@
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-qU-Xzj">
-                                <rect key="frame" x="480" y="642" width="152" height="152"/>
+                                <rect key="frame" x="480" y="619" width="152" height="152"/>
                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="bzQ-qU-Xzj" secondAttribute="height" multiplier="1:1" id="NrJ-9x-QRO"/>
+                                    <constraint firstAttribute="width" secondItem="bzQ-qU-Xzj" secondAttribute="height" multiplier="1:1" id="w7p-8O-t7q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
                                 <state key="normal" title="מידע ילדים">
@@ -52,15 +52,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bg-dr-vG4"/>
-                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GAo-cx-xl1"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="H9b-h4-vQk"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="NVk-DD-nE8"/>
+                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NzL-qI-jtj"/>
+                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="top" secondItem="RtX-Ff-ZfI" secondAttribute="bottom" constant="20" id="PZh-zl-qHE"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WyU-DB-NwS"/>
+                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" id="ctT-st-Q7J"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="g1s-NG-Fh8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" constant="940" id="qDq-kJ-vQR"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="r1t-Qa-TMt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bzQ-qU-Xzj" secondAttribute="bottom" constant="40" id="v0J-ev-OYG"/>
-                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" id="wKa-Er-4Uf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -79,7 +79,7 @@
         <!--Teacher Add Event View Controller-->
         <scene sceneID="8VQ-D6-9N8">
             <objects>
-                <viewController id="zXn-Fa-mkm" customClass="TeacherAddEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="TeacherAddEvent" storyboardIdentifier="TeacherAddEvent" id="zXn-Fa-mkm" customClass="TeacherAddEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV6-1k-S7o">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
