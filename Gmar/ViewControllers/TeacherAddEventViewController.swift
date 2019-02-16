@@ -44,13 +44,8 @@ class TeacherAddEventViewController: UIViewController {
     }
     
     func addAttendanceBtn(){
-        let btn = UIButton(type: .system)
-        btn.setTitle("עדכון נוכחות", for: .normal)
-        btn.setTitleColor(UIColor(red: 235, green: 235, blue: 235, alpha: 1), for: .normal)
-        btn.titleLabel?.font = UIFont(name: "SecularOne-Regular", size: 25)
-        btn.backgroundColor = Utility.btnBackColor
+        let btn = Utility.ourBtnDesign(title: "עדכון נוכחות", radius: 1, tag: 1, withBorder: true)
         btn.layer.borderColor = UIColor.gray.cgColor
-        btn.layer.borderWidth = 4
         btn.addTarget(self, action: #selector(attendanceBtnClicked), for: .touchUpInside)
         let firstStack = mainStackView.arrangedSubviews[0] as! UIStackView
         firstStack.addArrangedSubview(btn)
@@ -60,7 +55,9 @@ class TeacherAddEventViewController: UIViewController {
         let stacks = mainStackView.arrangedSubviews as! [UIStackView]
         for stack in stacks {
             while stack.arrangedSubviews.count < 4{
-                Utility.addBtnToStack(vc: self, title: "kid", tag: 1, stack: stack, action: #selector(kidClicked), radius: 80, withBorder: true, backgroundColor: Utility.btnBackColor!)
+                let btn = Utility.ourBtnDesign(title: "kid", radius: 80, tag: 1)
+                btn.addTarget(self, action: #selector(kidClicked), for: .touchUpInside)
+                stack.addArrangedSubview(btn)
             }
         }
     }
@@ -75,7 +72,12 @@ class TeacherAddEventViewController: UIViewController {
     
     @IBAction func kidClicked(_ sender: Any) {
         if let btn = sender as? UIButton{
-            print("\(btn.titleLabel?.text ?? "") pressed with tag \(btn.tag)")
+            if asAttandance{
+                performSegue(withIdentifier: "updateAttandance", sender: nil)
+            }
+            else{
+                print("\(btn.titleLabel?.text ?? "") pressed with tag \(btn.tag)")
+            }
         }
     }
 }

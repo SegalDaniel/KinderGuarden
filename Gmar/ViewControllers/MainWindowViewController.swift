@@ -16,6 +16,7 @@ class MainWindowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utility.btnBackColor = kgSettingBtn.backgroundColor
         roundKidsInfoBtn()
         addTeacherToStack(name: "סייעת א", tag: 2)
         addTeacherToStack(name: "סייעת ב", tag: 3)
@@ -35,12 +36,13 @@ class MainWindowViewController: UIViewController {
     
     func roundKidsInfoBtn(){
         kidsInfoBtn.layer.cornerRadius = kidsInfoBtn.layer.frame.width / 2
-        Utility.btnBackColor = kgSettingBtn.backgroundColor
         kidsInfoBtn.clipsToBounds = true
     }
     
     func addTeacherToStack(name:String, tag:Int){
-        Utility.addBtnToStack(vc:self, title: name, tag: tag, stack: teachersStackView, action: #selector(teacherButtonClicked), radius: kidsInfoBtn.layer.cornerRadius, withBorder: false, backgroundColor: kgSettingBtn.backgroundColor ?? UIColor.blue)
+        let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag)
+        btn.addTarget(self, action: #selector(teacherButtonClicked), for: .touchUpInside)
+        teachersStackView.addArrangedSubview(btn)
     }
 
 }
