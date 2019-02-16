@@ -1,0 +1,68 @@
+//
+//  TeacherAddEvent.swift
+//  Gmar
+//
+//  Created by Zach Bachar on 16/02/2019.
+//  Copyright © 2019 Final Project. All rights reserved.
+//
+
+import UIKit
+
+class TeacherAddEventViewController: UIViewController {
+
+    @IBOutlet weak var mainStackView: UIStackView!
+    var first:Bool = true
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addNewStackRow()
+        addNewStackRow()
+        addNewStackRow()
+        //addNewStackRow()
+        addAttendanceBtn()
+        addKids()
+        // Do any additional setup after loading the view.
+    }
+    
+    func addNewStackRow(){
+        let stack = UIStackView(frame: CGRect(x: mainStackView.layer.frame.minX , y: mainStackView.layer.frame.minY, width: mainStackView.layer.frame.width, height: mainStackView.layer.frame.height))
+       
+        stack.alignment = .fill
+        stack.spacing = 8
+        stack.distribution = .fillEqually
+        stack.axis = .horizontal
+        mainStackView.addArrangedSubview(stack)
+    }
+    
+    func addAttendanceBtn(){
+        let btn = UIButton(type: .system)
+        btn.setTitle("עדכון נוכחות", for: .normal)
+        btn.setTitleColor(UIColor(red: 235, green: 235, blue: 235, alpha: 1), for: .normal)
+        btn.titleLabel?.font = UIFont(name: "SecularOne-Regular", size: 25)
+        btn.backgroundColor = Utility.btnBackColor
+        btn.layer.borderColor = UIColor.gray.cgColor
+        btn.layer.borderWidth = 4
+        btn.addTarget(self, action: #selector(attendanceBtnClicked), for: .touchUpInside)
+        let firstStack = mainStackView.arrangedSubviews[0] as! UIStackView
+        firstStack.addArrangedSubview(btn)
+    }
+    
+    func addKids(){
+        let stacks = mainStackView.arrangedSubviews as! [UIStackView]
+        for stack in stacks {
+            while stack.arrangedSubviews.count < 4{
+                Utility.addBtnToStack(vc: self, title: "kid", tag: 1, stack: stack, action: #selector(attendanceBtnClicked), radius: 80, withBorder: true, backgroundColor: Utility.btnBackColor!)
+            }
+        }
+    }
+
+    @IBAction func attendanceBtnClicked(_ sender: Any){
+        print("Attandance btn clicked")
+    }
+    
+    @IBAction func kidClicked(_ sender: Any) {
+        if let btn = sender as? UIButton{
+            print("\(btn.titleLabel?.text ?? "") pressed with tag \(btn.tag)")
+        }
+    }
+}
