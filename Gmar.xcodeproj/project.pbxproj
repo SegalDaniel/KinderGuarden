@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D721E0E905006E1B39 /* AppDelegate.swift */; };
-		1818B1DA21E0E905006E1B39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* ViewController.swift */; };
+		1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */; };
 		1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DB21E0E905006E1B39 /* Main.storyboard */; };
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1818B1D421E0E905006E1B39 /* Gmar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1818B1D721E0E905006E1B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1818B1D921E0E905006E1B39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowViewController.swift; sourceTree = "<group>"; };
 		1818B1DC21E0E905006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1818B1DE21E0E906006E1B39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
+		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +48,8 @@
 				1818B1D621E0E905006E1B39 /* Gmar */,
 				1818B1D521E0E905006E1B39 /* Products */,
 				1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */,
+				E10FAAD4843773E48C946563 /* Pods */,
+				378573E8FF6EE6BEB75C54F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +65,30 @@
 			isa = PBXGroup;
 			children = (
 				1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
-				1818B1D921E0E905006E1B39 /* ViewController.swift */,
+				1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */,
 				1818B1DB21E0E905006E1B39 /* Main.storyboard */,
 				1818B1DE21E0E906006E1B39 /* Assets.xcassets */,
 				1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
 				1818B1E321E0E906006E1B39 /* Info.plist */,
 			);
 			path = Gmar;
+			sourceTree = "<group>";
+		};
+		378573E8FF6EE6BEB75C54F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E10FAAD4843773E48C946563 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */,
+				F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1818B1E621E0E906006E1B39 /* Build configuration list for PBXNativeTarget "Gmar" */;
 			buildPhases = (
+				B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */,
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
@@ -134,12 +159,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gmar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1818B1D021E0E905006E1B39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1818B1DA21E0E905006E1B39 /* ViewController.swift in Sources */,
+				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +334,7 @@
 		};
 		1818B1E721E0E906006E1B39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,12 +347,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		1818B1E821E0E906006E1B39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,7 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
