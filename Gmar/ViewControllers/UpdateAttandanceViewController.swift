@@ -25,7 +25,6 @@ class UpdateAttandanceViewController: UIViewController {
         Utility.addBorder(view: whoLabel, color: .black, width: 6)
         addWhenBtns()
         addWhoBtns()
-        // Do any additional setup after loading the view.
     }
     
     

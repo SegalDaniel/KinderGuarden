@@ -22,7 +22,6 @@ class MainWindowViewController: UIViewController {
         addTeacherToStack(name: "סייעת ב", tag: 3)
         addTeacherToStack(name: "סייעת ג", tag: 4)
         addTeacherToStack(name: "גננת ראשית", tag: 1)
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func teacherButtonClicked(_ sender: Any){

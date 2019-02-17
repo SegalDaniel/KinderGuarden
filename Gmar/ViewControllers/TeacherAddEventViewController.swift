@@ -15,6 +15,10 @@ class TeacherAddEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViews()
+    }
+    
+    func initViews(){
         if !asAttandance{
             addNewStackRow()
             addNewStackRow()
@@ -30,7 +34,6 @@ class TeacherAddEventViewController: UIViewController {
             addNewStackRow()
             addKids()
         }
-        // Do any additional setup after loading the view.
     }
     
     func addNewStackRow(){
@@ -77,7 +80,7 @@ class TeacherAddEventViewController: UIViewController {
                 performSegue(withIdentifier: "updateAttandance", sender: nil)
             }
             else{
-                print("\(btn.titleLabel?.text ?? "") pressed with tag \(btn.tag)")
+                performSegue(withIdentifier: "EventKind", sender: btn.tag)
             }
         }
     }
