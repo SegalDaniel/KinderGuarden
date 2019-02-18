@@ -82,11 +82,18 @@ class TeacherAddEventViewController: UIViewController {
     @IBAction func kidClicked(_ sender: Any) {
         if let btn = sender as? UIButton{
             if asAttandance{
-                performSegue(withIdentifier: "updateAttandance", sender: nil)
+                performSegue(withIdentifier: "GenericInfo", sender: Enums.BasicEvent.attandance)
             }
             else{
                 performSegue(withIdentifier: "EventKind", sender: btn.tag)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GenericInfo"{
+            let vc = segue.destination as! GenericVC
+            vc.kind = sender as! Enums.BasicEvent
         }
     }
 }

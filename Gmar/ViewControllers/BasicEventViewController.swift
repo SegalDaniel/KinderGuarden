@@ -20,7 +20,6 @@ class BasicEventViewController: UIViewController {
     @IBOutlet weak var hafrashaBtn: UIButton!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initBtns([rashBtn, sleepBtn, feedingBtn, fecesBtn, coughBtn, feeverBtn, vomitBtn, hafrashaBtn])
@@ -45,10 +44,11 @@ class BasicEventViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "GenericDecision"{
-            let vc = segue.destination as? GenericDecisionViewController
-            vc?.kind = sender as? Int ?? 0
+            let vc = segue.destination as! GenericDecisionViewController
+            let kind = Enums.BasicEvent(rawValue: (sender as! Int))!
+            vc.kind = kind
         }
     }
     

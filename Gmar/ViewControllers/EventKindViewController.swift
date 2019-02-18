@@ -19,25 +19,15 @@ class EventKindViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initBtns()
+        initBtns([basicEventBtn, developEventBtn, familiyEventBtn, generalEventBtn, futureAttEventBtn])
     }
     
-    func initBtns(){
-        basicEventBtn.layer.cornerRadius = basicEventBtn.layer.frame.width / 6
-        developEventBtn.layer.cornerRadius = developEventBtn.layer.frame.width / 6
-        familiyEventBtn.layer.cornerRadius = familiyEventBtn.layer.frame.width / 6
-        generalEventBtn.layer.cornerRadius = generalEventBtn.layer.frame.width / 6
-        futureAttEventBtn.layer.cornerRadius = futureAttEventBtn.layer.frame.width / 6
-        basicEventBtn.clipsToBounds = true
-        developEventBtn.clipsToBounds = true
-        familiyEventBtn.clipsToBounds = true
-        generalEventBtn.clipsToBounds = true
-        futureAttEventBtn.clipsToBounds = true
-        Utility.adjustBtnTitle(button: basicEventBtn)
-        Utility.adjustBtnTitle(button: developEventBtn)
-        Utility.adjustBtnTitle(button: familiyEventBtn)
-        Utility.adjustBtnTitle(button: generalEventBtn)
-        Utility.adjustBtnTitle(button: futureAttEventBtn)
+    func initBtns(_ buttons: [UIButton]){
+        buttons.forEach { (btn) in
+            btn.layer.cornerRadius = btn.layer.frame.width / 6
+            btn.clipsToBounds = true
+            Utility.adjustBtnTitle(button: btn)
+        }
     }
 
     @IBAction func someEventClicked(_ sender: Any) {
@@ -76,4 +66,6 @@ class EventKindViewController: UIViewController {
     }
     */
 
+    
+    
 }

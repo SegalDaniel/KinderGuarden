@@ -44,6 +44,7 @@ class MainWindowViewController: UIViewController {
         teachersStackView.addArrangedSubview(btn)
     }
 
+    @IBAction func unwindToMainWindow(segue:UIStoryboardSegue) { }
 }
 
 

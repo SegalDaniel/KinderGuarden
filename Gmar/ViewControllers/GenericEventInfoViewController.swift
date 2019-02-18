@@ -8,24 +8,30 @@
 
 import UIKit
 
-class GenericEventInfoViewController: UIViewController {
+class GenericEventInfoViewController: GenericVC {
 
     @IBOutlet weak var labelStackView: UIStackView!
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
-    var kind:Int = 0
+    @IBOutlet weak var messageTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-       
+        
     }
     
     func initViews(){
+        Utility.addBorder(view: messageLabel, color: UIColor.black, width: 2)
         switch kind {
-        case 1:
+        case .feces:
             fecesViews()
+            break
+        case .solidFoods:
+            break
+        case .attandance:
+            attandanceViews()
             break
         default:
             break
@@ -49,12 +55,12 @@ class GenericEventInfoViewController: UIViewController {
             let row = (btn.tag / 10) - 1
             let label = labelStackView.arrangedSubviews[row] as! UILabel
             label.text = btn.titleLabel?.text
-            print("row: \(row) text:\(String(describing: btn.titleLabel!.text))")
         }
     }
     
     @IBAction func confirmBtnClicked(_ sender: Any) {
         print("confirm clicked")
+        performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
     }
     
     /*
@@ -66,62 +72,39 @@ class GenericEventInfoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    /************************************************ Generic Info Adding *****************************************************/
 
+    func addStackForInfo(info:(Int, [String])){
+        var names:[String] = info.1
+        var btns:[UIButton] = []
+        labelStackView.addArrangedSubview(Utility.ourLabelDesign(frame: labelStackView.frame, text: names.removeFirst()))
+        for i in 0...names.count-1 {
+            let tag = (info.0 * 10) + i + 1
+            btns.append(Utility.ourBtnDesign(title: names[i], radius: 1, tag: tag, image: nil, alignment: .center, type: .system))
+        }
+        addTargetToBtn(buttons: btns)
+        buttonStackView.addArrangedSubview(Utility.newStack(arrangedSubviews: btns))
+    }
     
     
     /************************************************** Views Inits *******************************************************/
     
     func fecesViews(){
-        let l1 = Utility.ourLabelDesign(frame: labelStackView.frame, text: "צבע")
-        let l2 = Utility.ourLabelDesign(frame: labelStackView.frame, text: "מרקם")
-        let l3 = Utility.ourLabelDesign(frame: labelStackView.frame, text: "כמות")
-        let l4 = Utility.ourLabelDesign(frame: labelStackView.frame, text: "צבע שתן")
-        let l5 = Utility.ourLabelDesign(frame: labelStackView.frame, text: "ריח שתן")
-        let l6 = Utility.ourLabelDesign(frame: labelStackView.frame, text: "כמות שתן")
-        addToStack(stack: labelStackView, views: [l1, l2, l3, l4, l5 ,l6])
-        
-        let b11 = Utility.ourBtnDesign(title: "חום/צהוב/ירוק", radius: 1, tag: 11, image: nil, alignment: .center, type: .system)
-        let b12 = Utility.ourBtnDesign(title: "אדום", radius: 1, tag: 12, image: nil, alignment: .center, type: .system)
-        let b13 = Utility.ourBtnDesign(title: "לבן/אפור", radius: 1, tag: 13, image: nil, alignment: .center, type: .system)
-        let stack1 = Utility.newStack(arrangedSubviews: [b11, b12, b13])
-        addTargetToBtn(buttons: stack1.arrangedSubviews as! [UIButton])
-        
-        let b21 = Utility.ourBtnDesign(title: "משחתי/חלק", radius: 1, tag: 21, image: nil, alignment: .center, type: .system)
-        let b22 = Utility.ourBtnDesign(title: "יבש/גללי", radius: 1, tag: 22, image: nil, alignment: .center, type: .system)
-        let b23 = Utility.ourBtnDesign(title: "שלשול/מיימי", radius: 1, tag: 23, image: nil, alignment: .center, type: .system)
-        let b24 = Utility.ourBtnDesign(title: "ריירי", radius: 1, tag: 24, image: nil, alignment: .center, type: .system)
-        let stack2 = Utility.newStack(arrangedSubviews: [b21, b22, b23, b24])
-        addTargetToBtn(buttons: stack2.arrangedSubviews as! [UIButton])
-        
-        let b31 = Utility.ourBtnDesign(title: "קטנה", radius: 1, tag: 31, image: nil, alignment: .center, type: .system)
-        let b32 = Utility.ourBtnDesign(title: "רגילה", radius: 1, tag: 32, image: nil, alignment: .center, type: .system)
-        let b33 = Utility.ourBtnDesign(title: "חיתול מלא", radius: 1, tag: 33, image: nil, alignment: .center, type: .system)
-        let stack3 = Utility.newStack(arrangedSubviews: [b31, b32, b33])
-        addTargetToBtn(buttons: stack3.arrangedSubviews as! [UIButton])
-        
-        let b41 = Utility.ourBtnDesign(title: "צהוב בהיר", radius: 1, tag: 41, image: nil, alignment: .center, type: .system)
-        let b42 = Utility.ourBtnDesign(title: "צהוב כהה/חום", radius: 1, tag: 42, image: nil, alignment: .center, type: .system)
-        let b43 = Utility.ourBtnDesign(title: "אדום", radius: 1, tag: 43, image: nil, alignment: .center, type: .system)
-        let stack4 = Utility.newStack(arrangedSubviews: [b41, b42, b43])
-        addTargetToBtn(buttons: stack4.arrangedSubviews as! [UIButton])
-        
-        let b51 = Utility.ourBtnDesign(title: "רגיל", radius: 1, tag: 51, image: nil, alignment: .center, type: .system)
-        let b52 = Utility.ourBtnDesign(title: "חריף", radius: 1, tag: 52, image: nil, alignment: .center, type: .system)
-        let stack5 = Utility.newStack(arrangedSubviews: [b51, b52])
-        addTargetToBtn(buttons: stack5.arrangedSubviews as! [UIButton])
-        
-        let b61 = Utility.ourBtnDesign(title: "רגילה", radius: 1, tag: 61, image: nil, alignment: .center, type: .system)
-        let b62 = Utility.ourBtnDesign(title: "חיתול מלא", radius: 1, tag: 62, image: nil, alignment: .center, type: .system)
-        let stack6 = Utility.newStack(arrangedSubviews: [b61, b62])
-        addTargetToBtn(buttons: stack6.arrangedSubviews as! [UIButton])
-        
-        buttonStackView.addArrangedSubview(stack1)
-        buttonStackView.addArrangedSubview(stack2)
-        buttonStackView.addArrangedSubview(stack3)
-        buttonStackView.addArrangedSubview(stack4)
-        buttonStackView.addArrangedSubview(stack5)
-        buttonStackView.addArrangedSubview(stack6)
+        addStackForInfo(info: (1, ["צבע", "חום/צהוב/ירוק", "אדום", "לבן/אפור"]))
+        addStackForInfo(info: (2, ["מרקם", "משחתי/חלק", "יבש/גללי", "שלשול/מיימי", "ריירי"]))
+        addStackForInfo(info: (3, ["כמות", "קטנה", "רגילה", "חיתול מלא"]))
+        addStackForInfo(info: (4, ["צבע שתן", "צהוב בהיר", "צהוב כהה/חום", "אדום"]))
+        addStackForInfo(info: (5, ["ריח שתן", "רגיל", "חריף"]))
+        addStackForInfo(info: (6, ["כמות שתן", "רגילה", "חיתול מלא"]))
         
         messageLabel.text = "ניתן למלא או צואה או שתן או שניהם*"
+    }
+    
+    func attandanceViews(){
+        addStackForInfo(info: (1, ["", "הגעה", "עזיבה"]))
+        addStackForInfo(info: (2, ["", "אבא", "אמא", "סבא"]))
+        messageLabel.isHidden = true
+        messageTextField.isHidden = false
     }
 }
