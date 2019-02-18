@@ -15,15 +15,18 @@ class GenericEventInfoViewController: GenericVC {
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-        
     }
     
     func initViews(){
         Utility.addBorder(view: messageLabel, color: UIColor.black, width: 2)
+        Utility.addBorder(view: timeLabel, color: UIColor.black, width: 2)
+        timeLabel.text = currentDate()
         switch kind {
         case .feces:
             fecesViews()
@@ -62,6 +65,13 @@ class GenericEventInfoViewController: GenericVC {
         print("confirm clicked")
         performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
     }
+    
+    @IBAction func timeBtnClicked(_ sender: Any) {
+        showDatePicker { (time) in
+            self.timeLabel.text = time
+        }
+    }
+    
     
     /*
     // MARK: - Navigation

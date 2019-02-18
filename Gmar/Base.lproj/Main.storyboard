@@ -310,13 +310,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JM0-Ub-HXr">
-                                <rect key="frame" x="55.5" y="78" width="1001" height="208.5"/>
+                                <rect key="frame" x="55.5" y="170" width="1001" height="125"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kcP-9N-jy7">
-                                <rect key="frame" x="55.5" y="294.5" width="1001" height="417"/>
+                                <rect key="frame" x="55.5" y="303" width="1001" height="417"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCj-AX-agP">
-                                <rect key="frame" x="55.5" y="719.5" width="278" height="83.5"/>
+                                <rect key="frame" x="55.5" y="728" width="278" height="83.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="אישור">
@@ -327,17 +327,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFw-At-vNM">
-                                <rect key="frame" x="341.5" y="719.5" width="715" height="83.5"/>
+                                <rect key="frame" x="341.5" y="728" width="715" height="83.5"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*ניתן להוסיף הערה" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBn-vw-cE3">
-                                <rect key="frame" x="341.5" y="719.5" width="715" height="83.5"/>
+                                <rect key="frame" x="341.5" y="728" width="715" height="83.5"/>
                                 <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXq-bg-0Hu">
+                                <rect key="frame" x="55.5" y="78" width="278" height="83.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="שינוי זמן">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="rKZ-8f-FdN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgy-lY-1Uq">
+                                <rect key="frame" x="341.5" y="78" width="715" height="83.5"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -345,20 +362,29 @@
                             <constraint firstItem="kcP-9N-jy7" firstAttribute="top" secondItem="JM0-Ub-HXr" secondAttribute="bottom" constant="8" id="0kE-Ib-GHQ"/>
                             <constraint firstItem="RCj-AX-agP" firstAttribute="height" secondItem="3aE-zV-oPO" secondAttribute="height" multiplier="0.1" id="0nZ-Pl-GCx"/>
                             <constraint firstItem="JM0-Ub-HXr" firstAttribute="width" secondItem="3aE-zV-oPO" secondAttribute="width" multiplier="0.9" id="1hf-t8-jS7"/>
+                            <constraint firstItem="Xgy-lY-1Uq" firstAttribute="top" secondItem="KtT-wJ-QYV" secondAttribute="top" constant="8" id="3Gy-Lk-mZc"/>
                             <constraint firstItem="kcP-9N-jy7" firstAttribute="centerX" secondItem="KtT-wJ-QYV" secondAttribute="centerX" id="8Fs-zS-gcF"/>
+                            <constraint firstItem="bXq-bg-0Hu" firstAttribute="height" secondItem="RCj-AX-agP" secondAttribute="height" id="8ML-iu-1bY"/>
                             <constraint firstItem="XFw-At-vNM" firstAttribute="leading" secondItem="RCj-AX-agP" secondAttribute="trailing" constant="8" id="9ZE-hN-Dnm"/>
                             <constraint firstItem="RCj-AX-agP" firstAttribute="width" secondItem="3aE-zV-oPO" secondAttribute="width" multiplier="0.25" id="9bw-WA-vcH"/>
                             <constraint firstItem="gBn-vw-cE3" firstAttribute="centerX" secondItem="XFw-At-vNM" secondAttribute="centerX" id="Ccj-PI-K0m"/>
-                            <constraint firstItem="KtT-wJ-QYV" firstAttribute="top" secondItem="JM0-Ub-HXr" secondAttribute="top" constant="-8" id="Ee5-iF-XWf"/>
+                            <constraint firstItem="Xgy-lY-1Uq" firstAttribute="width" secondItem="XFw-At-vNM" secondAttribute="width" id="EXU-vK-SQz"/>
+                            <constraint firstItem="bXq-bg-0Hu" firstAttribute="leading" secondItem="RCj-AX-agP" secondAttribute="leading" id="Eb3-er-AfF"/>
+                            <constraint firstItem="bXq-bg-0Hu" firstAttribute="top" secondItem="KtT-wJ-QYV" secondAttribute="top" constant="8" id="GCB-c1-imB"/>
                             <constraint firstItem="XFw-At-vNM" firstAttribute="centerY" secondItem="RCj-AX-agP" secondAttribute="centerY" id="Gzx-xA-9va"/>
                             <constraint firstItem="kcP-9N-jy7" firstAttribute="width" secondItem="KtT-wJ-QYV" secondAttribute="width" multiplier="0.9" id="Iw4-6t-WSF"/>
                             <constraint firstItem="gBn-vw-cE3" firstAttribute="centerY" secondItem="XFw-At-vNM" secondAttribute="centerY" id="J2C-C3-OW0"/>
+                            <constraint firstItem="Xgy-lY-1Uq" firstAttribute="trailing" secondItem="gBn-vw-cE3" secondAttribute="trailing" id="JVU-ff-jMH"/>
                             <constraint firstItem="kcP-9N-jy7" firstAttribute="height" secondItem="3aE-zV-oPO" secondAttribute="height" multiplier="0.5" id="MMa-L3-CdP"/>
                             <constraint firstItem="gBn-vw-cE3" firstAttribute="height" secondItem="XFw-At-vNM" secondAttribute="height" id="SCA-Vm-50o"/>
-                            <constraint firstItem="JM0-Ub-HXr" firstAttribute="height" secondItem="3aE-zV-oPO" secondAttribute="height" multiplier="0.25" id="W8C-6v-oW9"/>
+                            <constraint firstItem="Xgy-lY-1Uq" firstAttribute="height" secondItem="XFw-At-vNM" secondAttribute="height" id="UU7-OM-Tsc"/>
+                            <constraint firstItem="bXq-bg-0Hu" firstAttribute="width" secondItem="RCj-AX-agP" secondAttribute="width" id="VrA-Uh-tKX"/>
+                            <constraint firstItem="JM0-Ub-HXr" firstAttribute="height" secondItem="3aE-zV-oPO" secondAttribute="height" multiplier="0.15" id="W8C-6v-oW9"/>
                             <constraint firstItem="gBn-vw-cE3" firstAttribute="width" secondItem="XFw-At-vNM" secondAttribute="width" id="XC5-gA-UCL"/>
                             <constraint firstItem="XFw-At-vNM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kcP-9N-jy7" secondAttribute="trailing" id="XTk-8k-sIe"/>
                             <constraint firstItem="RCj-AX-agP" firstAttribute="top" secondItem="kcP-9N-jy7" secondAttribute="bottom" constant="8" id="Ysw-ha-J2Q"/>
+                            <constraint firstItem="JM0-Ub-HXr" firstAttribute="top" secondItem="Xgy-lY-1Uq" secondAttribute="bottom" constant="8.5" id="ahr-aS-0fR"/>
+                            <constraint firstItem="Xgy-lY-1Uq" firstAttribute="leading" secondItem="bXq-bg-0Hu" secondAttribute="trailing" constant="8" id="iAl-Yn-Fb1"/>
                             <constraint firstItem="RCj-AX-agP" firstAttribute="leading" secondItem="kcP-9N-jy7" secondAttribute="leading" id="rLU-Ji-Hpf"/>
                             <constraint firstItem="XFw-At-vNM" firstAttribute="height" secondItem="RCj-AX-agP" secondAttribute="height" id="scM-fN-tG4"/>
                         </constraints>
@@ -370,13 +396,15 @@
                         <outlet property="labelStackView" destination="JM0-Ub-HXr" id="UKd-PM-Xgy"/>
                         <outlet property="messageLabel" destination="XFw-At-vNM" id="RDC-Ef-AwH"/>
                         <outlet property="messageTextField" destination="gBn-vw-cE3" id="8fz-mt-Ird"/>
+                        <outlet property="timeBtn" destination="bXq-bg-0Hu" id="ESw-fh-qCc"/>
+                        <outlet property="timeLabel" destination="Xgy-lY-1Uq" id="EEi-NM-3Yo"/>
                         <segue destination="gH2-7B-DDs" kind="unwind" identifier="unwindToMainWindow" unwindAction="unwindToMainWindowWithSegue:" id="Qaq-4H-VmP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acw-po-A79" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gH2-7B-DDs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="-1037"/>
+            <point key="canvasLocation" x="1963.4892086330935" y="-1037.4100719424462"/>
         </scene>
         <!--Generic Liquid View Controller-->
         <scene sceneID="SoW-uf-YhH">
@@ -386,45 +414,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-DY-jUJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-za-oNn">
+                                <rect key="frame" x="341.5" y="78" width="715" height="83.5"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9K-xi-L0e">
+                                <rect key="frame" x="55.5" y="78" width="278" height="83.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="שינוי זמן">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeTimeClicked:" destination="b8b-Qg-OgN" eventType="touchUpInside" id="eHO-Rf-V7T"/>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="TiB-AT-ARO"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-DY-jUJ">
                                 <rect key="frame" x="55.5" y="243.5" width="1001" height="417"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h22-gG-QvP">
-                                        <rect key="frame" x="504.5" y="0.0" width="496.5" height="417"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcc-md-Wle">
-                                                <rect key="frame" x="0.0" y="0.0" width="496.5" height="204.5"/>
-                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                                <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmS-oZ-W3v">
-                                                <rect key="frame" x="0.0" y="212.5" width="496.5" height="204.5"/>
-                                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                <state key="normal" title="שינוי שעה">
-                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l3A-Cy-d4h">
-                                        <rect key="frame" x="0.0" y="0.0" width="496.5" height="417"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כמות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-uh-M7X">
-                                                <rect key="frame" x="0.0" y="0.0" width="496.5" height="204.5"/>
-                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                                <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7ih-Q5-qhQ">
-                                                <rect key="frame" x="-2" y="212.5" width="500.5" height="205.5"/>
-                                                <connections>
-                                                    <action selector="quanSliderChanged:" destination="b8b-Qg-OgN" eventType="valueChanged" id="wpm-0N-Ana"/>
-                                                </connections>
-                                            </slider>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כמות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-uh-M7X">
+                                        <rect key="frame" x="0.0" y="0.0" width="1001" height="204.5"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
+                                        <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7ih-Q5-qhQ">
+                                        <rect key="frame" x="-2" y="212.5" width="1005" height="205.5"/>
+                                        <connections>
+                                            <action selector="quanSliderChanged:" destination="b8b-Qg-OgN" eventType="valueChanged" id="wpm-0N-Ana"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIg-hd-ESw">
@@ -450,26 +472,35 @@
                         <constraints>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="centerX" secondItem="ocJ-Mj-4rp" secondAttribute="centerX" id="1qP-kc-hNK"/>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="centerY" secondItem="ocJ-Mj-4rp" secondAttribute="centerY" id="2qS-tK-jkJ"/>
+                            <constraint firstItem="w9K-xi-L0e" firstAttribute="leading" secondItem="ZIg-hd-ESw" secondAttribute="leading" id="3cS-D2-6lO"/>
                             <constraint firstItem="6yz-mL-lOR" firstAttribute="height" secondItem="ZIg-hd-ESw" secondAttribute="height" id="C8F-rv-EAN"/>
+                            <constraint firstItem="CVJ-za-oNn" firstAttribute="width" secondItem="6yz-mL-lOR" secondAttribute="width" id="E7H-2c-oqH"/>
+                            <constraint firstItem="CVJ-za-oNn" firstAttribute="top" secondItem="ocJ-Mj-4rp" secondAttribute="top" constant="8" id="GDF-1W-Lj9"/>
+                            <constraint firstItem="w9K-xi-L0e" firstAttribute="width" secondItem="ZIg-hd-ESw" secondAttribute="width" id="Gn1-Tr-eXC"/>
                             <constraint firstItem="6yz-mL-lOR" firstAttribute="leading" secondItem="ZIg-hd-ESw" secondAttribute="trailing" constant="8" id="JVf-1J-twc"/>
                             <constraint firstItem="ZIg-hd-ESw" firstAttribute="top" secondItem="Kxq-DY-jUJ" secondAttribute="bottom" constant="40.5" id="NRT-2f-AVf"/>
+                            <constraint firstItem="CVJ-za-oNn" firstAttribute="trailing" secondItem="6yz-mL-lOR" secondAttribute="trailing" id="TgS-EW-9yP"/>
                             <constraint firstItem="ZIg-hd-ESw" firstAttribute="width" secondItem="ocJ-Mj-4rp" secondAttribute="width" multiplier="0.25" id="U9X-HE-4jQ"/>
+                            <constraint firstItem="CVJ-za-oNn" firstAttribute="leading" secondItem="w9K-xi-L0e" secondAttribute="trailing" constant="8" id="Vpf-ZB-QKm"/>
                             <constraint firstItem="ZIg-hd-ESw" firstAttribute="height" secondItem="8sP-wR-1eE" secondAttribute="height" multiplier="0.1" id="eUS-NU-Sc7"/>
+                            <constraint firstItem="w9K-xi-L0e" firstAttribute="height" secondItem="ZIg-hd-ESw" secondAttribute="height" id="f3N-wE-1Mn"/>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="height" secondItem="8sP-wR-1eE" secondAttribute="height" multiplier="0.5" id="juI-Aq-pi1"/>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="width" secondItem="8sP-wR-1eE" secondAttribute="width" multiplier="0.9" id="kzk-gT-mQK"/>
+                            <constraint firstItem="w9K-xi-L0e" firstAttribute="top" secondItem="ocJ-Mj-4rp" secondAttribute="top" constant="8" id="meM-pg-7cl"/>
                             <constraint firstItem="6yz-mL-lOR" firstAttribute="trailing" secondItem="Kxq-DY-jUJ" secondAttribute="trailing" id="nVn-61-4mK"/>
                             <constraint firstItem="6yz-mL-lOR" firstAttribute="centerY" secondItem="ZIg-hd-ESw" secondAttribute="centerY" id="tew-in-r44"/>
+                            <constraint firstItem="CVJ-za-oNn" firstAttribute="height" secondItem="6yz-mL-lOR" secondAttribute="height" id="wC5-nL-FXd"/>
                             <constraint firstItem="ZIg-hd-ESw" firstAttribute="leading" secondItem="Kxq-DY-jUJ" secondAttribute="leading" id="zsb-iL-rtO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ocJ-Mj-4rp"/>
                     </view>
                     <connections>
-                        <outlet property="changeTimeBtn" destination="bmS-oZ-W3v" id="jjv-wF-zMk"/>
+                        <outlet property="changeTimeBtn" destination="w9K-xi-L0e" id="AgS-7O-pl4"/>
                         <outlet property="confirmBtn" destination="ZIg-hd-ESw" id="zSR-YI-Tty"/>
                         <outlet property="messageLabel" destination="6yz-mL-lOR" id="jDi-zM-VhC"/>
                         <outlet property="quantityLabel" destination="aOy-uh-M7X" id="x8v-AY-yUo"/>
                         <outlet property="quantitySlider" destination="7ih-Q5-qhQ" id="w8f-F4-w3T"/>
-                        <outlet property="timeLabel" destination="Xcc-md-Wle" id="ggJ-97-IF1"/>
+                        <outlet property="timeLabel" destination="CVJ-za-oNn" id="JFB-mF-IkW"/>
                         <segue destination="e3Q-Tk-b38" kind="unwind" identifier="unwindToMainWindow" unwindAction="unwindToMainWindowWithSegue:" id="EL8-xJ-kpR"/>
                     </connections>
                 </viewController>

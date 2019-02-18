@@ -20,7 +20,7 @@ class GenericLiquidViewController: GenericVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentDate()
+        timeLabel.text = currentDate()
         initViews()
     }
     
@@ -51,7 +51,7 @@ class GenericLiquidViewController: GenericVC {
     func milkSettings(){
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 200
-        messageLabel.text = "חלב"
+        messageLabel.text = "חלב אם/ תמ״ל"
     }
     
     @IBAction func confirmBtnClicked(_ sender: Any) {
@@ -59,16 +59,16 @@ class GenericLiquidViewController: GenericVC {
     }
     
     @IBAction func quanSliderChanged(_ sender: Any) {
-        quantityLabel.text = "\(Int(quantitySlider.value))"
+        quantityLabel.text = "\(Int(quantitySlider.value)) מ״ל"
     }
     
-    func currentDate(){
-        let currentDateTime = Date()
-        let formatter = DateFormatter()
-        formatter.timeStyle = .medium
-        formatter.dateStyle = .medium
-        timeLabel.text = formatter.string(from: currentDateTime)
+    @IBAction func changeTimeClicked(_ sender: Any) {
+        showDatePicker { (time) in
+            self.timeLabel.text = time
+        }
     }
+    
+    
     /*
     // MARK: - Navigation
 
