@@ -188,6 +188,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="1056" height="667"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="עדכון נוכחות" image="alarm-clock">
                                                     <color key="titleColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
@@ -234,74 +235,98 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tuy-xu-eXE">
                                         <rect key="frame" x="0.0" y="0.0" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-Cg-22B">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-Cg-22B">
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="פריחה" image="illness">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="8gz-cf-Dct"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-wk-Gt1">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-wk-Gt1">
                                                 <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="שינה" image="048-baby-1">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="ngT-Vh-qCD"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GJQ-OO-Mxu">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GJQ-OO-Mxu">
                                                 <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="האכלה" image="024-feeding-bottle">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="1dW-fD-PxL"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-d7-rka">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-d7-rka">
                                                 <rect key="frame" x="765.5" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="צרכים" image="010-diaper">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="RqF-vO-i7y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vIP-ZZ-IsL">
                                         <rect key="frame" x="0.0" y="315.5" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-ud-SYc">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-ud-SYc">
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="הפרשה" image="049-baby">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="TYV-rK-dEy"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-Ym-HPK">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-Ym-HPK">
                                                 <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="הקאה   " image="vomit">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="bFq-f1-Mum"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-dO-x0r">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-dO-x0r">
                                                 <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="חום" image="033-thermometer">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="RIh-o0-yS0"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95o-Bs-Koa">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95o-Bs-Koa">
                                                 <rect key="frame" x="765.5" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="שיעול   " image="cough">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="crj-ty-N3d" eventType="touchUpInside" id="nGC-1i-w5c"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -326,11 +351,106 @@
                         <outlet property="rashBtn" destination="b3Q-Cg-22B" id="Qah-OG-l1F"/>
                         <outlet property="sleepBtn" destination="vvH-wk-Gt1" id="ltz-fB-Oll"/>
                         <outlet property="vomitBtn" destination="bFy-Ym-HPK" id="PI7-OY-Xoh"/>
+                        <segue destination="2OT-Z1-dfR" kind="show" identifier="GenericDecision" id="B4s-SX-Jp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hf-Yi-L22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2175" y="-677"/>
+            <point key="canvasLocation" x="2190" y="22"/>
+        </scene>
+        <!--Generic Decision View Controller-->
+        <scene sceneID="38g-Gj-137">
+            <objects>
+                <viewController id="2OT-Z1-dfR" customClass="GenericDecisionViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ckP-Fe-Dtl">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vxB-Qz-AxV">
+                                <rect key="frame" x="55.5" y="243.5" width="1001" height="417"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vxB-Qz-AxV" firstAttribute="centerY" secondItem="aK8-w5-D9k" secondAttribute="centerY" id="8GA-2I-U6b"/>
+                            <constraint firstItem="vxB-Qz-AxV" firstAttribute="centerX" secondItem="aK8-w5-D9k" secondAttribute="centerX" id="ANQ-hQ-EK8"/>
+                            <constraint firstItem="vxB-Qz-AxV" firstAttribute="height" secondItem="ckP-Fe-Dtl" secondAttribute="height" multiplier="0.5" id="QnO-uO-RdS"/>
+                            <constraint firstItem="vxB-Qz-AxV" firstAttribute="width" secondItem="ckP-Fe-Dtl" secondAttribute="width" multiplier="0.9" id="taD-da-efv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aK8-w5-D9k"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainStackView" destination="vxB-Qz-AxV" id="mo0-Ri-2b6"/>
+                        <segue destination="fEl-bo-HFl" kind="show" identifier="GenericInfo" id="lqd-QX-6d7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JD0-uk-hWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2913" y="22"/>
+        </scene>
+        <!--Generic Event Info View Controller-->
+        <scene sceneID="e3B-Bl-GTC">
+            <objects>
+                <viewController id="fEl-bo-HFl" customClass="GenericEventInfoViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3aE-zV-oPO">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JM0-Ub-HXr">
+                                <rect key="frame" x="55.5" y="78" width="1001" height="208.5"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kcP-9N-jy7">
+                                <rect key="frame" x="55.5" y="294.5" width="1001" height="417"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCj-AX-agP">
+                                <rect key="frame" x="55.5" y="719.5" width="278" height="83.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="אישור">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="aHC-jN-7nG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFw-At-vNM">
+                                <rect key="frame" x="341.5" y="719.5" width="715" height="83.5"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JM0-Ub-HXr" firstAttribute="centerX" secondItem="KtT-wJ-QYV" secondAttribute="centerX" id="08p-Nl-z85"/>
+                            <constraint firstItem="kcP-9N-jy7" firstAttribute="top" secondItem="JM0-Ub-HXr" secondAttribute="bottom" constant="8" id="0kE-Ib-GHQ"/>
+                            <constraint firstItem="RCj-AX-agP" firstAttribute="height" secondItem="3aE-zV-oPO" secondAttribute="height" multiplier="0.1" id="0nZ-Pl-GCx"/>
+                            <constraint firstItem="JM0-Ub-HXr" firstAttribute="width" secondItem="3aE-zV-oPO" secondAttribute="width" multiplier="0.9" id="1hf-t8-jS7"/>
+                            <constraint firstItem="kcP-9N-jy7" firstAttribute="centerX" secondItem="KtT-wJ-QYV" secondAttribute="centerX" id="8Fs-zS-gcF"/>
+                            <constraint firstItem="XFw-At-vNM" firstAttribute="leading" secondItem="RCj-AX-agP" secondAttribute="trailing" constant="8" id="9ZE-hN-Dnm"/>
+                            <constraint firstItem="RCj-AX-agP" firstAttribute="width" secondItem="3aE-zV-oPO" secondAttribute="width" multiplier="0.25" id="9bw-WA-vcH"/>
+                            <constraint firstItem="KtT-wJ-QYV" firstAttribute="top" secondItem="JM0-Ub-HXr" secondAttribute="top" constant="-8" id="Ee5-iF-XWf"/>
+                            <constraint firstItem="XFw-At-vNM" firstAttribute="centerY" secondItem="RCj-AX-agP" secondAttribute="centerY" id="Gzx-xA-9va"/>
+                            <constraint firstItem="kcP-9N-jy7" firstAttribute="width" secondItem="KtT-wJ-QYV" secondAttribute="width" multiplier="0.9" id="Iw4-6t-WSF"/>
+                            <constraint firstItem="kcP-9N-jy7" firstAttribute="height" secondItem="3aE-zV-oPO" secondAttribute="height" multiplier="0.5" id="MMa-L3-CdP"/>
+                            <constraint firstItem="JM0-Ub-HXr" firstAttribute="height" secondItem="3aE-zV-oPO" secondAttribute="height" multiplier="0.25" id="W8C-6v-oW9"/>
+                            <constraint firstItem="XFw-At-vNM" firstAttribute="trailing" secondItem="kcP-9N-jy7" secondAttribute="trailing" id="XTk-8k-sIe"/>
+                            <constraint firstItem="RCj-AX-agP" firstAttribute="top" secondItem="kcP-9N-jy7" secondAttribute="bottom" constant="8" id="Ysw-ha-J2Q"/>
+                            <constraint firstItem="RCj-AX-agP" firstAttribute="leading" secondItem="kcP-9N-jy7" secondAttribute="leading" id="rLU-Ji-Hpf"/>
+                            <constraint firstItem="XFw-At-vNM" firstAttribute="height" secondItem="RCj-AX-agP" secondAttribute="height" id="scM-fN-tG4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KtT-wJ-QYV"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonStackView" destination="kcP-9N-jy7" id="b4l-5N-5ms"/>
+                        <outlet property="confirmBtn" destination="RCj-AX-agP" id="Q5T-dj-KjE"/>
+                        <outlet property="labelStackView" destination="JM0-Ub-HXr" id="UKd-PM-Xgy"/>
+                        <outlet property="messageLabel" destination="XFw-At-vNM" id="RDC-Ef-AwH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Acw-po-A79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3591.906474820144" y="21.582733812949641"/>
         </scene>
         <!--Event Kind View Controller-->
         <scene sceneID="Y7q-fY-uJf">
@@ -343,11 +463,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2hZ-Kn-kvS">
                                 <rect key="frame" x="55.5" y="146.5" width="1001" height="611"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dXY-Fu-q7f">
+                                    <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dXY-Fu-q7f">
                                         <rect key="frame" x="0.0" y="0.0" width="1001" height="295.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QQa-2M-YFM">
-                                                <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
+                                                <rect key="frame" x="765.5" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
@@ -359,7 +479,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
-                                                <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
+                                                <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
                                                 <state key="normal" title="אירוע התפתחותי" image="abacus">
@@ -370,7 +490,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
-                                                <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
+                                                <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
                                                 <state key="normal" title="דיווח בן משפחה" image="050-woman">
@@ -381,7 +501,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
-                                                <rect key="frame" x="765.5" y="0.0" width="235.5" height="295.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                 <state key="normal" title="דיווח כללי" image="032-report">

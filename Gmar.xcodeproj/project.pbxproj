@@ -15,6 +15,9 @@
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
 		1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A52219D0B5007682A8 /* EventKindViewController.swift */; };
 		1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */; };
+		1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */; };
+		1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4AE221AE93A007682A8 /* GenericEventInfoViewController.swift */; };
+		1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */; };
 		18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEC22184C2800180600 /* SecularOne-Regular.ttf */; };
 		18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */; };
 		18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF022185E6600180600 /* TeacherAddEventViewController.swift */; };
@@ -38,6 +41,9 @@
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
 		1887F4A52219D0B5007682A8 /* EventKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKindViewController.swift; sourceTree = "<group>"; };
 		1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEventViewController.swift; sourceTree = "<group>"; };
+		1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDecisionViewController.swift; sourceTree = "<group>"; };
+		1887F4AE221AE93A007682A8 /* GenericEventInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericEventInfoViewController.swift; sourceTree = "<group>"; };
+		1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		18991FEC22184C2800180600 /* SecularOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SecularOne-Regular.ttf"; sourceTree = "<group>"; };
 		18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		18991FF022185E6600180600 /* TeacherAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAddEventViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 		1818B1D621E0E905006E1B39 /* Gmar */ = {
 			isa = PBXGroup;
 			children = (
+				1887F4B0221AFDF8007682A8 /* Views */,
 				A8DA55E6221858660043D580 /* Model */,
 				1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
 				18991FF222185E8B00180600 /* ViewControllers */,
@@ -104,6 +111,14 @@
 				1818B1E321E0E906006E1B39 /* Info.plist */,
 			);
 			path = Gmar;
+			sourceTree = "<group>";
+		};
+		1887F4B0221AFDF8007682A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		18991FEB22184C0600180600 /* Fonts */ = {
@@ -123,6 +138,8 @@
 				18E465532218A01C0030101C /* UpdateAttandanceViewController.swift */,
 				1887F4A52219D0B5007682A8 /* EventKindViewController.swift */,
 				1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */,
+				1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */,
+				1887F4AE221AE93A007682A8 /* GenericEventInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -291,10 +308,13 @@
 				A8DA55FF22187C9E0043D580 /* SqliteCache.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
+				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				18E465542218A01C0030101C /* UpdateAttandanceViewController.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
+				1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
+				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
