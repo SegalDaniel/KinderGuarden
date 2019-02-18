@@ -12,6 +12,7 @@ class TeacherAddEventViewController: UIViewController {
 
     @IBOutlet weak var mainStackView: UIStackView!
     var asAttandance:Bool = false
+    @IBOutlet weak var attandanceBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +23,14 @@ class TeacherAddEventViewController: UIViewController {
         if !asAttandance{
             addNewStackRow()
             addNewStackRow()
-            addNewStackRow()
-            addNewStackRow()
+            
             addAttendanceBtn()
             addKids()
         }
         else{
+            removeAttandance()
             addNewStackRow()
-            addNewStackRow()
-            addNewStackRow()
+            
             addNewStackRow()
             addKids()
         }
@@ -47,19 +47,24 @@ class TeacherAddEventViewController: UIViewController {
     }
     
     func addAttendanceBtn(){
-        let btn = Utility.ourBtnDesign(title: "עדכון נוכחות", radius: 1, tag: 1)
-        btn.backgroundColor = UIColor.black
-        btn.contentVerticalAlignment = .center
-        btn.addTarget(self, action: #selector(attendanceBtnClicked), for: .touchUpInside)
-        let firstStack = mainStackView.arrangedSubviews[0] as! UIStackView
-        firstStack.addArrangedSubview(btn)
+        attandanceBtn.backgroundColor = UIColor.lightGray
+        attandanceBtn.layer.cornerRadius = 20
+        Utility.adjustBtnTitle(button: attandanceBtn)
+    }
+    
+    func removeAttandance(){
+        attandanceBtn.removeFromSuperview()
     }
     
     func addKids(){
         let stacks = mainStackView.arrangedSubviews as! [UIStackView]
         for stack in stacks {
             while stack.arrangedSubviews.count < 4{
-                let btn = Utility.ourBtnDesign(title: "kid", radius: 80, tag: 1)
+                let btn = Utility.ourBtnDesign(title: "ילד", radius: 20, tag: 1, image: UIImage(named: "001-baby-6"))
+                if stack.arrangedSubviews.count % 2 == 0{
+                    btn.setTitle("ילדה", for: .normal)
+                    btn.backgroundColor = UIColor.purple
+                }
                 btn.addTarget(self, action: #selector(kidClicked), for: .touchUpInside)
                 stack.addArrangedSubview(btn)
             }

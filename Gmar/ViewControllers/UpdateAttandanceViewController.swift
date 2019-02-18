@@ -30,8 +30,8 @@ class UpdateAttandanceViewController: UIViewController {
     
     
     func addWhenBtns(){
-        let btn1 = Utility.ourBtnDesign(title: "הגעה", radius: 1, tag: 1)
-        let btn2 = Utility.ourBtnDesign(title: "עזיבה", radius: 1, tag: 2)
+        let btn1 = Utility.ourBtnDesign(title: "הגעה", radius: 1, tag: 1, image: nil)
+        let btn2 = Utility.ourBtnDesign(title: "עזיבה", radius: 1, tag: 2, image: nil)
         btn1.contentVerticalAlignment = .center
         btn2.contentVerticalAlignment = .center
         btn1.addTarget(self, action: #selector(whenBtnClicked), for: .touchUpInside)
@@ -41,9 +41,9 @@ class UpdateAttandanceViewController: UIViewController {
     }
     
     func addWhoBtns(){
-        let btn1 = Utility.ourBtnDesign(title: "אמא", radius: 1, tag: 1)
-        let btn2 = Utility.ourBtnDesign(title: "אבא", radius: 1, tag: 2)
-        let btn3 = Utility.ourBtnDesign(title: "סבא", radius: 1, tag: 3)
+        let btn1 = Utility.ourBtnDesign(title: "אמא", radius: 1, tag: 1, image: nil)
+        let btn2 = Utility.ourBtnDesign(title: "אבא", radius: 1, tag: 2, image: nil)
+        let btn3 = Utility.ourBtnDesign(title: "סבא", radius: 1, tag: 3, image: nil)
         btn1.contentVerticalAlignment = .center
         btn2.contentVerticalAlignment = .center
         btn3.contentVerticalAlignment = .center

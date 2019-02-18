@@ -180,6 +180,24 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SoE-1A-wKY">
                                 <rect key="frame" x="28" y="118.5" width="1056" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vU9-oW-Bcf">
+                                        <rect key="frame" x="0.0" y="0.0" width="1056" height="667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-fr-mA1">
+                                                <rect key="frame" x="0.0" y="0.0" width="1056" height="667"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="עדכון נוכחות" image="alarm-clock">
+                                                    <color key="titleColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="attendanceBtnClicked:" destination="zXn-Fa-mkm" eventType="touchUpInside" id="UZi-vu-yZP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,6 +210,7 @@
                         <viewLayoutGuide key="safeArea" id="v3c-TP-2OX"/>
                     </view>
                     <connections>
+                        <outlet property="attandanceBtn" destination="gmQ-fr-mA1" id="MIK-Cw-JhH"/>
                         <outlet property="mainStackView" destination="SoE-1A-wKY" id="B9b-Cc-MpZ"/>
                         <segue destination="w0b-Hr-E3A" kind="show" identifier="updateAttandance" id="NC5-Hy-D1m"/>
                         <segue destination="Vyh-8f-1or" kind="show" identifier="EventKind" id="7s3-1S-vfN"/>
@@ -215,49 +234,35 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tuy-xu-eXE">
                                         <rect key="frame" x="0.0" y="0.0" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-Cg-22B">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-Cg-22B">
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" backgroundImage="illness">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="  פריחה">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-wk-Gt1">
-                                                <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
-                                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                <state key="normal" title="שינה" backgroundImage="048-baby-1">
+                                                <state key="normal" title="פריחה" image="illness">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJQ-OO-Mxu">
-                                                <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-wk-Gt1">
+                                                <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" backgroundImage="024-feeding-bottle">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="  האכלה">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="שינה" image="048-baby-1">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-d7-rka">
+                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GJQ-OO-Mxu">
+                                                <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
+                                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="האכלה" image="024-feeding-bottle">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-d7-rka">
                                                 <rect key="frame" x="765.5" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                <state key="normal" title="צרכים" backgroundImage="010-diaper">
+                                                <state key="normal" title="צרכים" image="010-diaper">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
@@ -266,57 +271,36 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vIP-ZZ-IsL">
                                         <rect key="frame" x="0.0" y="315.5" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-ud-SYc">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-ud-SYc">
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                <state key="normal" title="הפרשה" backgroundImage="049-baby">
+                                                <state key="normal" title="הפרשה" image="049-baby">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-Ym-HPK">
+                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-Ym-HPK">
                                                 <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" backgroundImage="vomit">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="הקאה   ">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="הקאה   " image="vomit">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-dO-x0r">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-dO-x0r">
                                                 <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" backgroundImage="033-thermometer">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="   חום">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="חום" image="033-thermometer">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95o-Bs-Koa">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95o-Bs-Koa">
                                                 <rect key="frame" x="765.5" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" backgroundImage="cough">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="שיעול   ">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="שיעול   " image="cough">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -362,82 +346,46 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dXY-Fu-q7f">
                                         <rect key="frame" x="0.0" y="0.0" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQa-2M-YFM">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QQa-2M-YFM">
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment>
-                                                            <string key="content">אירוע
-בסיסי</string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" title=" דיווח בסיסי" image="001-baby-6"/>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="afs-hE-6et"/>
                                                     <segue destination="crj-ty-N3d" kind="show" identifier="BasicEvent" id="wrP-rb-SjG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
                                                 <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment>
-                                                            <string key="content">אירוע
-התפתחותי</string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
+                                                <state key="normal" title="אירוע התפתחותי" image="abacus">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="taT-TL-Fcx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
                                                 <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment>
-                                                            <string key="content">דיווח
-בן משפחה</string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
+                                                <state key="normal" title="דיווח בן משפחה" image="050-woman">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="B26-K6-4vc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
                                                 <rect key="frame" x="765.5" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment>
-                                                            <string key="content">דיווח
-כללי</string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="דיווח כללי" image="032-report">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="JPV-Ew-OYK"/>
@@ -448,21 +396,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uLm-WL-1sw">
                                         <rect key="frame" x="0.0" y="315.5" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-C0-t4z">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-C0-t4z">
                                                 <rect key="frame" x="383" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment>
-                                                            <string key="content">עדכון
-נוכחות עתידי</string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="30" name="SecularOne-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
+                                                <state key="normal" title="נוכחות עתידית" image="026-calendar">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="KEi-6I-b71"/>
@@ -515,11 +454,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="001-baby-6" width="409.60000610351562" height="409.60000610351562"/>
         <image name="010-diaper" width="409.60000610351562" height="409.60000610351562"/>
         <image name="024-feeding-bottle" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="026-calendar" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="032-report" width="409.60000610351562" height="409.60000610351562"/>
         <image name="033-thermometer" width="409.60000610351562" height="409.60000610351562"/>
         <image name="048-baby-1" width="409.60000610351562" height="409.60000610351562"/>
         <image name="049-baby" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="050-woman" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="abacus" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="alarm-clock" width="409.60000610351562" height="409.60000610351562"/>
         <image name="cough" width="107.4752197265625" height="107.4752197265625"/>
         <image name="illness" width="159.58441162109375" height="159.58441162109375"/>
         <image name="vomit" width="109.06508636474609" height="109.06508636474609"/>

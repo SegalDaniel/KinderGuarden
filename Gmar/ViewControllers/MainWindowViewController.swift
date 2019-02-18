@@ -39,7 +39,7 @@ class MainWindowViewController: UIViewController {
     }
     
     func addTeacherToStack(name:String, tag:Int){
-        let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag)
+        let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: UIImage(named: "teacher"))
         btn.addTarget(self, action: #selector(teacherButtonClicked), for: .touchUpInside)
         teachersStackView.addArrangedSubview(btn)
     }

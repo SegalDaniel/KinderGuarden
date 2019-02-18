@@ -44,6 +44,14 @@ class BasicEventViewController: UIViewController {
         feeverBtn.clipsToBounds = true
         vomitBtn.clipsToBounds = true
         hafrashaBtn.clipsToBounds = true
+        Utility.adjustBtnTitle(button: rashBtn)
+        Utility.adjustBtnTitle(button: sleepBtn)
+        Utility.adjustBtnTitle(button: feedingBtn)
+        Utility.adjustBtnTitle(button: fecesBtn)
+        Utility.adjustBtnTitle(button: coughBtn)
+        Utility.adjustBtnTitle(button: feeverBtn)
+        Utility.adjustBtnTitle(button: vomitBtn)
+        Utility.adjustBtnTitle(button: hafrashaBtn)
     }
 
     /*
