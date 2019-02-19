@@ -16,8 +16,6 @@ class Child{
     let age:String
     var image:String
 
-
-    
     init(_id:String, _name:String,  _gender:String, _birthDate:String, _age:String, _image:String){
         self.id=_id
         self.name=_name
