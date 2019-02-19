@@ -9,14 +9,14 @@
 import UIKit
 import Foundation
 class Feces{
-    var id:String
+    var fecesID:String
     let color:String
     let texture:String
     let amount:String
     
     
-    init(_id:String, _color:String, _texture:String, _amount:String){
-        self.id=_id
+    init(_fecesID:String, _color:String, _texture:String, _amount:String){
+        self.fecesID=_fecesID
         self.color=_color
         self.texture=_texture
         self.amount=_amount
@@ -24,7 +24,7 @@ class Feces{
     }
     
     init(json:[String:Any]) {
-        id = json["id"] as! String
+        fecesID = json["fecesID"] as! String
         color = json["color"] as! String
         texture = json["texture"] as! String
         amount = json["amount"] as! String
@@ -34,7 +34,7 @@ class Feces{
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["id"] = id
+        json["fecesID"] = fecesID
         json["color"] = color
         json["texture"] = texture
         json["amount"] = amount

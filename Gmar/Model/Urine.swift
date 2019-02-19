@@ -9,14 +9,14 @@
 import UIKit
 import Foundation
 class Urine{
-    var id:String
+    var urineID:String
     let color:String
     let fragrance:String
     let amount:String
     
     
-    init(_id:String, _color:String, _fragrance:String, _amount:String){
-        self.id=_id
+    init(_urineID:String, _color:String, _fragrance:String, _amount:String){
+        self.urineID=_urineID
         self.color=_color
         self.fragrance=_fragrance
         self.amount=_amount
@@ -24,7 +24,7 @@ class Urine{
     }
     
     init(json:[String:Any]) {
-        id = json["id"] as! String
+        urineID = json["urineID"] as! String
         color = json["color"] as! String
         fragrance = json["fragrance"] as! String
         amount = json["amount"] as! String
@@ -34,7 +34,7 @@ class Urine{
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["id"] = id
+        json["urineID"] = urineID
         json["color"] = color
         json["fragrance"] = fragrance
         json["amount"] = amount

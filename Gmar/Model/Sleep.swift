@@ -9,14 +9,14 @@
 import UIKit
 import Foundation
 class Sleep{
-    var id:String
+    var sleepID:String
     let type:String
     let allocatedTime:String
     let sleepingScope:String
     
     
-    init(_id:String, _type:String, _allocatedTime:String, _sleepingScope:String){
-        self.id=_id
+    init(_sleepID:String, _type:String, _allocatedTime:String, _sleepingScope:String){
+        self.sleepID=_sleepID
         self.type=_type
         self.allocatedTime=_allocatedTime
         self.sleepingScope=_sleepingScope
@@ -24,7 +24,7 @@ class Sleep{
     }
     
     init(json:[String:Any]) {
-        id = json["id"] as! String
+        sleepID = json["sleepID"] as! String
         type = json["type"] as! String
         allocatedTime = json["allocatedTime"] as! String
         sleepingScope = json["sleepingScope"] as! String
@@ -34,7 +34,7 @@ class Sleep{
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["id"] = id
+        json["sleepID"] = sleepID
         json["type"] = type
         json["allocatedTime"] = allocatedTime
         json["sleepingScope"] = sleepingScope

@@ -60,7 +60,7 @@
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
-		A8DA55EB22185A410043D580 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A8DA55EB22185A410043D580 /* BasicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEvent.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
 		A8DA55EF221864C70043D580 /* SolidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidFood.swift; sourceTree = "<group>"; };
 		A8DA55F1221864E20043D580 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
@@ -181,7 +181,8 @@
 				A8DF44E4221C796F0071DF7D /* Sleep.swift */,
 				A8DF44E2221C78860071DF7D /* Fever.swift */,
 				A8DA55E922185A1E0043D580 /* Staff.swift */,
-				A8DA55EB22185A410043D580 /* Event.swift */,
+				A8DA55EB22185A410043D580 /* BasicEvent.swift */,
+				A8DF44E8221C7CA10071DF7D /* Nutrition.swift */,
 				A8DA55ED221864B00043D580 /* LiquidFood.swift */,
 				A8DA55EF221864C70043D580 /* SolidFood.swift */,
 				A8DA55F1221864E20043D580 /* Water.swift */,
@@ -193,7 +194,6 @@
 				A8DA55FC22187BEC0043D580 /* CacheManager.swift */,
 				A8DA55FE22187C9E0043D580 /* SqliteCache.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
-				A8DF44E8221C7CA10071DF7D /* Nutrition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
