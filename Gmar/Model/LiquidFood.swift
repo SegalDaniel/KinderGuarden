@@ -10,14 +10,14 @@
 import UIKit
 import Foundation
 class LiquidFood{
-    var id:String
+    var liquidFoodID:String
     let mealType : String
     let amount:String
     let consumedAmount:String
 
     
-    init(_id:String, _mealType:String, _amount:String, _consumedAmount:String){
-        self.id=_id
+    init(_liquidFoodID:String, _mealType:String, _amount:String, _consumedAmount:String){
+        self.liquidFoodID=_liquidFoodID
         self.mealType=_mealType
         self.amount=_amount
         self.consumedAmount=_consumedAmount
@@ -25,7 +25,7 @@ class LiquidFood{
     }
     
     init(json:[String:Any]) {
-        id = json["id"] as! String
+        liquidFoodID = json["liquidFoodID"] as! String
         mealType = json["mealType"] as! String
         amount = json["amount"] as! String
         consumedAmount = json["consumedAmount"] as! String
@@ -35,7 +35,7 @@ class LiquidFood{
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["id"] = id
+        json["liquidFoodID"] = liquidFoodID
         json["mealType"] = mealType
         json["amount"] = amount
         json["consumedAmount"] = consumedAmount
