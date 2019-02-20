@@ -13,6 +13,9 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18788797221D4C510047A935 /* MultiChoiseViewController.swift */; };
+		1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */; };
+		1878879C221D7C260047A935 /* DateAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878879B221D7C260047A935 /* DateAdmin.swift */; };
 		1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A52219D0B5007682A8 /* EventKindViewController.swift */; };
 		1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */; };
 		1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */; };
@@ -45,6 +48,9 @@
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+		18788797221D4C510047A935 /* MultiChoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiseViewController.swift; sourceTree = "<group>"; };
+		18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiseTableViewCell.swift; sourceTree = "<group>"; };
+		1878879B221D7C260047A935 /* DateAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAdmin.swift; sourceTree = "<group>"; };
 		1887F4A52219D0B5007682A8 /* EventKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKindViewController.swift; sourceTree = "<group>"; };
 		1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEventViewController.swift; sourceTree = "<group>"; };
 		1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDecisionViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 			children = (
 				1887F4BE221B3FCD007682A8 /* RPicker.swift */,
 				1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */,
+				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 				1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */,
 				1887F4AE221AE93A007682A8 /* GenericEventInfoViewController.swift */,
 				1887F4B5221B1E13007682A8 /* GenericLiquidViewController.swift */,
+				18788797221D4C510047A935 /* MultiChoiseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 				A8DA55FC22187BEC0043D580 /* CacheManager.swift */,
 				A8DA55FE22187C9E0043D580 /* SqliteCache.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
+				1878879B221D7C260047A935 /* DateAdmin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */,
 				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
@@ -337,6 +347,7 @@
 				A8DA55FF22187C9E0043D580 /* SqliteCache.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
+				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
@@ -348,6 +359,7 @@
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */,
+				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
 			);

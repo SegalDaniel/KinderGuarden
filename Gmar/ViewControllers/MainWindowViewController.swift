@@ -16,7 +16,6 @@ class MainWindowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utility.btnBackColor = kgSettingBtn.backgroundColor
         roundKidsInfoBtn()
         addTeacherToStack(name: "סייעת א", tag: 2)
         addTeacherToStack(name: "סייעת ב", tag: 3)

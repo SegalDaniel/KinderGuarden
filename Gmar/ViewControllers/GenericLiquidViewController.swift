@@ -63,7 +63,7 @@ class GenericLiquidViewController: GenericVC {
     }
     
     @IBAction func changeTimeClicked(_ sender: Any) {
-        showDatePicker { (time) in
+        showDatePicker(timeStyle: .short, dateStyle: .medium) { (time) in
             self.timeLabel.text = time
         }
     }

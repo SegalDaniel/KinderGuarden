@@ -63,25 +63,39 @@ class GenericEventInfoViewController: GenericVC {
     
     @IBAction func confirmBtnClicked(_ sender: Any) {
         print("confirm clicked")
-        performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+        switch kind {
+        case .attandance:
+            performSegue(withIdentifier: "unwindToSelectKid", sender: nil)
+            break
+        case .feces, .solidFoods:
+            performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+            break
+        default:
+            break
+        }
+        
     }
     
     @IBAction func timeBtnClicked(_ sender: Any) {
-        showDatePicker { (time) in
+        showDatePicker(timeStyle: .short, dateStyle: .medium) { (time) in
             self.timeLabel.text = time
         }
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "unwindToSelectKid"{
+            var VCs = self.navigationController?.viewControllers
+            VCs!.remove(at: VCs!.count-1)
+            VCs!.remove(at: VCs!.count-1)
+            self.navigationController?.setViewControllers(VCs!, animated: true)
+        }
     }
-    */
+    
     
     /************************************************ Generic Info Adding *****************************************************/
 
