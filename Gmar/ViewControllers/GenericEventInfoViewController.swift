@@ -32,7 +32,6 @@ class GenericEventInfoViewController: GenericVC {
         timeLabel.text = currentDate()
         switch kind {
         case .feces:
-            //fecesViews()
             feecesDesicion()
             break
         case .solidFoods:
@@ -65,6 +64,7 @@ class GenericEventInfoViewController: GenericVC {
                 label.text = btn.titleLabel?.text
                 data[row] = label.text!
             }
+            // only on .feces kind
             else{
                 for view in labelStackView.subviews{
                     view.removeFromSuperview()
@@ -182,17 +182,6 @@ class GenericEventInfoViewController: GenericVC {
                 addStackForInfo(info: (4, ["כמות שתן", "רגילה", "חיתול מלא"]))
             }
         }
-    }
-    
-    func fecesViews(){
-        addStackForInfo(info: (1, ["צבע", "חום/צהוב/ירוק", "אדום", "לבן/אפור"]))
-        addStackForInfo(info: (2, ["מרקם", "משחתי/חלק", "יבש/גללי", "שלשול/מיימי", "ריירי"]))
-        addStackForInfo(info: (3, ["כמות", "קטנה", "רגילה", "חיתול מלא"]))
-        addStackForInfo(info: (4, ["צבע שתן", "צהוב בהיר", "צהוב כהה/חום", "אדום"]))
-        addStackForInfo(info: (5, ["ריח שתן", "רגיל", "חריף"]))
-        addStackForInfo(info: (6, ["כמות שתן", "רגילה", "חיתול מלא"]))
-        
-        messageLabel.text = "ניתן למלא או צואה או שתן או שניהם*"
     }
     
     func attandanceViews(){
