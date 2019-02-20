@@ -9,10 +9,11 @@
 import UIKit
 import Foundation
 class Nutrition{
-    var nutritionID:String
+    var nutritionID:String//change every id to child id
     let liquidFoodID:String
     let solidFoodID:String
     let waterID:String
+    //טבלת ילדים טבלת סייעות והגננת ובטלה לכל סוג אירוע בסיסי
     
     
     init(_nutritionID:String, _liquidFoodID:String, _solidFoodID:String, _waterID:String){
