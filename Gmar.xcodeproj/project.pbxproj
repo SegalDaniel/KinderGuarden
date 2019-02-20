@@ -34,7 +34,6 @@
 		A8DA55FF22187C9E0043D580 /* SqliteCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FE22187C9E0043D580 /* SqliteCache.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
 		A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E4221C796F0071DF7D /* Sleep.swift */; };
-		A8DF44E9221C7CA10071DF7D /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E8221C7CA10071DF7D /* Nutrition.swift */; };
 		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
 		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
-		A8DA55EB22185A410043D580 /* BasicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEvent.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
 		A8DA55EF221864C70043D580 /* SolidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidFood.swift; sourceTree = "<group>"; };
 		A8DA55F1221864E20043D580 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 		A8DA55FE22187C9E0043D580 /* SqliteCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteCache.swift; sourceTree = "<group>"; };
 		A8DF44E2221C78860071DF7D /* Fever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fever.swift; sourceTree = "<group>"; };
 		A8DF44E4221C796F0071DF7D /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
-		A8DF44E8221C7CA10071DF7D /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
 		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,8 +186,6 @@
 				A8DF44E4221C796F0071DF7D /* Sleep.swift */,
 				A8DF44E2221C78860071DF7D /* Fever.swift */,
 				A8DA55E922185A1E0043D580 /* Staff.swift */,
-				A8DA55EB22185A410043D580 /* BasicEvent.swift */,
-				A8DF44E8221C7CA10071DF7D /* Nutrition.swift */,
 				A8DA55ED221864B00043D580 /* LiquidFood.swift */,
 				A8DA55EF221864C70043D580 /* SolidFood.swift */,
 				A8DA55F1221864E20043D580 /* Water.swift */,
@@ -352,7 +347,6 @@
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
-				A8DF44E9221C7CA10071DF7D /* Nutrition.swift in Sources */,
 				1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,

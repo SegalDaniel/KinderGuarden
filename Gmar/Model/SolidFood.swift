@@ -9,15 +9,15 @@
 import UIKit
 import Foundation
 class SolidFood{
-    var solidFoodID:String
+    var childID:String
     let mealType:String //morning etc
     let mealInMenu:String
     let amount:String
     let consumedAmount:String
     
     
-    init(_solidFoodID:String, _mealType:String, _mealInMenu:String, _amount:String, _consumedAmount:String){
-        self.solidFoodID=_solidFoodID
+    init(_childID:String, _mealType:String, _mealInMenu:String, _amount:String, _consumedAmount:String){
+        self.childID=_childID
         self.mealType=_mealType
         self.mealInMenu=_mealInMenu
         self.amount=_amount
@@ -26,7 +26,7 @@ class SolidFood{
     }
     
     init(json:[String:Any]) {
-        solidFoodID = json["solidFoodID"] as! String
+        childID = json["childID"] as! String
         mealType = json["mealType"] as! String
         mealInMenu = json["mealInMenu"] as! String
         amount = json["amount"] as! String
@@ -37,7 +37,7 @@ class SolidFood{
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["solidFoodID"] = solidFoodID
+        json["childID"] = childID
         json["mealType"] = mealType
         json["mealInMenu"] = mealInMenu
         json["amount"] = amount

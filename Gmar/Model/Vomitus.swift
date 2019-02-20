@@ -9,18 +9,18 @@
 import UIKit
 import Foundation
 class Vomitus{
-    var vomitusID:String
+    var childID:String
     let proper:Bool
 
     
-    init(_vomitusID:String, _proper:Bool){
-        self.vomitusID=_vomitusID
+    init(_childID:String, _proper:Bool){
+        self.childID=_childID
         self.proper=_proper
         
     }
     
     init(json:[String:Any]) {
-        vomitusID = json["vomitusID"] as! String
+        childID = json["childID"] as! String
         proper = json["proper"] as! Bool
         
     }
@@ -28,7 +28,7 @@ class Vomitus{
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["vomitusID"] = vomitusID
+        json["childID"] = childID
         json["proper"] = proper
         return json
         

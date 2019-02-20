@@ -9,15 +9,16 @@
 import UIKit
 import Foundation
 class Child{
-    var id:String
+    var childID:String
     let name : String
     let gender:String
     let birthDate:String
     let age:String
     var image:String
+    //child table staff table and table for every event and child ID 
 
-    init(_id:String, _name:String,  _gender:String, _birthDate:String, _age:String, _image:String){
-        self.id=_id
+    init(_childID:String, _name:String,  _gender:String, _birthDate:String, _age:String, _image:String){
+        self.childID=_childID
         self.name=_name
         self.gender=_gender
         self.birthDate=_birthDate
@@ -26,7 +27,7 @@ class Child{
     }
     
     init(json:[String:Any]) {
-        id = json["id"] as! String
+        childID = json["childID"] as! String
         name = json["name"] as! String
         gender = json["gender"] as! String
         age = json["age"] as! String

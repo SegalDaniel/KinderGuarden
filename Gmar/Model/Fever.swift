@@ -9,18 +9,18 @@
 import UIKit
 import Foundation
 class Fever{
-    var feverID:String
+    var childID:String
     let tempreture:String
     
     
-    init(_feverID:String, _tempreture:String){
-        self.feverID=_feverID
+    init(_childID:String, _tempreture:String){
+        self.childID=_childID
         self.tempreture=_tempreture
         
     }
     
     init(json:[String:Any]) {
-        feverID = json["feverID"] as! String
+        childID = json["childID"] as! String
         tempreture = json["tempreture"] as! String
         
     }
@@ -28,7 +28,7 @@ class Fever{
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["feverID"] = feverID
+        json["childID"] = childID
         json["tempreture"] = tempreture
         return json
         
