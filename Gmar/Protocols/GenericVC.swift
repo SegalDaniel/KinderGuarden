@@ -14,24 +14,11 @@ class GenericVC: UIViewController {
     let datePicker = UIDatePicker()
     
     func currentDate() -> String{
-        let currentDateTime = Date()
-        let formatter = DateFormatter()
-        formatter.timeStyle = .medium
-        formatter.dateStyle = .medium
-        formatter.locale = Locale(identifier: "he")
-        return formatter.string(from: currentDateTime)
+        return DateAdmin.currentDate()
     }
     
     
-    func showDatePicker(callable:@escaping (String) -> Void){
-        RPicker.selectDate(title: "נא לבחור זמן מתאים", datePickerMode: .time, didSelectDate: { (selectedDate) in
-            let formatter = DateFormatter()
-            formatter.timeStyle = .medium
-            formatter.dateStyle = .medium
-            formatter.locale = Locale(identifier: "he")
-            let time = formatter.string(from: selectedDate)
-            callable(time)
-        })
-
+    func showDatePicker(timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, callable:@escaping (String) -> Void){
+        DateAdmin.showDatePicker(timeStyle: timeStyle, dateStyle: dateStyle, callable: callable)
     }
 }

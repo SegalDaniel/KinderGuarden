@@ -11,12 +11,14 @@ import Foundation
 
 class Utility{
     
-    static var btnBackColor:UIColor?
+    static let btnBackColor:UIColor = UIColor(red: 0/255, green: 114/255, blue: 188/255, alpha: 1)
+    static let btnGray:UIColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
+    static let btnSalmon:UIColor = UIColor(red: 255/255, green: 126/255, blue: 121/255, alpha: 1)
+    static let btnTextWhite:UIColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
     
-    
-    static func addBorder(view:UIView, color:UIColor, width:CGFloat){
+    static func addBorder(view:UIView, color:UIColor, width:CGFloat = 2){
         view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 2
+        view.layer.borderWidth = width
     }
     
     static func ourBtnDesign(title:String, radius:CGFloat, tag:Int, image:UIImage?,
@@ -24,11 +26,11 @@ class Utility{
                              type:UIButton.ButtonType = .custom, withBorder:Bool = false)->UIButton{
         let btn = UIButton(type: type)
         btn.setTitle(title, for: .normal)
-        btn.setTitleColor(UIColor(red: 235, green: 235, blue: 235, alpha: 1), for: .normal)
+        btn.setTitleColor(btnTextWhite, for: .normal)
         btn.titleLabel?.font = UIFont(name: "SecularOne-Regular", size: 30)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
         btn.contentVerticalAlignment = alignment
-        btn.backgroundColor = btnBackColor!
+        btn.backgroundColor = btnBackColor
         btn.layer.cornerRadius = radius
         btn.clipsToBounds = true
         btn.tag = tag
@@ -70,6 +72,17 @@ class Utility{
         stack.spacing = 8
         stack.distribution = .fillEqually
         stack.axis = .vertical
+        stack.tag = 0
+        return stack
+    }
+    
+    static func newStack(frame:CGRect) -> UIStackView{
+        let stack = UIStackView(frame: frame)
+        stack.alignment = .fill
+        stack.spacing = 8
+        stack.distribution = .fillEqually
+        stack.axis = .vertical
+        stack.tag = 0
         return stack
     }
 }
