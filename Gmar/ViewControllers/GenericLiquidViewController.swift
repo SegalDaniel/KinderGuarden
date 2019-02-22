@@ -24,8 +24,6 @@ class GenericLiquidViewController: GenericVC {
         initViews()
     }
     
-    //https://stackoverflow.com/questions/24070450/how-to-get-the-current-time-as-datetime
-    
     func initViews(){
         Utility.addBorder(view: timeLabel, color: UIColor.black, width: 2)
         Utility.addBorder(view: messageLabel, color: UIColor.black, width: 2)
@@ -37,29 +35,27 @@ class GenericLiquidViewController: GenericVC {
         case .milk:
             milkSettings()
             break
+        case .feever:
+            feeverSettings()
+            break
         default:
             break
         }
     }
-    
-    func waterSettings(){
-        quantitySlider.minimumValue = 0
-        quantitySlider.maximumValue = 250
-        messageLabel.text = "מים"
-    }
-    
-    func milkSettings(){
-        quantitySlider.minimumValue = 0
-        quantitySlider.maximumValue = 200
-        messageLabel.text = "חלב אם/ תמ״ל"
-    }
-    
+   
     @IBAction func confirmBtnClicked(_ sender: Any) {
         performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
     }
     
     @IBAction func quanSliderChanged(_ sender: Any) {
-        quantityLabel.text = "\(Int(quantitySlider.value)) מ״ל"
+        if kind == .feever{
+            let val = Double(quantitySlider.value).rounded(toPlaces: 1)
+            quantityLabel.text = "\(val) מעלות"
+        }
+        else{
+            let val = Int(quantitySlider.value) * 10
+            quantityLabel.text = "\(val) מ״ל"
+        }
     }
     
     @IBAction func changeTimeClicked(_ sender: Any) {
@@ -68,15 +64,27 @@ class GenericLiquidViewController: GenericVC {
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
+    /***************************  init views  ****************************************/
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func waterSettings(){
+        quantitySlider.minimumValue = 0
+        quantitySlider.maximumValue = 25
+        quantitySlider.setValue(12.5, animated: true)
+        messageLabel.text = "מים"
     }
-    */
-
+    
+    func milkSettings(){
+        quantitySlider.minimumValue = 0
+        quantitySlider.maximumValue = 20
+        quantitySlider.setValue(10, animated: true)
+        messageLabel.text = "חלב אם/תמ״ל"
+    }
+    
+    func feeverSettings(){
+        quantitySlider.minimumValue = 35
+        quantitySlider.maximumValue = 42
+        quantitySlider.setValue(36, animated: true)
+        quantityLabel.text = "מעלות"
+        messageLabel.text = "חום"
+    }
 }

@@ -21,6 +21,7 @@ class Enums{
         case hafrahsa
         //internal use:
         case foodOrDrink
+        case solidorMilk
         case solidFoods
         case water
         case milk

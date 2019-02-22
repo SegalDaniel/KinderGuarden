@@ -30,8 +30,7 @@ class SolidFood{
         mealType = json["mealType"] as! String
         mealInMenu = json["mealInMenu"] as! String
         amount = json["amount"] as! String
-        consumedAmount = json["consumedAmount"] as! String
-        
+        consumedAmount = json["consumedAmount"] as! String 
     }
     
     

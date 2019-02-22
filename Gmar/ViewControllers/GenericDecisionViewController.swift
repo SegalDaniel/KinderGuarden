@@ -25,19 +25,10 @@ class GenericDecisionViewController: GenericVC {
         case .feed:
             foodOrDrinkViews()
             break
-        case .solidFoods:
-            solidFoodViews()
+        case .solidorMilk:
+            solidorMilkViews()
             break
         default: break
-        }
-    }
-
-   
-    
-    func addToStackAndTarget(_ buttons:[UIButton]){
-        buttons.forEach { (btn) in
-            btn.addTarget(self, action: #selector(btnClicked), for: .touchUpInside)
-            mainStackView.addArrangedSubview(btn)
         }
     }
     
@@ -56,13 +47,13 @@ class GenericDecisionViewController: GenericVC {
                 break
             case .feed:
                 if btn.tag == 1{
-                    presentAgain(kind: .solidFoods)
+                    presentAgain(kind: .solidorMilk)
                 }
                 else if btn.tag == 2{
                     performSegue(withIdentifier: "GenericLiquid", sender: Enums.BasicEvent.water)
                 }
                 break
-            case .solidFoods:
+            case .solidorMilk:
                 if btn.tag == 1{
                     performSegue(withIdentifier: "GenericLiquid", sender: Enums.BasicEvent.milk)
                 }
@@ -97,6 +88,13 @@ class GenericDecisionViewController: GenericVC {
     
     /************************************************** Views Inits *******************************************************/
     
+    func addToStackAndTarget(_ buttons:[UIButton]){
+        buttons.forEach { (btn) in
+            btn.addTarget(self, action: #selector(btnClicked), for: .touchUpInside)
+            mainStackView.addArrangedSubview(btn)
+        }
+    }
+    
     func fecesViews(){
         let btn1 = Utility.ourBtnDesign(title: "צואה ו/או שתן", radius: 60, tag: 1, image: UIImage(named: "poop"))
         let btn2 = Utility.ourBtnDesign(title: "נקי", radius: 60, tag: 2, image: UIImage(named: "diaper-2"))
@@ -109,17 +107,10 @@ class GenericDecisionViewController: GenericVC {
         addToStackAndTarget([btn1,btn2])
     }
     
-    func solidFoodViews(){
+    func solidorMilkViews(){
         let btn1 = Utility.ourBtnDesign(title: "חלב אם/תמ״ל", radius: 60, tag: 1, image: UIImage(named: "023-feeding-bottle-1"))
         let btn2 = Utility.ourBtnDesign(title: "מוצקים", radius: 60, tag: 2, image: UIImage(named: "022-food"))
         addToStackAndTarget([btn1,btn2])
     }
-
     
-    
-    
-    public enum Kind : Int {
-        case Feces = 1
-        
-    }
 }

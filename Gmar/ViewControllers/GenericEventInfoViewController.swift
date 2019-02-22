@@ -9,7 +9,7 @@
 import UIKit
 
 class GenericEventInfoViewController: GenericVC {
-
+    
     @IBOutlet weak var labelStackView: UIStackView!
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -35,26 +35,32 @@ class GenericEventInfoViewController: GenericVC {
             feecesDesicion()
             break
         case .solidFoods:
+            solidFoodViews()
             break
         case .attandance:
             attandanceViews()
+            break
+        case .vomit:
+            vomitViews()
+            break
+        case .sleep:
+            sleepViews()
+            break
+        case .rash:
+            rashViews()
+            break
+        case .cough:
+            coughViews()
+            break
+        case .hafrahsa:
+            hafrashaViews()
             break
         default:
             break
         }
     }
     
-    func addToStack(stack:UIStackView, views:[UIView]){
-        views.forEach { (view) in
-            stack.addArrangedSubview(view)
-        }
-    }
-    
-    func addTargetToBtn(buttons:[UIButton]){
-        buttons.forEach { (btn) in
-            btn.addTarget(self, action: #selector(decisionBtnClicked), for: .touchUpInside)
-        }
-    }
+    /*************************   user interface events **********************************************/
     
     @IBAction func decisionBtnClicked(_ sender: Any){
         if let btn = sender as? UIButton{
@@ -83,10 +89,8 @@ class GenericEventInfoViewController: GenericVC {
         case .attandance:
             performSegue(withIdentifier: "unwindToSelectKid", sender: nil)
             break
-        case .feces, .solidFoods:
-            performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
-            break
         default:
+            performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
             break
         }
         
@@ -98,23 +102,18 @@ class GenericEventInfoViewController: GenericVC {
         }
     }
     
+    /*************************  Navigation **********************************************/
     
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToSelectKid"{
-            var VCs = self.navigationController?.viewControllers
-            VCs!.remove(at: VCs!.count-1)
-            VCs!.remove(at: VCs!.count-1)
-            self.navigationController?.setViewControllers(VCs!, animated: true)
+            let viewControllers:[UIViewController] = [self.navigationController!.viewControllers.first!]
+            self.navigationController?.setViewControllers(viewControllers, animated: true)
         }
     }
     
     
     /************************************************ Generic Info Adding *****************************************************/
-
+    
     func addStackForInfo(info:(Int, [String])){
         var names:[String] = info.1
         var btns:[UIButton] = []
@@ -135,6 +134,17 @@ class GenericEventInfoViewController: GenericVC {
         buttonStackView.addArrangedSubview(Utility.newStack(arrangedSubviews: btns))
     }
     
+    func addToStack(stack:UIStackView, views:[UIView]){
+        views.forEach { (view) in
+            stack.addArrangedSubview(view)
+        }
+    }
+    
+    func addTargetToBtn(buttons:[UIButton]){
+        buttons.forEach { (btn) in
+            btn.addTarget(self, action: #selector(decisionBtnClicked), for: .touchUpInside)
+        }
+    }
     
     /************************************************** Views Inits *******************************************************/
     
@@ -189,5 +199,48 @@ class GenericEventInfoViewController: GenericVC {
         addStackForInfo(info: (2, ["", "אבא", "אמא", "סבא"]))
         messageLabel.isHidden = true
         messageTextField.isHidden = false
+    }
+    
+    func vomitViews(){
+        addStackForInfo(info: (1, ["סוג", "פליטה מוגברת", "הקאה"]))
+    }
+    
+    func solidFoodViews(){
+        let currentTime = DateAdmin.currentTime(timeStyle: .short)
+        let currentHour = Int(currentTime.split(separator: ":")[0])!
+        if currentHour < 12{
+            addStackForInfo(info: (1, ["ארוחת בוקר", "ארוחת בוקר", "ארוחת צהריים"]))
+        }
+        else{
+           addStackForInfo(info: (1, ["ארוחת צהריים", "ארוחת בוקר", "ארוחת צהריים"]))
+        }
+        
+        addStackForInfo(info: (2, ["כמות", "סיים מנה", "מעל חצי מנה", "מתחת לחצי מנה", "לא אכל"]))
+    }
+    
+    func sleepViews(){
+        let currentTime = DateAdmin.currentTime(timeStyle: .short)
+        let currentHour = Int(currentTime.split(separator: ":")[0])!
+        if currentHour < 12{
+            addStackForInfo(info: (1, ["שנת בוקר", "שנת בוקר", "שנת צהריים"]))
+        }
+        else{
+            addStackForInfo(info: (1, ["שנת צהריים", "שנת בוקר", "שנת צהריים"]))
+        }
+        addStackForInfo(info: (2, ["איכות השינה", "שינה מלא/שקטה", "שינה חלקית/לא שקטה", "אי שינה"]))
+    }
+    
+    func rashViews(){
+        addStackForInfo(info: (1, ["סוג", "פריחה/אדמומיות", "פצעים/פצעונים", "כתמים"]))
+        addStackForInfo(info: (2, ["איזור", "פנים", "פה", "גפיים", "טוסיק", "גב", "חזה/בטן", "איבר מין", "ראש", "עיניים"]))
+    }
+    
+    func coughViews(){
+        addStackForInfo(info: (1, ["סוג", "צפצופי נשימה", "קוצר נשימה", "טורדני", "לח"]))
+    }
+    
+    func hafrashaViews(){
+        addStackForInfo(info: (1, ["סוג", "דם", "מוגלה", "נזלת"]))
+        addStackForInfo(info: (2, ["איזור", "עיניים", "אוזניים", "אף", "פה", "איבר מין", "שאר הגוף"]))
     }
 }

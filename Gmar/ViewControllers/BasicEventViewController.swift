@@ -36,7 +36,19 @@ class BasicEventViewController: UIViewController {
     
     @IBAction func btnClicked(_ sender: Any){
         if let btn = sender as? UIButton{
-            performSegue(withIdentifier: "GenericDecision", sender: btn.tag)
+            let kind = Enums.BasicEvent(rawValue: btn.tag)!
+            switch kind{
+            case .feces, .feed:
+                performSegue(withIdentifier: "GenericDecision", sender: kind)
+                break
+            case .vomit, .sleep, .rash, .cough, .hafrahsa:
+                performSegue(withIdentifier: "GenericEventInfo", sender: kind)
+                break
+            case .feever:
+                performSegue(withIdentifier: "GenericLiquid", sender: kind)
+            default: break
+            }
+            
         }
     }
 
@@ -45,10 +57,9 @@ class BasicEventViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "GenericDecision"{
-            let vc = segue.destination as! GenericDecisionViewController
-            let kind = Enums.BasicEvent(rawValue: (sender as! Int))!
-            vc.kind = kind
+        if segue.identifier == "GenericDecision" || segue.identifier == "GenericEventInfo" || segue.identifier == "GenericLiquid"{
+            let vc = segue.destination as! GenericVC
+            vc.kind = sender as! Enums.BasicEvent
         }
     }
     

@@ -520,6 +520,8 @@
                         <outlet property="sleepBtn" destination="vvH-wk-Gt1" id="ltz-fB-Oll"/>
                         <outlet property="vomitBtn" destination="bFy-Ym-HPK" id="PI7-OY-Xoh"/>
                         <segue destination="2OT-Z1-dfR" kind="show" identifier="GenericDecision" id="B4s-SX-Jp4"/>
+                        <segue destination="fEl-bo-HFl" kind="show" identifier="GenericEventInfo" id="YN3-ln-FeL"/>
+                        <segue destination="b8b-Qg-OgN" kind="show" identifier="GenericLiquid" id="UhQ-lY-ajX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hf-Yi-L22" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -905,6 +907,7 @@
         <image name="vomit" width="109.06508636474609" height="109.06508636474609"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uba-IQ-0PZ"/>
+        <segue reference="UhQ-lY-ajX"/>
+        <segue reference="YN3-ln-FeL"/>
     </inferredMetricsTieBreakers>
 </document>

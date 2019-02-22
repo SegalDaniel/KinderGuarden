@@ -51,7 +51,7 @@ class Utility{
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.imageView?.contentMode = .scaleAspectFit
         button.titleEdgeInsets = UIEdgeInsets(top: 5, left: -button.imageView!.image!.size.width, bottom: 0, right: 0)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: button.titleLabel!.layer.frame.size.height, right: 10)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: button.titleLabel!.layer.frame.size.height+15, right: 10)
     }
     
     static func ourLabelDesign(frame:CGRect, text:String = "") -> UILabel{
@@ -84,5 +84,12 @@ class Utility{
         stack.axis = .vertical
         stack.tag = 0
         return stack
+    }
+}
+
+extension Double {
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }
