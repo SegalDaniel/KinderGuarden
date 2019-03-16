@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180CF2FA223D3F9700A9DEF2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2F8223D3F9700A9DEF2 /* DataModel.xcdatamodeld */; };
+		180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */; };
 		180CF2FC223D413500A9DEF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */; };
 		180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */; };
 		180CF300223D44F300A9DEF2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2FF223D44F300A9DEF2 /* Model.swift */; };
+		180CF320223D5BF900A9DEF2 /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF31E223D5BF900A9DEF2 /* Child+CoreDataClass.swift */; };
+		180CF321223D5BF900A9DEF2 /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF31F223D5BF900A9DEF2 /* Child+CoreDataProperties.swift */; };
 		1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D721E0E905006E1B39 /* AppDelegate.swift */; };
 		1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */; };
 		1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DB21E0E905006E1B39 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFireBase.swift; sourceTree = "<group>"; };
 		180CF2FF223D44F300A9DEF2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		180CF31E223D5BF900A9DEF2 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
+		180CF31F223D5BF900A9DEF2 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1818B1D421E0E905006E1B39 /* Gmar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1818B1D721E0E905006E1B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180CF31D223D5B8300A9DEF2 /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				180CF31E223D5BF900A9DEF2 /* Child+CoreDataClass.swift */,
+				180CF31F223D5BF900A9DEF2 /* Child+CoreDataProperties.swift */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
 		1818B1CB21E0E905006E1B39 = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +149,6 @@
 				1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
 				1818B1E321E0E906006E1B39 /* Info.plist */,
 				180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */,
-				180CF2F8223D3F9700A9DEF2 /* DataModel.xcdatamodeld */,
 			);
 			path = Gmar;
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				180CF31D223D5B8300A9DEF2 /* Child */,
 				A8DA55E7221859CD0043D580 /* Child.swift */,
 				A8DF44E4221C796F0071DF7D /* Sleep.swift */,
 				A8DF44E2221C78860071DF7D /* Fever.swift */,
@@ -212,6 +225,7 @@
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
 				180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */,
 				180CF2FF223D44F300A9DEF2 /* Model.swift */,
+				180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,7 +391,7 @@
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
-				180CF2FA223D3F9700A9DEF2 /* DataModel.xcdatamodeld in Sources */,
+				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
@@ -388,9 +402,11 @@
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
+				180CF320223D5BF900A9DEF2 /* Child+CoreDataClass.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */,
 				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
+				180CF321223D5BF900A9DEF2 /* Child+CoreDataProperties.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
 			);
@@ -602,13 +618,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		180CF2F8223D3F9700A9DEF2 /* DataModel.xcdatamodeld */ = {
+		180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				180CF2F9223D3F9700A9DEF2 /* DataModel.xcdatamodel */,
 			);
 			currentVersion = 180CF2F9223D3F9700A9DEF2 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
+			path = Gmar.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

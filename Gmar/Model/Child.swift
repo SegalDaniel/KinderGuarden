@@ -8,6 +8,8 @@
 
 import UIKit
 import Foundation
+
+/*
 class Child{
     var childID:String
     let name : String
@@ -33,9 +35,7 @@ class Child{
         age = json["age"] as! String
         birthDate = json["birthDate"] as! String
         image = json["image"] as! String
-        
     }
-    
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
@@ -50,3 +50,4 @@ class Child{
     
 }
 
+*/
