@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180CF2FA223D3F9700A9DEF2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2F8223D3F9700A9DEF2 /* DataModel.xcdatamodeld */; };
 		1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D721E0E905006E1B39 /* AppDelegate.swift */; };
 		1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */; };
 		1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DB21E0E905006E1B39 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180CF2F9223D3F9700A9DEF2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1818B1D421E0E905006E1B39 /* Gmar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1818B1D721E0E905006E1B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		18991FEC22184C2800180600 /* SecularOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SecularOne-Regular.ttf"; sourceTree = "<group>"; };
 		18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		18991FF022185E6600180600 /* TeacherAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAddEventViewController.swift; sourceTree = "<group>"; };
+		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 		1818B1D621E0E905006E1B39 /* Gmar */ = {
 			isa = PBXGroup;
 			children = (
+				18BBB73722395A78001CE8B5 /* Gmar.entitlements */,
 				1887F4B7221B2A39007682A8 /* Protocols */,
 				1887F4B0221AFDF8007682A8 /* Views */,
 				A8DA55E6221858660043D580 /* Model */,
@@ -125,6 +129,7 @@
 				1818B1DE21E0E906006E1B39 /* Assets.xcassets */,
 				1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
 				1818B1E321E0E906006E1B39 /* Info.plist */,
+				180CF2F8223D3F9700A9DEF2 /* DataModel.xcdatamodeld */,
 			);
 			path = Gmar;
 			sourceTree = "<group>";
@@ -245,6 +250,11 @@
 				TargetAttributes = {
 					1818B1D321E0E905006E1B39 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -343,6 +353,7 @@
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
+				180CF2FA223D3F9700A9DEF2 /* DataModel.xcdatamodeld in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
@@ -503,15 +514,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1234;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -523,15 +536,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1234;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -559,6 +574,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		180CF2F8223D3F9700A9DEF2 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				180CF2F9223D3F9700A9DEF2 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 180CF2F9223D3F9700A9DEF2 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1818B1CC21E0E905006E1B39 /* Project object */;
 }
