@@ -35,6 +35,10 @@
 		18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEC22184C2800180600 /* SecularOne-Regular.ttf */; };
 		18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */; };
 		18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF022185E6600180600 /* TeacherAddEventViewController.swift */; };
+		A8C4146B223EE41D0072B0A8 /* Sleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41469223EE41D0072B0A8 /* Sleep+CoreDataClass.swift */; };
+		A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146A223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift */; };
+		A8C41470223EE98E0072B0A8 /* Fever+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146E223EE98E0072B0A8 /* Fever+CoreDataClass.swift */; };
+		A8C41471223EE98E0072B0A8 /* Fever+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146F223EE98E0072B0A8 /* Fever+CoreDataProperties.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
 		A8DA55FB22187A140043D580 /* DbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FA22187A140043D580 /* DbService.swift */; };
 		A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FC22187BEC0043D580 /* CacheManager.swift */; };
@@ -77,6 +81,10 @@
 		18991FF022185E6600180600 /* TeacherAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAddEventViewController.swift; sourceTree = "<group>"; };
 		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
+		A8C41469223EE41D0072B0A8 /* Sleep+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C4146A223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C4146E223EE98E0072B0A8 /* Fever+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fever+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C4146F223EE98E0072B0A8 /* Fever+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fever+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
@@ -205,12 +213,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A8C41468223EE28C0072B0A8 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				A8DF44E4221C796F0071DF7D /* Sleep.swift */,
+				A8C41469223EE41D0072B0A8 /* Sleep+CoreDataClass.swift */,
+				A8C4146A223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		A8C4146D223EE8F00072B0A8 /* Fever */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4146E223EE98E0072B0A8 /* Fever+CoreDataClass.swift */,
+				A8C4146F223EE98E0072B0A8 /* Fever+CoreDataProperties.swift */,
+				A8DF44E2221C78860071DF7D /* Fever.swift */,
+			);
+			path = Fever;
+			sourceTree = "<group>";
+		};
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				180CF31D223D5B8300A9DEF2 /* Child */,
-				A8DF44E4221C796F0071DF7D /* Sleep.swift */,
-				A8DF44E2221C78860071DF7D /* Fever.swift */,
+				A8C41468223EE28C0072B0A8 /* Sleep */,
+				A8C4146D223EE8F00072B0A8 /* Fever */,
 				A8DA55E922185A1E0043D580 /* Staff.swift */,
 				A8DA55ED221864B00043D580 /* LiquidFood.swift */,
 				A8DA55EF221864C70043D580 /* SolidFood.swift */,
@@ -393,7 +421,9 @@
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
 				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
+				A8C4146B223EE41D0072B0A8 /* Sleep+CoreDataClass.swift in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
+				A8C41471223EE98E0072B0A8 /* Fever+CoreDataProperties.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
@@ -401,10 +431,12 @@
 				1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
+				A8C41470223EE98E0072B0A8 /* Fever+CoreDataClass.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
 				180CF320223D5BF900A9DEF2 /* Child+CoreDataClass.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
+				A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */,
 				A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */,
 				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
 				180CF321223D5BF900A9DEF2 /* Child+CoreDataProperties.swift in Sources */,
@@ -560,7 +592,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+				DEVELOPMENT_TEAM = T3UK9D9NUA;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -582,7 +614,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+				DEVELOPMENT_TEAM = T3UK9D9NUA;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

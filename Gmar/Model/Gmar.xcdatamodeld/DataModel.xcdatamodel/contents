@@ -9,7 +9,19 @@
         <attribute name="lastName" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Fever" representedClassName="Fever" syncable="YES">
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempreture" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Sleep" representedClassName="Sleep" syncable="YES">
+        <attribute name="allocatedTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sleepingScope" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Child" positionX="-36" positionY="9" width="128" height="150"/>
+        <element name="Sleep" positionX="-27" positionY="72" width="128" height="105"/>
+        <element name="Fever" positionX="-9" positionY="90" width="128" height="75"/>
     </elements>
 </model>

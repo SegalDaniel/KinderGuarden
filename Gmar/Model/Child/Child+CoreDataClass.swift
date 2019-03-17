@@ -12,6 +12,16 @@ import CoreData
 
 @objc(Child)
 public class Child: NSManagedObject {
+    convenience init(childID:String, name:String, gender:String, lastName:String, age:String, birthDate:String, image:String?) {
+        self.init(entity: Model.instance.childEntity, insertInto: Model.instance.managedContext)
+        self.setValue(childID, forKey: "childID")
+        self.setValue(name, forKey: "name")
+        self.setValue(lastName, forKey: "lastName")
+        self.setValue(gender, forKey: "gender")
+        self.setValue(age, forKey: "age")
+        self.setValue(birthDate, forKey: "birthDate")
+        self.setValue(image, forKey: "image")
+    }
     
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.childEntity, insertInto: Model.instance.managedContext)
@@ -22,17 +32,6 @@ public class Child: NSManagedObject {
         self.setValue(json["age"], forKey: "age")
         self.setValue(json["birthDate"], forKey: "birthDate")
         self.setValue(json["image"], forKey: "image")
-    }
-    
-    convenience init(childID:String, name:String, gender:String, lastName:String, age:String, birthDate:String, image:String?) {
-        self.init(entity: Model.instance.childEntity, insertInto: Model.instance.managedContext)
-        self.setValue(childID, forKey: "childID")
-        self.setValue(name, forKey: "name")
-        self.setValue(lastName, forKey: "lastName")
-        self.setValue(gender, forKey: "gender")
-        self.setValue(age, forKey: "age")
-        self.setValue(birthDate, forKey: "birthDate")
-        self.setValue(image, forKey: "image")
     }
     
     func toJson() -> [String:Any] {
