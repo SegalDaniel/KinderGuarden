@@ -39,10 +39,9 @@
 		A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146A223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift */; };
 		A8C41470223EE98E0072B0A8 /* Fever+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146E223EE98E0072B0A8 /* Fever+CoreDataClass.swift */; };
 		A8C41471223EE98E0072B0A8 /* Fever+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146F223EE98E0072B0A8 /* Fever+CoreDataProperties.swift */; };
+		A8C41475223EEF7D0072B0A8 /* Staff+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41473223EEF7D0072B0A8 /* Staff+CoreDataClass.swift */; };
+		A8C41476223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41474223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
-		A8DA55FB22187A140043D580 /* DbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FA22187A140043D580 /* DbService.swift */; };
-		A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FC22187BEC0043D580 /* CacheManager.swift */; };
-		A8DA55FF22187C9E0043D580 /* SqliteCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55FE22187C9E0043D580 /* SqliteCache.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
 		A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E4221C796F0071DF7D /* Sleep.swift */; };
 		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
@@ -85,6 +84,8 @@
 		A8C4146A223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8C4146E223EE98E0072B0A8 /* Fever+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fever+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8C4146F223EE98E0072B0A8 /* Fever+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fever+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C41473223EEF7D0072B0A8 /* Staff+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C41474223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
@@ -93,9 +94,6 @@
 		A8DA55F322186E330043D580 /* Feces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feces.swift; sourceTree = "<group>"; };
 		A8DA55F522186F970043D580 /* Urine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urine.swift; sourceTree = "<group>"; };
 		A8DA55F7221876200043D580 /* Vomitus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vomitus.swift; sourceTree = "<group>"; };
-		A8DA55FA22187A140043D580 /* DbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbService.swift; sourceTree = "<group>"; };
-		A8DA55FC22187BEC0043D580 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
-		A8DA55FE22187C9E0043D580 /* SqliteCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteCache.swift; sourceTree = "<group>"; };
 		A8DF44E2221C78860071DF7D /* Fever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fever.swift; sourceTree = "<group>"; };
 		A8DF44E4221C796F0071DF7D /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -233,23 +231,30 @@
 			path = Fever;
 			sourceTree = "<group>";
 		};
+		A8C41472223EEED20072B0A8 /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+				A8C41473223EEF7D0072B0A8 /* Staff+CoreDataClass.swift */,
+				A8C41474223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift */,
+				A8DA55E922185A1E0043D580 /* Staff.swift */,
+			);
+			path = Staff;
+			sourceTree = "<group>";
+		};
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A8C41472223EEED20072B0A8 /* Staff */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
 				A8C41468223EE28C0072B0A8 /* Sleep */,
 				A8C4146D223EE8F00072B0A8 /* Fever */,
-				A8DA55E922185A1E0043D580 /* Staff.swift */,
 				A8DA55ED221864B00043D580 /* LiquidFood.swift */,
 				A8DA55EF221864C70043D580 /* SolidFood.swift */,
 				A8DA55F1221864E20043D580 /* Water.swift */,
 				A8DA55F322186E330043D580 /* Feces.swift */,
 				A8DA55F522186F970043D580 /* Urine.swift */,
 				A8DA55F7221876200043D580 /* Vomitus.swift */,
-				A8DA55FA22187A140043D580 /* DbService.swift */,
 				A8F7F380221888CB00F21DAD /* Utility.swift */,
-				A8DA55FC22187BEC0043D580 /* CacheManager.swift */,
-				A8DA55FE22187C9E0043D580 /* SqliteCache.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
 				180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */,
@@ -415,14 +420,14 @@
 				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
-				A8DA55FB22187A140043D580 /* DbService.swift in Sources */,
-				A8DA55FF22187C9E0043D580 /* SqliteCache.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
 				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
 				A8C4146B223EE41D0072B0A8 /* Sleep+CoreDataClass.swift in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
+				A8C41476223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift in Sources */,
+				A8C41475223EEF7D0072B0A8 /* Staff+CoreDataClass.swift in Sources */,
 				A8C41471223EE98E0072B0A8 /* Fever+CoreDataProperties.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
@@ -437,7 +442,6 @@
 				180CF320223D5BF900A9DEF2 /* Child+CoreDataClass.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */,
-				A8DA55FD22187BEC0043D580 /* CacheManager.swift in Sources */,
 				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
 				180CF321223D5BF900A9DEF2 /* Child+CoreDataProperties.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,

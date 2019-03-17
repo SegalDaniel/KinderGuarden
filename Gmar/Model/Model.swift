@@ -17,6 +17,7 @@ class Model{
 
     let appDelegate:AppDelegate
     let managedContext:NSManagedObjectContext
+    let staffEntity:NSEntityDescription
     let childEntity:NSEntityDescription
     let sleepEntity:NSEntityDescription
     let feverEntity:NSEntityDescription
@@ -24,6 +25,7 @@ class Model{
     private init(){
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
+        staffEntity = NSEntityDescription.entity(forEntityName: "Staff", in: managedContext)!
         childEntity = NSEntityDescription.entity(forEntityName: "Child", in: managedContext)!
         sleepEntity = NSEntityDescription.entity(forEntityName: "Sleep", in: managedContext)!
         feverEntity = NSEntityDescription.entity(forEntityName: "Fever", in: managedContext)!
