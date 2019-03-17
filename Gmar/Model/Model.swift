@@ -26,26 +26,21 @@ class Model{
     }
     
     //MARK: - Child Model Methods
-    func addChild(child:Child, callack:@escaping (Error?, DocumentReference?)->Void){
-        modelFirebase.addChild(child: child) { (err, ref) in
-            if let ref = ref{
-                child.setValue(ref.documentID, forKey: "childID")
+    func addChild(child:Child, callack:@escaping (Error?)->Void){
+        modelFirebase.addChild(child: child) { (err) in
+            if err == nil{
                 do {
                     try Model.instance.managedContext.save()
-                    
-                    let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
-                    
-                    let childs = try! Model.instance.managedContext.fetch(childFetch)
-                    let c:[Child] = childs as! [Child]
-                    c.forEach({ (chld) in
-                        print("childID: \(String(describing: chld.childID))")
-                    })
-                    
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
             }
+            callack(err)
         }
+    }
+    
+    func getChild(childID:String, callback:@escaping (Error?, Child?)->Void){
+        modelFirebase.getChild(childID: childID, callback: callback)
     }
     
     //MARK: - Firestore methods
@@ -54,24 +49,21 @@ class Model{
     }
     
     //MARK: - CoreData Only
-    func deleteAllData(_ entity:String) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.returnsObjectsAsFaults = false
-        do
-        {
-            let results = try Model.instance.managedContext.fetch(fetchRequest)
-            for managedObject in results
-            {
-                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-                Model.instance.managedContext.delete(managedObjectData)
-            }
-        } catch let error as NSError {
-            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
-        }
+    func getAllChildsFromCore(callback:([Child])->Void){
+        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+        let childs = try! Model.instance.managedContext.fetch(childFetch)
+        let c:[Child] = childs as! [Child]
+        callback(c)
     }
     
-    //******* TEST ONLY DONT USE *******
-    func testFirestoreDB(callack:@escaping (Error?, DocumentReference?)->Void){
-        modelFirebase.testUpload(callack: callack)
+    
+    func deleteAllDataFromCore(_ entity:String) {
+        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: entity))
+        do {
+            try managedContext.execute(DelAllReqVar)
+        }
+        catch {
+            print(error)
+        }
     }
 }
