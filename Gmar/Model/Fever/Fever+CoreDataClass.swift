@@ -19,10 +19,10 @@ public class Fever: NSManagedObject {
         
     }
     
-   convenience init(json:[String:Any]) {
-    self.init(entity: Model.instance.sleepEntity, insertInto: Model.instance.managedContext)
-    self.setValue(json["childID"], forKey: "childID")
-    self.setValue(json["tempreture"], forKey: "tempreture")
+    convenience init(json:[String:Any]) {
+        self.init(entity: Model.instance.feverEntity, insertInto: Model.instance.managedContext)
+        self.setValue(json["childID"], forKey: "childID")
+        self.setValue(json["tempreture"], forKey: "tempreture")
         
     }
     
@@ -34,5 +34,5 @@ public class Fever: NSManagedObject {
         return json
         
     }
-
+    
 }

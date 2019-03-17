@@ -13,11 +13,24 @@
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tempreture" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="LiquidFood" representedClassName="LiquidFood" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Sleep" representedClassName="Sleep" syncable="YES">
         <attribute name="allocatedTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sleepingScope" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SolidFood" representedClassName="SolidFood" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mealInMenu" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Staff" representedClassName="Staff" syncable="YES">
         <attribute name="birthdate" optional="YES" attributeType="String" syncable="YES"/>
@@ -25,10 +38,18 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="staffID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Water" representedClassName="Water" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Child" positionX="-36" positionY="9" width="128" height="150"/>
         <element name="Sleep" positionX="-27" positionY="72" width="128" height="105"/>
         <element name="Fever" positionX="-9" positionY="90" width="128" height="75"/>
         <element name="Staff" positionX="9" positionY="99" width="128" height="105"/>
+        <element name="LiquidFood" positionX="27" positionY="117" width="128" height="105"/>
+        <element name="SolidFood" positionX="45" positionY="135" width="128" height="120"/>
+        <element name="Water" positionX="63" positionY="162" width="128" height="90"/>
     </elements>
 </model>

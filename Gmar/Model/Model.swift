@@ -21,6 +21,9 @@ class Model{
     let childEntity:NSEntityDescription
     let sleepEntity:NSEntityDescription
     let feverEntity:NSEntityDescription
+    let liquidFoodEntity:NSEntityDescription
+    let solidFoodEntity:NSEntityDescription
+    let waterEntity:NSEntityDescription
     
     private init(){
         appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -29,6 +32,9 @@ class Model{
         childEntity = NSEntityDescription.entity(forEntityName: "Child", in: managedContext)!
         sleepEntity = NSEntityDescription.entity(forEntityName: "Sleep", in: managedContext)!
         feverEntity = NSEntityDescription.entity(forEntityName: "Fever", in: managedContext)!
+        liquidFoodEntity = NSEntityDescription.entity(forEntityName: "LiquidFood", in: managedContext)!
+        solidFoodEntity = NSEntityDescription.entity(forEntityName: "SolidFood", in: managedContext)!
+        waterEntity = NSEntityDescription.entity(forEntityName: "Water", in: managedContext)!
     }
     
     //MARK: - Child Model Methods

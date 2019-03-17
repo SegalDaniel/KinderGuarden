@@ -12,20 +12,20 @@ import CoreData
 
 @objc(Staff)
 public class Staff: NSManagedObject {
-   convenience init(staffID:String, name:String, birthdate:String, image:String){
-    self.init(entity: Model.instance.staffEntity, insertInto: Model.instance.managedContext)
-    self.setValue(staffID, forKey: "staffID")
-    self.setValue(name, forKey: "name")
-    self.setValue(birthdate, forKey: "birthdate")
-    self.setValue(image, forKey: "image")
+    convenience init(staffID:String, name:String, birthdate:String, image:String){
+        self.init(entity: Model.instance.staffEntity, insertInto: Model.instance.managedContext)
+        self.setValue(staffID, forKey: "staffID")
+        self.setValue(name, forKey: "name")
+        self.setValue(birthdate, forKey: "birthdate")
+        self.setValue(image, forKey: "image")
     }
     
-   convenience init(json:[String:Any]) {
-    self.init(entity: Model.instance.staffEntity, insertInto: Model.instance.managedContext)
-    self.setValue(json["staffID"], forKey: "staffID")
-    self.setValue(json["name"], forKey: "name")
-    self.setValue(json["birthdate"], forKey: "birthdate")
-    self.setValue(json["image"], forKey: "image")
+    convenience init(json:[String:Any]) {
+        self.init(entity: Model.instance.staffEntity, insertInto: Model.instance.managedContext)
+        self.setValue(json["staffID"], forKey: "staffID")
+        self.setValue(json["name"], forKey: "name")
+        self.setValue(json["birthdate"], forKey: "birthdate")
+        self.setValue(json["image"], forKey: "image")
         
     }
     
@@ -38,5 +38,5 @@ public class Staff: NSManagedObject {
         json["image"] = image
         return json
     }
-
+    
 }
