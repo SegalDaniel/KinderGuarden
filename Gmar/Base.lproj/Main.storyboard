@@ -143,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="18" y="986"/>
         </scene>
-        <!--Add Child View Controller-->
+        <!--רישום ילד לגן-->
         <scene sceneID="BLq-Zu-bK3">
             <objects>
                 <viewController id="V9L-pd-yNq" customClass="AddChildViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,23 +152,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001-baby-6" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-Ud-Dd7">
-                                <rect key="frame" x="20" y="78" width="333.5" height="250"/>
+                                <rect key="frame" x="20" y="78" width="333.5" height="333.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BjY-Gs-1jI">
-                                <rect key="frame" x="362" y="78" width="730" height="250"/>
+                                <rect key="frame" x="362" y="78" width="730" height="333.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ocg-Tl-t9K">
-                                        <rect key="frame" x="0.0" y="0.0" width="730" height="78"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="730" height="77.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם משפחה" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cf1-le-sBj">
-                                                <rect key="frame" x="0.0" y="0.0" width="361" height="78"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="77.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="family-name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם פרטי" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-Tk-cjA">
-                                                <rect key="frame" x="369" y="0.0" width="361" height="78"/>
+                                                <rect key="frame" x="369" y="0.0" width="361" height="77.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="name"/>
@@ -176,10 +176,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-2n-hva">
-                                        <rect key="frame" x="0.0" y="86" width="730" height="78"/>
+                                        <rect key="frame" x="0.0" y="85.5" width="730" height="77.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="כתובת" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="df4-Se-WOb">
-                                                <rect key="frame" x="0.0" y="0.0" width="730" height="78"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="730" height="77.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="street-address"/>
@@ -187,99 +187,110 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Ex-UU-KY5">
-                                        <rect key="frame" x="0.0" y="172" width="730" height="78"/>
+                                        <rect key="frame" x="0.0" y="171" width="730" height="77"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="boR-LO-fHt">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="78"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פג?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li1-Tz-QKO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="37.5"/>
-                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1bz-p5-OjU">
-                                                        <rect key="frame" x="0.0" y="40.5" width="72" height="37.5"/>
-                                                    </switch>
-                                                </subviews>
-                                            </stackView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nxo-ms-fsZ">
-                                                <rect key="frame" x="78" y="0.0" width="457.5" height="78"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="515" height="77"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="574766994.62415099">
                                                     <!--2019-03-20 09:29:54 +0000-->
                                                 </date>
                                                 <locale key="locale" localeIdentifier="he_IL"/>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך לידה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJH-Ph-wMf">
-                                                <rect key="frame" x="543.5" y="0.0" width="186.5" height="78"/>
+                                                <rect key="frame" x="523" y="0.0" width="207" height="77"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-ly-tzn">
+                                        <rect key="frame" x="0.0" y="256" width="730" height="77.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="boR-LO-fHt">
+                                                <rect key="frame" x="0.0" y="0.0" width="352.5" height="77.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פג" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li1-Tz-QKO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="352.5" height="37.5"/>
+                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XcK-t8-QPG">
+                                                        <rect key="frame" x="0.0" y="40.5" width="352.5" height="38"/>
+                                                        <segments>
+                                                            <segment title="שלילי"/>
+                                                            <segment title="חיובי"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ybL-Wg-E3S">
+                                                <rect key="frame" x="360.5" y="0.0" width="369.5" height="77.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מין" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMN-Fw-vEg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="369.5" height="37.5"/>
+                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kc1-9e-B4T">
+                                                        <rect key="frame" x="0.0" y="40.5" width="369.5" height="38"/>
+                                                        <segments>
+                                                            <segment title="זכר"/>
+                                                            <segment title="נקבה"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-ly-tzn">
-                                <rect key="frame" x="20" y="336" width="1072" height="83.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DyP-nZ-BKp">
+                                <rect key="frame" x="20" y="419.5" width="1072" height="67"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מ״ל" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpO-X0-IDO">
-                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="83.5"/>
-                                        <nil key="textColor"/>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zzg-Nz-mZG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="574771859.17767799">
+                                            <!--2019-03-20 10:50:59 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="he"/>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת איסוף:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-DW-PdV">
+                                        <rect key="frame" x="328" y="0.0" width="125.5" height="67"/>
                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="tel"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="סוג (תמ״ל)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tw3-g9-uBV">
-                                        <rect key="frame" x="146.5" y="0.0" width="307.5" height="83.5"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V45-Cx-7HY">
+                                        <rect key="frame" x="461.5" y="0.0" width="464" height="67"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
+                                        <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="לחץ להוספת מורשה">
+                                            <color key="titleColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPickerBtnClicked:" destination="V9L-pd-yNq" eventType="touchUpInside" id="r6a-5n-d7n"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מורשי איסוף:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OC-ch-hLC">
+                                        <rect key="frame" x="933.5" y="0.0" width="138.5" height="67"/>
                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9ff-UC-bl5">
-                                        <rect key="frame" x="462" y="0.0" width="379" height="83.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תזונה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gH-Tf-XbL">
-                                                <rect key="frame" x="0.0" y="0.0" width="379" height="42"/>
-                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Cgt-Qb-ocg">
-                                                <rect key="frame" x="0.0" y="42" width="379" height="42.5"/>
-                                                <segments>
-                                                    <segment title="חלב אם"/>
-                                                    <segment title="מוצקים"/>
-                                                    <segment title="תמ״ל"/>
-                                                </segments>
-                                            </segmentedControl>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ybL-Wg-E3S">
-                                        <rect key="frame" x="849" y="0.0" width="223" height="83.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מין" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMN-Fw-vEg">
-                                                <rect key="frame" x="0.0" y="0.0" width="223" height="40.5"/>
-                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kc1-9e-B4T">
-                                                <rect key="frame" x="0.0" y="43.5" width="223" height="41"/>
-                                                <segments>
-                                                    <segment title="זכר"/>
-                                                    <segment title="נקבה"/>
-                                                </segments>
-                                            </segmentedControl>
-                                        </subviews>
-                                    </stackView>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-WS-9wF">
-                                <rect key="frame" x="20" y="519" width="1072" height="307"/>
+                                <rect key="frame" x="20" y="494.5" width="1072" height="331.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-uy-dZk">
-                                        <rect key="frame" x="0.0" y="0.0" width="1072" height="307"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1072" height="331.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="childPicker" rowHeight="75" id="hI7-zQ-S8b" customClass="ChildPickerTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="1072" height="75"/>
@@ -298,7 +309,7 @@
                                                                     <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                                 </textField>
                                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-oj-EHl">
-                                                                    <rect key="frame" x="360" y="0.0" width="352" height="74"/>
+                                                                    <rect key="frame" x="360" y="0.0" width="352" height="74.5"/>
                                                                 </pickerView>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם מאסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cji-b7-5mq">
                                                                     <rect key="frame" x="720" y="0.0" width="352" height="74.5"/>
@@ -326,69 +337,40 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DyP-nZ-BKp">
-                                <rect key="frame" x="20" y="427.5" width="1072" height="83.5"/>
-                                <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zzg-Nz-mZG">
-                                        <rect key="frame" x="0.0" y="0.0" width="519" height="83.5"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="574771859.17767799">
-                                            <!--2019-03-20 10:50:59 +0000-->
-                                        </date>
-                                        <locale key="locale" localeIdentifier="he"/>
-                                    </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת איסוף:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-DW-PdV">
-                                        <rect key="frame" x="527" y="0.0" width="203.5" height="83.5"/>
-                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V45-Cx-7HY">
-                                        <rect key="frame" x="738.5" y="0.0" width="86" height="83.5"/>
-                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
-                                        <state key="normal" title="הוסף">
-                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addPickerBtnClicked:" destination="V9L-pd-yNq" eventType="touchUpInside" id="r6a-5n-d7n"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מורשי איסוף:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OC-ch-hLC">
-                                        <rect key="frame" x="832.5" y="0.0" width="239.5" height="83.5"/>
-                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BjY-Gs-1jI" firstAttribute="height" secondItem="H9n-Ud-Dd7" secondAttribute="height" id="05q-ZN-vO5"/>
-                            <constraint firstItem="cyA-ly-tzn" firstAttribute="top" secondItem="H9n-Ud-Dd7" secondAttribute="bottom" constant="8" id="20G-dF-SH1"/>
                             <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="DyP-nZ-BKp" secondAttribute="trailing" constant="20" id="2FM-oG-JLT"/>
                             <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="BjY-Gs-1jI" secondAttribute="trailing" constant="20" id="6vd-3W-Fqb"/>
                             <constraint firstItem="H9n-Ud-Dd7" firstAttribute="top" secondItem="qIb-1a-Wnl" secondAttribute="top" constant="8" id="80i-zK-Dif"/>
                             <constraint firstAttribute="bottom" secondItem="kjj-WS-9wF" secondAttribute="bottom" constant="8" id="8L0-Td-AGv"/>
                             <constraint firstItem="kjj-WS-9wF" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="AOq-Ch-jqb"/>
                             <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="kjj-WS-9wF" secondAttribute="trailing" constant="20" id="CPQ-ko-slx"/>
-                            <constraint firstItem="cyA-ly-tzn" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.1" id="DeZ-eb-k33"/>
                             <constraint firstItem="BjY-Gs-1jI" firstAttribute="leading" secondItem="H9n-Ud-Dd7" secondAttribute="trailing" constant="8.5" id="MNx-u1-g1D"/>
-                            <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="cyA-ly-tzn" secondAttribute="trailing" constant="20" id="P6C-I9-rFk"/>
-                            <constraint firstItem="cyA-ly-tzn" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="YVg-Mw-9Zy"/>
                             <constraint firstItem="H9n-Ud-Dd7" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="aXE-Nr-mUp"/>
                             <constraint firstItem="H9n-Ud-Dd7" firstAttribute="width" secondItem="rYx-JS-LgQ" secondAttribute="width" multiplier="0.3" id="dy0-UL-i9h"/>
+                            <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="DyP-nZ-BKp" secondAttribute="trailing" constant="20" id="eJO-Mm-wyJ"/>
+                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="top" secondItem="H9n-Ud-Dd7" secondAttribute="bottom" constant="8" id="gRW-y3-mDW"/>
+                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="hY8-es-v5V"/>
                             <constraint firstItem="BjY-Gs-1jI" firstAttribute="top" secondItem="qIb-1a-Wnl" secondAttribute="top" constant="8" id="kKN-wG-PaK"/>
                             <constraint firstItem="BjY-Gs-1jI" firstAttribute="top" secondItem="H9n-Ud-Dd7" secondAttribute="top" id="mfS-Xj-Jx5"/>
-                            <constraint firstItem="H9n-Ud-Dd7" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.3" id="nKU-02-Snk"/>
-                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.1" id="oDg-Js-mFh"/>
+                            <constraint firstItem="H9n-Ud-Dd7" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.4" id="nKU-02-Snk"/>
+                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.08" id="oDg-Js-mFh"/>
+                            <constraint firstItem="kjj-WS-9wF" firstAttribute="top" secondItem="DyP-nZ-BKp" secondAttribute="bottom" constant="8" id="pZi-Hh-2rX"/>
                             <constraint firstItem="DyP-nZ-BKp" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="pqK-Od-ium"/>
                             <constraint firstItem="kjj-WS-9wF" firstAttribute="top" secondItem="DyP-nZ-BKp" secondAttribute="bottom" constant="8" id="tI8-c5-X3S"/>
-                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="top" secondItem="cyA-ly-tzn" secondAttribute="bottom" constant="8" id="uSu-5T-xGH"/>
                             <constraint firstItem="BjY-Gs-1jI" firstAttribute="centerY" secondItem="H9n-Ud-Dd7" secondAttribute="centerY" id="ysh-uf-2Ww"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qIb-1a-Wnl"/>
                     </view>
+                    <navigationItem key="navigationItem" title="רישום ילד לגן" id="bif-DN-xbw">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="7Eb-Fm-f2e">
+                            <connections>
+                                <segue destination="Rk1-gC-I4V" kind="show" id="45y-H3-Hjn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addChildPickerBtn" destination="V45-Cx-7HY" id="e9g-1n-cVv"/>
                         <outlet property="addressTextField" destination="df4-Se-WOb" id="iYe-W3-R2g"/>
@@ -398,16 +380,232 @@
                         <outlet property="firstNameTextField" destination="Xng-Tk-cjA" id="m4q-NH-gT5"/>
                         <outlet property="genderSegment" destination="kc1-9e-B4T" id="UeP-qn-PWB"/>
                         <outlet property="lastNameTextField" destination="Cf1-le-sBj" id="WAg-fC-z5e"/>
-                        <outlet property="nutritionAmountTextField" destination="bpO-X0-IDO" id="BU1-2v-yHy"/>
-                        <outlet property="nutritionKindTextField" destination="tw3-g9-uBV" id="pzo-xN-n6u"/>
-                        <outlet property="nutritionSegment" destination="Cgt-Qb-ocg" id="7aQ-d2-4GP"/>
-                        <outlet property="pagSwitch" destination="1bz-p5-OjU" id="at6-zD-Agc"/>
                         <outlet property="pickingTimePicker" destination="zzg-Nz-mZG" id="FgB-hi-fsv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8o-Zn-q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="758.6330935251799" y="1792.8057553956835"/>
+        </scene>
+        <!--Add Child Second View Controller-->
+        <scene sceneID="8a1-xc-IhH">
+            <objects>
+                <viewController id="Rk1-gC-I4V" customClass="AddChildSecondViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VMa-vK-LtR">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mhp-QV-0Jg">
+                                <rect key="frame" x="20" y="78" width="1072" height="333.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1FH-Nh-TPc">
+                                        <rect key="frame" x="0.0" y="0.0" width="526" height="333.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ewr-xz-6GF">
+                                                <rect key="frame" x="0.0" y="0.0" width="526" height="42"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="at7-yA-S6o">
+                                                        <rect key="frame" x="0.0" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
+                                                        <state key="normal" title="הוסף"/>
+                                                        <connections>
+                                                            <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="46a-rv-srY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אלרגנים" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6W9-We-6PW">
+                                                        <rect key="frame" x="263" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D5z-bA-HPf">
+                                                <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="alergicCell" rowHeight="75" id="xIe-Cu-erw">
+                                                        <rect key="frame" x="0.0" y="28" width="526" height="75"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xIe-Cu-erw" id="GbG-rw-ZVn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dIe-u9-vpJ">
+                                        <rect key="frame" x="546" y="0.0" width="526" height="333.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qFN-tp-lBu">
+                                                <rect key="frame" x="0.0" y="0.0" width="526" height="42"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw8-r6-u5T">
+                                                        <rect key="frame" x="0.0" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
+                                                        <state key="normal" title="הוסף"/>
+                                                        <connections>
+                                                            <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="ZPv-zg-RE3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מזונות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmi-ZD-2rc">
+                                                        <rect key="frame" x="263" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wsb-SY-C81">
+                                                <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="75" id="j3N-sl-hCm">
+                                                        <rect key="frame" x="0.0" y="28" width="526" height="75"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j3N-sl-hCm" id="eQD-gP-cEq">
+                                                            <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodKindCell" rowHeight="75" id="jLc-qT-tkT">
+                                                        <rect key="frame" x="0.0" y="103" width="526" height="75"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jLc-qT-tkT" id="nPI-i8-3Dz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zxh-OR-75e">
+                                <rect key="frame" x="20" y="431.5" width="1072" height="333.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KYd-b8-guf">
+                                        <rect key="frame" x="0.0" y="0.0" width="526" height="333.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="370-4n-rot">
+                                                <rect key="frame" x="0.0" y="0.0" width="526" height="42"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZN2-TZ-Hkf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
+                                                        <state key="normal" title="הוסף"/>
+                                                        <connections>
+                                                            <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="gCb-4p-Z0I"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תרופות קבועות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inp-79-ynv">
+                                                        <rect key="frame" x="263" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-3u-tv5">
+                                                <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mediactionCell" rowHeight="75" id="5Zu-AR-PFR">
+                                                        <rect key="frame" x="0.0" y="28" width="526" height="75"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Zu-AR-PFR" id="MaF-y3-fgV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uk2-8R-JDg">
+                                        <rect key="frame" x="546" y="0.0" width="526" height="333.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1LP-Pc-FN2">
+                                                <rect key="frame" x="0.0" y="0.0" width="526" height="42"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VR-f7-d4q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
+                                                        <state key="normal" title="הוסף"/>
+                                                        <connections>
+                                                            <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="upb-kX-3cf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחלות כרוניות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9B-M4-VNH">
+                                                        <rect key="frame" x="263" y="0.0" width="263" height="42"/>
+                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QWl-ou-4Bq">
+                                                <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diasesCell" rowHeight="75" id="96f-qf-2Lm">
+                                                        <rect key="frame" x="0.0" y="28" width="526" height="75"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="96f-qf-2Lm" id="44e-NL-Ypo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWx-UT-nHE">
+                                <rect key="frame" x="20" y="769" width="127" height="59"/>
+                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="32"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="הוסף ילד">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mhp-QV-0Jg" secondAttribute="trailing" constant="20" id="4rp-gZ-Vf5"/>
+                            <constraint firstItem="zxh-OR-75e" firstAttribute="top" secondItem="Mhp-QV-0Jg" secondAttribute="bottom" constant="20" id="QQj-9f-eEJ"/>
+                            <constraint firstItem="DWx-UT-nHE" firstAttribute="top" secondItem="zxh-OR-75e" secondAttribute="bottom" constant="4" id="RSL-9s-ty8"/>
+                            <constraint firstItem="zxh-OR-75e" firstAttribute="leading" secondItem="bIj-kU-53X" secondAttribute="leading" constant="20" id="S1y-a3-GKm"/>
+                            <constraint firstItem="bIj-kU-53X" firstAttribute="bottom" secondItem="DWx-UT-nHE" secondAttribute="bottom" constant="6" id="Xx7-Lr-3Wr"/>
+                            <constraint firstItem="DWx-UT-nHE" firstAttribute="leading" secondItem="bIj-kU-53X" secondAttribute="leading" constant="20" id="fIz-uo-76R"/>
+                            <constraint firstItem="Mhp-QV-0Jg" firstAttribute="top" secondItem="bIj-kU-53X" secondAttribute="top" constant="8" id="frI-tN-bZ3"/>
+                            <constraint firstItem="bIj-kU-53X" firstAttribute="trailing" secondItem="zxh-OR-75e" secondAttribute="trailing" constant="20" id="gbk-mx-6Um"/>
+                            <constraint firstItem="bIj-kU-53X" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DWx-UT-nHE" secondAttribute="trailing" symbolic="YES" id="ibP-He-msC"/>
+                            <constraint firstItem="Mhp-QV-0Jg" firstAttribute="leading" secondItem="bIj-kU-53X" secondAttribute="leading" constant="20" id="klM-2n-ii2"/>
+                            <constraint firstItem="Mhp-QV-0Jg" firstAttribute="height" secondItem="VMa-vK-LtR" secondAttribute="height" multiplier="0.4" id="o1V-fW-Wxl"/>
+                            <constraint firstItem="zxh-OR-75e" firstAttribute="height" secondItem="Mhp-QV-0Jg" secondAttribute="height" id="wTk-KH-qMB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bIj-kU-53X"/>
+                    </view>
+                    <connections>
+                        <outlet property="addAlergicBtn" destination="at7-yA-S6o" id="K1H-Kc-56N"/>
+                        <outlet property="addDiseasesBtn" destination="6VR-f7-d4q" id="oXP-2M-iMl"/>
+                        <outlet property="addFoodBtn" destination="Yw8-r6-u5T" id="erL-0c-MO5"/>
+                        <outlet property="addMedicationBtn" destination="ZN2-TZ-Hkf" id="oxY-36-YHE"/>
+                        <outlet property="alergicTableView" destination="D5z-bA-HPf" id="ULc-X4-Kzx"/>
+                        <outlet property="diseasesTableView" destination="QWl-ou-4Bq" id="Qgh-in-4oE"/>
+                        <outlet property="foodsTableView" destination="wsb-SY-C81" id="fkL-c0-BJM"/>
+                        <outlet property="medicationsTableView" destination="5mV-3u-tv5" id="MiB-uv-Dfd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3K6-14-vea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472.4820143884892" y="1792.8057553956835"/>
         </scene>
         <!--Multi Choise View Controller-->
         <scene sceneID="GAA-C9-hLq">

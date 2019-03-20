@@ -10,19 +10,13 @@ import UIKit
 
 class AddChildViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     //MARK: - Variables
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var babyImageView: UIImageView!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
-    @IBOutlet weak var pagSwitch: UISwitch!
     @IBOutlet weak var genderSegment: UISegmentedControl!
-    @IBOutlet weak var nutritionSegment: UISegmentedControl!
-    @IBOutlet weak var nutritionKindTextField: UITextField!
-    @IBOutlet weak var nutritionAmountTextField: UITextField!
     @IBOutlet weak var addChildPickerBtn: UIButton!
     @IBOutlet weak var pickingTimePicker: UIDatePicker!
     @IBOutlet weak var childPickerTableView: UITableView!
