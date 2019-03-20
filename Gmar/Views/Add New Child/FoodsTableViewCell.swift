@@ -27,16 +27,26 @@ class FoodsTableViewCell: UITableViewCell {
     
     //MARK: - Segment
     @IBAction func segmentKindChanged(_ sender: Any) {
+        changePlaceHolder()
+        toggleKindHidness()
+    }
+    
+    func changePlaceHolder(){
+        if kindSegment.selectedSegmentIndex == 0{
+            amountTextField.placeholder = "העדפות"
+        }
+        else{
+            amountTextField.placeholder = "מ״ל"
+        }
+    }
+    
+    func toggleKindHidness(){
         if kindSegment.selectedSegmentIndex == 2{
             kindIsHidden = false
         }
         else{
             kindIsHidden = true
         }
-        toggleKindHidness()
-    }
-    
-    func toggleKindHidness(){
         kindTextField.isHidden = kindIsHidden
     }
     
