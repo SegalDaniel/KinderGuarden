@@ -33,6 +33,9 @@
                                 <state key="normal" title="הגדרות גן">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="WNC-8R-ZUY" kind="show" id="WXK-p6-9XV"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-Ff-ZfI">
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
@@ -79,6 +82,283 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="17.805755395683455" y="21.582733812949641"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="eTm-rv-bZM">
+            <objects>
+                <viewController id="WNC-8R-ZUY" customClass="SettingsViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SjI-EX-Dsx">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-vA-vZS">
+                                <rect key="frame" x="55.5" y="243.5" width="1001" height="417"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS6-6l-kKL">
+                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="417"/>
+                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                        <state key="normal" title="הגדרות הגן" image="kindergarten">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U04-kg-7wC">
+                                        <rect key="frame" x="340.5" y="0.0" width="320" height="417"/>
+                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                        <state key="normal" title="הוסף איש צוות" image="teacher">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C28-0r-y6m">
+                                        <rect key="frame" x="680.5" y="0.0" width="320.5" height="417"/>
+                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                        <state key="normal" title="הוסף ילד" image="001-baby-6">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="V9L-pd-yNq" kind="show" id="3TX-8t-E7W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="height" secondItem="SjI-EX-Dsx" secondAttribute="height" multiplier="0.5" id="9tG-tr-qv9"/>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="centerY" secondItem="HOs-Qi-7cP" secondAttribute="centerY" id="a51-51-hIm"/>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="centerX" secondItem="HOs-Qi-7cP" secondAttribute="centerX" id="q2k-NB-Tev"/>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="width" secondItem="SjI-EX-Dsx" secondAttribute="width" multiplier="0.9" id="qtd-1Y-j19"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HOs-Qi-7cP"/>
+                    </view>
+                    <connections>
+                        <outlet property="KindergardenSettingBtn" destination="AS6-6l-kKL" id="71g-2N-zmb"/>
+                        <outlet property="addChildBtn" destination="C28-0r-y6m" id="ZnS-iB-XlK"/>
+                        <outlet property="addStaffBtn" destination="U04-kg-7wC" id="9M0-VI-1qk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7GX-cq-WCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="986"/>
+        </scene>
+        <!--Add Child View Controller-->
+        <scene sceneID="BLq-Zu-bK3">
+            <objects>
+                <viewController id="V9L-pd-yNq" customClass="AddChildViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rYx-JS-LgQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001-baby-6" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-Ud-Dd7">
+                                <rect key="frame" x="20" y="78" width="333.5" height="250"/>
+                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BjY-Gs-1jI">
+                                <rect key="frame" x="362" y="78" width="730" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ocg-Tl-t9K">
+                                        <rect key="frame" x="0.0" y="0.0" width="730" height="78"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם משפחה" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cf1-le-sBj">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="78"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם פרטי" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-Tk-cjA">
+                                                <rect key="frame" x="369" y="0.0" width="361" height="78"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-2n-hva">
+                                        <rect key="frame" x="0.0" y="86" width="730" height="78"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="כתובת" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="df4-Se-WOb">
+                                                <rect key="frame" x="0.0" y="0.0" width="730" height="78"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Ex-UU-KY5">
+                                        <rect key="frame" x="0.0" y="172" width="730" height="78"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="boR-LO-fHt">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="78"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פג?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li1-Tz-QKO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="37.5"/>
+                                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1bz-p5-OjU">
+                                                        <rect key="frame" x="0.0" y="40.5" width="72" height="37.5"/>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nxo-ms-fsZ">
+                                                <rect key="frame" x="78" y="0.0" width="457.5" height="78"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="574766994.62415099">
+                                                    <!--2019-03-20 09:29:54 +0000-->
+                                                </date>
+                                                <locale key="locale" localeIdentifier="he_IL"/>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך לידה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJH-Ph-wMf">
+                                                <rect key="frame" x="543.5" y="0.0" width="186.5" height="78"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-ly-tzn">
+                                <rect key="frame" x="20" y="336" width="1072" height="83.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7R8-gP-GAQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="83.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מ״ל" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGw-0B-Uck">
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="42"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="JPT-tn-hYf">
+                                                <rect key="frame" x="-2" y="42" width="356" height="42.5"/>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTq-Bi-fMH">
+                                        <rect key="frame" x="360" y="0.0" width="352" height="83.5"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תזונה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gH-Tf-XbL">
+                                        <rect key="frame" x="720" y="0.0" width="352" height="83.5"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-WS-9wF">
+                                <rect key="frame" x="20" y="519" width="1072" height="307"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-uy-dZk">
+                                        <rect key="frame" x="0.0" y="0.0" width="1072" height="307"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="childPicker" rowHeight="100" id="hI7-zQ-S8b">
+                                                <rect key="frame" x="0.0" y="28" width="1072" height="100"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hI7-zQ-S8b" id="P0D-x8-joP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1072" height="99.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iJl-fQ-BgN">
+                                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="99.5"/>
+                                                            <subviews>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="טלפון" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nNk-ex-b0t">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="352" height="99.5"/>
+                                                                    <nil key="textColor"/>
+                                                                    <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-oj-EHl">
+                                                                    <rect key="frame" x="360" y="0.0" width="352" height="99.5"/>
+                                                                </pickerView>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם מאסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cji-b7-5mq">
+                                                                    <rect key="frame" x="720" y="0.0" width="352" height="99.5"/>
+                                                                    <nil key="textColor"/>
+                                                                    <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="iJl-fQ-BgN" firstAttribute="height" secondItem="P0D-x8-joP" secondAttribute="height" id="4xJ-AP-ddI"/>
+                                                        <constraint firstItem="iJl-fQ-BgN" firstAttribute="centerY" secondItem="P0D-x8-joP" secondAttribute="centerY" id="hsC-eS-77U"/>
+                                                        <constraint firstItem="iJl-fQ-BgN" firstAttribute="width" secondItem="P0D-x8-joP" secondAttribute="width" id="oD6-Mz-3qx"/>
+                                                        <constraint firstItem="iJl-fQ-BgN" firstAttribute="centerX" secondItem="P0D-x8-joP" secondAttribute="centerX" id="yg3-1j-0K2"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DyP-nZ-BKp">
+                                <rect key="frame" x="20" y="427.5" width="1072" height="83.5"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zzg-Nz-mZG">
+                                        <rect key="frame" x="0.0" y="0.0" width="519" height="83.5"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="574771859.17767799">
+                                            <!--2019-03-20 10:50:59 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="he"/>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת איסוף:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-DW-PdV">
+                                        <rect key="frame" x="527" y="0.0" width="203.5" height="83.5"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V45-Cx-7HY">
+                                        <rect key="frame" x="738.5" y="0.0" width="86" height="83.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
+                                        <state key="normal" title="הוסף">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מורשי איסוף:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OC-ch-hLC">
+                                        <rect key="frame" x="832.5" y="0.0" width="239.5" height="83.5"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BjY-Gs-1jI" firstAttribute="height" secondItem="H9n-Ud-Dd7" secondAttribute="height" id="05q-ZN-vO5"/>
+                            <constraint firstItem="cyA-ly-tzn" firstAttribute="top" secondItem="H9n-Ud-Dd7" secondAttribute="bottom" constant="8" id="20G-dF-SH1"/>
+                            <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="DyP-nZ-BKp" secondAttribute="trailing" constant="20" id="2FM-oG-JLT"/>
+                            <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="BjY-Gs-1jI" secondAttribute="trailing" constant="20" id="6vd-3W-Fqb"/>
+                            <constraint firstItem="H9n-Ud-Dd7" firstAttribute="top" secondItem="qIb-1a-Wnl" secondAttribute="top" constant="8" id="80i-zK-Dif"/>
+                            <constraint firstAttribute="bottom" secondItem="kjj-WS-9wF" secondAttribute="bottom" constant="8" id="8L0-Td-AGv"/>
+                            <constraint firstItem="kjj-WS-9wF" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="AOq-Ch-jqb"/>
+                            <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="kjj-WS-9wF" secondAttribute="trailing" constant="20" id="CPQ-ko-slx"/>
+                            <constraint firstItem="cyA-ly-tzn" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.1" id="DeZ-eb-k33"/>
+                            <constraint firstItem="BjY-Gs-1jI" firstAttribute="leading" secondItem="H9n-Ud-Dd7" secondAttribute="trailing" constant="8.5" id="MNx-u1-g1D"/>
+                            <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="cyA-ly-tzn" secondAttribute="trailing" constant="20" id="P6C-I9-rFk"/>
+                            <constraint firstItem="cyA-ly-tzn" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="YVg-Mw-9Zy"/>
+                            <constraint firstItem="H9n-Ud-Dd7" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="aXE-Nr-mUp"/>
+                            <constraint firstItem="H9n-Ud-Dd7" firstAttribute="width" secondItem="rYx-JS-LgQ" secondAttribute="width" multiplier="0.3" id="dy0-UL-i9h"/>
+                            <constraint firstItem="BjY-Gs-1jI" firstAttribute="top" secondItem="qIb-1a-Wnl" secondAttribute="top" constant="8" id="kKN-wG-PaK"/>
+                            <constraint firstItem="BjY-Gs-1jI" firstAttribute="top" secondItem="H9n-Ud-Dd7" secondAttribute="top" id="mfS-Xj-Jx5"/>
+                            <constraint firstItem="H9n-Ud-Dd7" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.3" id="nKU-02-Snk"/>
+                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="height" secondItem="rYx-JS-LgQ" secondAttribute="height" multiplier="0.1" id="oDg-Js-mFh"/>
+                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="leading" secondItem="qIb-1a-Wnl" secondAttribute="leading" constant="20" id="pqK-Od-ium"/>
+                            <constraint firstItem="kjj-WS-9wF" firstAttribute="top" secondItem="DyP-nZ-BKp" secondAttribute="bottom" constant="8" id="tI8-c5-X3S"/>
+                            <constraint firstItem="DyP-nZ-BKp" firstAttribute="top" secondItem="cyA-ly-tzn" secondAttribute="bottom" constant="8" id="uSu-5T-xGH"/>
+                            <constraint firstItem="BjY-Gs-1jI" firstAttribute="centerY" secondItem="H9n-Ud-Dd7" secondAttribute="centerY" id="ysh-uf-2Ww"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qIb-1a-Wnl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K8o-Zn-q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758.6330935251799" y="1792.8057553956835"/>
         </scene>
         <!--Multi Choise View Controller-->
         <scene sceneID="GAA-C9-hLq">
@@ -904,6 +1184,8 @@
         <image name="abacus" width="409.60000610351562" height="409.60000610351562"/>
         <image name="cough" width="107.4752197265625" height="107.4752197265625"/>
         <image name="illness" width="159.58441162109375" height="159.58441162109375"/>
+        <image name="kindergarten" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="teacher" width="512" height="512"/>
         <image name="vomit" width="109.06508636474609" height="109.06508636474609"/>
     </resources>
     <inferredMetricsTieBreakers>
