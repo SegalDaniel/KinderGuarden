@@ -13,7 +13,7 @@ import CoreData
 @objc(Urine)
 public class Urine: NSManagedObject {
     convenience init(childID:String, color:String, fragrance:String, amount:String){
-        self.init(entity: Model.instance.UrineEntity, insertInto: Model.instance.managedContext)
+        self.init(entity: Model.instance.urineEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(color, forKey: "color")
         self.setValue(fragrance, forKey: "fragrance")
@@ -22,7 +22,7 @@ public class Urine: NSManagedObject {
     }
     
     convenience  init(json:[String:Any]) {
-        self.init(entity: Model.instance.UrineEntity, insertInto: Model.instance.managedContext)
+        self.init(entity: Model.instance.urineEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["color"], forKey: "color")
         self.setValue(json["fragrance"], forKey: "fragrance")

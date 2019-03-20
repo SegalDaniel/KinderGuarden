@@ -13,14 +13,14 @@ import CoreData
 @objc(Vomitus)
 public class Vomitus: NSManagedObject {
     convenience  init(childID:String, proper:Bool){
-        self.init(entity: Model.instance.VomitusEntity, insertInto: Model.instance.managedContext)
+        self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(proper, forKey: "proper")
         
     }
     
     convenience  init(json:[String:Any]) {
-        self.init(entity: Model.instance.VomitusEntity, insertInto: Model.instance.managedContext)
+        self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["proper"], forKey: "proper")
         
