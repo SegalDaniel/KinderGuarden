@@ -33,6 +33,9 @@
                                 <state key="normal" title="הגדרות גן">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="WNC-8R-ZUY" kind="show" id="WXK-p6-9XV"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-Ff-ZfI">
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
@@ -79,6 +82,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="17.805755395683455" y="21.582733812949641"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="eTm-rv-bZM">
+            <objects>
+                <viewController id="WNC-8R-ZUY" customClass="SettingsViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SjI-EX-Dsx">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-vA-vZS">
+                                <rect key="frame" x="55.5" y="243.5" width="1001" height="417"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS6-6l-kKL">
+                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="417"/>
+                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                        <state key="normal" title="הגדרות הגן" image="kindergarten">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U04-kg-7wC">
+                                        <rect key="frame" x="340.5" y="0.0" width="320" height="417"/>
+                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                        <state key="normal" title="הוסף איש צוות" image="teacher">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C28-0r-y6m">
+                                        <rect key="frame" x="680.5" y="0.0" width="320.5" height="417"/>
+                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                        <state key="normal" title="הוסף ילד" image="001-baby-6">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="height" secondItem="SjI-EX-Dsx" secondAttribute="height" multiplier="0.5" id="9tG-tr-qv9"/>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="centerY" secondItem="HOs-Qi-7cP" secondAttribute="centerY" id="a51-51-hIm"/>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="centerX" secondItem="HOs-Qi-7cP" secondAttribute="centerX" id="q2k-NB-Tev"/>
+                            <constraint firstItem="eu7-vA-vZS" firstAttribute="width" secondItem="SjI-EX-Dsx" secondAttribute="width" multiplier="0.9" id="qtd-1Y-j19"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HOs-Qi-7cP"/>
+                    </view>
+                    <connections>
+                        <outlet property="KindergardenSettingBtn" destination="AS6-6l-kKL" id="71g-2N-zmb"/>
+                        <outlet property="addChildBtn" destination="C28-0r-y6m" id="ZnS-iB-XlK"/>
+                        <outlet property="addStaffBtn" destination="U04-kg-7wC" id="9M0-VI-1qk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7GX-cq-WCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19" y="821"/>
         </scene>
         <!--Multi Choise View Controller-->
         <scene sceneID="GAA-C9-hLq">
@@ -904,6 +964,8 @@
         <image name="abacus" width="409.60000610351562" height="409.60000610351562"/>
         <image name="cough" width="107.4752197265625" height="107.4752197265625"/>
         <image name="illness" width="159.58441162109375" height="159.58441162109375"/>
+        <image name="kindergarten" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="teacher" width="512" height="512"/>
         <image name="vomit" width="109.06508636474609" height="109.06508636474609"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -45,11 +45,11 @@
     </entity>
     <elements>
         <element name="Child" positionX="-36" positionY="9" width="128" height="150"/>
-        <element name="Sleep" positionX="-27" positionY="72" width="128" height="105"/>
         <element name="Fever" positionX="-9" positionY="90" width="128" height="75"/>
-        <element name="Staff" positionX="9" positionY="99" width="128" height="105"/>
         <element name="LiquidFood" positionX="27" positionY="117" width="128" height="105"/>
+        <element name="Sleep" positionX="-27" positionY="72" width="128" height="105"/>
         <element name="SolidFood" positionX="45" positionY="135" width="128" height="120"/>
+        <element name="Staff" positionX="9" positionY="99" width="128" height="105"/>
         <element name="Water" positionX="63" positionY="162" width="128" height="90"/>
     </elements>
 </model>
