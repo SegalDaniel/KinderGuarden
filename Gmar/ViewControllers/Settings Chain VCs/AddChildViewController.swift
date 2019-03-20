@@ -8,15 +8,56 @@
 
 import UIKit
 
-class AddChildViewController: UIViewController {
-
+class AddChildViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    
+    //MARK: - Variables
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var babyImageView: UIImageView!
+    @IBOutlet weak var birthDatePicker: UIDatePicker!
+    @IBOutlet weak var pagSwitch: UISwitch!
+    @IBOutlet weak var genderSegment: UISegmentedControl!
+    @IBOutlet weak var nutritionSegment: UISegmentedControl!
+    @IBOutlet weak var nutritionKindTextField: UITextField!
+    @IBOutlet weak var nutritionAmountTextField: UITextField!
+    @IBOutlet weak var addChildPickerBtn: UIButton!
+    @IBOutlet weak var pickingTimePicker: UIDatePicker!
+    @IBOutlet weak var childPickerTableView: UITableView!
+    var pickers:Int = 0{
+        didSet{
+            if childPickerTableView != nil{
+                childPickerTableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        childPickerTableView.delegate = self
+        childPickerTableView.dataSource = self
     }
     
 
+    //MARK: - Button action
+    @IBAction func addPickerBtnClicked(_ sender: Any) {
+        pickers += 1
+    }
+    
+    
+    //MARK: - child picker table view delegate & datasource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pickers
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "childPicker", for: indexPath) as! ChildPickerTableViewCell
+        
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

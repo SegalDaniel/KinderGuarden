@@ -37,6 +37,7 @@
 		18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF022185E6600180600 /* TeacherAddEventViewController.swift */; };
 		189B35362242384B00D33A6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B35352242384B00D33A6C /* SettingsViewController.swift */; };
 		189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B353922423DE600D33A6C /* AddChildViewController.swift */; };
+		189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B353B224263CD00D33A6C /* ChildPickerTableViewCell.swift */; };
 		A8C4146B223EE41D0072B0A8 /* Sleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41469223EE41D0072B0A8 /* Sleep+CoreDataClass.swift */; };
 		A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146A223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift */; };
 		A8C41470223EE98E0072B0A8 /* Fever+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146E223EE98E0072B0A8 /* Fever+CoreDataClass.swift */; };
@@ -89,6 +90,7 @@
 		18991FF022185E6600180600 /* TeacherAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAddEventViewController.swift; sourceTree = "<group>"; };
 		189B35352242384B00D33A6C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		189B353922423DE600D33A6C /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
+		189B353B224263CD00D33A6C /* ChildPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPickerTableViewCell.swift; sourceTree = "<group>"; };
 		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8C41469223EE41D0072B0A8 /* Sleep+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				1887F4BE221B3FCD007682A8 /* RPicker.swift */,
 				1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */,
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
+				189B353B224263CD00D33A6C /* ChildPickerTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				A8C41476223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift in Sources */,
 				A8C4147F223EF6F50072B0A8 /* SolidFood+CoreDataClass.swift in Sources */,
 				A8C41475223EEF7D0072B0A8 /* Staff+CoreDataClass.swift in Sources */,
+				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
 				A8C41482223EF8280072B0A8 /* Water.swift in Sources */,
 				A8C41471223EE98E0072B0A8 /* Fever+CoreDataProperties.swift in Sources */,
 				A8C4147A223EF2790072B0A8 /* LiquidFood+CoreDataClass.swift in Sources */,

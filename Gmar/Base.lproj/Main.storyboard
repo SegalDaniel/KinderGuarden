@@ -165,13 +165,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="78"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="family-name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם פרטי" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-Tk-cjA">
                                                 <rect key="frame" x="369" y="0.0" width="361" height="78"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="name"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -182,7 +182,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="730" height="78"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="street-address"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -220,65 +220,91 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-ly-tzn">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-ly-tzn">
                                 <rect key="frame" x="20" y="336" width="1072" height="83.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7R8-gP-GAQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="83.5"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מ״ל" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpO-X0-IDO">
+                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="83.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="tel"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="סוג (תמ״ל)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tw3-g9-uBV">
+                                        <rect key="frame" x="146.5" y="0.0" width="307.5" height="83.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9ff-UC-bl5">
+                                        <rect key="frame" x="462" y="0.0" width="379" height="83.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מ״ל" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGw-0B-Uck">
-                                                <rect key="frame" x="0.0" y="0.0" width="352" height="42"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תזונה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gH-Tf-XbL">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="42"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="JPT-tn-hYf">
-                                                <rect key="frame" x="-2" y="42" width="356" height="42.5"/>
-                                            </slider>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Cgt-Qb-ocg">
+                                                <rect key="frame" x="0.0" y="42" width="379" height="42.5"/>
+                                                <segments>
+                                                    <segment title="חלב אם"/>
+                                                    <segment title="מוצקים"/>
+                                                    <segment title="תמ״ל"/>
+                                                </segments>
+                                            </segmentedControl>
                                         </subviews>
                                     </stackView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTq-Bi-fMH">
-                                        <rect key="frame" x="360" y="0.0" width="352" height="83.5"/>
-                                    </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תזונה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gH-Tf-XbL">
-                                        <rect key="frame" x="720" y="0.0" width="352" height="83.5"/>
-                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ybL-Wg-E3S">
+                                        <rect key="frame" x="849" y="0.0" width="223" height="83.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מין" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMN-Fw-vEg">
+                                                <rect key="frame" x="0.0" y="0.0" width="223" height="40.5"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kc1-9e-B4T">
+                                                <rect key="frame" x="0.0" y="43.5" width="223" height="41"/>
+                                                <segments>
+                                                    <segment title="זכר"/>
+                                                    <segment title="נקבה"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-WS-9wF">
                                 <rect key="frame" x="20" y="519" width="1072" height="307"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-uy-dZk">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-uy-dZk">
                                         <rect key="frame" x="0.0" y="0.0" width="1072" height="307"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="childPicker" rowHeight="100" id="hI7-zQ-S8b">
-                                                <rect key="frame" x="0.0" y="28" width="1072" height="100"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="childPicker" rowHeight="75" id="hI7-zQ-S8b" customClass="ChildPickerTableViewCell" customModule="Gmar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="1072" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hI7-zQ-S8b" id="P0D-x8-joP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1072" height="99.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1072" height="74.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iJl-fQ-BgN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="99.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="74.5"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="טלפון" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nNk-ex-b0t">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="352" height="99.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="352" height="74.5"/>
                                                                     <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                    <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                                 </textField>
                                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-oj-EHl">
-                                                                    <rect key="frame" x="360" y="0.0" width="352" height="99.5"/>
+                                                                    <rect key="frame" x="360" y="0.0" width="352" height="74"/>
                                                                 </pickerView>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם מאסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cji-b7-5mq">
-                                                                    <rect key="frame" x="720" y="0.0" width="352" height="99.5"/>
+                                                                    <rect key="frame" x="720" y="0.0" width="352" height="74.5"/>
                                                                     <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="name"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -290,6 +316,11 @@
                                                         <constraint firstItem="iJl-fQ-BgN" firstAttribute="centerX" secondItem="P0D-x8-joP" secondAttribute="centerX" id="yg3-1j-0K2"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="pickerKindPicker" destination="f4G-oj-EHl" id="w1f-J5-Y5h"/>
+                                                    <outlet property="pickerNameTextField" destination="Cji-b7-5mq" id="ZcO-ol-7si"/>
+                                                    <outlet property="pickerPhoneTextField" destination="nNk-ex-b0t" id="onX-AL-OCD"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -318,6 +349,9 @@
                                         <state key="normal" title="הוסף">
                                             <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addPickerBtnClicked:" destination="V9L-pd-yNq" eventType="touchUpInside" id="r6a-5n-d7n"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מורשי איסוף:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OC-ch-hLC">
                                         <rect key="frame" x="832.5" y="0.0" width="239.5" height="83.5"/>
@@ -355,6 +389,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qIb-1a-Wnl"/>
                     </view>
+                    <connections>
+                        <outlet property="addChildPickerBtn" destination="V45-Cx-7HY" id="e9g-1n-cVv"/>
+                        <outlet property="addressTextField" destination="df4-Se-WOb" id="iYe-W3-R2g"/>
+                        <outlet property="babyImageView" destination="H9n-Ud-Dd7" id="fHG-j3-UGQ"/>
+                        <outlet property="birthDatePicker" destination="nxo-ms-fsZ" id="Eh8-4K-ViK"/>
+                        <outlet property="childPickerTableView" destination="Mxv-uy-dZk" id="Gcu-TE-q7l"/>
+                        <outlet property="firstNameTextField" destination="Xng-Tk-cjA" id="m4q-NH-gT5"/>
+                        <outlet property="genderSegment" destination="kc1-9e-B4T" id="UeP-qn-PWB"/>
+                        <outlet property="lastNameTextField" destination="Cf1-le-sBj" id="WAg-fC-z5e"/>
+                        <outlet property="nutritionAmountTextField" destination="bpO-X0-IDO" id="BU1-2v-yHy"/>
+                        <outlet property="nutritionKindTextField" destination="tw3-g9-uBV" id="pzo-xN-n6u"/>
+                        <outlet property="nutritionSegment" destination="Cgt-Qb-ocg" id="7aQ-d2-4GP"/>
+                        <outlet property="pagSwitch" destination="1bz-p5-OjU" id="at6-zD-Agc"/>
+                        <outlet property="pickingTimePicker" destination="zzg-Nz-mZG" id="FgB-hi-fsv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8o-Zn-q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
