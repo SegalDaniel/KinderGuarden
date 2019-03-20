@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+//add entities for child picker medicine deases and no need for age
 
 /*
 class Child{

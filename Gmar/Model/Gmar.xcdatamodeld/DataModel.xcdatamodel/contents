@@ -9,6 +9,12 @@
         <attribute name="lastName" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Feces" representedClassName="Feces" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="texture" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Fever" representedClassName="Fever" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tempreture" optional="YES" attributeType="String" syncable="YES"/>
@@ -38,6 +44,16 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="staffID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Urine" representedClassName="Urine" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fragrance" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Vomitus" representedClassName="Vomitus" syncable="YES">
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proper" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Water" representedClassName="Water" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,5 +67,8 @@
         <element name="LiquidFood" positionX="27" positionY="117" width="128" height="105"/>
         <element name="SolidFood" positionX="45" positionY="135" width="128" height="120"/>
         <element name="Water" positionX="63" positionY="162" width="128" height="90"/>
+        <element name="Feces" positionX="18" positionY="108" width="128" height="105"/>
+        <element name="Urine" positionX="27" positionY="117" width="128" height="105"/>
+        <element name="Vomitus" positionX="36" positionY="126" width="128" height="75"/>
     </elements>
 </model>
