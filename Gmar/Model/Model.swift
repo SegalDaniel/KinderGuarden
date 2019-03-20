@@ -14,19 +14,23 @@ class Model{
     
     static let instance:Model = Model()
     var modelFirebase = ModelFireBase()
-
+    
     let appDelegate:AppDelegate
     let managedContext:NSManagedObjectContext
     let staffEntity:NSEntityDescription
     let childEntity:NSEntityDescription
     let sleepEntity:NSEntityDescription
     let feverEntity:NSEntityDescription
+    let rashEntity:NSEntityDescription
     let liquidFoodEntity:NSEntityDescription
     let solidFoodEntity:NSEntityDescription
     let waterEntity:NSEntityDescription
-    let FecesEntity:NSEntityDescription
-    let UrineEntity:NSEntityDescription
-    let VomitusEntity:NSEntityDescription
+    let fecesEntity:NSEntityDescription
+    let urineEntity:NSEntityDescription
+    let vomitusEntity:NSEntityDescription
+    let authorizedAccompanistEntity:NSEntityDescription
+    let medicationEntity:NSEntityDescription
+    let diseaseEntity:NSEntityDescription
     
     private init(){
         appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -35,12 +39,16 @@ class Model{
         childEntity = NSEntityDescription.entity(forEntityName: "Child", in: managedContext)!
         sleepEntity = NSEntityDescription.entity(forEntityName: "Sleep", in: managedContext)!
         feverEntity = NSEntityDescription.entity(forEntityName: "Fever", in: managedContext)!
+        rashEntity = NSEntityDescription.entity(forEntityName: "Rash", in: managedContext)!
         liquidFoodEntity = NSEntityDescription.entity(forEntityName: "LiquidFood", in: managedContext)!
         solidFoodEntity = NSEntityDescription.entity(forEntityName: "SolidFood", in: managedContext)!
         waterEntity = NSEntityDescription.entity(forEntityName: "Water", in: managedContext)!
-        FecesEntity = NSEntityDescription.entity(forEntityName: "Feces", in: managedContext)!
-        UrineEntity = NSEntityDescription.entity(forEntityName: "Urine", in: managedContext)!
-        VomitusEntity = NSEntityDescription.entity(forEntityName: "Vomitus", in: managedContext)!
+        fecesEntity = NSEntityDescription.entity(forEntityName: "Feces", in: managedContext)!
+        urineEntity = NSEntityDescription.entity(forEntityName: "Urine", in: managedContext)!
+        vomitusEntity = NSEntityDescription.entity(forEntityName: "Vomitus", in: managedContext)!
+        authorizedAccompanistEntity = NSEntityDescription.entity(forEntityName: "AuthorizedAccompanist", in: managedContext)!
+        medicationEntity = NSEntityDescription.entity(forEntityName: "Medication", in: managedContext)!
+        diseaseEntity = NSEntityDescription.entity(forEntityName: "Disease", in: managedContext)!
     }
     
     //MARK: - Child Model Methods

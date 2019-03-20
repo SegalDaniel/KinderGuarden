@@ -13,7 +13,7 @@ import CoreData
 @objc(Feces)
 public class Feces: NSManagedObject {
     convenience init(childID:String, color:String, texture:String, amount:String){
-        self.init(entity: Model.instance.FecesEntity, insertInto: Model.instance.managedContext)
+        self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(color, forKey: "color")
         self.setValue(texture, forKey: "texture")
@@ -22,7 +22,7 @@ public class Feces: NSManagedObject {
     }
     
     convenience  init(json:[String:Any]) {
-        self.init(entity: Model.instance.FecesEntity, insertInto: Model.instance.managedContext)
+        self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["color"], forKey: "color")
         self.setValue(json["texture"], forKey: "texture")
