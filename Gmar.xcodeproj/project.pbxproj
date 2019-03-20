@@ -51,6 +51,12 @@
 		A8C41482223EF8280072B0A8 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F1221864E20043D580 /* Water.swift */; };
 		A8C41485223EF8A80072B0A8 /* Water+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41483223EF8A80072B0A8 /* Water+CoreDataClass.swift */; };
 		A8C41486223EF8A80072B0A8 /* Water+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41484223EF8A80072B0A8 /* Water+CoreDataProperties.swift */; };
+		A8C4148A22415DFB0072B0A8 /* Feces+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4148822415DFB0072B0A8 /* Feces+CoreDataClass.swift */; };
+		A8C4148B22415DFB0072B0A8 /* Feces+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4148922415DFB0072B0A8 /* Feces+CoreDataProperties.swift */; };
+		A8C4148F22424FC90072B0A8 /* Urine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4148D22424FC90072B0A8 /* Urine+CoreDataClass.swift */; };
+		A8C4149022424FC90072B0A8 /* Urine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4148E22424FC90072B0A8 /* Urine+CoreDataProperties.swift */; };
+		A8C41494224254570072B0A8 /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41492224254570072B0A8 /* Vomitus+CoreDataClass.swift */; };
+		A8C41495224254570072B0A8 /* Vomitus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41493224254570072B0A8 /* Vomitus+CoreDataProperties.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
 		A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E4221C796F0071DF7D /* Sleep.swift */; };
@@ -105,6 +111,12 @@
 		A8C4147E223EF6F50072B0A8 /* SolidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8C41483223EF8A80072B0A8 /* Water+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Water+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8C41484223EF8A80072B0A8 /* Water+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Water+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C4148822415DFB0072B0A8 /* Feces+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feces+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C4148922415DFB0072B0A8 /* Feces+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feces+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C4148D22424FC90072B0A8 /* Urine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Urine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C4148E22424FC90072B0A8 /* Urine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Urine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C41492224254570072B0A8 /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C41493224254570072B0A8 /* Vomitus+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
@@ -309,6 +321,36 @@
 			path = Water;
 			sourceTree = "<group>";
 		};
+		A8C4148722415D010072B0A8 /* Feces */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4148822415DFB0072B0A8 /* Feces+CoreDataClass.swift */,
+				A8C4148922415DFB0072B0A8 /* Feces+CoreDataProperties.swift */,
+				A8DA55F322186E330043D580 /* Feces.swift */,
+			);
+			path = Feces;
+			sourceTree = "<group>";
+		};
+		A8C4148C22415F3B0072B0A8 /* Urine */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4148D22424FC90072B0A8 /* Urine+CoreDataClass.swift */,
+				A8C4148E22424FC90072B0A8 /* Urine+CoreDataProperties.swift */,
+				A8DA55F522186F970043D580 /* Urine.swift */,
+			);
+			path = Urine;
+			sourceTree = "<group>";
+		};
+		A8C41491224253450072B0A8 /* Vomitus */ = {
+			isa = PBXGroup;
+			children = (
+				A8C41492224254570072B0A8 /* Vomitus+CoreDataClass.swift */,
+				A8C41493224254570072B0A8 /* Vomitus+CoreDataProperties.swift */,
+				A8DA55F7221876200043D580 /* Vomitus.swift */,
+			);
+			path = Vomitus;
+			sourceTree = "<group>";
+		};
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,9 +361,9 @@
 				A8C41477223EF1F70072B0A8 /* LiquidFood */,
 				A8C4147C223EF5F40072B0A8 /* SolidFood */,
 				A8C41481223EF8000072B0A8 /* Water */,
-				A8DA55F322186E330043D580 /* Feces.swift */,
-				A8DA55F522186F970043D580 /* Urine.swift */,
-				A8DA55F7221876200043D580 /* Vomitus.swift */,
+				A8C4148722415D010072B0A8 /* Feces */,
+				A8C4148C22415F3B0072B0A8 /* Urine */,
+				A8C41491224253450072B0A8 /* Vomitus */,
 				A8F7F380221888CB00F21DAD /* Utility.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
@@ -487,14 +529,18 @@
 				1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */,
 				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
+				A8C41494224254570072B0A8 /* Vomitus+CoreDataClass.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
 				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
+				A8C4148F22424FC90072B0A8 /* Urine+CoreDataClass.swift in Sources */,
+				A8C41495224254570072B0A8 /* Vomitus+CoreDataProperties.swift in Sources */,
 				A8C4146B223EE41D0072B0A8 /* Sleep+CoreDataClass.swift in Sources */,
 				A8C41486223EF8A80072B0A8 /* Water+CoreDataProperties.swift in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
+				A8C4148A22415DFB0072B0A8 /* Feces+CoreDataClass.swift in Sources */,
 				A8C41476223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift in Sources */,
 				A8C4147F223EF6F50072B0A8 /* SolidFood+CoreDataClass.swift in Sources */,
 				A8C41475223EEF7D0072B0A8 /* Staff+CoreDataClass.swift in Sources */,
@@ -515,10 +561,12 @@
 				A8C41470223EE98E0072B0A8 /* Fever+CoreDataClass.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
 				A8C4147B223EF2790072B0A8 /* LiquidFood+CoreDataProperties.swift in Sources */,
+				A8C4149022424FC90072B0A8 /* Urine+CoreDataProperties.swift in Sources */,
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
 				180CF320223D5BF900A9DEF2 /* Child+CoreDataClass.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */,
+				A8C4148B22415DFB0072B0A8 /* Feces+CoreDataProperties.swift in Sources */,
 				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
 				189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */,
 				180CF321223D5BF900A9DEF2 /* Child+CoreDataProperties.swift in Sources */,
