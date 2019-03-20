@@ -44,12 +44,12 @@
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Child" positionX="-36" positionY="9" width="128" height="150"/>
-        <element name="Fever" positionX="-9" positionY="90" width="128" height="75"/>
-        <element name="LiquidFood" positionX="27" positionY="117" width="128" height="105"/>
-        <element name="Sleep" positionX="-27" positionY="72" width="128" height="105"/>
-        <element name="SolidFood" positionX="45" positionY="135" width="128" height="120"/>
-        <element name="Staff" positionX="9" positionY="99" width="128" height="105"/>
-        <element name="Water" positionX="63" positionY="162" width="128" height="90"/>
+        <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="148"/>
+        <element name="Fever" positionX="84.93359375" positionY="-94.453125" width="128" height="75"/>
+        <element name="LiquidFood" positionX="71.97265625" positionY="16.27734375" width="128" height="105"/>
+        <element name="Sleep" positionX="232.6875" positionY="-89.85546875" width="128" height="105"/>
+        <element name="SolidFood" positionX="235.66015625" positionY="27.87890625" width="128" height="120"/>
+        <element name="Staff" positionX="-256.046875" positionY="-84.34375" width="128" height="105"/>
+        <element name="Water" positionX="74.64453125" positionY="140.08203125" width="128" height="90"/>
     </elements>
 </model>
