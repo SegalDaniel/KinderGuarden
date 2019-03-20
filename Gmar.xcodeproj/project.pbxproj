@@ -39,6 +39,9 @@
 		189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B353922423DE600D33A6C /* AddChildViewController.swift */; };
 		189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B353B224263CD00D33A6C /* ChildPickerTableViewCell.swift */; };
 		189B353E224275C000D33A6C /* AddChildSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B353D224275C000D33A6C /* AddChildSecondViewController.swift */; };
+		189B354122428E4B00D33A6C /* AlergicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354022428E4B00D33A6C /* AlergicTableViewCell.swift */; };
+		189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354222428E6900D33A6C /* FoodsTableViewCell.swift */; };
+		189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */; };
 		A8C4146B223EE41D0072B0A8 /* Sleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C41469223EE41D0072B0A8 /* Sleep+CoreDataClass.swift */; };
 		A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146A223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift */; };
 		A8C41470223EE98E0072B0A8 /* Fever+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4146E223EE98E0072B0A8 /* Fever+CoreDataClass.swift */; };
@@ -99,6 +102,9 @@
 		189B353922423DE600D33A6C /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
 		189B353B224263CD00D33A6C /* ChildPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPickerTableViewCell.swift; sourceTree = "<group>"; };
 		189B353D224275C000D33A6C /* AddChildSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildSecondViewController.swift; sourceTree = "<group>"; };
+		189B354022428E4B00D33A6C /* AlergicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlergicTableViewCell.swift; sourceTree = "<group>"; };
+		189B354222428E6900D33A6C /* FoodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsTableViewCell.swift; sourceTree = "<group>"; };
+		189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasesMedTableViewCell.swift; sourceTree = "<group>"; };
 		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8C41469223EE41D0072B0A8 /* Sleep+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -200,7 +206,7 @@
 				1887F4BE221B3FCD007682A8 /* RPicker.swift */,
 				1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */,
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
-				189B353B224263CD00D33A6C /* ChildPickerTableViewCell.swift */,
+				189B353F224289C600D33A6C /* Add New Child */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +260,17 @@
 				18788797221D4C510047A935 /* MultiChoiseViewController.swift */,
 			);
 			path = "Add Event Chain VCs";
+			sourceTree = "<group>";
+		};
+		189B353F224289C600D33A6C /* Add New Child */ = {
+			isa = PBXGroup;
+			children = (
+				189B353B224263CD00D33A6C /* ChildPickerTableViewCell.swift */,
+				189B354022428E4B00D33A6C /* AlergicTableViewCell.swift */,
+				189B354222428E6900D33A6C /* FoodsTableViewCell.swift */,
+				189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */,
+			);
+			path = "Add New Child";
 			sourceTree = "<group>";
 		};
 		378573E8FF6EE6BEB75C54F7 /* Frameworks */ = {
@@ -543,6 +560,7 @@
 				A8C4146B223EE41D0072B0A8 /* Sleep+CoreDataClass.swift in Sources */,
 				A8C41486223EF8A80072B0A8 /* Water+CoreDataProperties.swift in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
+				189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */,
 				A8C4148A22415DFB0072B0A8 /* Feces+CoreDataClass.swift in Sources */,
 				A8C41476223EEF7D0072B0A8 /* Staff+CoreDataProperties.swift in Sources */,
 				A8C4147F223EF6F50072B0A8 /* SolidFood+CoreDataClass.swift in Sources */,
@@ -568,6 +586,7 @@
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
 				180CF320223D5BF900A9DEF2 /* Child+CoreDataClass.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
+				189B354122428E4B00D33A6C /* AlergicTableViewCell.swift in Sources */,
 				A8C4146C223EE41D0072B0A8 /* Sleep+CoreDataProperties.swift in Sources */,
 				A8C4148B22415DFB0072B0A8 /* Feces+CoreDataProperties.swift in Sources */,
 				189B353E224275C000D33A6C /* AddChildSecondViewController.swift in Sources */,
@@ -577,6 +596,7 @@
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
 				180CF322223EC00400A9DEF2 /* Child.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
+				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

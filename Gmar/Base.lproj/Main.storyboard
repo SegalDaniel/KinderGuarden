@@ -178,8 +178,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-2n-hva">
                                         <rect key="frame" x="0.0" y="85.5" width="730" height="77.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="כתובת" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="df4-Se-WOb">
-                                                <rect key="frame" x="0.0" y="0.0" width="730" height="77.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="תעודת זהות" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="df4-Se-WOb">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="77.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="tel"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="כתובת" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jG-eK-IhW">
+                                                <rect key="frame" x="369" y="0.0" width="361" height="77.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="street-address"/>
@@ -309,7 +315,7 @@
                                                                     <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                                 </textField>
                                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-oj-EHl">
-                                                                    <rect key="frame" x="360" y="0.0" width="352" height="74.5"/>
+                                                                    <rect key="frame" x="360" y="0.0" width="352" height="75"/>
                                                                 </pickerView>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם מאסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cji-b7-5mq">
                                                                     <rect key="frame" x="720" y="0.0" width="352" height="74.5"/>
@@ -376,6 +382,7 @@
                         <outlet property="addressTextField" destination="df4-Se-WOb" id="iYe-W3-R2g"/>
                         <outlet property="babyImageView" destination="H9n-Ud-Dd7" id="fHG-j3-UGQ"/>
                         <outlet property="birthDatePicker" destination="nxo-ms-fsZ" id="Eh8-4K-ViK"/>
+                        <outlet property="childIDTextField" destination="df4-Se-WOb" id="NcN-WO-t24"/>
                         <outlet property="childPickerTableView" destination="Mxv-uy-dZk" id="Gcu-TE-q7l"/>
                         <outlet property="firstNameTextField" destination="Xng-Tk-cjA" id="m4q-NH-gT5"/>
                         <outlet property="genderSegment" destination="kc1-9e-B4T" id="UeP-qn-PWB"/>
@@ -424,13 +431,30 @@
                                                 <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="alergicCell" rowHeight="75" id="xIe-Cu-erw">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="alergicCell" rowHeight="75" id="xIe-Cu-erw" customClass="AlergicTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xIe-Cu-erw" id="GbG-rw-ZVn">
                                                             <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אלרגן" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bj7-q3-iY1">
+                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <nil key="textColor"/>
+                                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="bj7-q3-iY1" firstAttribute="centerX" secondItem="GbG-rw-ZVn" secondAttribute="centerX" id="9W0-EL-b0R"/>
+                                                                <constraint firstItem="bj7-q3-iY1" firstAttribute="centerY" secondItem="GbG-rw-ZVn" secondAttribute="centerY" id="UDz-pd-8vf"/>
+                                                                <constraint firstItem="bj7-q3-iY1" firstAttribute="height" secondItem="GbG-rw-ZVn" secondAttribute="height" multiplier="0.9" id="ZvO-et-0Gs"/>
+                                                                <constraint firstItem="bj7-q3-iY1" firstAttribute="width" secondItem="GbG-rw-ZVn" secondAttribute="width" multiplier="0.9" id="iI4-x8-3kZ"/>
+                                                            </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="nameTextField" destination="bj7-q3-iY1" id="HrW-p2-Ajt"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -462,21 +486,55 @@
                                                 <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="75" id="j3N-sl-hCm">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="75" id="jLc-qT-tkT" customClass="FoodsTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j3N-sl-hCm" id="eQD-gP-cEq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodKindCell" rowHeight="75" id="jLc-qT-tkT">
-                                                        <rect key="frame" x="0.0" y="103" width="526" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jLc-qT-tkT" id="nPI-i8-3Dz">
                                                             <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LSk-on-sZl">
+                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מ״ל" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DV-2A-eFC">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="67.5"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="סוג" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-vB-6Qx">
+                                                                            <rect key="frame" x="236.5" y="0.0" width="0.0" height="67.5"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-lk-zCg">
+                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="68.5"/>
+                                                                            <segments>
+                                                                                <segment title="מוצקים"/>
+                                                                                <segment title="חלב אם"/>
+                                                                                <segment title="תמ״ל"/>
+                                                                            </segments>
+                                                                            <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <connections>
+                                                                                <action selector="segmentKindChanged:" destination="jLc-qT-tkT" eventType="valueChanged" id="7l7-cq-0WF"/>
+                                                                            </connections>
+                                                                        </segmentedControl>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="LSk-on-sZl" firstAttribute="width" secondItem="nPI-i8-3Dz" secondAttribute="width" multiplier="0.9" id="Ag1-9o-F3I"/>
+                                                                <constraint firstItem="LSk-on-sZl" firstAttribute="centerY" secondItem="nPI-i8-3Dz" secondAttribute="centerY" id="MPY-C4-r4A"/>
+                                                                <constraint firstItem="LSk-on-sZl" firstAttribute="height" secondItem="nPI-i8-3Dz" secondAttribute="height" multiplier="0.9" id="ShQ-aW-NFf"/>
+                                                                <constraint firstItem="LSk-on-sZl" firstAttribute="centerX" secondItem="nPI-i8-3Dz" secondAttribute="centerX" id="dTA-O5-ims"/>
+                                                            </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="amountTextField" destination="7DV-2A-eFC" id="9L8-Aq-3Md"/>
+                                                            <outlet property="kindSegment" destination="Ktx-lk-zCg" id="1T0-Hp-xeX"/>
+                                                            <outlet property="kindTextField" destination="pdC-vB-6Qx" id="NEW-2v-AvA"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -513,12 +571,37 @@
                                                 <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mediactionCell" rowHeight="75" id="5Zu-AR-PFR">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diasesMedCell" rowHeight="75" id="4ws-GC-J9G" customClass="DiasesMedTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Zu-AR-PFR" id="MaF-y3-fgV">
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ws-GC-J9G" id="gBL-Vn-waW">
                                                             <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aGd-i3-kUK">
+                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מידע נוסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GW4-Nf-wBZ">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="67.5"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3nw-u4-mzb">
+                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="67.5"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="aGd-i3-kUK" firstAttribute="height" secondItem="gBL-Vn-waW" secondAttribute="height" multiplier="0.9" id="O5m-RT-yox"/>
+                                                                <constraint firstItem="aGd-i3-kUK" firstAttribute="width" secondItem="gBL-Vn-waW" secondAttribute="width" multiplier="0.9" id="P4u-si-U7w"/>
+                                                                <constraint firstItem="aGd-i3-kUK" firstAttribute="centerX" secondItem="gBL-Vn-waW" secondAttribute="centerX" id="hrU-I0-nIH"/>
+                                                                <constraint firstItem="aGd-i3-kUK" firstAttribute="centerY" secondItem="gBL-Vn-waW" secondAttribute="centerY" id="xSx-CY-eZR"/>
+                                                            </constraints>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -551,13 +634,42 @@
                                                 <rect key="frame" x="0.0" y="50" width="526" height="283.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diasesCell" rowHeight="75" id="96f-qf-2Lm">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diasesMedCell" rowHeight="75" id="96f-qf-2Lm" customClass="DiasesMedTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="96f-qf-2Lm" id="44e-NL-Ypo">
                                                             <rect key="frame" x="0.0" y="0.0" width="526" height="74.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-em-UCJ">
+                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מידע נוסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZM-OF-gP5">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="67.5"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ym-7H-HhW">
+                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="67.5"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="ToS-em-UCJ" firstAttribute="height" secondItem="44e-NL-Ypo" secondAttribute="height" multiplier="0.9" id="96P-lv-kNu"/>
+                                                                <constraint firstItem="ToS-em-UCJ" firstAttribute="centerY" secondItem="44e-NL-Ypo" secondAttribute="centerY" id="KYy-NY-sDU"/>
+                                                                <constraint firstItem="ToS-em-UCJ" firstAttribute="centerX" secondItem="44e-NL-Ypo" secondAttribute="centerX" id="deU-qu-HFj"/>
+                                                                <constraint firstItem="ToS-em-UCJ" firstAttribute="width" secondItem="44e-NL-Ypo" secondAttribute="width" multiplier="0.9" id="u0F-MB-pRa"/>
+                                                            </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="detailsTextField" destination="cZM-OF-gP5" id="5to-7n-XIE"/>
+                                                            <outlet property="nameTextField" destination="5ym-7H-HhW" id="mX4-r6-x2T"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
