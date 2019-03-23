@@ -158,14 +158,14 @@
                                 <rect key="frame" x="222.5" y="94" width="667" height="584"/>
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sil-en-2AM">
-                                <rect key="frame" x="389" y="686" width="500.5" height="83"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם פרטי" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sil-en-2AM">
+                                <rect key="frame" x="656" y="686" width="233.5" height="83"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ1-ST-giS">
-                                <rect key="frame" x="222.5" y="686" width="158.5" height="83"/>
+                                <rect key="frame" x="222.5" y="686" width="184" height="83"/>
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="הוספה">
@@ -175,25 +175,36 @@
                                     <action selector="saveBtnClicked:" destination="Nft-Hz-Lnj" eventType="touchUpInside" id="Sbg-Re-CgM"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם משפחה" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEi-xG-Ywb">
+                                <rect key="frame" x="414.5" y="686" width="233.5" height="83"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yQ1-ST-giS" firstAttribute="trailing" secondItem="sil-en-2AM" secondAttribute="leading" constant="-8" id="2nV-Ee-1xR"/>
+                            <constraint firstItem="XEi-xG-Ywb" firstAttribute="width" secondItem="sil-en-2AM" secondAttribute="width" id="0Up-NE-yAN"/>
+                            <constraint firstItem="XEi-xG-Ywb" firstAttribute="height" secondItem="sil-en-2AM" secondAttribute="height" id="0m7-Mz-Zfd"/>
+                            <constraint firstItem="sil-en-2AM" firstAttribute="leading" secondItem="XEi-xG-Ywb" secondAttribute="trailing" constant="8" id="DdX-QW-5xL"/>
+                            <constraint firstItem="XEi-xG-Ywb" firstAttribute="centerY" secondItem="sil-en-2AM" secondAttribute="centerY" id="HOo-z7-Obd"/>
                             <constraint firstItem="sil-en-2AM" firstAttribute="top" secondItem="yT3-Hc-oLX" secondAttribute="bottom" constant="8" id="NuF-8d-okJ"/>
                             <constraint firstItem="yT3-Hc-oLX" firstAttribute="centerX" secondItem="pya-D0-fGX" secondAttribute="centerX" id="To4-Ub-l7I"/>
                             <constraint firstItem="yT3-Hc-oLX" firstAttribute="height" secondItem="qMb-mr-QlY" secondAttribute="height" multiplier="0.7" id="VME-3t-Ucu"/>
-                            <constraint firstItem="yQ1-ST-giS" firstAttribute="height" secondItem="sil-en-2AM" secondAttribute="height" id="hCk-Np-aUA"/>
+                            <constraint firstItem="XEi-xG-Ywb" firstAttribute="leading" secondItem="yQ1-ST-giS" secondAttribute="trailing" constant="8" id="aek-c5-btz"/>
                             <constraint firstItem="sil-en-2AM" firstAttribute="height" secondItem="qMb-mr-QlY" secondAttribute="height" multiplier="0.1" id="hGi-as-C34"/>
-                            <constraint firstItem="sil-en-2AM" firstAttribute="width" secondItem="yT3-Hc-oLX" secondAttribute="width" multiplier="0.75" id="i4r-cy-CMv"/>
+                            <constraint firstItem="sil-en-2AM" firstAttribute="width" secondItem="yT3-Hc-oLX" secondAttribute="width" multiplier="0.35" id="i4r-cy-CMv"/>
                             <constraint firstItem="yT3-Hc-oLX" firstAttribute="width" secondItem="qMb-mr-QlY" secondAttribute="width" multiplier="0.6" id="jm3-RR-k5U"/>
+                            <constraint firstItem="yQ1-ST-giS" firstAttribute="height" secondItem="XEi-xG-Ywb" secondAttribute="height" id="lNS-sO-4fQ"/>
                             <constraint firstItem="sil-en-2AM" firstAttribute="trailing" secondItem="yT3-Hc-oLX" secondAttribute="trailing" id="lPE-TN-h1j"/>
                             <constraint firstItem="yT3-Hc-oLX" firstAttribute="top" secondItem="pya-D0-fGX" secondAttribute="top" constant="24" id="ljN-wX-Yay"/>
-                            <constraint firstItem="yQ1-ST-giS" firstAttribute="leading" secondItem="yT3-Hc-oLX" secondAttribute="leading" id="lpx-m1-kCB"/>
-                            <constraint firstItem="yQ1-ST-giS" firstAttribute="centerY" secondItem="sil-en-2AM" secondAttribute="centerY" id="uzD-Wd-yfe"/>
+                            <constraint firstItem="yQ1-ST-giS" firstAttribute="leading" secondItem="yT3-Hc-oLX" secondAttribute="leading" id="ukN-Sh-4OP"/>
+                            <constraint firstItem="yQ1-ST-giS" firstAttribute="centerY" secondItem="XEi-xG-Ywb" secondAttribute="centerY" id="uoM-gb-e4A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pya-D0-fGX"/>
                     </view>
                     <connections>
+                        <outlet property="lastNameTextField" destination="XEi-xG-Ywb" id="QfS-eK-erc"/>
                         <outlet property="nameTextField" destination="sil-en-2AM" id="qL9-xi-tJn"/>
                         <outlet property="saveBtn" destination="yQ1-ST-giS" id="EyL-QR-QpJ"/>
                         <outlet property="teacherImageView" destination="yT3-Hc-oLX" id="DDJ-0m-5qx"/>

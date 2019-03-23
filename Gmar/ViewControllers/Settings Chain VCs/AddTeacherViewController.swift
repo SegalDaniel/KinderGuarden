@@ -15,6 +15,7 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
     var permissions:Permissions?
     @IBOutlet weak var teacherImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
     
     override func viewDidLoad() {
