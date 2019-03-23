@@ -20,7 +20,8 @@ extension LiquidFood {
     @NSManaged public var amount: String?
     @NSManaged public var childID: String?
     @NSManaged public var consumedAmount: String?
-    @NSManaged public var mealType: String?
     @NSManaged public var eventDate: NSDate?
+    @NSManaged public var mealType: String?
+    @NSManaged public var child: Child?
 
 }

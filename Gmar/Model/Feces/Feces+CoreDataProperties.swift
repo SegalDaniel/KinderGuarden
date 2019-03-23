@@ -20,7 +20,8 @@ extension Feces {
     @NSManaged public var amount: String?
     @NSManaged public var childID: String?
     @NSManaged public var color: String?
-    @NSManaged public var texture: String?
     @NSManaged public var eventDate: NSDate?
+    @NSManaged public var texture: String?
+    @NSManaged public var child: Child?
 
 }

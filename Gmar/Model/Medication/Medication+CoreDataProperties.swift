@@ -18,8 +18,9 @@ extension Medication {
     }
 
     @NSManaged public var childID: String?
-    @NSManaged public var type: String?
     @NSManaged public var details: String?
     @NSManaged public var eventDate: NSDate?
+    @NSManaged public var type: String?
+    @NSManaged public var child: Child?
 
 }

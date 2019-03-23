@@ -18,7 +18,7 @@ public class Urine: NSManagedObject {
         self.setValue(color, forKey: "color")
         self.setValue(fragrance, forKey: "fragrance")
         self.setValue(amount, forKey: "amount")
-         self.setValue(eventDate, forKey: "eventDate")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     

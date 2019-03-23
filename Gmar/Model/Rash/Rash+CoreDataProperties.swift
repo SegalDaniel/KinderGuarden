@@ -17,9 +17,10 @@ extension Rash {
         return NSFetchRequest<Rash>(entityName: "Rash")
     }
 
-    @NSManaged public var childID: String?
-    @NSManaged public var type: String?
     @NSManaged public var area: String?
+    @NSManaged public var childID: String?
     @NSManaged public var eventDate: NSDate?
+    @NSManaged public var type: String?
+    @NSManaged public var child: Child?
 
 }

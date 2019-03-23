@@ -18,7 +18,8 @@ extension Fever {
     }
 
     @NSManaged public var childID: String?
-    @NSManaged public var tempreture: String?
     @NSManaged public var eventDate: NSDate?
+    @NSManaged public var tempreture: String?
+    @NSManaged public var child: Child?
 
 }

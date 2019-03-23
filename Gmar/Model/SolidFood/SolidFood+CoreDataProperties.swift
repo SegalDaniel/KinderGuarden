@@ -20,8 +20,9 @@ extension SolidFood {
     @NSManaged public var amount: String?
     @NSManaged public var childID: String?
     @NSManaged public var consumedAmount: String?
+    @NSManaged public var eventDate: NSDate?
     @NSManaged public var mealInMenu: String?
     @NSManaged public var mealType: String?
-    @NSManaged public var eventDate: NSDate?
+    @NSManaged public var child: Child?
 
 }

@@ -18,7 +18,8 @@ extension Vomitus {
     }
 
     @NSManaged public var childID: String?
-    @NSManaged public var proper: Bool
     @NSManaged public var eventDate: NSDate?
+    @NSManaged public var proper: Bool
+    @NSManaged public var child: Child?
 
 }

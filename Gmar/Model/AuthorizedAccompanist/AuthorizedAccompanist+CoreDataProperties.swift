@@ -18,9 +18,10 @@ extension AuthorizedAccompanist {
     }
 
     @NSManaged public var childID: String?
+    @NSManaged public var eventDate: NSDate?
     @NSManaged public var name: String?
     @NSManaged public var phone: String?
     @NSManaged public var relation: String?
-    @NSManaged public var eventDate: NSDate?
+    @NSManaged public var child: Child?
 
 }

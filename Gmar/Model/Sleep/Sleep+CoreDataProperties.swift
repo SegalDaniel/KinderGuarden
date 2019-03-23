@@ -19,8 +19,9 @@ extension Sleep {
 
     @NSManaged public var allocatedTime: String?
     @NSManaged public var childID: String?
+    @NSManaged public var eventDate: NSDate?
     @NSManaged public var sleepingScope: String?
     @NSManaged public var type: String?
-    @NSManaged public var eventDate: NSDate?
+    @NSManaged public var child: Child?
 
 }

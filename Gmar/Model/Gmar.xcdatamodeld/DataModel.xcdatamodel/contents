@@ -6,6 +6,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="authorized" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Child" representedClassName="Child" syncable="YES">
         <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -15,12 +16,25 @@
         <attribute name="isAttend" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPremature" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <relationship name="authorized" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="child" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
+        <relationship name="disease" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Disease" inverseName="child" inverseEntity="Disease" syncable="YES"/>
+        <relationship name="feces" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feces" inverseName="child" inverseEntity="Feces" syncable="YES"/>
+        <relationship name="fever" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fever" inverseName="child" inverseEntity="Fever" syncable="YES"/>
+        <relationship name="liquidFoods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LiquidFood" inverseName="child" inverseEntity="LiquidFood" syncable="YES"/>
+        <relationship name="medicine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="child" inverseEntity="Medication" syncable="YES"/>
+        <relationship name="rashes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rash" inverseName="child" inverseEntity="Rash" syncable="YES"/>
+        <relationship name="sleeps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sleep" inverseName="child" inverseEntity="Sleep" syncable="YES"/>
+        <relationship name="solidFoods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SolidFood" inverseName="child" inverseEntity="SolidFood" syncable="YES"/>
+        <relationship name="urine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Urine" inverseName="child" inverseEntity="Urine" syncable="YES"/>
+        <relationship name="vomitus" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vomitus" inverseName="child" inverseEntity="Vomitus" syncable="YES"/>
+        <relationship name="water" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Water" inverseName="child" inverseEntity="Water" syncable="YES"/>
     </entity>
     <entity name="Disease" representedClassName="Disease" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="disease" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Feces" representedClassName="Feces" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,11 +42,13 @@
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="texture" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="feces" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Fever" representedClassName="Fever" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="tempreture" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="fever" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="LiquidFood" representedClassName="LiquidFood" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
@@ -40,18 +56,21 @@
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="liquidFoods" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Medication" representedClassName="Medication" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="medicine" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Rash" representedClassName="Rash" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="rashes" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Sleep" representedClassName="Sleep" syncable="YES">
         <attribute name="allocatedTime" optional="YES" attributeType="String" syncable="YES"/>
@@ -59,6 +78,7 @@
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="sleepingScope" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="sleeps" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="SolidFood" representedClassName="SolidFood" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
@@ -67,6 +87,7 @@
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mealInMenu" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="solidFoods" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Staff" representedClassName="Staff" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -80,32 +101,35 @@
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="fragrance" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="urine" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Vomitus" representedClassName="Vomitus" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="proper" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="vomitus" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Water" representedClassName="Water" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="water" inverseEntity="Child" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AuthorizedAccompanist" positionX="-45" positionY="63" width="128" height="120"/>
-        <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="150"/>
-        <element name="Disease" positionX="-27" positionY="81" width="128" height="105"/>
-        <element name="Feces" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Fever" positionX="84.93359375" positionY="-94.453125" width="128" height="90"/>
-        <element name="LiquidFood" positionX="71.97265625" positionY="16.27734375" width="128" height="120"/>
-        <element name="Medication" positionX="-36" positionY="72" width="128" height="105"/>
-        <element name="Rash" positionX="-54" positionY="54" width="128" height="105"/>
-        <element name="Sleep" positionX="232.6875" positionY="-89.85546875" width="128" height="120"/>
-        <element name="SolidFood" positionX="235.66015625" positionY="27.87890625" width="128" height="135"/>
+        <element name="AuthorizedAccompanist" positionX="-45" positionY="63" width="128" height="135"/>
+        <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="330"/>
+        <element name="Disease" positionX="-27" positionY="81" width="128" height="120"/>
+        <element name="Feces" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Fever" positionX="84.93359375" positionY="-94.453125" width="128" height="105"/>
+        <element name="LiquidFood" positionX="71.97265625" positionY="16.27734375" width="128" height="135"/>
+        <element name="Medication" positionX="-36" positionY="72" width="128" height="120"/>
+        <element name="Rash" positionX="-54" positionY="54" width="128" height="120"/>
+        <element name="Sleep" positionX="232.6875" positionY="-89.85546875" width="128" height="135"/>
+        <element name="SolidFood" positionX="235.66015625" positionY="27.87890625" width="128" height="150"/>
         <element name="Staff" positionX="-256.046875" positionY="-84.34375" width="128" height="105"/>
-        <element name="Urine" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Vomitus" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Water" positionX="74.64453125" positionY="140.08203125" width="128" height="105"/>
+        <element name="Urine" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Vomitus" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Water" positionX="74.64453125" positionY="140.08203125" width="128" height="120"/>
     </elements>
 </model>
