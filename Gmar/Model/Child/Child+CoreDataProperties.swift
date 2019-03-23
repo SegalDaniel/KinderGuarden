@@ -19,176 +19,23 @@ extension Child {
 
     @NSManaged public var birthDate: NSDate?
     @NSManaged public var childID: String?
+    @NSManaged public var firstName: String?
     @NSManaged public var gender: String?
+    @NSManaged public var isAttend: Bool
     @NSManaged public var isPremature: Bool
     @NSManaged public var lastName: String?
-    @NSManaged public var firstName: String?
-    @NSManaged public var isAttend: Bool
-    @NSManaged public var sleeps: NSSet?
-    @NSManaged public var fever: NSSet?
-    @NSManaged public var rashes: NSSet?
-    @NSManaged public var liquidFoods: NSSet?
-    @NSManaged public var solidFoods: NSSet?
-    @NSManaged public var water: NSSet?
-    @NSManaged public var feces: NSSet?
-    @NSManaged public var urine: NSSet?
-    @NSManaged public var vomitus: NSSet?
     @NSManaged public var authorized: NSSet?
-    @NSManaged public var medicine: NSSet?
-    @NSManaged public var disease: NSSet?
-
-}
-
-// MARK: Generated accessors for sleeps
-extension Child {
-
-    @objc(addSleepsObject:)
-    @NSManaged public func addToSleeps(_ value: Sleep)
-
-    @objc(removeSleepsObject:)
-    @NSManaged public func removeFromSleeps(_ value: Sleep)
-
-    @objc(addSleeps:)
-    @NSManaged public func addToSleeps(_ values: NSSet)
-
-    @objc(removeSleeps:)
-    @NSManaged public func removeFromSleeps(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for fever
-extension Child {
-
-    @objc(addFeverObject:)
-    @NSManaged public func addToFever(_ value: Fever)
-
-    @objc(removeFeverObject:)
-    @NSManaged public func removeFromFever(_ value: Fever)
-
-    @objc(addFever:)
-    @NSManaged public func addToFever(_ values: NSSet)
-
-    @objc(removeFever:)
-    @NSManaged public func removeFromFever(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for rashes
-extension Child {
-
-    @objc(addRashesObject:)
-    @NSManaged public func addToRashes(_ value: Rash)
-
-    @objc(removeRashesObject:)
-    @NSManaged public func removeFromRashes(_ value: Rash)
-
-    @objc(addRashes:)
-    @NSManaged public func addToRashes(_ values: NSSet)
-
-    @objc(removeRashes:)
-    @NSManaged public func removeFromRashes(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for liquidFoods
-extension Child {
-
-    @objc(addLiquidFoodsObject:)
-    @NSManaged public func addToLiquidFoods(_ value: LiquidFood)
-
-    @objc(removeLiquidFoodsObject:)
-    @NSManaged public func removeFromLiquidFoods(_ value: LiquidFood)
-
-    @objc(addLiquidFoods:)
-    @NSManaged public func addToLiquidFoods(_ values: NSSet)
-
-    @objc(removeLiquidFoods:)
-    @NSManaged public func removeFromLiquidFoods(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for solidFoods
-extension Child {
-
-    @objc(addSolidFoodsObject:)
-    @NSManaged public func addToSolidFoods(_ value: SolidFood)
-
-    @objc(removeSolidFoodsObject:)
-    @NSManaged public func removeFromSolidFoods(_ value: SolidFood)
-
-    @objc(addSolidFoods:)
-    @NSManaged public func addToSolidFoods(_ values: NSSet)
-
-    @objc(removeSolidFoods:)
-    @NSManaged public func removeFromSolidFoods(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for water
-extension Child {
-
-    @objc(addWaterObject:)
-    @NSManaged public func addToWater(_ value: Water)
-
-    @objc(removeWaterObject:)
-    @NSManaged public func removeFromWater(_ value: Water)
-
-    @objc(addWater:)
-    @NSManaged public func addToWater(_ values: NSSet)
-
-    @objc(removeWater:)
-    @NSManaged public func removeFromWater(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for feces
-extension Child {
-
-    @objc(addFecesObject:)
-    @NSManaged public func addToFeces(_ value: Feces)
-
-    @objc(removeFecesObject:)
-    @NSManaged public func removeFromFeces(_ value: Feces)
-
-    @objc(addFeces:)
-    @NSManaged public func addToFeces(_ values: NSSet)
-
-    @objc(removeFeces:)
-    @NSManaged public func removeFromFeces(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for urine
-extension Child {
-
-    @objc(addUrineObject:)
-    @NSManaged public func addToUrine(_ value: Urine)
-
-    @objc(removeUrineObject:)
-    @NSManaged public func removeFromUrine(_ value: Urine)
-
-    @objc(addUrine:)
-    @NSManaged public func addToUrine(_ values: NSSet)
-
-    @objc(removeUrine:)
-    @NSManaged public func removeFromUrine(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for vomitus
-extension Child {
-
-    @objc(addVomitusObject:)
-    @NSManaged public func addToVomitus(_ value: Vomitus)
-
-    @objc(removeVomitusObject:)
-    @NSManaged public func removeFromVomitus(_ value: Vomitus)
-
-    @objc(addVomitus:)
-    @NSManaged public func addToVomitus(_ values: NSSet)
-
-    @objc(removeVomitus:)
-    @NSManaged public func removeFromVomitus(_ values: NSSet)
+    @NSManaged public var diseaseEvents: NSSet?
+    @NSManaged public var fecesEvents: NSSet?
+    @NSManaged public var feverEvents: NSSet?
+    @NSManaged public var liquidFoodEvents: NSSet?
+    @NSManaged public var medicationEvents: NSSet?
+    @NSManaged public var rashEvents: NSSet?
+    @NSManaged public var sleepEvents: NSSet?
+    @NSManaged public var solidFoodEvents: NSSet?
+    @NSManaged public var urineEvents: NSSet?
+    @NSManaged public var vomitusEvents: NSSet?
+    @NSManaged public var waterEvents: NSSet?
 
 }
 
@@ -209,36 +56,189 @@ extension Child {
 
 }
 
-// MARK: Generated accessors for medicine
+// MARK: Generated accessors for diseaseEvents
 extension Child {
 
-    @objc(addMedicineObject:)
-    @NSManaged public func addToMedicine(_ value: Medication)
+    @objc(addDiseaseEventsObject:)
+    @NSManaged public func addToDiseaseEvents(_ value: Disease)
 
-    @objc(removeMedicineObject:)
-    @NSManaged public func removeFromMedicine(_ value: Medication)
+    @objc(removeDiseaseEventsObject:)
+    @NSManaged public func removeFromDiseaseEvents(_ value: Disease)
 
-    @objc(addMedicine:)
-    @NSManaged public func addToMedicine(_ values: NSSet)
+    @objc(addDiseaseEvents:)
+    @NSManaged public func addToDiseaseEvents(_ values: NSSet)
 
-    @objc(removeMedicine:)
-    @NSManaged public func removeFromMedicine(_ values: NSSet)
+    @objc(removeDiseaseEvents:)
+    @NSManaged public func removeFromDiseaseEvents(_ values: NSSet)
 
 }
 
-// MARK: Generated accessors for disease
+// MARK: Generated accessors for fecesEvents
 extension Child {
 
-    @objc(addDiseaseObject:)
-    @NSManaged public func addToDisease(_ value: Disease)
+    @objc(addFecesEventsObject:)
+    @NSManaged public func addToFecesEvents(_ value: Feces)
 
-    @objc(removeDiseaseObject:)
-    @NSManaged public func removeFromDisease(_ value: Disease)
+    @objc(removeFecesEventsObject:)
+    @NSManaged public func removeFromFecesEvents(_ value: Feces)
 
-    @objc(addDisease:)
-    @NSManaged public func addToDisease(_ values: NSSet)
+    @objc(addFecesEvents:)
+    @NSManaged public func addToFecesEvents(_ values: NSSet)
 
-    @objc(removeDisease:)
-    @NSManaged public func removeFromDisease(_ values: NSSet)
+    @objc(removeFecesEvents:)
+    @NSManaged public func removeFromFecesEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for feverEvents
+extension Child {
+
+    @objc(addFeverEventsObject:)
+    @NSManaged public func addToFeverEvents(_ value: Fever)
+
+    @objc(removeFeverEventsObject:)
+    @NSManaged public func removeFromFeverEvents(_ value: Fever)
+
+    @objc(addFeverEvents:)
+    @NSManaged public func addToFeverEvents(_ values: NSSet)
+
+    @objc(removeFeverEvents:)
+    @NSManaged public func removeFromFeverEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for liquidFoodEvents
+extension Child {
+
+    @objc(addLiquidFoodEventsObject:)
+    @NSManaged public func addToLiquidFoodEvents(_ value: LiquidFood)
+
+    @objc(removeLiquidFoodEventsObject:)
+    @NSManaged public func removeFromLiquidFoodEvents(_ value: LiquidFood)
+
+    @objc(addLiquidFoodEvents:)
+    @NSManaged public func addToLiquidFoodEvents(_ values: NSSet)
+
+    @objc(removeLiquidFoodEvents:)
+    @NSManaged public func removeFromLiquidFoodEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for medicationEvents
+extension Child {
+
+    @objc(addMedicationEventsObject:)
+    @NSManaged public func addToMedicationEvents(_ value: Medication)
+
+    @objc(removeMedicationEventsObject:)
+    @NSManaged public func removeFromMedicationEvents(_ value: Medication)
+
+    @objc(addMedicationEvents:)
+    @NSManaged public func addToMedicationEvents(_ values: NSSet)
+
+    @objc(removeMedicationEvents:)
+    @NSManaged public func removeFromMedicationEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for rashEvents
+extension Child {
+
+    @objc(addRashEventsObject:)
+    @NSManaged public func addToRashEvents(_ value: Rash)
+
+    @objc(removeRashEventsObject:)
+    @NSManaged public func removeFromRashEvents(_ value: Rash)
+
+    @objc(addRashEvents:)
+    @NSManaged public func addToRashEvents(_ values: NSSet)
+
+    @objc(removeRashEvents:)
+    @NSManaged public func removeFromRashEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for sleepEvents
+extension Child {
+
+    @objc(addSleepEventsObject:)
+    @NSManaged public func addToSleepEvents(_ value: Sleep)
+
+    @objc(removeSleepEventsObject:)
+    @NSManaged public func removeFromSleepEvents(_ value: Sleep)
+
+    @objc(addSleepEvents:)
+    @NSManaged public func addToSleepEvents(_ values: NSSet)
+
+    @objc(removeSleepEvents:)
+    @NSManaged public func removeFromSleepEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for solidFoodEvents
+extension Child {
+
+    @objc(addSolidFoodEventsObject:)
+    @NSManaged public func addToSolidFoodEvents(_ value: SolidFood)
+
+    @objc(removeSolidFoodEventsObject:)
+    @NSManaged public func removeFromSolidFoodEvents(_ value: SolidFood)
+
+    @objc(addSolidFoodEvents:)
+    @NSManaged public func addToSolidFoodEvents(_ values: NSSet)
+
+    @objc(removeSolidFoodEvents:)
+    @NSManaged public func removeFromSolidFoodEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for urineEvents
+extension Child {
+
+    @objc(addUrineEventsObject:)
+    @NSManaged public func addToUrineEvents(_ value: Urine)
+
+    @objc(removeUrineEventsObject:)
+    @NSManaged public func removeFromUrineEvents(_ value: Urine)
+
+    @objc(addUrineEvents:)
+    @NSManaged public func addToUrineEvents(_ values: NSSet)
+
+    @objc(removeUrineEvents:)
+    @NSManaged public func removeFromUrineEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for vomitusEvents
+extension Child {
+
+    @objc(addVomitusEventsObject:)
+    @NSManaged public func addToVomitusEvents(_ value: Vomitus)
+
+    @objc(removeVomitusEventsObject:)
+    @NSManaged public func removeFromVomitusEvents(_ value: Vomitus)
+
+    @objc(addVomitusEvents:)
+    @NSManaged public func addToVomitusEvents(_ values: NSSet)
+
+    @objc(removeVomitusEvents:)
+    @NSManaged public func removeFromVomitusEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for waterEvents
+extension Child {
+
+    @objc(addWaterEventsObject:)
+    @NSManaged public func addToWaterEvents(_ value: Water)
+
+    @objc(removeWaterEventsObject:)
+    @NSManaged public func removeFromWaterEvents(_ value: Water)
+
+    @objc(addWaterEvents:)
+    @NSManaged public func addToWaterEvents(_ values: NSSet)
+
+    @objc(removeWaterEvents:)
+    @NSManaged public func removeFromWaterEvents(_ values: NSSet)
 
 }
