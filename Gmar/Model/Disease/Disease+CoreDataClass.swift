@@ -12,11 +12,12 @@ import CoreData
 
 @objc(Disease)
 public class Disease: NSManagedObject {
-    convenience init(childID:String, type:String, details:String){
+    convenience init(childID:String, type:String, details:String, eventDate:String){
         self.init(entity: Model.instance.diseaseEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(type, forKey: "type")
         self.setValue(details, forKey: "details")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
@@ -25,6 +26,7 @@ public class Disease: NSManagedObject {
         self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["type"], forKey: "type")
         self.setValue(json["detalis"], forKey: "details")
+        self.setValue(json["eventDate"], forKey: "eventDate")
         
     }
     
@@ -34,8 +36,9 @@ public class Disease: NSManagedObject {
         json["childID"] = childID
         json["type"] = type
         json["details"] = details
+        json["eventDate"] = eventDate
         return json
         
     }
-
+    
 }
