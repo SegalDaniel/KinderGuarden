@@ -70,7 +70,9 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
             self.permissions?.checkPermissionGallery()
         }))
-        alert.popoverPresentationController?.sourceView = self.view
+        if let popoverView = alert.popoverPresentationController{
+            popoverView.sourceView = childIDTextField
+        }
         self.present(alert, animated: true, completion: nil)
     }
     
