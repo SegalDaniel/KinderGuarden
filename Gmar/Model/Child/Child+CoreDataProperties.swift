@@ -2,7 +2,7 @@
 //  Child+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 21/03/2019.
+//  Created by Daniel Segal on 23/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -20,9 +20,9 @@ extension Child {
     @NSManaged public var birthDate: NSDate?
     @NSManaged public var childID: String?
     @NSManaged public var gender: String?
-    @NSManaged public var image: String?
-    @NSManaged public var lastName: String?
-    @NSManaged public var name: String?
     @NSManaged public var isPremature: Bool
+    @NSManaged public var lastName: String?
+    @NSManaged public var firstName: String?
+    @NSManaged public var isAttend: Bool
 
 }

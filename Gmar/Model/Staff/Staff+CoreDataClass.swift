@@ -12,19 +12,19 @@ import CoreData
 
 @objc(Staff)
 public class Staff: NSManagedObject {
-    convenience init(staffID:String, name:String, birthdate:String, image:String){
+    convenience init(staffID:String, firstName:String, lastName:String, image:String){
         self.init(entity: Model.instance.staffEntity, insertInto: Model.instance.managedContext)
         self.setValue(staffID, forKey: "staffID")
-        self.setValue(name, forKey: "name")
-        self.setValue(birthdate, forKey: "birthdate")
+        self.setValue(firstName, forKey: "firstName")
+        self.setValue(lastName, forKey: "lastName")
         self.setValue(image, forKey: "image")
     }
     
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.staffEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["staffID"], forKey: "staffID")
-        self.setValue(json["name"], forKey: "name")
-        self.setValue(json["birthdate"], forKey: "birthdate")
+        self.setValue(json["firstName"], forKey: "firstName")
+        self.setValue(json["lastName"], forKey: "lastName")
         self.setValue(json["image"], forKey: "image")
         
     }
@@ -33,8 +33,8 @@ public class Staff: NSManagedObject {
     func toJson() -> [String:Any] {
         var json = [String:Any]()
         json["staffID"] = staffID
-        json["name"] = name
-        json["birthdate"] = birthdate
+        json["firstName"] = firstName
+        json["lastName"] = lastName
         json["image"] = image
         return json
     }

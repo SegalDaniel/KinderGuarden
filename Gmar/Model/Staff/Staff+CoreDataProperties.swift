@@ -17,9 +17,9 @@ extension Staff {
         return NSFetchRequest<Staff>(entityName: "Staff")
     }
 
-    @NSManaged public var birthdate: NSDate?
     @NSManaged public var image: String?
-    @NSManaged public var name: String?
+    @NSManaged public var firstName: String?
     @NSManaged public var staffID: String?
+    @NSManaged public var lastName: String?
 
 }

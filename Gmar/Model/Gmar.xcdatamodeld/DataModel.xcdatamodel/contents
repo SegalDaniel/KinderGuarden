@@ -10,11 +10,11 @@
     <entity name="Child" representedClassName="Child" syncable="YES">
         <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="childID" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" syncable="YES"/>
         <attribute name="gender" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAttend" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPremature" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Disease" representedClassName="Disease" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
@@ -69,9 +69,9 @@
         <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Staff" representedClassName="Staff" syncable="YES">
-        <attribute name="birthdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="staffID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Urine" representedClassName="Urine" syncable="YES">
@@ -93,19 +93,19 @@
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
+        <element name="AuthorizedAccompanist" positionX="-45" positionY="63" width="128" height="120"/>
         <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="150"/>
+        <element name="Disease" positionX="-27" positionY="81" width="128" height="105"/>
         <element name="Feces" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Fever" positionX="84.93359375" positionY="-94.453125" width="128" height="90"/>
         <element name="LiquidFood" positionX="71.97265625" positionY="16.27734375" width="128" height="120"/>
+        <element name="Medication" positionX="-36" positionY="72" width="128" height="105"/>
+        <element name="Rash" positionX="-54" positionY="54" width="128" height="105"/>
         <element name="Sleep" positionX="232.6875" positionY="-89.85546875" width="128" height="120"/>
         <element name="SolidFood" positionX="235.66015625" positionY="27.87890625" width="128" height="135"/>
         <element name="Staff" positionX="-256.046875" positionY="-84.34375" width="128" height="105"/>
         <element name="Urine" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Vomitus" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Water" positionX="74.64453125" positionY="140.08203125" width="128" height="105"/>
-        <element name="Rash" positionX="-54" positionY="54" width="128" height="105"/>
-        <element name="AuthorizedAccompanist" positionX="-45" positionY="63" width="128" height="120"/>
-        <element name="Medication" positionX="-36" positionY="72" width="128" height="105"/>
-        <element name="Disease" positionX="-27" positionY="81" width="128" height="105"/>
     </elements>
 </model>
