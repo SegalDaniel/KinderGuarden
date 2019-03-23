@@ -23,5 +23,6 @@ extension AuthorizedAccompanist {
     @NSManaged public var phone: String?
     @NSManaged public var relation: String?
     @NSManaged public var child: Child?
+    @NSManaged public var attendance: Attendance?
 
 }

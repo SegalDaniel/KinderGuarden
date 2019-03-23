@@ -62,14 +62,22 @@
 		A81F4F392246C4D0003FED63 /* Urine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F372246C4D0003FED63 /* Urine+CoreDataProperties.swift */; };
 		A81F4F3C2246C4F1003FED63 /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F3A2246C4F1003FED63 /* Vomitus+CoreDataClass.swift */; };
 		A81F4F3D2246C4F1003FED63 /* Vomitus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F3B2246C4F1003FED63 /* Vomitus+CoreDataProperties.swift */; };
-		A81F4F402246C50F003FED63 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F3E2246C50F003FED63 /* AuthorizedAccompanist+CoreDataClass.swift */; };
-		A81F4F412246C50F003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F3F2246C50F003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
 		A81F4F442246C52B003FED63 /* Medication+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F422246C52B003FED63 /* Medication+CoreDataClass.swift */; };
 		A81F4F452246C52B003FED63 /* Medication+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F432246C52B003FED63 /* Medication+CoreDataProperties.swift */; };
 		A81F4F482246C549003FED63 /* Disease+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F462246C549003FED63 /* Disease+CoreDataClass.swift */; };
 		A81F4F492246C549003FED63 /* Disease+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F472246C549003FED63 /* Disease+CoreDataProperties.swift */; };
 		A81F4F502246C862003FED63 /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F4E2246C862003FED63 /* Child+CoreDataClass.swift */; };
 		A81F4F512246C862003FED63 /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F4F2246C862003FED63 /* Child+CoreDataProperties.swift */; };
+		A81F4F552246D1A6003FED63 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F532246D1A6003FED63 /* AuthorizedAccompanist+CoreDataClass.swift */; };
+		A81F4F562246D1A6003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F542246D1A6003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
+		A81F4F592246D1C7003FED63 /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F572246D1C7003FED63 /* Attendance+CoreDataClass.swift */; };
+		A81F4F5A2246D1C7003FED63 /* Attendance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F582246D1C7003FED63 /* Attendance+CoreDataProperties.swift */; };
+		A81F4F5E2246D61E003FED63 /* Cough+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F5C2246D61E003FED63 /* Cough+CoreDataClass.swift */; };
+		A81F4F5F2246D61E003FED63 /* Cough+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F5D2246D61E003FED63 /* Cough+CoreDataProperties.swift */; };
+		A81F4F632246D7B5003FED63 /* Parasites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F612246D7B5003FED63 /* Parasites+CoreDataClass.swift */; };
+		A81F4F642246D7B5003FED63 /* Parasites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F622246D7B5003FED63 /* Parasites+CoreDataProperties.swift */; };
+		A81F4F682246D9D3003FED63 /* Secretion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F662246D9D3003FED63 /* Secretion+CoreDataClass.swift */; };
+		A81F4F692246D9D3003FED63 /* Secretion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F672246D9D3003FED63 /* Secretion+CoreDataProperties.swift */; };
 		A8C41482223EF8280072B0A8 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F1221864E20043D580 /* Water.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
@@ -137,14 +145,22 @@
 		A81F4F372246C4D0003FED63 /* Urine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Urine+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A81F4F3A2246C4F1003FED63 /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A81F4F3B2246C4F1003FED63 /* Vomitus+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A81F4F3E2246C50F003FED63 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A81F4F3F2246C50F003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A81F4F422246C52B003FED63 /* Medication+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medication+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A81F4F432246C52B003FED63 /* Medication+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medication+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A81F4F462246C549003FED63 /* Disease+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disease+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A81F4F472246C549003FED63 /* Disease+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disease+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A81F4F4E2246C862003FED63 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A81F4F4F2246C862003FED63 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F532246D1A6003FED63 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F542246D1A6003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F572246D1C7003FED63 /* Attendance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F582246D1C7003FED63 /* Attendance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F5C2246D61E003FED63 /* Cough+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cough+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F5D2246D61E003FED63 /* Cough+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cough+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F612246D7B5003FED63 /* Parasites+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parasites+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F622246D7B5003FED63 /* Parasites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parasites+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F662246D9D3003FED63 /* Secretion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secretion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F672246D9D3003FED63 /* Secretion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secretion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
@@ -314,8 +330,8 @@
 		A81F4EBF22429121003FED63 /* AuthorizedAccompanist */ = {
 			isa = PBXGroup;
 			children = (
-				A81F4F3E2246C50F003FED63 /* AuthorizedAccompanist+CoreDataClass.swift */,
-				A81F4F3F2246C50F003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift */,
+				A81F4F532246D1A6003FED63 /* AuthorizedAccompanist+CoreDataClass.swift */,
+				A81F4F542246D1A6003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift */,
 			);
 			path = AuthorizedAccompanist;
 			sourceTree = "<group>";
@@ -336,6 +352,42 @@
 				A81F4F472246C549003FED63 /* Disease+CoreDataProperties.swift */,
 			);
 			path = Disease;
+			sourceTree = "<group>";
+		};
+		A81F4F522246CF7D003FED63 /* Attendance */ = {
+			isa = PBXGroup;
+			children = (
+				A81F4F572246D1C7003FED63 /* Attendance+CoreDataClass.swift */,
+				A81F4F582246D1C7003FED63 /* Attendance+CoreDataProperties.swift */,
+			);
+			path = Attendance;
+			sourceTree = "<group>";
+		};
+		A81F4F5B2246D583003FED63 /* Cough */ = {
+			isa = PBXGroup;
+			children = (
+				A81F4F5C2246D61E003FED63 /* Cough+CoreDataClass.swift */,
+				A81F4F5D2246D61E003FED63 /* Cough+CoreDataProperties.swift */,
+			);
+			path = Cough;
+			sourceTree = "<group>";
+		};
+		A81F4F602246D69D003FED63 /* Parasites */ = {
+			isa = PBXGroup;
+			children = (
+				A81F4F612246D7B5003FED63 /* Parasites+CoreDataClass.swift */,
+				A81F4F622246D7B5003FED63 /* Parasites+CoreDataProperties.swift */,
+			);
+			path = Parasites;
+			sourceTree = "<group>";
+		};
+		A81F4F652246D8FA003FED63 /* Secretion */ = {
+			isa = PBXGroup;
+			children = (
+				A81F4F662246D9D3003FED63 /* Secretion+CoreDataClass.swift */,
+				A81F4F672246D9D3003FED63 /* Secretion+CoreDataProperties.swift */,
+			);
+			path = Secretion;
 			sourceTree = "<group>";
 		};
 		A8C41468223EE28C0072B0A8 /* Sleep */ = {
@@ -431,6 +483,7 @@
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A81F4F522246CF7D003FED63 /* Attendance */,
 				A8C41472223EEED20072B0A8 /* Staff */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
 				A8C41468223EE28C0072B0A8 /* Sleep */,
@@ -445,6 +498,9 @@
 				A81F4EBF22429121003FED63 /* AuthorizedAccompanist */,
 				A81F4EC82242924F003FED63 /* Medication */,
 				A81F4ECD224292B3003FED63 /* Disease */,
+				A81F4F5B2246D583003FED63 /* Cough */,
+				A81F4F602246D69D003FED63 /* Parasites */,
+				A81F4F652246D8FA003FED63 /* Secretion */,
 				A8F7F380221888CB00F21DAD /* Utility.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
@@ -622,6 +678,8 @@
 				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
 				A81F4F502246C862003FED63 /* Child+CoreDataClass.swift in Sources */,
 				A81F4F512246C862003FED63 /* Child+CoreDataProperties.swift in Sources */,
+				A81F4F5E2246D61E003FED63 /* Cough+CoreDataClass.swift in Sources */,
+				A81F4F592246D1C7003FED63 /* Attendance+CoreDataClass.swift in Sources */,
 				A81F4F2D2246C46D003FED63 /* SolidFood+CoreDataProperties.swift in Sources */,
 				A81F4F0C2246B9D0003FED63 /* Staff+CoreDataClass.swift in Sources */,
 				A81F4F342246C4B2003FED63 /* Feces+CoreDataClass.swift in Sources */,
@@ -632,15 +690,17 @@
 				A81F4F302246C48C003FED63 /* Water+CoreDataClass.swift in Sources */,
 				A8C41482223EF8280072B0A8 /* Water.swift in Sources */,
 				A81F4F0D2246B9D0003FED63 /* Staff+CoreDataProperties.swift in Sources */,
+				A81F4F5A2246D1C7003FED63 /* Attendance+CoreDataProperties.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				A81F4F3D2246C4F1003FED63 /* Vomitus+CoreDataProperties.swift in Sources */,
 				A81F4F382246C4D0003FED63 /* Urine+CoreDataClass.swift in Sources */,
-				A81F4F412246C50F003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
+				A81F4F562246D1A6003FED63 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
 				A81F4F482246C549003FED63 /* Disease+CoreDataClass.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
 				A81F4F3C2246C4F1003FED63 /* Vomitus+CoreDataClass.swift in Sources */,
 				A81F4F252246C411003FED63 /* Rash+CoreDataProperties.swift in Sources */,
+				A81F4F682246D9D3003FED63 /* Secretion+CoreDataClass.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
 				A81F4F1C2246C3A1003FED63 /* Sleep+CoreDataClass.swift in Sources */,
 				A81F4F242246C411003FED63 /* Rash+CoreDataClass.swift in Sources */,
@@ -649,6 +709,7 @@
 				189B35362242384B00D33A6C /* SettingsViewController.swift in Sources */,
 				A81F4F212246C3EB003FED63 /* Fever+CoreDataProperties.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
+				A81F4F632246D7B5003FED63 /* Parasites+CoreDataClass.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
@@ -659,13 +720,16 @@
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A81F4F2C2246C46D003FED63 /* SolidFood+CoreDataClass.swift in Sources */,
 				A81F4F1D2246C3A1003FED63 /* Sleep+CoreDataProperties.swift in Sources */,
+				A81F4F642246D7B5003FED63 /* Parasites+CoreDataProperties.swift in Sources */,
 				189B354122428E4B00D33A6C /* AlergicTableViewCell.swift in Sources */,
 				189B353E224275C000D33A6C /* AddChildSecondViewController.swift in Sources */,
+				A81F4F5F2246D61E003FED63 /* Cough+CoreDataProperties.swift in Sources */,
 				A81F4F392246C4D0003FED63 /* Urine+CoreDataProperties.swift in Sources */,
-				A81F4F402246C50F003FED63 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */,
+				A81F4F552246D1A6003FED63 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */,
 				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
 				189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
+				A81F4F692246D9D3003FED63 /* Secretion+CoreDataProperties.swift in Sources */,
 				180CF322223EC00400A9DEF2 /* Child.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,

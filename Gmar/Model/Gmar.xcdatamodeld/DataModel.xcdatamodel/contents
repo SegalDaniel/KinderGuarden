@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Attendance" representedClassName="Attendance" syncable="YES">
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isLate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="authorized" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="attendance" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="attendanceEvents" inverseEntity="Child" syncable="YES"/>
+    </entity>
     <entity name="AuthorizedAccompanist" representedClassName="AuthorizedAccompanist" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attendance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attendance" inverseName="authorized" inverseEntity="Attendance" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="authorized" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Child" representedClassName="Child" syncable="YES">
@@ -16,18 +24,27 @@
         <attribute name="isAttend" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPremature" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <relationship name="attendanceEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="child" inverseEntity="Attendance" syncable="YES"/>
         <relationship name="authorized" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="child" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
+        <relationship name="coughEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cough" inverseName="child" inverseEntity="Cough" syncable="YES"/>
         <relationship name="diseaseEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Disease" inverseName="child" inverseEntity="Disease" syncable="YES"/>
         <relationship name="fecesEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feces" inverseName="child" inverseEntity="Feces" syncable="YES"/>
         <relationship name="feverEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fever" inverseName="child" inverseEntity="Fever" syncable="YES"/>
         <relationship name="liquidFoodEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LiquidFood" inverseName="child" inverseEntity="LiquidFood" syncable="YES"/>
         <relationship name="medicationEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="child" inverseEntity="Medication" syncable="YES"/>
+        <relationship name="parasitesEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Parasites" inverseName="child" inverseEntity="Parasites" syncable="YES"/>
         <relationship name="rashEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rash" inverseName="child" inverseEntity="Rash" syncable="YES"/>
+        <relationship name="secretion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Secretion" inverseName="child" inverseEntity="Secretion" syncable="YES"/>
         <relationship name="sleepEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sleep" inverseName="child" inverseEntity="Sleep" syncable="YES"/>
         <relationship name="solidFoodEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SolidFood" inverseName="child" inverseEntity="SolidFood" syncable="YES"/>
         <relationship name="urineEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Urine" inverseName="child" inverseEntity="Urine" syncable="YES"/>
         <relationship name="vomitusEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vomitus" inverseName="child" inverseEntity="Vomitus" syncable="YES"/>
         <relationship name="waterEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Water" inverseName="child" inverseEntity="Water" syncable="YES"/>
+    </entity>
+    <entity name="Cough" representedClassName="Cough" syncable="YES">
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="coughEvents" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Disease" representedClassName="Disease" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
@@ -65,12 +82,24 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="medicationEvents" inverseEntity="Child" syncable="YES"/>
     </entity>
+    <entity name="Parasites" representedClassName="Parasites" syncable="YES">
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="parasitesEvents" inverseEntity="Child" syncable="YES"/>
+    </entity>
     <entity name="Rash" representedClassName="Rash" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="rashEvents" inverseEntity="Child" syncable="YES"/>
+    </entity>
+    <entity name="Secretion" representedClassName="Secretion" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="secretion" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Sleep" representedClassName="Sleep" syncable="YES">
         <attribute name="allocatedTime" optional="YES" attributeType="String" syncable="YES"/>
@@ -117,8 +146,8 @@
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="waterEvents" inverseEntity="Child" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AuthorizedAccompanist" positionX="-45" positionY="63" width="128" height="135"/>
-        <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="330"/>
+        <element name="AuthorizedAccompanist" positionX="-45" positionY="63" width="128" height="150"/>
+        <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="390"/>
         <element name="Disease" positionX="-27" positionY="81" width="128" height="120"/>
         <element name="Feces" positionX="160" positionY="192" width="128" height="135"/>
         <element name="Fever" positionX="84.93359375" positionY="-94.453125" width="128" height="105"/>
@@ -131,5 +160,9 @@
         <element name="Urine" positionX="160" positionY="192" width="128" height="135"/>
         <element name="Vomitus" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Water" positionX="74.64453125" positionY="140.08203125" width="128" height="120"/>
+        <element name="Attendance" positionX="-18" positionY="90" width="128" height="120"/>
+        <element name="Cough" positionX="-9" positionY="99" width="128" height="90"/>
+        <element name="Parasites" positionX="0" positionY="108" width="128" height="90"/>
+        <element name="Secretion" positionX="-54" positionY="54" width="128" height="120"/>
     </elements>
 </model>

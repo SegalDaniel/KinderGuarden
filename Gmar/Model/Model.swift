@@ -32,6 +32,10 @@ class Model{
     let authorizedAccompanistEntity:NSEntityDescription
     let medicationEntity:NSEntityDescription
     let diseaseEntity:NSEntityDescription
+    let attendanceEntity:NSEntityDescription
+    let coughEntity:NSEntityDescription
+    let parasitesEntity:NSEntityDescription
+    let secretionEntity:NSEntityDescription
     
     //MARK: - init
     private init(){
@@ -51,6 +55,10 @@ class Model{
         authorizedAccompanistEntity = NSEntityDescription.entity(forEntityName: "AuthorizedAccompanist", in: managedContext)!
         medicationEntity = NSEntityDescription.entity(forEntityName: "Medication", in: managedContext)!
         diseaseEntity = NSEntityDescription.entity(forEntityName: "Disease", in: managedContext)!
+        attendanceEntity = NSEntityDescription.entity(forEntityName: "Attendance", in: managedContext)!
+        coughEntity = NSEntityDescription.entity(forEntityName: "Cough", in: managedContext)!
+        parasitesEntity = NSEntityDescription.entity(forEntityName: "Parasites", in: managedContext)!
+        secretionEntity = NSEntityDescription.entity(forEntityName: "Secretion", in: managedContext)!
     }
     
     //MARK: - Child Model Methods
