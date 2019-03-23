@@ -12,10 +12,11 @@ import CoreData
 
 @objc(Vomitus)
 public class Vomitus: NSManagedObject {
-    convenience  init(childID:String, proper:Bool){
+    convenience  init(childID:String, proper:Bool, eventDate:String){
         self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(proper, forKey: "proper")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
@@ -23,6 +24,7 @@ public class Vomitus: NSManagedObject {
         self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["proper"], forKey: "proper")
+        self.setValue(json["eventDate"], forKey: "eventDate")
         
     }
     
@@ -31,6 +33,7 @@ public class Vomitus: NSManagedObject {
         var json = [String:Any]()
         json["childID"] = childID
         json["proper"] = proper
+        json["eventDate"] = eventDate
         return json
         
     }

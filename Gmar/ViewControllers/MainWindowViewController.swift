@@ -48,18 +48,18 @@ class MainWindowViewController: UIViewController {
     
     
     //********************Testing Method********************//
-    func testDBs(){
-        let child = Child(childID: "203037346", name: "zach", gender: "male", lastName: "bachar", age: "27", birthDate: "9.3.92", image: nil)
-        Model.instance.addChild(child: child) { (err) in
-            if err == nil{
-                Model.instance.getAllChildsFromCore { (childs) in
-                    Model.instance.getChild(childID: childs.first!.childID!, callback: { (err, childFB) in
-                        print(childFB!.name!)
-                    })
-                }
-            }
-        }
-    }
+//    func testDBs(){
+//        let child = Child(childID: "203037346", name: "zach", gender: "male", lastName: "bachar", age: "27", birthDate: "9.3.92", image: nil)
+//        Model.instance.addChild(child: child) { (err) in
+//            if err == nil{
+//                Model.instance.getAllChildsFromCore { (childs) in
+//                    Model.instance.getChild(childID: childs.first!.childID!, callback: { (err, childFB) in
+//                        print(childFB!.name!)
+//                    })
+//                }
+//            }
+//        }
+//    }
 }
 
 

@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 //add entities for child picker medicine deases and no need for age
+//add time created in every entity and add more events needed anf finally configure the relashonship
 
 /*
 class Child{

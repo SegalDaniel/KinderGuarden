@@ -12,11 +12,12 @@ import CoreData
 
 @objc(Water)
 public class Water: NSManagedObject {
-    convenience  init(_childID:String, _amount:String, _consumedAmount:String){
+    convenience  init(childID:String, amount:String, consumedAmount:String, eventDate:String){
         self.init(entity: Model.instance.waterEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(amount, forKey: "amount")
         self.setValue(consumedAmount, forKey: "consumedAmount")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
@@ -25,6 +26,7 @@ public class Water: NSManagedObject {
         self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["amount"], forKey: "amount")
         self.setValue(json["consumedAmount"], forKey: "consumedAmount")
+        self.setValue(json["eventDate"], forKey: "eventDate")
         
     }
     
@@ -34,6 +36,7 @@ public class Water: NSManagedObject {
         json["childID"] = childID
         json["amount"] = amount
         json["consumedAmount"] = consumedAmount
+        json["eventDate"] = eventDate
         return json
         
     }

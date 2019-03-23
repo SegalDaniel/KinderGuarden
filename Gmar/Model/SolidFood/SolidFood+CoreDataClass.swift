@@ -12,13 +12,14 @@ import CoreData
 
 @objc(SolidFood)
 public class SolidFood: NSManagedObject {
-    convenience init(childID:String, mealType:String, mealInMenu:String, amount:String, consumedAmount:String){
+    convenience init(childID:String, mealType:String, mealInMenu:String, amount:String, consumedAmount:String, eventDate:String){
         self.init(entity: Model.instance.solidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(mealType, forKey: "mealType")
         self.setValue(mealInMenu, forKey: "mealInMenu")
         self.setValue(amount, forKey: "amount")
         self.setValue(consumedAmount, forKey: "consumedAmount")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
@@ -29,6 +30,7 @@ public class SolidFood: NSManagedObject {
         self.setValue(json["mealInMenu"], forKey: "mealInMenu")
         self.setValue(json["amount"], forKey: "amount")
         self.setValue(json["consumedAmount"], forKey: "consumedAmount")
+        self.setValue(json["eventDate"], forKey: "eventDate")
     }
     
     
@@ -39,6 +41,7 @@ public class SolidFood: NSManagedObject {
         json["mealInMenu"] = mealInMenu
         json["amount"] = amount
         json["consumedAmount"] = consumedAmount
+        json["eventDate"] = eventDate
         return json
         
     }

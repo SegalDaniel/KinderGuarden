@@ -2,7 +2,7 @@
 //  Sleep+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 17/03/2019.
+//  Created by Daniel Segal on 23/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,9 +17,10 @@ extension Sleep {
         return NSFetchRequest<Sleep>(entityName: "Sleep")
     }
 
-    @NSManaged public var childID: String?
-    @NSManaged public var type: String?
     @NSManaged public var allocatedTime: String?
+    @NSManaged public var childID: String?
     @NSManaged public var sleepingScope: String?
+    @NSManaged public var type: String?
+    @NSManaged public var eventDate: NSDate?
 
 }

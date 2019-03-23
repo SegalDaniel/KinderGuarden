@@ -2,7 +2,7 @@
 //  Urine+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 20/03/2019.
+//  Created by Daniel Segal on 23/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,9 +17,10 @@ extension Urine {
         return NSFetchRequest<Urine>(entityName: "Urine")
     }
 
+    @NSManaged public var amount: String?
     @NSManaged public var childID: String?
     @NSManaged public var color: String?
     @NSManaged public var fragrance: String?
-    @NSManaged public var amount: String?
+    @NSManaged public var eventDate: NSDate?
 
 }

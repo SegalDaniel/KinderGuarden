@@ -12,12 +12,13 @@ import CoreData
 
 @objc(Sleep)
 public class Sleep: NSManagedObject {
-    convenience init(childID:String, type:String, allocatedTime:String, sleepingScope:String){
+    convenience init(childID:String, type:String, allocatedTime:String, sleepingScope:String, eventDate:String){
         self.init(entity: Model.instance.sleepEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(type, forKey: "type")
         self.setValue(allocatedTime, forKey: "allocatedTime")
         self.setValue(sleepingScope, forKey: "sleepingScope")
+        self.setValue(sleepingScope, forKey: "eventDate")
         
     }
     
@@ -27,6 +28,7 @@ public class Sleep: NSManagedObject {
         self.setValue(json["type"], forKey: "type")
         self.setValue(json["allocatedTime"], forKey: "allocatedTime")
         self.setValue(json["sleepingScope"], forKey: "sleepingScope")
+        self.setValue(json["eventDate"], forKey: "eventDate")
         
     }
     
@@ -37,6 +39,7 @@ public class Sleep: NSManagedObject {
         json["type"] = type
         json["allocatedTime"] = allocatedTime
         json["sleepingScope"] = sleepingScope
+        json["eventDate"] = eventDate
         return json
         
     }

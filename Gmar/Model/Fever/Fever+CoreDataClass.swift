@@ -12,10 +12,11 @@ import CoreData
 
 @objc(Fever)
 public class Fever: NSManagedObject {
-    convenience init(_childID:String, _tempreture:String){
+    convenience init(_childID:String, _tempreture:String, eventDate:String){
         self.init(entity: Model.instance.feverEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(tempreture, forKey: "tempreture")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
@@ -23,6 +24,7 @@ public class Fever: NSManagedObject {
         self.init(entity: Model.instance.feverEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["tempreture"], forKey: "tempreture")
+        self.setValue(json["eventDate"], forKey: "eventDate")
         
     }
     
@@ -31,6 +33,7 @@ public class Fever: NSManagedObject {
         var json = [String:Any]()
         json["childID"] = childID
         json["tempreture"] = tempreture
+        json["eventDate"] = eventDate
         return json
         
     }

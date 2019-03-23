@@ -12,12 +12,13 @@ import CoreData
 
 @objc(Feces)
 public class Feces: NSManagedObject {
-    convenience init(childID:String, color:String, texture:String, amount:String){
+    convenience init(childID:String, color:String, texture:String, amount:String, eventDate:String){
         self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(color, forKey: "color")
         self.setValue(texture, forKey: "texture")
         self.setValue(amount, forKey: "amount")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
@@ -27,6 +28,7 @@ public class Feces: NSManagedObject {
         self.setValue(json["color"], forKey: "color")
         self.setValue(json["texture"], forKey: "texture")
         self.setValue(json["amount"], forKey: "amount")
+        self.setValue(json["eventDate"], forKey: "eventDate")
         
         
     }
@@ -38,6 +40,7 @@ public class Feces: NSManagedObject {
         json["color"] = color
         json["texture"] = texture
         json["amount"] = amount
+        json["eventDate"] = eventDate
         return json
         
     }
