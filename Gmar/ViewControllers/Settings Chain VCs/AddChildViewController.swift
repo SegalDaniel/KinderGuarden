@@ -20,6 +20,8 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var addChildPickerBtn: UIButton!
     @IBOutlet weak var pickingTimePicker: UIDatePicker!
     @IBOutlet weak var childPickerTableView: UITableView!
+    @IBOutlet weak var childIDTextField: UITextField!
+    
     var pickers:Int = 0{
         didSet{
             if childPickerTableView != nil{

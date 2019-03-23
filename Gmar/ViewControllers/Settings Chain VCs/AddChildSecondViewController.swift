@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddChildSecondViewController: UIViewController {
+class AddChildSecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //MARK: - Variables
     @IBOutlet weak var alergicTableView: UITableView!
@@ -20,17 +20,93 @@ class AddChildSecondViewController: UIViewController {
     @IBOutlet weak var addDiseasesBtn: UIButton!
     @IBOutlet weak var addMedicationBtn: UIButton!
     
+    var foods:Int = 0{
+        didSet{
+            foodsTableView.reloadData()
+        }
+    }
+    var alergies:Int = 0{
+        didSet{
+            alergicTableView.reloadData()
+        }
+    }
+    var medications:Int = 0{
+        didSet{
+            medicationsTableView.reloadData()
+        }
+    }
+    var diseases:Int = 0{
+        didSet{
+            diseasesTableView.reloadData()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initTables(tables: [foodsTableView, medicationsTableView, diseasesTableView, alergicTableView])
+        
+    }
+    
+    func initTables(tables:[UITableView]){
+        tables.forEach { (table) in
+            table.delegate = self
+            table.dataSource = self
+        }
     }
     
     @IBAction func addCellBtnClicked(_ sender: UIButton) {
+        switch sender {
+        case addFoodBtn:
+            foods += 1
+            break
+        case addAlergicBtn:
+            alergies += 1
+            break
+        case addDiseasesBtn:
+            diseases += 1
+            break
+        case addMedicationBtn:
+            medications += 1
+            break
+        default:
+            break
+        }
     }
     
+    //MARK: - TableView delegate and datasource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch tableView {
+        case foodsTableView:
+            return foods
+        case alergicTableView:
+            return alergies
+        case medicationsTableView:
+            return medications
+        case diseasesTableView:
+            return diseases
+        default:
+            return 0
+        }
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        switch tableView {
+        case foodsTableView:
+            cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodsTableViewCell
+            break
+        case alergicTableView:
+            cell = tableView.dequeueReusableCell(withIdentifier: "alergicCell", for: indexPath) as! AlergicTableViewCell
+            break
+        case diseasesTableView, medicationsTableView:
+            cell = tableView.dequeueReusableCell(withIdentifier: "diasesMedCell", for: indexPath) as! DiasesMedTableViewCell
+            break
+        default:
+            break
+        }
+        return cell
+    }
 
     /*
     // MARK: - Navigation
