@@ -30,6 +30,8 @@
         <relationship name="diseaseEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Disease" inverseName="child" inverseEntity="Disease" syncable="YES"/>
         <relationship name="fecesEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feces" inverseName="child" inverseEntity="Feces" syncable="YES"/>
         <relationship name="feverEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fever" inverseName="child" inverseEntity="Fever" syncable="YES"/>
+        <relationship name="generalBehaviorEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GeneralBehavior" inverseName="child" inverseEntity="GeneralBehavior" syncable="YES"/>
+        <relationship name="generalNotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GeneralNote" inverseName="child" inverseEntity="GeneralNote" syncable="YES"/>
         <relationship name="liquidFoodEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LiquidFood" inverseName="child" inverseEntity="LiquidFood" syncable="YES"/>
         <relationship name="medicationEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="child" inverseEntity="Medication" syncable="YES"/>
         <relationship name="parasitesEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Parasites" inverseName="child" inverseEntity="Parasites" syncable="YES"/>
@@ -66,6 +68,17 @@
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="tempreture" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="feverEvents" inverseEntity="Child" syncable="YES"/>
+    </entity>
+    <entity name="GeneralBehavior" representedClassName="GeneralBehavior" syncable="YES">
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="generalBehaviorEvents" inverseEntity="Child" syncable="YES"/>
+    </entity>
+    <entity name="GeneralNote" representedClassName="GeneralNote" syncable="YES">
+        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="generalNotes" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="LiquidFood" representedClassName="LiquidFood" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
@@ -147,7 +160,7 @@
     </entity>
     <elements>
         <element name="AuthorizedAccompanist" positionX="-45" positionY="63" width="128" height="150"/>
-        <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="390"/>
+        <element name="Child" positionX="-260.6484375" positionY="77.2265625" width="128" height="420"/>
         <element name="Disease" positionX="-27" positionY="81" width="128" height="120"/>
         <element name="Feces" positionX="160" positionY="192" width="128" height="135"/>
         <element name="Fever" positionX="84.93359375" positionY="-94.453125" width="128" height="105"/>
@@ -164,5 +177,7 @@
         <element name="Cough" positionX="-9" positionY="99" width="128" height="90"/>
         <element name="Parasites" positionX="0" positionY="108" width="128" height="90"/>
         <element name="Secretion" positionX="-54" positionY="54" width="128" height="120"/>
+        <element name="GeneralBehavior" positionX="-45" positionY="63" width="128" height="90"/>
+        <element name="GeneralNote" positionX="-36" positionY="72" width="128" height="105"/>
     </elements>
 </model>

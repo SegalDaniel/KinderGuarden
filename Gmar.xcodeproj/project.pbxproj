@@ -76,8 +76,12 @@
 		A81F4F642246D7B5003FED63 /* Parasites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F622246D7B5003FED63 /* Parasites+CoreDataProperties.swift */; };
 		A81F4F682246D9D3003FED63 /* Secretion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F662246D9D3003FED63 /* Secretion+CoreDataClass.swift */; };
 		A81F4F692246D9D3003FED63 /* Secretion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F672246D9D3003FED63 /* Secretion+CoreDataProperties.swift */; };
-		A81F4F702246DB3F003FED63 /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F6E2246DB3F003FED63 /* Child+CoreDataClass.swift */; };
-		A81F4F712246DB3F003FED63 /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F6F2246DB3F003FED63 /* Child+CoreDataProperties.swift */; };
+		A81F4F752246DDE9003FED63 /* GeneralBehavior+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F732246DDE9003FED63 /* GeneralBehavior+CoreDataClass.swift */; };
+		A81F4F762246DDE9003FED63 /* GeneralBehavior+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F742246DDE9003FED63 /* GeneralBehavior+CoreDataProperties.swift */; };
+		A81F4F7A2246DF33003FED63 /* GeneralNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F782246DF33003FED63 /* GeneralNote+CoreDataClass.swift */; };
+		A81F4F7B2246DF33003FED63 /* GeneralNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F792246DF33003FED63 /* GeneralNote+CoreDataProperties.swift */; };
+		A81F4F7E2246E160003FED63 /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F7C2246E160003FED63 /* Child+CoreDataClass.swift */; };
+		A81F4F7F2246E160003FED63 /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4F7D2246E160003FED63 /* Child+CoreDataProperties.swift */; };
 		A8C41482223EF8280072B0A8 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F1221864E20043D580 /* Water.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
@@ -159,8 +163,12 @@
 		A81F4F622246D7B5003FED63 /* Parasites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parasites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A81F4F662246D9D3003FED63 /* Secretion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secretion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A81F4F672246D9D3003FED63 /* Secretion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secretion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A81F4F6E2246DB3F003FED63 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A81F4F6F2246DB3F003FED63 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F732246DDE9003FED63 /* GeneralBehavior+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F742246DDE9003FED63 /* GeneralBehavior+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F782246DF33003FED63 /* GeneralNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F792246DF33003FED63 /* GeneralNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A81F4F7C2246E160003FED63 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A81F4F7D2246E160003FED63 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
@@ -191,8 +199,8 @@
 		180CF31D223D5B8300A9DEF2 /* Child */ = {
 			isa = PBXGroup;
 			children = (
-				A81F4F6E2246DB3F003FED63 /* Child+CoreDataClass.swift */,
-				A81F4F6F2246DB3F003FED63 /* Child+CoreDataProperties.swift */,
+				A81F4F7C2246E160003FED63 /* Child+CoreDataClass.swift */,
+				A81F4F7D2246E160003FED63 /* Child+CoreDataProperties.swift */,
 				A8DA55E7221859CD0043D580 /* Child.swift */,
 			);
 			path = Child;
@@ -390,6 +398,24 @@
 			path = Secretion;
 			sourceTree = "<group>";
 		};
+		A81F4F722246DCD8003FED63 /* GeneralBehavior */ = {
+			isa = PBXGroup;
+			children = (
+				A81F4F732246DDE9003FED63 /* GeneralBehavior+CoreDataClass.swift */,
+				A81F4F742246DDE9003FED63 /* GeneralBehavior+CoreDataProperties.swift */,
+			);
+			path = GeneralBehavior;
+			sourceTree = "<group>";
+		};
+		A81F4F772246DE3A003FED63 /* GeneralNote */ = {
+			isa = PBXGroup;
+			children = (
+				A81F4F782246DF33003FED63 /* GeneralNote+CoreDataClass.swift */,
+				A81F4F792246DF33003FED63 /* GeneralNote+CoreDataProperties.swift */,
+			);
+			path = GeneralNote;
+			sourceTree = "<group>";
+		};
 		A8C41468223EE28C0072B0A8 /* Sleep */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +527,8 @@
 				A81F4F5B2246D583003FED63 /* Cough */,
 				A81F4F602246D69D003FED63 /* Parasites */,
 				A81F4F652246D8FA003FED63 /* Secretion */,
+				A81F4F722246DCD8003FED63 /* GeneralBehavior */,
+				A81F4F772246DE3A003FED63 /* GeneralNote */,
 				A8F7F380221888CB00F21DAD /* Utility.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
@@ -672,11 +700,12 @@
 				A81F4F352246C4B2003FED63 /* Feces+CoreDataProperties.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
+				A81F4F762246DDE9003FED63 /* GeneralBehavior+CoreDataProperties.swift in Sources */,
 				A81F4F292246C442003FED63 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
+				A81F4F7E2246E160003FED63 /* Child+CoreDataClass.swift in Sources */,
 				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
-				A81F4F702246DB3F003FED63 /* Child+CoreDataClass.swift in Sources */,
 				A81F4F5E2246D61E003FED63 /* Cough+CoreDataClass.swift in Sources */,
 				A81F4F592246D1C7003FED63 /* Attendance+CoreDataClass.swift in Sources */,
 				A81F4F2D2246C46D003FED63 /* SolidFood+CoreDataProperties.swift in Sources */,
@@ -688,7 +717,6 @@
 				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
 				A81F4F302246C48C003FED63 /* Water+CoreDataClass.swift in Sources */,
 				A8C41482223EF8280072B0A8 /* Water.swift in Sources */,
-				A81F4F712246DB3F003FED63 /* Child+CoreDataProperties.swift in Sources */,
 				A81F4F0D2246B9D0003FED63 /* Staff+CoreDataProperties.swift in Sources */,
 				A81F4F5A2246D1C7003FED63 /* Attendance+CoreDataProperties.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
@@ -700,6 +728,7 @@
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
 				A81F4F3C2246C4F1003FED63 /* Vomitus+CoreDataClass.swift in Sources */,
 				A81F4F252246C411003FED63 /* Rash+CoreDataProperties.swift in Sources */,
+				A81F4F7B2246DF33003FED63 /* GeneralNote+CoreDataProperties.swift in Sources */,
 				A81F4F682246D9D3003FED63 /* Secretion+CoreDataClass.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
 				A81F4F1C2246C3A1003FED63 /* Sleep+CoreDataClass.swift in Sources */,
@@ -719,6 +748,7 @@
 				18BFE193224651250084D766 /* Permissions.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A81F4F2C2246C46D003FED63 /* SolidFood+CoreDataClass.swift in Sources */,
+				A81F4F7F2246E160003FED63 /* Child+CoreDataProperties.swift in Sources */,
 				A81F4F1D2246C3A1003FED63 /* Sleep+CoreDataProperties.swift in Sources */,
 				A81F4F642246D7B5003FED63 /* Parasites+CoreDataProperties.swift in Sources */,
 				189B354122428E4B00D33A6C /* AlergicTableViewCell.swift in Sources */,
@@ -729,7 +759,9 @@
 				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
 				189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
+				A81F4F7A2246DF33003FED63 /* GeneralNote+CoreDataClass.swift in Sources */,
 				A81F4F692246D9D3003FED63 /* Secretion+CoreDataProperties.swift in Sources */,
+				A81F4F752246DDE9003FED63 /* GeneralBehavior+CoreDataClass.swift in Sources */,
 				180CF322223EC00400A9DEF2 /* Child.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,

@@ -36,6 +36,8 @@ class Model{
     let coughEntity:NSEntityDescription
     let parasitesEntity:NSEntityDescription
     let secretionEntity:NSEntityDescription
+    let generalBehaviorEntity:NSEntityDescription
+    let generalNoteEntity:NSEntityDescription
     
     //MARK: - init
     private init(){
@@ -59,6 +61,8 @@ class Model{
         coughEntity = NSEntityDescription.entity(forEntityName: "Cough", in: managedContext)!
         parasitesEntity = NSEntityDescription.entity(forEntityName: "Parasites", in: managedContext)!
         secretionEntity = NSEntityDescription.entity(forEntityName: "Secretion", in: managedContext)!
+        generalBehaviorEntity = NSEntityDescription.entity(forEntityName: "GeneralBehavior", in: managedContext)!
+        generalNoteEntity = NSEntityDescription.entity(forEntityName: "GeneralNote", in: managedContext)!
     }
     
     //MARK: - Child Model Methods

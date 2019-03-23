@@ -40,6 +40,8 @@ extension Child {
     @NSManaged public var coughEvents: NSSet?
     @NSManaged public var parasitesEvents: NSSet?
     @NSManaged public var secretionEvents: NSSet?
+    @NSManaged public var generalBehaviorEvents: NSSet?
+    @NSManaged public var generalNotes: NSSet?
 
 }
 
@@ -312,5 +314,39 @@ extension Child {
 
     @objc(removeSecretionEvents:)
     @NSManaged public func removeFromSecretionEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for generalBehaviorEvents
+extension Child {
+
+    @objc(addGeneralBehaviorEventsObject:)
+    @NSManaged public func addToGeneralBehaviorEvents(_ value: GeneralBehavior)
+
+    @objc(removeGeneralBehaviorEventsObject:)
+    @NSManaged public func removeFromGeneralBehaviorEvents(_ value: GeneralBehavior)
+
+    @objc(addGeneralBehaviorEvents:)
+    @NSManaged public func addToGeneralBehaviorEvents(_ values: NSSet)
+
+    @objc(removeGeneralBehaviorEvents:)
+    @NSManaged public func removeFromGeneralBehaviorEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for generalNotes
+extension Child {
+
+    @objc(addGeneralNotesObject:)
+    @NSManaged public func addToGeneralNotes(_ value: GeneralNote)
+
+    @objc(removeGeneralNotesObject:)
+    @NSManaged public func removeFromGeneralNotes(_ value: GeneralNote)
+
+    @objc(addGeneralNotes:)
+    @NSManaged public func addToGeneralNotes(_ values: NSSet)
+
+    @objc(removeGeneralNotes:)
+    @NSManaged public func removeFromGeneralNotes(_ values: NSSet)
 
 }
