@@ -109,6 +109,9 @@
                                         <state key="normal" title="הוסף איש צוות" image="teacher">
                                             <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Nft-Hz-Lnj" kind="show" identifier="addStaff" id="fzz-jn-ygN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C28-0r-y6m">
                                         <rect key="frame" x="680.5" y="0.0" width="320.5" height="417"/>
@@ -142,6 +145,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7GX-cq-WCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18" y="986"/>
+        </scene>
+        <!--Add Teacher View Controller-->
+        <scene sceneID="2Be-ex-7h2">
+            <objects>
+                <viewController id="Nft-Hz-Lnj" customClass="AddTeacherViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qMb-mr-QlY">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teacher" translatesAutoresizingMaskIntoConstraints="NO" id="yT3-Hc-oLX">
+                                <rect key="frame" x="222.5" y="94" width="667" height="584"/>
+                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sil-en-2AM">
+                                <rect key="frame" x="389" y="686" width="500.5" height="83"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ1-ST-giS">
+                                <rect key="frame" x="222.5" y="686" width="158.5" height="83"/>
+                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="הוספה">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBtnClicked:" destination="Nft-Hz-Lnj" eventType="touchUpInside" id="Sbg-Re-CgM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yQ1-ST-giS" firstAttribute="trailing" secondItem="sil-en-2AM" secondAttribute="leading" constant="-8" id="2nV-Ee-1xR"/>
+                            <constraint firstItem="sil-en-2AM" firstAttribute="top" secondItem="yT3-Hc-oLX" secondAttribute="bottom" constant="8" id="NuF-8d-okJ"/>
+                            <constraint firstItem="yT3-Hc-oLX" firstAttribute="centerX" secondItem="pya-D0-fGX" secondAttribute="centerX" id="To4-Ub-l7I"/>
+                            <constraint firstItem="yT3-Hc-oLX" firstAttribute="height" secondItem="qMb-mr-QlY" secondAttribute="height" multiplier="0.7" id="VME-3t-Ucu"/>
+                            <constraint firstItem="yQ1-ST-giS" firstAttribute="height" secondItem="sil-en-2AM" secondAttribute="height" id="hCk-Np-aUA"/>
+                            <constraint firstItem="sil-en-2AM" firstAttribute="height" secondItem="qMb-mr-QlY" secondAttribute="height" multiplier="0.1" id="hGi-as-C34"/>
+                            <constraint firstItem="sil-en-2AM" firstAttribute="width" secondItem="yT3-Hc-oLX" secondAttribute="width" multiplier="0.75" id="i4r-cy-CMv"/>
+                            <constraint firstItem="yT3-Hc-oLX" firstAttribute="width" secondItem="qMb-mr-QlY" secondAttribute="width" multiplier="0.6" id="jm3-RR-k5U"/>
+                            <constraint firstItem="sil-en-2AM" firstAttribute="trailing" secondItem="yT3-Hc-oLX" secondAttribute="trailing" id="lPE-TN-h1j"/>
+                            <constraint firstItem="yT3-Hc-oLX" firstAttribute="top" secondItem="pya-D0-fGX" secondAttribute="top" constant="24" id="ljN-wX-Yay"/>
+                            <constraint firstItem="yQ1-ST-giS" firstAttribute="leading" secondItem="yT3-Hc-oLX" secondAttribute="leading" id="lpx-m1-kCB"/>
+                            <constraint firstItem="yQ1-ST-giS" firstAttribute="centerY" secondItem="sil-en-2AM" secondAttribute="centerY" id="uzD-Wd-yfe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pya-D0-fGX"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="sil-en-2AM" id="qL9-xi-tJn"/>
+                        <outlet property="saveBtn" destination="yQ1-ST-giS" id="EyL-QR-QpJ"/>
+                        <outlet property="teacherImageView" destination="yT3-Hc-oLX" id="DDJ-0m-5qx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfW-0B-AbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39.388489208633096" y="1792.8057553956835"/>
         </scene>
         <!--רישום ילד לגן-->
         <scene sceneID="BLq-Zu-bK3">
@@ -315,7 +375,7 @@
                                                                     <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                                 </textField>
                                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-oj-EHl">
-                                                                    <rect key="frame" x="360" y="0.0" width="352" height="75"/>
+                                                                    <rect key="frame" x="360" y="0.0" width="352" height="74.5"/>
                                                                 </pickerView>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם מאסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cji-b7-5mq">
                                                                     <rect key="frame" x="720" y="0.0" width="352" height="74.5"/>
@@ -508,7 +568,7 @@
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
-                                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-lk-zCg">
+                                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-lk-zCg">
                                                                             <rect key="frame" x="240.5" y="0.0" width="232.5" height="68.5"/>
                                                                             <segments>
                                                                                 <segment title="מוצקים"/>

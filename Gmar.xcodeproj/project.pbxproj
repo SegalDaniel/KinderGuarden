@@ -41,6 +41,7 @@
 		189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354222428E6900D33A6C /* FoodsTableViewCell.swift */; };
 		189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */; };
 		18BFE193224651250084D766 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE192224651250084D766 /* Permissions.swift */; };
+		18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE1942246739E0084D766 /* AddTeacherViewController.swift */; };
 		A81F4ED422438F57003FED63 /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4ED222438F57003FED63 /* Child+CoreDataClass.swift */; };
 		A81F4ED522438F57003FED63 /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4ED322438F57003FED63 /* Child+CoreDataProperties.swift */; };
 		A81F4ED82246471E003FED63 /* Sleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F4ED62246471E003FED63 /* Sleep+CoreDataClass.swift */; };
@@ -114,6 +115,7 @@
 		189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasesMedTableViewCell.swift; sourceTree = "<group>"; };
 		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		18BFE192224651250084D766 /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		18BFE1942246739E0084D766 /* AddTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherViewController.swift; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A81F4ED222438F57003FED63 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A81F4ED322438F57003FED63 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				189B35352242384B00D33A6C /* SettingsViewController.swift */,
 				189B353922423DE600D33A6C /* AddChildViewController.swift */,
 				189B353D224275C000D33A6C /* AddChildSecondViewController.swift */,
+				18BFE1942246739E0084D766 /* AddTeacherViewController.swift */,
 			);
 			path = "Settings Chain VCs";
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
 				A81F4EF422464A8E003FED63 /* Urine+CoreDataClass.swift in Sources */,
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
+				18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */,
 				A81F4EF822464AE6003FED63 /* Vomitus+CoreDataClass.swift in Sources */,
 				A81F4EE5224648AF003FED63 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				18BFE193224651250084D766 /* Permissions.swift in Sources */,
