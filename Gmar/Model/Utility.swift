@@ -11,11 +11,13 @@ import Foundation
 
 class Utility{
     
+    //MARK: - App colors
     static let btnBackColor:UIColor = UIColor(red: 0/255, green: 114/255, blue: 188/255, alpha: 1)
     static let btnGray:UIColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
     static let btnSalmon:UIColor = UIColor(red: 255/255, green: 126/255, blue: 121/255, alpha: 1)
     static let btnTextWhite:UIColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
     
+    //MARK: - Design views methods
     static func addBorder(view:UIView, color:UIColor, width:CGFloat = 2){
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = width
@@ -66,6 +68,7 @@ class Utility{
         return label
     }
     
+    //MARK: - generic stack methods
     static func newStack(arrangedSubviews: [UIView]) -> UIStackView{
         let stack = UIStackView(arrangedSubviews: arrangedSubviews)
         stack.alignment = .fill
@@ -85,8 +88,16 @@ class Utility{
         stack.tag = 0
         return stack
     }
+    
+    //MARK: - TapRecognizer metod
+    static func viewTapRecognizer(target:Any, toBeTapped:UIView, action:Selector){
+        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
+        toBeTapped.isUserInteractionEnabled = true
+        toBeTapped.addGestureRecognizer(tapGestureRecognizer)
+    }
 }
 
+//MARK: - Double extension
 extension Double {
     func rounded(toPlaces places:Int) -> Double {
         let divisor = pow(10.0, Double(places))

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class AddChildViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AddChildViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: - Variables
+    let imagePicker = UIImagePickerController()
+    var permissions:Permissions?
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
@@ -34,6 +36,9 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         childPickerTableView.delegate = self
         childPickerTableView.dataSource = self
+        imagePicker.delegate = self
+        permissions = Permissions(target: self, imagePicker: imagePicker)
+        Utility.viewTapRecognizer(target: self, toBeTapped: babyImageView, action: #selector(selectImageTapped))
     }
     
 
@@ -52,6 +57,32 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "childPicker", for: indexPath) as! ChildPickerTableViewCell
         
         return cell
+    }
+    
+    
+    //MARK: - UIIMagePickerDelegate
+    @objc func selectImageTapped(){
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.permissions?.checkPermissionCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.permissions?.checkPermissionGallery()
+        }))
+        alert.popoverPresentationController?.sourceView = self.view
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imagePicker.dismiss(animated: true)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        babyImageView.contentMode = .scaleAspectFit
+        babyImageView.image = image
+        babyImageView.backgroundColor = UIColor.clear
     }
     
     /*
