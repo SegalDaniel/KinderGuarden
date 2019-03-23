@@ -34,7 +34,7 @@
         <relationship name="medicationEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="child" inverseEntity="Medication" syncable="YES"/>
         <relationship name="parasitesEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Parasites" inverseName="child" inverseEntity="Parasites" syncable="YES"/>
         <relationship name="rashEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rash" inverseName="child" inverseEntity="Rash" syncable="YES"/>
-        <relationship name="secretion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Secretion" inverseName="child" inverseEntity="Secretion" syncable="YES"/>
+        <relationship name="secretionEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Secretion" inverseName="child" inverseEntity="Secretion" syncable="YES"/>
         <relationship name="sleepEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sleep" inverseName="child" inverseEntity="Sleep" syncable="YES"/>
         <relationship name="solidFoodEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SolidFood" inverseName="child" inverseEntity="SolidFood" syncable="YES"/>
         <relationship name="urineEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Urine" inverseName="child" inverseEntity="Urine" syncable="YES"/>
@@ -99,7 +99,7 @@
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="secretion" inverseEntity="Child" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="secretionEvents" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Sleep" representedClassName="Sleep" syncable="YES">
         <attribute name="allocatedTime" optional="YES" attributeType="String" syncable="YES"/>

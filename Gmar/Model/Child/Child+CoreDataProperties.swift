@@ -36,6 +36,10 @@ extension Child {
     @NSManaged public var urineEvents: NSSet?
     @NSManaged public var vomitusEvents: NSSet?
     @NSManaged public var waterEvents: NSSet?
+    @NSManaged public var attendanceEvents: NSSet?
+    @NSManaged public var coughEvents: NSSet?
+    @NSManaged public var parasitesEvents: NSSet?
+    @NSManaged public var secretionEvents: NSSet?
 
 }
 
@@ -240,5 +244,73 @@ extension Child {
 
     @objc(removeWaterEvents:)
     @NSManaged public func removeFromWaterEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for attendanceEvents
+extension Child {
+
+    @objc(addAttendanceEventsObject:)
+    @NSManaged public func addToAttendanceEvents(_ value: Attendance)
+
+    @objc(removeAttendanceEventsObject:)
+    @NSManaged public func removeFromAttendanceEvents(_ value: Attendance)
+
+    @objc(addAttendanceEvents:)
+    @NSManaged public func addToAttendanceEvents(_ values: NSSet)
+
+    @objc(removeAttendanceEvents:)
+    @NSManaged public func removeFromAttendanceEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for coughEvents
+extension Child {
+
+    @objc(addCoughEventsObject:)
+    @NSManaged public func addToCoughEvents(_ value: Cough)
+
+    @objc(removeCoughEventsObject:)
+    @NSManaged public func removeFromCoughEvents(_ value: Cough)
+
+    @objc(addCoughEvents:)
+    @NSManaged public func addToCoughEvents(_ values: NSSet)
+
+    @objc(removeCoughEvents:)
+    @NSManaged public func removeFromCoughEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for parasitesEvents
+extension Child {
+
+    @objc(addParasitesEventsObject:)
+    @NSManaged public func addToParasitesEvents(_ value: Parasites)
+
+    @objc(removeParasitesEventsObject:)
+    @NSManaged public func removeFromParasitesEvents(_ value: Parasites)
+
+    @objc(addParasitesEvents:)
+    @NSManaged public func addToParasitesEvents(_ values: NSSet)
+
+    @objc(removeParasitesEvents:)
+    @NSManaged public func removeFromParasitesEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for secretionEvents
+extension Child {
+
+    @objc(addSecretionEventsObject:)
+    @NSManaged public func addToSecretionEvents(_ value: Secretion)
+
+    @objc(removeSecretionEventsObject:)
+    @NSManaged public func removeFromSecretionEvents(_ value: Secretion)
+
+    @objc(addSecretionEvents:)
+    @NSManaged public func addToSecretionEvents(_ values: NSSet)
+
+    @objc(removeSecretionEvents:)
+    @NSManaged public func removeFromSecretionEvents(_ values: NSSet)
 
 }
