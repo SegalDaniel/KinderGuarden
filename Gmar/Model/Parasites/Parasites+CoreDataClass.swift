@@ -2,7 +2,7 @@
 //  Parasites+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 23/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Parasites)
-public class Parasites: NSManagedObject {
+public class Parasites: BasicEvent {
     convenience init(childID:String, type:String){
         self.init(entity: Model.instance.parasitesEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")

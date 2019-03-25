@@ -2,7 +2,7 @@
 //  LiquidFood+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 17/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(LiquidFood)
-public class LiquidFood: NSManagedObject {
+public class LiquidFood: BasicEvent {
     convenience init(childID:String, mealType:String, amount:String, consumedAmount:String, eventDate:String){
         self.init(entity: Model.instance.liquidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")

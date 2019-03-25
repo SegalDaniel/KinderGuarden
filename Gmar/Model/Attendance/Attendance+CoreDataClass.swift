@@ -2,7 +2,7 @@
 //  Attendance+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 23/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Attendance)
-public class Attendance: NSManagedObject {
+public class Attendance: BasicEvent {
     convenience init(childID:String, type:String, isLate:Bool){
         self.init(entity: Model.instance.attendanceEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")

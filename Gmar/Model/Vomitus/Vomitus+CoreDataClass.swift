@@ -2,7 +2,7 @@
 //  Vomitus+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 20/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Vomitus)
-public class Vomitus: NSManagedObject {
+public class Vomitus: BasicEvent {
     convenience  init(childID:String, proper:Bool, eventDate:String){
         self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
@@ -37,6 +37,5 @@ public class Vomitus: NSManagedObject {
         return json
         
     }
-    
     
 }

@@ -2,7 +2,7 @@
 //  Medication+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 20/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Medication)
-public class Medication: NSManagedObject {
+public class Medication: BasicEvent {
     convenience init(childID:String, type:String, details:String, eventDate:String){
         self.init(entity: Model.instance.medicationEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")

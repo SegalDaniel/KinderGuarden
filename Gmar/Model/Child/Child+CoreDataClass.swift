@@ -2,11 +2,10 @@
 //  Child+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 21/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
-
 
 import Foundation
 import CoreData
@@ -46,5 +45,5 @@ public class Child: NSManagedObject {
         json["isAttend"] = isAttend
         return json
     }
-}
 
+}

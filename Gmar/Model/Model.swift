@@ -38,6 +38,7 @@ class Model{
     let secretionEntity:NSEntityDescription
     let generalBehaviorEntity:NSEntityDescription
     let generalNoteEntity:NSEntityDescription
+    let basicEventEntity:NSEntityDescription
     
     //MARK: - init
     private init(){
@@ -63,6 +64,7 @@ class Model{
         secretionEntity = NSEntityDescription.entity(forEntityName: "Secretion", in: managedContext)!
         generalBehaviorEntity = NSEntityDescription.entity(forEntityName: "GeneralBehavior", in: managedContext)!
         generalNoteEntity = NSEntityDescription.entity(forEntityName: "GeneralNote", in: managedContext)!
+        basicEventEntity = NSEntityDescription.entity(forEntityName: "BasicEvent", in: managedContext)!
     }
     
     //MARK: - Child Model Methods

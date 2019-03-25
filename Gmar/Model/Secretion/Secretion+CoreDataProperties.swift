@@ -2,7 +2,7 @@
 //  Secretion+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 23/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,10 +17,9 @@ extension Secretion {
         return NSFetchRequest<Secretion>(entityName: "Secretion")
     }
 
-    @NSManaged public var childID: String?
-    @NSManaged public var type: String?
     @NSManaged public var area: String?
+    @NSManaged public var childID: String?
     @NSManaged public var rank: String?
-    @NSManaged public var child: Child?
+    @NSManaged public var type: String?
 
 }

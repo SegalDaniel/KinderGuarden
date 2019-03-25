@@ -2,7 +2,7 @@
 //  Sleep+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 17/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Sleep)
-public class Sleep: NSManagedObject {
+public class Sleep: BasicEvent {
     convenience init(childID:String, type:String, allocatedTime:String, sleepingScope:String, eventDate:String){
         self.init(entity: Model.instance.sleepEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")

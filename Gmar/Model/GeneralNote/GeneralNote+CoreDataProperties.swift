@@ -2,7 +2,7 @@
 //  GeneralNote+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 23/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -18,8 +18,7 @@ extension GeneralNote {
     }
 
     @NSManaged public var childID: String?
-    @NSManaged public var subject: String?
     @NSManaged public var details: String?
-    @NSManaged public var child: Child?
+    @NSManaged public var subject: String?
 
 }

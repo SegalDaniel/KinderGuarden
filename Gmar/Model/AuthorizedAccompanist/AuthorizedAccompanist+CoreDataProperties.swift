@@ -2,7 +2,7 @@
 //  AuthorizedAccompanist+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 23/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -22,7 +22,7 @@ extension AuthorizedAccompanist {
     @NSManaged public var name: String?
     @NSManaged public var phone: String?
     @NSManaged public var relation: String?
-    @NSManaged public var child: Child?
     @NSManaged public var attendance: Attendance?
+    @NSManaged public var child: Child?
 
 }

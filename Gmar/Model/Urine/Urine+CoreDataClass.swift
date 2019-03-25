@@ -2,7 +2,7 @@
 //  Urine+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 20/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Urine)
-public class Urine: NSManagedObject {
+public class Urine: BasicEvent {
     convenience init(childID:String, color:String, fragrance:String, amount:String, eventDate:String){
         self.init(entity: Model.instance.urineEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
@@ -43,6 +43,5 @@ public class Urine: NSManagedObject {
         return json
         
     }
-    
     
 }

@@ -2,7 +2,7 @@
 //  Fever+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 17/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Fever)
-public class Fever: NSManagedObject {
+public class Fever: BasicEvent {
     convenience init(_childID:String, _tempreture:String, eventDate:String){
         self.init(entity: Model.instance.feverEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")

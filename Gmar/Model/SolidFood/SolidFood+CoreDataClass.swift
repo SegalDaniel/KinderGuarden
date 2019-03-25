@@ -2,7 +2,7 @@
 //  SolidFood+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 17/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 @objc(SolidFood)
-public class SolidFood: NSManagedObject {
+public class SolidFood: BasicEvent {
     convenience init(childID:String, mealType:String, mealInMenu:String, amount:String, consumedAmount:String, eventDate:String){
         self.init(entity: Model.instance.solidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")

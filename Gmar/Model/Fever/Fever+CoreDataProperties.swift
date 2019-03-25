@@ -2,7 +2,7 @@
 //  Fever+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 23/03/2019.
+//  Created by Daniel Segal on 25/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -20,6 +20,5 @@ extension Fever {
     @NSManaged public var childID: String?
     @NSManaged public var eventDate: NSDate?
     @NSManaged public var tempreture: String?
-    @NSManaged public var child: Child?
 
 }
