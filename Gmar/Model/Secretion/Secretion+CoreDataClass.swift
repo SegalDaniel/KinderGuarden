@@ -2,7 +2,7 @@
 //  Secretion+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 25/03/2019.
+//  Created by Daniel Segal on 26/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -12,9 +12,8 @@ import CoreData
 
 @objc(Secretion)
 public class Secretion: BasicEvent {
-    convenience init(childID:String, type:String, area:String, rank:String){
+    convenience init(type:String, area:String, rank:String){
         self.init(entity: Model.instance.secretionEntity, insertInto: Model.instance.managedContext)
-        self.setValue(childID, forKey: "childID")
         self.setValue(type, forKey: "type")
         self.setValue(area, forKey: "area")
         self.setValue(rank, forKey: "rank")
@@ -23,7 +22,6 @@ public class Secretion: BasicEvent {
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.secretionEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["childID"], forKey: "childID")
         self.setValue(json["type"], forKey: "type")
         self.setValue(json["area"], forKey: "area")
         self.setValue(json["rank"], forKey: "rank")
@@ -33,7 +31,6 @@ public class Secretion: BasicEvent {
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["childID"] = childID
         json["type"] = type
         json["area"] = area
         json["rank"] = rank

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Attendance" representedClassName="Attendance" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isLate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="authorized" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="attendance" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
     </entity>
     <entity name="AuthorizedAccompanist" representedClassName="AuthorizedAccompanist" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,8 +13,10 @@
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="authorized" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="BasicEvent" representedClassName="BasicEvent" isAbstract="YES" syncable="YES">
-        <attribute name="eventType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="eventType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="basicEvents" inverseEntity="Child" syncable="YES"/>
+        <relationship name="staff" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Staff" inverseName="basicEvents" inverseEntity="Staff" syncable="YES"/>
     </entity>
     <entity name="Child" representedClassName="Child" syncable="YES">
         <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -35,73 +34,53 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Disease" representedClassName="Disease" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Feces" representedClassName="Feces" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="texture" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Fever" representedClassName="Fever" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="tempreture" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="GeneralBehavior" representedClassName="GeneralBehavior" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="GeneralNote" representedClassName="GeneralNote" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="LiquidFood" representedClassName="LiquidFood" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Medication" representedClassName="Medication" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Parasites" representedClassName="Parasites" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Rash" representedClassName="Rash" parentEntity="BasicEvent" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Secretion" representedClassName="Secretion" parentEntity="BasicEvent" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Sleep" representedClassName="Sleep" parentEntity="BasicEvent" syncable="YES">
         <attribute name="allocatedTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="sleepingScope" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="SolidFood" representedClassName="SolidFood" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mealInMenu" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -110,46 +89,41 @@
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="staffID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="basicEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicEvent" inverseName="staff" inverseEntity="BasicEvent" syncable="YES"/>
     </entity>
     <entity name="Urine" representedClassName="Urine" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="fragrance" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Vomitus" representedClassName="Vomitus" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="proper" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Water" representedClassName="Water" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Attendance" positionX="-3601.6015625" positionY="777.5859375" width="128" height="105"/>
-        <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="150"/>
+        <element name="Attendance" positionX="-3601.6015625" positionY="777.5859375" width="128" height="90"/>
+        <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="120"/>
+        <element name="BasicEvent" positionX="-3753" positionY="774" width="128" height="105"/>
         <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="180"/>
         <element name="Cough" positionX="-3985.5546875" positionY="833.96875" width="128" height="75"/>
-        <element name="Disease" positionX="-3574.67578125" positionY="907.71484375" width="128" height="105"/>
-        <element name="Feces" positionX="-3987.453125" positionY="926.19921875" width="128" height="120"/>
-        <element name="Fever" positionX="-3575.44140625" positionY="1030.40625" width="128" height="90"/>
-        <element name="GeneralBehavior" positionX="-3984.96484375" positionY="1059.59765625" width="128" height="75"/>
-        <element name="GeneralNote" positionX="-3407.109375" positionY="598.0078125" width="128" height="90"/>
-        <element name="LiquidFood" positionX="-3819.66796875" positionY="611.32421875" width="128" height="120"/>
-        <element name="Medication" positionX="-3408.0625" positionY="706.3203125" width="128" height="105"/>
-        <element name="Parasites" positionX="-3818" positionY="749.4921875" width="128" height="75"/>
-        <element name="Rash" positionX="-3405.8125" positionY="829.62109375" width="128" height="105"/>
-        <element name="Secretion" positionX="-3819.26171875" positionY="843.44140625" width="128" height="105"/>
-        <element name="Sleep" positionX="-3405.13671875" positionY="951.59375" width="128" height="120"/>
-        <element name="SolidFood" positionX="-3820.48046875" positionY="966.0234375" width="128" height="135"/>
-        <element name="Staff" positionX="-3770.0703125" positionY="756.74609375" width="128" height="105"/>
-        <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="120"/>
-        <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="90"/>
-        <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="105"/>
-        <element name="BasicEvent" positionX="-3753" positionY="774" width="128" height="75"/>
+        <element name="Disease" positionX="-3574.67578125" positionY="907.71484375" width="128" height="75"/>
+        <element name="Feces" positionX="-3987.453125" positionY="926.19921875" width="128" height="90"/>
+        <element name="Fever" positionX="-3575.44140625" positionY="1030.40625" width="128" height="60"/>
+        <element name="GeneralBehavior" positionX="-3984.96484375" positionY="1059.59765625" width="128" height="60"/>
+        <element name="GeneralNote" positionX="-3407.109375" positionY="598.0078125" width="128" height="75"/>
+        <element name="LiquidFood" positionX="-3819.66796875" positionY="611.32421875" width="128" height="90"/>
+        <element name="Medication" positionX="-3408.0625" positionY="706.3203125" width="128" height="75"/>
+        <element name="Parasites" positionX="-3818" positionY="749.4921875" width="128" height="60"/>
+        <element name="Rash" positionX="-3405.8125" positionY="829.62109375" width="128" height="75"/>
+        <element name="Secretion" positionX="-3819.26171875" positionY="843.44140625" width="128" height="90"/>
+        <element name="Sleep" positionX="-3405.13671875" positionY="951.59375" width="128" height="90"/>
+        <element name="SolidFood" positionX="-3820.48046875" positionY="966.0234375" width="128" height="105"/>
+        <element name="Staff" positionX="-3770.0703125" positionY="756.74609375" width="128" height="120"/>
+        <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
+        <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
+        <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  Vomitus+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 25/03/2019.
+//  Created by Daniel Segal on 26/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,8 +17,6 @@ extension Vomitus {
         return NSFetchRequest<Vomitus>(entityName: "Vomitus")
     }
 
-    @NSManaged public var childID: String?
-    @NSManaged public var eventDate: NSDate?
     @NSManaged public var proper: Bool
 
 }

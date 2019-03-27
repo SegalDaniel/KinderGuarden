@@ -2,7 +2,7 @@
 //  Staff+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 17/03/2019.
+//  Created by Daniel Segal on 26/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -40,4 +40,3 @@ public class Staff: NSManagedObject {
     }
     
 }
-
