@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Attendance" representedClassName="Attendance" parentEntity="BasicEvent" syncable="YES">
+        <attribute name="isLate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="authorized" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" syncable="YES"/>
+    </entity>
     <entity name="AuthorizedAccompanist" representedClassName="AuthorizedAccompanist" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
@@ -118,5 +123,6 @@
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
         <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
+        <element name="Attendance" positionX="-3780" positionY="747" width="128" height="90"/>
     </elements>
 </model>
