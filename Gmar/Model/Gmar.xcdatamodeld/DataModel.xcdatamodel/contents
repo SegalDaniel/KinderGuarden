@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Attendance" representedClassName="Attendance" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="isLate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="authorized" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="attendance" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
-    </entity>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AuthorizedAccompanist" representedClassName="AuthorizedAccompanist" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="attendance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attendance" inverseName="authorized" inverseEntity="Attendance" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="authorized" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="BasicEvent" representedClassName="BasicEvent" isAbstract="YES" syncable="YES">
@@ -104,8 +98,7 @@
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Attendance" positionX="-3601.6015625" positionY="777.5859375" width="128" height="90"/>
-        <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="120"/>
+        <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="105"/>
         <element name="BasicEvent" positionX="-3753" positionY="774" width="128" height="105"/>
         <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="180"/>
         <element name="Cough" positionX="-3985.5546875" positionY="833.96875" width="128" height="75"/>

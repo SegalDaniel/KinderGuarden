@@ -78,8 +78,6 @@
 		A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */; };
 		A8576E39224A715100CBA907 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E37224A715100CBA907 /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8576E3A224A715100CBA907 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E38224A715100CBA907 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
-		A8576E3D224A719C00CBA907 /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E3B224A719C00CBA907 /* Attendance+CoreDataClass.swift */; };
-		A8576E3E224A719C00CBA907 /* Attendance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E3C224A719C00CBA907 /* Attendance+CoreDataProperties.swift */; };
 		A8576E41224A726100CBA907 /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E3F224A726100CBA907 /* Child+CoreDataClass.swift */; };
 		A8576E42224A726100CBA907 /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E40224A726100CBA907 /* Child+CoreDataProperties.swift */; };
 		A8576E45224A729700CBA907 /* Staff+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E43224A729700CBA907 /* Staff+CoreDataClass.swift */; };
@@ -167,8 +165,6 @@
 		A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576E37224A715100CBA907 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576E38224A715100CBA907 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8576E3B224A719C00CBA907 /* Attendance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8576E3C224A719C00CBA907 /* Attendance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576E3F224A726100CBA907 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576E40224A726100CBA907 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576E43224A729700CBA907 /* Staff+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -366,15 +362,6 @@
 			path = Disease;
 			sourceTree = "<group>";
 		};
-		A81F4F522246CF7D003FED63 /* Attendance */ = {
-			isa = PBXGroup;
-			children = (
-				A8576E3B224A719C00CBA907 /* Attendance+CoreDataClass.swift */,
-				A8576E3C224A719C00CBA907 /* Attendance+CoreDataProperties.swift */,
-			);
-			path = Attendance;
-			sourceTree = "<group>";
-		};
 		A81F4F5B2246D583003FED63 /* Cough */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,7 +513,6 @@
 				A81F4EBF22429121003FED63 /* AuthorizedAccompanist */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
 				A81F4F802248D8DF003FED63 /* BasicEvent */,
-				A81F4F522246CF7D003FED63 /* Attendance */,
 				A8C41468223EE28C0072B0A8 /* Sleep */,
 				A8C41477223EF1F70072B0A8 /* LiquidFood */,
 				A8C4147C223EF5F40072B0A8 /* SolidFood */,
@@ -597,6 +583,7 @@
 				TargetAttributes = {
 					1818B1D321E0E905006E1B39 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -653,7 +640,6 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -666,7 +652,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -743,7 +728,6 @@
 				A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */,
 				A8576DF6224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift in Sources */,
 				A8576E2E224A701100CBA907 /* SolidFood+CoreDataProperties.swift in Sources */,
-				A8576E3E224A719C00CBA907 /* Attendance+CoreDataProperties.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
 				A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */,
 				A8576E32224A705200CBA907 /* LiquidFood+CoreDataProperties.swift in Sources */,
@@ -771,7 +755,6 @@
 				18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */,
 				A8576E19224A6ED900CBA907 /* Cough+CoreDataClass.swift in Sources */,
 				189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */,
-				A8576E3D224A719C00CBA907 /* Attendance+CoreDataClass.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
 				A8576E01224A6D6000CBA907 /* Secretion+CoreDataClass.swift in Sources */,
 				180CF322223EC00400A9DEF2 /* Child.swift in Sources */,
@@ -940,7 +923,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -963,7 +946,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
