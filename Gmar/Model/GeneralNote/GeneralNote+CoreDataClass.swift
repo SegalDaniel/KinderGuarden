@@ -13,10 +13,11 @@ import CoreData
 @objc(GeneralNote)
 public class GeneralNote: BasicEvent {
     
-    convenience init(subject:String, details:String){
+    convenience init(subject:String, details:String, eventDate:String){
         self.init(entity: Model.instance.generalNoteEntity, insertInto: Model.instance.managedContext)
         self.setValue(subject, forKey: "subject")
         self.setValue(details, forKey: "details")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     

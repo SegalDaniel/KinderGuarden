@@ -12,11 +12,12 @@ import CoreData
 
 @objc(Urine)
 public class Urine: BasicEvent {
-    convenience init(color:String, fragrance:String, amount:String){
+    convenience init(color:String, fragrance:String, amount:String, eventDate:String){
         self.init(entity: Model.instance.urineEntity, insertInto: Model.instance.managedContext)
         self.setValue(color, forKey: "color")
         self.setValue(fragrance, forKey: "fragrance")
         self.setValue(amount, forKey: "amount")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     

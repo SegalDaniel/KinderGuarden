@@ -12,10 +12,11 @@ import CoreData
 
 @objc(Disease)
 public class Disease: BasicEvent {
-    convenience init(type:String, details:String){
+    convenience init(type:String, details:String, eventDate:String){
         self.init(entity: Model.instance.diseaseEntity, insertInto: Model.instance.managedContext)
         self.setValue(type, forKey: "type")
         self.setValue(details, forKey: "details")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     

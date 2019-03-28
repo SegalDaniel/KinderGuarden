@@ -12,10 +12,11 @@ import CoreData
 
 @objc(Water)
 public class Water: BasicEvent {
-    convenience  init(amount:String, consumedAmount:String){
+    convenience  init(amount:String, consumedAmount:String, eventDate:String){
         self.init(entity: Model.instance.waterEntity, insertInto: Model.instance.managedContext)
         self.setValue(amount, forKey: "amount")
         self.setValue(consumedAmount, forKey: "consumedAmount")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     

@@ -12,9 +12,10 @@ import CoreData
 
 @objc(Vomitus)
 public class Vomitus: BasicEvent {
-    convenience  init(proper:Bool){
+    convenience  init(proper:Bool, eventDate:String){
         self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(proper, forKey: "proper")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
