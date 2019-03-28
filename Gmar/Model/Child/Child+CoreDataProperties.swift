@@ -27,6 +27,7 @@ extension Child {
     @NSManaged public var authorized: NSSet?
     @NSManaged public var basicEvents: NSSet?
     @NSManaged public var attendanceEvents: NSSet?
+    @NSManaged public var developmentalEvents: NSSet?
 
 }
 
@@ -78,5 +79,22 @@ extension Child {
 
     @objc(removeAttendanceEvents:)
     @NSManaged public func removeFromAttendanceEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for developmentalEvents
+extension Child {
+
+    @objc(addDevelopmentalEventsObject:)
+    @NSManaged public func addToDevelopmentalEvents(_ value: DevelopmentalEvent)
+
+    @objc(removeDevelopmentalEventsObject:)
+    @NSManaged public func removeFromDevelopmentalEvents(_ value: DevelopmentalEvent)
+
+    @objc(addDevelopmentalEvents:)
+    @NSManaged public func addToDevelopmentalEvents(_ values: NSSet)
+
+    @objc(removeDevelopmentalEvents:)
+    @NSManaged public func removeFromDevelopmentalEvents(_ values: NSSet)
 
 }

@@ -46,12 +46,12 @@
 		A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E42224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift */; };
 		A8287E4B224CCF77000C64DD /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E49224CCF77000C64DD /* Attendance+CoreDataClass.swift */; };
 		A8287E4C224CCF77000C64DD /* Attendance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E4A224CCF77000C64DD /* Attendance+CoreDataProperties.swift */; };
-		A8287E4F224CCFE3000C64DD /* Staff+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E4D224CCFE3000C64DD /* Staff+CoreDataClass.swift */; };
-		A8287E50224CCFE3000C64DD /* Staff+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E4E224CCFE3000C64DD /* Staff+CoreDataProperties.swift */; };
-		A8287E53224CD041000C64DD /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E51224CD041000C64DD /* Child+CoreDataClass.swift */; };
-		A8287E54224CD041000C64DD /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E52224CD041000C64DD /* Child+CoreDataProperties.swift */; };
 		A8287E5C224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5A224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift */; };
 		A8287E5D224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5B224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift */; };
+		A8287E60224CE346000C64DD /* Staff+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5E224CE346000C64DD /* Staff+CoreDataClass.swift */; };
+		A8287E61224CE346000C64DD /* Staff+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5F224CE346000C64DD /* Staff+CoreDataProperties.swift */; };
+		A8287E64224CE38B000C64DD /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */; };
+		A8287E65224CE38B000C64DD /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */; };
 		A8576DF5224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF3224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift */; };
 		A8576DF6224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF4224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift */; };
 		A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */; };
@@ -137,12 +137,12 @@
 		A8287E42224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8287E49224CCF77000C64DD /* Attendance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8287E4A224CCF77000C64DD /* Attendance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8287E4D224CCFE3000C64DD /* Staff+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8287E4E224CCFE3000C64DD /* Staff+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8287E51224CD041000C64DD /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8287E52224CD041000C64DD /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8287E5A224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8287E5B224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8287E5E224CE346000C64DD /* Staff+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8287E5F224CE346000C64DD /* Staff+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DF3224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576DF4224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -207,8 +207,8 @@
 		180CF31D223D5B8300A9DEF2 /* Child */ = {
 			isa = PBXGroup;
 			children = (
-				A8287E51224CD041000C64DD /* Child+CoreDataClass.swift */,
-				A8287E52224CD041000C64DD /* Child+CoreDataProperties.swift */,
+				A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */,
+				A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */,
 				A8DA55E7221859CD0043D580 /* Child.swift */,
 			);
 			path = Child;
@@ -465,8 +465,8 @@
 		A8C41472223EEED20072B0A8 /* Staff */ = {
 			isa = PBXGroup;
 			children = (
-				A8287E4D224CCFE3000C64DD /* Staff+CoreDataClass.swift */,
-				A8287E4E224CCFE3000C64DD /* Staff+CoreDataProperties.swift */,
+				A8287E5E224CE346000C64DD /* Staff+CoreDataClass.swift */,
+				A8287E5F224CE346000C64DD /* Staff+CoreDataProperties.swift */,
 				A8DA55E922185A1E0043D580 /* Staff.swift */,
 			);
 			path = Staff;
@@ -535,7 +535,6 @@
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8287E55224CD4A6000C64DD /* DevelopmentalEvent */,
 				A8C41472223EEED20072B0A8 /* Staff */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
 				A8287E3C224BB861000C64DD /* Attendance */,
@@ -557,6 +556,7 @@
 				A81F4F652246D8FA003FED63 /* Secretion */,
 				A81F4F722246DCD8003FED63 /* GeneralBehavior */,
 				A81F4F772246DE3A003FED63 /* GeneralNote */,
+				A8287E55224CD4A6000C64DD /* DevelopmentalEvent */,
 				A8F7F380221888CB00F21DAD /* Utility.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
@@ -723,6 +723,7 @@
 				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
+				A8287E64224CE38B000C64DD /* Child+CoreDataClass.swift in Sources */,
 				A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
@@ -739,21 +740,18 @@
 				A8576E31224A705200CBA907 /* LiquidFood+CoreDataClass.swift in Sources */,
 				A8576E0D224A6E1500CBA907 /* Medication+CoreDataClass.swift in Sources */,
 				189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */,
+				A8287E60224CE346000C64DD /* Staff+CoreDataClass.swift in Sources */,
 				A8576E21224A6F4C00CBA907 /* Urine+CoreDataClass.swift in Sources */,
 				A8576E2D224A701100CBA907 /* SolidFood+CoreDataClass.swift in Sources */,
 				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
 				A8576E1E224A6F0200CBA907 /* Fever+CoreDataProperties.swift in Sources */,
-				A8287E54224CD041000C64DD /* Child+CoreDataProperties.swift in Sources */,
 				A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */,
 				A8C41482223EF8280072B0A8 /* Water.swift in Sources */,
 				A8576E06224A6D9500CBA907 /* Parasites+CoreDataProperties.swift in Sources */,
-				A8287E4F224CCFE3000C64DD /* Staff+CoreDataClass.swift in Sources */,
 				A8287E5D224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8576E1A224A6ED900CBA907 /* Cough+CoreDataProperties.swift in Sources */,
-				A8287E50224CCFE3000C64DD /* Staff+CoreDataProperties.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
-				A8287E53224CD041000C64DD /* Child+CoreDataClass.swift in Sources */,
 				A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */,
 				A8576DF6224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift in Sources */,
 				A8576E2E224A701100CBA907 /* SolidFood+CoreDataProperties.swift in Sources */,
@@ -793,9 +791,11 @@
 				A8576E26224A6F8000CBA907 /* Feces+CoreDataProperties.swift in Sources */,
 				A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
+				A8287E61224CE346000C64DD /* Staff+CoreDataProperties.swift in Sources */,
 				A8576E0A224A6DCA00CBA907 /* Disease+CoreDataProperties.swift in Sources */,
 				A8576E2A224A6FBB00CBA907 /* Water+CoreDataProperties.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
+				A8287E65224CE38B000C64DD /* Child+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
