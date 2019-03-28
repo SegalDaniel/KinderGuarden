@@ -2,7 +2,7 @@
 //  Staff+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 26/03/2019.
+//  Created by Daniel Segal on 28/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -22,6 +22,7 @@ extension Staff {
     @NSManaged public var lastName: String?
     @NSManaged public var staffID: String?
     @NSManaged public var basicEvents: NSSet?
+    @NSManaged public var attendanceEvents: NSSet?
 
 }
 
@@ -39,5 +40,22 @@ extension Staff {
 
     @objc(removeBasicEvents:)
     @NSManaged public func removeFromBasicEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for attendanceEvents
+extension Staff {
+
+    @objc(addAttendanceEventsObject:)
+    @NSManaged public func addToAttendanceEvents(_ value: Attendance)
+
+    @objc(removeAttendanceEventsObject:)
+    @NSManaged public func removeFromAttendanceEvents(_ value: Attendance)
+
+    @objc(addAttendanceEvents:)
+    @NSManaged public func addToAttendanceEvents(_ values: NSSet)
+
+    @objc(removeAttendanceEvents:)
+    @NSManaged public func removeFromAttendanceEvents(_ values: NSSet)
 
 }

@@ -2,7 +2,7 @@
 //  Attendance+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 27/03/2019.
+//  Created by Daniel Segal on 28/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -19,6 +19,9 @@ extension Attendance {
 
     @NSManaged public var isLate: Bool
     @NSManaged public var type: String?
+    @NSManaged public var eventDate: NSDate?
     @NSManaged public var authorized: AuthorizedAccompanist?
+    @NSManaged public var child: Child?
+    @NSManaged public var staff: Staff?
 
 }

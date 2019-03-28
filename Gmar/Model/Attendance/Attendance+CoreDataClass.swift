@@ -2,7 +2,7 @@
 //  Attendance+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 27/03/2019.
+//  Created by Daniel Segal on 28/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -11,11 +11,12 @@ import Foundation
 import CoreData
 
 @objc(Attendance)
-public class Attendance: BasicEvent {
-    convenience init(isLate:String, type:String){
+public class Attendance: NSManagedObject {
+    convenience init(isLate:String, type:String, eventDate:String){
         self.init(entity: Model.instance.authorizedAccompanistEntity, insertInto: Model.instance.managedContext)
         self.setValue(isLate, forKey: "isLate")
         self.setValue(type, forKey: "type")
+        self.setValue(eventDate, forKey: "eventDate")
         
     }
     
@@ -23,6 +24,7 @@ public class Attendance: BasicEvent {
         self.init(entity: Model.instance.authorizedAccompanistEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["isLate"], forKey: "isLate")
         self.setValue(json["type"], forKey: "type")
+        self.setValue(json["eventDate"], forKey: "eventDate")
         
     }
     
@@ -31,6 +33,7 @@ public class Attendance: BasicEvent {
         var json = [String:Any]()
         json["isLate"] = isLate
         json["type"] = type
+        json["eventDate"] = eventDate
         return json
         
     }

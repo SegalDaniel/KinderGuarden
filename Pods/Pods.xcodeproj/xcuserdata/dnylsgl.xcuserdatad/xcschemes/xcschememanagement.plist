@@ -53,11 +53,6 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>SQLite.swift.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
-		</dict>
 		<key>gRPC-C++-gRPCCertificates.xcscheme</key>
 		<dict>
 			<key>isShown</key>
