@@ -12,11 +12,11 @@ import CoreData
 
 @objc(Rash)
 public class Rash: BasicEvent {
-    convenience init(type:String, area:String, eventDate:String, eventType:Int16){
+    convenience init(type:String, area:String/*, eventDate:NSDate, eventType:Int16*/){
         self.init(entity: Model.instance.rashEntity, insertInto: Model.instance.managedContext)
         self.setValue(type, forKey: "type")
         self.setValue(area, forKey: "area")
-        self.setValue(eventDate, forKey: "eventDate")
+//        self.setValue(eventDate, forKey: "eventDate")
         
     }
     

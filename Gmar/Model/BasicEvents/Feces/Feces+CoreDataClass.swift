@@ -12,12 +12,12 @@ import CoreData
 
 @objc(Feces)
 public class Feces: BasicEvent {
-    convenience init(color:String, texture:String, amount:String, eventDate:String, eventType:Int16){
+    convenience init(color:String, texture:String, amount:String/*, eventDate:NSDate, eventType:Int16*/){
         self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
         self.setValue(color, forKey: "color")
         self.setValue(texture, forKey: "texture")
         self.setValue(amount, forKey: "amount")
-        self.setValue(eventDate, forKey: "eventDate")
+//        self.setValue(eventDate, forKey: "eventDate")
         
     }
     

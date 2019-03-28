@@ -12,7 +12,7 @@ import CoreData
 
 @objc(BasicEvent)
 public class BasicEvent: NSManagedObject {
-    convenience init(eventType:Int16, eventDate:String) {
+    convenience init(eventType:Int16, eventDate:NSDate) {
         self.init(entity: Model.instance.basicEventEntity, insertInto: Model.instance.managedContext)
         self.setValue(eventType, forKey: "eventType")
         self.setValue(eventDate, forKey: "eventDate")
