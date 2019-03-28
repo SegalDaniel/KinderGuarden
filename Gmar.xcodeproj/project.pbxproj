@@ -442,6 +442,38 @@
 			path = DevelopmentalEvent;
 			sourceTree = "<group>";
 		};
+		A8287E66224D5471000C64DD /* BasicEvents */ = {
+			isa = PBXGroup;
+			children = (
+				A81F4F802248D8DF003FED63 /* BasicEvent */,
+				A8C41468223EE28C0072B0A8 /* Sleep */,
+				A8C41481223EF8000072B0A8 /* Water */,
+				A8C4147C223EF5F40072B0A8 /* SolidFood */,
+				A8C41477223EF1F70072B0A8 /* LiquidFood */,
+				A8C4148722415D010072B0A8 /* Feces */,
+				A8C4148C22415F3B0072B0A8 /* Urine */,
+				A81F4F5B2246D583003FED63 /* Cough */,
+				A81F4F652246D8FA003FED63 /* Secretion */,
+				A8C41491224253450072B0A8 /* Vomitus */,
+				A81F4EBE224290B1003FED63 /* Rash */,
+				A8C4146D223EE8F00072B0A8 /* Fever */,
+				A81F4ECD224292B3003FED63 /* Disease */,
+				A81F4EC82242924F003FED63 /* Medication */,
+				A81F4F602246D69D003FED63 /* Parasites */,
+				A81F4F722246DCD8003FED63 /* GeneralBehavior */,
+				A81F4F772246DE3A003FED63 /* GeneralNote */,
+			);
+			path = BasicEvents;
+			sourceTree = "<group>";
+		};
+		A8287E67224D55C8000C64DD /* DevelopmentEvents */ = {
+			isa = PBXGroup;
+			children = (
+				A8287E55224CD4A6000C64DD /* DevelopmentalEvent */,
+			);
+			path = DevelopmentEvents;
+			sourceTree = "<group>";
+		};
 		A8C41468223EE28C0072B0A8 /* Sleep */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,26 +569,10 @@
 			children = (
 				A8C41472223EEED20072B0A8 /* Staff */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
-				A8287E3C224BB861000C64DD /* Attendance */,
 				A81F4EBF22429121003FED63 /* AuthorizedAccompanist */,
-				A81F4F802248D8DF003FED63 /* BasicEvent */,
-				A8C41468223EE28C0072B0A8 /* Sleep */,
-				A8C41477223EF1F70072B0A8 /* LiquidFood */,
-				A8C4147C223EF5F40072B0A8 /* SolidFood */,
-				A8C41481223EF8000072B0A8 /* Water */,
-				A8C4148722415D010072B0A8 /* Feces */,
-				A8C4148C22415F3B0072B0A8 /* Urine */,
-				A8C4146D223EE8F00072B0A8 /* Fever */,
-				A81F4F5B2246D583003FED63 /* Cough */,
-				A8C41491224253450072B0A8 /* Vomitus */,
-				A81F4EBE224290B1003FED63 /* Rash */,
-				A81F4EC82242924F003FED63 /* Medication */,
-				A81F4ECD224292B3003FED63 /* Disease */,
-				A81F4F602246D69D003FED63 /* Parasites */,
-				A81F4F652246D8FA003FED63 /* Secretion */,
-				A81F4F722246DCD8003FED63 /* GeneralBehavior */,
-				A81F4F772246DE3A003FED63 /* GeneralNote */,
-				A8287E55224CD4A6000C64DD /* DevelopmentalEvent */,
+				A8287E3C224BB861000C64DD /* Attendance */,
+				A8287E66224D5471000C64DD /* BasicEvents */,
+				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
 				A8F7F380221888CB00F21DAD /* Utility.swift */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
