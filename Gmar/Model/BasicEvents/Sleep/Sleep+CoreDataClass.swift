@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Sleep)
 public class Sleep: BasicEvent {
-    convenience init(type:String, allocatedTime:String, sleepingScope:String, eventDate:String){
+    convenience init(type:String, allocatedTime:String, sleepingScope:String, eventDate:String, eventType:Int16){
         self.init(entity: Model.instance.sleepEntity, insertInto: Model.instance.managedContext)
         self.setValue(type, forKey: "type")
         self.setValue(allocatedTime, forKey: "allocatedTime")

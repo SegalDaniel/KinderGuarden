@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Secretion)
 public class Secretion: BasicEvent {
-    convenience init(type:String, area:String, rank:String, eventDate:String){
+    convenience init(type:String, area:String, rank:String, eventDate:String, eventType:Int16){
         self.init(entity: Model.instance.secretionEntity, insertInto: Model.instance.managedContext)
         self.setValue(type, forKey: "type")
         self.setValue(area, forKey: "area")

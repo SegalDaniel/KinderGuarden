@@ -12,11 +12,12 @@ import CoreData
 
 @objc(Water)
 public class Water: BasicEvent {
-    convenience  init(amount:String, consumedAmount:String, eventDate:String){
+    convenience  init(amount:String, consumedAmount:String, eventDate:String, eventType:Int16){
         self.init(entity: Model.instance.waterEntity, insertInto: Model.instance.managedContext)
         self.setValue(amount, forKey: "amount")
         self.setValue(consumedAmount, forKey: "consumedAmount")
         self.setValue(eventDate, forKey: "eventDate")
+        //use SUPER
         
     }
     
@@ -28,12 +29,12 @@ public class Water: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
+        func toJason() -> [String:Any] { 
         var json = [String:Any]()
         json["amount"] = amount
         json["consumedAmount"] = consumedAmount
         return json
-        
+
     }
     
 }

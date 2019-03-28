@@ -12,7 +12,7 @@ import CoreData
 
 @objc(SolidFood)
 public class SolidFood: BasicEvent {
-    convenience init(mealType:String, mealInMenu:String, amount:String, consumedAmount:String, eventDate:String){
+    convenience init(mealType:String, mealInMenu:String, amount:String, consumedAmount:String, eventDate:String, eventType:Int16){
         self.init(entity: Model.instance.solidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(mealType, forKey: "mealType")
         self.setValue(mealInMenu, forKey: "mealInMenu")

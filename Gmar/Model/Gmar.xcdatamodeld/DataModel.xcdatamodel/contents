@@ -14,7 +14,7 @@
         <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="authorized" inverseEntity="Child" syncable="YES"/>
     </entity>
-    <entity name="BasicEvent" representedClassName="BasicEvent" isAbstract="YES" syncable="YES">
+    <entity name="BasicEvent" representedClassName="BasicEvent" syncable="YES">
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="eventType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="basicEvents" inverseEntity="Child" syncable="YES"/>
@@ -121,6 +121,7 @@
         <element name="BasicEvent" positionX="-3697.8125" positionY="713.4375" width="128" height="105"/>
         <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="208"/>
         <element name="Cough" positionX="-3985.5546875" positionY="833.96875" width="128" height="75"/>
+        <element name="DevelopmentalEvent" positionX="-3771" positionY="261" width="128" height="105"/>
         <element name="Disease" positionX="-3574.67578125" positionY="907.71484375" width="128" height="75"/>
         <element name="Feces" positionX="-3987.453125" positionY="926.19921875" width="128" height="90"/>
         <element name="Fever" positionX="-3575.44140625" positionY="1030.40625" width="128" height="60"/>
@@ -137,6 +138,5 @@
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
         <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
-        <element name="DevelopmentalEvent" positionX="-3771" positionY="261" width="128" height="105"/>
     </elements>
 </model>

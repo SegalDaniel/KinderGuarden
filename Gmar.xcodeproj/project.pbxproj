@@ -52,8 +52,8 @@
 		A8287E61224CE346000C64DD /* Staff+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5F224CE346000C64DD /* Staff+CoreDataProperties.swift */; };
 		A8287E64224CE38B000C64DD /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */; };
 		A8287E65224CE38B000C64DD /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */; };
-		A8576DF5224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF3224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift */; };
-		A8576DF6224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF4224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift */; };
+		A8287E6A224D67D6000C64DD /* BasicEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E68224D67D6000C64DD /* BasicEvent+CoreDataClass.swift */; };
+		A8287E6B224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E69224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift */; };
 		A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */; };
 		A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */; };
 		A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */; };
@@ -143,8 +143,8 @@
 		A8287E5F224CE346000C64DD /* Staff+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8576DF3224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8576DF4224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8287E68224D67D6000C64DD /* BasicEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8287E69224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -418,8 +418,8 @@
 		A81F4F802248D8DF003FED63 /* BasicEvent */ = {
 			isa = PBXGroup;
 			children = (
-				A8576DF3224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift */,
-				A8576DF4224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift */,
+				A8287E68224D67D6000C64DD /* BasicEvent+CoreDataClass.swift */,
+				A8287E69224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift */,
 			);
 			path = BasicEvent;
 			sourceTree = "<group>";
@@ -769,7 +769,6 @@
 				A8576E1A224A6ED900CBA907 /* Cough+CoreDataProperties.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
 				A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */,
-				A8576DF6224A6AA100CBA907 /* BasicEvent+CoreDataProperties.swift in Sources */,
 				A8576E2E224A701100CBA907 /* SolidFood+CoreDataProperties.swift in Sources */,
 				A8287E4C224CCF77000C64DD /* Attendance+CoreDataProperties.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
@@ -785,13 +784,13 @@
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
+				A8287E6A224D67D6000C64DD /* BasicEvent+CoreDataClass.swift in Sources */,
 				A8576E11224A6E4C00CBA907 /* Rash+CoreDataClass.swift in Sources */,
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
 				18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */,
 				A8576DFE224A6D2700CBA907 /* GeneralBehavior+CoreDataProperties.swift in Sources */,
 				A8576E0E224A6E1500CBA907 /* Medication+CoreDataProperties.swift in Sources */,
 				18BFE193224651250084D766 /* Permissions.swift in Sources */,
-				A8576DF5224A6AA100CBA907 /* BasicEvent+CoreDataClass.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				189B354122428E4B00D33A6C /* AlergicTableViewCell.swift in Sources */,
 				189B353E224275C000D33A6C /* AddChildSecondViewController.swift in Sources */,
@@ -811,6 +810,7 @@
 				A8576E0A224A6DCA00CBA907 /* Disease+CoreDataProperties.swift in Sources */,
 				A8576E2A224A6FBB00CBA907 /* Water+CoreDataProperties.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
+				A8287E6B224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift in Sources */,
 				A8287E65224CE38B000C64DD /* Child+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
