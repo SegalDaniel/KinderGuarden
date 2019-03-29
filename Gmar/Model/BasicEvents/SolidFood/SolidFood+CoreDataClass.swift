@@ -12,14 +12,16 @@ import CoreData
 
 @objc(SolidFood)
 public class SolidFood: BasicEvent {
-    convenience init(mealType:String, mealInMenu:String, amount:String, consumedAmount:String/*, eventDate:NSDate, eventType:Int16*/){
+    convenience init(mealType:String, mealInMenu:String, amount:String, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
         self.init(entity: Model.instance.solidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(mealType, forKey: "mealType")
         self.setValue(mealInMenu, forKey: "mealInMenu")
         self.setValue(amount, forKey: "amount")
         self.setValue(consumedAmount, forKey: "consumedAmount")
-//        self.setValue(eventDate, forKey: "eventDate")
-        
+        self.setValue(eventType, forKey: "eventType")
+        self.setValue(eventDate, forKey: "eventDate")
+        self.setValue(child, forKey: "child")
+        self.setValue(staff, forKey: "staff")
     }
     
     convenience  init(json:[String:Any]) {
@@ -28,6 +30,10 @@ public class SolidFood: BasicEvent {
         self.setValue(json["mealInMenu"], forKey: "mealInMenu")
         self.setValue(json["amount"], forKey: "amount")
         self.setValue(json["consumedAmount"], forKey: "consumedAmount")
+        self.setValue(json["eventType"], forKey: "eventType")
+        self.setValue(json["eventDate"], forKey: "eventDate")
+        self.setValue(json["child"], forKey: "child")
+        self.setValue(json["staff"], forKey: "staff")
     }
     
     

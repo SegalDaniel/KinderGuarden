@@ -10,8 +10,10 @@ import UIKit
 
 class GenericDecisionViewController: GenericVC {
 
+    //MARK: - Variables
     @IBOutlet weak var mainStackView: UIStackView!
     
+    //MARL: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
@@ -32,7 +34,7 @@ class GenericDecisionViewController: GenericVC {
         }
     }
     
-    
+    //MARL: - buttons actions
     @IBAction func btnClicked(_ sender: Any){
         if let btn = sender as? UIButton{
             print("clicked \(String(describing: btn.titleLabel!.text)) tag: \(btn.tag)")
@@ -87,7 +89,7 @@ class GenericDecisionViewController: GenericVC {
     }
     
     /************************************************** Views Inits *******************************************************/
-    
+    //MARK: - Views Inits
     func addToStackAndTarget(_ buttons:[UIButton]){
         buttons.forEach { (btn) in
             btn.addTarget(self, action: #selector(btnClicked), for: .touchUpInside)

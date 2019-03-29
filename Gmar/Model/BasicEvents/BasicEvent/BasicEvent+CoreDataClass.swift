@@ -12,6 +12,7 @@ import CoreData
 
 @objc(BasicEvent)
 public class BasicEvent: NSManagedObject {
+    /*
     convenience init(eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?) {
         self.init(entity: Model.instance.basicEventEntity, insertInto: Model.instance.managedContext)
         self.setValue(eventType, forKey: "eventType")
@@ -26,9 +27,8 @@ public class BasicEvent: NSManagedObject {
         self.setValue(json["eventDate"], forKey: "eventDate")
         self.setValue(json["child"], forKey: "child")
         self.setValue(json["staff"], forKey: "staff")
-        
     }
-    
+    */
     func toJson() -> [String:Any]{ 
         var json = [String:Any]()
         json["eventType"] = eventType

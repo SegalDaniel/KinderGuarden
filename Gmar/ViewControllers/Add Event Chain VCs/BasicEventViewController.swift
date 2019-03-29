@@ -10,6 +10,7 @@ import UIKit
 
 class BasicEventViewController: UIViewController {
 
+    //MARK: - Variables
     @IBOutlet weak var rashBtn: UIButton!
     @IBOutlet weak var sleepBtn: UIButton!
     @IBOutlet weak var feedingBtn: UIButton!
@@ -19,10 +20,11 @@ class BasicEventViewController: UIViewController {
     @IBOutlet weak var vomitBtn: UIButton!
     @IBOutlet weak var hafrashaBtn: UIButton!
     
-    
+    //MARK: - init
     override func viewDidLoad() {
         super.viewDidLoad()
         initBtns([rashBtn, sleepBtn, feedingBtn, fecesBtn, coughBtn, feeverBtn, vomitBtn, hafrashaBtn])
+        
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +36,7 @@ class BasicEventViewController: UIViewController {
         }
     }
     
+    //MARK: - buttons actions
     @IBAction func btnClicked(_ sender: Any){
         if let btn = sender as? UIButton{
             let kind = Enums.BasicEvent(rawValue: btn.tag)!

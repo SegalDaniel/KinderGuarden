@@ -10,11 +10,13 @@ import UIKit
 
 class TeacherAddEventViewController: UIViewController {
 
+    //MARK: - Variables
     @IBOutlet weak var mainStackView: UIStackView!
     var asAttandance:Bool = false
     @IBOutlet weak var attandanceBtn: UIButton!
     @IBOutlet weak var multiChoiseBtn: UIButton!
     
+    //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
@@ -36,6 +38,7 @@ class TeacherAddEventViewController: UIViewController {
         }
     }
     
+    //MARK: - Views init
     func addNewStackRow(){
         let stack = Utility.newStack(frame: CGRect(x: mainStackView.layer.frame.minX , y: mainStackView.layer.frame.minY, width: mainStackView.layer.frame.width, height: mainStackView.layer.frame.height))
         stack.axis = .horizontal
@@ -52,6 +55,7 @@ class TeacherAddEventViewController: UIViewController {
         (mainStackView.arrangedSubviews[0] as! UIStackView).addArrangedSubview(attandance)
         (mainStackView.arrangedSubviews[0] as! UIStackView).addArrangedSubview(multi)
     }
+    
     
     func addKids(){
         let stacks = mainStackView.arrangedSubviews as! [UIStackView]
@@ -71,6 +75,7 @@ class TeacherAddEventViewController: UIViewController {
         }
     }
 
+    //MARK: - Buttons actions
     @IBAction func attendanceBtnClicked(_ sender: Any){
         print("Attandance btn clicked")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -95,6 +100,7 @@ class TeacherAddEventViewController: UIViewController {
         }
     }
     
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GenericInfo"{
             let vc = segue.destination as! GenericVC
@@ -105,5 +111,6 @@ class TeacherAddEventViewController: UIViewController {
         }
     }
     
+    //MARK: - Unwind seague
     @IBAction func unwindToSelectKid(segue:UIStoryboardSegue) { }
 }

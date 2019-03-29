@@ -10,7 +10,7 @@ import UIKit
 
 class GenericLiquidViewController: GenericVC {
 
-    
+    //MARK: - Variables
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var changeTimeBtn: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
@@ -18,6 +18,7 @@ class GenericLiquidViewController: GenericVC {
     @IBOutlet weak var quantitySlider: UISlider!
     @IBOutlet weak var messageLabel: UILabel!
     
+    //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLabel.text = currentDate()
@@ -43,6 +44,7 @@ class GenericLiquidViewController: GenericVC {
         }
     }
    
+    //MARK: - buttons actions
     @IBAction func confirmBtnClicked(_ sender: Any) {
         performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
     }
@@ -64,8 +66,8 @@ class GenericLiquidViewController: GenericVC {
         }
     }
     
-    /***************************  init views  ****************************************/
-
+    //MARK: - Views Init
+    //MARK: - water
     func waterSettings(){
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 25
@@ -73,6 +75,7 @@ class GenericLiquidViewController: GenericVC {
         messageLabel.text = "מים"
     }
     
+    //MARK: - milk
     func milkSettings(){
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 20
@@ -80,6 +83,7 @@ class GenericLiquidViewController: GenericVC {
         messageLabel.text = "חלב אם/תמ״ל"
     }
     
+    //MARK: - feever
     func feeverSettings(){
         quantitySlider.minimumValue = 35
         quantitySlider.maximumValue = 42

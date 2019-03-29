@@ -12,17 +12,22 @@ import CoreData
 
 @objc(Vomitus)
 public class Vomitus: BasicEvent {
-    convenience  init(proper:Bool/*, eventDate:NSDate, eventType:Int16*/){
+    convenience  init(proper:Bool, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
         self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(proper, forKey: "proper")
-//        self.setValue(eventDate, forKey: "eventDate")
-        
+        self.setValue(eventType, forKey: "eventType")
+        self.setValue(eventDate, forKey: "eventDate")
+        self.setValue(child, forKey: "child")
+        self.setValue(staff, forKey: "staff")
     }
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["proper"], forKey: "proper")
-        
+        self.setValue(json["eventType"], forKey: "eventType")
+        self.setValue(json["eventDate"], forKey: "eventDate")
+        self.setValue(json["child"], forKey: "child")
+        self.setValue(json["staff"], forKey: "staff")
     }
     
     

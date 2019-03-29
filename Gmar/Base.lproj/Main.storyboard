@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfc-BU-c2f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfc-BU-c2f">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1503,7 +1503,7 @@
                                                 <state key="normal" title=" דיווח בסיסי" image="001-baby-6"/>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="afs-hE-6et"/>
-                                                    <segue destination="crj-ty-N3d" kind="show" identifier="BasicEvent" id="wrP-rb-SjG"/>
+                                                    <segue destination="crj-ty-N3d" kind="show" identifier="BasicEventSegue" id="wrP-rb-SjG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
@@ -1602,24 +1602,24 @@
         </scene>
     </scenes>
     <resources>
-        <image name="001-baby-6" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="010-diaper" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="024-feeding-bottle" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="026-calendar" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="032-report" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="033-thermometer" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="048-baby-1" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="049-baby" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="050-woman" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="abacus" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="cough" width="107.4752197265625" height="107.4752197265625"/>
-        <image name="illness" width="159.58441162109375" height="159.58441162109375"/>
-        <image name="kindergarten" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="001-baby-6" width="512" height="512"/>
+        <image name="010-diaper" width="512" height="512"/>
+        <image name="024-feeding-bottle" width="512" height="512"/>
+        <image name="026-calendar" width="512" height="512"/>
+        <image name="032-report" width="512" height="512"/>
+        <image name="033-thermometer" width="512" height="512"/>
+        <image name="048-baby-1" width="512" height="512"/>
+        <image name="049-baby" width="512" height="512"/>
+        <image name="050-woman" width="512" height="512"/>
+        <image name="abacus" width="512" height="512"/>
+        <image name="cough" width="512" height="512"/>
+        <image name="illness" width="512" height="512"/>
+        <image name="kindergarten" width="512" height="512"/>
         <image name="teacher" width="512" height="512"/>
-        <image name="vomit" width="109.06508636474609" height="109.06508636474609"/>
+        <image name="vomit" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UhQ-lY-ajX"/>
-        <segue reference="YN3-ln-FeL"/>
+        <segue reference="lqd-QX-6d7"/>
     </inferredMetricsTieBreakers>
 </document>

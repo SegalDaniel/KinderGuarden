@@ -10,13 +10,14 @@ import UIKit
 
 class MultiChoiseViewController: GenericVC, UITableViewDelegate, UITableViewDataSource, MultiChoiseCellDelegate {
 
+    //MARk: - Variables
     @IBOutlet weak var finalConfirmBtn: UIButton!
     @IBOutlet weak var kidNameTitle: UILabel!
     @IBOutlet weak var foodKindTitle: UILabel!
     @IBOutlet weak var quantityTitle: UILabel!
     @IBOutlet weak var kidsTableView: UITableView!
     
-    
+    //MARK: inits
     override func viewDidLoad() {
         super.viewDidLoad()
         kidsTableView.dataSource = self
@@ -25,8 +26,13 @@ class MultiChoiseViewController: GenericVC, UITableViewDelegate, UITableViewData
         initViews(labels: [kidNameTitle, foodKindTitle, quantityTitle])
     }
     
-    /* TableView Methods */
+    func initViews(labels:[UILabel]){
+        labels.forEach { (label) in
+            Utility.addBorder(view: label, color: UIColor.black, width: 2)
+        }
+    }
     
+    //MARK: -  TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -43,14 +49,11 @@ class MultiChoiseViewController: GenericVC, UITableViewDelegate, UITableViewData
         
     }
     
+    //MARK: - buttons actions
     @IBAction func finalConfirmBtnClicked(_ sender: Any) {
         performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
     }
     
 
-    func initViews(labels:[UILabel]){
-        labels.forEach { (label) in
-            Utility.addBorder(view: label, color: UIColor.black, width: 2)
-        }
-    }
+    
 }

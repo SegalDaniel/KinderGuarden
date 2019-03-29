@@ -10,6 +10,7 @@ import UIKit
 
 class GenericEventInfoViewController: GenericVC {
     
+    //MARK: - Variables
     @IBOutlet weak var labelStackView: UIStackView!
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -21,6 +22,7 @@ class GenericEventInfoViewController: GenericVC {
     var isOn:[String:Bool] = [:]
     var data:[Int:String] = [:]
     
+    //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
@@ -61,7 +63,7 @@ class GenericEventInfoViewController: GenericVC {
     }
     
     /*************************   user interface events **********************************************/
-    
+    //MARK: - buttons actions
     @IBAction func decisionBtnClicked(_ sender: Any){
         if let btn = sender as? UIButton{
             let row = (btn.tag / 10) - 1
@@ -102,8 +104,8 @@ class GenericEventInfoViewController: GenericVC {
         }
     }
     
-    /*************************  Navigation **********************************************/
     
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToSelectKid"{
             let viewControllers:[UIViewController] = [self.navigationController!.viewControllers.first!]
@@ -111,9 +113,7 @@ class GenericEventInfoViewController: GenericVC {
         }
     }
     
-    
-    /************************************************ Generic Info Adding *****************************************************/
-    
+    //MARK: - Generic info adding
     func addStackForInfo(info:(Int, [String])){
         var names:[String] = info.1
         var btns:[UIButton] = []
@@ -146,8 +146,8 @@ class GenericEventInfoViewController: GenericVC {
         }
     }
     
-    /************************************************** Views Inits *******************************************************/
-    
+    //MARK: - Views Inits
+    //MARK: - feeces
     func feecesDesicion(){
         addStackForInfo(info: (-1, ["צואה", "הוסף"]))
         addStackForInfo(info: (-2, ["שתן", "הוסף"]))
@@ -194,6 +194,7 @@ class GenericEventInfoViewController: GenericVC {
         }
     }
     
+    //MARK: - attandance
     func attandanceViews(){
         addStackForInfo(info: (1, ["", "הגעה", "עזיבה"]))
         addStackForInfo(info: (2, ["", "אבא", "אמא", "סבא"]))
@@ -201,10 +202,12 @@ class GenericEventInfoViewController: GenericVC {
         messageTextField.isHidden = false
     }
     
+    //MARK: - vomits
     func vomitViews(){
         addStackForInfo(info: (1, ["סוג", "פליטה מוגברת", "הקאה"]))
     }
     
+    //MARK: - solid food
     func solidFoodViews(){
         let currentTime = DateAdmin.currentTime(timeStyle: .short)
         let currentHour = Int(currentTime.split(separator: ":")[0])!
@@ -218,6 +221,7 @@ class GenericEventInfoViewController: GenericVC {
         addStackForInfo(info: (2, ["כמות", "סיים מנה", "מעל חצי מנה", "מתחת לחצי מנה", "לא אכל"]))
     }
     
+    //MARK: - sleep
     func sleepViews(){
         let currentTime = DateAdmin.currentTime(timeStyle: .short)
         let currentHour = Int(currentTime.split(separator: ":")[0])!
@@ -230,15 +234,18 @@ class GenericEventInfoViewController: GenericVC {
         addStackForInfo(info: (2, ["איכות השינה", "שינה מלא/שקטה", "שינה חלקית/לא שקטה", "אי שינה"]))
     }
     
+    //MARK: - rash
     func rashViews(){
         addStackForInfo(info: (1, ["סוג", "פריחה/אדמומיות", "פצעים/פצעונים", "כתמים"]))
         addStackForInfo(info: (2, ["איזור", "פנים", "פה", "גפיים", "טוסיק", "גב", "חזה/בטן", "איבר מין", "ראש", "עיניים"]))
     }
     
+    //MARK: - cough
     func coughViews(){
         addStackForInfo(info: (1, ["סוג", "צפצופי נשימה", "קוצר נשימה", "טורדני", "לח"]))
     }
     
+    //MARK: - hafrasha
     func hafrashaViews(){
         addStackForInfo(info: (1, ["סוג", "דם", "מוגלה", "נזלת"]))
         addStackForInfo(info: (2, ["איזור", "עיניים", "אוזניים", "אף", "פה", "איבר מין", "שאר הגוף"]))
