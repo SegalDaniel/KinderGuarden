@@ -31,8 +31,8 @@ public class Feces: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["color"] = color
         json["texture"] = texture
         json["amount"] = amount

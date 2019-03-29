@@ -26,8 +26,8 @@ public class Vomitus: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["proper"] = proper
         return json
         

@@ -28,8 +28,8 @@ public class Medication: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["type"] = type
         json["details"] = details
         return json

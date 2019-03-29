@@ -28,8 +28,8 @@ public class Water: BasicEvent {
     }
     
     
-        func toJason() -> [String:Any] { 
-        var json = [String:Any]()
+       override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["amount"] = amount
         json["consumedAmount"] = consumedAmount
         return json

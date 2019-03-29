@@ -29,8 +29,8 @@ public class LiquidFood: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["mealType"] = mealType
         json["amount"] = amount
         json["consumedAmount"] = consumedAmount

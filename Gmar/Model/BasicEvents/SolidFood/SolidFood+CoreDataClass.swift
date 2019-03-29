@@ -31,8 +31,8 @@ public class SolidFood: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["mealType"] = mealType
         json["mealInMenu"] = mealInMenu
         json["amount"] = amount

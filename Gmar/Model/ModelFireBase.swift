@@ -49,6 +49,6 @@ class ModelFireBase{
     
     //MARK: - BasicEvent Methods
     func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
-        
+        db.collection("BasicEvents").addDocument(data: basicEvent.toJson(), completion: callback)
     }
 }

@@ -26,8 +26,8 @@ public class Fever: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["tempreture"] = tempreture
         return json
         

@@ -92,6 +92,19 @@ class Model{
         modelFirebase.removeDocument(docID: docID, callack: callack)
     }
     
+    func sendBasicEventToFB(basicEvent:BasicEvent, callack:@escaping (Error?)->Void){
+        modelFirebase.sendBasicEvent(basicEvent: basicEvent) { (err) in
+            if err == nil{
+                do{
+                    try Model.instance.managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+            callack(err)
+        }
+    }
+    
     //MARK: - CoreData Only
     func getAllChildsFromCore(callback:([Child])->Void){
         let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")

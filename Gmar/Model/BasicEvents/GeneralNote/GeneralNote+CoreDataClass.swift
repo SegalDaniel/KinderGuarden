@@ -29,8 +29,8 @@ public class GeneralNote: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["subject"] = subject
         json["details"] = details
         return json

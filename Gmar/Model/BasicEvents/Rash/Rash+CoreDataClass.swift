@@ -28,8 +28,8 @@ public class Rash: BasicEvent {
     }
     
     
-    func toJson() -> [String:Any] {
-        var json = [String:Any]()
+    override func toJson() -> [String:Any] {
+        var json = super.toJson()
         json["type"] = type
         json["area"] = area
         return json

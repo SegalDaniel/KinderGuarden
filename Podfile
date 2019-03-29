@@ -6,7 +6,6 @@ target 'Gmar' do
   use_frameworks!
 
   # Pods for Gmar
-  #pod 'SQLite.swift', '~> 0.11.5'
-pod 'Firebase/Core'
-pod 'Firebase/Firestore'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 end
