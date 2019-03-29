@@ -46,4 +46,9 @@ class ModelFireBase{
             callack(err)
         }
     }
+    
+    //MARK: - BasicEvent Methods
+    func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
+        
+    }
 }
