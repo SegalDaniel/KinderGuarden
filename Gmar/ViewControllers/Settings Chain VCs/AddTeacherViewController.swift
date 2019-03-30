@@ -41,8 +41,12 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
                     let _ = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: nil)
                 }
                 Model.instance.saveToDB(callback: nil)
+                self.performSegue(withIdentifier: "uniwndToMain", sender: nil)
+                return
             }
         }
+        let alert = SimpleAlert(_title: "אופס", _message: "נא למלא שם ושם משפחה, ניתן גם להוסיף תמונה", dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - UIIMagePickerDelegate

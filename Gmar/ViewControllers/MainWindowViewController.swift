@@ -19,32 +19,78 @@ class MainWindowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         roundKidsInfoBtn()
-        addTeacherToStack(name: "סייעת א", tag: 2)
-        addTeacherToStack(name: "סייעת ב", tag: 3)
-        addTeacherToStack(name: "סייעת ג", tag: 4)
-        addTeacherToStack(name: "גננת ראשית", tag: 1)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Model.instance.getStaffFromDB { (staff) in
+            self.initStaffViews(staff: staff)
+        }
     }
 
     //MARK: - buttons actions
     @IBAction func teacherButtonClicked(_ sender: Any){
         if let btn = sender as? UIButton{
-            //testDBs()
             self.performSegue(withIdentifier: "teacherEvent", sender: btn.tag)
+        }
+    }
+    
+    @IBAction func teacherButtonLongPressed(_ sender: Any){
+        if let btn = sender as? UIButton{
+            let staffID = "\(btn.tag)"
+            let alert = UIAlertController(title: "האם ברצונך למחוק משתמש זה?", message: "פעולה זו תהיה בלתי הפיכה", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "אישור", style: .default, handler: { (action) in
+                Model.instance.deleteStaffFromDB(staffID: staffID, callback: { (error) in
+                    if error == nil{
+                        alert.dismiss(animated: true, completion: nil)
+                        self.present(SimpleAlert(_title: "נמחק בהצלחה", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: {
+                            Model.instance.getStaffFromDB { (staff) in
+                                self.initStaffViews(staff: staff)
+                            }
+                        })
+                    }
+                    else{
+                        alert.dismiss(animated: true, completion: nil)
+                        self.present(SimpleAlert(_title: "לא נמחק, נסה שנית", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: nil)
+                    }
+                })
+            }))
+            alert.addAction(UIAlertAction(title: "ביטול", style: .cancel, handler: { (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
     }
     
+    
     //MARK: - Views Inits
+    func initStaffViews(staff:[Staff]){
+        teachersStackView.arrangedSubviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+        staff.forEach { (s) in
+            addTeacherToStack(name: "\(s.firstName!) \(s.lastName!)", tag: Int(s.staffID!)!, imageName: s.image)
+        }
+    }
+    
     func roundKidsInfoBtn(){
         kidsInfoBtn.layer.cornerRadius = kidsInfoBtn.layer.frame.width / 2
         kidsInfoBtn.clipsToBounds = true
     }
     
-    func addTeacherToStack(name:String, tag:Int){
-        let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: UIImage(named: "teacher"))
+    func addTeacherToStack(name:String, tag:Int, imageName:String?){
+        var image:UIImage
+        if imageName != nil{
+            image = Model.instance.loadImageFromDiskWith(fileName: imageName!)!
+        }
+        else{
+            image = UIImage(named: "teacher")!
+        }
+        let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: image)
         btn.addTarget(self, action: #selector(teacherButtonClicked), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(teacherButtonLongPressed), for: .touchDragExit)
         teachersStackView.addArrangedSubview(btn)
     }
 

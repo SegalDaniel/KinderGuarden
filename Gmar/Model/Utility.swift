@@ -95,6 +95,12 @@ class Utility{
         toBeTapped.isUserInteractionEnabled = true
         toBeTapped.addGestureRecognizer(tapGestureRecognizer)
     }
+    
+     static func viewLongPressRecognizer(target:Any, toBeTapped:UIView, action:Selector){
+        let longPressRecognizer = UILongPressGestureRecognizer(target: target, action: action)
+        toBeTapped.isUserInteractionEnabled = true
+        toBeTapped.addGestureRecognizer(longPressRecognizer)
+    }
 }
 
 //MARK: - Double extension

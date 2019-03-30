@@ -105,7 +105,7 @@ class Model{
         }
     }
     
-    //MARK: - CoreData Only
+    //MARK: - CoreData
     //MARK: - child entity methods
     func getAllChildsFromCore(callback:([Child])->Void){
         let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
@@ -114,6 +114,41 @@ class Model{
         callback(c)
     }
     
+    //MARK: - staff entity methods
+    func getStaffFromDB(callback:@escaping ([Staff]) -> Void){
+        let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
+        let staff = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
+        callback(staff)
+    }
+    
+    func deleteStaffFromDB(staffID:String, callback:(NSError?)->Void){
+        let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
+        let staff = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
+        let toDelete = staff.filter { (member) -> Bool in
+            if member.staffID == staffID {
+                return true
+            }
+            return false
+        }
+        if let obj = toDelete.first {
+            managedContext.delete(obj)
+            if let imageName = obj.image{
+                removeImageFromDisk(imageName: imageName)
+            }
+            do{
+                try Model.instance.managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+                callback(error)
+            }
+            callback(nil)
+        }
+        else{
+             callback(NSError(domain: "no id found", code: 0, userInfo: nil))
+        }
+    }
+    
+    //MARK: - CoreData global methods
     func saveToDB(callback:((NSError?)->Void)?){
         do{
             try Model.instance.managedContext.save()
