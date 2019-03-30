@@ -10,6 +10,14 @@ import Foundation
 
 class DateAdmin{
     
+    static func currentDateEN(timeStyle:DateFormatter.Style = .medium, dateStyle:DateFormatter.Style = .short) -> String{
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = timeStyle
+        formatter.dateStyle = dateStyle
+        return formatter.string(from: currentDateTime)
+    }
+    
     static func currentDate(timeStyle:DateFormatter.Style = .medium, dateStyle:DateFormatter.Style = .medium) -> String{
         let currentDateTime = Date()
         let formatter = DateFormatter()

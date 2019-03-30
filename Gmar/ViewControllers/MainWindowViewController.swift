@@ -62,6 +62,7 @@ class MainWindowViewController: UIViewController {
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
+        print(DateAdmin.currentDateEN())
     }
     
     
