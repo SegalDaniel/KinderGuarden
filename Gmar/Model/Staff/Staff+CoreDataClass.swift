@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Staff)
 public class Staff: NSManagedObject {
-    convenience init(staffID:String, firstName:String, lastName:String, image:String){
+    convenience init(staffID:String, firstName:String, lastName:String, image:String?){
         self.init(entity: Model.instance.staffEntity, insertInto: Model.instance.managedContext)
         self.setValue(staffID, forKey: "staffID")
         self.setValue(firstName, forKey: "firstName")

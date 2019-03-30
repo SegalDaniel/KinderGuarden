@@ -17,6 +17,7 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
+    var teacherImage:UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,21 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
     
     //MARK: - buttons action
     @IBAction func saveBtnClicked(_ sender: Any) {
+        if nameTextField.text != nil && lastNameTextField.text != nil{
+            if nameTextField.text != "" && lastNameTextField.text != ""{
+                let fName = nameTextField.text!
+                let lName = lastNameTextField.text!
+                let id = "\(fName)\(lName)".hash
+                if let teacherImage = teacherImage{
+                    Model.instance.saveImageToDisk(imageName: "\(id)", image: teacherImage)
+                    let _ = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: "\(id)")
+                }
+                else{
+                    let _ = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: nil)
+                }
+                Model.instance.saveToDB(callback: nil)
+            }
+        }
     }
     
     //MARK: - UIIMagePickerDelegate
@@ -54,6 +70,7 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
         teacherImageView.contentMode = .scaleAspectFit
         teacherImageView.image = image
         teacherImageView.backgroundColor = UIColor.clear
+        teacherImage = image
     }
     /*
     // MARK: - Navigation
