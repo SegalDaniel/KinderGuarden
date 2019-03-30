@@ -42,6 +42,7 @@
 		189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */; };
 		18BFE193224651250084D766 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE192224651250084D766 /* Permissions.swift */; };
 		18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE1942246739E0084D766 /* AddTeacherViewController.swift */; };
+		18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */; };
 		A8287E43224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E41224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E42224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift */; };
 		A8287E4B224CCF77000C64DD /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E49224CCF77000C64DD /* Attendance+CoreDataClass.swift */; };
@@ -132,6 +133,7 @@
 		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		18BFE192224651250084D766 /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		18BFE1942246739E0084D766 /* AddTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherViewController.swift; sourceTree = "<group>"; };
+		18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8287E41224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8287E42224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */,
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
 				189B353F224289C600D33A6C /* Add New Child */,
+				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */,
 				18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */,
 				A8576DFE224A6D2700CBA907 /* GeneralBehavior+CoreDataProperties.swift in Sources */,
+				18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */,
 				A8576E0E224A6E1500CBA907 /* Medication+CoreDataProperties.swift in Sources */,
 				18BFE193224651250084D766 /* Permissions.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
