@@ -38,9 +38,10 @@ class Model{
     let secretionEntity:NSEntityDescription
     let generalBehaviorEntity:NSEntityDescription
     let generalNoteEntity:NSEntityDescription
-    let basicEventEntity:NSEntityDescription
-    let developmentEventEntity:NSEntityDescription
+//    let basicEventEntity:NSEntityDescription
+//    let developmentEventEntity:NSEntityDescription
     let fineMotorEventEntity:NSEntityDescription
+    let grossMotorEventEntity:NSEntityDescription
     
     //MARK: - init
     private init(){
@@ -66,9 +67,10 @@ class Model{
         secretionEntity = NSEntityDescription.entity(forEntityName: "Secretion", in: managedContext)!
         generalBehaviorEntity = NSEntityDescription.entity(forEntityName: "GeneralBehavior", in: managedContext)!
         generalNoteEntity = NSEntityDescription.entity(forEntityName: "GeneralNote", in: managedContext)!
-        basicEventEntity = NSEntityDescription.entity(forEntityName: "BasicEvent", in: managedContext)!
-        developmentEventEntity = NSEntityDescription.entity(forEntityName: "DevelopmentEvent", in: managedContext)!
+//        basicEventEntity = NSEntityDescription.entity(forEntityName: "BasicEvent", in: managedContext)!
+//        developmentEventEntity = NSEntityDescription.entity(forEntityName: "DevelopmentEvent", in: managedContext)!
         fineMotorEventEntity = NSEntityDescription.entity(forEntityName: "FineMotor", in: managedContext)!
+        grossMotorEventEntity = NSEntityDescription.entity(forEntityName: "GrossMotor", in: managedContext)!
     }
     
     //MARK: - Child Model Methods

@@ -67,6 +67,10 @@
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="GrossMotor" representedClassName="GrossMotor" parentEntity="DevelopmentalEvent" syncable="YES">
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="LiquidFood" representedClassName="LiquidFood" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
@@ -130,6 +134,7 @@
         <element name="Disease" positionX="-3574.67578125" positionY="907.71484375" width="128" height="75"/>
         <element name="Feces" positionX="-3987.453125" positionY="926.19921875" width="128" height="90"/>
         <element name="Fever" positionX="-3575.44140625" positionY="1030.40625" width="128" height="60"/>
+        <element name="FineMotor" positionX="-3717" positionY="342" width="128" height="73"/>
         <element name="GeneralBehavior" positionX="-3984.96484375" positionY="1059.59765625" width="128" height="60"/>
         <element name="GeneralNote" positionX="-3407.109375" positionY="598.0078125" width="128" height="75"/>
         <element name="LiquidFood" positionX="-3819.66796875" positionY="611.32421875" width="128" height="90"/>
@@ -143,6 +148,6 @@
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
         <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
-        <element name="FineMotor" positionX="-3717" positionY="342" width="128" height="73"/>
+        <element name="GrossMotor" positionX="-3771" positionY="261" width="128" height="75"/>
     </elements>
 </model>
