@@ -10,10 +10,12 @@ import UIKit
 
 class MainWindowViewController: UIViewController {
 
+    //MARK: - Varaiables
     @IBOutlet weak var kgSettingBtn: UIButton!
     @IBOutlet weak var teachersStackView: UIStackView!
     @IBOutlet weak var kidsInfoBtn: UIButton!
     
+    //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
         roundKidsInfoBtn()
@@ -23,6 +25,7 @@ class MainWindowViewController: UIViewController {
         addTeacherToStack(name: "גננת ראשית", tag: 1)
     }
 
+    //MARK: - buttons actions
     @IBAction func teacherButtonClicked(_ sender: Any){
         if let btn = sender as? UIButton{
             //testDBs()
@@ -33,6 +36,7 @@ class MainWindowViewController: UIViewController {
     @IBAction func kidsInfoClicked(_ sender: Any) {
     }
     
+    //MARK: - Views Inits
     func roundKidsInfoBtn(){
         kidsInfoBtn.layer.cornerRadius = kidsInfoBtn.layer.frame.width / 2
         kidsInfoBtn.clipsToBounds = true
@@ -44,6 +48,7 @@ class MainWindowViewController: UIViewController {
         teachersStackView.addArrangedSubview(btn)
     }
 
+    //MARK: - unwind segue
     @IBAction func unwindToMainWindow(segue:UIStoryboardSegue) { }
     
     
