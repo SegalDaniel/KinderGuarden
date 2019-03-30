@@ -56,6 +56,10 @@
     <entity name="Fever" representedClassName="Fever" parentEntity="BasicEvent" syncable="YES">
         <attribute name="tempreture" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="FineMotor" representedClassName="FineMotor" parentEntity="DevelopmentalEvent" syncable="YES">
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="GeneralBehavior" representedClassName="GeneralBehavior" parentEntity="BasicEvent" syncable="YES">
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -139,5 +143,6 @@
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
         <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
+        <element name="FineMotor" positionX="-3717" positionY="342" width="128" height="73"/>
     </elements>
 </model>
