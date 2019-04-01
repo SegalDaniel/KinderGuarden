@@ -51,14 +51,14 @@
 		A8287E5D224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5B224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift */; };
 		A8287E60224CE346000C64DD /* Staff+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5E224CE346000C64DD /* Staff+CoreDataClass.swift */; };
 		A8287E61224CE346000C64DD /* Staff+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5F224CE346000C64DD /* Staff+CoreDataProperties.swift */; };
-		A8287E64224CE38B000C64DD /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */; };
-		A8287E65224CE38B000C64DD /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */; };
 		A8287E6A224D67D6000C64DD /* BasicEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E68224D67D6000C64DD /* BasicEvent+CoreDataClass.swift */; };
 		A8287E6B224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E69224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift */; };
 		A8299D53224FD024006E961F /* FineMotor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D51224FD024006E961F /* FineMotor+CoreDataClass.swift */; };
 		A8299D54224FD024006E961F /* FineMotor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D52224FD024006E961F /* FineMotor+CoreDataProperties.swift */; };
 		A8299D58224FDEEB006E961F /* GrossMotor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D56224FDEEB006E961F /* GrossMotor+CoreDataClass.swift */; };
 		A8299D59224FDEEB006E961F /* GrossMotor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D57224FDEEB006E961F /* GrossMotor+CoreDataProperties.swift */; };
+		A8299D642252062A006E961F /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D622252062A006E961F /* Child+CoreDataClass.swift */; };
+		A8299D652252062A006E961F /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D632252062A006E961F /* Child+CoreDataProperties.swift */; };
 		A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */; };
 		A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */; };
 		A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */; };
@@ -147,14 +147,14 @@
 		A8287E5B224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8287E5E224CE346000C64DD /* Staff+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8287E5F224CE346000C64DD /* Staff+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8287E68224D67D6000C64DD /* BasicEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8287E69224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8299D51224FD024006E961F /* FineMotor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FineMotor+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8299D52224FD024006E961F /* FineMotor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FineMotor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8299D56224FDEEB006E961F /* GrossMotor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GrossMotor+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8299D57224FDEEB006E961F /* GrossMotor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GrossMotor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8299D622252062A006E961F /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8299D632252062A006E961F /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -217,8 +217,8 @@
 		180CF31D223D5B8300A9DEF2 /* Child */ = {
 			isa = PBXGroup;
 			children = (
-				A8287E62224CE38B000C64DD /* Child+CoreDataClass.swift */,
-				A8287E63224CE38B000C64DD /* Child+CoreDataProperties.swift */,
+				A8299D622252062A006E961F /* Child+CoreDataClass.swift */,
+				A8299D632252062A006E961F /* Child+CoreDataProperties.swift */,
 				A8DA55E7221859CD0043D580 /* Child.swift */,
 			);
 			path = Child;
@@ -770,7 +770,6 @@
 				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
-				A8287E64224CE38B000C64DD /* Child+CoreDataClass.swift in Sources */,
 				A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
@@ -788,6 +787,7 @@
 				A8576E0D224A6E1500CBA907 /* Medication+CoreDataClass.swift in Sources */,
 				189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */,
 				A8287E60224CE346000C64DD /* Staff+CoreDataClass.swift in Sources */,
+				A8299D642252062A006E961F /* Child+CoreDataClass.swift in Sources */,
 				A8576E21224A6F4C00CBA907 /* Urine+CoreDataClass.swift in Sources */,
 				A8576E2D224A701100CBA907 /* SolidFood+CoreDataClass.swift in Sources */,
 				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
@@ -806,6 +806,7 @@
 				A8287E4C224CCF77000C64DD /* Attendance+CoreDataProperties.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
 				A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */,
+				A8299D652252062A006E961F /* Child+CoreDataProperties.swift in Sources */,
 				A8576E32224A705200CBA907 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
 				A8576E16224A6E8600CBA907 /* Vomitus+CoreDataProperties.swift in Sources */,
@@ -847,7 +848,6 @@
 				A8576E2A224A6FBB00CBA907 /* Water+CoreDataProperties.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
 				A8287E6B224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift in Sources */,
-				A8287E65224CE38B000C64DD /* Child+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

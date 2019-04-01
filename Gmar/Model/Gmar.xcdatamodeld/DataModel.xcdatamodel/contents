@@ -22,13 +22,19 @@
         <relationship name="staff" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Staff" inverseName="basicEvents" inverseEntity="Staff" syncable="YES"/>
     </entity>
     <entity name="Child" representedClassName="Child" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="allergenic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="childID" attributeType="String" syncable="YES"/>
+        <attribute name="diseases" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="foods" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" attributeType="String" syncable="YES"/>
         <attribute name="isAttend" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPremature" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="medication" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pickupHour" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="attendanceEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="child" inverseEntity="Attendance" syncable="YES"/>
         <relationship name="authorized" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="child" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
         <relationship name="basicEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicEvent" inverseName="child" inverseEntity="BasicEvent" syncable="YES"/>
@@ -38,7 +44,7 @@
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="DevelopmentalEvent" representedClassName="DevelopmentalEvent" isAbstract="YES" syncable="YES">
+    <entity name="DevelopmentalEvent" representedClassName="DevelopmentalEvent" syncable="YES">
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="eventType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="developmentalEvents" inverseEntity="Child" syncable="YES"/>
@@ -127,16 +133,17 @@
     <elements>
         <element name="Attendance" positionX="-3526.58203125" positionY="98.73046875" width="128" height="133"/>
         <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="118"/>
-        <element name="BasicEvent" positionX="-3697.8125" positionY="713.4375" width="128" height="105"/>
-        <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="208"/>
+        <element name="BasicEvent" positionX="-3634.3515625" positionY="690.71484375" width="128" height="103"/>
+        <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="300"/>
         <element name="Cough" positionX="-3985.5546875" positionY="833.96875" width="128" height="75"/>
-        <element name="DevelopmentalEvent" positionX="-3771" positionY="261" width="128" height="105"/>
+        <element name="DevelopmentalEvent" positionX="-3771" positionY="261" width="128" height="103"/>
         <element name="Disease" positionX="-3574.67578125" positionY="907.71484375" width="128" height="75"/>
         <element name="Feces" positionX="-3987.453125" positionY="926.19921875" width="128" height="90"/>
         <element name="Fever" positionX="-3575.44140625" positionY="1030.40625" width="128" height="60"/>
         <element name="FineMotor" positionX="-3717" positionY="342" width="128" height="73"/>
         <element name="GeneralBehavior" positionX="-3984.96484375" positionY="1059.59765625" width="128" height="60"/>
         <element name="GeneralNote" positionX="-3407.109375" positionY="598.0078125" width="128" height="75"/>
+        <element name="GrossMotor" positionX="-3771" positionY="261" width="128" height="75"/>
         <element name="LiquidFood" positionX="-3819.66796875" positionY="611.32421875" width="128" height="90"/>
         <element name="Medication" positionX="-3408.0625" positionY="706.3203125" width="128" height="75"/>
         <element name="Parasites" positionX="-3818" positionY="749.4921875" width="128" height="60"/>
@@ -148,6 +155,5 @@
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
         <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
-        <element name="GrossMotor" positionX="-3771" positionY="261" width="128" height="75"/>
     </elements>
 </model>
