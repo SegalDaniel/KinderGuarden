@@ -20,6 +20,13 @@ class Model{
     //MARK: - NSEnteties
     let staffEntity:NSEntityDescription
     let childEntity:NSEntityDescription
+    
+    //MARK: - Child Entities
+    let authorizedAccompanistEntity:NSEntityDescription
+    let attendanceEntity:NSEntityDescription
+    let allergenicEntity:NSEntityDescription
+    
+   //MARK: - Basic Events Entities
     let sleepEntity:NSEntityDescription
     let feverEntity:NSEntityDescription
     let rashEntity:NSEntityDescription
@@ -29,10 +36,8 @@ class Model{
     let fecesEntity:NSEntityDescription
     let urineEntity:NSEntityDescription
     let vomitusEntity:NSEntityDescription
-    let authorizedAccompanistEntity:NSEntityDescription
     let medicationEntity:NSEntityDescription
     let diseaseEntity:NSEntityDescription
-    let attendanceEntity:NSEntityDescription
     let coughEntity:NSEntityDescription
     let parasitesEntity:NSEntityDescription
     let secretionEntity:NSEntityDescription
@@ -40,6 +45,7 @@ class Model{
     let generalNoteEntity:NSEntityDescription
 //    let basicEventEntity:NSEntityDescription
 //    let developmentEventEntity:NSEntityDescription
+    //MARK: - Development Events Entities
     let fineMotorEventEntity:NSEntityDescription
     let grossMotorEventEntity:NSEntityDescription
     
@@ -71,6 +77,7 @@ class Model{
 //        developmentEventEntity = NSEntityDescription.entity(forEntityName: "DevelopmentEvent", in: managedContext)!
         fineMotorEventEntity = NSEntityDescription.entity(forEntityName: "FineMotor", in: managedContext)!
         grossMotorEventEntity = NSEntityDescription.entity(forEntityName: "GrossMotor", in: managedContext)!
+        allergenicEntity  = NSEntityDescription.entity(forEntityName: "Allergenic", in: managedContext)!
     }
     
     //MARK: - Child Model Methods

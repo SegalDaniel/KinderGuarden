@@ -59,6 +59,8 @@
 		A8299D59224FDEEB006E961F /* GrossMotor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D57224FDEEB006E961F /* GrossMotor+CoreDataProperties.swift */; };
 		A8299D642252062A006E961F /* Child+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D622252062A006E961F /* Child+CoreDataClass.swift */; };
 		A8299D652252062A006E961F /* Child+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D632252062A006E961F /* Child+CoreDataProperties.swift */; };
+		A8299D6922537FDD006E961F /* Allergenic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D6722537FDD006E961F /* Allergenic+CoreDataClass.swift */; };
+		A8299D6A22537FDD006E961F /* Allergenic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D6822537FDD006E961F /* Allergenic+CoreDataProperties.swift */; };
 		A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */; };
 		A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */; };
 		A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */; };
@@ -155,6 +157,8 @@
 		A8299D57224FDEEB006E961F /* GrossMotor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GrossMotor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8299D622252062A006E961F /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8299D632252062A006E961F /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8299D6722537FDD006E961F /* Allergenic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Allergenic+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8299D6822537FDD006E961F /* Allergenic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Allergenic+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -505,6 +509,15 @@
 			path = GrossMotor;
 			sourceTree = "<group>";
 		};
+		A8299D6622537F63006E961F /* Allergenic */ = {
+			isa = PBXGroup;
+			children = (
+				A8299D6722537FDD006E961F /* Allergenic+CoreDataClass.swift */,
+				A8299D6822537FDD006E961F /* Allergenic+CoreDataProperties.swift */,
+			);
+			path = Allergenic;
+			sourceTree = "<group>";
+		};
 		A8C41468223EE28C0072B0A8 /* Sleep */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +613,7 @@
 			children = (
 				A8C41472223EEED20072B0A8 /* Staff */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
+				A8299D6622537F63006E961F /* Allergenic */,
 				A81F4EBF22429121003FED63 /* AuthorizedAccompanist */,
 				A8287E3C224BB861000C64DD /* Attendance */,
 				A8287E66224D5471000C64DD /* BasicEvents */,
@@ -635,7 +649,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
-				074B3FCC6E909271AAE98A34 /* [CP] Embed Pods Frameworks */,
+				1AE078421560C27430ED9D89 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,7 +717,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		074B3FCC6E909271AAE98A34 /* [CP] Embed Pods Frameworks */ = {
+		1AE078421560C27430ED9D89 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -784,6 +798,7 @@
 				A8576E1D224A6F0200CBA907 /* Fever+CoreDataClass.swift in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
 				A8576E31224A705200CBA907 /* LiquidFood+CoreDataClass.swift in Sources */,
+				A8299D6922537FDD006E961F /* Allergenic+CoreDataClass.swift in Sources */,
 				A8576E0D224A6E1500CBA907 /* Medication+CoreDataClass.swift in Sources */,
 				189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */,
 				A8287E60224CE346000C64DD /* Staff+CoreDataClass.swift in Sources */,
@@ -824,6 +839,7 @@
 				18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */,
 				A8576DFE224A6D2700CBA907 /* GeneralBehavior+CoreDataProperties.swift in Sources */,
 				18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */,
+				A8299D6A22537FDD006E961F /* Allergenic+CoreDataProperties.swift in Sources */,
 				A8299D54224FD024006E961F /* FineMotor+CoreDataProperties.swift in Sources */,
 				A8576E0E224A6E1500CBA907 /* Medication+CoreDataProperties.swift in Sources */,
 				18BFE193224651250084D766 /* Permissions.swift in Sources */,

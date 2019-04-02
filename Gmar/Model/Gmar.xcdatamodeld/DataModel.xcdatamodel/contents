@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Allergenic" representedClassName="Allergenic" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="allergenics" inverseEntity="Child" syncable="YES"/>
+    </entity>
     <entity name="Attendance" representedClassName="Attendance" syncable="YES">
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="isLate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -35,6 +39,7 @@
         <attribute name="lastName" attributeType="String" syncable="YES"/>
         <attribute name="medication" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pickupHour" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allergenics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Allergenic" inverseName="child" inverseEntity="Allergenic" syncable="YES"/>
         <relationship name="attendanceEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="child" inverseEntity="Attendance" syncable="YES"/>
         <relationship name="authorized" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="child" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
         <relationship name="basicEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicEvent" inverseName="child" inverseEntity="BasicEvent" syncable="YES"/>
@@ -134,9 +139,9 @@
         <element name="Attendance" positionX="-3526.58203125" positionY="98.73046875" width="128" height="133"/>
         <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="118"/>
         <element name="BasicEvent" positionX="-3634.3515625" positionY="690.71484375" width="128" height="103"/>
-        <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="300"/>
+        <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="315"/>
         <element name="Cough" positionX="-3985.5546875" positionY="833.96875" width="128" height="75"/>
-        <element name="DevelopmentalEvent" positionX="-3771" positionY="261" width="128" height="103"/>
+        <element name="DevelopmentalEvent" positionX="-3771" positionY="261" width="128" height="105"/>
         <element name="Disease" positionX="-3574.67578125" positionY="907.71484375" width="128" height="75"/>
         <element name="Feces" positionX="-3987.453125" positionY="926.19921875" width="128" height="90"/>
         <element name="Fever" positionX="-3575.44140625" positionY="1030.40625" width="128" height="60"/>
@@ -155,5 +160,6 @@
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
         <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
+        <element name="Allergenic" positionX="-3762" positionY="270" width="128" height="75"/>
     </elements>
 </model>
