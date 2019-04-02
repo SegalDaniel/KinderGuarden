@@ -27,10 +27,8 @@
     </entity>
     <entity name="Child" representedClassName="Child" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="allergenic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="childID" attributeType="String" syncable="YES"/>
-        <attribute name="diseases" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" attributeType="String" syncable="YES"/>
         <attribute name="foods" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" attributeType="String" syncable="YES"/>
@@ -43,7 +41,12 @@
         <relationship name="attendanceEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="child" inverseEntity="Attendance" syncable="YES"/>
         <relationship name="authorized" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AuthorizedAccompanist" inverseName="child" inverseEntity="AuthorizedAccompanist" syncable="YES"/>
         <relationship name="basicEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicEvent" inverseName="child" inverseEntity="BasicEvent" syncable="YES"/>
+        <relationship name="chronicDiseases" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChronicDisease" inverseName="child" inverseEntity="ChronicDisease" syncable="YES"/>
         <relationship name="developmentalEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DevelopmentalEvent" inverseName="child" inverseEntity="DevelopmentalEvent" syncable="YES"/>
+    </entity>
+    <entity name="ChronicDisease" representedClassName="ChronicDisease" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="chronicDiseases" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Cough" representedClassName="Cough" parentEntity="BasicEvent" syncable="YES">
         <attribute name="childID" optional="YES" attributeType="String" syncable="YES"/>
@@ -139,7 +142,7 @@
         <element name="Attendance" positionX="-3526.58203125" positionY="98.73046875" width="128" height="133"/>
         <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="118"/>
         <element name="BasicEvent" positionX="-3634.3515625" positionY="690.71484375" width="128" height="103"/>
-        <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="315"/>
+        <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="300"/>
         <element name="Cough" positionX="-3985.5546875" positionY="833.96875" width="128" height="75"/>
         <element name="DevelopmentalEvent" positionX="-3771" positionY="261" width="128" height="105"/>
         <element name="Disease" positionX="-3574.67578125" positionY="907.71484375" width="128" height="75"/>
@@ -161,5 +164,6 @@
         <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
         <element name="Allergenic" positionX="-3762" positionY="270" width="128" height="75"/>
+        <element name="ChronicDisease" positionX="-3753" positionY="279" width="128" height="75"/>
     </elements>
 </model>
