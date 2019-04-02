@@ -8,14 +8,20 @@
 
 import UIKit
 
-class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
+class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, AddChildViewControllerDelegate {
+    
     //MARK: - Variables
     @IBOutlet weak var pickerNameTextField: UITextField!
     @IBOutlet weak var pickerKindPicker: UIPickerView!
     @IBOutlet weak var pickerPhoneTextField: UITextField!
     var possPickers = ["אמא", "אבא", "סבא", "סבתא", "אח/ות", "אחר"]
     var delegate:ChildPickerTableViewCellDelegate?
+    var vc:AddChildViewController?{
+        didSet{
+            vc!.delegate = self
+            Utility.moveWithKeyboard(viewController: vc!)
+        }
+    }
     
     //MARK: - Cell overrides
     override func awakeFromNib() {
@@ -45,6 +51,11 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         delegate?.relation(relation: possPickers[row])
+    }
+    
+    func shouldEndEditing() {
+        delegate?.firstName(name: pickerNameTextField.text!)
+        delegate?.phoneNumber(phone: pickerPhoneTextField.text!)
     }
     
     //MARK: - UITextFieldDelegate

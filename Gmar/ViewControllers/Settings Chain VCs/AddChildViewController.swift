@@ -13,6 +13,7 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Variables
     let imagePicker = UIImagePickerController()
     var permissions:Permissions?
+    var delegate:AddChildViewControllerDelegate?
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
@@ -58,6 +59,7 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Button action
     @IBAction func addPickerBtnClicked(_ sender: Any) {
         pickers += 1
+        self.view.endEditing(true)
     }
     
     
@@ -69,6 +71,7 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "childPicker", for: indexPath) as! ChildPickerTableViewCell
         cell.delegate = self
+        cell.vc = self
         return cell
     }
     
@@ -102,6 +105,7 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - TextField delegate
     func textFieldDidEndEditing(_ textField: UITextField) {
+        self.view.endEditing(true)
         switch textField {
         case firstNameTextField:
             childData["firstName"] = firstNameTextField.text!
@@ -154,6 +158,8 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.view.endEditing(true)
+        delegate?.shouldEndEditing()
         if segue.identifier == "addChildSecondVC"{
             let vc = segue.destination as! AddChildSecondViewController
             if prematureSegment.selectedSegmentIndex == 0{
@@ -183,4 +189,8 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
 
+}
+
+protocol AddChildViewControllerDelegate {
+    func shouldEndEditing()
 }
