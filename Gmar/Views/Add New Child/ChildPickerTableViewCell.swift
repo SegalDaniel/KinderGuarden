@@ -8,17 +8,20 @@
 
 import UIKit
 
-class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
+class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     //MARK: - Variables
     @IBOutlet weak var pickerNameTextField: UITextField!
     @IBOutlet weak var pickerKindPicker: UIPickerView!
     @IBOutlet weak var pickerPhoneTextField: UITextField!
     var possPickers = ["אמא", "אבא", "סבא", "סבתא", "אח/ות", "אחר"]
+    var delegate:ChildPickerTableViewCellDelegate?
     
     //MARK: - Cell overrides
     override func awakeFromNib() {
         super.awakeFromNib()
+        pickerNameTextField.delegate = self
+        pickerPhoneTextField.delegate = self
         pickerKindPicker.delegate = self
         pickerKindPicker.dataSource = self
     }
@@ -39,9 +42,29 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return possPickers[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        delegate?.relation(relation: possPickers[row])
+    }
+    
+    //MARK: - UITextFieldDelegate
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case pickerNameTextField:
+            delegate?.firstName(name: pickerNameTextField.text!)
+            break
+        case pickerPhoneTextField:
+            delegate?.phoneNumber(phone: pickerPhoneTextField.text!)
+            break
+        default:
+            break
+        }
+    }    
 }
 
 //MARK: - ChildPickerTableViewCellDelegate protocol
 protocol ChildPickerTableViewCellDelegate {
-    func pickers(amount:Int)
+    func firstName(name:String)
+    func phoneNumber(phone:String)
+    func relation(relation:String)
 }

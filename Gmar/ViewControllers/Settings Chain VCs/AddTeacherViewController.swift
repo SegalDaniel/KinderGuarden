@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     //MARK: - Variables
     let imagePicker = UIImagePickerController()
@@ -22,6 +22,8 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        nameTextField.delegate = self
+        lastNameTextField.delegate = self
         permissions = Permissions(target: self, imagePicker: imagePicker)
         Utility.viewTapRecognizer(target: self, toBeTapped: teacherImageView, action: #selector(selectImageTapped))
     }
@@ -75,6 +77,11 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
         teacherImageView.image = image
         teacherImageView.backgroundColor = UIColor.clear
         teacherImage = image
+    }
+    
+    //MARK: - TextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        Utility.moveWithKeyboard(viewController: self)
     }
     /*
     // MARK: - Navigation
