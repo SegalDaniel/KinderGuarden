@@ -17,15 +17,16 @@ extension Child {
         return NSFetchRequest<Child>(entityName: "Child")
     }
 
-    @NSManaged public var address: String?
-    @NSManaged public var birthDate: NSDate?
     @NSManaged public var childID: String?
     @NSManaged public var firstName: String?
-    @NSManaged public var foods: String?
+    @NSManaged public var lastName: String?
     @NSManaged public var gender: String?
+    @NSManaged public var birthDate: NSDate?
+    @NSManaged public var address: String?
+    
+    @NSManaged public var foods: String?
     @NSManaged public var isAttend: Bool
     @NSManaged public var isPremature: Bool
-    @NSManaged public var lastName: String?
     @NSManaged public var pickupHour: String?
     @NSManaged public var attendanceEvents: NSSet?
     @NSManaged public var authorized: NSSet?

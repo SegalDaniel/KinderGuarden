@@ -29,25 +29,27 @@ class Model{
     let routineMedicationEtity:NSEntityDescription
     
    //MARK: - Basic Events Entities
+//    let basicEventEntity:NSEntityDescription
     let sleepEntity:NSEntityDescription
-    let feverEntity:NSEntityDescription
-    let rashEntity:NSEntityDescription
-    let liquidFoodEntity:NSEntityDescription
-    let solidFoodEntity:NSEntityDescription
     let waterEntity:NSEntityDescription
+    let solidFoodEntity:NSEntityDescription
+    let liquidFoodEntity:NSEntityDescription
     let fecesEntity:NSEntityDescription
     let urineEntity:NSEntityDescription
-    let vomitusEntity:NSEntityDescription
-    let medicationEntity:NSEntityDescription
-    let diseaseEntity:NSEntityDescription
     let coughEntity:NSEntityDescription
-    let parasitesEntity:NSEntityDescription
     let secretionEntity:NSEntityDescription
+    let vomitusEntity:NSEntityDescription
+    let rashEntity:NSEntityDescription
+    let feverEntity:NSEntityDescription
+    let diseaseEntity:NSEntityDescription
+    let medicationEntity:NSEntityDescription
+    let parasitesEntity:NSEntityDescription
     let generalBehaviorEntity:NSEntityDescription
     let generalNoteEntity:NSEntityDescription
-//    let basicEventEntity:NSEntityDescription
-//    let developmentEventEntity:NSEntityDescription
+
+
     //MARK: - Development Events Entities
+//    let developmentEventEntity:NSEntityDescription
     let fineMotorEventEntity:NSEntityDescription
     let grossMotorEventEntity:NSEntityDescription
     
