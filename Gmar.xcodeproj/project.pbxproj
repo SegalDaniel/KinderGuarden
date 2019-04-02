@@ -236,11 +236,11 @@
 				A8299D7E22541251006E961F /* Child+CoreDataClass.swift */,
 				A8299D7F22541251006E961F /* Child+CoreDataProperties.swift */,
 				A8DA55E7221859CD0043D580 /* Child.swift */,
+				A81F4EBF22429121003FED63 /* AuthorizedAccompanist */,
 				A8299D7922540D0A006E961F /* Food */,
 				A8299D6622537F63006E961F /* Allergenic */,
 				A8299D6B225383B5006E961F /* ChronicDisease */,
 				A8299D70225385F1006E961F /* RoutineMedication */,
-				A81F4EBF22429121003FED63 /* AuthorizedAccompanist */,
 			);
 			path = Child;
 			sourceTree = "<group>";
