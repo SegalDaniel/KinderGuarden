@@ -2,7 +2,7 @@
 //  Child+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 02/04/2019.
+//  Created by Daniel Segal on 03/04/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,24 +17,43 @@ extension Child {
         return NSFetchRequest<Child>(entityName: "Child")
     }
 
+    //MARK: - Variables
     @NSManaged public var childID: String?
     @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
     @NSManaged public var gender: String?
     @NSManaged public var birthDate: NSDate?
-    @NSManaged public var address: String?
-    
-    @NSManaged public var foods: String?
-    @NSManaged public var isAttend: Bool
     @NSManaged public var isPremature: Bool
-    @NSManaged public var pickupHour: String?
-    @NSManaged public var attendanceEvents: NSSet?
+    @NSManaged public var address: String?
+    @NSManaged public var isAttend: Bool
     @NSManaged public var authorized: NSSet?
-    @NSManaged public var basicEvents: NSSet?
-    @NSManaged public var developmentalEvents: NSSet?
+    @NSManaged public var pickupHour: String?
     @NSManaged public var allergenics: NSSet?
     @NSManaged public var chronicDiseases: NSSet?
     @NSManaged public var routineMedication: NSSet?
+    @NSManaged public var foodList: NSSet?
+    
+    //MARK: - Child's Entities
+    @NSManaged public var attendanceEvents: NSSet?
+    @NSManaged public var basicEvents: NSSet?
+    @NSManaged public var developmentalEvents: NSSet?
+
+}
+
+// MARK: Generated accessors for allergenics
+extension Child {
+
+    @objc(addAllergenicsObject:)
+    @NSManaged public func addToAllergenics(_ value: Allergenic)
+
+    @objc(removeAllergenicsObject:)
+    @NSManaged public func removeFromAllergenics(_ value: Allergenic)
+
+    @objc(addAllergenics:)
+    @NSManaged public func addToAllergenics(_ values: NSSet)
+
+    @objc(removeAllergenics:)
+    @NSManaged public func removeFromAllergenics(_ values: NSSet)
 
 }
 
@@ -89,6 +108,23 @@ extension Child {
 
 }
 
+// MARK: Generated accessors for chronicDiseases
+extension Child {
+
+    @objc(addChronicDiseasesObject:)
+    @NSManaged public func addToChronicDiseases(_ value: ChronicDisease)
+
+    @objc(removeChronicDiseasesObject:)
+    @NSManaged public func removeFromChronicDiseases(_ value: ChronicDisease)
+
+    @objc(addChronicDiseases:)
+    @NSManaged public func addToChronicDiseases(_ values: NSSet)
+
+    @objc(removeChronicDiseases:)
+    @NSManaged public func removeFromChronicDiseases(_ values: NSSet)
+
+}
+
 // MARK: Generated accessors for developmentalEvents
 extension Child {
 
@@ -106,37 +142,20 @@ extension Child {
 
 }
 
-// MARK: Generated accessors for allergenics
+// MARK: Generated accessors for foodList
 extension Child {
 
-    @objc(addAllergenicsObject:)
-    @NSManaged public func addToAllergenics(_ value: Allergenic)
+    @objc(addFoodListObject:)
+    @NSManaged public func addToFoodList(_ value: Food)
 
-    @objc(removeAllergenicsObject:)
-    @NSManaged public func removeFromAllergenics(_ value: Allergenic)
+    @objc(removeFoodListObject:)
+    @NSManaged public func removeFromFoodList(_ value: Food)
 
-    @objc(addAllergenics:)
-    @NSManaged public func addToAllergenics(_ values: NSSet)
+    @objc(addFoodList:)
+    @NSManaged public func addToFoodList(_ values: NSSet)
 
-    @objc(removeAllergenics:)
-    @NSManaged public func removeFromAllergenics(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for chronicDiseases
-extension Child {
-
-    @objc(addChronicDiseasesObject:)
-    @NSManaged public func addToChronicDiseases(_ value: ChronicDisease)
-
-    @objc(removeChronicDiseasesObject:)
-    @NSManaged public func removeFromChronicDiseases(_ value: ChronicDisease)
-
-    @objc(addChronicDiseases:)
-    @NSManaged public func addToChronicDiseases(_ values: NSSet)
-
-    @objc(removeChronicDiseases:)
-    @NSManaged public func removeFromChronicDiseases(_ values: NSSet)
+    @objc(removeFoodList:)
+    @NSManaged public func removeFromFoodList(_ values: NSSet)
 
 }
 

@@ -27,6 +27,7 @@ class Model{
     let allergenicEntity:NSEntityDescription
     let chronicDiseaseEntity:NSEntityDescription
     let routineMedicationEtity:NSEntityDescription
+    let foodEntity:NSEntityDescription
     
    //MARK: - Basic Events Entities
 //    let basicEventEntity:NSEntityDescription
@@ -84,6 +85,7 @@ class Model{
         allergenicEntity  = NSEntityDescription.entity(forEntityName: "Allergenic", in: managedContext)!
         chronicDiseaseEntity = NSEntityDescription.entity(forEntityName: "ChronicDisease", in: managedContext)!
         routineMedicationEtity = NSEntityDescription.entity(forEntityName: "RoutineMedication", in: managedContext)!
+        foodEntity = NSEntityDescription.entity(forEntityName: "Food", in: managedContext)!
         
     }
     
