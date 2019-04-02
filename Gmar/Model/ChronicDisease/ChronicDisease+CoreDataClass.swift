@@ -28,7 +28,7 @@ public class ChronicDisease: NSManagedObject {
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["type"] = type
-        json["child"] = child?.toJson()
+        json["childID"] = child?.childID
         return json
         
     }
