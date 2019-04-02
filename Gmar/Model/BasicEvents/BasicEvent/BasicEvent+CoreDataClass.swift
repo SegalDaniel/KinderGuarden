@@ -33,8 +33,8 @@ public class BasicEvent: NSManagedObject {
         var json = [String:Any]()
         json["eventType"] = eventType
         json["eventDate"] = eventDate
-        json["child"] = child?.toJson()
-        json["staff"] = staff?.toJson()
+        json["childID"] = child?.childID
+        json["staffID"] = staff?.staffID
         return json
         
     }
