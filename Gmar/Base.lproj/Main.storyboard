@@ -446,13 +446,13 @@
                     <navigationItem key="navigationItem" title="רישום ילד לגן" id="bif-DN-xbw">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="7Eb-Fm-f2e">
                             <connections>
-                                <segue destination="Rk1-gC-I4V" kind="show" id="45y-H3-Hjn"/>
+                                <segue destination="Rk1-gC-I4V" kind="show" identifier="addChildSecondVC" id="45y-H3-Hjn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addChildPickerBtn" destination="V45-Cx-7HY" id="e9g-1n-cVv"/>
-                        <outlet property="addressTextField" destination="df4-Se-WOb" id="iYe-W3-R2g"/>
+                        <outlet property="addressTextField" destination="9jG-eK-IhW" id="EAa-wy-8qI"/>
                         <outlet property="babyImageView" destination="H9n-Ud-Dd7" id="fHG-j3-UGQ"/>
                         <outlet property="birthDatePicker" destination="nxo-ms-fsZ" id="Eh8-4K-ViK"/>
                         <outlet property="childIDTextField" destination="df4-Se-WOb" id="NcN-WO-t24"/>
@@ -461,6 +461,7 @@
                         <outlet property="genderSegment" destination="kc1-9e-B4T" id="UeP-qn-PWB"/>
                         <outlet property="lastNameTextField" destination="Cf1-le-sBj" id="WAg-fC-z5e"/>
                         <outlet property="pickingTimePicker" destination="zzg-Nz-mZG" id="FgB-hi-fsv"/>
+                        <outlet property="prematureSegment" destination="XcK-t8-QPG" id="W9z-w5-Kdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8o-Zn-q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,6 +19,7 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var addAlergicBtn: UIButton!
     @IBOutlet weak var addDiseasesBtn: UIButton!
     @IBOutlet weak var addMedicationBtn: UIButton!
+    var childData:[String:Any]?
     
     var foods:Int = 0{
         didSet{
