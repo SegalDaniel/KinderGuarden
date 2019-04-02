@@ -142,7 +142,6 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
                 if let phone = authAccompData["phone"]{
                     if let relation = authAccompData["relation"]{
                         authAccomps.append(AuthorizedAccompanist(name: name, phone: phone, relation: relation))
-                        Model.instance.saveToDB(callback: nil)
                         authAccompData = [:]
                     }
                     else {return}
