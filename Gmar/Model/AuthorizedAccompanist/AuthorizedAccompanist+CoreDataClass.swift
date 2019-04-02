@@ -12,7 +12,7 @@ import CoreData
 
 @objc(AuthorizedAccompanist)
 public class AuthorizedAccompanist: NSManagedObject {
-    convenience init(name:String, phone:String, relation:String, child:Child?){
+    convenience init(name:String, phone:String, relation:String){
         self.init(entity: Model.instance.authorizedAccompanistEntity, insertInto: Model.instance.managedContext)
         self.setValue(name, forKey: "name")
         self.setValue(phone, forKey: "phone")
