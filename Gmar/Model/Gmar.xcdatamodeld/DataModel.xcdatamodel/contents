@@ -35,7 +35,6 @@
         <attribute name="isAttend" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPremature" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
-        <attribute name="medication" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pickupHour" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="allergenics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Allergenic" inverseName="child" inverseEntity="Allergenic" syncable="YES"/>
         <relationship name="attendanceEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="child" inverseEntity="Attendance" syncable="YES"/>
@@ -43,6 +42,7 @@
         <relationship name="basicEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicEvent" inverseName="child" inverseEntity="BasicEvent" syncable="YES"/>
         <relationship name="chronicDiseases" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChronicDisease" inverseName="child" inverseEntity="ChronicDisease" syncable="YES"/>
         <relationship name="developmentalEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DevelopmentalEvent" inverseName="child" inverseEntity="DevelopmentalEvent" syncable="YES"/>
+        <relationship name="routineMedication" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineMedication" inverseName="child" inverseEntity="RoutineMedication" syncable="YES"/>
     </entity>
     <entity name="ChronicDisease" representedClassName="ChronicDisease" syncable="YES">
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -100,6 +100,10 @@
     <entity name="Rash" representedClassName="Rash" parentEntity="BasicEvent" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RoutineMedication" representedClassName="RoutineMedication" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="routineMedication" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Secretion" representedClassName="Secretion" parentEntity="BasicEvent" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
@@ -165,5 +169,6 @@
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
         <element name="Allergenic" positionX="-3762" positionY="270" width="128" height="75"/>
         <element name="ChronicDisease" positionX="-3753" positionY="279" width="128" height="75"/>
+        <element name="RoutineMedication" positionX="-3744" positionY="288" width="128" height="75"/>
     </elements>
 </model>

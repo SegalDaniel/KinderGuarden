@@ -26,6 +26,7 @@ class Model{
     let attendanceEntity:NSEntityDescription
     let allergenicEntity:NSEntityDescription
     let chronicDiseaseEntity:NSEntityDescription
+    let routineMedicationEtity:NSEntityDescription
     
    //MARK: - Basic Events Entities
     let sleepEntity:NSEntityDescription
@@ -80,6 +81,8 @@ class Model{
         grossMotorEventEntity = NSEntityDescription.entity(forEntityName: "GrossMotor", in: managedContext)!
         allergenicEntity  = NSEntityDescription.entity(forEntityName: "Allergenic", in: managedContext)!
         chronicDiseaseEntity = NSEntityDescription.entity(forEntityName: "ChronicDisease", in: managedContext)!
+        routineMedicationEtity = NSEntityDescription.entity(forEntityName: "RoutineMedication", in: managedContext)!
+        
     }
     
     //MARK: - Child Model Methods

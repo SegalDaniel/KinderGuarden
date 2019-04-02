@@ -2,7 +2,7 @@
 //  Child+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 01/04/2019.
+//  Created by Daniel Segal on 02/04/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Child)
 public class Child: NSManagedObject {
-    convenience init(childID:String, firstName:String, gender:String, lastName:String, isPremature:Bool, birthDate:String, isAttend:Bool, address:String, pickupHour:String, foods:String, allergenic:String, diseases:String, medication:String) {
+    convenience init(childID:String, firstName:String, gender:String, lastName:String, isPremature:Bool, birthDate:String, isAttend:Bool, address:String, pickupHour:String, foods:String) {
         self.init(entity: Model.instance.childEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(firstName, forKey: "firstName")
@@ -22,9 +22,6 @@ public class Child: NSManagedObject {
         self.setValue(address, forKey: "address")
         self.setValue(pickupHour, forKey: "pickupHour")
         self.setValue(foods, forKey: "foods")
-        self.setValue(allergenic, forKey: "allergenic")
-        self.setValue(diseases, forKey: "diseases")
-        self.setValue(medication, forKey: "medication")
         self.setValue(birthDate, forKey: "birthDate")
         self.setValue(isAttend, forKey: "isAttend")
     }
@@ -39,9 +36,6 @@ public class Child: NSManagedObject {
         self.setValue(json["address"], forKey: "address")
         self.setValue(json["pickupHour"], forKey: "pickupHour")
         self.setValue(json["foods"], forKey: "foods")
-        self.setValue(json["allergenic"], forKey: "allergenic")
-        self.setValue(json["diseases"], forKey: "diseases")
-        self.setValue(json["medication"], forKey: "medication")
         self.setValue(json["birthDate"], forKey: "birthDate")
         self.setValue(json["isAttend"], forKey: "isAttend")
     }
@@ -56,9 +50,6 @@ public class Child: NSManagedObject {
         json["address"] = address
         json["pickupHour"] = pickupHour
         json["foods"] = foods
-        json["allergenic"] = allergenic
-        json["diseases"] = diseases
-        json["medication"] = medication
         json["birthDate"] = birthDate
         json["isAttend"] = isAttend
         return json
