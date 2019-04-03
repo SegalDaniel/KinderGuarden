@@ -460,6 +460,7 @@
                         <outlet property="firstNameTextField" destination="Xng-Tk-cjA" id="m4q-NH-gT5"/>
                         <outlet property="genderSegment" destination="kc1-9e-B4T" id="UeP-qn-PWB"/>
                         <outlet property="lastNameTextField" destination="Cf1-le-sBj" id="WAg-fC-z5e"/>
+                        <outlet property="nextBarButton" destination="7Eb-Fm-f2e" id="qP7-zs-o0K"/>
                         <outlet property="pickingTimePicker" destination="zzg-Nz-mZG" id="FgB-hi-fsv"/>
                         <outlet property="prematureSegment" destination="XcK-t8-QPG" id="W9z-w5-Kdp"/>
                     </connections>
