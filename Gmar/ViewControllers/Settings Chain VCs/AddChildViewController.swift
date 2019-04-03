@@ -56,6 +56,10 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.endEditing(true)
     }
     
+    @IBAction func nextScreenBtnClicked(_ sender: Any) {
+        
+    }
+    
     
     //MARK: - child picker table view delegate & datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
