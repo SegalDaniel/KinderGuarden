@@ -119,6 +119,10 @@
         <attribute name="sleepingScope" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Social" representedClassName="Social" parentEntity="DevelopmentalEvent" syncable="YES">
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="SolidFood" representedClassName="SolidFood" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
@@ -170,6 +174,7 @@
         <element name="RoutineMedication" positionX="-3744" positionY="288" width="128" height="75"/>
         <element name="Secretion" positionX="-3819.26171875" positionY="843.44140625" width="128" height="90"/>
         <element name="Sleep" positionX="-3405.13671875" positionY="951.59375" width="128" height="90"/>
+        <element name="Social" positionX="-3726" positionY="306" width="128" height="75"/>
         <element name="SolidFood" positionX="-3820.48046875" positionY="966.0234375" width="128" height="105"/>
         <element name="Staff" positionX="-3448.37109375" positionY="304.265625" width="128" height="148"/>
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>

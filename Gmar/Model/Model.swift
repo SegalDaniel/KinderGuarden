@@ -53,6 +53,7 @@ class Model{
 //    let developmentEventEntity:NSEntityDescription
     let fineMotorEventEntity:NSEntityDescription
     let grossMotorEventEntity:NSEntityDescription
+    let socialEventEntity:NSEntityDescription
     
     //MARK: - init
     private init(){
@@ -86,6 +87,7 @@ class Model{
         chronicDiseaseEntity = NSEntityDescription.entity(forEntityName: "ChronicDisease", in: managedContext)!
         routineMedicationEtity = NSEntityDescription.entity(forEntityName: "RoutineMedication", in: managedContext)!
         foodEntity = NSEntityDescription.entity(forEntityName: "Food", in: managedContext)!
+        socialEventEntity = NSEntityDescription.entity(forEntityName: "Social", in: managedContext)!
         
     }
     

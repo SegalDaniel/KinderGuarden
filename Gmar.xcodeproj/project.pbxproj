@@ -99,6 +99,8 @@
 		A8576E32224A705200CBA907 /* LiquidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E30224A705200CBA907 /* LiquidFood+CoreDataProperties.swift */; };
 		A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E33224A70DA00CBA907 /* Sleep+CoreDataClass.swift */; };
 		A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */; };
+		A88BBF9E2255F91000F9C0B4 /* Social+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBF9C2255F91000F9C0B4 /* Social+CoreDataClass.swift */; };
+		A88BBF9F2255F91000F9C0B4 /* Social+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBF9D2255F91000F9C0B4 /* Social+CoreDataProperties.swift */; };
 		A8C41482223EF8280072B0A8 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F1221864E20043D580 /* Water.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
@@ -203,6 +205,8 @@
 		A8576E30224A705200CBA907 /* LiquidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576E33224A70DA00CBA907 /* Sleep+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A88BBF9C2255F91000F9C0B4 /* Social+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Social+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A88BBF9D2255F91000F9C0B4 /* Social+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Social+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
@@ -504,6 +508,7 @@
 				A8287E55224CD4A6000C64DD /* DevelopmentalEvent */,
 				A8299D50224FCEB3006E961F /* FineMotor */,
 				A8299D55224FDD5D006E961F /* GrossMotor */,
+				A8299D822255F899006E961F /* Social */,
 			);
 			path = DevelopmentEvents;
 			sourceTree = "<group>";
@@ -560,6 +565,15 @@
 				A8299D7B22540EB2006E961F /* Food+CoreDataProperties.swift */,
 			);
 			path = Food;
+			sourceTree = "<group>";
+		};
+		A8299D822255F899006E961F /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				A88BBF9C2255F91000F9C0B4 /* Social+CoreDataClass.swift */,
+				A88BBF9D2255F91000F9C0B4 /* Social+CoreDataProperties.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 		A8C41468223EE28C0072B0A8 /* Sleep */ = {
@@ -691,7 +705,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
-				719FCA7F6EA788BDCF881D1D /* [CP] Embed Pods Frameworks */,
+				741BAB11D4410E461590485D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -759,7 +773,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		719FCA7F6EA788BDCF881D1D /* [CP] Embed Pods Frameworks */ = {
+		741BAB11D4410E461590485D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -850,6 +864,7 @@
 				A8576E21224A6F4C00CBA907 /* Urine+CoreDataClass.swift in Sources */,
 				A8576E2D224A701100CBA907 /* SolidFood+CoreDataClass.swift in Sources */,
 				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
+				A88BBF9F2255F91000F9C0B4 /* Social+CoreDataProperties.swift in Sources */,
 				A8576E1E224A6F0200CBA907 /* Fever+CoreDataProperties.swift in Sources */,
 				A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */,
 				A8C41482223EF8280072B0A8 /* Water.swift in Sources */,
@@ -908,6 +923,7 @@
 				A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
 				A8287E61224CE346000C64DD /* Staff+CoreDataProperties.swift in Sources */,
+				A88BBF9E2255F91000F9C0B4 /* Social+CoreDataClass.swift in Sources */,
 				A8576E0A224A6DCA00CBA907 /* Disease+CoreDataProperties.swift in Sources */,
 				A8576E2A224A6FBB00CBA907 /* Water+CoreDataProperties.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
