@@ -16,6 +16,7 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var pickerPhoneTextField: UITextField!
     var possPickers = ["אמא", "אבא", "סבא", "סבתא", "אח/ות", "אחר"]
     var delegate:ChildPickerTableViewCellDelegate?
+    var row = 0
     var vc:AddChildViewController?{
         didSet{
             vc!.delegate = self
@@ -30,6 +31,16 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
         pickerPhoneTextField.delegate = self
         pickerKindPicker.delegate = self
         pickerKindPicker.dataSource = self
+    }
+    
+    func removeAll(){
+        pickerNameTextField.isEnabled = true
+        pickerPhoneTextField.isEnabled = true
+        pickerKindPicker.isUserInteractionEnabled = true
+        pickerKindPicker.selectRow(0, inComponent: 0, animated: false)
+        row = 0
+        pickerNameTextField.text = ""
+        pickerPhoneTextField.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,32 +61,23 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        delegate?.relation(relation: possPickers[row])
+        //delegate?.relation(relation: possPickers[row])
+        self.row = row
     }
     
     func shouldEndEditing() {
-        delegate?.firstName(name: pickerNameTextField.text!)
-        delegate?.phoneNumber(phone: pickerPhoneTextField.text!)
+        var data:[String:String] = [:]
+        data["name"] = pickerNameTextField.text!
+        data["phone"] = pickerPhoneTextField.text!
+        data["relation"] = possPickers[row]
+        pickerNameTextField.isEnabled = false
+        pickerPhoneTextField.isEnabled = false
+        pickerKindPicker.isUserInteractionEnabled = false
+        delegate?.authData(data: data)
     }
-    
-    //MARK: - UITextFieldDelegate
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField {
-        case pickerNameTextField:
-            delegate?.firstName(name: pickerNameTextField.text!)
-            break
-        case pickerPhoneTextField:
-            delegate?.phoneNumber(phone: pickerPhoneTextField.text!)
-            break
-        default:
-            break
-        }
-    }    
 }
 
 //MARK: - ChildPickerTableViewCellDelegate protocol
 protocol ChildPickerTableViewCellDelegate {
-    func firstName(name:String)
-    func phoneNumber(phone:String)
-    func relation(relation:String)
+    func authData(data:[String:String])
 }

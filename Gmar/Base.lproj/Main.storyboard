@@ -446,7 +446,7 @@
                     <navigationItem key="navigationItem" title="רישום ילד לגן" id="bif-DN-xbw">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="7Eb-Fm-f2e">
                             <connections>
-                                <segue destination="Rk1-gC-I4V" kind="show" identifier="addChildSecondVC" id="45y-H3-Hjn"/>
+                                <action selector="nextScreenBtnClicked:" destination="V9L-pd-yNq" id="lrj-ct-L5W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -460,8 +460,10 @@
                         <outlet property="firstNameTextField" destination="Xng-Tk-cjA" id="m4q-NH-gT5"/>
                         <outlet property="genderSegment" destination="kc1-9e-B4T" id="UeP-qn-PWB"/>
                         <outlet property="lastNameTextField" destination="Cf1-le-sBj" id="WAg-fC-z5e"/>
+                        <outlet property="nextBarButton" destination="7Eb-Fm-f2e" id="qP7-zs-o0K"/>
                         <outlet property="pickingTimePicker" destination="zzg-Nz-mZG" id="FgB-hi-fsv"/>
                         <outlet property="prematureSegment" destination="XcK-t8-QPG" id="W9z-w5-Kdp"/>
+                        <segue destination="Rk1-gC-I4V" kind="show" identifier="addChildSecondVC" id="Jeo-xK-eq1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8o-Zn-q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -25,17 +25,10 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var pickingTimePicker: UIDatePicker!
     @IBOutlet weak var childPickerTableView: UITableView!
     @IBOutlet weak var childIDTextField: UITextField!
+    @IBOutlet weak var nextBarButton: UIBarButtonItem!
     var childData:[String:Any] = [:]
-    var authAccompData:[String:String] = [:]
     var authAccomps:[AuthorizedAccompanist] = []
-    
-    var pickers:Int = 0{
-        didSet{
-            if childPickerTableView != nil{
-                childPickerTableView.reloadData()
-            }
-        }
-    }
+    var pickers:Int = 0
     
     //MARK: - inits
     override func viewDidLoad() {
@@ -51,15 +44,20 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         Utility.viewTapRecognizer(target: self, toBeTapped: babyImageView, action: #selector(selectImageTapped))
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-
     //MARK: - Button action
     @IBAction func addPickerBtnClicked(_ sender: Any) {
         pickers += 1
+        if pickers > 1{
+            delegate?.shouldEndEditing()
+        }
+        childPickerTableView.beginUpdates()
+        childPickerTableView.insertRows(at: [IndexPath(row: pickers - 1, section: 0)], with: .automatic)
+        childPickerTableView.endUpdates()
         self.view.endEditing(true)
+    }
+    
+    @IBAction func nextScreenBtnClicked(_ sender: Any) {
+        
     }
     
     
@@ -72,7 +70,31 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "childPicker", for: indexPath) as! ChildPickerTableViewCell
         cell.delegate = self
         cell.vc = self
+        cell.removeAll()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        return [UITableViewRowAction(style: .destructive, title: "מחק", handler: { (action, index) in
+            self.delegate?.shouldEndEditing()
+            if self.authAccomps.count > 0 && self.pickers > 0{
+                if indexPath.row < self.authAccomps.count{
+                    self.authAccomps.remove(at: indexPath.row)
+                }
+            }
+            self.pickers -= 1
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        })]
     }
     
     
@@ -124,29 +146,16 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    
     //MARK: - ChildPickerTableViewCellDelegate
-    func firstName(name: String) {
-        authAccompData["name"] = name
-        generateAuthAcomp()
-    }
-    
-    func phoneNumber(phone: String) {
-        authAccompData["phone"] = phone
-        generateAuthAcomp()
-    }
-    
-    func relation(relation: String) {
-        authAccompData["relation"] = relation
-        generateAuthAcomp()
-    }
-    
-    func generateAuthAcomp(){
-        if authAccompData.count == 3{
-            if let name = authAccompData["name"]{
-                if let phone = authAccompData["phone"]{
-                    if let relation = authAccompData["relation"]{
-                        authAccomps.append(AuthorizedAccompanist(name: name, phone: phone, relation: relation))
-                        authAccompData = [:]
+    func authData(data: [String : String]){
+        if data.count == 3{
+            if let name = data["name"]{
+                if let phone = data["phone"]{
+                    if let relation = data["relation"]{
+                        if name != "" && phone != ""{
+                            authAccomps.append(AuthorizedAccompanist(name: name, phone: phone, relation: relation))
+                        }
                     }
                     else {return}
                 }
@@ -159,7 +168,9 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.view.endEditing(true)
-        delegate?.shouldEndEditing()
+        if pickers != authAccomps.count{
+            delegate?.shouldEndEditing()
+        }
         if segue.identifier == "addChildSecondVC"{
             let vc = segue.destination as! AddChildSecondViewController
             if prematureSegment.selectedSegmentIndex == 0{
