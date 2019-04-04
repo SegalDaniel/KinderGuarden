@@ -57,7 +57,69 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func nextScreenBtnClicked(_ sender: Any) {
+        if childData["firstName"] == nil || childData["firstName"] as! String == ""{
+            performAlert(with: "נא למלא שם פרטי בבקשה")
+            return
+        }
+        if childData["lastName"] == nil || childData["lastName"] as! String == ""{
+            performAlert(with: "נא למלא שם משפחה בבקשה")
+            return
+        }
+        if childData["address"] == nil || childData["address"] as! String == ""{
+            performAlert(with: "נא למלא כתובת בבקשה")
+            return
+        }
+        if childData["childID"] == nil || childData["childID"] as! String == ""{
+            performAlert(with: "נא למלא תעודת זהות של הילד בבקשה")
+            return
+        }
+        if prematureSegment.selectedSegmentIndex == 0{
+            childData["isPremature"] = false
+        }
+        else{
+            childData["isPremature"] = true
+        }
+        if genderSegment.selectedSegmentIndex == 0{
+            childData["gender"] = "boy"
+        }
+        else{
+            childData["gender"] = "girl"
+        }
+        self.view.endEditing(true)
+        if pickers != authAccomps.count{
+            delegate?.shouldEndEditing()
+        }
+        if authAccomps.count == 0{
+            performAlert(with: "נא להוסיף מלווים מורשים לילד בבקשה")
+            return
+        }
+        childData["AuthorizedAccompanist"] = authAccomps
+        let bDay = birthDatePicker!.date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        childData["birthDate"] = formatter.string(from: bDay)
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        let pickup = pickingTimePicker!.date
+        childData["pickupHour"] = formatter.string(from: pickup)
         
+        if childData["image"] == nil{
+            let alert = UIAlertController(title: "רק רגע לפני שנמשיך", message: "יש באפשרותכם להוסיף תמונה של הילד על ידי לחיצה על תמונת התינוק", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "המשך בכל זאת", style: .default, handler: { (action) in
+                self.performSegue(withIdentifier: "addChildSecondVC", sender: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "אני רוצה להוסיף", style: .destructive, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else{
+            self.performSegue(withIdentifier: "addChildSecondVC", sender: nil)
+        }
+    }
+    
+    func performAlert(with text:String){
+        let alert = SimpleAlert(_title: "רק רגע", _message: text, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
     }
     
     
@@ -123,6 +185,7 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         babyImageView.contentMode = .scaleAspectFit
         babyImageView.image = image
         babyImageView.backgroundColor = UIColor.clear
+        childData["image"] = image
     }
     
     //MARK: - TextField delegate
@@ -167,34 +230,8 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.view.endEditing(true)
-        if pickers != authAccomps.count{
-            delegate?.shouldEndEditing()
-        }
         if segue.identifier == "addChildSecondVC"{
             let vc = segue.destination as! AddChildSecondViewController
-            if prematureSegment.selectedSegmentIndex == 0{
-                childData["isPremature"] = false
-            }
-            else{
-                childData["isPremature"] = true
-            }
-            if genderSegment.selectedSegmentIndex == 0{
-                childData["gender"] = "boy"
-            }
-            else{
-                childData["gender"] = "girl"
-            }
-            let bDay = birthDatePicker!.date
-            let formatter = DateFormatter()
-            formatter.dateStyle = .short
-            formatter.timeStyle = .none
-            childData["birthDate"] = formatter.string(from: bDay)
-            formatter.dateStyle = .none
-            formatter.timeStyle = .short
-            let pickup = pickingTimePicker!.date
-            childData["pickupHour"] = formatter.string(from: pickup)
-            childData["AuthorizedAccompanist"] = authAccomps
             vc.childData = self.childData
         }
     }
