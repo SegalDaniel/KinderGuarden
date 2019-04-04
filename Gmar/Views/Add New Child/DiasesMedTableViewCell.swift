@@ -8,22 +8,39 @@
 
 import UIKit
 
-class DiasesMedTableViewCell: UITableViewCell {
+class DiasesMedTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSecondViewControllerDelegate {
 
     //MARK: - Variables
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var detailsTextField: UITextField!
-    
+    var kind:String?
+    var delegate:DiasesMedTableViewCellDelegate?
+    var vc:AddChildSecondViewController?{
+        didSet{
+            vc!.delegate = self
+            Utility.moveWithKeyboard(viewController: vc!)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        nameTextField.delegate = self
+        detailsTextField.delegate = self
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func shouldEndEditing(){
+        var data:[String:String] = [:]
+        data["kind"] = kind!
+        data["name"] = nameTextField.text!
+        data["details"] = detailsTextField.text!
+        nameTextField.isEnabled = false
+        detailsTextField.isEnabled = false
+        delegate?.diasesData(data: data)
     }
 
+}
+//MARK: - DiasesMedTableViewCellDelegate protocol
+protocol DiasesMedTableViewCellDelegate {
+    func diasesData(data:[String:String])
 }

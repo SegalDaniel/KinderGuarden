@@ -43,9 +43,6 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
         pickerPhoneTextField.text = ""
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     //MARK: - UIPickerView delegate and datasource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -61,7 +58,6 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //delegate?.relation(relation: possPickers[row])
         self.row = row
     }
     

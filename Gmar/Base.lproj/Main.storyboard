@@ -578,13 +578,7 @@
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
-                                                                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="סוג" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-vB-6Qx">
-                                                                            <rect key="frame" x="236.5" y="0.0" width="0.0" height="67.5"/>
-                                                                            <nil key="textColor"/>
-                                                                            <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                                            <textInputTraits key="textInputTraits"/>
-                                                                        </textField>
-                                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-lk-zCg">
+                                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-lk-zCg">
                                                                             <rect key="frame" x="240.5" y="0.0" width="232.5" height="68.5"/>
                                                                             <segments>
                                                                                 <segment title="מוצקים"/>
@@ -609,7 +603,6 @@
                                                         <connections>
                                                             <outlet property="amountTextField" destination="7DV-2A-eFC" id="9L8-Aq-3Md"/>
                                                             <outlet property="kindSegment" destination="Ktx-lk-zCg" id="1T0-Hp-xeX"/>
-                                                            <outlet property="kindTextField" destination="pdC-vB-6Qx" id="NEW-2v-AvA"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -679,6 +672,10 @@
                                                                 <constraint firstItem="aGd-i3-kUK" firstAttribute="centerY" secondItem="gBL-Vn-waW" secondAttribute="centerY" id="xSx-CY-eZR"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="detailsTextField" destination="GW4-Nf-wBZ" id="XgB-P5-loZ"/>
+                                                            <outlet property="nameTextField" destination="3nw-u4-mzb" id="OA2-i9-BvS"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -761,6 +758,9 @@
                                 <state key="normal" title="הוסף ילד">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addChildBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="Gjf-DN-0GK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

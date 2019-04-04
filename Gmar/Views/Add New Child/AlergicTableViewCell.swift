@@ -8,20 +8,37 @@
 
 import UIKit
 
-class AlergicTableViewCell: UITableViewCell {
+class AlergicTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSecondViewControllerDelegate {
 
     //MARK: - Variables
     @IBOutlet weak var nameTextField: UITextField!
+    var delegate:AlergicTableViewCellDelegate?
+    var vc:AddChildSecondViewController?{
+        didSet{
+            vc!.delegate = self
+            Utility.removeMoveWithKeyboard(viewController: vc!)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        nameTextField.delegate = self
+    }
+    
+    func removeAll(){
+        nameTextField.isEnabled = true
+        nameTextField.text = ""
+    }
+    
+    func shouldEndEditing(){
+        var data:[String:String] = [:]
+        data["alergic"] = nameTextField.text!
+        nameTextField.isEnabled = false
+        delegate?.alergicData(data: data)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+}
+//MARK: - AlergicTableViewCellDelegate protocol
+protocol AlergicTableViewCellDelegate {
+    func alergicData(data:[String:String])
 }

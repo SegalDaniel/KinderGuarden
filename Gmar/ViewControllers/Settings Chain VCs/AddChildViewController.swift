@@ -56,7 +56,7 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.endEditing(true)
     }
     
-    @IBAction func nextScreenBtnClicked(_ sender: Any) {
+    @IBAction func nextScreenBtnClicked(_ sender: Any) {/*
         if childData["firstName"] == nil || childData["firstName"] as! String == ""{
             performAlert(with: "נא למלא שם פרטי בבקשה")
             return
@@ -112,9 +112,9 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
             alert.addAction(UIAlertAction(title: "אני רוצה להוסיף", style: .destructive, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        else{
+        else{*/
             self.performSegue(withIdentifier: "addChildSecondVC", sender: nil)
-        }
+       // }
     }
     
     func performAlert(with text:String){

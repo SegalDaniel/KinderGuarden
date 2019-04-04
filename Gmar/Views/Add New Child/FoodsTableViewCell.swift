@@ -8,21 +8,23 @@
 
 import UIKit
 
-class FoodsTableViewCell: UITableViewCell {
-
+class FoodsTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSecondViewControllerDelegate {
+    
     //MARK: - Variables
-    @IBOutlet weak var kindTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var kindSegment: UISegmentedControl!
-    var kindIsHidden = true
+    var textIsHidden = true
+    var delegate:FoodsTableViewCellDelegate?
+    var vc:AddChildSecondViewController?{
+        didSet{
+            vc!.delegate = self
+            Utility.removeMoveWithKeyboard(viewController: vc!)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+        amountTextField.delegate = self
     }
     
     //MARK: - Segment
@@ -36,18 +38,44 @@ class FoodsTableViewCell: UITableViewCell {
             amountTextField.placeholder = "העדפות"
         }
         else{
-            amountTextField.placeholder = "מ״ל"
+            amountTextField.placeholder = "סוג"
         }
     }
     
     func toggleKindHidness(){
-        if kindSegment.selectedSegmentIndex == 2{
-            kindIsHidden = false
+        if kindSegment.selectedSegmentIndex == 1{
+            textIsHidden = true
         }
         else{
-            kindIsHidden = true
+            textIsHidden = false
         }
-        kindTextField.isHidden = kindIsHidden
+        amountTextField.isHidden = textIsHidden
     }
     
+    func shouldEndEditing() {
+        var data:[String:String] = [:]
+        switch kindSegment.selectedSegmentIndex {
+        case 0:
+            data["kind"] = "solid"
+            data["detalis"] = amountTextField.text!
+            break
+        case 1:
+            data["kind"] = "milk"
+            data["detalis"] = ""
+            break
+        case 2:
+            data["kind"] = "tamal"
+            data["detalis"] = amountTextField.text!
+            break
+        default:
+            break
+        }
+        amountTextField.isEnabled = false
+        delegate?.foodsData(data: data)
+    }
+    
+}
+
+protocol FoodsTableViewCellDelegate {
+    func foodsData(data:[String:String])
 }

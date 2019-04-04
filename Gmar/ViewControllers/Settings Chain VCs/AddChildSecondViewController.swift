@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddChildSecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class AddChildSecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AlergicTableViewCellDelegate, FoodsTableViewCellDelegate, DiasesMedTableViewCellDelegate {
+    
     //MARK: - Variables
     @IBOutlet weak var alergicTableView: UITableView!
     @IBOutlet weak var foodsTableView: UITableView!
@@ -20,33 +20,20 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var addDiseasesBtn: UIButton!
     @IBOutlet weak var addMedicationBtn: UIButton!
     var childData:[String:Any]?
-    
-    var foods:Int = 0{
-        didSet{
-            foodsTableView.reloadData()
-        }
-    }
-    var alergies:Int = 0{
-        didSet{
-            alergicTableView.reloadData()
-        }
-    }
-    var medications:Int = 0{
-        didSet{
-            medicationsTableView.reloadData()
-        }
-    }
-    var diseases:Int = 0{
-        didSet{
-            diseasesTableView.reloadData()
-        }
-    }
+    var delegate:AddChildSecondViewControllerDelegate?
+    var foodsArr:[Food] = []
+    var alergiesArr:[Allergenic] = []
+    var medicationsArr:[RoutineMedication] = []
+    var diseasesArr:[ChronicDisease] = []
+    var foods:Int = 0
+    var alergies:Int = 0
+    var medications:Int = 0
+    var diseases:Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initTables(tables: [foodsTableView, medicationsTableView, diseasesTableView, alergicTableView])
-        
     }
     
     func initTables(tables:[UITableView]){
@@ -56,19 +43,37 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
     
+    //MARK: - Buttons actions
+    @IBAction func addChildBtnClicked(_ sender: Any) {
+        delegate?.shouldEndEditing()
+    }
+    
     @IBAction func addCellBtnClicked(_ sender: UIButton) {
+        delegate?.shouldEndEditing()
         switch sender {
         case addFoodBtn:
             foods += 1
+            foodsTableView.beginUpdates()
+            foodsTableView.insertRows(at: [IndexPath(row: foods - 1, section: 0)], with: .automatic)
+            foodsTableView.endUpdates()
             break
         case addAlergicBtn:
             alergies += 1
+            alergicTableView.beginUpdates()
+            alergicTableView.insertRows(at: [IndexPath(row: alergies - 1, section: 0)], with: .automatic)
+            alergicTableView.endUpdates()
             break
         case addDiseasesBtn:
             diseases += 1
+            diseasesTableView.beginUpdates()
+            diseasesTableView.insertRows(at: [IndexPath(row: diseases - 1, section: 0)], with: .automatic)
+            diseasesTableView.endUpdates()
             break
         case addMedicationBtn:
             medications += 1
+            medicationsTableView.beginUpdates()
+            medicationsTableView.insertRows(at: [IndexPath(row: medications - 1, section: 0)], with: .automatic)
+            medicationsTableView.endUpdates()
             break
         default:
             break
@@ -92,23 +97,138 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         switch tableView {
         case foodsTableView:
-            cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodsTableViewCell
-            break
+            let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodsTableViewCell
+            cell.delegate = self
+            cell.vc = self
+            return cell
         case alergicTableView:
-            cell = tableView.dequeueReusableCell(withIdentifier: "alergicCell", for: indexPath) as! AlergicTableViewCell
-            break
-        case diseasesTableView, medicationsTableView:
-            cell = tableView.dequeueReusableCell(withIdentifier: "diasesMedCell", for: indexPath) as! DiasesMedTableViewCell
-            break
+            let cell = tableView.dequeueReusableCell(withIdentifier: "alergicCell", for: indexPath) as! AlergicTableViewCell
+            cell.delegate = self
+            cell.vc = self
+            return cell
+        case diseasesTableView:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "diasesMedCell", for: indexPath) as! DiasesMedTableViewCell
+            cell.delegate = self
+            cell.vc = self
+            cell.kind = "diseas"
+            return cell
+        case medicationsTableView:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "diasesMedCell", for: indexPath) as! DiasesMedTableViewCell
+            cell.delegate = self
+            cell.vc = self
+            cell.kind = "medicine"
+            return cell
         default:
             break
         }
-        return cell
+        return UITableViewCell(style: .default, reuseIdentifier: nil)
     }
-
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        self.delegate?.shouldEndEditing()
+        switch tableView {
+        case foodsTableView:
+            return [UITableViewRowAction(style: .destructive, title: "מחק", handler: { (action, index) in
+                if self.foodsArr.count > 0 && self.foods > 0{
+                    if indexPath.row < self.foodsArr.count{
+                        self.foodsArr.remove(at: indexPath.row)
+                    }
+                }
+                self.foods -= 1
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+            })]
+        case alergicTableView:
+            return [UITableViewRowAction(style: .destructive, title: "מחק", handler: { (action, index) in
+                if self.alergiesArr.count > 0 && self.alergies > 0{
+                    if indexPath.row < self.alergiesArr.count{
+                        self.alergiesArr.remove(at: indexPath.row)
+                    }
+                }
+                self.alergies -= 1
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+            })]
+        case diseasesTableView:
+            return [UITableViewRowAction(style: .destructive, title: "מחק", handler: { (action, index) in
+                if self.diseasesArr.count > 0 && self.diseases > 0{
+                    if indexPath.row < self.diseasesArr.count{
+                        self.diseasesArr.remove(at: indexPath.row)
+                    }
+                }
+                self.diseases -= 1
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+            })]
+        case medicationsTableView:
+            return [UITableViewRowAction(style: .destructive, title: "מחק", handler: { (action, index) in
+                if self.medicationsArr.count > 0 && self.medications > 0{
+                    if indexPath.row < self.medicationsArr.count{
+                        self.medicationsArr.remove(at: indexPath.row)
+                    }
+                }
+                self.medications -= 1
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+            })]
+        default:
+            break
+        }
+        return nil
+    }
+    
+    //MARK: - Cells delegation
+    func alergicData(data: [String : String]) {
+        if data.count == 1{
+            if let alergic = data["alergic"]{
+                if alergic != ""{
+                    alergiesArr.append(Allergenic(type: alergic, child: nil))
+                }
+            }
+        }
+    }
+    
+    func foodsData(data: [String : String]) {
+        if let kind = data["kind"]{
+            if let details = data["detalis"]{
+                //if details != ""{
+                    foodsArr.append(Food(type: kind, detalis: details, child: nil))
+                //}
+            }
+        }
+    }
+    
+    func diasesData(data: [String : String]) {
+        if let kind = data["kind"]{
+            if let name = data["name"]{
+                if name != ""{
+                    if let _ = data["details"]{
+                        if kind == "diseas"{
+                            diseasesArr.append(ChronicDisease(type: name, child: nil))
+                        }
+                        else if kind == "medicine"{
+                            medicationsArr.append(RoutineMedication(type: name, child: nil))
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -119,4 +239,8 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
     }
     */
 
+}
+
+protocol AddChildSecondViewControllerDelegate {
+    func shouldEndEditing()
 }
