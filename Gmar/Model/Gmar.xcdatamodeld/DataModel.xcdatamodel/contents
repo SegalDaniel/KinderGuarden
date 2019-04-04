@@ -75,6 +75,7 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Food" representedClassName="Food" syncable="YES">
+        <attribute name="detalis" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="foodList" inverseEntity="Child" syncable="YES"/>
     </entity>
@@ -163,7 +164,7 @@
         <element name="Feces" positionX="-3987.453125" positionY="926.19921875" width="128" height="90"/>
         <element name="Fever" positionX="-3575.44140625" positionY="1030.40625" width="128" height="60"/>
         <element name="FineMotor" positionX="-3717" positionY="342" width="128" height="73"/>
-        <element name="Food" positionX="-3735" positionY="297" width="128" height="75"/>
+        <element name="Food" positionX="-3735" positionY="297" width="128" height="90"/>
         <element name="GeneralBehavior" positionX="-3984.96484375" positionY="1059.59765625" width="128" height="60"/>
         <element name="GeneralNote" positionX="-3407.109375" positionY="598.0078125" width="128" height="75"/>
         <element name="GrossMotor" positionX="-3771" positionY="261" width="128" height="75"/>
