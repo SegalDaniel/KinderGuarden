@@ -204,9 +204,9 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
     
     func foodsData(data: [String : String]) {
         if let kind = data["kind"]{
-            if let details = data["detalis"]{
+            if let details = data["details"]{
                 //if details != ""{
-                    foodsArr.append(Food(type: kind, detalis: details, child: nil))
+                    foodsArr.append(Food(type: kind, details: details, child: nil))
                 //}
             }
         }

@@ -6,6 +6,6 @@ target 'Gmar' do
   use_frameworks!
 
   # Pods for Gmar
-  pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
+ pod 'Firebase/Core'
+ pod 'Firebase/Firestore'
 end

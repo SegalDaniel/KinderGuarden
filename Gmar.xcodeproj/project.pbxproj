@@ -99,8 +99,8 @@
 		A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */; };
 		A88BBF9E2255F91000F9C0B4 /* Social+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBF9C2255F91000F9C0B4 /* Social+CoreDataClass.swift */; };
 		A88BBF9F2255F91000F9C0B4 /* Social+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBF9D2255F91000F9C0B4 /* Social+CoreDataProperties.swift */; };
-		A88BBFA22256A63100F9C0B4 /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFA02256A63100F9C0B4 /* Food+CoreDataClass.swift */; };
-		A88BBFA32256A63100F9C0B4 /* Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFA12256A63100F9C0B4 /* Food+CoreDataProperties.swift */; };
+		A88BBFA622576A9A00F9C0B4 /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFA422576A9A00F9C0B4 /* Food+CoreDataClass.swift */; };
+		A88BBFA722576A9A00F9C0B4 /* Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFA522576A9A00F9C0B4 /* Food+CoreDataProperties.swift */; };
 		A8C41482223EF8280072B0A8 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F1221864E20043D580 /* Water.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
@@ -205,8 +205,8 @@
 		A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A88BBF9C2255F91000F9C0B4 /* Social+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Social+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A88BBF9D2255F91000F9C0B4 /* Social+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Social+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A88BBFA02256A63100F9C0B4 /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A88BBFA12256A63100F9C0B4 /* Food+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A88BBFA422576A9A00F9C0B4 /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A88BBFA522576A9A00F9C0B4 /* Food+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
@@ -561,8 +561,8 @@
 		A8299D7922540D0A006E961F /* Food */ = {
 			isa = PBXGroup;
 			children = (
-				A88BBFA02256A63100F9C0B4 /* Food+CoreDataClass.swift */,
-				A88BBFA12256A63100F9C0B4 /* Food+CoreDataProperties.swift */,
+				A88BBFA422576A9A00F9C0B4 /* Food+CoreDataClass.swift */,
+				A88BBFA522576A9A00F9C0B4 /* Food+CoreDataProperties.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -705,7 +705,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
-				253D2AA16870CF03E21D6C58 /* [CP] Embed Pods Frameworks */,
+				EAFC13EF4DB1A8652A3D8526 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -773,7 +773,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		253D2AA16870CF03E21D6C58 /* [CP] Embed Pods Frameworks */ = {
+		B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gmar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAFC13EF4DB1A8652A3D8526 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -805,28 +827,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gmar/Pods-Gmar-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gmar-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -883,7 +883,7 @@
 				A8299D74225386E4006E961F /* RoutineMedication+CoreDataProperties.swift in Sources */,
 				A8576E32224A705200CBA907 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
-				A88BBFA32256A63100F9C0B4 /* Food+CoreDataProperties.swift in Sources */,
+				A88BBFA722576A9A00F9C0B4 /* Food+CoreDataProperties.swift in Sources */,
 				A8576E16224A6E8600CBA907 /* Vomitus+CoreDataProperties.swift in Sources */,
 				A8287E5C224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift in Sources */,
 				A8287E43224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift in Sources */,
@@ -902,7 +902,7 @@
 				18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */,
 				A8299D6A22537FDD006E961F /* Allergenic+CoreDataProperties.swift in Sources */,
 				A8299D54224FD024006E961F /* FineMotor+CoreDataProperties.swift in Sources */,
-				A88BBFA22256A63100F9C0B4 /* Food+CoreDataClass.swift in Sources */,
+				A88BBFA622576A9A00F9C0B4 /* Food+CoreDataClass.swift in Sources */,
 				A8576E0E224A6E1500CBA907 /* Medication+CoreDataProperties.swift in Sources */,
 				18BFE193224651250084D766 /* Permissions.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
