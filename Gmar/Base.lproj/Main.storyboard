@@ -572,7 +572,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LSk-on-sZl">
                                                                     <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מ״ל" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DV-2A-eFC">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="העדפות" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DV-2A-eFC">
                                                                             <rect key="frame" x="0.0" y="0.0" width="232.5" height="67.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
@@ -789,9 +789,11 @@
                         <outlet property="diseasesTableView" destination="QWl-ou-4Bq" id="Qgh-in-4oE"/>
                         <outlet property="foodsTableView" destination="wsb-SY-C81" id="fkL-c0-BJM"/>
                         <outlet property="medicationsTableView" destination="5mV-3u-tv5" id="MiB-uv-Dfd"/>
+                        <segue destination="lMM-Lk-V51" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWindowWithSegue:" id="Bb1-Xa-CqP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3K6-14-vea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lMM-Lk-V51" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1472.4820143884892" y="1792.8057553956835"/>
         </scene>

@@ -27,6 +27,14 @@ class DiasesMedTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSeco
         nameTextField.delegate = self
         detailsTextField.delegate = self
     }
+    
+    func removeAll(){
+        nameTextField.isEnabled = true
+        detailsTextField.isEnabled = true
+        nameTextField.text = ""
+        detailsTextField.text = ""
+        kind = nil
+    }
 
     
     func shouldEndEditing(){

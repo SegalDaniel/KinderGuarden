@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Child)
 public class Child: NSManagedObject {
-    convenience init(childID:String, firstName:String, gender:String, lastName:String, isPremature:Bool, birthDate:String, isAttend:Bool, address:String, pickupHour:String) {
+    convenience init(childID:String, firstName:String, gender:String, lastName:String, isPremature:Bool, birthDate:NSDate, isAttend:Bool, address:String, pickupHour:String) {
         self.init(entity: Model.instance.childEntity, insertInto: Model.instance.managedContext)
         self.setValue(childID, forKey: "childID")
         self.setValue(firstName, forKey: "firstName")

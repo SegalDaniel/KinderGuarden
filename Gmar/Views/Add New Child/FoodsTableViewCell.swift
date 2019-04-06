@@ -27,6 +27,14 @@ class FoodsTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSecondVi
         amountTextField.delegate = self
     }
     
+    func removeAll(){
+        amountTextField.isEnabled = true
+        kindSegment.isEnabled = true
+        kindSegment.selectedSegmentIndex = 0
+        amountTextField.text = ""
+        textIsHidden = true
+    }
+    
     //MARK: - Segment
     @IBAction func segmentKindChanged(_ sender: Any) {
         changePlaceHolder()
@@ -53,19 +61,20 @@ class FoodsTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSecondVi
     }
     
     func shouldEndEditing() {
+        kindSegment.isEnabled = false
         var data:[String:String] = [:]
         switch kindSegment.selectedSegmentIndex {
         case 0:
             data["kind"] = "solid"
-            data["detalis"] = amountTextField.text!
+            data["details"] = amountTextField.text!
             break
         case 1:
             data["kind"] = "milk"
-            data["detalis"] = ""
+            data["details"] = ""
             break
         case 2:
             data["kind"] = "tamal"
-            data["detalis"] = amountTextField.text!
+            data["details"] = amountTextField.text!
             break
         default:
             break

@@ -40,12 +40,50 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
         tables.forEach { (table) in
             table.delegate = self
             table.dataSource = self
+            table.allowsSelection = false
         }
     }
     
     //MARK: - Buttons actions
     @IBAction func addChildBtnClicked(_ sender: Any) {
-        delegate?.shouldEndEditing()
+        if foods != foodsArr.count || alergies != alergiesArr.count || medications != medicationsArr.count || diseases != diseasesArr.count{
+            delegate?.shouldEndEditing()
+        }
+        if foodsArr.count == 0{
+            let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: "נא להוסיף לפחות מזון אחד לילד", dissmissCallback: nil).getAlert()
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if let childData = childData{
+            let id = childData["childID"] as! String
+            let fName = childData["firstName"] as! String
+            let lName = childData["lastName"] as! String
+            let gender = childData["gender"] as! String
+            let isPre = childData["isPremature"] as! Bool
+            let bDay = childData["birthDate"] as! NSDate
+            let address = childData["address"] as! String
+            let pickup = childData["pickupHour"] as! String
+            let child = Child(childID: id, firstName: fName, gender: gender, lastName: lName, isPremature: isPre, birthDate: bDay, isAttend: false, address: address, pickupHour: pickup)
+            
+            child.foodList = NSSet(array: foodsArr)
+            child.allergenics = NSSet(array: alergiesArr)
+            child.routineMedication = NSSet(array: medicationsArr)
+            child.chronicDiseases = NSSet(array: diseasesArr)
+            child.authorized = NSSet(array: childData["AuthorizedAccompanist"] as! [AuthorizedAccompanist])
+            
+            if let image = childData["image"] as? UIImage{
+                Model.instance.saveImageToDisk(imageName: id, image: image)
+            }
+            
+            Model.instance.saveToDB { (err) in
+                if err == nil{
+                    self.performSegue(withIdentifier: "unwindToMain", sender: nil)
+                }
+                else{
+                    let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err!.description, dissmissCallback: nil).getAlert()
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @IBAction func addCellBtnClicked(_ sender: UIButton) {
@@ -100,22 +138,26 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
         switch tableView {
         case foodsTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodsTableViewCell
+            cell.removeAll()
             cell.delegate = self
             cell.vc = self
             return cell
         case alergicTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "alergicCell", for: indexPath) as! AlergicTableViewCell
+            cell.removeAll()
             cell.delegate = self
             cell.vc = self
             return cell
         case diseasesTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "diasesMedCell", for: indexPath) as! DiasesMedTableViewCell
+            cell.removeAll()
             cell.delegate = self
             cell.vc = self
             cell.kind = "diseas"
             return cell
         case medicationsTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "diasesMedCell", for: indexPath) as! DiasesMedTableViewCell
+            cell.removeAll()
             cell.delegate = self
             cell.vc = self
             cell.kind = "medicine"
@@ -193,21 +235,25 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
     
     //MARK: - Cells delegation
     func alergicData(data: [String : String]) {
-        if data.count == 1{
-            if let alergic = data["alergic"]{
-                if alergic != ""{
-                    alergiesArr.append(Allergenic(type: alergic, child: nil))
+        if alergiesArr.count < alergies{
+            if data.count == 1{
+                if let alergic = data["alergic"]{
+                    if alergic != ""{
+                        alergiesArr.append(Allergenic(type: alergic, child: nil))
+                    }
                 }
             }
         }
     }
     
     func foodsData(data: [String : String]) {
-        if let kind = data["kind"]{
-            if let details = data["details"]{
-                //if details != ""{
+        if foodsArr.count < foods{
+            if let kind = data["kind"]{
+                if let details = data["details"]{
+                    //if details != ""{
                     foodsArr.append(Food(type: kind, details: details, child: nil))
-                //}
+                    //}
+                }
             }
         }
     }
@@ -217,10 +263,10 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
             if let name = data["name"]{
                 if name != ""{
                     if let _ = data["details"]{
-                        if kind == "diseas"{
+                        if kind == "diseas" && diseasesArr.count < diseases{
                             diseasesArr.append(ChronicDisease(type: name, child: nil))
                         }
-                        else if kind == "medicine"{
+                        else if kind == "medicine" && medicationsArr.count < medications{
                             medicationsArr.append(RoutineMedication(type: name, child: nil))
                         }
                     }
@@ -229,15 +275,13 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
     
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 

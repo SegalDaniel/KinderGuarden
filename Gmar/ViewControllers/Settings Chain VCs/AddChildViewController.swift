@@ -47,16 +47,14 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Button action
     @IBAction func addPickerBtnClicked(_ sender: Any) {
         pickers += 1
-        if pickers > 1{
-            delegate?.shouldEndEditing()
-        }
+        delegate?.shouldEndEditing()
         childPickerTableView.beginUpdates()
         childPickerTableView.insertRows(at: [IndexPath(row: pickers - 1, section: 0)], with: .automatic)
         childPickerTableView.endUpdates()
         self.view.endEditing(true)
     }
     
-    @IBAction func nextScreenBtnClicked(_ sender: Any) {/*
+    @IBAction func nextScreenBtnClicked(_ sender: Any) {
         if childData["firstName"] == nil || childData["firstName"] as! String == ""{
             performAlert(with: "נא למלא שם פרטי בבקשה")
             return
@@ -94,11 +92,8 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
             return
         }
         childData["AuthorizedAccompanist"] = authAccomps
-        let bDay = birthDatePicker!.date
+        childData["birthDate"] = birthDatePicker!.date
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        childData["birthDate"] = formatter.string(from: bDay)
         formatter.dateStyle = .none
         formatter.timeStyle = .short
         let pickup = pickingTimePicker!.date
@@ -112,9 +107,9 @@ class AddChildViewController: UIViewController, UITableViewDelegate, UITableView
             alert.addAction(UIAlertAction(title: "אני רוצה להוסיף", style: .destructive, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        else{*/
+        else{
             self.performSegue(withIdentifier: "addChildSecondVC", sender: nil)
-       // }
+        }
     }
     
     func performAlert(with text:String){
