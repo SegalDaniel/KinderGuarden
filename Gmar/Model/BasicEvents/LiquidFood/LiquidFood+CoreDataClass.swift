@@ -2,7 +2,7 @@
 //  LiquidFood+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 26/03/2019.
+//  Created by Daniel Segal on 07/04/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -12,7 +12,7 @@ import CoreData
 
 @objc(LiquidFood)
 public class LiquidFood: BasicEvent {
-    convenience init(mealType:String, amount:String, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
+    convenience init(mealType:String, amount:Int16, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
         self.init(entity: Model.instance.liquidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(mealType, forKey: "mealType")
         self.setValue(amount, forKey: "amount")
@@ -43,5 +43,5 @@ public class LiquidFood: BasicEvent {
         return json
         
     }
-    
+
 }

@@ -91,7 +91,7 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="LiquidFood" representedClassName="LiquidFood" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -125,7 +125,7 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="SolidFood" representedClassName="SolidFood" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mealInMenu" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mealType" optional="YES" attributeType="String" syncable="YES"/>
@@ -148,7 +148,7 @@
         <attribute name="proper" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Water" representedClassName="Water" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

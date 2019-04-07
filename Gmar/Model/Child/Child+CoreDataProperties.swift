@@ -28,6 +28,7 @@ extension Child {
     @NSManaged public var isAttend: Bool
     @NSManaged public var authorized: NSSet?
     @NSManaged public var pickupHour: String?
+    //MARK: - Child's Prop Entities
     @NSManaged public var allergenics: NSSet?
     @NSManaged public var chronicDiseases: NSSet?
     @NSManaged public var routineMedication: NSSet?

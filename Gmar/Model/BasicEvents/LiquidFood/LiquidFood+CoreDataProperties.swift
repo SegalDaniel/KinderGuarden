@@ -2,7 +2,7 @@
 //  LiquidFood+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 26/03/2019.
+//  Created by Daniel Segal on 07/04/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension LiquidFood {
         return NSFetchRequest<LiquidFood>(entityName: "LiquidFood")
     }
 
-    @NSManaged public var amount: String?
+    @NSManaged public var amount: Int16
     @NSManaged public var consumedAmount: String?
     @NSManaged public var mealType: String?
 

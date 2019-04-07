@@ -2,7 +2,7 @@
 //  SolidFood+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 26/03/2019.
+//  Created by Daniel Segal on 07/04/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -12,7 +12,7 @@ import CoreData
 
 @objc(SolidFood)
 public class SolidFood: BasicEvent {
-    convenience init(mealType:String, mealInMenu:String, amount:String, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
+    convenience init(mealType:String, mealInMenu:String, amount:Int16, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
         self.init(entity: Model.instance.solidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(mealType, forKey: "mealType")
         self.setValue(mealInMenu, forKey: "mealInMenu")
@@ -46,5 +46,5 @@ public class SolidFood: BasicEvent {
         return json
         
     }
-    
+
 }
