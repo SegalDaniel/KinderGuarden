@@ -255,7 +255,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="77.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" textContentType="tel"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="כתובת" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jG-eK-IhW">
                                                 <rect key="frame" x="369" y="0.0" width="361" height="77.5"/>
@@ -385,7 +385,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="352" height="74.5"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                                    <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                                 </textField>
                                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-oj-EHl">
                                                                     <rect key="frame" x="360" y="0.0" width="352" height="74.5"/>
@@ -1627,6 +1627,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UhQ-lY-ajX"/>
-        <segue reference="lqd-QX-6d7"/>
+        <segue reference="uba-IQ-0PZ"/>
     </inferredMetricsTieBreakers>
 </document>

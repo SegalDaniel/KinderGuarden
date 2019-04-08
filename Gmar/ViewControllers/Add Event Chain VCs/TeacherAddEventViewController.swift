@@ -15,6 +15,7 @@ class TeacherAddEventViewController: UIViewController {
     var asAttandance:Bool = false
     @IBOutlet weak var attandanceBtn: UIButton!
     @IBOutlet weak var multiChoiseBtn: UIButton!
+    var teacherID:String?
     
     //MARK: - inits
     override func viewDidLoad() {
@@ -24,17 +25,25 @@ class TeacherAddEventViewController: UIViewController {
     
     func initViews(){
         if !asAttandance{
-            addNewStackRow()
-            addNewStackRow()
-            addAttendanceBtn()
-            addKids()
+            Model.instance.getAllAttendedChildsFromCore { (children) in
+                let stacksNum:Int = children.count / 4
+                for _ in 0...stacksNum{
+                    self.addNewStackRow()
+                }
+                self.addKids(kids: children)
+                self.addAttendanceBtn()
+            }
+            
         }
         else{
-            addNewStackRow()
-            addNewStackRow()
-            addNewStackRow()
-            addNewStackRow()
-            addKids()
+            Model.instance.getAllChildsFromCore { (children) in
+                let stacksNum:Int = children.count / 4
+                for _ in 0...stacksNum{
+                    self.addNewStackRow()
+                }
+                self.addKids(kids: children)
+                
+            }
         }
     }
     
@@ -57,16 +66,24 @@ class TeacherAddEventViewController: UIViewController {
     }
     
     
-    func addKids(){
+    func addKids(kids:[Child]){
         let stacks = mainStackView.arrangedSubviews as! [UIStackView]
+        var children = kids
         for stack in stacks {
             if !asAttandance{
                 if stack.tag == -1 { continue }
             }
-            while stack.arrangedSubviews.count < 4{
-                let btn = Utility.ourBtnDesign(title: "ילד", radius: 20, tag: 1, image: UIImage(named: "001-baby-6"))
-                if stack.arrangedSubviews.count % 2 == 0{
-                    btn.setTitle("ילדה", for: .normal)
+            while stack.arrangedSubviews.count < 4 && children.count > 0{
+                let kid = children.removeLast()
+                var btn:UIButton
+                let image:UIImage? = Model.instance.loadImageFromDiskWith(fileName: "\(kid.childID!)")
+                if let image = image{
+                    btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: image)
+                }
+                else{
+                    btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: UIImage(named: "001-baby-6")!)
+                }
+                if kid.gender == "girl"{
                     btn.backgroundColor = UIColor.purple
                 }
                 btn.addTarget(self, action: #selector(kidClicked), for: .touchUpInside)
@@ -81,6 +98,7 @@ class TeacherAddEventViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TeacherAddEvent") as! TeacherAddEventViewController
         vc.asAttandance = true
+        vc.teacherID = self.teacherID
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -92,7 +110,7 @@ class TeacherAddEventViewController: UIViewController {
     @IBAction func kidClicked(_ sender: Any) {
         if let btn = sender as? UIButton{
             if asAttandance{
-                performSegue(withIdentifier: "GenericInfo", sender: Enums.BasicEvent.attandance)
+                performSegue(withIdentifier: "GenericInfo", sender: (Enums.BasicEvent.attandance, btn.tag))
             }
             else{
                 performSegue(withIdentifier: "EventKind", sender: btn.tag)
@@ -104,7 +122,10 @@ class TeacherAddEventViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GenericInfo"{
             let vc = segue.destination as! GenericVC
-            vc.kind = sender as! Enums.BasicEvent
+            let tup = sender as! (Enums.BasicEvent, Int)
+            vc.kind = tup.0
+            vc.childID = "\(tup.1)"
+            vc.teacherID = self.teacherID
         }
         else if segue.identifier == "MultiChoose"{
             

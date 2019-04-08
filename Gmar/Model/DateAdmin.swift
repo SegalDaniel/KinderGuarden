@@ -36,6 +36,12 @@ class DateAdmin{
         return formatter.string(from: currentDateTime)
     }
     
+    static func createTime(from:String) -> Date?{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.date(from: from)
+    }
+    
     static func showDatePicker(timeStyle:DateFormatter.Style, dateStyle:DateFormatter.Style, callable:@escaping (String) -> Void){
         RPicker.selectDate(title: "נא לבחור זמן מתאים", datePickerMode: .time, didSelectDate: { (selectedDate) in
             let formatter = DateFormatter()

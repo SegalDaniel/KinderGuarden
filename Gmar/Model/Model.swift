@@ -136,6 +136,58 @@ class Model{
         callback(c)
     }
     
+    func getAllAttendedChildsFromCore(callback:([Child])->Void){
+        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+        let childs = try! Model.instance.managedContext.fetch(childFetch)
+        let c:[Child] = childs as! [Child]
+        let filtered = c.filter { (child) -> Bool in
+            return child.isAttend
+        }
+        callback(filtered)
+    }
+    
+    func getChild(childID:String, callback:(Child)->Void){
+        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+        childFetch.predicate = NSPredicate(format: "childID = %@", childID)
+        let child:[Child] = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
+        callback(child.first!)
+    }
+    
+    func deleteChildFromDB(childID:String, callback:(NSError?)->Void){
+        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+        let child = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
+        let toDelete = child.filter { (member) -> Bool in
+            if member.childID == childID {
+                return true
+            }
+            return false
+        }
+        if let obj = toDelete.first {
+            managedContext.delete(obj)
+            removeImageFromDisk(imageName: obj.childID!)
+            do{
+                try Model.instance.managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+                callback(error)
+            }
+            callback(nil)
+        }
+        else{
+            callback(NSError(domain: "no id found", code: 0, userInfo: nil))
+        }
+    }
+    
+    func eventChildAndStaff(childID:String, staffID:String){
+        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+        childFetch.predicate = NSPredicate(format: "childID = %@", childID)
+        let child:[Child] = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
+        let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
+        staffFetch.predicate = NSPredicate(format: "staffID = %@", staffID)
+        let staff:[Staff] = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
+        ModelNotification.childAndStaffNotification.notify(data: (child.first!, staff.first!))
+    }
+    
     //MARK: - staff entity methods
     func getStaffFromDB(callback:@escaping ([Staff]) -> Void){
         let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
@@ -244,7 +296,8 @@ class Model{
 
 // MARK: - ModelNotification class
 class ModelNotification{
-//    static let usersListNotification = MyNotification<[User]>("app.GoldenHour.usersList")
+    //    static let usersListNotification = MyNotification<[User]>("app.GoldenHour.usersList")
+    static let childAndStaffNotification = MyNotification<(Child, Staff)>("childAndStaffNotification")
     
     class MyNotification<T>{
         let name:String

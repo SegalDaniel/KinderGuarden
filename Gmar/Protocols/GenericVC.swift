@@ -12,6 +12,20 @@ import UIKit
 class GenericVC: UIViewController {
     var kind:Enums.BasicEvent = .UKNOWN
     let datePicker = UIDatePicker()
+    var teacherID:String?
+    var childID:String?
+    var eventObjectsListener:NSObjectProtocol?
+    var child:Child?
+    var staff:Staff?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventObjectsListener = ModelNotification.childAndStaffNotification.observe(cb: { (child, staff) in
+            self.child = child
+            self.staff = staff
+        })
+        Model.instance.eventChildAndStaff(childID: childID!, staffID: teacherID!)
+    }
     
     func currentDate() -> String{
         return DateAdmin.currentDate()

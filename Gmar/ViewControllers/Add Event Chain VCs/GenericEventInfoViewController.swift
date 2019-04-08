@@ -89,7 +89,28 @@ class GenericEventInfoViewController: GenericVC {
         print("confirm clicked")
         switch kind {
         case .attandance:
-            performSegue(withIdentifier: "unwindToSelectKid", sender: nil)
+            if let child = child{
+                if let staff = staff{
+                    let pickup = DateAdmin.createTime(from: child.pickupHour!)
+                    let now = DateAdmin.createTime(from:DateAdmin.currentTime(timeStyle: .short))
+                    var isLate:Bool = false
+                    if pickup != nil && now != nil{
+                        isLate = now! > pickup!
+                    }
+                    let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
+                    let type = typeLabel.text!
+                    if type == "הגעה"{
+                        child.isAttend = true
+                    }
+                    else if type == "עזיבה"{
+                        child.isAttend = false
+                    }
+                    //Cannot create Attandance
+                    //let _ = Attendance(isLate: isLate, type: type, eventDate: currentDate(), child: child, staff: staff)
+                    Model.instance.saveToDB(callback: nil)
+                    self.performSegue(withIdentifier: "unwindToSelectKid", sender: nil)
+                }
+            }
             break
         default:
             performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
@@ -196,8 +217,21 @@ class GenericEventInfoViewController: GenericVC {
     
     //MARK: - attandance
     func attandanceViews(){
-        addStackForInfo(info: (1, ["", "הגעה", "עזיבה"]))
-        addStackForInfo(info: (2, ["", "אבא", "אמא", "סבא"]))
+        var authorizedData:[String] = [""]
+        if let child = child{
+            if child.isAttend{
+                addStackForInfo(info: (1, ["עזיבה", "עזיבה"]))
+            }
+            else{
+                addStackForInfo(info: (1, ["הגעה", "הגעה"]))
+            }
+            
+            child.authorized?.forEach({ (auth) in
+                let auth = auth as! AuthorizedAccompanist
+                authorizedData.append("\(auth.relation!) \(auth.name!)")
+            })
+        }
+        addStackForInfo(info: (2, authorizedData))
         messageLabel.isHidden = true
         messageTextField.isHidden = false
     }

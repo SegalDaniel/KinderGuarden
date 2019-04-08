@@ -62,12 +62,7 @@ class MainWindowViewController: UIViewController {
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
-        //Model.instance.deleteAllDataFromCore("Child")
-        Model.instance.getAllChildsFromCore { (children) in
-            let child = children.first!
-            let alert = SimpleAlert(_title: "info", _message: "\(child.childID!) \(child.firstName!) \(child.lastName!) \(child.gender!) \(child.birthDate!.description) \(child.isPremature) \(child.address!) \(child.isAttend) autorized :\(child.authorized!.count) \(child.pickupHour!) allergies: \(child.allergenics!.count) chronic diseases: \(child.chronicDiseases!.count) foods: \(child.foodList!.count)" , dissmissCallback: nil).getAlert()
-            self.present(alert, animated: true, completion: nil)
-        }
+        
     }
     
     
@@ -103,6 +98,14 @@ class MainWindowViewController: UIViewController {
     //MARK: - unwind segue
     @IBAction func unwindToMainWindow(segue:UIStoryboardSegue) { }
     
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "teacherEvent"{
+            let vc = segue.destination as! TeacherAddEventViewController
+            let tID = sender as! Int
+            vc.teacherID = "\(tID)"
+        }
+    }
     
     //********************Testing Method********************//
 //    func testDBs(){
