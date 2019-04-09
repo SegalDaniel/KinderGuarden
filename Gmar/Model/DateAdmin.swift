@@ -42,14 +42,18 @@ class DateAdmin{
         return formatter.date(from: from)
     }
     
-    static func showDatePicker(timeStyle:DateFormatter.Style, dateStyle:DateFormatter.Style, callable:@escaping (String) -> Void){
+    static func showDatePicker(timeStyle:DateFormatter.Style, dateStyle:DateFormatter.Style, callable:@escaping (String, String, Date) -> Void){
         RPicker.selectDate(title: "נא לבחור זמן מתאים", datePickerMode: .time, didSelectDate: { (selectedDate) in
-            let formatter = DateFormatter()
-            formatter.timeStyle = timeStyle
-            formatter.dateStyle = dateStyle
-            formatter.locale = Locale(identifier: "he")
-            let time = formatter.string(from: selectedDate)
-            callable(time)
+            let formatter1 = DateFormatter()
+            formatter1.dateStyle = .none
+            formatter1.timeStyle = .short
+            let time = formatter1.string(from: selectedDate)
+            let formatter2 = DateFormatter()
+            formatter2.timeStyle = timeStyle
+            formatter2.dateStyle = dateStyle
+            formatter2.locale = Locale(identifier: "he")
+            let date = formatter2.string(from: selectedDate)
+            callable(date, time, selectedDate)
         })
         
     }

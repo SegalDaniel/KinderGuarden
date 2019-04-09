@@ -186,6 +186,13 @@ class Model{
         ModelNotification.childAndStaffNotification.notify(data: (child.first!, staff.first!))
     }
     
+    func getAuthorized(authName:String, callback:(AuthorizedAccompanist?)->Void){
+        let authFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "AuthorizedAccompanist")
+        authFetch.predicate = NSPredicate(format: "name = %@", authName)
+        let auth:[AuthorizedAccompanist] = try! Model.instance.managedContext.fetch(authFetch) as! [AuthorizedAccompanist]
+        callback(auth.first)
+    }
+    
     //MARK: - staff entity methods
     func getStaffFromDB(callback:@escaping ([Staff]) -> Void){
         let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")

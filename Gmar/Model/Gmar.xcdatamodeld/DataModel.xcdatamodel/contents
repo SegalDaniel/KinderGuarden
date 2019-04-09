@@ -153,7 +153,7 @@
     </entity>
     <elements>
         <element name="Allergenic" positionX="-3762" positionY="270" width="128" height="75"/>
-        <element name="Attendance" positionX="-3526.58203125" positionY="98.73046875" width="128" height="133"/>
+        <element name="Attendance" positionX="-3526.58203125" positionY="98.73046875" width="128" height="135"/>
         <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="118"/>
         <element name="BasicEvent" positionX="-3634.3515625" positionY="690.71484375" width="128" height="103"/>
         <element name="Child" positionX="-3747.8984375" positionY="1097.765625" width="128" height="300"/>

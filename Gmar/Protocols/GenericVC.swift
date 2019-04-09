@@ -17,6 +17,8 @@ class GenericVC: UIViewController {
     var eventObjectsListener:NSObjectProtocol?
     var child:Child?
     var staff:Staff?
+    var selectedTime:String?
+    var selectedDate:Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,11 @@ class GenericVC: UIViewController {
     }
     
     
-    func showDatePicker(timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, callable:@escaping (String) -> Void){
-        DateAdmin.showDatePicker(timeStyle: timeStyle, dateStyle: dateStyle, callable: callable)
+    func showDatePicker(timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, callable:@escaping (String, String, Date) -> Void){
+        DateAdmin.showDatePicker(timeStyle: timeStyle, dateStyle: dateStyle) { (dateString, time, date) in
+            self.selectedDate = date
+            self.selectedTime = time
+            callable(time, dateString, date)
+        }
     }
 }

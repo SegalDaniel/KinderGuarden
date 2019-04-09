@@ -51,8 +51,8 @@ class MultiChoiseTableViewCell: UITableViewCell {
     }
     
     @IBAction func changeTimeBtnClicked(_ sender: Any) {
-        DateAdmin.showDatePicker(timeStyle: .short, dateStyle: .none) { (newTime) in
-            self.timeLabel.text = newTime
+        DateAdmin.showDatePicker(timeStyle: .short, dateStyle: .none) { (dateString, time, date) in
+            self.timeLabel.text = dateString
         }
     }
     

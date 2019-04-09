@@ -91,11 +91,22 @@ class GenericEventInfoViewController: GenericVC {
         case .attandance:
             if let child = child{
                 if let staff = staff{
-                    let pickup = DateAdmin.createTime(from: child.pickupHour!)
-                    let now = DateAdmin.createTime(from:DateAdmin.currentTime(timeStyle: .short))
                     var isLate:Bool = false
-                    if pickup != nil && now != nil{
-                        isLate = now! > pickup!
+                    let pickup = DateAdmin.createTime(from: child.pickupHour!)!
+                    var eventTime:Date
+                    var eventDate:Date
+                    if selectedTime == nil{
+                        eventTime = DateAdmin.createTime(from:DateAdmin.currentTime(timeStyle: .short))!
+                    }
+                    else{
+                        eventTime = DateAdmin.createTime(from: selectedTime!)!
+                    }
+                    isLate = eventTime > pickup
+                    if selectedDate == nil{
+                        eventDate = Date()
+                    }
+                    else{
+                        eventDate = selectedDate!
                     }
                     let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
                     let type = typeLabel.text!
@@ -105,10 +116,14 @@ class GenericEventInfoViewController: GenericVC {
                     else if type == "עזיבה"{
                         child.isAttend = false
                     }
-                    //Cannot create Attandance
-                    //let _ = Attendance(isLate: isLate, type: type, eventDate: currentDate(), child: child, staff: staff)
-                    Model.instance.saveToDB(callback: nil)
-                    self.performSegue(withIdentifier: "unwindToSelectKid", sender: nil)
+                    
+                    let authLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
+                    let authName:String = String(authLabel.text!.split(separator: " ")[1])
+                    Model.instance.getAuthorized(authName: authName) { (auth) in
+                        let _ = Attendance(isLate: isLate, type: type, eventDate: eventDate, child: child, staff: staff, authorized: auth)
+                        Model.instance.saveToDB(callback: nil)
+                        self.performSegue(withIdentifier: "unwindToSelectKid", sender: nil)
+                    }
                 }
             }
             break
@@ -120,8 +135,8 @@ class GenericEventInfoViewController: GenericVC {
     }
     
     @IBAction func timeBtnClicked(_ sender: Any) {
-        showDatePicker(timeStyle: .short, dateStyle: .medium) { (time) in
-            self.timeLabel.text = time
+        showDatePicker(timeStyle: .short, dateStyle: .medium) { (dateString, time, date) in
+            self.timeLabel.text = dateString
         }
     }
     

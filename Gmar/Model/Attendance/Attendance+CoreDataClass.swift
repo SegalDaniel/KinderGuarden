@@ -12,18 +12,18 @@ import CoreData
 
 @objc(Attendance)
 public class Attendance: NSManagedObject {
-    convenience init(isLate:Bool, type:String, eventDate:String, child:Child?, staff:Staff?, authorized:AuthorizedAccompanist?){
-        self.init(entity: Model.instance.authorizedAccompanistEntity, insertInto: Model.instance.managedContext)
+    convenience init(isLate:Bool, type:String, eventDate:Date, child:Child?, staff:Staff?, authorized:AuthorizedAccompanist?){
+        self.init(entity: Model.instance.attendanceEntity, insertInto: Model.instance.managedContext)
         self.setValue(isLate, forKey: "isLate")
         self.setValue(type, forKey: "type")
         self.setValue(eventDate, forKey: "eventDate")
         self.setValue(child, forKey: "child")
-        self.setValue(child, forKey: "staff")
+        self.setValue(staff, forKey: "staff")
         self.setValue(authorized, forKey: "authorized")
     }
     
     convenience  init(json:[String:Any]) {
-        self.init(entity: Model.instance.authorizedAccompanistEntity, insertInto: Model.instance.managedContext)
+        self.init(entity: Model.instance.attendanceEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["isLate"], forKey: "isLate")
         self.setValue(json["type"], forKey: "type")
         self.setValue(json["eventDate"], forKey: "eventDate")
