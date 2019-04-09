@@ -79,8 +79,6 @@ class Model{
         secretionEntity = NSEntityDescription.entity(forEntityName: "Secretion", in: managedContext)!
         generalBehaviorEntity = NSEntityDescription.entity(forEntityName: "GeneralBehavior", in: managedContext)!
         generalNoteEntity = NSEntityDescription.entity(forEntityName: "GeneralNote", in: managedContext)!
-//        basicEventEntity = NSEntityDescription.entity(forEntityName: "BasicEvent", in: managedContext)!
-//        developmentEventEntity = NSEntityDescription.entity(forEntityName: "DevelopmentEvent", in: managedContext)!
         fineMotorEventEntity = NSEntityDescription.entity(forEntityName: "FineMotor", in: managedContext)!
         grossMotorEventEntity = NSEntityDescription.entity(forEntityName: "GrossMotor", in: managedContext)!
         allergenicEntity  = NSEntityDescription.entity(forEntityName: "Allergenic", in: managedContext)!

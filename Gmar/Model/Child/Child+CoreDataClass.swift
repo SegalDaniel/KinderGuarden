@@ -49,6 +49,21 @@ public class Child: NSManagedObject {
         json["pickupHour"] = pickupHour
         json["birthDate"] = birthDate
         json["isAttend"] = isAttend
+        for authorize in self.authorized as! Set<AuthorizedAccompanist>{
+        json["authorized"] = authorize.toJson()
+        }
+        for allergenic in self.allergenics as! Set<Allergenic>{
+            json["allergenics"] = allergenic.toJson()
+        }
+        for chronicDisease in self.chronicDiseases as! Set<ChronicDisease>{
+            json["chronicDiseases"] = chronicDisease.toJson()
+        }
+        for routine in self.routineMedication as! Set<AuthorizedAccompanist>{
+            json["routineMedication"] = routine.toJson()
+        }
+        for food in self.foodList as! Set<Food>{
+            json["foodList"] = food.toJson()
+        }
         return json
     }
     
