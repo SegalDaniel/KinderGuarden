@@ -64,6 +64,15 @@ public class Child: NSManagedObject {
         for food in self.foodList as! Set<Food>{
             json["foodList"] = food.toJson()
         }
+        for event in self.attendanceEvents as! Set<Attendance>{
+            json["attendanceEvents"] = event.toJson()
+        }
+        for event in self.foodList as! Set<BasicEvent>{
+            json["basicEvents"] = event.toJson()
+        }
+        for event in self.developmentalEvents as! Set<DevelopmentalEvent>{
+            json["developmentalEvents"] = event.toJson()
+        }
         return json
     }
     
