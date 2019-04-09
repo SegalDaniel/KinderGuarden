@@ -54,6 +54,9 @@ class ModelFireBase{
     
     //MARK: - Attandance Methods
     func sendAttandanceEvent(event:Attendance, callback: @escaping(Error?) -> Void){
+        let childRef = db.collection("Child").document(event.child!.childID!)
+        let eventID = event.eventDate!.hash
+        childRef.updateData(["attendanceEvents.\(eventID)": event.toJson()])
         db.collection("AttendanceEvent").addDocument(data: event.toJson(), completion: callback)
     }
     

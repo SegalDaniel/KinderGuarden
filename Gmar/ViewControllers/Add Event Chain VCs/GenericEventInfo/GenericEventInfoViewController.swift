@@ -96,6 +96,7 @@ class GenericEventInfoViewController: GenericVC {
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.navigationController?.popViewController(animated: false)
         if segue.identifier == "unwindToSelectKid"{
             let viewControllers:[UIViewController] = [self.navigationController!.viewControllers.first!]
             self.navigationController?.setViewControllers(viewControllers, animated: true)
