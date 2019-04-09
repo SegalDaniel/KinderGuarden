@@ -49,30 +49,63 @@ public class Child: NSManagedObject {
         json["pickupHour"] = pickupHour
         json["birthDate"] = birthDate
         json["isAttend"] = isAttend
-        for authorize in self.authorized as! Set<AuthorizedAccompanist>{
-        json["authorized"] = authorize.toJson()
-        }
-        for allergenic in self.allergenics as! Set<Allergenic>{
-            json["allergenics"] = allergenic.toJson()
-        }
-        for chronicDisease in self.chronicDiseases as! Set<ChronicDisease>{
-            json["chronicDiseases"] = chronicDisease.toJson()
-        }
-        for routine in self.routineMedication as! Set<AuthorizedAccompanist>{
-            json["routineMedication"] = routine.toJson()
-        }
-        for food in self.foodList as! Set<Food>{
-            json["foodList"] = food.toJson()
-        }
-        for event in self.attendanceEvents as! Set<Attendance>{
-            json["attendanceEvents"] = event.toJson()
-        }
-        for event in self.foodList as! Set<BasicEvent>{
-            json["basicEvents"] = event.toJson()
-        }
-        for event in self.developmentalEvents as! Set<DevelopmentalEvent>{
-            json["developmentalEvents"] = event.toJson()
-        }
+        
+        var authorizedJson:[String:Any] = [:]
+        var i = 0
+        authorized?.forEach({ (obj) in
+            let obj = obj as! AuthorizedAccompanist
+            authorizedJson["\(i)"] = obj.toJson()
+            i += 1
+        })
+        json["authorized"] = authorizedJson
+        
+        var allergenicsJson:[String:Any] = [:]
+        i = 0
+        allergenics?.forEach({ (obj) in
+            let obj = obj as! Allergenic
+            allergenicsJson["\(i)"] = obj.toJson()
+        })
+        json["allergenics"] = allergenicsJson
+        
+        var chronicJson:[String:Any] = [:]
+        i = 0
+        chronicDiseases?.forEach({ (obj) in
+            let obj = obj as! ChronicDisease
+            chronicJson["\(i)"] = obj.toJson()
+        })
+        json["chronicDiseases"] = chronicJson
+        
+        var medicJson:[String:Any] = [:]
+        i = 0
+        routineMedication?.forEach({ (obj) in
+            let obj = obj as! RoutineMedication
+            medicJson["\(i)"] = obj.toJson()
+        })
+        json["routineMedication"] = medicJson
+        
+        var foodsJson:[String:Any] = [:]
+        i = 0
+        foodList?.forEach({ (obj) in
+            let obj = obj as! Food
+            foodsJson["\(i)"] = obj.toJson()
+        })
+        json["foodList"] = foodsJson
+        
+        var attJson:[String:Any] = [:]
+        i = 0
+        attendanceEvents?.forEach({ (obj) in
+            let obj = obj as! Attendance
+            attJson["\(i)"] = obj.toJson()
+        })
+        json["attendanceEvents"] = attJson
+        
+        var devJson:[String:Any] = [:]
+        i = 0
+        developmentalEvents?.forEach({ (obj) in
+            let obj = obj as! DevelopmentalEvent
+            devJson["\(i)"] = obj.toJson()
+        })
+        json["developmentalEvents"] = devJson
         return json
     }
     

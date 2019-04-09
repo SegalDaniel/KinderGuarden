@@ -30,20 +30,26 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
     
     //MARK: - buttons action
     @IBAction func saveBtnClicked(_ sender: Any) {
+        self.view.endEditing(true)
         if nameTextField.text != nil && lastNameTextField.text != nil{
             if nameTextField.text != "" && lastNameTextField.text != ""{
+                let loadingView = Utility.getLoadingAlert()
+                self.present(loadingView, animated: true, completion: nil)
                 let fName = nameTextField.text!
                 let lName = lastNameTextField.text!
                 let id = "\(fName)\(lName)".hash
+                var staff:Staff
                 if let teacherImage = teacherImage{
                     Model.instance.saveImageToDisk(imageName: "\(id)", image: teacherImage)
-                    let _ = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: "\(id)")
+                    staff = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: "\(id)")
                 }
                 else{
-                    let _ = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: nil)
+                    staff = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: nil)
                 }
-                Model.instance.saveToDB(callback: nil)
-                self.performSegue(withIdentifier: "uniwndToMain", sender: nil)
+                Model.instance.sendToFB(staff: staff) { (err) in
+                    loadingView.removeFromParent()
+                    self.performSegue(withIdentifier: "uniwndToMain", sender: nil)
+                }
                 return
             }
         }
@@ -83,14 +89,13 @@ class AddTeacherViewController: UIViewController, UIImagePickerControllerDelegat
     func textFieldDidBeginEditing(_ textField: UITextField) {
         Utility.moveWithKeyboard(viewController: self)
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        self.navigationController?.popViewController(animated: false)
     }
-    */
+    
 
 }

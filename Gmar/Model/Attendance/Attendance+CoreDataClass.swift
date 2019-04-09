@@ -28,9 +28,7 @@ public class Attendance: NSManagedObject {
         self.setValue(json["type"], forKey: "type")
         self.setValue(json["eventDate"], forKey: "eventDate")
         self.setValue(json["authorized"], forKey: "authorized")
-        
     }
-    
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
@@ -39,9 +37,7 @@ public class Attendance: NSManagedObject {
         json["eventDate"] = eventDate
         json["childID"] = child?.childID
         json["staffID"] = staff?.staffID
-        json["authorized"] = authorized
+        json["authorized"] = authorized?.toJson()
         return json
-        
     }
-
 }

@@ -112,6 +112,19 @@ class Utility{
         NotificationCenter.default.removeObserver(viewController, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(viewController, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    //MARK: - Loading Alert
+    static func getLoadingAlert(message:String = "שומר..") ->UIAlertController{
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        return alert
+    }
 }
 
 //MARK: - Double extension

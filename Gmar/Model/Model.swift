@@ -90,10 +90,19 @@ class Model{
     }
     
     //MARK: - Child Model Methods
-    func addChild(child:Child, callack:@escaping (Error?)->Void){
-        modelFirebase.addChild(child: child) { (err) in
+    func getChild(childID:String, callback:@escaping (Error?, Child?)->Void){
+        modelFirebase.getChild(childID: childID, callback: callback)
+    }
+    
+    //MARK: - Firestore methods
+    func deleteDocument(collection:String, docID:String, callack:@escaping (Error?)->Void){
+        modelFirebase.removeDocument(collection: collection, docID: docID, callack: callack)
+    }
+    
+    func sendToFB(basicEvent:BasicEvent, callack:@escaping (Error?)->Void){
+        modelFirebase.sendBasicEvent(basicEvent: basicEvent) { (err) in
             if err == nil{
-                do {
+                do{
                     try Model.instance.managedContext.save()
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
@@ -103,21 +112,38 @@ class Model{
         }
     }
     
-    func getChild(childID:String, callback:@escaping (Error?, Child?)->Void){
-        modelFirebase.getChild(childID: childID, callback: callback)
-    }
-    
-    //MARK: - Firestore methods
-    func deleteDocument(docID:String, callack:@escaping (Error?)->Void){
-        modelFirebase.removeDocument(docID: docID, callack: callack)
-    }
-    
-    func sendBasicEventToFB(basicEvent:BasicEvent, callack:@escaping (Error?)->Void){
-        modelFirebase.sendBasicEvent(basicEvent: basicEvent) { (err) in
+    func sendToFB(attandanceEvent:Attendance, callack:@escaping (Error?)->Void){
+        modelFirebase.sendAttandanceEvent(event: attandanceEvent) { (err) in
             if err == nil{
                 do{
                     try Model.instance.managedContext.save()
-                } catch let error as NSError {
+                } catch let error as NSError{
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+            callack(err)
+        }
+    }
+    
+    func sendToFB(child:Child, callack:@escaping (Error?)->Void){
+        modelFirebase.sendChild(child: child) { (err) in
+            if err == nil{
+                do{
+                    try Model.instance.managedContext.save()
+                } catch let error as NSError{
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+            callack(err)
+        }
+    }
+    
+    func sendToFB(staff:Staff, callack:@escaping (Error?)->Void){
+        modelFirebase.sendStaff(staff: staff) { (err) in
+            if err == nil{
+                do{
+                    try Model.instance.managedContext.save()
+                } catch let error as NSError{
                     print("Could not save. \(error), \(error.userInfo)")
                 }
             }
