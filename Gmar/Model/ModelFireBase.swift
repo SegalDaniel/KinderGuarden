@@ -57,11 +57,11 @@ class ModelFireBase{
         let childRef = db.collection("Child").document(event.child!.childID!)
         let eventID = event.eventDate!.hash
         childRef.updateData(["attendanceEvents.\(eventID)": event.toJson()])
-        db.collection("AttendanceEvent").addDocument(data: event.toJson(), completion: callback)
+        db.collection("AttendanceEvent").document("\(eventID)").setData(event.toJson(), completion: callback)
     }
     
     //MARK: - Staff methods
     func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
-        db.collection("Staff").addDocument(data: staff.toJson(), completion: callback)
+        db.collection("Staff").document(staff.staffID!).setData(staff.toJson(), completion: callback)
     }
 }
