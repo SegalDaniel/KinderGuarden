@@ -42,6 +42,7 @@
 		189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */; };
 		18BFE193224651250084D766 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE192224651250084D766 /* Permissions.swift */; };
 		18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE1942246739E0084D766 /* AddTeacherViewController.swift */; };
+		18C59D6D225CEE65003BD029 /* GenericEventInfo_Confirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C59D6C225CEE65003BD029 /* GenericEventInfo_Confirmation.swift */; };
 		18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */; };
 		A8287E43224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E41224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E42224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift */; };
@@ -147,6 +148,7 @@
 		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		18BFE192224651250084D766 /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		18BFE1942246739E0084D766 /* AddTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherViewController.swift; sourceTree = "<group>"; };
+		18C59D6C225CEE65003BD029 /* GenericEventInfo_Confirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericEventInfo_Confirmation.swift; sourceTree = "<group>"; };
 		18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8287E41224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -344,7 +346,7 @@
 				1887F4A52219D0B5007682A8 /* EventKindViewController.swift */,
 				1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */,
 				1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */,
-				1887F4AE221AE93A007682A8 /* GenericEventInfoViewController.swift */,
+				18C59D6E225CEE6D003BD029 /* GenericEventInfo */,
 				1887F4B5221B1E13007682A8 /* GenericLiquidViewController.swift */,
 				18788797221D4C510047A935 /* MultiChoiseViewController.swift */,
 			);
@@ -360,6 +362,15 @@
 				189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */,
 			);
 			path = "Add New Child";
+			sourceTree = "<group>";
+		};
+		18C59D6E225CEE6D003BD029 /* GenericEventInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1887F4AE221AE93A007682A8 /* GenericEventInfoViewController.swift */,
+				18C59D6C225CEE65003BD029 /* GenericEventInfo_Confirmation.swift */,
+			);
+			path = GenericEventInfo;
 			sourceTree = "<group>";
 		};
 		378573E8FF6EE6BEB75C54F7 /* Frameworks */ = {
@@ -870,6 +881,7 @@
 				A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */,
 				A88BBFB7225CA7B500F9C0B4 /* Attendance+CoreDataProperties.swift in Sources */,
 				A8C41482223EF8280072B0A8 /* Water.swift in Sources */,
+				18C59D6D225CEE65003BD029 /* GenericEventInfo_Confirmation.swift in Sources */,
 				A8576E06224A6D9500CBA907 /* Parasites+CoreDataProperties.swift in Sources */,
 				A8287E5D224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
