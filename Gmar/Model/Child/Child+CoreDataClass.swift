@@ -104,6 +104,14 @@ public class Child: NSManagedObject {
         })
         json["attendanceEvents"] = attJson
         
+        var basJson:[String:Any] = [:]
+        i = 0
+        basicEvents?.forEach({ (obj) in
+            let obj = obj as! BasicEvent
+            basJson["\(i)"] = obj.toJson()
+        })
+        json["basicEvents"] = basJson
+        
         var devJson:[String:Any] = [:]
         i = 0
         developmentalEvents?.forEach({ (obj) in
