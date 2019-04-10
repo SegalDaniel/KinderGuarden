@@ -19,6 +19,8 @@ class BasicEventViewController: UIViewController {
     @IBOutlet weak var feeverBtn: UIButton!
     @IBOutlet weak var vomitBtn: UIButton!
     @IBOutlet weak var hafrashaBtn: UIButton!
+    var childID:String?
+    var teacherID:String?
     
     //MARK: - init
     override func viewDidLoad() {
@@ -63,6 +65,8 @@ class BasicEventViewController: UIViewController {
         if segue.identifier == "GenericDecision" || segue.identifier == "GenericEventInfo" || segue.identifier == "GenericLiquid"{
             let vc = segue.destination as! GenericVC
             vc.kind = sender as! Enums.BasicEvent
+            vc.childID = self.childID
+            vc.teacherID = self.teacherID
         }
     }
     

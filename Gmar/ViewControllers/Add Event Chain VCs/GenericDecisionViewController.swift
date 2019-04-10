@@ -78,6 +78,8 @@ class GenericDecisionViewController: GenericVC {
             let vc = segue.destination as! GenericVC
             let nextKind = sender as! Enums.BasicEvent
             vc.kind = nextKind
+            vc.childID = self.childID
+            vc.teacherID = self.teacherID
         }
     }
     
@@ -85,6 +87,8 @@ class GenericDecisionViewController: GenericVC {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "GenericDecision") as! GenericDecisionViewController
         vc.kind = kind
+        vc.childID = self.childID
+        vc.teacherID = self.teacherID
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

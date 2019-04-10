@@ -130,6 +130,12 @@ class TeacherAddEventViewController: UIViewController {
         else if segue.identifier == "MultiChoose"{
             
         }
+        else if segue.identifier == "EventKind"{
+            let vc = segue.destination as! EventKindViewController
+            let id = sender as! Int
+            vc.childID = "\(id)"
+            vc.teacherID = self.teacherID
+        }
     }
     
     //MARK: - Unwind seague

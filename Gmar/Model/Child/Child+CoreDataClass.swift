@@ -111,6 +111,7 @@ public class Child: NSManagedObject {
             devJson["\(i)"] = obj.toJson()
         })
         json["developmentalEvents"] = devJson
+        
         return json
     }
     

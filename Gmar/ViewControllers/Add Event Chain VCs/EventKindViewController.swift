@@ -16,6 +16,8 @@ class EventKindViewController: UIViewController {
     @IBOutlet weak var familiyEventBtn: UIButton!
     @IBOutlet weak var generalEventBtn: UIButton!
     @IBOutlet weak var futureAttEventBtn: UIButton!
+    var childID:String?
+    var teacherID:String?
     
     //MARK: - inits
     override func viewDidLoad() {
@@ -64,7 +66,9 @@ class EventKindViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BasicEventSegue"{
-            
+            let vc = segue.destination as! BasicEventViewController
+            vc.childID = self.childID
+            vc.teacherID = self.teacherID
         }
     }
 }
