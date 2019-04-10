@@ -36,6 +36,11 @@ public class Child: NSManagedObject {
         self.setValue(json["pickupHour"], forKey: "pickupHour")
         self.setValue(json["birthDate"], forKey: "birthDate")
         self.setValue(json["isAttend"], forKey: "isAttend")
+//        if let attend = json["attendanceEvents"] as? [Attendance:Any]{
+//            attend.forEach { (key,value) in
+//                attendanceEvents?.adding(Attendance(json: value as! [String:Any]))
+//            }
+//        }
     }
     
     func toJson() -> [String:Any] {
