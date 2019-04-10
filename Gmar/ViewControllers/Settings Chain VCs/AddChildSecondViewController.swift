@@ -46,6 +46,8 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
     
     //MARK: - Buttons actions
     @IBAction func addChildBtnClicked(_ sender: Any) {
+        let loadingView = Utility.getLoadingAlert()
+        self.present(loadingView, animated: true, completion: nil)
         if foods != foodsArr.count || alergies != alergiesArr.count || medications != medicationsArr.count || diseases != diseasesArr.count{
             delegate?.shouldEndEditing()
         }
@@ -74,16 +76,18 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
                 Model.instance.saveImageToDisk(imageName: id, image: image)
             }
             
-            Model.instance.saveToDB { (err) in
+            Model.instance.sendToFB(child: child) { (err) in
+                loadingView.removeFromParent()
                 if err == nil{
                     self.performSegue(withIdentifier: "unwindToMain", sender: nil)
                 }
                 else{
-                    let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err!.description, dissmissCallback: nil).getAlert()
+                    let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err.debugDescription, dissmissCallback: nil).getAlert()
                     self.present(alert, animated: true, completion: nil)
                 }
             }
         }
+        loadingView.removeFromParent()
     }
     
     @IBAction func addCellBtnClicked(_ sender: UIButton) {

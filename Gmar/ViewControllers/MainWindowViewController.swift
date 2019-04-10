@@ -62,7 +62,7 @@ class MainWindowViewController: UIViewController {
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
-        
+        Model.instance.deleteAllDataFromCore("Child")
     }
     
     

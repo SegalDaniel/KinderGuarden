@@ -38,7 +38,7 @@ class GenericVC: UIViewController {
         DateAdmin.showDatePicker(timeStyle: timeStyle, dateStyle: dateStyle) { (dateString, time, date) in
             self.selectedDate = date
             self.selectedTime = time
-            callable(time, dateString, date)
+            callable(dateString, time, date)
         }
     }
 }

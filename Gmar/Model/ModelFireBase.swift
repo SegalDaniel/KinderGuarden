@@ -17,15 +17,15 @@ class ModelFireBase{
     
     
     //MARK: - Child Methods
-    func addChild(child:Child, callack:@escaping (Error?)->Void){
-        db.collection("childs").document(child.childID!).setData(child.toJson(), completion: { (err) in
+    func sendChild(child:Child, callack:@escaping (Error?)->Void){
+        db.collection("Child").document(child.childID!).setData(child.toJson(), completion: { (err) in
             callack(err)
         })
     }
     
     
     func getChild(childID:String, callback:@escaping (Error?, Child?)->Void){
-        let childRef = db.collection("childs").document(childID)
+        let childRef = db.collection("Child").document(childID)
         childRef.getDocument { (document, err) in
             if let child = document.flatMap({
                 $0.data().flatMap({ (data) in
@@ -41,8 +41,8 @@ class ModelFireBase{
     }
     
     //MARK: - Remove document - wont be needed
-    func removeDocument(docID:String, callack:@escaping (Error?)->Void){
-        db.collection("users").document(docID).delete { (err) in
+    func removeDocument(collection:String, docID:String, callack:@escaping (Error?)->Void){
+        db.collection(collection).document(docID).delete { (err) in
             callack(err)
         }
     }
@@ -50,5 +50,18 @@ class ModelFireBase{
     //MARK: - BasicEvent Methods
     func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
         db.collection("BasicEvents").addDocument(data: basicEvent.toJson(), completion: callback)
+    }
+    
+    //MARK: - Attandance Methods
+    func sendAttandanceEvent(event:Attendance, callback: @escaping(Error?) -> Void){
+        let childRef = db.collection("Child").document(event.child!.childID!)
+        let eventID = event.eventDate!.hash
+        childRef.updateData(["attendanceEvents.\(eventID)": event.toJson()])
+        db.collection("AttendanceEvent").document("\(eventID)").setData(event.toJson(), completion: callback)
+    }
+    
+    //MARK: - Staff methods
+    func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
+        db.collection("Staff").document(staff.staffID!).setData(staff.toJson(), completion: callback)
     }
 }
