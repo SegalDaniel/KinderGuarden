@@ -36,6 +36,30 @@ public class Staff: NSManagedObject {
         json["firstName"] = firstName
         json["lastName"] = lastName
         json["image"] = image
+        var i = 0
+        var attJson:[String:Any] = [:]
+        i = 0
+        attendanceEvents?.forEach({ (obj) in
+            let obj = obj as! Attendance
+            attJson["\(i)"] = obj.toJson()
+        })
+        json["attendanceEvents"] = attJson
+        
+        var basJson:[String:Any] = [:]
+        i = 0
+        basicEvents?.forEach({ (obj) in
+            let obj = obj as! BasicEvent
+            basJson["\(i)"] = obj.toJson()
+        })
+        json["basicEvents"] = basJson
+        
+        var devJson:[String:Any] = [:]
+        i = 0
+        developmentalEvents?.forEach({ (obj) in
+            let obj = obj as! DevelopmentalEvent
+            devJson["\(i)"] = obj.toJson()
+        })
+        json["developmentalEvents"] = devJson
         return json
     }
 
