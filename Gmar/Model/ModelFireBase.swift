@@ -49,14 +49,23 @@ class ModelFireBase{
     
     //MARK: - BasicEvent Methods
     func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
-        db.collection("BasicEvents").addDocument(data: basicEvent.toJson(), completion: callback)
+        let childRef = db.collection("Child").document(basicEvent.child!.childID!)
+        let eventID = basicEvent.eventDate!.hash
+        let staffRef = db.collection("Staff").document(basicEvent.staff!.staffID!)
+        childRef.updateData(["basicEvents.\(eventID)\(basicEvent.eventType)": basicEvent.toJson()]) { (err) in
+            staffRef.updateData(["basicEvents.\(eventID)\(basicEvent.eventType)": basicEvent.toJson()], completion: { (err) in
+                self.db.collection("BasicEvents").document("\(eventID)\(basicEvent.eventType)").setData(basicEvent.toJson(), completion: callback)
+            })
+        }
     }
     
     //MARK: - Attandance Methods
     func sendAttandanceEvent(event:Attendance, callback: @escaping(Error?) -> Void){
         let childRef = db.collection("Child").document(event.child!.childID!)
         let eventID = event.eventDate!.hash
+        let staffRef = db.collection("Staff").document(event.staff!.staffID!)
         childRef.updateData(["attendanceEvents.\(eventID)": event.toJson()])
+        staffRef.updateData(["basicEvents.\(eventID)": event.toJson()])
         db.collection("AttendanceEvent").document("\(eventID)").setData(event.toJson(), completion: callback)
     }
     

@@ -10,21 +10,19 @@ import UIKit
 
 class MultiChoiseTableViewCell: UITableViewCell {
 
+    //MARK: - Variables
     @IBOutlet weak var kidNameLabel: UILabel!
     @IBOutlet weak var foodKindBtn: UIButton!
     @IBOutlet weak var quantStackView: UIStackView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var changeTimeBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
-    
     @IBOutlet weak var foodFinishedBtn: UIButton!
     @IBOutlet weak var foodAboveHalfBtn: UIButton!
     @IBOutlet weak var foodBelowHalfBtn: UIButton!
     @IBOutlet weak var foodDidntBtn: UIButton!
-    
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var quantitySlider: UISlider!
-    
     var delegate:MultiChoiseCellDelegate?
     
     var foodBtns:[UIButton] = []
@@ -37,11 +35,13 @@ class MultiChoiseTableViewCell: UITableViewCell {
     }
     var foodKind:Int = 1
     
+    //MARK: - init
     override func awakeFromNib() {
         super.awakeFromNib()
         initChoise()
     }
     
+    //MARK: - Buttons actions
     @IBAction func foodKindBtnClicked(_ sender: Any) {
         toggleFoodKind()
     }
@@ -75,8 +75,7 @@ class MultiChoiseTableViewCell: UITableViewCell {
         
     }
     
-    /*  Views inits  */
-    
+    //MARK: - Views intis
     func initLabels(labels:[UILabel]){
         labels.forEach { (label) in
             label.adjustsFontSizeToFitWidth = true

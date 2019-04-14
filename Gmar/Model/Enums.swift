@@ -19,6 +19,7 @@ class Enums{
         case feever
         case vomit
         case hafrahsa
+        case urine
         //internal use:
         case foodOrDrink
         case solidorMilk

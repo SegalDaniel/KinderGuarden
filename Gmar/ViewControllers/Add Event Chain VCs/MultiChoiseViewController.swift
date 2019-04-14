@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MultiChoiseViewController: GenericVC, UITableViewDelegate, UITableViewDataSource, MultiChoiseCellDelegate {
+class MultiChoiseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MultiChoiseCellDelegate {
 
     //MARk: - Variables
     @IBOutlet weak var finalConfirmBtn: UIButton!
@@ -16,6 +16,7 @@ class MultiChoiseViewController: GenericVC, UITableViewDelegate, UITableViewData
     @IBOutlet weak var foodKindTitle: UILabel!
     @IBOutlet weak var quantityTitle: UILabel!
     @IBOutlet weak var kidsTableView: UITableView!
+    var kids:[Child]?
     
     //MARK: inits
     override func viewDidLoad() {
@@ -30,16 +31,20 @@ class MultiChoiseViewController: GenericVC, UITableViewDelegate, UITableViewData
         labels.forEach { (label) in
             Utility.addBorder(view: label, color: UIColor.black, width: 2)
         }
+        Model.instance.getAllAttendedChildsFromCore { (children) in
+            self.kids = children
+        }
     }
     
     //MARK: -  TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return kids?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MultiChoiseCell") as! MultiChoiseTableViewCell
-        cell.data = "שם של ילד"
+        let kid = kids![indexPath.row]
+        cell.data = "\(kid.firstName!) \(kid.lastName!)"
         Utility.addBorder(view: cell, color: UIColor.black, width: 1)
         cell.delegate = self
         return cell

@@ -62,7 +62,17 @@ class MainWindowViewController: UIViewController {
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
-        
+        Model.instance.getChild(childID: "203037346") { (child) in
+            let basics = child.basicEvents
+            var msg = ""
+            basics?.forEach({ (obj) in
+                let event = obj as! BasicEvent
+                let type = Enums.BasicEvent.init(rawValue: Int(event.eventType))
+                msg.append("type: \(type!)\n")
+            })
+            let alert = SimpleAlert(_title: "Basic Events of \(child.firstName!) \(child.lastName!)", _message: msg, dissmissCallback: nil).getAlert()
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     

@@ -69,6 +69,7 @@ public class Child: NSManagedObject {
         allergenics?.forEach({ (obj) in
             let obj = obj as! Allergenic
             allergenicsJson["\(i)"] = obj.toJson()
+            i += 1
         })
         json["allergenics"] = allergenicsJson
         
@@ -77,6 +78,7 @@ public class Child: NSManagedObject {
         chronicDiseases?.forEach({ (obj) in
             let obj = obj as! ChronicDisease
             chronicJson["\(i)"] = obj.toJson()
+            i += 1
         })
         json["chronicDiseases"] = chronicJson
         
@@ -85,6 +87,7 @@ public class Child: NSManagedObject {
         routineMedication?.forEach({ (obj) in
             let obj = obj as! RoutineMedication
             medicJson["\(i)"] = obj.toJson()
+            i += 1
         })
         json["routineMedication"] = medicJson
         
@@ -93,6 +96,7 @@ public class Child: NSManagedObject {
         foodList?.forEach({ (obj) in
             let obj = obj as! Food
             foodsJson["\(i)"] = obj.toJson()
+            i += 1
         })
         json["foodList"] = foodsJson
         
@@ -101,6 +105,7 @@ public class Child: NSManagedObject {
         attendanceEvents?.forEach({ (obj) in
             let obj = obj as! Attendance
             attJson["\(i)"] = obj.toJson()
+            i += 1
         })
         json["attendanceEvents"] = attJson
         
@@ -109,6 +114,7 @@ public class Child: NSManagedObject {
         basicEvents?.forEach({ (obj) in
             let obj = obj as! BasicEvent
             basJson["\(i)"] = obj.toJson()
+            i += 1
         })
         json["basicEvents"] = basJson
         
@@ -117,6 +123,7 @@ public class Child: NSManagedObject {
         developmentalEvents?.forEach({ (obj) in
             let obj = obj as! DevelopmentalEvent
             devJson["\(i)"] = obj.toJson()
+            i += 1
         })
         json["developmentalEvents"] = devJson
         

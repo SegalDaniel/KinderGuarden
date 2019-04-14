@@ -125,6 +125,7 @@ class Model{
         }
     }
     
+    
     func sendToFB(child:Child, callack:@escaping (Error?)->Void){
         modelFirebase.sendChild(child: child) { (err) in
             if err == nil{
