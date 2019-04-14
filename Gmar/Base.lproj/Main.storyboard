@@ -208,11 +208,10 @@
                         <outlet property="nameTextField" destination="sil-en-2AM" id="qL9-xi-tJn"/>
                         <outlet property="saveBtn" destination="yQ1-ST-giS" id="EyL-QR-QpJ"/>
                         <outlet property="teacherImageView" destination="yT3-Hc-oLX" id="DDJ-0m-5qx"/>
-                        <segue destination="VKg-0k-qn6" kind="unwind" identifier="uniwndToMain" unwindAction="unwindToMainWindowWithSegue:" id="jcO-gm-BEL"/>
+                        <segue destination="dfc-BU-c2f" kind="showDetail" identifier="exit" id="bF9-iM-2AH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfW-0B-AbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="VKg-0k-qn6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39.388489208633096" y="1792.8057553956835"/>
         </scene>

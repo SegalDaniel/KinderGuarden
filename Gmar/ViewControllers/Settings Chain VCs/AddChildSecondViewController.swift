@@ -52,8 +52,10 @@ class AddChildSecondViewController: UIViewController, UITableViewDataSource, UIT
             delegate?.shouldEndEditing()
         }
         if foodsArr.count == 0{
-            let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: "נא להוסיף לפחות מזון אחד לילד", dissmissCallback: nil).getAlert()
-            self.present(alert, animated: true, completion: nil)
+            loadingView.dismiss(animated: true) {
+                let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: "נא להוסיף לפחות מזון אחד לילד", dissmissCallback: nil).getAlert()
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         else if let childData = childData{
             let id = childData["childID"] as! String

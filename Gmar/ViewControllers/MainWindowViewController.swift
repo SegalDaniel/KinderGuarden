@@ -34,7 +34,7 @@ class MainWindowViewController: UIViewController {
         }
     }
     
-    @IBAction func teacherButtonLongPressed(_ sender: Any){
+    @IBAction func teacherButtonDragExit(_ sender: Any){
         if let btn = sender as? UIButton{
             let staffID = "\(btn.tag)"
             let alert = UIAlertController(title: "האם ברצונך למחוק משתמש זה?", message: "פעולה זו תהיה בלתי הפיכה", preferredStyle: .alert)
@@ -62,7 +62,7 @@ class MainWindowViewController: UIViewController {
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
-        Model.instance.deleteAllDataFromCore("Staff")
+        
     }
     
     
@@ -91,7 +91,7 @@ class MainWindowViewController: UIViewController {
         }
         let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: image)
         btn.addTarget(self, action: #selector(teacherButtonClicked), for: .touchUpInside)
-        btn.addTarget(self, action: #selector(teacherButtonLongPressed), for: .touchDragExit)
+        btn.addTarget(self, action: #selector(teacherButtonDragExit), for: .touchDragExit)
         teachersStackView.addArrangedSubview(btn)
     }
 
