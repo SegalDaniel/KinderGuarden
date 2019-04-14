@@ -1375,7 +1375,7 @@
                         <outlet property="timeBtn" destination="bXq-bg-0Hu" id="ESw-fh-qCc"/>
                         <outlet property="timeLabel" destination="Xgy-lY-1Uq" id="EEi-NM-3Yo"/>
                         <segue destination="gH2-7B-DDs" kind="unwind" identifier="unwindToMainWindow" unwindAction="unwindToMainWindowWithSegue:" id="Qaq-4H-VmP"/>
-                        <segue destination="gH2-7B-DDs" kind="unwind" identifier="unwindToSelectKid" unwindAction="unwindToSelectKidWithSegue:" id="QUP-EP-qHe"/>
+                        <segue destination="gH2-7B-DDs" kind="unwind" identifier="unwindToSelectKid" unwindAction="unwindToSelectKidWithSegue:" id="rHa-tR-JYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acw-po-A79" userLabel="First Responder" sceneMemberID="firstResponder"/>

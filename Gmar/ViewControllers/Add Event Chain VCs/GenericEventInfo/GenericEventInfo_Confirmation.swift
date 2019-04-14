@@ -14,16 +14,18 @@ extension GenericEventInfoViewController{
     @IBAction func confirmBtnClicked(_ sender: Any) {
         print("confirm clicked")
         let loadingAlert = Utility.getLoadingAlert()
+        self.present(loadingAlert, animated: true, completion: nil)
         switch kind {
         //MARK: - Attandance
         case .attandance:
-            self.present(loadingAlert, animated: true, completion: nil)
             let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
             let authLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
             let authText = authLabel.text!
             let type = typeLabel.text!
             if authText == "" || type == ""{
-                showUnselectedAlert()
+                loadingAlert.dismiss(animated: true) {
+                    self.showUnselectedAlert()
+                }
                 return
             }
             if let child = child{
@@ -58,8 +60,8 @@ extension GenericEventInfoViewController{
                     Model.instance.getAuthorized(authName: authName) { (auth) in
                         let event = Attendance(isLate: isLate, type: type, eventDate: eventDate, child: child, staff: staff, authorized: auth)
                         Model.instance.sendToFB(attandanceEvent: event, callack: { (err) in
-                            loadingAlert.removeFromParent()
-                            self.performSegue(withIdentifier: "unwindToSelectKid", sender: nil)
+                            loadingAlert.dismiss(animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
                         })
                     }
                 }

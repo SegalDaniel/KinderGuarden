@@ -139,5 +139,7 @@ class TeacherAddEventViewController: UIViewController {
     }
     
     //MARK: - Unwind seague
-    @IBAction func unwindToSelectKid(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToSelectKid(segue:UIStoryboardSegue) {
+        initViews()
+    }
 }
