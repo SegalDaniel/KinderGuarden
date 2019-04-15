@@ -8,4 +8,5 @@ target 'Gmar' do
   # Pods for Gmar
  pod 'Firebase/Core'
  pod 'Firebase/Firestore'
+ pod 'Alamofire', '~> 5.0.0-beta.5'
 end

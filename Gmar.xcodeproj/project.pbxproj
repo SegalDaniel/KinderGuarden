@@ -716,7 +716,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
-				05EAD0604EBF5C5191DFC562 /* [CP] Embed Pods Frameworks */,
+				26D96D5386CEB4BBFAE752D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -784,7 +784,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05EAD0604EBF5C5191DFC562 /* [CP] Embed Pods Frameworks */ = {
+		26D96D5386CEB4BBFAE752D3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -793,6 +793,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Gmar/Pods-Gmar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -805,6 +806,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
