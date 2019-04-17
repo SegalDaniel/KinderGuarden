@@ -78,6 +78,7 @@ extension GenericEventInfoViewController{
             }
             break
             
+        //MARK: - Feces
         case .feces:
             let poo = isOn["poo"]!
             let pee = isOn["pee"]!
@@ -147,6 +148,28 @@ extension GenericEventInfoViewController{
                 }
             }
             break
+            
+        //MARK: - SolidFood
+        case .solidFoods:
+            let amountLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
+            let amount = amountLabel.text!
+            if amount == "כלום"{
+                showUnselectedAlert(dismiss: loadingAlert)
+                return
+            }
+            if let child = child{
+                if let staff = staff{
+                    let consumed = amount
+                    let type = (self.labelStackView.arrangedSubviews[0] as! UILabel).text!
+                    let eventType:Int16 = Int16(Enums.BasicEvent.solidFoods.rawValue)
+                    let eventDate:Date = getEventDate()
+                    let solidFood = SolidFood(mealType: type, mealInMenu: nil, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                    Model.instance.sendToFB(basicEvent: solidFood) { (err) in
+                        self.sendToFBCallback(err, loadingAlert: loadingAlert)
+                    }
+                }
+            }
+            break
         default:
             loadingAlert.dismiss(animated: true) {
                 self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
@@ -156,41 +179,6 @@ extension GenericEventInfoViewController{
         
     }
     
-    //MARK: - sendToFB callback
-    func sendToFBCallback(_ err:Error?, loadingAlert:UIAlertController){
-        loadingAlert.dismiss(animated: true) {
-            if err == nil{
-                self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
-            }
-            else{
-                self.showErrorAlert(errorDescription: err!.localizedDescription)
-            }
-        }
-    }
     
-    //MARK: - Event Date Handler
-    func getEventDate() -> Date{
-        var eventDate:Date
-        if selectedDate == nil{
-            eventDate = Date()
-        }
-        else{
-            eventDate = selectedDate!
-        }
-        return eventDate
-    }
-    
-    //MARK: - Alert
-    func showUnselectedAlert(dismiss loadingAlert:UIAlertController){
-        let alert = SimpleAlert(_title: "רק רגע", _message: "נא למלא את כל הפרטים הנדרשים", dissmissCallback: nil).getAlert()
-        loadingAlert.dismiss(animated: true) {
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func showErrorAlert(errorDescription:String){
-        let alert = SimpleAlert(_title: "רק רגע", _message: errorDescription, dissmissCallback: nil).getAlert()
-        self.present(alert, animated: true, completion: nil)
-    }
 
 }

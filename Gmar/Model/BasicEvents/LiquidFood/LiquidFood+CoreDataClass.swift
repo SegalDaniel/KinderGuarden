@@ -12,7 +12,7 @@ import CoreData
 
 @objc(LiquidFood)
 public class LiquidFood: BasicEvent {
-    convenience init(mealType:String, amount:Int16, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
+    convenience init(mealType:String, amount:Int16?, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
         self.init(entity: Model.instance.liquidFoodEntity, insertInto: Model.instance.managedContext)
         self.setValue(mealType, forKey: "mealType")
         self.setValue(amount, forKey: "amount")

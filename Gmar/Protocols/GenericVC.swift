@@ -41,4 +41,41 @@ class GenericVC: UIViewController {
             callable(dateString, time, date)
         }
     }
+    
+    //MARK: - sendToFB callback
+    func sendToFBCallback(_ err:Error?, loadingAlert:UIAlertController){
+        loadingAlert.dismiss(animated: true) {
+            if err == nil{
+                self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+            }
+            else{
+                self.showErrorAlert(errorDescription: err!.localizedDescription)
+            }
+        }
+    }
+    
+    //MARK: - Event Date Handler
+    func getEventDate() -> Date{
+        var eventDate:Date
+        if selectedDate == nil{
+            eventDate = Date()
+        }
+        else{
+            eventDate = selectedDate!
+        }
+        return eventDate
+    }
+    
+    //MARK: - Alert
+    func showUnselectedAlert(dismiss loadingAlert:UIAlertController){
+        let alert = SimpleAlert(_title: "רק רגע", _message: "נא למלא את כל הפרטים הנדרשים", dissmissCallback: nil).getAlert()
+        loadingAlert.dismiss(animated: true) {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func showErrorAlert(errorDescription:String){
+        let alert = SimpleAlert(_title: "רק רגע", _message: errorDescription, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
 }

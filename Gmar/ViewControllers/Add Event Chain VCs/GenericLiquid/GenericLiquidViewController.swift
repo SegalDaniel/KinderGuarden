@@ -48,10 +48,6 @@ class GenericLiquidViewController: GenericVC {
     }
    
     //MARK: - buttons actions
-    @IBAction func confirmBtnClicked(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
-    }
-    
     @IBAction func quanSliderChanged(_ sender: Any) {
         if kind == .feever{
             let val = Double(quantitySlider.value).rounded(toPlaces: 1)

@@ -12,6 +12,7 @@
 		180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */; };
 		180CF300223D44F300A9DEF2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2FF223D44F300A9DEF2 /* Model.swift */; };
 		180CF322223EC00400A9DEF2 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55E7221859CD0043D580 /* Child.swift */; };
+		18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814677F226772640036BFC9 /* GenericLiquid_Confirmation.swift */; };
 		1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D721E0E905006E1B39 /* AppDelegate.swift */; };
 		1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */; };
 		1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DB21E0E905006E1B39 /* Main.storyboard */; };
@@ -115,6 +116,7 @@
 		180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFireBase.swift; sourceTree = "<group>"; };
 		180CF2FF223D44F300A9DEF2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1814677F226772640036BFC9 /* GenericLiquid_Confirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLiquid_Confirmation.swift; sourceTree = "<group>"; };
 		1818B1D421E0E905006E1B39 /* Gmar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1818B1D721E0E905006E1B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,15 @@
 			path = Child;
 			sourceTree = "<group>";
 		};
+		181467812267726B0036BFC9 /* GenericLiquid */ = {
+			isa = PBXGroup;
+			children = (
+				1887F4B5221B1E13007682A8 /* GenericLiquidViewController.swift */,
+				1814677F226772640036BFC9 /* GenericLiquid_Confirmation.swift */,
+			);
+			path = GenericLiquid;
+			sourceTree = "<group>";
+		};
 		1818B1CB21E0E905006E1B39 = {
 			isa = PBXGroup;
 			children = (
@@ -347,7 +358,7 @@
 				1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */,
 				1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */,
 				18C59D6E225CEE6D003BD029 /* GenericEventInfo */,
-				1887F4B5221B1E13007682A8 /* GenericLiquidViewController.swift */,
+				181467812267726B0036BFC9 /* GenericLiquid */,
 				18788797221D4C510047A935 /* MultiChoiseViewController.swift */,
 			);
 			path = "Add Event Chain VCs";
@@ -857,6 +868,7 @@
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
+				18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */,
 				A8576E02224A6D6000CBA907 /* Secretion+CoreDataProperties.swift in Sources */,
 				A88BBFB6225CA7B500F9C0B4 /* Attendance+CoreDataClass.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,

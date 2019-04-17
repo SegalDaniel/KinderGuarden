@@ -38,8 +38,14 @@ class DateAdmin{
     
     static func createTime(from:String) -> Date?{
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter.date(from: from)
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        var time = formatter.date(from: from)
+        if time == nil{
+            formatter.dateFormat = "HH:mm"
+            time = formatter.date(from: from)
+        }
+        return time
     }
     
     static func showDatePicker(timeStyle:DateFormatter.Style, dateStyle:DateFormatter.Style, callable:@escaping (String, String, Date) -> Void){

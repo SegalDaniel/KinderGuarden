@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Water)
 public class Water: BasicEvent {
-    convenience  init(amount:Int16, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
+    convenience  init(amount:Int16?, consumedAmount:String, eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?){
         self.init(entity: Model.instance.waterEntity, insertInto: Model.instance.managedContext)
         self.setValue(amount, forKey: "amount")
         self.setValue(consumedAmount, forKey: "consumedAmount")
