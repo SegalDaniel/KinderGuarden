@@ -115,9 +115,27 @@ class GenericDecisionViewController: GenericVC {
     }
     
     func solidorMilkViews(){
+        var milk = false
+        var tamal = false
+        var solid = false
+        child?.foodList?.forEach({ (obj) in
+            let food = obj as! Food
+            if food.type == "milk"{
+                milk = true
+            }
+            else if food.type == "solid"{
+                solid = true
+            }
+            else if food.type == "tamal"{
+                tamal = true
+            }
+        })
         let btn1 = Utility.ourBtnDesign(title: "חלב אם", radius: 60, tag: 1, image: UIImage(named: "024-feeding-bottle"))
+        btn1.isEnabled = milk
         let btn2 = Utility.ourBtnDesign(title: "תמ״ל", radius: 60, tag: 2, image: UIImage(named: "023-feeding-bottle-1"))
+        btn2.isEnabled = tamal
         let btn3 = Utility.ourBtnDesign(title: "מוצקים", radius: 60, tag: 3, image: UIImage(named: "022-food"))
+        btn3.isEnabled = solid
         addToStackAndTarget([btn1,btn2,btn3])
     }
     
