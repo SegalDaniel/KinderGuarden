@@ -211,6 +211,13 @@ class GenericEventInfoViewController: GenericVC {
     
     //MARK: - solid food
     func solidFoodViews(){
+        var solids = ""
+        child?.foodList?.forEach({ (obj) in
+            let food = obj as! Food
+            if food.type == "solid"{
+                solids.append("\(food.details!) ")
+            }
+        })
         let currentTime = DateAdmin.currentTime(timeStyle: .short)
         let currentHour = Int(currentTime.split(separator: ":")[0])!
         if currentHour < 12{
@@ -219,7 +226,7 @@ class GenericEventInfoViewController: GenericVC {
         else{
            addStackForInfo(info: (1, ["ארוחת צהריים", "ארוחת בוקר", "ארוחת צהריים"]))
         }
-        
+        messageLabel.text = solids
         addStackForInfo(info: (2, ["כמות", "סיים מנה", "מעל חצי מנה", "מתחת לחצי מנה", "לא אכל"]))
     }
     

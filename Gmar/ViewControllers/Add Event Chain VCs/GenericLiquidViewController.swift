@@ -87,10 +87,17 @@ class GenericLiquidViewController: GenericVC {
     }
     
     func tamalSettings(){
+        var tamals = ""
+        child?.foodList?.forEach({ (obj) in
+            let food = obj as! Food
+            if food.type == "tamal"{
+                tamals.append("\(food.details!) ")
+            }
+        })
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 20
         quantitySlider.setValue(10, animated: true)
-        messageLabel.text = "תמ״ל"
+        messageLabel.text = tamals
     }
     
     //MARK: - feever

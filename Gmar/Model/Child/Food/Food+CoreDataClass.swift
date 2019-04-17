@@ -16,7 +16,7 @@ public class Food: NSManagedObject {
     convenience init(type:String, details:String, child:Child?){
         self.init(entity: Model.instance.foodEntity, insertInto: Model.instance.managedContext)
         self.setValue(type, forKey: "type")
-        self.setValue(type, forKey: "details")
+        self.setValue(details, forKey: "details")
         self.setValue(child, forKey: "child")
         
     }
