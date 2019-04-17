@@ -180,11 +180,72 @@ extension GenericEventInfoViewController{
             if let child = child{
                 if let staff = staff{
                     let eventType:Int16 = Int16(Enums.BasicEvent.sleep.rawValue)
-                    let eventDate:Date = getEventDate()
                     let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
                     let type = typeLabel.text!
                     let sleep = Sleep(type: type, allocatedTime: allocated, sleepingScope: scope, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                     Model.instance.sendToFB(basicEvent: sleep) { (err) in
+                        self.sendToFBCallback(err, loadingAlert: loadingAlert)
+                    }
+                }
+            }
+            break
+        //MARK: - Rash
+        case .rash:
+            let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
+            let areaLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
+            let type = typeLabel.text!
+            let area = areaLabel.text!
+            if type == "סוג" || area == "איזור"{
+                showUnselectedAlert(dismiss: loadingAlert)
+                return
+            }
+            if let child = child{
+                if let staff = staff{
+                    let eventType:Int16 = Int16(Enums.BasicEvent.rash.rawValue)
+                    let rash = Rash(type: type, area: area, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                    Model.instance.sendToFB(basicEvent: rash) { (err) in
+                        self.sendToFBCallback(err, loadingAlert: loadingAlert)
+                    }
+                }
+            }
+        break
+        //MARK: - Vomit
+        case .vomit:
+            let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
+            let properLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
+            let type = typeLabel.text!
+            let proper = properLabel.text!
+            if type == "סוג" || proper == "חומרה"{
+                showUnselectedAlert(dismiss: loadingAlert)
+                return
+            }
+            if let child = child{
+                if let staff = staff{
+                    let eventType:Int16 = Int16(Enums.BasicEvent.vomit.rawValue)
+                    let vomit = Vomitus(type: type, proper: proper, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                    Model.instance.sendToFB(basicEvent: vomit) { (err) in
+                        self.sendToFBCallback(err, loadingAlert: loadingAlert)
+                    }
+                }
+            }
+            break
+        //MARK: - Hafrasha
+        case .hafrahsa:
+            let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
+            let areaLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
+            let rankLabel = self.labelStackView.arrangedSubviews[2] as! UILabel
+            let type = typeLabel.text!
+            let area = areaLabel.text!
+            let rank = rankLabel.text!
+            if type == "סוג" || area == "איזור" || rank == "חומרה"{
+                showUnselectedAlert(dismiss: loadingAlert)
+                return
+            }
+            if let child = child{
+                if let staff = staff{
+                    let eventType:Int16 = Int16(Enums.BasicEvent.hafrahsa.rawValue)
+                    let hafrasha = Secretion(type: type, area: area, rank: rank, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                    Model.instance.sendToFB(basicEvent: hafrasha) { (err) in
                         self.sendToFBCallback(err, loadingAlert: loadingAlert)
                     }
                 }

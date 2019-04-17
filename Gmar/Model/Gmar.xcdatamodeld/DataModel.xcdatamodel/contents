@@ -145,7 +145,8 @@
         <attribute name="fragrance" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Vomitus" representedClassName="Vomitus" parentEntity="BasicEvent" syncable="YES">
-        <attribute name="proper" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="proper" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Water" representedClassName="Water" parentEntity="BasicEvent" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -179,7 +180,7 @@
         <element name="SolidFood" positionX="-3820.48046875" positionY="966.0234375" width="128" height="105"/>
         <element name="Staff" positionX="-3448.37109375" positionY="304.265625" width="128" height="148"/>
         <element name="Urine" positionX="-3403.90234375" positionY="1089.80859375" width="128" height="90"/>
-        <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="60"/>
+        <element name="Vomitus" positionX="-3820.375" positionY="1118.9765625" width="128" height="75"/>
         <element name="Water" positionX="-3582.10546875" positionY="1048.91796875" width="128" height="75"/>
     </elements>
 </model>

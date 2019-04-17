@@ -207,6 +207,7 @@ class GenericEventInfoViewController: GenericVC {
     //MARK: - vomits
     func vomitViews(){
         addStackForInfo(info: (1, ["סוג", "פליטה מוגברת", "הקאה"]))
+        addStackForInfo(info: (2, ["חומרה", "תקין", "לא תקין"]))
     }
     
     //MARK: - solid food
@@ -259,5 +260,6 @@ class GenericEventInfoViewController: GenericVC {
     func hafrashaViews(){
         addStackForInfo(info: (1, ["סוג", "דם", "מוגלה", "נזלת"]))
         addStackForInfo(info: (2, ["איזור", "עיניים", "אוזניים", "אף", "פה", "איבר מין", "שאר הגוף"]))
+        addStackForInfo(info: (3, ["חומרה", "תקין", "לא תקין"]))
     }
 }
