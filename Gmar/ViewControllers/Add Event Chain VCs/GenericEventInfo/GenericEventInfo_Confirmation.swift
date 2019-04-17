@@ -15,6 +15,7 @@ extension GenericEventInfoViewController{
         print("confirm clicked")
         let loadingAlert = Utility.getLoadingAlert()
         self.present(loadingAlert, animated: true, completion: nil)
+        let eventDate:Date = getEventDate()
         switch kind {
         //MARK: - Attandance
         case .attandance:
@@ -31,7 +32,6 @@ extension GenericEventInfoViewController{
                     var isLate:Bool = false
                     let pickup = DateAdmin.createTime(from: child.pickupHour!)!
                     var eventTime:Date
-                    let eventDate:Date = getEventDate()
                     if selectedTime == nil{
                         eventTime = DateAdmin.createTime(from:DateAdmin.currentTime(timeStyle: .short))!
                     }
@@ -69,7 +69,6 @@ extension GenericEventInfoViewController{
             if let child = child{
                 if let staff = staff{
                     let eventType:Int16 = Int16(Enums.BasicEvent.cough.rawValue)
-                    let eventDate:Date = getEventDate()
                     let event = Cough(type: type, eventType: eventType ,eventDate: eventDate as NSDate, child: child, staff: staff)
                     Model.instance.sendToFB(basicEvent: event) { (err) in
                         self.sendToFBCallback(err, loadingAlert: loadingAlert)
@@ -88,7 +87,6 @@ extension GenericEventInfoViewController{
             }
             if let child = child{
                 if let staff = staff{
-                    let eventDate = getEventDate()
                     if poo{
                         let pooEventType:Int16 = Int16(Enums.BasicEvent.feces.rawValue)
                         let colorLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
@@ -162,9 +160,31 @@ extension GenericEventInfoViewController{
                     let consumed = amount
                     let type = (self.labelStackView.arrangedSubviews[0] as! UILabel).text!
                     let eventType:Int16 = Int16(Enums.BasicEvent.solidFoods.rawValue)
-                    let eventDate:Date = getEventDate()
                     let solidFood = SolidFood(mealType: type, mealInMenu: nil, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                     Model.instance.sendToFB(basicEvent: solidFood) { (err) in
+                        self.sendToFBCallback(err, loadingAlert: loadingAlert)
+                    }
+                }
+            }
+            break
+        //MARK: - Sleep
+        case .sleep:
+            let scopeLabel = self.labelStackView.arrangedSubviews[2] as! UILabel
+            let allocLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
+            let allocated = allocLabel.text!
+            let scope = scopeLabel.text!
+            if allocated == "אורך השינה" || scope == "איכות השינה"{
+                showUnselectedAlert(dismiss: loadingAlert)
+                return
+            }
+            if let child = child{
+                if let staff = staff{
+                    let eventType:Int16 = Int16(Enums.BasicEvent.sleep.rawValue)
+                    let eventDate:Date = getEventDate()
+                    let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
+                    let type = typeLabel.text!
+                    let sleep = Sleep(type: type, allocatedTime: allocated, sleepingScope: scope, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                    Model.instance.sendToFB(basicEvent: sleep) { (err) in
                         self.sendToFBCallback(err, loadingAlert: loadingAlert)
                     }
                 }

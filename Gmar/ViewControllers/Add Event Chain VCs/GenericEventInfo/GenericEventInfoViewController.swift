@@ -240,7 +240,8 @@ class GenericEventInfoViewController: GenericVC {
         else{
             addStackForInfo(info: (1, ["שנת צהריים", "שנת בוקר", "שנת צהריים"]))
         }
-        addStackForInfo(info: (2, ["איכות השינה", "שינה מלא/שקטה", "שינה חלקית/לא שקטה", "אי שינה"]))
+        addStackForInfo(info: (2, ["אורך השינה", "שינה מלאה", "שינה חלקית", "אי שינה"]))
+        addStackForInfo(info: (3, ["איכות השינה", "שקטה", "לא שקטה"]))
     }
     
     //MARK: - rash
