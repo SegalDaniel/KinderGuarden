@@ -87,6 +87,7 @@ class TeacherAddEventViewController: UIViewController {
                     btn.backgroundColor = UIColor.purple
                 }
                 btn.addTarget(self, action: #selector(kidClicked), for: .touchUpInside)
+                btn.addTarget(self, action: #selector(kidDragExit), for: .touchDragExit)
                 stack.addArrangedSubview(btn)
             }
         }
@@ -116,6 +117,30 @@ class TeacherAddEventViewController: UIViewController {
                 performSegue(withIdentifier: "EventKind", sender: btn.tag)
             }
         }
+    }
+    
+    @IBAction func kidDragExit(_ sender: Any){
+        let btn = sender as! UIButton
+        let childID = "\(btn.tag)"
+        let alert = UIAlertController(title: "האם ברצונך למחוק משתמש זה?", message: "פעולה זו תהיה בלתי הפיכה", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "אישור", style: .default, handler: { (action) in
+            Model.instance.deleteChildFromDB(childID: childID, callback: { (error) in
+                if error == nil{
+                    alert.dismiss(animated: true, completion: nil)
+                    self.present(SimpleAlert(_title: "נמחק בהצלחה", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: {
+                        self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+                    })
+                }
+                else{
+                    alert.dismiss(animated: true, completion: nil)
+                    self.present(SimpleAlert(_title: "לא נמחק, נסה שנית", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: nil)
+                }
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "ביטול", style: .cancel, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - Navigation
