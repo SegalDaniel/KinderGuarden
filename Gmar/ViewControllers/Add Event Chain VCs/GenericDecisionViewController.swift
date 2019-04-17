@@ -60,6 +60,9 @@ class GenericDecisionViewController: GenericVC {
                     performSegue(withIdentifier: "GenericLiquid", sender: Enums.BasicEvent.milk)
                 }
                 else if btn.tag == 2{
+                    performSegue(withIdentifier: "GenericLiquid", sender: Enums.BasicEvent.tamal)
+                }
+                else if btn.tag == 3{
                     performSegue(withIdentifier: "GenericInfo", sender: Enums.BasicEvent.solidFoods)
                 }
                 break
@@ -71,8 +74,6 @@ class GenericDecisionViewController: GenericVC {
     
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GenericInfo" || segue.identifier == "GenericLiquid" {
             let vc = segue.destination as! GenericVC
@@ -114,9 +115,10 @@ class GenericDecisionViewController: GenericVC {
     }
     
     func solidorMilkViews(){
-        let btn1 = Utility.ourBtnDesign(title: "חלב אם/תמ״ל", radius: 60, tag: 1, image: UIImage(named: "023-feeding-bottle-1"))
-        let btn2 = Utility.ourBtnDesign(title: "מוצקים", radius: 60, tag: 2, image: UIImage(named: "022-food"))
-        addToStackAndTarget([btn1,btn2])
+        let btn1 = Utility.ourBtnDesign(title: "חלב אם", radius: 60, tag: 1, image: UIImage(named: "024-feeding-bottle"))
+        let btn2 = Utility.ourBtnDesign(title: "תמ״ל", radius: 60, tag: 2, image: UIImage(named: "023-feeding-bottle-1"))
+        let btn3 = Utility.ourBtnDesign(title: "מוצקים", radius: 60, tag: 3, image: UIImage(named: "022-food"))
+        addToStackAndTarget([btn1,btn2,btn3])
     }
     
 }

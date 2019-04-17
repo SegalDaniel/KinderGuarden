@@ -36,6 +36,9 @@ class GenericLiquidViewController: GenericVC {
         case .milk:
             milkSettings()
             break
+        case .tamal:
+            tamalSettings()
+            break
         case .feever:
             feeverSettings()
             break
@@ -80,7 +83,14 @@ class GenericLiquidViewController: GenericVC {
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 20
         quantitySlider.setValue(10, animated: true)
-        messageLabel.text = "חלב אם/תמ״ל"
+        messageLabel.text = "חלב אם"
+    }
+    
+    func tamalSettings(){
+        quantitySlider.minimumValue = 0
+        quantitySlider.maximumValue = 20
+        quantitySlider.setValue(10, animated: true)
+        messageLabel.text = "תמ״ל"
     }
     
     //MARK: - feever

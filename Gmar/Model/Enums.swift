@@ -26,6 +26,7 @@ class Enums{
         case solidFoods
         case water
         case milk
+        case tamal
         case attandance
     }
 }
