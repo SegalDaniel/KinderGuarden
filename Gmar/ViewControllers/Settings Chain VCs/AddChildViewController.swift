@@ -25,7 +25,9 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var pickingTimePicker: UIDatePicker!
     @IBOutlet weak var childPickerTableView: UITableView!
     @IBOutlet weak var childIDTextField: UITextField!
-    @IBOutlet weak var nextBarButton: UIBarButtonItem!
+    @IBOutlet weak var bDayStack: UIStackView!
+    @IBOutlet weak var sexStack: UIStackView!
+    @IBOutlet weak var pagStack: UIStackView!
     var childData:[String:Any] = [:]
     var authAccomps:[AuthorizedAccompanist] = []
     var pickers:Int = 0
@@ -33,15 +35,28 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
     //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
-        childPickerTableView.delegate = self
-        childPickerTableView.dataSource = self
+        let item = UIBarButtonItem(title: "הבא", style: .plain, target: self, action: #selector(nextScreenBtnClicked))
+        self.navigationItem.rightBarButtonItem = item
+        pickingTimePicker.setValue(Utility.btnTextWhite, forKey: "textColor")
+        birthDatePicker.setValue(Utility.btnTextWhite, forKey: "textColor")
+        initchildPickerTableView()
         imagePicker.delegate = self
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
-        addressTextField.delegate = self
-        childIDTextField.delegate = self
+        initTextFields(textFildes: [firstNameTextField, lastNameTextField, addressTextField, childIDTextField])
         permissions = Permissions(target: self, imagePicker: imagePicker)
         Utility.viewTapRecognizer(target: self, toBeTapped: babyImageView, action: #selector(selectImageTapped))
+    }
+    
+    func initchildPickerTableView(){
+        childPickerTableView.delegate = self
+        childPickerTableView.dataSource = self
+        childPickerTableView.separatorStyle = .none
+    }
+    
+    func initTextFields(textFildes:[UITextField]){
+        textFildes.forEach { (field) in
+            field.delegate = self
+            Utility.ourTextFieldDesign(textFiled: field)
+        }
     }
     
     //MARK: - Button action

@@ -27,10 +27,10 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
     //MARK: - Cell overrides
     override func awakeFromNib() {
         super.awakeFromNib()
-        pickerNameTextField.delegate = self
-        pickerPhoneTextField.delegate = self
+        initTextFields(textFildes: [pickerNameTextField, pickerPhoneTextField])
         pickerKindPicker.delegate = self
         pickerKindPicker.dataSource = self
+        pickerKindPicker.setValue(Utility.btnTextWhite, forKey: "textColor")
     }
     
     func removeAll(){
@@ -43,6 +43,12 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
         pickerPhoneTextField.text = ""
     }
 
+    func initTextFields(textFildes:[UITextField]){
+        textFildes.forEach { (field) in
+            field.delegate = self
+            Utility.ourTextFieldDesign(textFiled: field)
+        }
+    }
     
     //MARK: - UIPickerView delegate and datasource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -53,8 +59,8 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
         return possPickers.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return possPickers[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: possPickers[row], attributes: [NSAttributedString.Key.foregroundColor: Utility.btnTextWhite])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

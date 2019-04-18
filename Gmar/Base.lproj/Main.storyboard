@@ -228,7 +228,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001-baby-6" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-Ud-Dd7">
                                 <rect key="frame" x="20" y="78" width="333.5" height="333.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BjY-Gs-1jI">
                                 <rect key="frame" x="362" y="78" width="730" height="333.5"/>
@@ -272,15 +271,21 @@
                                         <subviews>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nxo-ms-fsZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="515" height="77"/>
+                                                <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="574766994.62415099">
                                                     <!--2019-03-20 09:29:54 +0000-->
                                                 </date>
                                                 <locale key="locale" localeIdentifier="he_IL"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך לידה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJH-Ph-wMf">
                                                 <rect key="frame" x="523" y="0.0" width="207" height="77"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -294,7 +299,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פג" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li1-Tz-QKO">
                                                         <rect key="frame" x="0.0" y="0.0" width="352.5" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XcK-t8-QPG">
@@ -303,7 +308,7 @@
                                                             <segment title="שלילי"/>
                                                             <segment title="חיובי"/>
                                                         </segments>
-                                                        <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
@@ -313,7 +318,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מין" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMN-Fw-vEg">
                                                         <rect key="frame" x="0.0" y="0.0" width="369.5" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kc1-9e-B4T">
@@ -322,7 +327,7 @@
                                                             <segment title="זכר"/>
                                                             <segment title="נקבה"/>
                                                         </segments>
-                                                        <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
@@ -343,7 +348,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת איסוף:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-DW-PdV">
                                         <rect key="frame" x="328" y="0.0" width="125.5" height="67"/>
                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V45-Cx-7HY">
@@ -351,7 +356,7 @@
                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
                                         <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="לחץ להוספת מורשה">
-                                            <color key="titleColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="addPickerBtnClicked:" destination="V9L-pd-yNq" eventType="touchUpInside" id="r6a-5n-d7n"/>
@@ -360,7 +365,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מורשי איסוף:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OC-ch-hLC">
                                         <rect key="frame" x="933.5" y="0.0" width="138.5" height="67"/>
                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -391,6 +396,7 @@
                                                                 </textField>
                                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-oj-EHl">
                                                                     <rect key="frame" x="360" y="0.0" width="352" height="74.5"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </pickerView>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם מאסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cji-b7-5mq">
                                                                     <rect key="frame" x="720" y="0.0" width="352" height="74.5"/>
@@ -399,8 +405,10 @@
                                                                     <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="name"/>
                                                                 </textField>
                                                             </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </stackView>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="iJl-fQ-BgN" firstAttribute="height" secondItem="P0D-x8-joP" secondAttribute="height" id="4xJ-AP-ddI"/>
                                                         <constraint firstItem="iJl-fQ-BgN" firstAttribute="centerY" secondItem="P0D-x8-joP" secondAttribute="centerY" id="hsC-eS-77U"/>
@@ -408,6 +416,7 @@
                                                         <constraint firstItem="iJl-fQ-BgN" firstAttribute="centerX" secondItem="P0D-x8-joP" secondAttribute="centerX" id="yg3-1j-0K2"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="pickerKindPicker" destination="f4G-oj-EHl" id="w1f-J5-Y5h"/>
                                                     <outlet property="pickerNameTextField" destination="Cji-b7-5mq" id="ZcO-ol-7si"/>
@@ -417,6 +426,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -445,16 +455,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qIb-1a-Wnl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="רישום ילד לגן" id="bif-DN-xbw">
-                        <barButtonItem key="rightBarButtonItem" title="הבא" id="7Eb-Fm-f2e">
-                            <connections>
-                                <action selector="nextScreenBtnClicked:" destination="V9L-pd-yNq" id="lrj-ct-L5W"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="רישום ילד לגן" id="bif-DN-xbw"/>
                     <connections>
                         <outlet property="addChildPickerBtn" destination="V45-Cx-7HY" id="e9g-1n-cVv"/>
                         <outlet property="addressTextField" destination="9jG-eK-IhW" id="EAa-wy-8qI"/>
+                        <outlet property="bDayStack" destination="8Ex-UU-KY5" id="AeD-kH-deB"/>
                         <outlet property="babyImageView" destination="H9n-Ud-Dd7" id="fHG-j3-UGQ"/>
                         <outlet property="birthDatePicker" destination="nxo-ms-fsZ" id="Eh8-4K-ViK"/>
                         <outlet property="childIDTextField" destination="df4-Se-WOb" id="NcN-WO-t24"/>
@@ -462,9 +467,10 @@
                         <outlet property="firstNameTextField" destination="Xng-Tk-cjA" id="m4q-NH-gT5"/>
                         <outlet property="genderSegment" destination="kc1-9e-B4T" id="UeP-qn-PWB"/>
                         <outlet property="lastNameTextField" destination="Cf1-le-sBj" id="WAg-fC-z5e"/>
-                        <outlet property="nextBarButton" destination="7Eb-Fm-f2e" id="qP7-zs-o0K"/>
+                        <outlet property="pagStack" destination="boR-LO-fHt" id="qCi-Vy-qHV"/>
                         <outlet property="pickingTimePicker" destination="zzg-Nz-mZG" id="FgB-hi-fsv"/>
                         <outlet property="prematureSegment" destination="XcK-t8-QPG" id="W9z-w5-Kdp"/>
+                        <outlet property="sexStack" destination="ybL-Wg-E3S" id="Ghw-I0-rIj"/>
                         <segue destination="Rk1-gC-I4V" kind="show" identifier="addChildSecondVC" id="Jeo-xK-eq1"/>
                     </connections>
                 </viewController>
