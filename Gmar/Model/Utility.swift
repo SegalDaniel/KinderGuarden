@@ -12,20 +12,30 @@ import Foundation
 class Utility{
     
     //MARK: - App colors
+    //static let BackgroundBlueColor:UIColor = UIColor(red: 48/255, green: 112/255, blue: 182/255, alpha: 1)
     static let btnBackColor:UIColor = UIColor(red: 0/255, green: 114/255, blue: 188/255, alpha: 1)
     static let btnGray:UIColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
     static let btnSalmon:UIColor = UIColor(red: 255/255, green: 126/255, blue: 121/255, alpha: 1)
     static let btnTextWhite:UIColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+    static let btnPink:UIColor = UIColor(red: 255/255, green: 133/255, blue: 255/255, alpha: 1)
     
     //MARK: - Design views methods
-    static func addBorder(view:UIView, color:UIColor, width:CGFloat = 2){
-        view.layer.borderColor = UIColor.black.cgColor
+    static func addBorder(view:UIView, color:UIColor = UIColor.white, width:CGFloat = 2){
+        view.layer.borderColor = color.cgColor
         view.layer.borderWidth = width
+    }
+    
+    static func addShadow(view:UIView){
+        view.layer.shadowRadius = 5
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width:0, height:1)
+        view.layer.masksToBounds = false
     }
     
     static func ourBtnDesign(title:String, radius:CGFloat, tag:Int, image:UIImage?,
                              alignment:UIControl.ContentVerticalAlignment = .bottom,
-                             type:UIButton.ButtonType = .custom, withBorder:Bool = false)->UIButton{
+                             type:UIButton.ButtonType = .custom, withBorder:Bool = true)->UIButton{
         let btn = UIButton(type: type)
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(btnTextWhite, for: .normal)
@@ -36,15 +46,16 @@ class Utility{
         btn.layer.cornerRadius = radius
         btn.clipsToBounds = true
         btn.tag = tag
+        addShadow(view: btn)
         if image != nil{
             btn.setImage(image, for: .normal)
             btn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -btn.imageView!.image!.size.width, bottom: 0, right: 0)
+            btn.imageView?.clipsToBounds = true
             btn.imageView?.contentMode = .scaleAspectFit
             btn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: btn.titleLabel!.frame.size.height, right: 0)
         }
         if withBorder{
-            btn.layer.borderColor = UIColor.black.cgColor
-            btn.layer.borderWidth = 2
+            addBorder(view: btn, color: UIColor.white)
         }
         return btn
     }
@@ -66,6 +77,13 @@ class Utility{
         label.text = text
         label.textAlignment = .center
         return label
+    }
+    
+    static func ourTextFieldDesign(textFiled:UITextField){
+        textFiled.backgroundColor = btnBackColor
+        textFiled.tintColor = btnTextWhite
+        textFiled.textColor = btnTextWhite
+        addShadow(view: textFiled)
     }
     
     //MARK: - generic stack methods
@@ -150,4 +168,55 @@ extension UIViewController{
             self.view.frame.origin.y = 0
         }
     }
+}
+
+public class EdgeShadowLayer: CAGradientLayer {
+    
+    public enum Edge {
+        case Top
+        case Left
+        case Bottom
+        case Right
+    }
+    
+    public init(forView view: UIView,
+                edge: Edge = Edge.Top,
+                shadowRadius radius: CGFloat = 20.0,
+                toColor: UIColor = UIColor.white,
+                fromColor: UIColor = UIColor.black) {
+        super.init()
+        self.colors = [fromColor.cgColor, toColor.cgColor]
+        self.shadowRadius = radius
+        
+        let viewFrame = view.frame
+        
+        switch edge {
+        case .Top:
+            startPoint = CGPoint(x: 0.5, y: 0.0)
+            endPoint = CGPoint(x: 0.5, y: 1.0)
+            self.frame = CGRect(x: 0.0, y: 0.0, width: viewFrame.width, height: shadowRadius)
+        case .Bottom:
+            startPoint = CGPoint(x: 0.5, y: 1.0)
+            endPoint = CGPoint(x: 0.5, y: 0.0)
+            self.frame = CGRect(x: 0.0, y: viewFrame.height - shadowRadius, width: viewFrame.width, height: shadowRadius)
+        case .Left:
+            startPoint = CGPoint(x: 0.0, y: 0.5)
+            endPoint = CGPoint(x: 1.0, y: 0.5)
+            self.frame = CGRect(x: 0.0, y: 0.0, width: shadowRadius, height: viewFrame.height)
+        case .Right:
+            startPoint = CGPoint(x: 1.0, y: 0.5)
+            endPoint = CGPoint(x: 0.0, y: 0.5)
+            self.frame = CGRect(x: viewFrame.width - shadowRadius, y: 0.0, width: shadowRadius, height: viewFrame.height)
+        }
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension UIButton{
+    
+    
+    
 }

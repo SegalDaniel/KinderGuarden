@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainWindowViewController: UIViewController {
+class MainWindowViewController: MyViewController {
 
     //MARK: - Varaiables
     @IBOutlet weak var kgSettingBtn: UIButton!
@@ -19,9 +19,11 @@ class MainWindowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         roundKidsInfoBtn()
+        kgSettingBtn.layer.shadowColor = UIColor.clear.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
         Model.instance.getStaffFromDB { (staff) in
             self.initStaffViews(staff: staff)
         }
@@ -62,6 +64,7 @@ class MainWindowViewController: UIViewController {
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
+        (sender as! UIButton).layer.shadowOpacity = 0.5
         let alert = UIAlertController(title: "Delete Entity", message: "type the name", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Entity name"
@@ -76,7 +79,6 @@ class MainWindowViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
     //MARK: - Views Inits
     func initStaffViews(staff:[Staff]){
         teachersStackView.arrangedSubviews.forEach { (view) in
@@ -90,6 +92,9 @@ class MainWindowViewController: UIViewController {
     func roundKidsInfoBtn(){
         kidsInfoBtn.layer.cornerRadius = kidsInfoBtn.layer.frame.width / 2
         kidsInfoBtn.clipsToBounds = true
+        kidsInfoBtn.layer.borderColor = UIColor.white.cgColor
+        kidsInfoBtn.layer.borderWidth = 2
+        Utility.addShadow(view: kidsInfoBtn)
     }
     
     func addTeacherToStack(name:String, tag:Int, imageName:String?){
@@ -111,6 +116,7 @@ class MainWindowViewController: UIViewController {
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.navigationController?.navigationBar.isHidden = false
         if segue.identifier == "teacherEvent"{
             let vc = segue.destination as! TeacherAddEventViewController
             let tID = sender as! Int

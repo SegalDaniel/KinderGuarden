@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GenericVC: UIViewController {
+class GenericVC: MyViewController {
     var kind:Enums.BasicEvent = .UKNOWN
     let datePicker = UIDatePicker()
     var teacherID:String?

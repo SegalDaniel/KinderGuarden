@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806E46A2268D24400F9CCE3 /* MyViewController.swift */; };
 		180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */; };
 		180CF2FC223D413500A9DEF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */; };
 		180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */; };
@@ -112,6 +113,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1806E46A2268D24400F9CCE3 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		180CF2F9223D3F9700A9DEF2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFireBase.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				1887F4B8221B2A5A007682A8 /* GenericVC.swift */,
+				1806E46A2268D24400F9CCE3 /* MyViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */,
 				1875FACE226780A100F68F8E /* Vomitus+CoreDataProperties.swift in Sources */,
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
+				1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */,

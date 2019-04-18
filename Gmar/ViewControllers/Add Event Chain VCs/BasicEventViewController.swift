@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasicEventViewController: UIViewController {
+class BasicEventViewController: MyViewController {
 
     //MARK: - Variables
     @IBOutlet weak var rashBtn: UIButton!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeacherAddEventViewController: UIViewController {
+class TeacherAddEventViewController: MyViewController {
 
     //MARK: - Variables
     @IBOutlet weak var mainStackView: UIStackView!
@@ -84,7 +84,7 @@ class TeacherAddEventViewController: UIViewController {
                     btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: UIImage(named: "001-baby-6")!)
                 }
                 if kid.gender == "girl"{
-                    btn.backgroundColor = UIColor.purple
+                    btn.backgroundColor = Utility.btnPink
                 }
                 btn.addTarget(self, action: #selector(kidClicked), for: .touchUpInside)
                 btn.addTarget(self, action: #selector(kidDragExit), for: .touchDragExit)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MultiChoiseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MultiChoiseCellDelegate {
+class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableViewDataSource, MultiChoiseCellDelegate {
 
     //MARk: - Variables
     @IBOutlet weak var finalConfirmBtn: UIButton!

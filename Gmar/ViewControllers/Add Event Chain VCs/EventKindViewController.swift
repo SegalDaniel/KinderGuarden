@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventKindViewController: UIViewController {
+class EventKindViewController: MyViewController {
 
     //MARK: - Variables
     @IBOutlet weak var basicEventBtn: UIButton!

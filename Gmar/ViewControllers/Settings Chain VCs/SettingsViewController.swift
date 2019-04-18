@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: MyViewController {
     
     //MARK: - Variables
     @IBOutlet weak var addChildBtn: UIButton!
@@ -26,6 +26,9 @@ class SettingsViewController: UIViewController {
             Utility.adjustBtnTitle(button: btn)
             btn.layer.cornerRadius = btn.layer.frame.width / 6
             btn.clipsToBounds = true
+            btn.layer.borderColor = UIColor.white.cgColor
+            btn.layer.borderWidth = 2
+            Utility.addShadow(view: btn)
         }
     }
 

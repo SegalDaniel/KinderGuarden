@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddChildViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, ChildPickerTableViewCellDelegate {
+class AddChildViewController: MyViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, ChildPickerTableViewCellDelegate {
     
     //MARK: - Variables
     let imagePicker = UIImagePickerController()

@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Main Window View Controller-->
+        <!--מסך ראשי-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainWindowViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,11 +26,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-lF-Qkp">
-                                <rect key="frame" x="20" y="78" width="144.5" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-lF-Qkp">
+                                <rect key="frame" x="20" y="78" width="144.5" height="144.5"/>
                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="32"/>
-                                <state key="normal" title="הגדרות גן">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="height" multiplier="1:1" id="gEb-jS-BIj"/>
+                                </constraints>
+                                <state key="normal" title="הגדרות גן" image="settings">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -55,7 +57,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bg-dr-vG4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" symbolic="YES" id="A3u-Ib-lSz"/>
@@ -71,7 +73,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PSV-c2-h0Z"/>
+                    <navigationItem key="navigationItem" title="מסך ראשי" id="PSV-c2-h0Z"/>
                     <connections>
                         <outlet property="kgSettingBtn" destination="O0Y-lF-Qkp" id="QJS-uH-fIx"/>
                         <outlet property="kidsInfoBtn" destination="bzQ-qU-Xzj" id="y6c-2K-pEj"/>
@@ -83,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="17.805755395683455" y="21.582733812949641"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--הגדרות-->
         <scene sceneID="eTm-rv-bZM">
             <objects>
                 <viewController id="WNC-8R-ZUY" customClass="SettingsViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +98,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS6-6l-kKL">
                                         <rect key="frame" x="0.0" y="0.0" width="320.5" height="417"/>
-                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                         <state key="normal" title="הגדרות הגן" image="kindergarten">
                                             <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,7 +106,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U04-kg-7wC">
                                         <rect key="frame" x="340.5" y="0.0" width="320" height="417"/>
-                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                         <state key="normal" title="הוסף איש צוות" image="teacher">
                                             <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -115,7 +117,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C28-0r-y6m">
                                         <rect key="frame" x="680.5" y="0.0" width="320.5" height="417"/>
-                                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                         <state key="normal" title="הוסף ילד" image="001-baby-6">
                                             <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -127,7 +129,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="eu7-vA-vZS" firstAttribute="height" secondItem="SjI-EX-Dsx" secondAttribute="height" multiplier="0.5" id="9tG-tr-qv9"/>
                             <constraint firstItem="eu7-vA-vZS" firstAttribute="centerY" secondItem="HOs-Qi-7cP" secondAttribute="centerY" id="a51-51-hIm"/>
@@ -136,6 +138,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HOs-Qi-7cP"/>
                     </view>
+                    <navigationItem key="navigationItem" title="הגדרות" id="qvL-ll-X1I"/>
                     <connections>
                         <outlet property="KindergardenSettingBtn" destination="AS6-6l-kKL" id="71g-2N-zmb"/>
                         <outlet property="addChildBtn" destination="C28-0r-y6m" id="ZnS-iB-XlK"/>
@@ -146,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="18" y="986"/>
         </scene>
-        <!--Add Teacher View Controller-->
+        <!--הוספת איש צוות-->
         <scene sceneID="2Be-ex-7h2">
             <objects>
                 <viewController id="Nft-Hz-Lnj" customClass="AddTeacherViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,7 +159,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teacher" translatesAutoresizingMaskIntoConstraints="NO" id="yT3-Hc-oLX">
                                 <rect key="frame" x="222.5" y="94" width="667" height="584"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם פרטי" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sil-en-2AM">
                                 <rect key="frame" x="656" y="686" width="233.5" height="83"/>
@@ -166,7 +168,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ1-ST-giS">
                                 <rect key="frame" x="222.5" y="686" width="184" height="83"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="הוספה">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -182,7 +184,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="XEi-xG-Ywb" firstAttribute="width" secondItem="sil-en-2AM" secondAttribute="width" id="0Up-NE-yAN"/>
                             <constraint firstItem="XEi-xG-Ywb" firstAttribute="height" secondItem="sil-en-2AM" secondAttribute="height" id="0m7-Mz-Zfd"/>
@@ -203,6 +205,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pya-D0-fGX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="הוספת איש צוות" id="hfe-xW-xIe"/>
                     <connections>
                         <outlet property="lastNameTextField" destination="XEi-xG-Ywb" id="QfS-eK-erc"/>
                         <outlet property="nameTextField" destination="sil-en-2AM" id="qL9-xi-tJn"/>
@@ -367,7 +370,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-uy-dZk">
                                         <rect key="frame" x="0.0" y="0.0" width="1072" height="331.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="childPicker" rowHeight="75" id="hI7-zQ-S8b" customClass="ChildPickerTableViewCell" customModule="Gmar" customModuleProvider="target">
@@ -416,7 +419,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="BjY-Gs-1jI" firstAttribute="height" secondItem="H9n-Ud-Dd7" secondAttribute="height" id="05q-ZN-vO5"/>
                             <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="DyP-nZ-BKp" secondAttribute="trailing" constant="20" id="2FM-oG-JLT"/>
@@ -443,7 +446,7 @@
                         <viewLayoutGuide key="safeArea" id="qIb-1a-Wnl"/>
                     </view>
                     <navigationItem key="navigationItem" title="רישום ילד לגן" id="bif-DN-xbw">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="7Eb-Fm-f2e">
+                        <barButtonItem key="rightBarButtonItem" title="הבא" id="7Eb-Fm-f2e">
                             <connections>
                                 <action selector="nextScreenBtnClicked:" destination="V9L-pd-yNq" id="lrj-ct-L5W"/>
                             </connections>
@@ -750,7 +753,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWx-UT-nHE">
-                                <rect key="frame" x="20" y="769" width="122" height="59"/>
+                                <rect key="frame" x="20" y="769" width="127" height="59"/>
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="32"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
@@ -762,7 +765,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Mhp-QV-0Jg" secondAttribute="trailing" constant="20" id="4rp-gZ-Vf5"/>
                             <constraint firstItem="zxh-OR-75e" firstAttribute="top" secondItem="Mhp-QV-0Jg" secondAttribute="bottom" constant="20" id="QQj-9f-eEJ"/>
@@ -1026,7 +1029,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="X3h-OX-nfT" firstAttribute="centerX" secondItem="hoe-b7-bjo" secondAttribute="centerX" id="06x-ce-Grx"/>
                             <constraint firstItem="PoD-tf-y8V" firstAttribute="width" secondItem="WOr-jO-Bli" secondAttribute="width" id="2vd-GF-VzQ"/>
@@ -1066,7 +1069,7 @@
             </objects>
             <point key="canvasLocation" x="1042.9856115107914" y="-1040.2877697841727"/>
         </scene>
-        <!--Teacher Add Event View Controller-->
+        <!--בחירת ילד-->
         <scene sceneID="8VQ-D6-9N8">
             <objects>
                 <viewController restorationIdentifier="TeacherAddEvent" storyboardIdentifier="TeacherAddEvent" id="zXn-Fa-mkm" customClass="TeacherAddEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -1083,7 +1086,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="SoE-1A-wKY" firstAttribute="height" secondItem="UV6-1k-S7o" secondAttribute="height" multiplier="0.8" id="5cA-mK-UyV"/>
                             <constraint firstItem="SoE-1A-wKY" firstAttribute="centerY" secondItem="v3c-TP-2OX" secondAttribute="centerY" id="MYc-5e-3AD"/>
@@ -1092,6 +1095,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v3c-TP-2OX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="בחירת ילד" id="O2H-7Z-sGo"/>
                     <connections>
                         <outlet property="mainStackView" destination="SoE-1A-wKY" id="B9b-Cc-MpZ"/>
                         <segue destination="Vyh-8f-1or" kind="show" identifier="EventKind" id="7s3-1S-vfN"/>
@@ -1105,7 +1109,7 @@
             </objects>
             <point key="canvasLocation" x="759" y="22"/>
         </scene>
-        <!--Basic Event View Controller-->
+        <!--דיווח בסיסי-->
         <scene sceneID="t1M-Lm-Nmv">
             <objects>
                 <viewController id="crj-ty-N3d" customClass="BasicEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -1217,7 +1221,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="WSY-Mt-OSR" firstAttribute="centerY" secondItem="y8g-M4-THZ" secondAttribute="centerY" id="X3i-gB-MRq"/>
                             <constraint firstItem="WSY-Mt-OSR" firstAttribute="width" secondItem="DJA-q8-TkA" secondAttribute="width" multiplier="0.9" id="d1p-9r-Kmu"/>
@@ -1226,6 +1230,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DJA-q8-TkA"/>
                     </view>
+                    <navigationItem key="navigationItem" title="דיווח בסיסי" id="Bof-ow-vl0"/>
                     <connections>
                         <outlet property="coughBtn" destination="95o-Bs-Koa" id="10z-ZC-jKW"/>
                         <outlet property="fecesBtn" destination="l2A-d7-rka" id="WMX-ic-R6w"/>
@@ -1256,7 +1261,7 @@
                                 <rect key="frame" x="55.5" y="243.5" width="1001" height="417"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="vxB-Qz-AxV" firstAttribute="centerY" secondItem="aK8-w5-D9k" secondAttribute="centerY" id="8GA-2I-U6b"/>
                             <constraint firstItem="vxB-Qz-AxV" firstAttribute="centerX" secondItem="aK8-w5-D9k" secondAttribute="centerX" id="ANQ-hQ-EK8"/>
@@ -1332,7 +1337,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="JM0-Ub-HXr" firstAttribute="centerX" secondItem="KtT-wJ-QYV" secondAttribute="centerX" id="08p-Nl-z85"/>
                             <constraint firstItem="kcP-9N-jy7" firstAttribute="top" secondItem="JM0-Ub-HXr" secondAttribute="bottom" constant="8" id="0kE-Ib-GHQ"/>
@@ -1415,7 +1420,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כמות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-uh-M7X">
                                         <rect key="frame" x="0.0" y="0.0" width="1001" height="204.5"/>
                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                        <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7ih-Q5-qhQ">
@@ -1445,7 +1450,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="centerX" secondItem="ocJ-Mj-4rp" secondAttribute="centerX" id="1qP-kc-hNK"/>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="centerY" secondItem="ocJ-Mj-4rp" secondAttribute="centerY" id="2qS-tK-jkJ"/>
@@ -1486,7 +1491,7 @@
             </objects>
             <point key="canvasLocation" x="2788" y="-1037"/>
         </scene>
-        <!--Event Kind View Controller-->
+        <!--בחירת סוג דיווח-->
         <scene sceneID="Y7q-fY-uJf">
             <objects>
                 <viewController id="Vyh-8f-1or" customClass="EventKindViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -1569,7 +1574,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="2hZ-Kn-kvS" firstAttribute="width" secondItem="gtl-IF-RaN" secondAttribute="width" multiplier="0.9" id="4C2-VX-amA"/>
                             <constraint firstItem="2hZ-Kn-kvS" firstAttribute="centerX" secondItem="gtl-IF-RaN" secondAttribute="centerX" id="Im3-M7-QMo"/>
@@ -1578,6 +1583,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gtl-IF-RaN"/>
                     </view>
+                    <navigationItem key="navigationItem" title="בחירת סוג דיווח" id="TVb-bO-iXc"/>
                     <connections>
                         <outlet property="basicEventBtn" destination="QQa-2M-YFM" id="MTE-2I-TkU"/>
                         <outlet property="developEventBtn" destination="lRD-Wh-ZY0" id="SUO-ES-1wJ"/>
@@ -1621,11 +1627,12 @@
         <image name="cough" width="512" height="512"/>
         <image name="illness" width="512" height="512"/>
         <image name="kindergarten" width="512" height="512"/>
+        <image name="settings" width="512" height="512"/>
         <image name="teacher" width="512" height="512"/>
         <image name="vomit" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UhQ-lY-ajX"/>
-        <segue reference="uba-IQ-0PZ"/>
+        <segue reference="2no-SZ-mxa"/>
+        <segue reference="lqd-QX-6d7"/>
     </inferredMetricsTieBreakers>
 </document>

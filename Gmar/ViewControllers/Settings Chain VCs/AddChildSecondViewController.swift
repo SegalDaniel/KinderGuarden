@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddChildSecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AlergicTableViewCellDelegate, FoodsTableViewCellDelegate, DiasesMedTableViewCellDelegate {
+class AddChildSecondViewController: MyViewController, UITableViewDataSource, UITableViewDelegate, AlergicTableViewCellDelegate, FoodsTableViewCellDelegate, DiasesMedTableViewCellDelegate {
     
     //MARK: - Variables
     @IBOutlet weak var alergicTableView: UITableView!
