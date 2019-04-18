@@ -21,14 +21,14 @@ class GenericLiquidViewController: GenericVC {
     //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utility.adjustLabelDesign(label: messageLabel)
+        Utility.adjustLabelDesign(label: timeLabel)
         timeLabel.text = currentDate()
         initViews()
     }
     
     func initViews(){
-        Utility.addBorder(view: timeLabel, color: UIColor.black, width: 2)
-        Utility.addBorder(view: messageLabel, color: UIColor.black, width: 2)
-        Utility.addBorder(view: quantityLabel, color: UIColor.black, width: 2)
+        addConfirmButton(selector: #selector(confirmBtnClicked))
         switch kind {
         case .water:
             waterSettings()

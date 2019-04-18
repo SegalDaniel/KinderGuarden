@@ -26,6 +26,8 @@ class DiasesMedTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSeco
         super.awakeFromNib()
         nameTextField.delegate = self
         detailsTextField.delegate = self
+        Utility.ourTextFieldDesign(textFiled: nameTextField)
+        Utility.ourTextFieldDesign(textFiled: detailsTextField)
     }
     
     func removeAll(){

@@ -37,6 +37,7 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         let item = UIBarButtonItem(title: "הבא", style: .plain, target: self, action: #selector(nextScreenBtnClicked))
         self.navigationItem.rightBarButtonItem = item
+        Utility.addShadow(view: babyImageView)
         pickingTimePicker.setValue(Utility.btnTextWhite, forKey: "textColor")
         birthDatePicker.setValue(Utility.btnTextWhite, forKey: "textColor")
         initchildPickerTableView()

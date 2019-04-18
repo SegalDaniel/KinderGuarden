@@ -26,8 +26,6 @@ class SettingsViewController: MyViewController {
             Utility.adjustBtnTitle(button: btn)
             btn.layer.cornerRadius = btn.layer.frame.width / 6
             btn.clipsToBounds = true
-            btn.layer.borderColor = UIColor.white.cgColor
-            btn.layer.borderWidth = 2
             Utility.addShadow(view: btn)
         }
     }

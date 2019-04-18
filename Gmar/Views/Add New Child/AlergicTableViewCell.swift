@@ -23,6 +23,7 @@ class AlergicTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSecond
     override func awakeFromNib() {
         super.awakeFromNib()
         nameTextField.delegate = self
+        Utility.ourTextFieldDesign(textFiled: nameTextField)
     }
     
     func removeAll(){

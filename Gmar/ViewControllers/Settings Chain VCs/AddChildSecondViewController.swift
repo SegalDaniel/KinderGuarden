@@ -41,6 +41,8 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
             table.delegate = self
             table.dataSource = self
             table.allowsSelection = false
+            table.separatorStyle = .none
+            Utility.addBorder(view: table)
         }
     }
     

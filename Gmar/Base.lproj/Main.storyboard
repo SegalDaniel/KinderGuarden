@@ -28,7 +28,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-lF-Qkp">
                                 <rect key="frame" x="20" y="78" width="89" height="89"/>
-                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="height" multiplier="1:1" id="gEb-jS-BIj"/>
                                 </constraints>
@@ -39,7 +38,7 @@
                                     <segue destination="WNC-8R-ZUY" kind="show" id="WXK-p6-9XV"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-Ff-ZfI">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-Ff-ZfI">
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-qU-Xzj">
@@ -57,7 +56,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bg-dr-vG4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" symbolic="YES" id="A3u-Ib-lSz"/>
@@ -129,7 +128,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eu7-vA-vZS" firstAttribute="height" secondItem="SjI-EX-Dsx" secondAttribute="height" multiplier="0.5" id="9tG-tr-qv9"/>
                             <constraint firstItem="eu7-vA-vZS" firstAttribute="centerY" secondItem="HOs-Qi-7cP" secondAttribute="centerY" id="a51-51-hIm"/>
@@ -184,7 +183,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XEi-xG-Ywb" firstAttribute="width" secondItem="sil-en-2AM" secondAttribute="width" id="0Up-NE-yAN"/>
                             <constraint firstItem="XEi-xG-Ywb" firstAttribute="height" secondItem="sil-en-2AM" secondAttribute="height" id="0m7-Mz-Zfd"/>
@@ -429,7 +428,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BjY-Gs-1jI" firstAttribute="height" secondItem="H9n-Ud-Dd7" secondAttribute="height" id="05q-ZN-vO5"/>
                             <constraint firstItem="qIb-1a-Wnl" firstAttribute="trailing" secondItem="DyP-nZ-BKp" secondAttribute="trailing" constant="20" id="2FM-oG-JLT"/>
@@ -478,7 +477,7 @@
             </objects>
             <point key="canvasLocation" x="758.6330935251799" y="1792.8057553956835"/>
         </scene>
-        <!--Add Child Second View Controller-->
+        <!--רישום ילד לגן-->
         <scene sceneID="8a1-xc-IhH">
             <objects>
                 <viewController id="Rk1-gC-I4V" customClass="AddChildSecondViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -498,7 +497,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="at7-yA-S6o">
                                                         <rect key="frame" x="0.0" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
-                                                        <state key="normal" title="הוסף"/>
+                                                        <state key="normal" title="הוסף">
+                                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="46a-rv-srY"/>
                                                         </connections>
@@ -506,14 +507,14 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אלרגנים" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6W9-We-6PW">
                                                         <rect key="frame" x="263" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D5z-bA-HPf">
                                                 <rect key="frame" x="0.0" y="44" width="526" height="289.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="alergicCell" rowHeight="75" id="xIe-Cu-erw" customClass="AlergicTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
@@ -523,7 +524,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אלרגן" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bj7-q3-iY1">
-                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <rect key="frame" x="26.5" y="5.5" width="473" height="63.5"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                     <textInputTraits key="textInputTraits"/>
@@ -532,10 +533,11 @@
                                                             <constraints>
                                                                 <constraint firstItem="bj7-q3-iY1" firstAttribute="centerX" secondItem="GbG-rw-ZVn" secondAttribute="centerX" id="9W0-EL-b0R"/>
                                                                 <constraint firstItem="bj7-q3-iY1" firstAttribute="centerY" secondItem="GbG-rw-ZVn" secondAttribute="centerY" id="UDz-pd-8vf"/>
-                                                                <constraint firstItem="bj7-q3-iY1" firstAttribute="height" secondItem="GbG-rw-ZVn" secondAttribute="height" multiplier="0.9" id="ZvO-et-0Gs"/>
+                                                                <constraint firstItem="bj7-q3-iY1" firstAttribute="height" secondItem="GbG-rw-ZVn" secondAttribute="height" multiplier="0.85" id="ZvO-et-0Gs"/>
                                                                 <constraint firstItem="bj7-q3-iY1" firstAttribute="width" secondItem="GbG-rw-ZVn" secondAttribute="width" multiplier="0.9" id="iI4-x8-3kZ"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="nameTextField" destination="bj7-q3-iY1" id="HrW-p2-Ajt"/>
                                                         </connections>
@@ -553,7 +555,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw8-r6-u5T">
                                                         <rect key="frame" x="0.0" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
-                                                        <state key="normal" title="הוסף"/>
+                                                        <state key="normal" title="הוסף">
+                                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="ZPv-zg-RE3"/>
                                                         </connections>
@@ -561,14 +565,14 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מזונות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmi-ZD-2rc">
                                                         <rect key="frame" x="263" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wsb-SY-C81">
                                                 <rect key="frame" x="0.0" y="44" width="526" height="289.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="75" id="jLc-qT-tkT" customClass="FoodsTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
@@ -578,22 +582,22 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LSk-on-sZl">
-                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <rect key="frame" x="26.5" y="5.5" width="473" height="63.5"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="העדפות" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DV-2A-eFC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="67.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="63.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-lk-zCg">
-                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="68.5"/>
+                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="64.5"/>
                                                                             <segments>
                                                                                 <segment title="מוצקים"/>
                                                                                 <segment title="חלב אם"/>
                                                                                 <segment title="תמ״ל"/>
                                                                             </segments>
-                                                                            <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <connections>
                                                                                 <action selector="segmentKindChanged:" destination="jLc-qT-tkT" eventType="valueChanged" id="7l7-cq-0WF"/>
                                                                             </connections>
@@ -601,13 +605,15 @@
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="LSk-on-sZl" firstAttribute="width" secondItem="nPI-i8-3Dz" secondAttribute="width" multiplier="0.9" id="Ag1-9o-F3I"/>
                                                                 <constraint firstItem="LSk-on-sZl" firstAttribute="centerY" secondItem="nPI-i8-3Dz" secondAttribute="centerY" id="MPY-C4-r4A"/>
-                                                                <constraint firstItem="LSk-on-sZl" firstAttribute="height" secondItem="nPI-i8-3Dz" secondAttribute="height" multiplier="0.9" id="ShQ-aW-NFf"/>
+                                                                <constraint firstItem="LSk-on-sZl" firstAttribute="height" secondItem="nPI-i8-3Dz" secondAttribute="height" multiplier="0.85" id="ShQ-aW-NFf"/>
                                                                 <constraint firstItem="LSk-on-sZl" firstAttribute="centerX" secondItem="nPI-i8-3Dz" secondAttribute="centerX" id="dTA-O5-ims"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="amountTextField" destination="7DV-2A-eFC" id="9L8-Aq-3Md"/>
                                                             <outlet property="kindSegment" destination="Ktx-lk-zCg" id="1T0-Hp-xeX"/>
@@ -631,7 +637,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZN2-TZ-Hkf">
                                                         <rect key="frame" x="0.0" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
-                                                        <state key="normal" title="הוסף"/>
+                                                        <state key="normal" title="הוסף">
+                                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="gCb-4p-Z0I"/>
                                                         </connections>
@@ -639,14 +647,14 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תרופות קבועות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inp-79-ynv">
                                                         <rect key="frame" x="263" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-3u-tv5">
                                                 <rect key="frame" x="0.0" y="44" width="526" height="289.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diasesMedCell" rowHeight="75" id="4ws-GC-J9G" customClass="DiasesMedTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
@@ -656,16 +664,16 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aGd-i3-kUK">
-                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <rect key="frame" x="26.5" y="5.5" width="473" height="63.5"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מידע נוסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GW4-Nf-wBZ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="67.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="63.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3nw-u4-mzb">
-                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="67.5"/>
+                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="63.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                             <textInputTraits key="textInputTraits"/>
@@ -674,12 +682,13 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="aGd-i3-kUK" firstAttribute="height" secondItem="gBL-Vn-waW" secondAttribute="height" multiplier="0.9" id="O5m-RT-yox"/>
+                                                                <constraint firstItem="aGd-i3-kUK" firstAttribute="height" secondItem="gBL-Vn-waW" secondAttribute="height" multiplier="0.85" id="O5m-RT-yox"/>
                                                                 <constraint firstItem="aGd-i3-kUK" firstAttribute="width" secondItem="gBL-Vn-waW" secondAttribute="width" multiplier="0.9" id="P4u-si-U7w"/>
                                                                 <constraint firstItem="aGd-i3-kUK" firstAttribute="centerX" secondItem="gBL-Vn-waW" secondAttribute="centerX" id="hrU-I0-nIH"/>
                                                                 <constraint firstItem="aGd-i3-kUK" firstAttribute="centerY" secondItem="gBL-Vn-waW" secondAttribute="centerY" id="xSx-CY-eZR"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="detailsTextField" destination="GW4-Nf-wBZ" id="XgB-P5-loZ"/>
                                                             <outlet property="nameTextField" destination="3nw-u4-mzb" id="OA2-i9-BvS"/>
@@ -688,6 +697,7 @@
                                                 </prototypes>
                                             </tableView>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uk2-8R-JDg">
                                         <rect key="frame" x="546" y="0.0" width="526" height="333.5"/>
@@ -698,7 +708,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VR-f7-d4q">
                                                         <rect key="frame" x="0.0" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
-                                                        <state key="normal" title="הוסף"/>
+                                                        <state key="normal" title="הוסף">
+                                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="addCellBtnClicked:" destination="Rk1-gC-I4V" eventType="touchUpInside" id="upb-kX-3cf"/>
                                                         </connections>
@@ -706,14 +718,14 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחלות כרוניות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9B-M4-VNH">
                                                         <rect key="frame" x="263" y="0.0" width="263" height="36"/>
                                                         <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QWl-ou-4Bq">
                                                 <rect key="frame" x="0.0" y="44" width="526" height="289.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diasesMedCell" rowHeight="75" id="96f-qf-2Lm" customClass="DiasesMedTableViewCell" customModule="Gmar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="526" height="75"/>
@@ -723,16 +735,16 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-em-UCJ">
-                                                                    <rect key="frame" x="26.5" y="3.5" width="473" height="67.5"/>
+                                                                    <rect key="frame" x="26.5" y="5.5" width="473" height="63.5"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מידע נוסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZM-OF-gP5">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="67.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="63.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ym-7H-HhW">
-                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="67.5"/>
+                                                                            <rect key="frame" x="240.5" y="0.0" width="232.5" height="63.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
                                                                             <textInputTraits key="textInputTraits"/>
@@ -741,12 +753,13 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="ToS-em-UCJ" firstAttribute="height" secondItem="44e-NL-Ypo" secondAttribute="height" multiplier="0.9" id="96P-lv-kNu"/>
+                                                                <constraint firstItem="ToS-em-UCJ" firstAttribute="height" secondItem="44e-NL-Ypo" secondAttribute="height" multiplier="0.85" id="96P-lv-kNu"/>
                                                                 <constraint firstItem="ToS-em-UCJ" firstAttribute="centerY" secondItem="44e-NL-Ypo" secondAttribute="centerY" id="KYy-NY-sDU"/>
                                                                 <constraint firstItem="ToS-em-UCJ" firstAttribute="centerX" secondItem="44e-NL-Ypo" secondAttribute="centerX" id="deU-qu-HFj"/>
                                                                 <constraint firstItem="ToS-em-UCJ" firstAttribute="width" secondItem="44e-NL-Ypo" secondAttribute="width" multiplier="0.9" id="u0F-MB-pRa"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="detailsTextField" destination="cZM-OF-gP5" id="5to-7n-XIE"/>
                                                             <outlet property="nameTextField" destination="5ym-7H-HhW" id="mX4-r6-x2T"/>
@@ -760,7 +773,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWx-UT-nHE">
                                 <rect key="frame" x="20" y="769" width="127" height="59"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="32"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="הוסף ילד">
@@ -771,7 +784,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Mhp-QV-0Jg" secondAttribute="trailing" constant="20" id="4rp-gZ-Vf5"/>
                             <constraint firstItem="zxh-OR-75e" firstAttribute="top" secondItem="Mhp-QV-0Jg" secondAttribute="bottom" constant="20" id="QQj-9f-eEJ"/>
@@ -788,6 +801,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bIj-kU-53X"/>
                     </view>
+                    <navigationItem key="navigationItem" title="רישום ילד לגן" id="ajG-oW-9Hd"/>
                     <connections>
                         <outlet property="addAlergicBtn" destination="at7-yA-S6o" id="K1H-Kc-56N"/>
                         <outlet property="addDiseasesBtn" destination="6VR-f7-d4q" id="oXP-2M-iMl"/>
@@ -826,7 +840,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X3h-OX-nfT">
                                 <rect key="frame" x="0.0" y="146.5" width="1112" height="687.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultiChoiseCell" rowHeight="100" id="hmc-pB-aXI" customClass="MultiChoiseTableViewCell" customModule="Gmar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1112" height="100"/>
@@ -1035,7 +1049,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X3h-OX-nfT" firstAttribute="centerX" secondItem="hoe-b7-bjo" secondAttribute="centerX" id="06x-ce-Grx"/>
                             <constraint firstItem="PoD-tf-y8V" firstAttribute="width" secondItem="WOr-jO-Bli" secondAttribute="width" id="2vd-GF-VzQ"/>
@@ -1092,7 +1106,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SoE-1A-wKY" firstAttribute="height" secondItem="UV6-1k-S7o" secondAttribute="height" multiplier="0.8" id="5cA-mK-UyV"/>
                             <constraint firstItem="SoE-1A-wKY" firstAttribute="centerY" secondItem="v3c-TP-2OX" secondAttribute="centerY" id="MYc-5e-3AD"/>
@@ -1227,7 +1241,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WSY-Mt-OSR" firstAttribute="centerY" secondItem="y8g-M4-THZ" secondAttribute="centerY" id="X3i-gB-MRq"/>
                             <constraint firstItem="WSY-Mt-OSR" firstAttribute="width" secondItem="DJA-q8-TkA" secondAttribute="width" multiplier="0.9" id="d1p-9r-Kmu"/>
@@ -1265,9 +1279,10 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vxB-Qz-AxV">
                                 <rect key="frame" x="55.5" y="243.5" width="1001" height="417"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vxB-Qz-AxV" firstAttribute="centerY" secondItem="aK8-w5-D9k" secondAttribute="centerY" id="8GA-2I-U6b"/>
                             <constraint firstItem="vxB-Qz-AxV" firstAttribute="centerX" secondItem="aK8-w5-D9k" secondAttribute="centerX" id="ANQ-hQ-EK8"/>
@@ -1304,7 +1319,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCj-AX-agP">
                                 <rect key="frame" x="55.5" y="728" width="278" height="83.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="אישור">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1327,7 +1342,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXq-bg-0Hu">
                                 <rect key="frame" x="55.5" y="78" width="278" height="83.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="שינוי זמן">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1339,11 +1354,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgy-lY-1Uq">
                                 <rect key="frame" x="341.5" y="78" width="715" height="83.5"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JM0-Ub-HXr" firstAttribute="centerX" secondItem="KtT-wJ-QYV" secondAttribute="centerX" id="08p-Nl-z85"/>
                             <constraint firstItem="kcP-9N-jy7" firstAttribute="top" secondItem="JM0-Ub-HXr" secondAttribute="bottom" constant="8" id="0kE-Ib-GHQ"/>
@@ -1410,7 +1425,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9K-xi-L0e">
                                 <rect key="frame" x="55.5" y="78" width="278" height="83.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="שינוי זמן">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1439,7 +1454,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIg-hd-ESw">
                                 <rect key="frame" x="55.5" y="701" width="278" height="83.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                 <state key="normal" title="אישור">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1456,7 +1471,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="centerX" secondItem="ocJ-Mj-4rp" secondAttribute="centerX" id="1qP-kc-hNK"/>
                             <constraint firstItem="Kxq-DY-jUJ" firstAttribute="centerY" secondItem="ocJ-Mj-4rp" secondAttribute="centerY" id="2qS-tK-jkJ"/>
@@ -1580,7 +1595,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2hZ-Kn-kvS" firstAttribute="width" secondItem="gtl-IF-RaN" secondAttribute="width" multiplier="0.9" id="4C2-VX-amA"/>
                             <constraint firstItem="2hZ-Kn-kvS" firstAttribute="centerX" secondItem="gtl-IF-RaN" secondAttribute="centerX" id="Im3-M7-QMo"/>

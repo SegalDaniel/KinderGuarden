@@ -12,8 +12,9 @@ class MyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = Utility.BackgroundBlueColor
         let subviews = self.view.subviews
-        findAllButtons(subviews: subviews)
+        findAllButtonsAndLabels(subviews: subviews)
         addHomeButton()
         navigationTitleFont()
     }
@@ -35,7 +36,7 @@ class MyViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: containView)
     }
     
-    func findAllButtons(subviews:[UIView]){
+    func findAllButtonsAndLabels(subviews:[UIView]){
         subviews.forEach { (view) in
             if let btn = view as? UIButton{
                 Utility.addShadow(view: btn)
@@ -45,9 +46,16 @@ class MyViewController: UIViewController {
                 btn.addTarget(self, action: #selector(reAddShadow), for: .touchUpInside)
             }
             else{
-                findAllButtons(subviews: view.subviews)
+                findAllButtonsAndLabels(subviews: view.subviews)
             }
         }
+    }
+    
+    
+    func newButtonShadowAdjust(button btn:UIButton){
+        btn.addTarget(self, action: #selector(removeShadow), for: .touchDown)
+        btn.addTarget(self, action: #selector(reAddShadow), for: .touchDragExit)
+        btn.addTarget(self, action: #selector(reAddShadow), for: .touchUpInside)
     }
     
     @IBAction func removeShadow(_ sender: UIButton) {

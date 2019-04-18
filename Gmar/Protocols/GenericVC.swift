@@ -42,6 +42,18 @@ class GenericVC: MyViewController {
         }
     }
     
+    func addConfirmButton(selector:Selector){
+        let height = self.navigationController!.navigationBar.frame.height
+        let frame = CGRect(x: 0, y: 0,width: height*0.8, height: height*0.8)
+        let containView = UIView(frame: frame)
+        let btn = UIButton(frame: frame)
+        btn.setImage(UIImage(named: "checked"), for: .normal)
+        btn.imageView?.contentMode = .scaleToFill
+        btn.addTarget(self, action: selector, for: .touchUpInside)
+        containView.addSubview(btn)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: containView)
+    }
+    
     //MARK: - sendToFB callback
     func sendToFBCallback(_ err:Error?, loadingAlert:UIAlertController){
         loadingAlert.dismiss(animated: true) {

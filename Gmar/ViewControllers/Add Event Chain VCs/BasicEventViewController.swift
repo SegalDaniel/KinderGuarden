@@ -35,6 +35,7 @@ class BasicEventViewController: MyViewController {
             btn.layer.cornerRadius = btn.layer.frame.width / 6
             btn.clipsToBounds = true
             Utility.adjustBtnTitle(button: btn)
+            newButtonShadowAdjust(button: btn)
         }
     }
     

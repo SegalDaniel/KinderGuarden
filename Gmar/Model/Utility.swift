@@ -12,7 +12,7 @@ import Foundation
 class Utility{
     
     //MARK: - App colors
-    //static let BackgroundBlueColor:UIColor = UIColor(red: 48/255, green: 112/255, blue: 182/255, alpha: 1)
+    static let BackgroundBlueColor:UIColor = UIColor(red: 0/255, green: 84/255, blue: 147/255, alpha: 1)
     static let btnBackColor:UIColor = UIColor(red: 0/255, green: 114/255, blue: 188/255, alpha: 1)
     static let btnGray:UIColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
     static let btnSalmon:UIColor = UIColor(red: 255/255, green: 126/255, blue: 121/255, alpha: 1)
@@ -36,7 +36,7 @@ class Utility{
     
     static func ourBtnDesign(title:String, radius:CGFloat, tag:Int, image:UIImage?,
                              alignment:UIControl.ContentVerticalAlignment = .bottom,
-                             type:UIButton.ButtonType = .custom, withBorder:Bool = true)->UIButton{
+                             type:UIButton.ButtonType = .custom, withBorder:Bool = false)->UIButton{
         let btn = UIButton(type: type)
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(btnTextWhite, for: .normal)
@@ -62,6 +62,8 @@ class Utility{
     }
     
     static func adjustBtnTitle(button:UIButton){
+        //addBorder(view: button)
+        addShadow(view: button)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.imageView?.contentMode = .scaleAspectFit
         button.titleEdgeInsets = UIEdgeInsets(top: 5, left: -button.imageView!.image!.size.width, bottom: 0, right: 0)
@@ -71,20 +73,27 @@ class Utility{
     static func ourLabelDesign(frame:CGRect, text:String = "") -> UILabel{
         let label = PaddingLabel(frame: frame)
         label.font = UIFont(name: "VarelaRound-Regular", size: 30)
-        label.textColor = btnBackColor
-        label.layer.borderColor = UIColor.black.cgColor
-        label.layer.borderWidth = 2
+        label.textColor = btnTextWhite
+        addBorder(view: label)
         label.adjustsFontSizeToFitWidth = true
         label.text = text
         label.textAlignment = .center
         return label
     }
     
+    static func adjustLabelDesign(label:UILabel){
+        label.textColor = btnTextWhite
+        addBorder(view: label)
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+    }
+    
     static func ourTextFieldDesign(textFiled:UITextField){
-        textFiled.backgroundColor = btnBackColor
+        textFiled.backgroundColor = BackgroundBlueColor
         textFiled.tintColor = btnTextWhite
         textFiled.textColor = btnTextWhite
         addBorder(view: textFiled)
+        textFiled.clipsToBounds = true
         let placeholder = textFiled.placeholder
         if let txt = placeholder{
             textFiled.attributedPlaceholder = NSAttributedString(string: txt,

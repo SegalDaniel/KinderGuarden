@@ -25,6 +25,7 @@ class FoodsTableViewCell: UITableViewCell, UITextFieldDelegate, AddChildSecondVi
     override func awakeFromNib() {
         super.awakeFromNib()
         amountTextField.delegate = self
+        Utility.ourTextFieldDesign(textFiled: amountTextField)
     }
     
     func removeAll(){

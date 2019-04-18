@@ -88,6 +88,7 @@ class TeacherAddEventViewController: MyViewController {
                 }
                 btn.addTarget(self, action: #selector(kidClicked), for: .touchUpInside)
                 btn.addTarget(self, action: #selector(kidDragExit), for: .touchDragExit)
+                newButtonShadowAdjust(button: btn)
                 stack.addArrangedSubview(btn)
             }
         }

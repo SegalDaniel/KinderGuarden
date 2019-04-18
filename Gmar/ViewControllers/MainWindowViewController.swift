@@ -92,8 +92,6 @@ class MainWindowViewController: MyViewController {
     func roundKidsInfoBtn(){
         kidsInfoBtn.layer.cornerRadius = kidsInfoBtn.layer.frame.width / 2
         kidsInfoBtn.clipsToBounds = true
-        kidsInfoBtn.layer.borderColor = UIColor.white.cgColor
-        kidsInfoBtn.layer.borderWidth = 2
         Utility.addShadow(view: kidsInfoBtn)
     }
     
@@ -106,8 +104,10 @@ class MainWindowViewController: MyViewController {
             image = UIImage(named: "teacher")!
         }
         let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: image)
+        
         btn.addTarget(self, action: #selector(teacherButtonClicked), for: .touchUpInside)
         btn.addTarget(self, action: #selector(teacherButtonDragExit), for: .touchDragExit)
+        newButtonShadowAdjust(button: btn)
         teachersStackView.addArrangedSubview(btn)
     }
 

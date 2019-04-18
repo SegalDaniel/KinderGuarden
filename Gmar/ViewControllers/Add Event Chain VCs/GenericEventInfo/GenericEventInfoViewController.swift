@@ -26,11 +26,12 @@ class GenericEventInfoViewController: GenericVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
+        Utility.adjustLabelDesign(label: messageLabel)
+        Utility.adjustLabelDesign(label: timeLabel)
     }
     
     func initViews(){
-        Utility.addBorder(view: messageLabel, color: UIColor.black, width: 2)
-        Utility.addBorder(view: timeLabel, color: UIColor.black, width: 2)
+        addConfirmButton(selector: #selector(confirmBtnClicked))
         timeLabel.text = currentDate()
         switch kind {
         case .feces:
@@ -110,10 +111,10 @@ class GenericEventInfoViewController: GenericVC {
         for i in 0...names.count-1 {
             let tag = (info.0 * 10) + i + 1
             if tag > -1{
-                btns.append(Utility.ourBtnDesign(title: names[i], radius: 1, tag: tag, image: nil, alignment: .center, type: .system))
+                btns.append(Utility.ourBtnDesign(title: names[i], radius: 10, tag: tag, image: nil, alignment: .center, type: .system))
             }
             else{
-                btns.append(Utility.ourBtnDesign(title: names[i], radius: 1, tag: tag, image: nil, alignment: .center, type: .system))
+                btns.append(Utility.ourBtnDesign(title: names[i], radius: 10, tag: tag, image: nil, alignment: .center, type: .system))
                 btns.forEach { (btn) in
                     btn.backgroundColor = Utility.btnSalmon
                 }
@@ -132,6 +133,7 @@ class GenericEventInfoViewController: GenericVC {
     func addTargetToBtn(buttons:[UIButton]){
         buttons.forEach { (btn) in
             btn.addTarget(self, action: #selector(decisionBtnClicked), for: .touchUpInside)
+            newButtonShadowAdjust(button: btn)
         }
     }
     
