@@ -31,6 +31,7 @@ class ChildPickerTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
         pickerKindPicker.delegate = self
         pickerKindPicker.dataSource = self
         pickerKindPicker.setValue(Utility.btnTextWhite, forKey: "textColor")
+        Utility.addBorder(view: pickerKindPicker)
     }
     
     func removeAll(){

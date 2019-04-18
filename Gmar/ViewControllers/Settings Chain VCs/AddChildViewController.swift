@@ -44,6 +44,8 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
         initTextFields(textFildes: [firstNameTextField, lastNameTextField, addressTextField, childIDTextField])
         permissions = Permissions(target: self, imagePicker: imagePicker)
         Utility.viewTapRecognizer(target: self, toBeTapped: babyImageView, action: #selector(selectImageTapped))
+        Utility.addBorder(view: birthDatePicker)
+        Utility.addBorder(view: pickingTimePicker)
     }
     
     func initchildPickerTableView(){
@@ -217,6 +219,10 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
         default:
             break
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        Utility.removeMoveWithKeyboard(viewController: self)
     }
     
     
