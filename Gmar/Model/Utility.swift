@@ -23,6 +23,7 @@ class Utility{
     static func addBorder(view:UIView, color:UIColor = UIColor.white, width:CGFloat = 2){
         view.layer.borderColor = color.cgColor
         view.layer.borderWidth = width
+        view.layer.cornerRadius = 10
     }
     
     static func addShadow(view:UIView){
@@ -83,7 +84,12 @@ class Utility{
         textFiled.backgroundColor = btnBackColor
         textFiled.tintColor = btnTextWhite
         textFiled.textColor = btnTextWhite
-        addShadow(view: textFiled)
+        addBorder(view: textFiled)
+        let placeholder = textFiled.placeholder
+        if let txt = placeholder{
+            textFiled.attributedPlaceholder = NSAttributedString(string: txt,
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightText])
+        }
     }
     
     //MARK: - generic stack methods
