@@ -13,22 +13,20 @@ class GenericLiquidViewController: GenericVC {
     //MARK: - Variables
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var changeTimeBtn: UIButton!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var quantitySlider: UISlider!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var titleItem: UINavigationItem!
+    
     
     //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utility.adjustLabelDesign(label: messageLabel)
-        Utility.adjustLabelDesign(label: timeLabel)
-        timeLabel.text = currentDate()
+        changeTimeBtn.setTitle(currentDate(), for: .normal)
         initViews()
     }
     
     func initViews(){
-        addConfirmButton(selector: #selector(confirmBtnClicked))
+        //addConfirmButton(selector: #selector(confirmBtnClicked))
         switch kind {
         case .water:
             waterSettings()
@@ -61,47 +59,40 @@ class GenericLiquidViewController: GenericVC {
     
     @IBAction func changeTimeClicked(_ sender: Any) {
         showDatePicker(timeStyle: .short, dateStyle: .medium) { (dateString, time, date) in
-            self.timeLabel.text = dateString
+            self.changeTimeBtn.setTitle(dateString, for: .normal)
         }
     }
     
     //MARK: - Views Init
     //MARK: - water
     func waterSettings(){
+        titleItem.title = "דיווח שתיית מים"
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 25
         quantitySlider.setValue(12.5, animated: true)
-        messageLabel.text = "מים"
     }
     
     //MARK: - milk
     func milkSettings(){
+        titleItem.title = "דיווח מאכל חלב אם"
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 20
         quantitySlider.setValue(10, animated: true)
-        messageLabel.text = "חלב אם"
     }
     
     func tamalSettings(){
-        var tamals = ""
-        child?.foodList?.forEach({ (obj) in
-            let food = obj as! Food
-            if food.type == "tamal"{
-                tamals.append("\(food.details!) ")
-            }
-        })
+        titleItem.title = "דיווח מאכל תמ״ל"
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 20
         quantitySlider.setValue(10, animated: true)
-        messageLabel.text = tamals
     }
     
     //MARK: - feever
     func feeverSettings(){
+        titleItem.title = "דיווח מדידת חום"
         quantitySlider.minimumValue = 35
         quantitySlider.maximumValue = 42
         quantitySlider.setValue(36, animated: true)
         quantityLabel.text = "מעלות"
-        messageLabel.text = "חום"
     }
 }

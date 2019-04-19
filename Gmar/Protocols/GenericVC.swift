@@ -27,6 +27,7 @@ class GenericVC: MyViewController {
             self.staff = staff
         })
         Model.instance.eventChildAndStaff(childID: childID!, staffID: teacherID!)
+        
     }
     
     func currentDate() -> String{
@@ -79,8 +80,8 @@ class GenericVC: MyViewController {
     }
     
     //MARK: - Alert
-    func showUnselectedAlert(dismiss loadingAlert:UIAlertController){
-        let alert = SimpleAlert(_title: "רק רגע", _message: "נא למלא את כל הפרטים הנדרשים", dissmissCallback: nil).getAlert()
+    func showUnselectedAlert(type:String, dismiss loadingAlert:UIAlertController){
+        let alert = SimpleAlert(_title: "רק רגע", _message: "נא למלא את כל פרטי ה\(type) הנדרשים", dissmissCallback: nil).getAlert()
         loadingAlert.dismiss(animated: true) {
             self.present(alert, animated: true, completion: nil)
         }

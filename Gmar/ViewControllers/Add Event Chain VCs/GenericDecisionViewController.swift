@@ -12,6 +12,7 @@ class GenericDecisionViewController: GenericVC {
 
     //MARK: - Variables
     @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var titleItem: UINavigationItem!
     
     //MARL: - inits
     override func viewDidLoad() {
@@ -103,18 +104,21 @@ class GenericDecisionViewController: GenericVC {
     }
     
     func fecesViews(){
+        titleItem.title = "דיווח צרכים"
         let btn1 = Utility.ourBtnDesign(title: "צואה ו/או שתן", radius: 60, tag: 1, image: UIImage(named: "poop"))
         let btn2 = Utility.ourBtnDesign(title: "נקי", radius: 60, tag: 2, image: UIImage(named: "diaper-2"))
         addToStackAndTarget([btn1,btn2])
     }
     
     func foodOrDrinkViews(){
+        titleItem.title = "דיווח האכלה"
         let btn1 = Utility.ourBtnDesign(title: "אוכל", radius: 60, tag: 1, image: UIImage(named: "cutlery"))
         let btn2 = Utility.ourBtnDesign(title: "שתיה", radius: 60, tag: 2, image: UIImage(named: "water-glass"))
         addToStackAndTarget([btn1,btn2])
     }
     
     func solidorMilkViews(){
+        titleItem.title = "דיווח האכלה"
         var milk = false
         var tamal = false
         var solid = false

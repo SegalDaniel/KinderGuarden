@@ -23,8 +23,8 @@ extension GenericEventInfoViewController{
             let authLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
             let authText = authLabel.text!
             let type = typeLabel.text!
-            if authText == "" || type == ""{
-                showUnselectedAlert(dismiss: loadingAlert)
+            if authText == "מלווה" || type == ""{
+                showUnselectedAlert(type: "מלווה" , dismiss: loadingAlert)
                 return
             }
             if let child = child{
@@ -63,7 +63,7 @@ extension GenericEventInfoViewController{
             let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
             let type = typeLabel.text!
             if type == "סוג"{
-                showUnselectedAlert(dismiss: loadingAlert)
+                showUnselectedAlert(type: type, dismiss: loadingAlert)
                 return
             }
             if let child = child{
@@ -82,7 +82,7 @@ extension GenericEventInfoViewController{
             let poo = isOn["poo"]!
             let pee = isOn["pee"]!
             if !poo && !pee{
-                showUnselectedAlert(dismiss: loadingAlert)
+                showUnselectedAlert(type: "צרכים", dismiss: loadingAlert)
                 return
             }
             if let child = child{
@@ -96,7 +96,7 @@ extension GenericEventInfoViewController{
                         let texture = textureLabel.text!
                         let amount = amountLabel.text!
                         if color == "צבע" || texture == "מרקם" || amount == "כמות"{
-                            showUnselectedAlert(dismiss: loadingAlert)
+                            showUnselectedAlert(type: "צבע כמות ומרקם", dismiss: loadingAlert)
                             return
                         }
                         if pee{
@@ -108,7 +108,7 @@ extension GenericEventInfoViewController{
                             let pFragrance = pFragranceLabel.text!
                             let pAmount = pAmountLabel.text!
                             if pColor == "צבע שתן" || pFragrance == "ריח שתן" || pAmount == "כמות שתן"{
-                                showUnselectedAlert(dismiss: loadingAlert)
+                                showUnselectedAlert(type: "שתן", dismiss: loadingAlert)
                                 return
                             }
                             let urine = Urine(color: pColor, fragrance: pFragrance, amount: pAmount, eventType: peeEventType, eventDate: eventDate as NSDate, child: child, staff: staff)
@@ -135,7 +135,7 @@ extension GenericEventInfoViewController{
                         let pFragrance = pFragranceLabel.text!
                         let pAmount = pAmountLabel.text!
                         if pColor == "צבע שתן" || pFragrance == "ריח שתן" || pAmount == "כמות שתן"{
-                            showUnselectedAlert(dismiss: loadingAlert)
+                            showUnselectedAlert(type: "שתן", dismiss: loadingAlert)
                             return
                         }
                         let urine = Urine(color: pColor, fragrance: pFragrance, amount: pAmount, eventType: peeEventType, eventDate: eventDate as NSDate, child: child, staff: staff)
@@ -152,7 +152,7 @@ extension GenericEventInfoViewController{
             let amountLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
             let amount = amountLabel.text!
             if amount == "כלום"{
-                showUnselectedAlert(dismiss: loadingAlert)
+                showUnselectedAlert(type: "כמות", dismiss: loadingAlert)
                 return
             }
             if let child = child{
@@ -174,7 +174,7 @@ extension GenericEventInfoViewController{
             let allocated = allocLabel.text!
             let scope = scopeLabel.text!
             if allocated == "אורך השינה" || scope == "איכות השינה"{
-                showUnselectedAlert(dismiss: loadingAlert)
+                showUnselectedAlert(type: "שינה", dismiss: loadingAlert)
                 return
             }
             if let child = child{
@@ -196,7 +196,7 @@ extension GenericEventInfoViewController{
             let type = typeLabel.text!
             let area = areaLabel.text!
             if type == "סוג" || area == "איזור"{
-                showUnselectedAlert(dismiss: loadingAlert)
+                showUnselectedAlert(type: "סוג ואזור", dismiss: loadingAlert)
                 return
             }
             if let child = child{
@@ -216,7 +216,7 @@ extension GenericEventInfoViewController{
             let type = typeLabel.text!
             let proper = properLabel.text!
             if type == "סוג" || proper == "חומרה"{
-                showUnselectedAlert(dismiss: loadingAlert)
+                showUnselectedAlert(type: "סוג וחומרה", dismiss: loadingAlert)
                 return
             }
             if let child = child{
@@ -238,7 +238,7 @@ extension GenericEventInfoViewController{
             let area = areaLabel.text!
             let rank = rankLabel.text!
             if type == "סוג" || area == "איזור" || rank == "חומרה"{
-                showUnselectedAlert(dismiss: loadingAlert)
+                showUnselectedAlert(type: "סוג איזור וחומרה", dismiss: loadingAlert)
                 return
             }
             if let child = child{

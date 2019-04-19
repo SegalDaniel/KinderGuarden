@@ -16,7 +16,7 @@ extension GenericLiquidViewController{
         self.present(loadingAlert, animated: true, completion: nil)
         let amount = quantityLabel.text!
         if amount == "כמות"{
-            showUnselectedAlert(dismiss: loadingAlert)
+            showUnselectedAlert(type: "כמות", dismiss: loadingAlert)
             return
         }
         var val = "\(Int(quantitySlider.value) * 10)"

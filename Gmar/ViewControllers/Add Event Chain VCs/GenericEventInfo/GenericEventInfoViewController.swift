@@ -14,10 +14,8 @@ class GenericEventInfoViewController: GenericVC {
     @IBOutlet weak var labelStackView: UIStackView!
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var confirmBtn: UIButton!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var messageTextField: UITextField!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeBtn: UIButton!
+    @IBOutlet weak var titleItem: UINavigationItem!
     
     var isOn:[String:Bool] = [:]
     var data:[Int:String] = [:]
@@ -26,13 +24,11 @@ class GenericEventInfoViewController: GenericVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-        Utility.adjustLabelDesign(label: messageLabel)
-        Utility.adjustLabelDesign(label: timeLabel)
     }
     
     func initViews(){
-        addConfirmButton(selector: #selector(confirmBtnClicked))
-        timeLabel.text = currentDate()
+        //addConfirmButton(selector: #selector(confirmBtnClicked))
+        timeBtn.setTitle(currentDate(), for: .normal)
         switch kind {
         case .feces:
             feecesDesicion()
@@ -90,7 +86,7 @@ class GenericEventInfoViewController: GenericVC {
     
     @IBAction func timeBtnClicked(_ sender: Any) {
         showDatePicker(timeStyle: .short, dateStyle: .medium) { (dateString, time, date) in
-            self.timeLabel.text = dateString
+            self.timeBtn.setTitle(dateString, for: .normal)
         }
     }
     
@@ -140,6 +136,7 @@ class GenericEventInfoViewController: GenericVC {
     //MARK: - Views Inits
     //MARK: - feeces
     func feecesDesicion(){
+        titleItem.title = "דיווח צרכים"
         addStackForInfo(info: (-1, ["צואה", "הוסף"]))
         addStackForInfo(info: (-2, ["שתן", "הוסף"]))
         isOn["poo"] = false
@@ -147,6 +144,7 @@ class GenericEventInfoViewController: GenericVC {
     }
     
     func feecesAddMissing(row:Int){
+        titleItem.title = "דיווח צרכים"
         if row == -1{
             isOn["poo"] = true
             addStackForInfo(info: (1, ["צבע", "חום/צהוב/ירוק", "אדום", "לבן/אפור"]))
@@ -187,7 +185,8 @@ class GenericEventInfoViewController: GenericVC {
     
     //MARK: - attandance
     func attandanceViews(){
-        var authorizedData:[String] = [""]
+        titleItem.title = "דיווח נוכחות"
+        var authorizedData:[String] = ["מלווה"]
         if let child = child{
             if child.isAttend{
                 addStackForInfo(info: (1, ["עזיבה", "עזיבה"]))
@@ -202,25 +201,18 @@ class GenericEventInfoViewController: GenericVC {
             })
         }
         addStackForInfo(info: (2, authorizedData))
-        messageLabel.isHidden = true
-        messageTextField.isHidden = false
     }
     
     //MARK: - vomits
     func vomitViews(){
+        titleItem.title = "דיווח הקאה"
         addStackForInfo(info: (1, ["סוג", "פליטה מוגברת", "הקאה"]))
         addStackForInfo(info: (2, ["חומרה", "תקין", "לא תקין"]))
     }
     
     //MARK: - solid food
     func solidFoodViews(){
-        var solids = ""
-        child?.foodList?.forEach({ (obj) in
-            let food = obj as! Food
-            if food.type == "solid"{
-                solids.append("\(food.details!) ")
-            }
-        })
+        titleItem.title = "דיווח האכלה"
         let currentTime = DateAdmin.currentTime(timeStyle: .short)
         let currentHour = Int(currentTime.split(separator: ":")[0])!
         if currentHour < 12{
@@ -229,12 +221,12 @@ class GenericEventInfoViewController: GenericVC {
         else{
            addStackForInfo(info: (1, ["ארוחת צהריים", "ארוחת בוקר", "ארוחת צהריים"]))
         }
-        messageLabel.text = solids
         addStackForInfo(info: (2, ["כמות", "סיים מנה", "מעל חצי מנה", "מתחת לחצי מנה", "לא אכל"]))
     }
     
     //MARK: - sleep
     func sleepViews(){
+        titleItem.title = "דיווח שינה"
         let currentTime = DateAdmin.currentTime(timeStyle: .short)
         let currentHour = Int(currentTime.split(separator: ":")[0])!
         if currentHour < 12{
@@ -249,17 +241,20 @@ class GenericEventInfoViewController: GenericVC {
     
     //MARK: - rash
     func rashViews(){
+        titleItem.title = "דיווח פריחה"
         addStackForInfo(info: (1, ["סוג", "פריחה/אדמומיות", "פצעים/פצעונים", "כתמים"]))
         addStackForInfo(info: (2, ["איזור", "פנים", "פה", "גפיים", "טוסיק", "גב", "חזה/בטן", "איבר מין", "ראש", "עיניים"]))
     }
     
     //MARK: - cough
     func coughViews(){
+        titleItem.title = "דיווח שיעול"
         addStackForInfo(info: (1, ["סוג", "צפצופי נשימה", "קוצר נשימה", "טורדני", "לח"]))
     }
     
     //MARK: - hafrasha
     func hafrashaViews(){
+        titleItem.title = "דיווח הפרשה"
         addStackForInfo(info: (1, ["סוג", "דם", "מוגלה", "נזלת"]))
         addStackForInfo(info: (2, ["איזור", "עיניים", "אוזניים", "אף", "פה", "איבר מין", "שאר הגוף"]))
         addStackForInfo(info: (3, ["חומרה", "תקין", "לא תקין"]))

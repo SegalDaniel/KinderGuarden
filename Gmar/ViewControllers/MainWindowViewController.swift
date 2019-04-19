@@ -20,6 +20,7 @@ class MainWindowViewController: MyViewController {
         super.viewDidLoad()
         roundKidsInfoBtn()
         kgSettingBtn.layer.shadowColor = UIColor.clear.cgColor
+        Utility.addShadow(view: kgSettingBtn.imageView!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
