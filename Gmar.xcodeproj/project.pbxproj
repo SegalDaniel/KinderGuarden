@@ -730,7 +730,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
-				26D96D5386CEB4BBFAE752D3 /* [CP] Embed Pods Frameworks */,
+				87559B7621F7FB9E2DA70F56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -798,7 +798,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26D96D5386CEB4BBFAE752D3 /* [CP] Embed Pods Frameworks */ = {
+		87559B7621F7FB9E2DA70F56 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1107,13 +1107,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+				DEVELOPMENT_TEAM = T3UK9D9NUA;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
@@ -1130,13 +1130,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+				DEVELOPMENT_TEAM = T3UK9D9NUA;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
