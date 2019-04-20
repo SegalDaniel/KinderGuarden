@@ -1492,7 +1492,7 @@
                                                     <segue destination="crj-ty-N3d" kind="show" identifier="BasicEventSegue" id="wrP-rb-SjG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
                                                 <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
@@ -1503,7 +1503,7 @@
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="taT-TL-Fcx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
                                                 <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
@@ -1514,7 +1514,7 @@
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="B26-K6-4vc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
@@ -1530,7 +1530,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uLm-WL-1sw">
                                         <rect key="frame" x="0.0" y="315.5" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-C0-t4z">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-C0-t4z">
                                                 <rect key="frame" x="383" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>

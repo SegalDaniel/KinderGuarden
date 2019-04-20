@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CropViewController
 
-class AddChildViewController: MyViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, ChildPickerTableViewCellDelegate {
+class AddChildViewController: MyViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, ChildPickerTableViewCellDelegate, CropViewControllerDelegate {
     
     //MARK: - Variables
     let imagePicker = UIImagePickerController()
@@ -191,14 +192,25 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePicker.dismiss(animated: true)
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            print("No image found")
-            return
-        }
+        guard let image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) else { return }
+        let cropViewController = CropViewController(image: image)
+        cropViewController.delegate = self
+        cropViewController.aspectRatioPreset = .presetSquare;
+        cropViewController.aspectRatioLockEnabled = true
+        cropViewController.resetAspectRatioEnabled = false
+        cropViewController.aspectRatioPickerButtonHidden = true
+        cropViewController.doneButtonTitle = "אישור"
+        cropViewController.cancelButtonTitle = "ביטול"
+        present(cropViewController, animated: true, completion: nil)
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true, completion: nil)
+        let newImage = Utility.resizeImage(image: image, targetSize: CGSize(width: 512, height: 512))
         babyImageView.contentMode = .scaleAspectFit
-        babyImageView.image = image
+        babyImageView.image = newImage
         babyImageView.backgroundColor = UIColor.clear
-        childData["image"] = image
+         childData["image"] = newImage
     }
     
     //MARK: - TextField delegate
