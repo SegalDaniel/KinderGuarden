@@ -20,6 +20,8 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		1866066D226B55BE006F20B0 /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1866066C226B55BE006F20B0 /* MyButton.xib */; };
+		1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866066E226B597B006F20B0 /* MyButtonView.swift */; };
 		1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */; };
 		1875FACE226780A100F68F8E /* Vomitus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FACC226780A100F68F8E /* Vomitus+CoreDataProperties.swift */; };
 		18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18788797221D4C510047A935 /* MultiChoiseViewController.swift */; };
@@ -127,6 +129,8 @@
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+		1866066C226B55BE006F20B0 /* MyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyButton.xib; sourceTree = "<group>"; };
+		1866066E226B597B006F20B0 /* MyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonView.swift; sourceTree = "<group>"; };
 		1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1875FACC226780A100F68F8E /* Vomitus+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18788797221D4C510047A935 /* MultiChoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiseViewController.swift; sourceTree = "<group>"; };
@@ -302,9 +306,19 @@
 			path = Gmar;
 			sourceTree = "<group>";
 		};
+		1866066B226B559A006F20B0 /* MyButton */ = {
+			isa = PBXGroup;
+			children = (
+				1866066C226B55BE006F20B0 /* MyButton.xib */,
+				1866066E226B597B006F20B0 /* MyButtonView.swift */,
+			);
+			path = MyButton;
+			sourceTree = "<group>";
+		};
 		1887F4B0221AFDF8007682A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1866066B226B559A006F20B0 /* MyButton */,
 				1887F4BE221B3FCD007682A8 /* RPicker.swift */,
 				1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */,
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
@@ -792,6 +806,7 @@
 				18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */,
 				18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */,
 				180CF2FC223D413500A9DEF2 /* GoogleService-Info.plist in Resources */,
+				1866066D226B55BE006F20B0 /* MyButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +890,7 @@
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
+				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */,
 				A8576E02224A6D6000CBA907 /* Secretion+CoreDataProperties.swift in Sources */,

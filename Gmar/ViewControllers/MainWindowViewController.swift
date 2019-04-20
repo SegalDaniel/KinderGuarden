@@ -104,11 +104,14 @@ class MainWindowViewController: MyViewController {
         else{
             image = UIImage(named: "teacher")!
         }
-        let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: image)
-        
+        //let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: image)
+        let btn = MyButtonView(frame: teachersStackView.frame)
+        btn.addRadius(radius: kidsInfoBtn.layer.cornerRadius)
+        btn.addTag(tag: tag)
+        btn.setImage(image: image)
+        btn.setTitle(title: name)
         btn.addTarget(self, action: #selector(teacherButtonClicked), for: .touchUpInside)
         btn.addTarget(self, action: #selector(teacherButtonDragExit), for: .touchDragExit)
-        newButtonShadowAdjust(button: btn)
         teachersStackView.addArrangedSubview(btn)
     }
 
