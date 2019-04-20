@@ -14,6 +14,21 @@ class MyButtonView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainLabel: UILabel!
+    var isEnabled:Bool = true{
+        didSet{
+            mainButton.isEnabled = self.isEnabled
+            if !self.isEnabled{
+                removeShadow(0)
+                mainImageView.layer.opacity = 0.5
+                mainLabel.layer.opacity = 0.5
+            }
+            else{
+                reAddShadow(0)
+                mainImageView.layer.opacity = 1
+                mainLabel.layer.opacity = 1
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +38,14 @@ class MyButtonView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+    }
+    
+    convenience init(frame:CGRect, title:String, radius:CGFloat, tag:Int, image:UIImage){
+        self.init(frame: frame)
+        self.setTitle(title: title)
+        self.addRadius(radius: radius)
+        self.addTag(tag: tag)
+        self.setImage(image: image)
     }
     
     private func commonInit(){
@@ -37,6 +60,7 @@ class MyButtonView: UIView {
         mainImageView.layer.cornerRadius = 10
         mainImageView.clipsToBounds = true
         mainButton.layer.zPosition = 1
+        mainLabel.clipsToBounds = true
         mainButton.addTarget(self, action: #selector(removeShadow), for: .touchDown)
         mainButton.addTarget(self, action: #selector(reAddShadow), for: .touchDragExit)
         mainButton.addTarget(self, action: #selector(reAddShadow), for: .touchUpInside)
@@ -56,6 +80,10 @@ class MyButtonView: UIView {
         mainImageView.layer.cornerRadius = radius
     }
     
+    func setBackgroundColor(color:UIColor){
+        contentView.backgroundColor = color
+    }
+    
     func addTag(tag:Int){
         mainButton.tag = tag
     }
@@ -64,11 +92,11 @@ class MyButtonView: UIView {
         mainLabel.text = title
     }
     
-    @IBAction func removeShadow(_ sender: UIButton) {
+    @IBAction func removeShadow(_ sender: Any) {
         contentView.layer.shadowOpacity = 0.0
     }
     
-    @IBAction func reAddShadow(_ sender: UIButton) {
+    @IBAction func reAddShadow(_ sender: Any) {
         contentView.layer.shadowOpacity = 0.5
     }
 }

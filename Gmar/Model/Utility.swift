@@ -34,6 +34,7 @@ class Utility{
         view.layer.masksToBounds = false
     }
     
+    
     static func ourBtnDesign(title:String, radius:CGFloat, tag:Int, image:UIImage?,
                              alignment:UIControl.ContentVerticalAlignment = .bottom,
                              type:UIButton.ButtonType = .custom, withBorder:Bool = false)->UIButton{

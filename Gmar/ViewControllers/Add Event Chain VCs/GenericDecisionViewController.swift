@@ -96,7 +96,7 @@ class GenericDecisionViewController: GenericVC {
     
     /************************************************** Views Inits *******************************************************/
     //MARK: - Views Inits
-    func addToStackAndTarget(_ buttons:[UIButton]){
+    func addToStackAndTarget(_ buttons:[MyButtonView]){
         buttons.forEach { (btn) in
             btn.addTarget(self, action: #selector(btnClicked), for: .touchUpInside)
             mainStackView.addArrangedSubview(btn)
@@ -105,15 +105,15 @@ class GenericDecisionViewController: GenericVC {
     
     func fecesViews(){
         titleItem.title = "דיווח צרכים"
-        let btn1 = Utility.ourBtnDesign(title: "צואה ו/או שתן", radius: 60, tag: 1, image: UIImage(named: "poop"))
-        let btn2 = Utility.ourBtnDesign(title: "נקי", radius: 60, tag: 2, image: UIImage(named: "diaper-2"))
+        let btn1 = MyButtonView(frame: mainStackView.frame, title: "צואה ו/או שתן", radius: 60, tag: 1, image: UIImage(named: "poop")!)
+        let btn2 = MyButtonView(frame: mainStackView.frame, title: "נקי", radius: 60, tag: 2, image: UIImage(named: "diaper-2")!)
         addToStackAndTarget([btn1,btn2])
     }
     
     func foodOrDrinkViews(){
         titleItem.title = "דיווח האכלה"
-        let btn1 = Utility.ourBtnDesign(title: "אוכל", radius: 60, tag: 1, image: UIImage(named: "cutlery"))
-        let btn2 = Utility.ourBtnDesign(title: "שתיה", radius: 60, tag: 2, image: UIImage(named: "water-glass"))
+        let btn1 = MyButtonView(frame: mainStackView.frame, title: "אוכל", radius: 60, tag: 1, image: UIImage(named: "cutlery")!)
+        let btn2 = MyButtonView(frame: mainStackView.frame, title: "שתיה", radius: 60, tag: 2, image:  UIImage(named: "water-glass")!)
         addToStackAndTarget([btn1,btn2])
     }
     
@@ -134,11 +134,11 @@ class GenericDecisionViewController: GenericVC {
                 tamal = true
             }
         })
-        let btn1 = Utility.ourBtnDesign(title: "חלב אם", radius: 60, tag: 1, image: UIImage(named: "024-feeding-bottle"))
+        let btn1 = MyButtonView(frame: mainStackView.frame, title: "חלב אם", radius: 60, tag: 1, image: UIImage(named: "024-feeding-bottle")!)
+        let btn2 = MyButtonView(frame: mainStackView.frame, title: "תמ״ל", radius: 60, tag: 2, image: UIImage(named: "023-feeding-bottle-1")!)
+        let btn3 = MyButtonView(frame: mainStackView.frame, title: "מוצקים", radius: 60, tag: 3, image: UIImage(named: "022-food")!)
         btn1.isEnabled = milk
-        let btn2 = Utility.ourBtnDesign(title: "תמ״ל", radius: 60, tag: 2, image: UIImage(named: "023-feeding-bottle-1"))
         btn2.isEnabled = tamal
-        let btn3 = Utility.ourBtnDesign(title: "מוצקים", radius: 60, tag: 3, image: UIImage(named: "022-food"))
         btn3.isEnabled = solid
         addToStackAndTarget([btn1,btn2,btn3])
     }

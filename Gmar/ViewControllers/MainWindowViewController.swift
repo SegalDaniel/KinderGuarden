@@ -104,7 +104,6 @@ class MainWindowViewController: MyViewController {
         else{
             image = UIImage(named: "teacher")!
         }
-        //let btn = Utility.ourBtnDesign(title: name, radius: kidsInfoBtn.layer.cornerRadius, tag: tag, image: image)
         let btn = MyButtonView(frame: teachersStackView.frame)
         btn.addRadius(radius: kidsInfoBtn.layer.cornerRadius)
         btn.addTag(tag: tag)

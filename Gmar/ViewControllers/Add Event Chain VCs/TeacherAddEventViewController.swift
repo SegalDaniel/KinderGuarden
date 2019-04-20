@@ -55,12 +55,20 @@ class TeacherAddEventViewController: MyViewController {
     }
     
     func addAttendanceBtn(){
-        let attandance = Utility.ourBtnDesign(title: "עדכון נוכחות", radius: 20, tag: 0, image: UIImage(named: "alarm-clock"))
-        let multi = Utility.ourBtnDesign(title: "בחירה מרובה", radius: 20, tag: 1, image: UIImage(named: "checklist"))
+        let attandance = MyButtonView(frame: mainStackView.frame)
+        attandance.setTitle(title: "עדכון נוכחות")
+        attandance.addRadius(radius: 20)
+        attandance.addTag(tag: 0)
+        attandance.setImage(image: UIImage(named: "alarm-clock")!)
+        let multi = MyButtonView(frame: mainStackView.frame)
+        multi.setTitle(title: "בחירה מרובה")
+        multi.addRadius(radius: 20)
+        multi.addTag(tag: 1)
+        multi.setImage(image: UIImage(named: "checklist")!)
         attandance.addTarget(self, action: #selector(attendanceBtnClicked), for: .touchUpInside)
         multi.addTarget(self, action: #selector(multiChoiseBtnClicked), for: .touchUpInside)
-        attandance.backgroundColor = Utility.btnSalmon
-        multi.backgroundColor = Utility.btnSalmon
+        attandance.setBackgroundColor(color:Utility.btnSalmon)
+        multi.setBackgroundColor(color:Utility.btnSalmon)
         (mainStackView.arrangedSubviews[0] as! UIStackView).addArrangedSubview(attandance)
         (mainStackView.arrangedSubviews[0] as! UIStackView).addArrangedSubview(multi)
     }
@@ -75,20 +83,24 @@ class TeacherAddEventViewController: MyViewController {
             }
             while stack.arrangedSubviews.count < 4 && children.count > 0{
                 let kid = children.removeLast()
-                var btn:UIButton
+                let btn:MyButtonView = MyButtonView(frame: stack.frame)
                 let image:UIImage? = Model.instance.loadImageFromDiskWith(fileName: "\(kid.childID!)")
+                btn.setTitle(title: "\(kid.firstName!) \(kid.lastName!)")
+                btn.addRadius(radius: 20)
+                btn.addTag(tag: Int(kid.childID!)!)
                 if let image = image{
-                    btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: image)
+                    btn.setImage(image: image)
+                    //btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: image)
                 }
                 else{
-                    btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: UIImage(named: "001-baby-6")!)
+                    btn.setImage(image: UIImage(named: "001-baby-6")!)
+                    //btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: UIImage(named: "001-baby-6")!)
                 }
                 if kid.gender == "girl"{
-                    btn.backgroundColor = Utility.btnPink
+                    btn.setBackgroundColor(color: Utility.btnPink)
                 }
                 btn.addTarget(self, action: #selector(kidClicked), for: .touchUpInside)
                 btn.addTarget(self, action: #selector(kidDragExit), for: .touchDragExit)
-                newButtonShadowAdjust(button: btn)
                 stack.addArrangedSubview(btn)
             }
         }
