@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CropViewController
 
-class AddTeacherViewController: MyViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class AddTeacherViewController: MyViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, CropViewControllerDelegate {
 
     //MARK: - Variables
     let imagePicker = UIImagePickerController()
@@ -62,6 +63,9 @@ class AddTeacherViewController: MyViewController, UIImagePickerControllerDelegat
     
     //MARK: - UIIMagePickerDelegate
     @objc func selectImageTapped(){
+        imagePicker.modalPresentationStyle = .popover
+        imagePicker.popoverPresentationController?.sourceView = saveBtn
+        imagePicker.preferredContentSize = CGSize(width: 320, height: 568)
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.permissions?.checkPermissionCamera()
@@ -76,16 +80,29 @@ class AddTeacherViewController: MyViewController, UIImagePickerControllerDelegat
         self.present(alert, animated: true, completion: nil)
     }
     
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePicker.dismiss(animated: true)
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            print("No image found")
-            return
-        }
+        guard let image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) else { return }
+        let cropViewController = CropViewController(image: image)
+        cropViewController.delegate = self
+        cropViewController.aspectRatioPreset = .presetSquare;
+        cropViewController.aspectRatioLockEnabled = true
+        cropViewController.resetAspectRatioEnabled = false
+        cropViewController.aspectRatioPickerButtonHidden = true
+        cropViewController.doneButtonTitle = "אישור"
+        cropViewController.cancelButtonTitle = "ביטול"
+        present(cropViewController, animated: true, completion: nil)
+        
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true, completion: nil)
+        let newImage = Utility.resizeImage(image: image, targetSize: CGSize(width: 512, height: 512))
         teacherImageView.contentMode = .scaleAspectFit
-        teacherImageView.image = image
+        teacherImageView.image = newImage
         teacherImageView.backgroundColor = UIColor.clear
-        teacherImage = image
+        teacherImage = newImage
     }
     
     //MARK: - TextFieldDelegate

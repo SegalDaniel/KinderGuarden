@@ -50,9 +50,9 @@ class Utility{
         addShadow(view: btn)
         if image != nil{
             btn.setImage(image, for: .normal)
-            btn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -btn.imageView!.image!.size.width, bottom: 0, right: 0)
-            btn.imageView?.clipsToBounds = true
             btn.imageView?.contentMode = .scaleAspectFit
+            btn.imageView?.clipsToBounds = true
+            btn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -btn.imageView!.image!.size.width, bottom: 0, right: 0)
             btn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: btn.titleLabel!.frame.size.height, right: 0)
         }
         if withBorder{
@@ -66,8 +66,9 @@ class Utility{
         addShadow(view: button)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.clipsToBounds = true
         button.titleEdgeInsets = UIEdgeInsets(top: 5, left: -button.imageView!.image!.size.width, bottom: 0, right: 0)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: button.titleLabel!.layer.frame.size.height+15, right: 10)
+        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: button.titleLabel!.layer.frame.size.height+15, right: 10)
     }
     
     static func ourLabelDesign(frame:CGRect, text:String = "") -> UILabel{
@@ -158,6 +159,33 @@ class Utility{
         alert.view.addSubview(loadingIndicator)
         return alert
     }
+    
+    //MARK: - photo resizing
+    static func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
 }
 
 //MARK: - Double extension
@@ -230,8 +258,11 @@ public class EdgeShadowLayer: CAGradientLayer {
     }
 }
 
-extension UIButton{
-    
-    
-    
+//MARK: - uiimage picker auto rotate
+extension UIImagePickerController {
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .all
+    }
 }
+
+
