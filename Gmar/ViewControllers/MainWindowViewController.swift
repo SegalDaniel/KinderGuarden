@@ -65,19 +65,7 @@ class MainWindowViewController: MyViewController {
     }
     
     @IBAction func kidsInfoClicked(_ sender: Any) {
-        (sender as! UIButton).layer.shadowOpacity = 0.5
-        let alert = UIAlertController(title: "Delete Entity", message: "type the name", preferredStyle: .alert)
-        alert.addTextField { (textField) in
-            textField.placeholder = "Entity name"
-        }
-        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action) in
-            let entity = alert.textFields![0].text!
-            Model.instance.deleteAllDataFromCore(entity)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        
     }
     
     //MARK: - Views Inits

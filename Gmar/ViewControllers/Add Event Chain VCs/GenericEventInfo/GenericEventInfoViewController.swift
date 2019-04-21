@@ -107,7 +107,6 @@ class GenericEventInfoViewController: GenericVC {
         for i in 0...names.count-1 {
             let tag = (info.0 * 10) + i + 1
             if tag > -1{
-                let btn = MyButtonView(frame: .zero)
                 btns.append(Utility.ourBtnDesign(title: names[i], radius: 10, tag: tag, image: nil, alignment: .center, type: .system))
             }
             else{

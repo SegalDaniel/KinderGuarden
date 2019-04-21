@@ -258,8 +258,13 @@ public class EdgeShadowLayer: CAGradientLayer {
     }
 }
 
-extension UIButton{
-    
-    
+extension UIImagePickerController
+{
+    override open var shouldAutorotate: Bool {
+        return true
+    }
+    override open var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .all
+    }
     
 }
