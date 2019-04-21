@@ -84,6 +84,21 @@
             </objects>
             <point key="canvasLocation" x="17.805755395683455" y="21.582733812949641"/>
         </scene>
+        <!--Kids Info View Controller-->
+        <scene sceneID="jTW-Zl-C4G">
+            <objects>
+                <viewController id="Gzv-od-Ave" customClass="KidsInfoViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sbs-rl-7u5">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ilg-eX-otJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUl-Lv-HfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304" y="906"/>
+        </scene>
         <!--הגדרות-->
         <scene sceneID="eTm-rv-bZM">
             <objects>
@@ -146,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7GX-cq-WCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="986"/>
+            <point key="canvasLocation" x="-685" y="907"/>
         </scene>
         <!--הוספת איש צוות-->
         <scene sceneID="2Be-ex-7h2">
@@ -215,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfW-0B-AbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.388489208633096" y="1792.8057553956835"/>
+            <point key="canvasLocation" x="-1111" y="1676"/>
         </scene>
         <!--רישום ילד לגן-->
         <scene sceneID="BLq-Zu-bK3">
@@ -475,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8o-Zn-q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758.6330935251799" y="1792.8057553956835"/>
+            <point key="canvasLocation" x="-421" y="1676"/>
         </scene>
         <!--רישום ילד לגן-->
         <scene sceneID="8a1-xc-IhH">
@@ -817,7 +832,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3K6-14-vea" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lMM-Lk-V51" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1472.4820143884892" y="1792.8057553956835"/>
+            <point key="canvasLocation" x="-421" y="2395"/>
         </scene>
         <!--Multi Choise View Controller-->
         <scene sceneID="GAA-C9-hLq">
