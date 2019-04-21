@@ -5,7 +5,6 @@
 //  Created by Zach Bachar on 20/03/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
-
 import UIKit
 import CropViewController
 
@@ -210,7 +209,7 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
         babyImageView.contentMode = .scaleAspectFit
         babyImageView.image = newImage
         babyImageView.backgroundColor = UIColor.clear
-         childData["image"] = newImage
+        childData["image"] = newImage
     }
     
     //MARK: - TextField delegate
@@ -265,7 +264,7 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
         }
     }
     
-
+    
 }
 
 protocol AddChildViewControllerDelegate {
