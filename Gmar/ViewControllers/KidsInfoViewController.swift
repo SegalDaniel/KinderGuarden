@@ -8,8 +8,14 @@
 
 import UIKit
 
-class KidsInfoViewController: UIViewController {
+class KidsInfoViewController: MyViewController {
 
+    //MARK: - Variables
+    @IBOutlet weak var startDateBtn: UIButton!
+    @IBOutlet weak var endDateBtn: UIButton!
+    @IBOutlet weak var childOrCatStackView: UIStackView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

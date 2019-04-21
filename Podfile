@@ -9,4 +9,5 @@ target 'Gmar' do
  pod 'Firebase/Core'
  pod 'Firebase/Firestore'
  pod 'Alamofire', '~> 5.0.0-beta.5'
+ pod 'CropViewController'
 end

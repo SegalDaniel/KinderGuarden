@@ -53,6 +53,7 @@
                                 </state>
                                 <connections>
                                     <action selector="kidsInfoClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKT-d9-3e7"/>
+                                    <segue destination="Gzv-od-Ave" kind="show" id="s9s-q6-Sbx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,20 +85,84 @@
             </objects>
             <point key="canvasLocation" x="17.805755395683455" y="21.582733812949641"/>
         </scene>
-        <!--Kids Info View Controller-->
+        <!--מידע ילדים-->
         <scene sceneID="jTW-Zl-C4G">
             <objects>
                 <viewController id="Gzv-od-Ave" customClass="KidsInfoViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sbs-rl-7u5">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uue-Ws-Zhd">
+                                <rect key="frame" x="55.5" y="78" width="1001" height="167"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="l0O-TK-FtR">
+                                        <rect key="frame" x="0.0" y="0.0" width="490.5" height="167"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך סיום" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qw-Cl-hW4">
+                                                <rect key="frame" x="0.0" y="0.0" width="490.5" height="73.5"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
+                                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6h-HE-wt2">
+                                                <rect key="frame" x="0.0" y="93.5" width="490.5" height="73.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZjO-is-pgp">
+                                        <rect key="frame" x="510.5" y="0.0" width="490.5" height="167"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך התחלה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TjY-tT-oxB">
+                                                <rect key="frame" x="0.0" y="0.0" width="490.5" height="73.5"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
+                                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOX-a3-OD3">
+                                                <rect key="frame" x="0.0" y="93.5" width="490.5" height="73.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ozk-Qx-ldF">
+                                <rect key="frame" x="55.5" y="285" width="1001" height="334"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uue-Ws-Zhd" firstAttribute="width" secondItem="sbs-rl-7u5" secondAttribute="width" multiplier="0.9" id="42C-LR-j1s"/>
+                            <constraint firstItem="Ozk-Qx-ldF" firstAttribute="centerX" secondItem="uue-Ws-Zhd" secondAttribute="centerX" id="72X-gv-N7f"/>
+                            <constraint firstItem="uue-Ws-Zhd" firstAttribute="top" secondItem="ilg-eX-otJ" secondAttribute="top" constant="8" id="Euh-42-MOf"/>
+                            <constraint firstItem="uue-Ws-Zhd" firstAttribute="height" secondItem="sbs-rl-7u5" secondAttribute="height" multiplier="0.2" id="HtP-6J-IIp"/>
+                            <constraint firstItem="Ozk-Qx-ldF" firstAttribute="width" secondItem="uue-Ws-Zhd" secondAttribute="width" id="edH-85-KyV"/>
+                            <constraint firstItem="uue-Ws-Zhd" firstAttribute="centerX" secondItem="ilg-eX-otJ" secondAttribute="centerX" id="hop-zY-WDP"/>
+                            <constraint firstItem="Ozk-Qx-ldF" firstAttribute="height" secondItem="sbs-rl-7u5" secondAttribute="height" multiplier="0.4" id="liX-v7-cYX"/>
+                            <constraint firstItem="Ozk-Qx-ldF" firstAttribute="centerY" secondItem="ilg-eX-otJ" secondAttribute="centerY" id="ufy-WI-HTb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ilg-eX-otJ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="מידע ילדים" id="B3k-go-X3r"/>
+                    <connections>
+                        <outlet property="childOrCatStackView" destination="Ozk-Qx-ldF" id="IZz-yo-G5d"/>
+                        <outlet property="endDateBtn" destination="e6h-HE-wt2" id="7HF-E1-eWY"/>
+                        <outlet property="startDateBtn" destination="dOX-a3-OD3" id="9Nc-Cq-nOH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUl-Lv-HfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="906"/>
+            <point key="canvasLocation" x="303.77697841726621" y="905.75539568345334"/>
         </scene>
         <!--הגדרות-->
         <scene sceneID="eTm-rv-bZM">
