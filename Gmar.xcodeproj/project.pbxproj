@@ -50,6 +50,7 @@
 		18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE1942246739E0084D766 /* AddTeacherViewController.swift */; };
 		18C59D6D225CEE65003BD029 /* GenericEventInfo_Confirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C59D6C225CEE65003BD029 /* GenericEventInfo_Confirmation.swift */; };
 		18DE415C226CBAC800314AA0 /* KidsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE415B226CBAC800314AA0 /* KidsInfoViewController.swift */; };
+		18DE415E226E391B00314AA0 /* IndividualInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE415D226E391B00314AA0 /* IndividualInfoViewController.swift */; };
 		18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */; };
 		A8287E43224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E41224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E42224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift */; };
@@ -161,6 +162,7 @@
 		18BFE1942246739E0084D766 /* AddTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherViewController.swift; sourceTree = "<group>"; };
 		18C59D6C225CEE65003BD029 /* GenericEventInfo_Confirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericEventInfo_Confirmation.swift; sourceTree = "<group>"; };
 		18DE415B226CBAC800314AA0 /* KidsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsInfoViewController.swift; sourceTree = "<group>"; };
+		18DE415D226E391B00314AA0 /* IndividualInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualInfoViewController.swift; sourceTree = "<group>"; };
 		18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
 		A8287E41224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -354,7 +356,7 @@
 				1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */,
 				189B353822423D3400D33A6C /* Add Event Chain VCs */,
 				189B353722423D0E00D33A6C /* Settings Chain VCs */,
-				18DE415B226CBAC800314AA0 /* KidsInfoViewController.swift */,
+				18DE415F226E392100314AA0 /* Kids Info Chain VCs */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -402,6 +404,15 @@
 				18C59D6C225CEE65003BD029 /* GenericEventInfo_Confirmation.swift */,
 			);
 			path = GenericEventInfo;
+			sourceTree = "<group>";
+		};
+		18DE415F226E392100314AA0 /* Kids Info Chain VCs */ = {
+			isa = PBXGroup;
+			children = (
+				18DE415B226CBAC800314AA0 /* KidsInfoViewController.swift */,
+				18DE415D226E391B00314AA0 /* IndividualInfoViewController.swift */,
+			);
+			path = "Kids Info Chain VCs";
 			sourceTree = "<group>";
 		};
 		378573E8FF6EE6BEB75C54F7 /* Frameworks */ = {
@@ -944,6 +955,7 @@
 				189B35362242384B00D33A6C /* SettingsViewController.swift in Sources */,
 				A8576E25224A6F8000CBA907 /* Feces+CoreDataClass.swift in Sources */,
 				A8299D8022541251006E961F /* Child+CoreDataClass.swift in Sources */,
+				18DE415E226E391B00314AA0 /* IndividualInfoViewController.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,

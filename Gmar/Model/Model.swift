@@ -254,6 +254,14 @@ class Model{
         }
     }
     
+    //MARK: - BasicEvents methods
+    func getAllBasicEventsFromCore(callback:([BasicEvent])->Void){
+        let beFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "BasicEvent")
+        let events = try! Model.instance.managedContext.fetch(beFetch)
+        let e:[BasicEvent] = events as! [BasicEvent]
+        callback(e)
+    }
+    
     //MARK: - CoreData global methods
     func saveToDB(callback:((NSError?)->Void)?){
         do{

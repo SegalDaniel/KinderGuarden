@@ -42,18 +42,24 @@ class KidsInfoViewController: MyViewController {
     func initKidsOrCatBtns(){
         let kidsBtn = MyButtonView(frame: childOrCatStackView.frame, title: "לפי ילד", radius: 20, tag: 1, image: UIImage(named: "001-baby-6")!)
         let categoryBtn = MyButtonView(frame: childOrCatStackView.frame, title: "לפי קטגוריה", radius: 20, tag: 2, image: UIImage(named: "check-mark")!)
+        kidsBtn.addTarget(self, action: #selector(kidsBtnClicked), for: .touchUpInside)
         childOrCatStackView.addArrangedSubview(kidsBtn)
         childOrCatStackView.addArrangedSubview(categoryBtn)
     }
 
-    /*
+    @IBAction func kidsBtnClicked(_ sender: Any){
+        self.performSegue(withIdentifier: "pickChild", sender: nil)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "pickChild"{
+            let vc = segue.destination as! TeacherAddEventViewController
+            vc.asKidsInfo = true
+        }
     }
-    */
+    
 
 }

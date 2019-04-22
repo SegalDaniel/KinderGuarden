@@ -13,6 +13,7 @@ class TeacherAddEventViewController: MyViewController {
     //MARK: - Variables
     @IBOutlet weak var mainStackView: UIStackView!
     var asAttandance:Bool = false
+    var asKidsInfo:Bool = false
     @IBOutlet weak var attandanceBtn: UIButton!
     @IBOutlet weak var multiChoiseBtn: UIButton!
     var teacherID:String?
@@ -24,7 +25,16 @@ class TeacherAddEventViewController: MyViewController {
     }
     
     func initViews(){
-        if !asAttandance{
+        if asKidsInfo || asAttandance{
+            Model.instance.getAllChildsFromCore { (children) in
+                let stacksNum:Int = children.count / 4
+                for _ in 0...stacksNum{
+                    self.addNewStackRow()
+                }
+                self.addKids(kids: children)
+            }
+        }
+        else {
             Model.instance.getAllAttendedChildsFromCore { (children) in
                 let stacksNum:Int = children.count / 4
                 for _ in 0...stacksNum{
@@ -32,17 +42,6 @@ class TeacherAddEventViewController: MyViewController {
                 }
                 self.addKids(kids: children)
                 self.addAttendanceBtn()
-            }
-            
-        }
-        else{
-            Model.instance.getAllChildsFromCore { (children) in
-                let stacksNum:Int = children.count / 4
-                for _ in 0...stacksNum{
-                    self.addNewStackRow()
-                }
-                self.addKids(kids: children)
-                
             }
         }
     }
@@ -90,11 +89,9 @@ class TeacherAddEventViewController: MyViewController {
                 btn.addTag(tag: Int(kid.childID!)!)
                 if let image = image{
                     btn.setImage(image: image)
-                    //btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: image)
                 }
                 else{
                     btn.setImage(image: UIImage(named: "001-baby-6")!)
-                    //btn = Utility.ourBtnDesign(title: "\(kid.firstName!) \(kid.lastName!)", radius: 20, tag: Int(kid.childID!)!, image: UIImage(named: "001-baby-6")!)
                 }
                 if kid.gender == "girl"{
                     btn.setBackgroundColor(color: Utility.btnPink)
@@ -125,6 +122,9 @@ class TeacherAddEventViewController: MyViewController {
         if let btn = sender as? UIButton{
             if asAttandance{
                 performSegue(withIdentifier: "GenericInfo", sender: (Enums.BasicEvent.attandance, btn.tag))
+            }
+            else if asKidsInfo{
+                performSegue(withIdentifier: "kidInfo", sender: btn.tag)
             }
             else{
                 performSegue(withIdentifier: "EventKind", sender: btn.tag)
@@ -174,6 +174,11 @@ class TeacherAddEventViewController: MyViewController {
             Model.instance.eventChildAndStaff(childID: "\(id)", staffID: teacherID!)
             vc.childID = "\(id)"
             vc.teacherID = self.teacherID
+        }
+        else if segue.identifier == "kidInfo"{
+            let vc = segue.destination as! IndividualInfoViewController
+            let id = sender as! Int
+            vc.childID = "\(id)"
         }
     }
     
