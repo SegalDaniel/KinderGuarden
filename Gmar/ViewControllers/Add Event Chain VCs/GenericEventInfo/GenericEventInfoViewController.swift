@@ -16,7 +16,7 @@ class GenericEventInfoViewController: GenericVC {
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var timeBtn: UIButton!
     @IBOutlet weak var titleItem: UINavigationItem!
-    
+    var borders:[UIView] = []
     var isOn:[String:Bool] = [:]
     var data:[Int:String] = [:]
     
@@ -57,6 +57,18 @@ class GenericEventInfoViewController: GenericVC {
         default:
             break
         }
+        addStacksBorders()
+    }
+    
+    func addStacksBorders(){
+        labelStackView.arrangedSubviews.forEach { (view) in
+            let b = Utility.addBorder(superView: self.view, constraintTop: view, constraintLeading: view, constraintTrailing: view, constraintBottom: buttonStackView, constant: 10, color: Utility.torquizeColor)
+            b.layer.borderWidth = 3
+            b.layer.zPosition = -1
+            b.layer.opacity = 0.5
+            borders.append(b)
+        }
+       
     }
     
     /*************************   user interface events **********************************************/
@@ -68,6 +80,14 @@ class GenericEventInfoViewController: GenericVC {
                 let label = labelStackView.arrangedSubviews[row] as! UILabel
                 label.text = btn.titleLabel?.text
                 data[row] = label.text!
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.borders[row].layer.opacity = 0
+                }) { (bool) in
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.borders[row].layer.borderColor = Utility.backCloverColor.cgColor
+                        self.borders[row].layer.opacity = 1
+                    })
+                }
             }
             // only on .feces kind
             else{
@@ -78,6 +98,8 @@ class GenericEventInfoViewController: GenericVC {
                     view.removeFromSuperview()
                 }
                 feecesAddMissing(row: row)
+                borders = []
+                addStacksBorders()
             }
         }
     }

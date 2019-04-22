@@ -18,12 +18,38 @@ class Utility{
     static let btnSalmon:UIColor = UIColor(red: 255/255, green: 126/255, blue: 121/255, alpha: 1)
     static let btnTextWhite:UIColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
     static let btnPink:UIColor = UIColor(red: 255/255, green: 133/255, blue: 255/255, alpha: 1)
+    static let backCloverColor:UIColor = UIColor(red: 0/255, green: 143/255, blue: 0/255, alpha: 1)
+    static let torquizeColor:UIColor = UIColor(red: 0/255, green: 253/255, blue: 255/255, alpha: 1)
     
     //MARK: - Design views methods
-    static func addBorder(view:UIView, color:UIColor = UIColor.white, width:CGFloat = 2){
+    private static func addView(superView:UIView, constraintTop top:UIView, constraintLeading lead:UIView, constraintTrailing trail:UIView, constraintBottom bottom:UIView, constant const:CGFloat) -> UIView{
+        let view = UIView()
+        superView.addSubview(view)
+        view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: top, attribute: .top, multiplier: 1, constant: -const).isActive = true
+        NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: lead, attribute: .leading, multiplier: 1, constant: -const).isActive = true
+        NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: trail, attribute: .trailing, multiplier: 1, constant: const).isActive = true
+        NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: bottom, attribute: .bottom, multiplier: 1, constant: const).isActive = true
+        return view
+    }
+    
+    static func addBackground(superView:UIView, constraintTop top:UIView, constraintLeading lead:UIView, constraintTrailing trail:UIView, constraintBottom bottom:UIView, backgroundColor color:UIColor, constant const:CGFloat){
+        let back = addView(superView: superView, constraintTop: top, constraintLeading: lead, constraintTrailing: trail, constraintBottom: bottom, constant: const)
+        back.backgroundColor = color
+        back.layer.cornerRadius = 10
+    }
+    
+    static func addBorder(superView:UIView, constraintTop top:UIView, constraintLeading lead:UIView, constraintTrailing trail:UIView, constraintBottom bottom:UIView, constant const:CGFloat, color:UIColor = UIColor.white) -> UIView{
+        let borderView = addView(superView: superView, constraintTop: top, constraintLeading: lead, constraintTrailing: trail, constraintBottom: bottom, constant: const)
+        addBorder(view: borderView, color: color)
+        return borderView
+    }
+    
+    static func addBorder(view:UIView, radius:CGFloat = 10, color:UIColor = UIColor.white, width:CGFloat = 2){
         view.layer.borderColor = color.cgColor
         view.layer.borderWidth = width
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = radius
     }
     
     static func addShadow(view:UIView){
@@ -106,7 +132,7 @@ class Utility{
     static func newStack(arrangedSubviews: [UIView]) -> UIStackView{
         let stack = UIStackView(arrangedSubviews: arrangedSubviews)
         stack.alignment = .fill
-        stack.spacing = 8
+        stack.spacing = 10
         stack.distribution = .fillEqually
         stack.axis = .vertical
         stack.tag = 0
@@ -116,7 +142,7 @@ class Utility{
     static func newStack(frame:CGRect) -> UIStackView{
         let stack = UIStackView(frame: frame)
         stack.alignment = .fill
-        stack.spacing = 8
+        stack.spacing = 10
         stack.distribution = .fillEqually
         stack.axis = .vertical
         stack.tag = 0

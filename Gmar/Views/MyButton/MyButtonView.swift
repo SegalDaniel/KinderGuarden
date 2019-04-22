@@ -57,7 +57,6 @@ class MyButtonView: UIView {
         mainButton.layer.cornerRadius = 10
         contentView.layer.cornerRadius = 10
         contentView.backgroundColor = Utility.btnBackColor
-        mainImageView.layer.cornerRadius = 10
         mainImageView.clipsToBounds = true
         mainButton.layer.zPosition = 1
         mainLabel.clipsToBounds = true
