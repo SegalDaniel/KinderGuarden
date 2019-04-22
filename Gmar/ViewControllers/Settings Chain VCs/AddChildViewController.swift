@@ -89,6 +89,18 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             performAlert(with: "נא למלא תעודת זהות של הילד בבקשה")
             return
         }
+        let number = childData["childID"] as! String //view load error
+        if !number.isNumeric{
+            childData["childID"]=nil
+            performAlert(with: "תעודת הזהות חייבת להכיל מספרים בלבד")
+            return
+        }
+        
+        if !(number.count==9){ //continue working on the incorrect count method of json
+            childData["childID"]=nil
+            performAlert(with: "תעודת הזהות חייבת להכיל 9 ספרות")
+            return
+        }
         if prematureSegment.selectedSegmentIndex == 0{
             childData["isPremature"] = false
         }
@@ -269,4 +281,11 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
 
 protocol AddChildViewControllerDelegate {
     func shouldEndEditing()
+}
+extension String {
+    var isNumeric: Bool {
+        guard self.count > 0 else { return false }
+        let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        return Set(self).isSubset(of: nums)
+    }
 }
