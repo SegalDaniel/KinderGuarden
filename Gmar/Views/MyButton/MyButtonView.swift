@@ -93,10 +93,14 @@ class MyButtonView: UIView {
     
     @IBAction func removeShadow(_ sender: Any) {
         contentView.layer.shadowOpacity = 0.0
+        mainLabel.layer.opacity = 0.5
+        mainImageView.layer.opacity = 0.5
     }
     
     @IBAction func reAddShadow(_ sender: Any) {
-        contentView.layer.shadowOpacity = 0.5
+       contentView.layer.shadowOpacity = 0.5
+       mainLabel.layer.opacity = 1
+       mainImageView.layer.opacity = 1
     }
 }
 
