@@ -77,6 +77,13 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             performAlert(with: "נא למלא שם פרטי בבקשה")
             return
         }
+        let letters = childData["firstName"] as! String
+        if !letters.isAlpha{
+            childData["firstName"]=nil
+            performAlert(with: "שם הילד חייבת להכיל אותיות בעברית בלבד")
+            return
+        }
+        
         if childData["lastName"] == nil || childData["lastName"] as! String == ""{
             performAlert(with: "נא למלא שם משפחה בבקשה")
             return
@@ -95,7 +102,6 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             performAlert(with: "תעודת הזהות חייבת להכיל מספרים בלבד")
             return
         }
-        
         if !(number.count==9){ //continue working on the incorrect count method of json
             childData["childID"]=nil
             performAlert(with: "תעודת הזהות חייבת להכיל 9 ספרות")
@@ -288,4 +294,11 @@ extension String {
         let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         return Set(self).isSubset(of: nums)
     }
+    
+    var isAlpha: Bool {
+        guard self.count > 0 else { return false }
+        let letters: Set<Character> = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ" , "צ", "ק", "ר", "ש", "ת"]
+        return Set(self).isSubset(of: letters)
+    }
 }
+
