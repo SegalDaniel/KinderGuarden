@@ -9,12 +9,27 @@
 import Foundation
 import Firebase
 import FirebaseFirestore
+import FirebaseAuth
 
 // link to firestore documention: https://firebase.google.com/docs/firestore/manage-data/add-data?authuser=0
 class ModelFireBase{
     
     let db = Firestore.firestore()
     
+    //MARK: - Authentication FireBase
+    func signIn(mail:String  ,pass:String, callback:@escaping (AuthDataResult?, Error?)->Void){
+        Auth.auth().signIn(withEmail: mail, password: pass) { (user, error) in
+            if user != nil{
+                callback(user, error)
+            }else{
+                callback(user, error)
+            }
+        }
+    }
+    
+    func checkIfSignIn()->Bool{
+        return (Auth.auth().currentUser != nil)
+    }
     
     //MARK: - Child Methods
     func sendChild(child:Child, callack:@escaping (Error?)->Void){

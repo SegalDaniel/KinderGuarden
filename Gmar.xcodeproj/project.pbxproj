@@ -20,6 +20,7 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		183CFCCA226F724E00F7FF68 /* basicEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */; };
 		1866066D226B55BE006F20B0 /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1866066C226B55BE006F20B0 /* MyButton.xib */; };
 		1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866066E226B597B006F20B0 /* MyButtonView.swift */; };
 		1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */; };
@@ -131,6 +132,7 @@
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+		183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicEventCollectionViewCell.swift; sourceTree = "<group>"; };
 		1866066C226B55BE006F20B0 /* MyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyButton.xib; sourceTree = "<group>"; };
 		1866066E226B597B006F20B0 /* MyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonView.swift; sourceTree = "<group>"; };
 		1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
 				189B353F224289C600D33A6C /* Add New Child */,
 				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
+				183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -853,6 +857,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -991,6 +996,7 @@
 				A8576E0A224A6DCA00CBA907 /* Disease+CoreDataProperties.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
 				A8287E6B224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift in Sources */,
+				183CFCCA226F724E00F7FF68 /* basicEventCollectionViewCell.swift in Sources */,
 				A88BBFAF225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1141,13 +1147,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
@@ -1164,13 +1170,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
