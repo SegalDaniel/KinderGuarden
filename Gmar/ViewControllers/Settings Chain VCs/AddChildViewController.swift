@@ -77,15 +77,20 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             performAlert(with: "נא למלא שם פרטי בבקשה")
             return
         }
-        let letters = childData["firstName"] as! String
+        var letters = childData["firstName"] as! String
         if !letters.isAlpha{
             childData["firstName"]=nil
             performAlert(with: "שם הילד חייבת להכיל אותיות בעברית בלבד")
             return
         }
-        
         if childData["lastName"] == nil || childData["lastName"] as! String == ""{
             performAlert(with: "נא למלא שם משפחה בבקשה")
+            return
+        }
+        letters = childData["lastName"] as! String
+        if !letters.isAlpha{
+            childData["lastName"]=nil
+            performAlert(with: "שם המשפחה חייב להכיל אותיות בעברית בלבד")
             return
         }
         if childData["address"] == nil || childData["address"] as! String == ""{
@@ -96,13 +101,13 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             performAlert(with: "נא למלא תעודת זהות של הילד בבקשה")
             return
         }
-        let number = childData["childID"] as! String //view load error
+        let number = childData["childID"] as! String
         if !number.isNumeric{
             childData["childID"]=nil
             performAlert(with: "תעודת הזהות חייבת להכיל מספרים בלבד")
             return
         }
-        if !(number.count==9){ //continue working on the incorrect count method of json
+        if !(number.count==9){
             childData["childID"]=nil
             performAlert(with: "תעודת הזהות חייבת להכיל 9 ספרות")
             return
@@ -126,6 +131,12 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
         if authAccomps.count == 0{
             performAlert(with: "נא להוסיף מלווים מורשים לילד בבקשה")
             return
+        }
+        for auth in authAccomps{
+            if auth.phone?.isNumeric==false{
+                performAlert(with: "מספר הטלפון חייב להכיל מספרים בלבד")
+                return
+            }
         }
         childData["AuthorizedAccompanist"] = authAccomps
         childData["birthDate"] = birthDatePicker!.date
@@ -297,7 +308,7 @@ extension String {
     
     var isAlpha: Bool {
         guard self.count > 0 else { return false }
-        let letters: Set<Character> = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ" , "צ", "ק", "ר", "ש", "ת"]
+        let letters: Set<Character> = [ " " ,"ץ" ,"ן" ,"ם" ,"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ" , "צ", "ק", "ר", "ש", "ת"]
         return Set(self).isSubset(of: letters)
     }
 }
