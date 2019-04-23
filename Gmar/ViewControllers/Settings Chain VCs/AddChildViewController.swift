@@ -133,7 +133,13 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             return
         }
         for auth in authAccomps{
+            if auth.name?.isAlpha==false{
+                authAccomps.self.removeAll()
+                performAlert(with: "שם המלווה חייב להכיל אותיות בעברית בלבד")
+                return
+            }
             if auth.phone?.isNumeric==false{
+                authAccomps.self.removeAll()
                 performAlert(with: "מספר הטלפון חייב להכיל מספרים בלבד")
                 return
             }
@@ -308,7 +314,7 @@ extension String {
     
     var isAlpha: Bool {
         guard self.count > 0 else { return false }
-        let letters: Set<Character> = [ " " ,"ץ" ,"ן" ,"ם" ,"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ" , "צ", "ק", "ר", "ש", "ת"]
+        let letters: Set<Character> = [ " " ,"ף" ,"ץ" ,"ן" ,"ם" ,"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ" , "צ", "ק", "ר", "ש", "ת"]
         return Set(self).isSubset(of: letters)
     }
 }
