@@ -21,6 +21,13 @@
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
 		183CFCCA226F724E00F7FF68 /* basicEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */; };
+		183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCC226F7A3600F7FF68 /* AppColors.swift */; };
+		183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */; };
+		183CFCD1226F7B5C00F7FF68 /* StackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */; };
+		183CFCD3226F7C0300F7FF68 /* TapGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD2226F7C0300F7FF68 /* TapGestures.swift */; };
+		183CFCD5226F7C9700F7FF68 /* KeyboardMovment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */; };
+		183CFCD7226F7CD800F7FF68 /* PhotosUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */; };
+		183CFCD9226F7D1700F7FF68 /* EdgeShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */; };
 		1866066D226B55BE006F20B0 /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1866066C226B55BE006F20B0 /* MyButton.xib */; };
 		1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866066E226B597B006F20B0 /* MyButtonView.swift */; };
 		1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */; };
@@ -133,6 +140,13 @@
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
 		183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicEventCollectionViewCell.swift; sourceTree = "<group>"; };
+		183CFCCC226F7A3600F7FF68 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewsHelper.swift; sourceTree = "<group>"; };
+		183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackHelper.swift; sourceTree = "<group>"; };
+		183CFCD2226F7C0300F7FF68 /* TapGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestures.swift; sourceTree = "<group>"; };
+		183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMovment.swift; sourceTree = "<group>"; };
+		183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosUtility.swift; sourceTree = "<group>"; };
+		183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeShadowLayer.swift; sourceTree = "<group>"; };
 		1866066C226B55BE006F20B0 /* MyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyButton.xib; sourceTree = "<group>"; };
 		1866066E226B597B006F20B0 /* MyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonView.swift; sourceTree = "<group>"; };
 		1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -310,6 +324,21 @@
 				180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */,
 			);
 			path = Gmar;
+			sourceTree = "<group>";
+		};
+		183CFCCB226F7A2000F7FF68 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A8F7F380221888CB00F21DAD /* Utility.swift */,
+				183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */,
+				183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */,
+				183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */,
+				183CFCD2226F7C0300F7FF68 /* TapGestures.swift */,
+				183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */,
+				183CFCCC226F7A3600F7FF68 /* AppColors.swift */,
+				183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		1866066B226B559A006F20B0 /* MyButton */ = {
@@ -730,7 +759,7 @@
 				A8287E3C224BB861000C64DD /* Attendance */,
 				A8287E66224D5471000C64DD /* BasicEvents */,
 				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
-				A8F7F380221888CB00F21DAD /* Utility.swift */,
+				183CFCCB226F7A2000F7FF68 /* Utility */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				1878879B221D7C260047A935 /* DateAdmin.swift */,
 				180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */,
@@ -900,18 +929,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */,
+				183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */,
 				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
 				A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
 				18DE415C226CBAC800314AA0 /* KidsInfoViewController.swift in Sources */,
 				1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */,
+				183CFCD9226F7D1700F7FF68 /* EdgeShadowLayer.swift in Sources */,
 				1875FACE226780A100F68F8E /* Vomitus+CoreDataProperties.swift in Sources */,
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
+				183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */,
 				18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */,
 				A8576E02224A6D6000CBA907 /* Secretion+CoreDataProperties.swift in Sources */,
 				A88BBFB6225CA7B500F9C0B4 /* Attendance+CoreDataClass.swift in Sources */,
@@ -920,6 +952,7 @@
 				A8576E09224A6DCA00CBA907 /* Disease+CoreDataClass.swift in Sources */,
 				A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */,
 				A8576E05224A6D9500CBA907 /* Parasites+CoreDataClass.swift in Sources */,
+				183CFCD5226F7C9700F7FF68 /* KeyboardMovment.swift in Sources */,
 				A8576E12224A6E4C00CBA907 /* Rash+CoreDataProperties.swift in Sources */,
 				A8576E1D224A6F0200CBA907 /* Fever+CoreDataClass.swift in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
@@ -959,8 +992,10 @@
 				1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */,
 				189B35362242384B00D33A6C /* SettingsViewController.swift in Sources */,
 				A8576E25224A6F8000CBA907 /* Feces+CoreDataClass.swift in Sources */,
+				183CFCD1226F7B5C00F7FF68 /* StackHelper.swift in Sources */,
 				A8299D8022541251006E961F /* Child+CoreDataClass.swift in Sources */,
 				18DE415E226E391B00314AA0 /* IndividualInfoViewController.swift in Sources */,
+				183CFCD7226F7CD800F7FF68 /* PhotosUtility.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
@@ -988,6 +1023,7 @@
 				A8576E01224A6D6000CBA907 /* Secretion+CoreDataClass.swift in Sources */,
 				180CF322223EC00400A9DEF2 /* Child.swift in Sources */,
 				A8299D53224FD024006E961F /* FineMotor+CoreDataClass.swift in Sources */,
+				183CFCD3226F7C0300F7FF68 /* TapGestures.swift in Sources */,
 				A8576E26224A6F8000CBA907 /* Feces+CoreDataProperties.swift in Sources */,
 				A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,

@@ -305,6 +305,7 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
 protocol AddChildViewControllerDelegate {
     func shouldEndEditing()
 }
+
 extension String {
     var isNumeric: Bool {
         guard self.count > 0 else { return false }
