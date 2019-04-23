@@ -312,14 +312,11 @@
 			isa = PBXGroup;
 			children = (
 				18BBB73722395A78001CE8B5 /* Gmar.entitlements */,
-				1887F4B7221B2A39007682A8 /* Protocols */,
+				1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
 				1887F4B0221AFDF8007682A8 /* Views */,
 				A8DA55E6221858660043D580 /* Model */,
-				1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
 				18991FF222185E8B00180600 /* ViewControllers */,
-				1818B1DB21E0E905006E1B39 /* Main.storyboard */,
-				1818B1DE21E0E906006E1B39 /* Assets.xcassets */,
-				1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
+				183CFCDB226F7E3900F7FF68 /* Storyboards and Assests */,
 				1818B1E321E0E906006E1B39 /* Info.plist */,
 				180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */,
 			);
@@ -329,6 +326,8 @@
 		183CFCCB226F7A2000F7FF68 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				18BFE192224651250084D766 /* Permissions.swift */,
+				1878879B221D7C260047A935 /* DateAdmin.swift */,
 				A8F7F380221888CB00F21DAD /* Utility.swift */,
 				183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */,
 				183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */,
@@ -339,6 +338,29 @@
 				183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		183CFCDA226F7DAF00F7FF68 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1887F4B3221B14A2007682A8 /* Enums.swift */,
+				A8C41472223EEED20072B0A8 /* Staff */,
+				180CF31D223D5B8300A9DEF2 /* Child */,
+				A8287E3C224BB861000C64DD /* Attendance */,
+				A8287E66224D5471000C64DD /* BasicEvents */,
+				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		183CFCDB226F7E3900F7FF68 /* Storyboards and Assests */ = {
+			isa = PBXGroup;
+			children = (
+				1818B1DE21E0E906006E1B39 /* Assets.xcassets */,
+				1818B1DB21E0E905006E1B39 /* Main.storyboard */,
+				1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
+			);
+			path = "Storyboards and Assests";
 			sourceTree = "<group>";
 		};
 		1866066B226B559A006F20B0 /* MyButton */ = {
@@ -364,13 +386,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1887F4B7221B2A39007682A8 /* Protocols */ = {
+		1887F4B7221B2A39007682A8 /* Base ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				1887F4B8221B2A5A007682A8 /* GenericVC.swift */,
 				1806E46A2268D24400F9CCE3 /* MyViewController.swift */,
 			);
-			path = Protocols;
+			path = "Base ViewControllers";
 			sourceTree = "<group>";
 		};
 		18991FEB22184C0600180600 /* Fonts */ = {
@@ -385,6 +407,7 @@
 		18991FF222185E8B00180600 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1887F4B7221B2A39007682A8 /* Base ViewControllers */,
 				1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */,
 				189B353822423D3400D33A6C /* Add Event Chain VCs */,
 				189B353722423D0E00D33A6C /* Settings Chain VCs */,
@@ -754,18 +777,11 @@
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8C41472223EEED20072B0A8 /* Staff */,
-				180CF31D223D5B8300A9DEF2 /* Child */,
-				A8287E3C224BB861000C64DD /* Attendance */,
-				A8287E66224D5471000C64DD /* BasicEvents */,
-				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
+				183CFCDA226F7DAF00F7FF68 /* Entities */,
 				183CFCCB226F7A2000F7FF68 /* Utility */,
-				1887F4B3221B14A2007682A8 /* Enums.swift */,
-				1878879B221D7C260047A935 /* DateAdmin.swift */,
 				180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */,
 				180CF2FF223D44F300A9DEF2 /* Model.swift */,
 				180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */,
-				18BFE192224651250084D766 /* Permissions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
