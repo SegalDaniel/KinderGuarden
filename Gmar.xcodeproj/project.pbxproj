@@ -12,7 +12,6 @@
 		180CF2FC223D413500A9DEF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */; };
 		180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */; };
 		180CF300223D44F300A9DEF2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CF2FF223D44F300A9DEF2 /* Model.swift */; };
-		180CF322223EC00400A9DEF2 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55E7221859CD0043D580 /* Child.swift */; };
 		18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814677F226772640036BFC9 /* GenericLiquid_Confirmation.swift */; };
 		1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D721E0E905006E1B39 /* AppDelegate.swift */; };
 		1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */; };
@@ -116,10 +115,8 @@
 		A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */; };
 		A88BBFB6225CA7B500F9C0B4 /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB4225CA7B500F9C0B4 /* Attendance+CoreDataClass.swift */; };
 		A88BBFB7225CA7B500F9C0B4 /* Attendance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB5225CA7B500F9C0B4 /* Attendance+CoreDataProperties.swift */; };
-		A8C41482223EF8280072B0A8 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F1221864E20043D580 /* Water.swift */; };
 		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
 		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
-		A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E4221C796F0071DF7D /* Sleep.swift */; };
 		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
 		BEEB2D74529193A123CAF0E7 /* Pods_Gmar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */; };
 /* End PBXBuildFile section */
@@ -237,16 +234,9 @@
 		A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A88BBFB4225CA7B500F9C0B4 /* Attendance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A88BBFB5225CA7B500F9C0B4 /* Attendance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8DA55E7221859CD0043D580 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
-		A8DA55ED221864B00043D580 /* LiquidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidFood.swift; sourceTree = "<group>"; };
-		A8DA55EF221864C70043D580 /* SolidFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidFood.swift; sourceTree = "<group>"; };
-		A8DA55F1221864E20043D580 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
-		A8DA55F322186E330043D580 /* Feces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feces.swift; sourceTree = "<group>"; };
-		A8DA55F522186F970043D580 /* Urine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urine.swift; sourceTree = "<group>"; };
 		A8DA55F7221876200043D580 /* Vomitus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vomitus.swift; sourceTree = "<group>"; };
 		A8DF44E2221C78860071DF7D /* Fever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fever.swift; sourceTree = "<group>"; };
-		A8DF44E4221C796F0071DF7D /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D2EF71FC037F2B868063EFE6 /* Pods_Gmar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gmar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07399715B8B4AE5272EF714 /* Pods-Gmar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,7 +259,6 @@
 			children = (
 				A8299D7E22541251006E961F /* Child+CoreDataClass.swift */,
 				A8299D7F22541251006E961F /* Child+CoreDataProperties.swift */,
-				A8DA55E7221859CD0043D580 /* Child.swift */,
 				A81F4EBF22429121003FED63 /* AuthorizedAccompanist */,
 				A8299D7922540D0A006E961F /* Food */,
 				A8299D6622537F63006E961F /* Allergenic */,
@@ -689,7 +678,6 @@
 			children = (
 				A8576E33224A70DA00CBA907 /* Sleep+CoreDataClass.swift */,
 				A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */,
-				A8DF44E4221C796F0071DF7D /* Sleep.swift */,
 			);
 			path = Sleep;
 			sourceTree = "<group>";
@@ -719,7 +707,6 @@
 			children = (
 				A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */,
 				A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */,
-				A8DA55ED221864B00043D580 /* LiquidFood.swift */,
 			);
 			path = LiquidFood;
 			sourceTree = "<group>";
@@ -729,7 +716,6 @@
 			children = (
 				A88BBFAC225A7EB900F9C0B4 /* SolidFood+CoreDataClass.swift */,
 				A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */,
-				A8DA55EF221864C70043D580 /* SolidFood.swift */,
 			);
 			path = SolidFood;
 			sourceTree = "<group>";
@@ -739,7 +725,6 @@
 			children = (
 				A88BBFA8225A7E5100F9C0B4 /* Water+CoreDataClass.swift */,
 				A88BBFA9225A7E5100F9C0B4 /* Water+CoreDataProperties.swift */,
-				A8DA55F1221864E20043D580 /* Water.swift */,
 			);
 			path = Water;
 			sourceTree = "<group>";
@@ -749,7 +734,6 @@
 			children = (
 				A8576E23224A6F8000CBA907 /* Feces+CoreDataClass.swift */,
 				A8576E24224A6F8000CBA907 /* Feces+CoreDataProperties.swift */,
-				A8DA55F322186E330043D580 /* Feces.swift */,
 			);
 			path = Feces;
 			sourceTree = "<group>";
@@ -759,7 +743,6 @@
 			children = (
 				A8576E1F224A6F4C00CBA907 /* Urine+CoreDataClass.swift */,
 				A8576E20224A6F4C00CBA907 /* Urine+CoreDataProperties.swift */,
-				A8DA55F522186F970043D580 /* Urine.swift */,
 			);
 			path = Urine;
 			sourceTree = "<group>";
@@ -806,7 +789,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
-				185DA404143B633337455819 /* [CP] Embed Pods Frameworks */,
+				CD0C2995F60E29FF3763A876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -875,7 +858,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		185DA404143B633337455819 /* [CP] Embed Pods Frameworks */ = {
+		B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gmar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD0C2995F60E29FF3763A876 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -913,28 +918,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gmar/Pods-Gmar-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B258660DF6FD5BFF8B89A1E7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gmar-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -986,7 +969,6 @@
 				A8576E1E224A6F0200CBA907 /* Fever+CoreDataProperties.swift in Sources */,
 				A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */,
 				A88BBFB7225CA7B500F9C0B4 /* Attendance+CoreDataProperties.swift in Sources */,
-				A8C41482223EF8280072B0A8 /* Water.swift in Sources */,
 				18C59D6D225CEE65003BD029 /* GenericEventInfo_Confirmation.swift in Sources */,
 				A8576E06224A6D9500CBA907 /* Parasites+CoreDataProperties.swift in Sources */,
 				A8287E5D224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift in Sources */,
@@ -1037,12 +1019,10 @@
 				189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
 				A8576E01224A6D6000CBA907 /* Secretion+CoreDataClass.swift in Sources */,
-				180CF322223EC00400A9DEF2 /* Child.swift in Sources */,
 				A8299D53224FD024006E961F /* FineMotor+CoreDataClass.swift in Sources */,
 				183CFCD3226F7C0300F7FF68 /* TapGestures.swift in Sources */,
 				A8576E26224A6F8000CBA907 /* Feces+CoreDataProperties.swift in Sources */,
 				A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */,
-				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
 				A8287E61224CE346000C64DD /* Staff+CoreDataProperties.swift in Sources */,
 				A88BBF9E2255F91000F9C0B4 /* Social+CoreDataClass.swift in Sources */,
 				A8576E0A224A6DCA00CBA907 /* Disease+CoreDataProperties.swift in Sources */,
@@ -1199,13 +1179,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+				DEVELOPMENT_TEAM = T3UK9D9NUA;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
@@ -1222,13 +1202,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
+				DEVELOPMENT_TEAM = T3UK9D9NUA;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;

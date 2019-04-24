@@ -315,7 +315,7 @@ extension String {
     
     var isAlpha: Bool {
         guard self.count > 0 else { return false }
-        let letters: Set<Character> = [ " " ,"ף" ,"ץ" ,"ן" ,"ם" ,"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ" , "צ", "ק", "ר", "ש", "ת"]
+        let letters: Set<Character> = [ " " ,"ך" ,"ף" ,"ץ" ,"ן" ,"ם" ,"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ" , "צ", "ק", "ר", "ש", "ת"]
         return Set(self).isSubset(of: letters)
     }
 }
