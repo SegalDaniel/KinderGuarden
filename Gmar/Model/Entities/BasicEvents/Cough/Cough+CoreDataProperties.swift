@@ -2,7 +2,7 @@
 //  Cough+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 26/03/2019.
+//  Created by Daniel Segal on 25/04/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,7 +17,6 @@ extension Cough {
         return NSFetchRequest<Cough>(entityName: "Cough")
     }
 
-    @NSManaged public var childID: String?
     @NSManaged public var type: String?
 
 }
