@@ -95,6 +95,16 @@ class Model{
     }
     
     //MARK: - Firestore methods
+    func signIn(){
+        modelFirebase.signIn(mail: "baby@guard.com", pass: "123456") { (result, err) in
+            print(result.debugDescription)
+        }
+    }
+    
+    func checkIfSignedIn() -> Bool{
+        return modelFirebase.checkIfSignIn()
+    }
+    
     func deleteDocument(collection:String, docID:String, callack:@escaping (Error?)->Void){
         modelFirebase.removeDocument(collection: collection, docID: docID, callack: callack)
     }

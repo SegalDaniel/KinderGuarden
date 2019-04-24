@@ -20,6 +20,14 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		183CFCCA226F724E00F7FF68 /* basicEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */; };
+		183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCC226F7A3600F7FF68 /* AppColors.swift */; };
+		183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */; };
+		183CFCD1226F7B5C00F7FF68 /* StackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */; };
+		183CFCD3226F7C0300F7FF68 /* TapGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD2226F7C0300F7FF68 /* TapGestures.swift */; };
+		183CFCD5226F7C9700F7FF68 /* KeyboardMovment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */; };
+		183CFCD7226F7CD800F7FF68 /* PhotosUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */; };
+		183CFCD9226F7D1700F7FF68 /* EdgeShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */; };
 		1866066D226B55BE006F20B0 /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1866066C226B55BE006F20B0 /* MyButton.xib */; };
 		1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866066E226B597B006F20B0 /* MyButtonView.swift */; };
 		1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */; };
@@ -131,6 +139,14 @@
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+		183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicEventCollectionViewCell.swift; sourceTree = "<group>"; };
+		183CFCCC226F7A3600F7FF68 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewsHelper.swift; sourceTree = "<group>"; };
+		183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackHelper.swift; sourceTree = "<group>"; };
+		183CFCD2226F7C0300F7FF68 /* TapGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestures.swift; sourceTree = "<group>"; };
+		183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMovment.swift; sourceTree = "<group>"; };
+		183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosUtility.swift; sourceTree = "<group>"; };
+		183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeShadowLayer.swift; sourceTree = "<group>"; };
 		1866066C226B55BE006F20B0 /* MyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyButton.xib; sourceTree = "<group>"; };
 		1866066E226B597B006F20B0 /* MyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonView.swift; sourceTree = "<group>"; };
 		1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -296,18 +312,55 @@
 			isa = PBXGroup;
 			children = (
 				18BBB73722395A78001CE8B5 /* Gmar.entitlements */,
-				1887F4B7221B2A39007682A8 /* Protocols */,
+				1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
 				1887F4B0221AFDF8007682A8 /* Views */,
 				A8DA55E6221858660043D580 /* Model */,
-				1818B1D721E0E905006E1B39 /* AppDelegate.swift */,
 				18991FF222185E8B00180600 /* ViewControllers */,
-				1818B1DB21E0E905006E1B39 /* Main.storyboard */,
-				1818B1DE21E0E906006E1B39 /* Assets.xcassets */,
-				1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
+				183CFCDB226F7E3900F7FF68 /* Storyboards and Assests */,
 				1818B1E321E0E906006E1B39 /* Info.plist */,
 				180CF2FB223D413500A9DEF2 /* GoogleService-Info.plist */,
 			);
 			path = Gmar;
+			sourceTree = "<group>";
+		};
+		183CFCCB226F7A2000F7FF68 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				18BFE192224651250084D766 /* Permissions.swift */,
+				1878879B221D7C260047A935 /* DateAdmin.swift */,
+				A8F7F380221888CB00F21DAD /* Utility.swift */,
+				183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */,
+				183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */,
+				183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */,
+				183CFCD2226F7C0300F7FF68 /* TapGestures.swift */,
+				183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */,
+				183CFCCC226F7A3600F7FF68 /* AppColors.swift */,
+				183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		183CFCDA226F7DAF00F7FF68 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1887F4B3221B14A2007682A8 /* Enums.swift */,
+				A8C41472223EEED20072B0A8 /* Staff */,
+				180CF31D223D5B8300A9DEF2 /* Child */,
+				A8287E3C224BB861000C64DD /* Attendance */,
+				A8287E66224D5471000C64DD /* BasicEvents */,
+				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		183CFCDB226F7E3900F7FF68 /* Storyboards and Assests */ = {
+			isa = PBXGroup;
+			children = (
+				1818B1DE21E0E906006E1B39 /* Assets.xcassets */,
+				1818B1DB21E0E905006E1B39 /* Main.storyboard */,
+				1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */,
+			);
+			path = "Storyboards and Assests";
 			sourceTree = "<group>";
 		};
 		1866066B226B559A006F20B0 /* MyButton */ = {
@@ -328,17 +381,18 @@
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
 				189B353F224289C600D33A6C /* Add New Child */,
 				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
+				183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1887F4B7221B2A39007682A8 /* Protocols */ = {
+		1887F4B7221B2A39007682A8 /* Base ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				1887F4B8221B2A5A007682A8 /* GenericVC.swift */,
 				1806E46A2268D24400F9CCE3 /* MyViewController.swift */,
 			);
-			path = Protocols;
+			path = "Base ViewControllers";
 			sourceTree = "<group>";
 		};
 		18991FEB22184C0600180600 /* Fonts */ = {
@@ -353,6 +407,7 @@
 		18991FF222185E8B00180600 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1887F4B7221B2A39007682A8 /* Base ViewControllers */,
 				1818B1D921E0E905006E1B39 /* MainWindowViewController.swift */,
 				189B353822423D3400D33A6C /* Add Event Chain VCs */,
 				189B353722423D0E00D33A6C /* Settings Chain VCs */,
@@ -722,18 +777,11 @@
 		A8DA55E6221858660043D580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8C41472223EEED20072B0A8 /* Staff */,
-				180CF31D223D5B8300A9DEF2 /* Child */,
-				A8287E3C224BB861000C64DD /* Attendance */,
-				A8287E66224D5471000C64DD /* BasicEvents */,
-				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
-				A8F7F380221888CB00F21DAD /* Utility.swift */,
-				1887F4B3221B14A2007682A8 /* Enums.swift */,
-				1878879B221D7C260047A935 /* DateAdmin.swift */,
+				183CFCDA226F7DAF00F7FF68 /* Entities */,
+				183CFCCB226F7A2000F7FF68 /* Utility */,
 				180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */,
 				180CF2FF223D44F300A9DEF2 /* Model.swift */,
 				180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */,
-				18BFE192224651250084D766 /* Permissions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -839,6 +887,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -853,6 +902,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -895,18 +945,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */,
+				183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */,
 				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
 				A8287E44224BBF13000C64DD /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
 				18DE415C226CBAC800314AA0 /* KidsInfoViewController.swift in Sources */,
 				1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */,
+				183CFCD9226F7D1700F7FF68 /* EdgeShadowLayer.swift in Sources */,
 				1875FACE226780A100F68F8E /* Vomitus+CoreDataProperties.swift in Sources */,
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
+				183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */,
 				18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */,
 				A8576E02224A6D6000CBA907 /* Secretion+CoreDataProperties.swift in Sources */,
 				A88BBFB6225CA7B500F9C0B4 /* Attendance+CoreDataClass.swift in Sources */,
@@ -915,6 +968,7 @@
 				A8576E09224A6DCA00CBA907 /* Disease+CoreDataClass.swift in Sources */,
 				A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */,
 				A8576E05224A6D9500CBA907 /* Parasites+CoreDataClass.swift in Sources */,
+				183CFCD5226F7C9700F7FF68 /* KeyboardMovment.swift in Sources */,
 				A8576E12224A6E4C00CBA907 /* Rash+CoreDataProperties.swift in Sources */,
 				A8576E1D224A6F0200CBA907 /* Fever+CoreDataClass.swift in Sources */,
 				180CF300223D44F300A9DEF2 /* Model.swift in Sources */,
@@ -954,8 +1008,10 @@
 				1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */,
 				189B35362242384B00D33A6C /* SettingsViewController.swift in Sources */,
 				A8576E25224A6F8000CBA907 /* Feces+CoreDataClass.swift in Sources */,
+				183CFCD1226F7B5C00F7FF68 /* StackHelper.swift in Sources */,
 				A8299D8022541251006E961F /* Child+CoreDataClass.swift in Sources */,
 				18DE415E226E391B00314AA0 /* IndividualInfoViewController.swift in Sources */,
+				183CFCD7226F7CD800F7FF68 /* PhotosUtility.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
@@ -983,6 +1039,7 @@
 				A8576E01224A6D6000CBA907 /* Secretion+CoreDataClass.swift in Sources */,
 				180CF322223EC00400A9DEF2 /* Child.swift in Sources */,
 				A8299D53224FD024006E961F /* FineMotor+CoreDataClass.swift in Sources */,
+				183CFCD3226F7C0300F7FF68 /* TapGestures.swift in Sources */,
 				A8576E26224A6F8000CBA907 /* Feces+CoreDataProperties.swift in Sources */,
 				A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */,
 				A8DF44E5221C796F0071DF7D /* Sleep.swift in Sources */,
@@ -991,6 +1048,7 @@
 				A8576E0A224A6DCA00CBA907 /* Disease+CoreDataProperties.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
 				A8287E6B224D67D6000C64DD /* BasicEvent+CoreDataProperties.swift in Sources */,
+				183CFCCA226F724E00F7FF68 /* basicEventCollectionViewCell.swift in Sources */,
 				A88BBFAF225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1141,13 +1199,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
@@ -1164,13 +1222,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
