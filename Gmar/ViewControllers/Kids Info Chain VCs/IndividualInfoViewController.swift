@@ -14,7 +14,6 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
     @IBOutlet weak var basicCollectionView: UICollectionView!
     @IBOutlet weak var developCollectionView: UICollectionView!
     @IBOutlet weak var logicCollectionView: UICollectionView!
-    @IBOutlet weak var generalNoteLabel: UILabel!
     @IBOutlet weak var titleItem: UINavigationItem!
     var childID:String?
     var child:Child?
