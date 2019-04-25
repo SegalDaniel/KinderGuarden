@@ -19,7 +19,6 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
-		183CFCCA226F724E00F7FF68 /* basicEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */; };
 		183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCC226F7A3600F7FF68 /* AppColors.swift */; };
 		183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */; };
 		183CFCD1226F7B5C00F7FF68 /* StackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */; };
@@ -53,6 +52,7 @@
 		189B354122428E4B00D33A6C /* AlergicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354022428E4B00D33A6C /* AlergicTableViewCell.swift */; };
 		189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354222428E6900D33A6C /* FoodsTableViewCell.swift */; };
 		189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */; };
+		18A25F3B2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A25F3A2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift */; };
 		18BFE193224651250084D766 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE192224651250084D766 /* Permissions.swift */; };
 		18BFE1952246739E0084D766 /* AddTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BFE1942246739E0084D766 /* AddTeacherViewController.swift */; };
 		18C59D6D225CEE65003BD029 /* GenericEventInfo_Confirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C59D6C225CEE65003BD029 /* GenericEventInfo_Confirmation.swift */; };
@@ -138,7 +138,6 @@
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
-		183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicEventCollectionViewCell.swift; sourceTree = "<group>"; };
 		183CFCCC226F7A3600F7FF68 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewsHelper.swift; sourceTree = "<group>"; };
 		183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackHelper.swift; sourceTree = "<group>"; };
@@ -172,6 +171,7 @@
 		189B354022428E4B00D33A6C /* AlergicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlergicTableViewCell.swift; sourceTree = "<group>"; };
 		189B354222428E6900D33A6C /* FoodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsTableViewCell.swift; sourceTree = "<group>"; };
 		189B354422428E8E00D33A6C /* DiasesMedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasesMedTableViewCell.swift; sourceTree = "<group>"; };
+		18A25F3A2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEventCollectionViewCell.swift; sourceTree = "<group>"; };
 		18BBB73722395A78001CE8B5 /* Gmar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gmar.entitlements; sourceTree = "<group>"; };
 		18BFE192224651250084D766 /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		18BFE1942246739E0084D766 /* AddTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherViewController.swift; sourceTree = "<group>"; };
@@ -375,7 +375,7 @@
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
 				189B353F224289C600D33A6C /* Add New Child */,
 				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
-				183CFCC9226F724E00F7FF68 /* basicEventCollectionViewCell.swift */,
+				18A25F3A2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1002,6 +1002,7 @@
 				A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */,
 				A8299D74225386E4006E961F /* RoutineMedication+CoreDataProperties.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
+				18A25F3B2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift in Sources */,
 				A88BBFA722576A9A00F9C0B4 /* Food+CoreDataProperties.swift in Sources */,
 				A8287E5C224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift in Sources */,
 				A8287E43224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift in Sources */,
@@ -1044,7 +1045,6 @@
 				A88BBF9E2255F91000F9C0B4 /* Social+CoreDataClass.swift in Sources */,
 				A8576E0A224A6DCA00CBA907 /* Disease+CoreDataProperties.swift in Sources */,
 				189B354322428E6900D33A6C /* FoodsTableViewCell.swift in Sources */,
-				183CFCCA226F724E00F7FF68 /* basicEventCollectionViewCell.swift in Sources */,
 				A88BBFAF225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1195,13 +1195,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
@@ -1218,13 +1218,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3UK9D9NUA;
+				DEVELOPMENT_TEAM = YKNQ4Y4FEY;
 				INFOPLIST_FILE = Gmar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar123;
+				PRODUCT_BUNDLE_IDENTIFIER = finalProject.Gmar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;

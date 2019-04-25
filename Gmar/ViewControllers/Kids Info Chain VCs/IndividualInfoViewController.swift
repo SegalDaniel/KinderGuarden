@@ -11,10 +11,12 @@ import UIKit
 class IndividualInfoViewController: MyViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     //MARK: - Variables
+    @IBOutlet weak var childImageView: UIImageView!
     @IBOutlet weak var basicCollectionView: UICollectionView!
     @IBOutlet weak var developCollectionView: UICollectionView!
     @IBOutlet weak var logicCollectionView: UICollectionView!
     @IBOutlet weak var titleItem: UINavigationItem!
+    @IBOutlet weak var generalNoteLabel: UILabel!
     var childID:String?
     var child:Child?
     var basicEvents:[BasicEvent] = []{
@@ -34,6 +36,7 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
         collections.forEach { (coll) in
             coll.delegate = self
             coll.dataSource = self
+            Utility.addBorder(view: coll)
         }
     }
     
@@ -42,9 +45,17 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
             Model.instance.getChild(childID: id) { (child) in
                 self.child = child
                 self.titleItem.title = "מידע על \(child.firstName!)"
+                let image = Model.instance.loadImageFromDiskWith(fileName: child.childID!)
+                if let image = image{
+                    self.childImageView.image = image
+                }
+                else{
+                    self.childImageView.image = UIImage(named: "047-baby-2")
+                }
             }
             Model.instance.getAllBasicEventsFromCore { (events) in
                 self.basicEvents = events
+                basicCollectionView.reloadData()
             }
         }
     }
@@ -68,10 +79,12 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "basicCell", for: indexPath) as! basicEventCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "basicCell", for: indexPath)
         switch collectionView {
         case basicCollectionView:
-            cell.textView.text = Enums.BasicEvent.init(rawValue: Int(basicEvents[indexPath.row].eventType)).debugDescription
+            let cell = cell as! BasicEventCollectionViewCell
+            cell.event = basicEvents[indexPath.row]
+            cell.awakeFromNib()
             break
         case developCollectionView:
             

@@ -48,6 +48,13 @@ class DateAdmin{
         return time
     }
     
+    static func extractDateAndTime(date:Date, dateStyle:DateFormatter.Style = .none, timeStyle:DateFormatter.Style = .short) -> String{
+        let formatter = DateFormatter()
+        formatter.dateStyle = dateStyle
+        formatter.timeStyle = timeStyle
+        return formatter.string(from: date)
+    }
+    
     static func showDatePicker(timeStyle:DateFormatter.Style, dateStyle:DateFormatter.Style, callable:@escaping (String, String, Date) -> Void){
         RPicker.selectDate(title: "נא לבחור זמן מתאים", datePickerMode: .time, didSelectDate: { (selectedDate) in
             let formatter1 = DateFormatter()
