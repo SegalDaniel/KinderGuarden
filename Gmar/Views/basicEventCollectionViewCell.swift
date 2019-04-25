@@ -121,6 +121,14 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
     
     @IBAction func tapped(_ sender: Any){
         delegate?.cellTapped(event: event!, description: eventDescription)
+        self.layer.shadowOpacity = 0.0
+        timeLabel.layer.opacity = 0.5
+        mainImageView.layer.opacity = 0.5
+        UIView.animate(withDuration: 0.2) {
+            self.layer.shadowOpacity = 0.5
+            self.timeLabel.layer.opacity = 1
+            self.mainImageView.layer.opacity = 1
+        }
     }
 }
 
