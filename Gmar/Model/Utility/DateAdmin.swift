@@ -55,6 +55,30 @@ class DateAdmin{
         return formatter.string(from: date)
     }
     
+    static func morningDate(date:Date) -> Date{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        let theDay = formatter.string(from: date)
+        formatter.dateFormat = "dd/MM/yy , HH:mm"
+        formatter.timeZone = TimeZone.current
+        let toFormat = "\(theDay) , 06:00"
+        let morning = formatter.date(from: toFormat)!
+        return morning
+    }
+    
+    static func eveningDate(date:Date) -> Date{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        let theDay = formatter.string(from: date)
+        formatter.dateFormat = "dd/MM/yy , HH:mm"
+        formatter.timeZone = TimeZone.current
+        let toFormat = "\(theDay) , 23:00"
+        let evening = formatter.date(from: toFormat)!
+        return evening
+    }
+    
     static func showDatePicker(timeStyle:DateFormatter.Style, dateStyle:DateFormatter.Style, callable:@escaping (String, String, Date) -> Void){
         RPicker.selectDate(title: "נא לבחור זמן מתאים", datePickerMode: .time, didSelectDate: { (selectedDate) in
             let formatter1 = DateFormatter()

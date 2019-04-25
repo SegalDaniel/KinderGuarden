@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IndividualInfoViewController: MyViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class IndividualInfoViewController: MyViewController {
     
     //MARK: - Variables
     @IBOutlet weak var childImageView: UIImageView!
@@ -32,7 +32,7 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
     //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
-        morningDate(date: Date())
+        startDate = DateAdmin.morningDate(date: Date())
         endDate = Date()
         initChildData()
         initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView])
@@ -96,7 +96,7 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
         case startDateBtn:
             RPicker.selectDate(title: "נא לבחור תאריך התחלה", hideCancel: false, datePickerMode: .date, selectedDate: startDate, minDate: Date(timeIntervalSinceNow: -monthInsSeconds), maxDate: endDate!) { (selectedDate) in
                 let date = formatter.string(from: selectedDate)
-                self.morningDate(date: selectedDate)
+                self.startDate = DateAdmin.morningDate(date: selectedDate)
                 self.startDateBtn.setTitle("מ \(date)", for: .normal)
                 self.filterByDates()
             }
@@ -104,7 +104,7 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
         case endDateBtn:
             RPicker.selectDate(title: "נא לבחור תאריך סיום", hideCancel: false, datePickerMode: .date, selectedDate: endDate, minDate: startDate, maxDate: Date()) { (selectedDate) in
                 let date = formatter.string(from: selectedDate)
-                self.eveningDate(date: selectedDate)
+                self.endDate = DateAdmin.eveningDate(date: selectedDate)
                 self.endDateBtn.setTitle("עד \(date)", for: .normal)
                 self.filterByDates()
             }
@@ -114,31 +114,24 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
         }
     }
     
-    func morningDate(date:Date){
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        let today = formatter.string(from: date)
-        formatter.dateFormat = "dd/MM/yy , HH:mm"
-        formatter.timeZone = TimeZone.current
-        let toFormat = "\(today) , 06:00"
-        let todayMorning = formatter.date(from: toFormat)
-        startDate = todayMorning
+    @IBAction func todayBtnPressed(_ sender: Any) {
+        startDate = DateAdmin.morningDate(date: Date())
+        endDate = Date()
+        initDatesBtns()
+        filterByDates()
     }
     
-    func eveningDate(date:Date){
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        let today = formatter.string(from: date)
-        formatter.dateFormat = "dd/MM/yy , HH:mm"
-        formatter.timeZone = TimeZone.current
-        let toFormat = "\(today) , 23:00"
-        let todayEve = formatter.date(from: toFormat)
-        endDate = todayEve
+}
+
+
+//MARK: - Collection View Datasource & Delegate
+extension IndividualInfoViewController: UICollectionViewDataSource, UICollectionViewDelegate, BasicEventCollectionViewCellDelegate{
+    func cellTapped(event:BasicEvent, description: String) {
+        let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
+        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
     }
     
-    //MARK: - Collection View Datasource & Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case basicCollectionView:
@@ -162,6 +155,7 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
         case basicCollectionView:
             let cell = cell as! BasicEventCollectionViewCell
             cell.event = basicEvents[indexPath.row]
+            cell.delegate = self
             cell.awakeFromNib()
             break
         case developCollectionView:
@@ -175,15 +169,4 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
         }
         return cell
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

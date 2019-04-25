@@ -12,13 +12,18 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
+    var delegate:BasicEventCollectionViewCellDelegate?
     var event:BasicEvent?
+    var eventDescription:String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = Utility.btnBackColor
         self.layer.cornerRadius = 10
         Utility.addShadow(view: self)
+        Utility.viewTapRecognizer(target: self, toBeTapped: mainImageView, action: #selector(tapped))
+        Utility.viewTapRecognizer(target: self, toBeTapped: timeLabel, action: #selector(tapped))
+        Utility.viewTapRecognizer(target: self, toBeTapped: self, action: #selector(tapped))
         if event != nil{
             initEvent()
         }
@@ -27,53 +32,98 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
     func initEvent(){
         let type = Enums.BasicEvent.init(rawValue: Int(event!.eventType))!
         let date = event!.eventDate!
-        let time = DateAdmin.extractDateAndTime(date: date as Date, dateStyle: .short)
+        let time = DateAdmin.extractDateAndTime(date: date as Date, dateStyle: .none)
         timeLabel.text = time
-        setImage(type: type)
+        setImageAndDescription(type: type)
     }
     
-    func setImage(type:Enums.BasicEvent){
+    func setImageAndDescription(type:Enums.BasicEvent){
         var image:UIImage?
         switch type {
         case .feces:
+            timeLabel.text?.append(" צואה")
             image = UIImage(named: "poop")
+            let feces = event as! Feces
+            eventDescription = "\(feces.amount!)\n\(feces.color!)\n\(feces.texture!)\n"
             break
         case .hafrahsa:
+            timeLabel.text?.append(" הפרשה")
             image = UIImage(named: "049-baby")
+            let haf = event as! Secretion
+            eventDescription = "\(haf.type!)\n\(haf.area!)\n"
             break
         case .feever:
+            timeLabel.text?.append(" חום")
             image = UIImage(named: "033-thermometer")
+            let fev = event as! Fever
+            eventDescription = "\(fev.tempreture!)\n"
             break
         case .sleep:
+            timeLabel.text?.append(" שינה")
             image = UIImage(named: "048-baby-1")
+            let sleep = event as! Sleep
+            eventDescription = "\(sleep.type!)\n\(sleep.sleepingScope!)\n\(sleep.allocatedTime!)\n"
             break
         case .solidFoods:
+            timeLabel.text?.append(" אוכל מוצק")
             image = UIImage(named: "022-food")
+            let sol = event as! SolidFood
+            eventDescription = "\(sol.mealType!)\n\(String(sol.amount))\n"
             break
         case .milk:
+            timeLabel.text?.append(" חלב")
             image = UIImage(named: "024-feeding-bottle")
+            let milk = event as! LiquidFood
+            eventDescription = "\(milk.mealType!)\n\(String(milk.amount))\n"
             break
         case .tamal:
+            timeLabel.text?.append(" תמ״ל")
             image = UIImage(named: "024-feeding-bottle-1")
+            let tamal = event as! LiquidFood
+            eventDescription = "\(tamal.mealType!)\n\(String(tamal.amount))\n"
             break
         case .rash:
+            timeLabel.text?.append(" פריחה")
             image = UIImage(named: "illness")
+            let rash = event as! Rash
+            eventDescription = "\(rash.type!)\n\(rash.area!)\n"
             break
         case .urine:
+            timeLabel.text?.append(" שתן")
             image = UIImage(named: "010-diaper")
+            let pee = event as! Urine
+            eventDescription = "\(pee.color!)\n\(pee.amount!)\nריח \(pee.fragrance!)\n"
             break
         case .vomit:
+            timeLabel.text?.append(" הקאה")
             image = UIImage(named: "vomit")
+            let vom = event as! Vomitus
+            eventDescription = "\(vom.type!)\n\(vom.proper!)\n"
             break
         case .cough:
+            timeLabel.text?.append(" שיעול")
             image = UIImage(named: "cough")
+            let cough = event as! Cough
+            eventDescription = "\(cough.type!)\n"
             break
         case .water:
+            timeLabel.text?.append(" מים")
             image = UIImage(named: "water-glass")
+            let water = event as! Water
+            eventDescription = "\(water.amount) מ״ל"
             break
         default:
             image = UIImage(named: "047-baby-2")
         }
         mainImageView.image = image
+        eventDescription.append("דווח על-ידי \(event!.staff!.firstName!) \(event!.staff!.lastName!)")
     }
+    
+    @IBAction func tapped(_ sender: Any){
+        delegate?.cellTapped(event: event!, description: eventDescription)
+    }
+}
+
+protocol BasicEventCollectionViewCellDelegate {
+    func cellTapped(event:BasicEvent, description:String)
 }
