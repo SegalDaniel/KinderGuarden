@@ -38,6 +38,8 @@ class IndividualInfoViewController: MyViewController {
         initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView])
         initDatesBtns()
         childImageView.layer.cornerRadius = 10
+        generalNoteLabel.layer.cornerRadius = 10
+        Utility.addBorder(view: generalNoteLabel)
     }
     
     func initDatesBtns(){
