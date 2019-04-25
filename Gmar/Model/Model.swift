@@ -265,8 +265,9 @@ class Model{
     }
     
     //MARK: - BasicEvents methods
-    func getAllBasicEventsFromCore(callback:([BasicEvent])->Void){
+    func getChildsBasicEventsFromCore(childID:String, callback:([BasicEvent])->Void){
         let beFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "BasicEvent")
+        beFetch.predicate = NSPredicate(format: "child.childID = %@", childID)
         let events = try! Model.instance.managedContext.fetch(beFetch)
         let e:[BasicEvent] = events as! [BasicEvent]
         callback(e)

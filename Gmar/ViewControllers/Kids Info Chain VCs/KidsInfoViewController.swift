@@ -11,10 +11,6 @@ import UIKit
 class KidsInfoViewController: MyViewController {
 
     //MARK: - Variables
-    @IBOutlet weak var endLabel: UILabel!
-    @IBOutlet weak var startLabel: UILabel!
-    @IBOutlet weak var startDateBtn: UIButton!
-    @IBOutlet weak var endDateBtn: UIButton!
     @IBOutlet weak var childOrCatStackView: UIStackView!
     var startDate:Date!
     var endDate:Date!
@@ -24,19 +20,11 @@ class KidsInfoViewController: MyViewController {
         super.viewDidLoad()
         initTimeBtns()
         initKidsOrCatBtns()
-        addDatesBorder()
     }
     
     func initTimeBtns(){
         startDate = Date()
         endDate = Date()
-        startDateBtn.setTitle(DateAdmin.currentDate(timeStyle: .none, dateStyle: .long), for: .normal)
-        endDateBtn.setTitle(DateAdmin.currentDate(timeStyle: .none, dateStyle: .long), for: .normal)
-    }
-    
-    func addDatesBorder(){
-        let _ = Utility.addBorder(superView: self.view, constraintTop: startLabel, constraintLeading: startLabel, constraintTrailing: startLabel, constraintBottom: startDateBtn, constant: 5)
-        let _ = Utility.addBorder(superView: self.view, constraintTop: endLabel, constraintLeading: endLabel, constraintTrailing: endLabel, constraintBottom: endDateBtn, constant: 5)
     }
     
     func initKidsOrCatBtns(){

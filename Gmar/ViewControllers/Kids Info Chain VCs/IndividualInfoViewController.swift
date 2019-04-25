@@ -17,6 +17,10 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
     @IBOutlet weak var logicCollectionView: UICollectionView!
     @IBOutlet weak var titleItem: UINavigationItem!
     @IBOutlet weak var generalNoteLabel: UILabel!
+    @IBOutlet weak var startDateBtn: UIButton!
+    @IBOutlet weak var endDateBtn: UIButton!
+    var startDate:Date?
+    var endDate:Date?
     var childID:String?
     var child:Child?
     var basicEvents:[BasicEvent] = []{
@@ -28,14 +32,26 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
     //MARK: - inits
     override func viewDidLoad() {
         super.viewDidLoad()
+        morningDate(date: Date())
+        endDate = Date()
         initChildData()
         initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView])
+        initDatesBtns()
+        childImageView.layer.cornerRadius = 10
+    }
+    
+    func initDatesBtns(){
+        let start = DateAdmin.extractDateAndTime(date: startDate!, dateStyle: .short, timeStyle: .none)
+        let end = DateAdmin.extractDateAndTime(date: endDate!, dateStyle: .short, timeStyle: .none)
+        startDateBtn.setTitle("מ \(start)", for: .normal)
+        endDateBtn.setTitle("עד \(end)", for: .normal)
     }
     
     func initCollections(collections:[UICollectionView]){
         collections.forEach { (coll) in
             coll.delegate = self
             coll.dataSource = self
+            coll.semanticContentAttribute = UISemanticContentAttribute.forceRightToLeft
             Utility.addBorder(view: coll)
         }
     }
@@ -53,13 +69,75 @@ class IndividualInfoViewController: MyViewController, UICollectionViewDataSource
                     self.childImageView.image = UIImage(named: "047-baby-2")
                 }
             }
-            Model.instance.getAllBasicEventsFromCore { (events) in
-                self.basicEvents = events
-                basicCollectionView.reloadData()
-            }
+            filterByDates()
         }
     }
-
+    
+    func filterByDates(){
+        Model.instance.getChildsBasicEventsFromCore(childID: self.childID!) { (events) in
+            self.basicEvents = events.filter({ (event) -> Bool in
+                let eDate = event.eventDate! as Date
+                if  eDate >= self.startDate! && eDate <= self.endDate!{
+                    return true
+                }
+                return false
+            })
+            basicCollectionView.reloadData()
+        }
+    }
+    
+    //MARK: - Buttons actions
+    @IBAction func showDatePicker(_ sender: UIButton){
+        let monthInsSeconds = 2629743.83
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        switch sender {
+        case startDateBtn:
+            RPicker.selectDate(title: "נא לבחור תאריך התחלה", hideCancel: false, datePickerMode: .date, selectedDate: startDate, minDate: Date(timeIntervalSinceNow: -monthInsSeconds), maxDate: endDate!) { (selectedDate) in
+                let date = formatter.string(from: selectedDate)
+                self.morningDate(date: selectedDate)
+                self.startDateBtn.setTitle("מ \(date)", for: .normal)
+                self.filterByDates()
+            }
+            break
+        case endDateBtn:
+            RPicker.selectDate(title: "נא לבחור תאריך סיום", hideCancel: false, datePickerMode: .date, selectedDate: endDate, minDate: startDate, maxDate: Date()) { (selectedDate) in
+                let date = formatter.string(from: selectedDate)
+                self.eveningDate(date: selectedDate)
+                self.endDateBtn.setTitle("עד \(date)", for: .normal)
+                self.filterByDates()
+            }
+            break
+        default:
+           break
+        }
+    }
+    
+    func morningDate(date:Date){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        let today = formatter.string(from: date)
+        formatter.dateFormat = "dd/MM/yy , HH:mm"
+        formatter.timeZone = TimeZone.current
+        let toFormat = "\(today) , 06:00"
+        let todayMorning = formatter.date(from: toFormat)
+        startDate = todayMorning
+    }
+    
+    func eveningDate(date:Date){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        let today = formatter.string(from: date)
+        formatter.dateFormat = "dd/MM/yy , HH:mm"
+        formatter.timeZone = TimeZone.current
+        let toFormat = "\(today) , 23:00"
+        let todayEve = formatter.date(from: toFormat)
+        endDate = todayEve
+    }
+    
     //MARK: - Collection View Datasource & Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {

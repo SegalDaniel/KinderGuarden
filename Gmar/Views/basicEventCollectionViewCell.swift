@@ -18,6 +18,7 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.backgroundColor = Utility.btnBackColor
         self.layer.cornerRadius = 10
+        Utility.addShadow(view: self)
         if event != nil{
             initEvent()
         }
