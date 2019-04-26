@@ -16,9 +16,7 @@ class KidCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //kidButton.commonInit()
         initButton()
-        
         self.layer.masksToBounds = false
         self.layer.cornerRadius = 10
     }

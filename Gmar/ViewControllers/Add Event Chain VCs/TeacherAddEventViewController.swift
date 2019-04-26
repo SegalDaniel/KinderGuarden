@@ -57,7 +57,7 @@ class TeacherAddEventViewController: MyViewController {
         attandanceBtn.setBackgroundColor(color:Utility.btnSalmon)
         
         multiChooseBtn.layer.cornerRadius = 20
-        multiChooseBtn.setTitle(title: "בחירה מרובה")
+        multiChooseBtn.setTitle(title: "האכלה מרובה")
         multiChooseBtn.addRadius(radius: 20)
         multiChooseBtn.addTag(tag: 1)
         multiChooseBtn.setImage(image: UIImage(named: "checklist")!)
@@ -162,6 +162,11 @@ extension TeacherAddEventViewController: UICollectionViewDataSource, UICollectio
         cell.child = kids![indexPath.row]
         cell.awakeFromNib()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kidCell", for: indexPath)
+        Utility.addBorder(view: cell)
     }
     
     func kidsCollectionInit(){

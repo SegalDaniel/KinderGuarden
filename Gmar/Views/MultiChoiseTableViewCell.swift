@@ -39,9 +39,30 @@ class MultiChoiseTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         initChoise()
+        initButtons(btns: [foodKindBtn, changeTimeBtn, confirmBtn, foodFinishedBtn, foodAboveHalfBtn, foodBelowHalfBtn, foodDidntBtn])
+        confirmBtn.backgroundColor = Utility.backCloverColor
     }
     
+    func initButtons(btns:[UIButton]){
+        btns.forEach { (btn) in
+            Utility.addShadow(view: btn)
+            btn.layer.cornerRadius = 10
+            btn.addTarget(self, action: #selector(removeShadow), for: .touchDown)
+            btn.addTarget(self, action: #selector(reAddShadow), for: .touchDragExit)
+            btn.addTarget(self, action: #selector(reAddShadow), for: .touchUpInside)
+        }
+    }
+    
+    
     //MARK: - Buttons actions
+    @IBAction func removeShadow(_ sender: UIButton) {
+        sender.layer.shadowOpacity = 0.0
+    }
+    
+    @IBAction func reAddShadow(_ sender: UIButton) {
+        sender.layer.shadowOpacity = 0.5
+    }
+    
     @IBAction func foodKindBtnClicked(_ sender: Any) {
         toggleFoodKind()
     }
@@ -60,17 +81,15 @@ class MultiChoiseTableViewCell: UITableViewCell {
         if let btn = sender as? UIButton{
             if btn.tag == 0{
                 btn.tag = 1
-                btn.setTitle("לחץ שוב לביטול", for: .normal)
-                btn.backgroundColor = Utility.btnGray
+                btn.setTitle("ביטול", for: .normal)
+                btn.backgroundColor = Utility.btnSalmon
             }
             else{
                 btn.tag = 0
                 btn.setTitle("אישור", for: .normal)
-                btn.backgroundColor = Utility.btnBackColor
+                btn.backgroundColor = Utility.backCloverColor
             }
-            if let del = delegate{
-                del.cellConfirmBtnClicked()
-            }
+            delegate?.cellConfirmBtnClicked()
         }
         
     }
@@ -89,12 +108,12 @@ class MultiChoiseTableViewCell: UITableViewCell {
         case 0:
             hideSlider()
             showSolidBtns()
-            foodKind = (foodKind + 1) % 2
+            foodKind = (foodKind + 1) % 3
             break
-        case 1:
+        case 1,2:
             hideSolidBtns()
             showSlider()
-            foodKind = (foodKind + 1) % 2
+            foodKind = (foodKind + 1) % 3
             break
         default:
             break
@@ -135,11 +154,16 @@ class MultiChoiseTableViewCell: UITableViewCell {
     
     func showSlider(){
         quantStackView.axis = .vertical
-        foodKindBtn.setTitle("חלב אם/תמ״ל", for: .normal)
+        if foodKind == 1{
+            foodKindBtn.setTitle("חלב אם", for: .normal)
+        }
+        else if foodKind == 2{
+            foodKindBtn.setTitle("תמ״ל", for: .normal)
+        }
         sliderLabel.isHidden = false
         quantitySlider.isHidden = false
         quantitySlider.minimumValue = 0
-        quantitySlider.maximumValue = 25
+        quantitySlider.maximumValue = 30
     }
     
     func hideSlider(){
@@ -152,7 +176,7 @@ class MultiChoiseTableViewCell: UITableViewCell {
             for fBtn in foodBtns{
                 if fBtn == btn{
                     if fBtn.tag == 0{
-                        fBtn.backgroundColor = Utility.btnBackColor
+                        fBtn.backgroundColor = Utility.backCloverColor
                         fBtn.tag = 1
                     }
                     else{
