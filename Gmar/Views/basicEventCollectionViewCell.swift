@@ -48,7 +48,7 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             break
         case .hafrahsa:
             timeLabel.text?.append(" הפרשה")
-            image = UIImage(named: "049-baby")
+            image = UIImage(named: "rainy-nose")
             let haf = event as! Secretion
             eventDescription = "\(haf.type!)\n\(haf.area!)\n"
             break
@@ -72,19 +72,19 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             break
         case .milk:
             timeLabel.text?.append(" חלב")
-            image = UIImage(named: "024-feeding-bottle")
+            image = UIImage(named: "feeder")
             let milk = event as! LiquidFood
             eventDescription = "\(milk.mealType!)\n\(String(milk.amount))\n"
             break
         case .tamal:
             timeLabel.text?.append(" תמ״ל")
-            image = UIImage(named: "024-feeding-bottle-1")
+            image = UIImage(named: "aby-bottle")
             let tamal = event as! LiquidFood
             eventDescription = "\(tamal.mealType!)\n\(String(tamal.amount))\n"
             break
         case .rash:
             timeLabel.text?.append(" פריחה")
-            image = UIImage(named: "illness")
+            image = UIImage(named: "rash")
             let rash = event as! Rash
             eventDescription = "\(rash.type!)\n\(rash.area!)\n"
             break
