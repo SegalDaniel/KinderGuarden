@@ -274,6 +274,7 @@
 				A8299D6622537F63006E961F /* Allergenic */,
 				A8299D6B225383B5006E961F /* ChronicDisease */,
 				A8299D70225385F1006E961F /* RoutineMedication */,
+				A868E9A822710ECB000B3230 /* Alert */,
 			);
 			path = Child;
 			sourceTree = "<group>";
@@ -348,7 +349,6 @@
 				A8287E3C224BB861000C64DD /* Attendance */,
 				A8287E66224D5471000C64DD /* BasicEvents */,
 				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
-				A868E9A822710ECB000B3230 /* Alert */,
 			);
 			path = Entities;
 			sourceTree = "<group>";

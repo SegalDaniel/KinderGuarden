@@ -38,5 +38,5 @@ public class Alert: NSManagedObject {
         json["actionNeeded"] = actionNeeded
         return json
     }
-
+    
 }

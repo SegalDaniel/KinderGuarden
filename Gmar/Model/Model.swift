@@ -30,8 +30,8 @@ class Model{
     let foodEntity:NSEntityDescription
     let alertEntity:NSEntityDescription
     
-   //MARK: - Basic Events Entities
-//    let basicEventEntity:NSEntityDescription
+    //MARK: - Basic Events Entities
+    //    let basicEventEntity:NSEntityDescription
     let sleepEntity:NSEntityDescription
     let waterEntity:NSEntityDescription
     let solidFoodEntity:NSEntityDescription
@@ -48,10 +48,10 @@ class Model{
     let parasitesEntity:NSEntityDescription
     let generalBehaviorEntity:NSEntityDescription
     let generalNoteEntity:NSEntityDescription
-
-
+    
+    
     //MARK: - Development Events Entities
-//    let developmentEventEntity:NSEntityDescription
+    //    let developmentEventEntity:NSEntityDescription
     let fineMotorEventEntity:NSEntityDescription
     let grossMotorEventEntity:NSEntityDescription
     let socialEventEntity:NSEntityDescription
@@ -262,7 +262,7 @@ class Model{
             callback(nil)
         }
         else{
-             callback(NSError(domain: "no id found", code: 0, userInfo: nil))
+            callback(NSError(domain: "no id found", code: 0, userInfo: nil))
         }
     }
     

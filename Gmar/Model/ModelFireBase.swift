@@ -52,7 +52,7 @@ class ModelFireBase{
                 callback(err, nil)
             }
         }
-
+        
     }
     
     //MARK: - Remove document - wont be needed
