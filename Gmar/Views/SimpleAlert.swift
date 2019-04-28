@@ -14,7 +14,7 @@ class SimpleAlert{
     
     init(_title:String, _message:String, dissmissCallback:((() -> Void))?){
         alert = UIAlertController( title: _title, message: _message, preferredStyle: .alert )
-        let dissmisAction = UIAlertAction(title: "Dissmis", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+        let dissmisAction = UIAlertAction(title: "אישור", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
             dissmissCallback?()
             self.alert.dismiss(animated: true, completion: nil)
         })

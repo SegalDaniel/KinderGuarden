@@ -26,6 +26,9 @@
 		183CFCD5226F7C9700F7FF68 /* KeyboardMovment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */; };
 		183CFCD7226F7CD800F7FF68 /* PhotosUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */; };
 		183CFCD9226F7D1700F7FF68 /* EdgeShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */; };
+		18586D6022730926004F219C /* KidCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18586D5F22730926004F219C /* KidCollectionViewCell.swift */; };
+		18586D6322731CA5004F219C /* MyButtonLandscapeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18586D6222731CA5004F219C /* MyButtonLandscapeView.xib */; };
+		18586D6522731CB3004F219C /* MyButtonLandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18586D6422731CB3004F219C /* MyButtonLandscapeView.swift */; };
 		1866066D226B55BE006F20B0 /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1866066C226B55BE006F20B0 /* MyButton.xib */; };
 		1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866066E226B597B006F20B0 /* MyButtonView.swift */; };
 		1875FACD226780A100F68F8E /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */; };
@@ -145,6 +148,9 @@
 		183CFCD4226F7C9700F7FF68 /* KeyboardMovment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMovment.swift; sourceTree = "<group>"; };
 		183CFCD6226F7CD800F7FF68 /* PhotosUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosUtility.swift; sourceTree = "<group>"; };
 		183CFCD8226F7D1700F7FF68 /* EdgeShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeShadowLayer.swift; sourceTree = "<group>"; };
+		18586D5F22730926004F219C /* KidCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidCollectionViewCell.swift; sourceTree = "<group>"; };
+		18586D6222731CA5004F219C /* MyButtonLandscapeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyButtonLandscapeView.xib; sourceTree = "<group>"; };
+		18586D6422731CB3004F219C /* MyButtonLandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonLandscapeView.swift; sourceTree = "<group>"; };
 		1866066C226B55BE006F20B0 /* MyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyButton.xib; sourceTree = "<group>"; };
 		1866066E226B597B006F20B0 /* MyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonView.swift; sourceTree = "<group>"; };
 		1875FACB226780A100F68F8E /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -357,6 +363,15 @@
 			path = "Storyboards and Assests";
 			sourceTree = "<group>";
 		};
+		18586D6122731C51004F219C /* MyButtonLandscape */ = {
+			isa = PBXGroup;
+			children = (
+				18586D6222731CA5004F219C /* MyButtonLandscapeView.xib */,
+				18586D6422731CB3004F219C /* MyButtonLandscapeView.swift */,
+			);
+			path = MyButtonLandscape;
+			sourceTree = "<group>";
+		};
 		1866066B226B559A006F20B0 /* MyButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +384,7 @@
 		1887F4B0221AFDF8007682A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18586D6122731C51004F219C /* MyButtonLandscape */,
 				1866066B226B559A006F20B0 /* MyButton */,
 				1887F4BE221B3FCD007682A8 /* RPicker.swift */,
 				1887F4B1221AFE0E007682A8 /* PaddingLabel.swift */,
@@ -376,6 +392,7 @@
 				189B353F224289C600D33A6C /* Add New Child */,
 				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
 				18A25F3A2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift */,
+				18586D5F22730926004F219C /* KidCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -862,6 +879,7 @@
 				1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */,
 				1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */,
 				1818B1DD21E0E905006E1B39 /* Main.storyboard in Resources */,
+				18586D6322731CA5004F219C /* MyButtonLandscapeView.xib in Resources */,
 				18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */,
 				18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */,
 				180CF2FC223D413500A9DEF2 /* GoogleService-Info.plist in Resources */,
@@ -954,6 +972,7 @@
 				1875FACE226780A100F68F8E /* Vomitus+CoreDataProperties.swift in Sources */,
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */,
+				18586D6022730926004F219C /* KidCollectionViewCell.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
@@ -1005,6 +1024,7 @@
 				18A25F3B2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift in Sources */,
 				A88BBFA722576A9A00F9C0B4 /* Food+CoreDataProperties.swift in Sources */,
 				A8287E5C224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift in Sources */,
+				18586D6522731CB3004F219C /* MyButtonLandscapeView.swift in Sources */,
 				A8287E43224BBF13000C64DD /* AuthorizedAccompanist+CoreDataClass.swift in Sources */,
 				1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */,
 				189B35362242384B00D33A6C /* SettingsViewController.swift in Sources */,

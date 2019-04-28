@@ -1,19 +1,19 @@
 //
-//  MyButtonView.swift
+//  MyButtonLandscapeView.swift
 //  Gmar
 //
-//  Created by Zach Bachar on 20/04/2019.
+//  Created by Zach Bachar on 26/04/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 
 import UIKit
 
-class MyButtonView: UIView {
+class MyButtonLandscapeView: UIView {
 
-    @IBOutlet weak var mainButton: UIButton!
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var mainButton: UIButton!
     var isEnabled:Bool = true{
         didSet{
             mainButton.isEnabled = self.isEnabled
@@ -34,7 +34,7 @@ class MyButtonView: UIView {
         super.init(frame: frame)
         commonInit()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
@@ -49,7 +49,7 @@ class MyButtonView: UIView {
     }
     
     func commonInit(){
-        Bundle.main.loadNibNamed("MyButton", owner: self, options: nil)
+        Bundle.main.loadNibNamed("MyButtonLandscapeView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -98,10 +98,8 @@ class MyButtonView: UIView {
     }
     
     @IBAction func reAddShadow(_ sender: Any) {
-       contentView.layer.shadowOpacity = 0.5
-       mainLabel.layer.opacity = 1
-       mainImageView.layer.opacity = 1
+        contentView.layer.shadowOpacity = 0.5
+        mainLabel.layer.opacity = 1
+        mainImageView.layer.opacity = 1
     }
 }
-
-

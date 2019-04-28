@@ -134,8 +134,8 @@ class GenericDecisionViewController: GenericVC {
                 tamal = true
             }
         })
-        let btn1 = MyButtonView(frame: mainStackView.frame, title: "חלב אם", radius: 60, tag: 1, image: UIImage(named: "024-feeding-bottle")!)
-        let btn2 = MyButtonView(frame: mainStackView.frame, title: "תמ״ל", radius: 60, tag: 2, image: UIImage(named: "023-feeding-bottle-1")!)
+        let btn1 = MyButtonView(frame: mainStackView.frame, title: "חלב אם", radius: 60, tag: 1, image: UIImage(named: "feeder")!)
+        let btn2 = MyButtonView(frame: mainStackView.frame, title: "תמ״ל", radius: 60, tag: 2, image: UIImage(named: "baby-bottle")!)
         let btn3 = MyButtonView(frame: mainStackView.frame, title: "מוצקים", radius: 60, tag: 3, image: UIImage(named: "022-food")!)
         btn1.isEnabled = milk
         btn2.isEnabled = tamal

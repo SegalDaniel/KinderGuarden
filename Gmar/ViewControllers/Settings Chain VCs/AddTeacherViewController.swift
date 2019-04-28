@@ -34,6 +34,21 @@ class AddTeacherViewController: MyViewController, UIImagePickerControllerDelegat
     //MARK: - buttons action
     @IBAction func saveBtnClicked(_ sender: Any) {
         self.view.endEditing(true)
+        if teacherImage == nil{
+            let alert = UIAlertController(title: "רק רגע לפני שנמשיך", message: "יש באפשרותכם להוסיף תמונה על ידי לחיצה על תמונת הגננת", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "המשך בכל זאת", style: .default, handler: { (action) in
+                alert.dismiss(animated: true , completion: nil)
+                self.saveStaffToDB()
+            }))
+            alert.addAction(UIAlertAction(title: "אני רוצה להוסיף", style: .destructive, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            saveStaffToDB()
+        }
+    }
+    
+    func saveStaffToDB(){
         if nameTextField.text != nil && lastNameTextField.text != nil{
             if nameTextField.text != "" && lastNameTextField.text != ""{
                 let loadingView = Utility.getLoadingAlert()
@@ -56,7 +71,7 @@ class AddTeacherViewController: MyViewController, UIImagePickerControllerDelegat
                 return
             }
         }
-        let alert = SimpleAlert(_title: "אופס", _message: "נא למלא שם ושם משפחה, ניתן גם להוסיף תמונה", dissmissCallback: nil).getAlert()
+        let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: "נא למלא שם ושם משפחה, ניתן גם להוסיף תמונה", dissmissCallback: nil).getAlert()
         self.present(alert, animated: true, completion: nil)
     }
     

@@ -293,7 +293,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כללי" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6A-Oj-fJx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" כללי" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6A-Oj-fJx">
                                 <rect key="frame" x="20" y="775" width="1072" height="39"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="32"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1144,7 +1144,7 @@
             </objects>
             <point key="canvasLocation" x="-421" y="2395"/>
         </scene>
-        <!--Multi Choise View Controller-->
+        <!--האכלה מרובה-->
         <scene sceneID="GAA-C9-hLq">
             <objects>
                 <viewController id="W7p-xh-Fbn" customClass="MultiChoiseViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
@@ -1152,36 +1152,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK2-iN-azM">
-                                <rect key="frame" x="8" y="72" width="278" height="69"/>
-                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                <state key="normal" title="אישור סופי">
-                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="finalConfirmBtnClicked:" destination="W7p-xh-Fbn" eventType="touchUpInside" id="5Js-5T-TAL"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X3h-OX-nfT">
-                                <rect key="frame" x="0.0" y="146.5" width="1112" height="687.5"/>
+                                <rect key="frame" x="28" y="90" width="1056" height="648"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultiChoiseCell" rowHeight="100" id="hmc-pB-aXI" customClass="MultiChoiseTableViewCell" customModule="Gmar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1112" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="1056" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hmc-pB-aXI" id="IHu-lW-IPc">
-                                            <rect key="frame" x="0.0" y="0.0" width="1112" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1056" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הילד" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJd-6E-C67">
-                                                    <rect key="frame" x="930" y="5" width="167" height="89.5"/>
+                                                    <rect key="frame" x="882.5" y="5" width="158.5" height="89.5"/>
                                                     <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                                    <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYM-kM-tCL">
-                                                    <rect key="frame" x="755.5" y="5" width="166.5" height="89.5"/>
+                                                    <rect key="frame" x="716" y="5" width="158.5" height="89.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                     <state key="normal" title="מנה מוצקה">
@@ -1192,10 +1181,10 @@
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fi0-v7-UZ6">
-                                                    <rect key="frame" x="302.5" y="5" width="445" height="89.5"/>
+                                                    <rect key="frame" x="286" y="5" width="422" height="89.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncg-Bj-eQC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="107" height="89.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="89.5"/>
                                                             <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="27"/>
                                                             <state key="normal" title="סיים מנה">
@@ -1206,7 +1195,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lL-II-A4q">
-                                                            <rect key="frame" x="113" y="0.0" width="106.5" height="89.5"/>
+                                                            <rect key="frame" x="107" y="0.0" width="101" height="89.5"/>
                                                             <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
                                                                 <attributedString key="attributedTitle">
@@ -1224,7 +1213,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jby-wf-MOZ">
-                                                            <rect key="frame" x="225.5" y="0.0" width="106.5" height="89.5"/>
+                                                            <rect key="frame" x="214" y="0.0" width="101" height="89.5"/>
                                                             <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
                                                                 <attributedString key="attributedTitle">
@@ -1242,7 +1231,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ck7-5C-D5r">
-                                                            <rect key="frame" x="338" y="0.0" width="107" height="89.5"/>
+                                                            <rect key="frame" x="321" y="0.0" width="101" height="89.5"/>
                                                             <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                             <state key="normal" title="לא אכל">
@@ -1253,13 +1242,13 @@
                                                             </connections>
                                                         </button>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כמות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgj-oZ-369">
-                                                            <rect key="frame" x="445" y="0.0" width="0.0" height="89.5"/>
+                                                            <rect key="frame" x="422" y="0.0" width="0.0" height="89.5"/>
                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                                            <color key="textColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pci-Ov-GDU">
-                                                            <rect key="frame" x="443" y="0.0" width="4" height="90.5"/>
+                                                            <rect key="frame" x="420" y="0.0" width="4" height="90.5"/>
                                                             <connections>
                                                                 <action selector="quantSliderChanged:" destination="hmc-pB-aXI" eventType="valueChanged" id="jBA-ss-CZE"/>
                                                             </connections>
@@ -1267,7 +1256,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQq-Wu-lYw">
-                                                    <rect key="frame" x="15" y="5" width="111" height="89.5"/>
+                                                    <rect key="frame" x="15" y="5" width="105.5" height="89.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                                     <state key="normal" title="אישור">
@@ -1278,13 +1267,13 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך ושעה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-GE-3dT">
-                                                    <rect key="frame" x="134" y="5" width="160.5" height="45"/>
+                                                    <rect key="frame" x="128.5" y="5" width="149.5" height="45"/>
                                                     <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
-                                                    <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNB-x7-TAU">
-                                                    <rect key="frame" x="134" y="50" width="160.5" height="44.5"/>
+                                                    <rect key="frame" x="128.5" y="50" width="149.5" height="44.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="25"/>
                                                     <state key="normal" title="שינוי שעה">
@@ -1322,6 +1311,7 @@
                                                 <constraint firstItem="pYM-kM-tCL" firstAttribute="width" secondItem="IHu-lW-IPc" secondAttribute="width" multiplier="0.15" id="zZl-5X-rhp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="changeTimeBtn" destination="rNB-x7-TAU" id="2Jd-5J-wHH"/>
                                             <outlet property="confirmBtn" destination="aQq-Wu-lYw" id="xSe-Up-zrn"/>
@@ -1339,73 +1329,35 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הילד" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-jO-Bli">
-                                <rect key="frame" x="930" y="72" width="167" height="69"/>
-                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoD-tf-y8V">
-                                <rect key="frame" x="755.5" y="72" width="166.5" height="69"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">סוג המזון
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="30" name="VarelaRound-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="לחץ לשינוי">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="20" name="VarelaRound-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כמות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fet-8F-A94">
-                                <rect key="frame" x="302.5" y="72" width="445" height="69"/>
-                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
-                                <color key="textColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUe-7k-KDl">
+                                <rect key="frame" x="28" y="758" width="211" height="56"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="אישור דיווחים">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="finalConfirmBtnClicked:" destination="W7p-xh-Fbn" eventType="touchUpInside" id="UdP-kW-u2U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X3h-OX-nfT" firstAttribute="centerX" secondItem="hoe-b7-bjo" secondAttribute="centerX" id="06x-ce-Grx"/>
-                            <constraint firstItem="PoD-tf-y8V" firstAttribute="width" secondItem="WOr-jO-Bli" secondAttribute="width" id="2vd-GF-VzQ"/>
-                            <constraint firstItem="PoD-tf-y8V" firstAttribute="top" secondItem="WOr-jO-Bli" secondAttribute="top" id="37J-uB-dEx"/>
-                            <constraint firstItem="hoe-b7-bjo" firstAttribute="trailing" secondItem="WOr-jO-Bli" secondAttribute="trailing" constant="15" id="3Y4-AO-4N4"/>
-                            <constraint firstItem="PoD-tf-y8V" firstAttribute="height" secondItem="WOr-jO-Bli" secondAttribute="height" id="3jm-Ex-b4P"/>
-                            <constraint firstItem="WOr-jO-Bli" firstAttribute="top" secondItem="hoe-b7-bjo" secondAttribute="top" constant="2" id="663-tu-Aed"/>
-                            <constraint firstItem="fet-8F-A94" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UK2-iN-azM" secondAttribute="trailing" constant="16.5" id="8kl-Dx-7c6"/>
-                            <constraint firstItem="fet-8F-A94" firstAttribute="top" secondItem="PoD-tf-y8V" secondAttribute="top" id="C4i-Dd-qsi"/>
-                            <constraint firstItem="X3h-OX-nfT" firstAttribute="width" secondItem="KFd-hf-KQb" secondAttribute="width" id="MDn-Iq-e2Q"/>
-                            <constraint firstItem="X3h-OX-nfT" firstAttribute="height" secondItem="hoe-b7-bjo" secondAttribute="height" multiplier="0.9" id="OAa-zS-UzI"/>
-                            <constraint firstItem="UK2-iN-azM" firstAttribute="width" secondItem="KFd-hf-KQb" secondAttribute="width" multiplier="0.25" id="OYm-Gy-Eid"/>
-                            <constraint firstItem="WOr-jO-Bli" firstAttribute="width" secondItem="KFd-hf-KQb" secondAttribute="width" multiplier="0.15" id="YFq-r6-hbn"/>
-                            <constraint firstItem="hoe-b7-bjo" firstAttribute="bottom" secondItem="X3h-OX-nfT" secondAttribute="bottom" id="bUN-n9-MUq"/>
-                            <constraint firstItem="UK2-iN-azM" firstAttribute="leading" secondItem="hoe-b7-bjo" secondAttribute="leading" constant="8" id="dnf-ux-zyW"/>
-                            <constraint firstItem="WOr-jO-Bli" firstAttribute="height" secondItem="hoe-b7-bjo" secondAttribute="height" multiplier="0.09" id="hNV-0D-bqD"/>
-                            <constraint firstItem="fet-8F-A94" firstAttribute="height" secondItem="PoD-tf-y8V" secondAttribute="height" id="i1A-zZ-2Lb"/>
-                            <constraint firstItem="PoD-tf-y8V" firstAttribute="leading" secondItem="fet-8F-A94" secondAttribute="trailing" constant="8" id="kI9-ph-WfL"/>
-                            <constraint firstItem="WOr-jO-Bli" firstAttribute="leading" secondItem="PoD-tf-y8V" secondAttribute="trailing" constant="8" id="kln-m9-9t3"/>
-                            <constraint firstItem="fet-8F-A94" firstAttribute="width" secondItem="KFd-hf-KQb" secondAttribute="width" multiplier="0.4" id="uCM-bx-uTp"/>
-                            <constraint firstItem="UK2-iN-azM" firstAttribute="top" secondItem="fet-8F-A94" secondAttribute="top" id="xvf-3o-SpV"/>
-                            <constraint firstItem="UK2-iN-azM" firstAttribute="height" secondItem="fet-8F-A94" secondAttribute="height" id="yAW-RQ-yE6"/>
+                            <constraint firstItem="hoe-b7-bjo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LUe-7k-KDl" secondAttribute="trailing" symbolic="YES" id="IW4-fp-TLd"/>
+                            <constraint firstItem="X3h-OX-nfT" firstAttribute="width" secondItem="KFd-hf-KQb" secondAttribute="width" multiplier="0.95" id="MDn-Iq-e2Q"/>
+                            <constraint firstItem="hoe-b7-bjo" firstAttribute="bottom" secondItem="LUe-7k-KDl" secondAttribute="bottom" constant="20" id="dxC-sr-ubX"/>
+                            <constraint firstItem="LUe-7k-KDl" firstAttribute="leading" secondItem="X3h-OX-nfT" secondAttribute="leading" id="ejV-PP-oub"/>
+                            <constraint firstItem="X3h-OX-nfT" firstAttribute="top" secondItem="hoe-b7-bjo" secondAttribute="top" constant="20" id="mzS-cq-N6I"/>
+                            <constraint firstItem="LUe-7k-KDl" firstAttribute="width" secondItem="X3h-OX-nfT" secondAttribute="width" multiplier="0.2" id="oIi-pg-s8Q"/>
+                            <constraint firstItem="LUe-7k-KDl" firstAttribute="top" secondItem="X3h-OX-nfT" secondAttribute="bottom" constant="20" id="sdO-UP-rFB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hoe-b7-bjo"/>
                     </view>
+                    <navigationItem key="navigationItem" title="האכלה מרובה" id="Yy1-Vi-lAe"/>
                     <connections>
-                        <outlet property="finalConfirmBtn" destination="UK2-iN-azM" id="kYG-Hn-td8"/>
-                        <outlet property="foodKindTitle" destination="PoD-tf-y8V" id="Wec-AB-DaC"/>
-                        <outlet property="kidNameTitle" destination="WOr-jO-Bli" id="F74-Vg-sw7"/>
+                        <outlet property="confirmAllBtn" destination="LUe-7k-KDl" id="E5H-DZ-xYX"/>
                         <outlet property="kidsTableView" destination="X3h-OX-nfT" id="u6r-hJ-gT4"/>
-                        <outlet property="quantityTitle" destination="fet-8F-A94" id="f1d-Db-c3o"/>
                         <segue destination="QIu-Qh-OXq" kind="unwind" identifier="unwindToMainWindow" unwindAction="unwindToMainWindowWithSegue:" id="la9-T0-lmX"/>
                     </connections>
                 </viewController>
@@ -1422,27 +1374,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SoE-1A-wKY">
-                                <rect key="frame" x="28" y="118.5" width="1056" height="667"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="orX-OF-zQT">
+                                <rect key="frame" x="28" y="90" width="1056" height="125"/>
                                 <subviews>
-                                    <stackView opaque="NO" tag="-1" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vU9-oW-Bcf">
-                                        <rect key="frame" x="0.0" y="0.0" width="1056" height="667"/>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3E-zD-IN9" customClass="MyButtonLandscapeView" customModule="Gmar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="518" height="125"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nv3-Qw-DFf" customClass="MyButtonLandscapeView" customModule="Gmar" customModuleProvider="target">
+                                        <rect key="frame" x="538" y="0.0" width="518" height="125"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ja-9T-bdJ">
+                                <rect key="frame" x="28" y="235" width="1056" height="579"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fB3-JY-bk1">
+                                    <size key="itemSize" width="300" height="300"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kidCell" id="wYf-A4-zzm" customClass="KidCollectionViewCell" customModule="Gmar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keU-dL-PlK" customClass="MyButtonView" customModule="Gmar" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="keU-dL-PlK" firstAttribute="centerY" secondItem="wYf-A4-zzm" secondAttribute="centerY" id="4vE-Xf-rpH"/>
+                                            <constraint firstItem="keU-dL-PlK" firstAttribute="centerX" secondItem="wYf-A4-zzm" secondAttribute="centerX" id="dfL-hj-5Xj"/>
+                                            <constraint firstItem="keU-dL-PlK" firstAttribute="width" secondItem="wYf-A4-zzm" secondAttribute="width" id="lpQ-mF-Zdo"/>
+                                            <constraint firstItem="keU-dL-PlK" firstAttribute="height" secondItem="wYf-A4-zzm" secondAttribute="height" id="oet-fT-Spv"/>
+                                        </constraints>
+                                        <size key="customSize" width="300" height="300"/>
+                                        <connections>
+                                            <outlet property="kidButton" destination="keU-dL-PlK" id="aUg-cU-Dh7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SoE-1A-wKY" firstAttribute="height" secondItem="UV6-1k-S7o" secondAttribute="height" multiplier="0.8" id="5cA-mK-UyV"/>
-                            <constraint firstItem="SoE-1A-wKY" firstAttribute="centerY" secondItem="v3c-TP-2OX" secondAttribute="centerY" id="MYc-5e-3AD"/>
-                            <constraint firstItem="SoE-1A-wKY" firstAttribute="centerX" secondItem="v3c-TP-2OX" secondAttribute="centerX" id="X2u-ee-maQ"/>
-                            <constraint firstItem="SoE-1A-wKY" firstAttribute="width" secondItem="UV6-1k-S7o" secondAttribute="width" multiplier="0.95" id="nSj-Gq-XDp"/>
+                            <constraint firstItem="7ja-9T-bdJ" firstAttribute="width" secondItem="UV6-1k-S7o" secondAttribute="width" multiplier="0.95" id="8LQ-Qt-PpX"/>
+                            <constraint firstItem="orX-OF-zQT" firstAttribute="top" secondItem="v3c-TP-2OX" secondAttribute="top" constant="20" id="UMU-7O-Y7o"/>
+                            <constraint firstItem="orX-OF-zQT" firstAttribute="centerX" secondItem="v3c-TP-2OX" secondAttribute="centerX" id="bwT-0f-R6L"/>
+                            <constraint firstItem="v3c-TP-2OX" firstAttribute="bottom" secondItem="7ja-9T-bdJ" secondAttribute="bottom" constant="20" id="hoE-QF-DaM"/>
+                            <constraint firstItem="orX-OF-zQT" firstAttribute="width" secondItem="UV6-1k-S7o" secondAttribute="width" multiplier="0.95" id="kNg-Sj-zEj"/>
+                            <constraint firstItem="7ja-9T-bdJ" firstAttribute="top" secondItem="orX-OF-zQT" secondAttribute="bottom" constant="20" id="pOy-ql-BRW"/>
+                            <constraint firstItem="orX-OF-zQT" firstAttribute="height" secondItem="UV6-1k-S7o" secondAttribute="height" multiplier="0.15" id="rbX-l6-gT0"/>
+                            <constraint firstItem="7ja-9T-bdJ" firstAttribute="centerX" secondItem="v3c-TP-2OX" secondAttribute="centerX" id="vgO-8q-rD6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v3c-TP-2OX"/>
                     </view>
                     <navigationItem key="navigationItem" title="בחירת ילד" id="O2H-7Z-sGo"/>
                     <connections>
-                        <outlet property="mainStackView" destination="SoE-1A-wKY" id="B9b-Cc-MpZ"/>
+                        <outlet property="attandanceBtn" destination="D3E-zD-IN9" id="ac7-fK-f5x"/>
+                        <outlet property="kidsCollectionView" destination="7ja-9T-bdJ" id="3Fr-by-axR"/>
+                        <outlet property="multiChooseBtn" destination="nv3-Qw-DFf" id="QaW-vQ-Gsz"/>
+                        <outlet property="topBtnsStack" destination="orX-OF-zQT" id="0N2-64-bwp"/>
                         <segue destination="Vyh-8f-1or" kind="show" identifier="EventKind" id="7s3-1S-vfN"/>
                         <segue destination="fEl-bo-HFl" kind="show" identifier="GenericInfo" id="uba-IQ-0PZ"/>
                         <segue destination="W7p-xh-Fbn" kind="show" identifier="MultiChoose" id="GQb-Le-336"/>
@@ -1453,7 +1453,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQ7-Oc-bV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Go9-9G-CPE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="759" y="22"/>
+            <point key="canvasLocation" x="758.6330935251799" y="21.582733812949641"/>
         </scene>
         <!--דיווח בסיסי-->
         <scene sceneID="t1M-Lm-Nmv">
@@ -1473,7 +1473,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                <state key="normal" title="פריחה" image="illness">
+                                                <state key="normal" title="פריחה" image="rash">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -1495,7 +1495,7 @@
                                                 <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                <state key="normal" title="האכלה" image="024-feeding-bottle">
+                                                <state key="normal" title="האכלה" image="feeding">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -1522,7 +1522,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                <state key="normal" title="הפרשה" image="049-baby">
+                                                <state key="normal" title="הפרשה" image="rainy-nose">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -1817,7 +1817,7 @@
                                                     <segue destination="crj-ty-N3d" kind="show" identifier="BasicEventSegue" id="wrP-rb-SjG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-Wh-ZY0">
                                                 <rect key="frame" x="510.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
@@ -1828,7 +1828,7 @@
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="taT-TL-Fcx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
                                                 <rect key="frame" x="255.5" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
@@ -1839,7 +1839,7 @@
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="B26-K6-4vc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
                                                 <rect key="frame" x="0.0" y="0.0" width="235.5" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
@@ -1855,7 +1855,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uLm-WL-1sw">
                                         <rect key="frame" x="0.0" y="315.5" width="1001" height="295.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-C0-t4z">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-C0-t4z">
                                                 <rect key="frame" x="383" y="0.0" width="235" height="295.5"/>
                                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
@@ -1916,25 +1916,25 @@
     <resources>
         <image name="001-baby-6" width="512" height="512"/>
         <image name="010-diaper" width="512" height="512"/>
-        <image name="024-feeding-bottle" width="512" height="512"/>
         <image name="026-calendar" width="512" height="512"/>
         <image name="032-report" width="512" height="512"/>
         <image name="033-thermometer" width="512" height="512"/>
         <image name="048-baby-1" width="512" height="512"/>
-        <image name="049-baby" width="512" height="512"/>
         <image name="050-woman" width="512" height="512"/>
         <image name="abacus" width="512" height="512"/>
         <image name="cough" width="512" height="512"/>
-        <image name="illness" width="512" height="512"/>
+        <image name="feeding" width="512" height="512"/>
         <image name="kindergarten" width="512" height="512"/>
         <image name="logo_stroke" width="5296" height="860"/>
+        <image name="rainy-nose" width="512" height="512"/>
+        <image name="rash" width="512" height="512"/>
         <image name="settings" width="512" height="512"/>
         <image name="teacher" width="512" height="512"/>
         <image name="vomit" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2no-SZ-mxa"/>
-        <segue reference="lqd-QX-6d7"/>
+        <segue reference="UhQ-lY-ajX"/>
+        <segue reference="YN3-ln-FeL"/>
         <segue reference="pBt-dH-qId"/>
     </inferredMetricsTieBreakers>
 </document>
