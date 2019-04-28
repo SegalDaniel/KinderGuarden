@@ -10,10 +10,11 @@ import CoreData
 
 @objc(BasicEvent)
 public class BasicEvent: NSManagedObject {
-
+    
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["eventType"] = eventType
+        json["eventID"] = eventID
         json["eventDate"] = eventDate
         json["childID"] = child?.childID
         json["staffID"] = staff?.staffID
