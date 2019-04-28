@@ -28,6 +28,7 @@ class Model{
     let chronicDiseaseEntity:NSEntityDescription
     let routineMedicationEtity:NSEntityDescription
     let foodEntity:NSEntityDescription
+    let alertEntity:NSEntityDescription
     
    //MARK: - Basic Events Entities
 //    let basicEventEntity:NSEntityDescription
@@ -86,6 +87,7 @@ class Model{
         routineMedicationEtity = NSEntityDescription.entity(forEntityName: "RoutineMedication", in: managedContext)!
         foodEntity = NSEntityDescription.entity(forEntityName: "Food", in: managedContext)!
         socialEventEntity = NSEntityDescription.entity(forEntityName: "Social", in: managedContext)!
+        alertEntity = NSEntityDescription.entity(forEntityName: "Alert", in: managedContext)!
         
     }
     
