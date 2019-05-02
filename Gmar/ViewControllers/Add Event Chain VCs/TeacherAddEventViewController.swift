@@ -61,7 +61,7 @@ class TeacherAddEventViewController: MyViewController {
         multiChooseBtn.addRadius(radius: 20)
         multiChooseBtn.addTag(tag: 1)
         multiChooseBtn.setImage(image: UIImage(named: "checklist")!)
-        multiChooseBtn.addTarget(self, action: #selector(multiChoiseBtnClicked), for: .touchUpInside)
+        //multiChooseBtn.addTarget(self, action: #selector(multiChoiseBtnClicked), for: .touchUpInside)
         multiChooseBtn.setBackgroundColor(color:Utility.btnSalmon)
     }
     

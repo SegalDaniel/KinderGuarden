@@ -36,7 +36,7 @@ class KidCollectionViewCell: UICollectionViewCell {
                 kidButton.setBackgroundColor(color: Utility.btnPink)
             }
             kidButton.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-            kidButton.addTarget(self, action: #selector(dragExit), for: .touchDragExit)
+            //kidButton.addTarget(self, action: #selector(dragExit), for: .touchDragExit)
         }
     }
     
