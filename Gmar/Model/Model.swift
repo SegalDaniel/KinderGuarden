@@ -7,13 +7,14 @@
 //
 
 import Foundation
-import FirebaseFirestore
+import UIKit
+//import FirebaseFirestore
 import CoreData
 
 class Model{
     //MARK: - Variables
     static let instance:Model = Model()
-    var modelFirebase = ModelFireBase()
+    //var modelFirebase = ModelFireBase()
     let appDelegate:AppDelegate
     let managedContext:NSManagedObjectContext
     
@@ -90,7 +91,8 @@ class Model{
         alertEntity = NSEntityDescription.entity(forEntityName: "Alert", in: managedContext)!
         
     }
-    
+    /******************** Offline changes - Replace all comments for FireBase connection**********************/
+    /*
     //MARK: - Child Model Methods
     func getChild(childID:String, callback:@escaping (Error?, Child?)->Void){
         modelFirebase.getChild(childID: childID, callback: callback)
@@ -110,8 +112,12 @@ class Model{
     func deleteDocument(collection:String, docID:String, callack:@escaping (Error?)->Void){
         modelFirebase.removeDocument(collection: collection, docID: docID, callack: callack)
     }
+    */
     
     func sendToFB(basicEvent:BasicEvent, callack:@escaping (Error?)->Void){
+        saveToDB(callback: nil)
+        callack(nil)
+        /*
         modelFirebase.sendBasicEvent(basicEvent: basicEvent) { (err) in
             if err == nil{
                 do{
@@ -121,11 +127,13 @@ class Model{
                 }
             }
             callack(err)
-        }
+        }*/
     }
     
     func sendToFB(attandanceEvent:Attendance, callack:@escaping (Error?)->Void){
-        modelFirebase.sendAttandanceEvent(event: attandanceEvent) { (err) in
+        saveToDB(callback: nil)
+        callack(nil)
+        /*modelFirebase.sendAttandanceEvent(event: attandanceEvent) { (err) in
             if err == nil{
                 do{
                     try Model.instance.managedContext.save()
@@ -134,12 +142,14 @@ class Model{
                 }
             }
             callack(err)
-        }
+        }*/
     }
     
     
     func sendToFB(child:Child, callack:@escaping (Error?)->Void){
-        modelFirebase.sendChild(child: child) { (err) in
+        saveToDB(callback: nil)
+        callack(nil)
+        /*modelFirebase.sendChild(child: child) { (err) in
             if err == nil{
                 do{
                     try Model.instance.managedContext.save()
@@ -148,11 +158,13 @@ class Model{
                 }
             }
             callack(err)
-        }
+        }*/
     }
     
     func sendToFB(staff:Staff, callack:@escaping (Error?)->Void){
-        modelFirebase.sendStaff(staff: staff) { (err) in
+        saveToDB(callback: nil)
+        callack(nil)
+        /*modelFirebase.sendStaff(staff: staff) { (err) in
             if err == nil{
                 do{
                     try Model.instance.managedContext.save()
@@ -161,8 +173,10 @@ class Model{
                 }
             }
             callack(err)
-        }
+        }*/
     }
+    
+    /******************** Offline changes - Replace all comments for FireBase connection**********************/
     
     //MARK: - CoreData
     //MARK: - child entity methods

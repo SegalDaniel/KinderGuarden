@@ -6,6 +6,7 @@
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 
+/*
 import Foundation
 import Firebase
 import FirebaseFirestore
@@ -89,3 +90,4 @@ class ModelFireBase{
         db.collection("Staff").document(staff.staffID!).setData(staff.toJson(), completion: callback)
     }
 }
+*/
