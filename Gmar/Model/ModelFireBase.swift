@@ -36,6 +36,55 @@ class ModelFireBase{
         db.collection("Child").document(child.childID!).setData(child.toJson(), completion: { (err) in
             callack(err)
         })
+//        let session = URLSession.shared
+//        let url = URL(string: "http://127.0.0.1:5000/alerts/LogicSystemAlert/1")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+////        let json = child.toJson()
+//        let jsonData = try? JSONSerialization.data(withJSONObject: child.toJson(), options: [.prettyPrinted])
+//
+//
+//        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+//            // Do something...
+//                        if error != nil || data == nil {
+//                            print("Client error!")
+//                            return
+//                        }
+//
+//                        guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+//                            print("Server error!")
+//                            return
+//                        }
+//        }
+//
+//        task.resume()
+        
+        //        let task = session.dataTask(with: url) { data, response, error in
+        //
+        //            if error != nil || data == nil {
+        //                print("Client error!")
+        //                return
+        //            }
+        //
+        //            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+        //                print("Server error!")
+        //                return
+        //            }
+        //
+        //            guard let mime = response.mimeType, mime == "application/json" else {
+        //                print("Wrong MIME type!")
+        //                return
+        //            }
+        //
+        //            do {
+        //                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+        //                print(json)
+        //            } catch {
+        //                print("JSON error: \(error.localizedDescription)")
+        //            }
+        //        }
+        //
+        //        task.resume()
     }
     
     
@@ -72,6 +121,28 @@ class ModelFireBase{
                 self.db.collection("BasicEvents").document("\(eventID)\(basicEvent.eventType)").setData(basicEvent.toJson(), completion: callback)
             })
         }
+//        let session = URLSession.shared
+//        let url = URL(string: "http://127.0.0.1:5000/basicEvents")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        let json = basicEvent.toJson()
+//        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+//
+//
+//        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+//            // Do something...
+//            if error != nil || data == nil {
+//                print("Client error!")
+//                return
+//            }
+//
+//            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+//                print("Server error!")
+//                return
+//            }
+//        }
+//
+//        task.resume()
     }
     
     //MARK: - Attandance Methods
