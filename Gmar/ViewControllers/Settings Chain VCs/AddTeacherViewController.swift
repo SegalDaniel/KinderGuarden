@@ -65,8 +65,9 @@ class AddTeacherViewController: MyViewController, UIImagePickerControllerDelegat
                     staff = Staff(staffID: "\(id)", firstName: fName, lastName: lName, image: nil)
                 }
                 Model.instance.sendToFB(staff: staff) { (err) in
-                    loadingView.removeFromParent()
-                    self.performSegue(withIdentifier: "exit", sender: nil)
+                    loadingView.dismiss(animated: true, completion: {
+                        self.performSegue(withIdentifier: "exit", sender: nil)
+                    })
                 }
                 return
             }

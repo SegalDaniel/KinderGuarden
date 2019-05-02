@@ -81,17 +81,19 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
             }
             
             Model.instance.sendToFB(child: child) { (err) in
-                loadingView.removeFromParent()
-                if err == nil{
-                    self.performSegue(withIdentifier: "unwindToMain", sender: nil)
-                }
-                else{
-                    let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err.debugDescription, dissmissCallback: nil).getAlert()
-                    self.present(alert, animated: true, completion: nil)
-                }
+                loadingView.dismiss(animated: true, completion: {
+                    if err == nil{
+                        self.performSegue(withIdentifier: "unwindToMain", sender: nil)
+                    }
+                    else{
+                        let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err.debugDescription, dissmissCallback: nil).getAlert()
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                })
+                
             }
         }
-        loadingView.removeFromParent()
+        loadingView.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addCellBtnClicked(_ sender: UIButton) {
