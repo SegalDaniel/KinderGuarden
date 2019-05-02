@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/ModelFireBase.swift"
-            timestampString = "578509038.942035"
+            timestampString = "578513214.382831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
@@ -26,43 +26,139 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/Model.swift"
-            timestampString = "578509007.39469"
+            timestampString = "578511851.845704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-            landmarkName = "sendToFB(basicEvent:callack:)"
+            landmarkName = "Model"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gmar/ViewControllers/Settings Chain VCs/AddTeacherViewController.swift"
+            timestampString = "578513214.38301"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "saveStaffToDB()"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Gmar.Model.sendToFB(basicEvent: Gmar.BasicEvent, callack: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "Gmar.AddTeacherViewController.saveStaffToDB() -&gt; ()"
                   moduleName = "Gmar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/Model/Model.swift"
-                  timestampString = "578509038.9509341"
+                  urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
+                  timestampString = "578513214.564419"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "49">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "4940">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Gmar.Model.sendToFB(basicEvent: Gmar.BasicEvent, callack: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Gmar.AddTeacherViewController.saveStaffToDB() -&gt; ()"
                   moduleName = "Gmar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/Model/Model.swift"
-                  timestampString = "578509038.953396"
+                  urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
+                  timestampString = "578513214.566871"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "147">
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gmar/Model/Model.swift"
+            timestampString = "578511851.846118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "sendToFB(child:callack:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gmar/Model/Model.swift"
+            timestampString = "578511851.846364"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "sendToFB(staff:callack:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gmar/ViewControllers/Settings Chain VCs/AddTeacherViewController.swift"
+            timestampString = "578513214.383395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "saveBtnClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gmar.AddTeacherViewController.saveBtnClicked(Any) -&gt; ()"
+                  moduleName = "Gmar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
+                  timestampString = "578513214.578671"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "628">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in Gmar.AddTeacherViewController.saveBtnClicked(Any) -&gt; ()"
+                  moduleName = "Gmar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
+                  timestampString = "578513214.580608"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "152">
                </Location>
             </Locations>
          </BreakpointContent>
