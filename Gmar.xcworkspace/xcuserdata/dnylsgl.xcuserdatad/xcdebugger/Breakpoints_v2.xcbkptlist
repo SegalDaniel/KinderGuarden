@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/ModelFireBase.swift"
-            timestampString = "578513214.382831"
+            timestampString = "578744192.03321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/Model.swift"
-            timestampString = "578511851.845704"
+            timestampString = "578782614.07359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -38,7 +38,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/ViewControllers/Settings Chain VCs/AddTeacherViewController.swift"
@@ -51,14 +51,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Gmar.AddTeacherViewController.saveStaffToDB() -&gt; ()"
                   moduleName = "Gmar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
-                  timestampString = "578513214.564419"
+                  timestampString = "578514071.200362"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -66,19 +66,19 @@
                   offsetFromSymbolStart = "4940">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Gmar.AddTeacherViewController.saveStaffToDB() -&gt; ()"
                   moduleName = "Gmar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
-                  timestampString = "578513214.566871"
+                  timestampString = "578514071.203124"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
                   endingLineNumber = "68"
-                  offsetFromSymbolStart = "148">
+                  offsetFromSymbolStart = "136">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/Model.swift"
-            timestampString = "578511851.846118"
+            timestampString = "578782614.073909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
@@ -102,11 +102,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/Model.swift"
-            timestampString = "578511851.846364"
+            timestampString = "578782614.074034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
@@ -118,7 +118,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/ViewControllers/Settings Chain VCs/AddTeacherViewController.swift"
@@ -131,14 +131,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Gmar.AddTeacherViewController.saveBtnClicked(Any) -&gt; ()"
                   moduleName = "Gmar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
-                  timestampString = "578513214.578671"
+                  timestampString = "578514071.213218"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "39"
@@ -146,14 +146,14 @@
                   offsetFromSymbolStart = "628">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in Gmar.AddTeacherViewController.saveBtnClicked(Any) -&gt; ()"
                   moduleName = "Gmar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dnylsgl/Documents/Gmar/Gmar/ViewControllers/Settings%20Chain%20VCs/AddTeacherViewController.swift"
-                  timestampString = "578513214.580608"
+                  timestampString = "578514071.2157021"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"

@@ -15,6 +15,7 @@ class Model{
     //MARK: - Variables
     static let instance:Model = Model()
     //var modelFirebase = ModelFireBase()
+    var modelHttp = ModelHttp()
     let appDelegate:AppDelegate
     let managedContext:NSManagedObjectContext
     
@@ -159,6 +160,7 @@ class Model{
             }
             callack(err)
         }*/
+        
     }
     
     func sendToFB(staff:Staff, callack:@escaping (Error?)->Void){
