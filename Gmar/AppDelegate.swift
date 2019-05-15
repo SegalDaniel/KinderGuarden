@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         if !Model.instance.checkIfSignedIn(){
             Model.instance.signIn()
-        }
+        }*/
 
 
         return true
@@ -103,4 +103,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+
 

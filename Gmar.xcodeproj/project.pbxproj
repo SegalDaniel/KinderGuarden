@@ -78,6 +78,7 @@
 		A8299D6F22538538006E961F /* ChronicDisease+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D6D22538538006E961F /* ChronicDisease+CoreDataProperties.swift */; };
 		A8299D73225386E4006E961F /* RoutineMedication+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D71225386E4006E961F /* RoutineMedication+CoreDataClass.swift */; };
 		A8299D74225386E4006E961F /* RoutineMedication+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D72225386E4006E961F /* RoutineMedication+CoreDataProperties.swift */; };
+		A833C299228BE2B8003855FB /* ModelHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A833C298228BE2B8003855FB /* ModelHttp.swift */; };
 		A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */; };
 		A8576DFA224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */; };
 		A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */; };
@@ -202,6 +203,7 @@
 		A8299D6D22538538006E961F /* ChronicDisease+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChronicDisease+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8299D71225386E4006E961F /* RoutineMedication+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoutineMedication+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8299D72225386E4006E961F /* RoutineMedication+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoutineMedication+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A833C298228BE2B8003855FB /* ModelHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHttp.swift; sourceTree = "<group>"; };
 		A8576DF7224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576DF8224A6CDC00CBA907 /* GeneralNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 				183CFCDA226F7DAF00F7FF68 /* Entities */,
 				183CFCCB226F7A2000F7FF68 /* Utility */,
 				180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */,
+				A833C298228BE2B8003855FB /* ModelHttp.swift */,
 				180CF2FF223D44F300A9DEF2 /* Model.swift */,
 				180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */,
 			);
@@ -820,7 +823,7 @@
 				1818B1D021E0E905006E1B39 /* Sources */,
 				1818B1D121E0E905006E1B39 /* Frameworks */,
 				1818B1D221E0E905006E1B39 /* Resources */,
-				5F9DC7C42429F0FAD0672964 /* [CP] Embed Pods Frameworks */,
+				A3A779D03903C2FC22468EB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -890,7 +893,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5F9DC7C42429F0FAD0672964 /* [CP] Embed Pods Frameworks */ = {
+		A3A779D03903C2FC22468EB7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1022,6 +1025,7 @@
 				A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */,
 				A8299D74225386E4006E961F /* RoutineMedication+CoreDataProperties.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,
+				A833C299228BE2B8003855FB /* ModelHttp.swift in Sources */,
 				18A25F3B2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift in Sources */,
 				A88BBFA722576A9A00F9C0B4 /* Food+CoreDataProperties.swift in Sources */,
 				A8287E5C224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift in Sources */,
