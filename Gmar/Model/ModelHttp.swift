@@ -41,7 +41,65 @@ class ModelHttp{
     }
     
     func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
+        let kind:Enums.BasicEvent = Enums.BasicEvent(rawValue: Int(basicEvent.eventType))!
+        var url=URL(string: "empty")!
+        switch kind {
+        case .sleep:
+            url = URL(string: "http://127.0.0.1:5000/events/SleepingEvent")!
+            break
+        case .water:
+            url = URL(string: "http://127.0.0.1:5000/events/WaterEvent")!
+            break
+        case .solidFoods:
+            url = URL(string: "http://127.0.0.1:5000/events/SolidFoodEvent")!
+            break
+        case .feces:
+            url = URL(string: "http://127.0.0.1:5000/events/FecesEvent")!
+            break
+        case .urine:
+            url = URL(string: "http://127.0.0.1:5000/events/UrineEvent")!
+            break
+        case .cough:
+            url = URL(string: "http://127.0.0.1:5000/events/CoughEvent")!
+            break
+        case .hafrahsa:
+            url = URL(string: "http://127.0.0.1:5000/events/SecretionEvent")!
+            break
+        case .vomit:
+            url = URL(string: "http://127.0.0.1:5000/events/VomitusEvent")!
+            break
+        case .rash:
+            url = URL(string: "http://127.0.0.1:5000/events/RashEvent")!
+            break
+        case .feever:
+            url = URL(string: "http://127.0.0.1:5000/events/FeverEvent")!
+            break
+            //add parasites medication and disease
+        //add liquid food url
+        default:
+            break
+        }
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let dic = basicEvent.toJson()
+        let json = dic.toJSON()
+        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+        let jsonData = json?.data(using: .utf8)
         
+        
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+        }
+        task.resume()
     }
     
     func sendAttandanceEvent(event:Attendance, callback: @escaping(Error?) -> Void){

@@ -122,30 +122,7 @@ class ModelFireBase{
                 self.db.collection("BasicEvents").document("\(eventID)\(basicEvent.eventType)").setData(basicEvent.toJson(), completion: callback)
             })
         }
-//        let session = URLSession.shared
-//        let url = URL(string: "http://127.0.0.1:5000/events/SoidFood")!
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        let dic = basicEvent.toJson()
-//        let json = dic.toJSON()
-////        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
-//        let jsonData = json?.data(using: .utf8)
-//
-//
-//        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
-//            // Do something...
-//            if error != nil || data == nil {
-//                print("Client error!")
-//                return
-//            }
-//
-//            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-//                print("Server error!")
-//                return
-//            }
-//        }
-//
-//        task.resume()
+
 //    }
     
     //MARK: - Attandance Methods
@@ -163,27 +140,5 @@ class ModelFireBase{
         db.collection("Staff").document(staff.staffID!).setData(staff.toJson(), completion: callback)
     }
 }
-
-protocol JSONSerializable {
-    func toJSON() -> String?
-}
-extension String : JSONSerializable {
-    func toJSON() -> String? {
-        return "\"\(self)\""
-    }
-}
-extension Dictionary : JSONSerializable {
-    func toJSON() -> String? {
-        var out : [String] = []
-        for (k, v) in self {
-            if let json_element = v as? JSONSerializable, let string = json_element.toJSON() {
-                out.append("\"\(k)\": \(string)")
-            }
-//            else {
-//                return nil
-//            }
-        }
-        return "{\(out.joined(separator: ", "))}"
-    }
-}
  */
+
