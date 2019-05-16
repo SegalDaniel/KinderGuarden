@@ -178,6 +178,9 @@ class Model{
          }
          callack(err)
          }*/
+        modelHttp.sendStaff(staff: staff) { (err) in
+            callack(err)
+        }
     }
     
     /******************** Offline changes - Replace all comments for FireBase connection**********************/

@@ -23,7 +23,6 @@ class ModelHttp{
         
         
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
-            // Do something...
             if error != nil || data == nil {
                 print("Client error!")
                 return
@@ -34,9 +33,7 @@ class ModelHttp{
                 return
             }
         }
-        
         task.resume()
-        
     }
     
     func getChild(childID:String, callback:@escaping (Error?, Child?)->Void){
@@ -48,13 +45,56 @@ class ModelHttp{
     }
     
     func sendAttandanceEvent(event:Attendance, callback: @escaping(Error?) -> Void){
+        let session = URLSession.shared
+        let url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let dic = event.toJson()
+        let json = dic.toJSON()
+        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+        let jsonData = json?.data(using: .utf8)
         
+        
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+        }
+        task.resume()
     }
+    
+    
     
     func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
+        let session = URLSession.shared
+        let url = URL(string: "http://127.0.0.1:5000/staff")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let dic = staff.toJson()
+        let json = dic.toJSON()
+        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+        let jsonData = json?.data(using: .utf8)
         
+        
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+        }
+        task.resume()
     }
-    
 }
 
 protocol JSONSerializable {
@@ -72,9 +112,6 @@ extension Dictionary : JSONSerializable {
             if let json_element = v as? JSONSerializable, let string = json_element.toJSON() {
                 out.append("\"\(k)\": \(string)")
             }
-            //            else {
-            //                return nil
-            //            }
         }
         return "{\(out.joined(separator: ", "))}"
     }
