@@ -147,6 +147,9 @@ class Model{
          }
          callack(err)
          }*/
+        modelHttp.sendAttandanceEvent(event: attandanceEvent) { (err) in
+            callack(err)
+        }
     }
     
     

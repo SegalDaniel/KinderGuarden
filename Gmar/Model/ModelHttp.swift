@@ -16,12 +16,11 @@ class ModelHttp{
         let url = URL(string: "http://127.0.0.1:5000/Child/newChild")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = child.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
-        
-        
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
@@ -37,7 +36,34 @@ class ModelHttp{
     }
     
     func getChild(childID:String, callback:@escaping (Error?, Child?)->Void){
+        let session = URLSession.shared
+        let url = URL(string: "http://127.0.0.1:5000/Child")!
+        let task = session.dataTask(with: url) { data, response, error in
+            
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+            
+            guard let mime = response.mimeType, mime == "application/json" else {
+                print("Wrong MIME type!")
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                print(json)
+            } catch {
+                print("JSON error: \(error.localizedDescription)")
+            }
+        }
         
+        task.resume()
     }
     
     func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
@@ -86,8 +112,6 @@ class ModelHttp{
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
-        
-        
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
@@ -106,13 +130,13 @@ class ModelHttp{
         let session = URLSession.shared
         let url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent")!
         var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        //        request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let dic = event.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
-        
-        
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
@@ -138,8 +162,6 @@ class ModelHttp{
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
-        
-        
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
