@@ -19,6 +19,9 @@
 		1818B1DF21E0E906006E1B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1DE21E0E906006E1B39 /* Assets.xcassets */; };
 		1818B1E221E0E906006E1B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1E021E0E906006E1B39 /* LaunchScreen.storyboard */; };
 		1818B1F621E1196C006E1B39 /* BabyGuard Mockup.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */; };
+		1835C4F6228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835C4F5228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift */; };
+		1835C4F8228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835C4F7228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift */; };
+		1835C4FA228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */; };
 		183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCC226F7A3600F7FF68 /* AppColors.swift */; };
 		183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */; };
 		183CFCD1226F7B5C00F7FF68 /* StackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */; };
@@ -142,6 +145,9 @@
 		1818B1E121E0E906006E1B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818B1E321E0E906006E1B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818B1F521E1196C006E1B39 /* BabyGuard Mockup.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "BabyGuard Mockup.pdf"; sourceTree = "<group>"; };
+		1835C4F5228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentalEventsDataSource.swift; sourceTree = "<group>"; };
+		1835C4F7228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentalEventViewController.swift; sourceTree = "<group>"; };
+		1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentalEventTableViewCell.swift; sourceTree = "<group>"; };
 		183CFCCC226F7A3600F7FF68 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewsHelper.swift; sourceTree = "<group>"; };
 		183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackHelper.swift; sourceTree = "<group>"; };
@@ -395,6 +401,7 @@
 				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
 				18A25F3A2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift */,
 				18586D5F22730926004F219C /* KidCollectionViewCell.swift */,
+				1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +457,7 @@
 				18C59D6E225CEE6D003BD029 /* GenericEventInfo */,
 				181467812267726B0036BFC9 /* GenericLiquid */,
 				18788797221D4C510047A935 /* MultiChoiseViewController.swift */,
+				1835C4F7228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift */,
 			);
 			path = "Add Event Chain VCs";
 			sourceTree = "<group>";
@@ -630,6 +638,7 @@
 				A8299D50224FCEB3006E961F /* FineMotor */,
 				A8299D55224FDD5D006E961F /* GrossMotor */,
 				A8299D822255F899006E961F /* Social */,
+				1835C4F5228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift */,
 			);
 			path = DevelopmentEvents;
 			sourceTree = "<group>";
@@ -1001,6 +1010,7 @@
 				189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */,
 				A8287E60224CE346000C64DD /* Staff+CoreDataClass.swift in Sources */,
 				A8299D6E22538538006E961F /* ChronicDisease+CoreDataClass.swift in Sources */,
+				1835C4FA228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift in Sources */,
 				A88BBFB2225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift in Sources */,
 				A88BBFAE225A7EB900F9C0B4 /* SolidFood+CoreDataClass.swift in Sources */,
 				A8576E21224A6F4C00CBA907 /* Urine+CoreDataClass.swift in Sources */,
@@ -1018,6 +1028,7 @@
 				A8299D73225386E4006E961F /* RoutineMedication+CoreDataClass.swift in Sources */,
 				A8299D58224FDEEB006E961F /* GrossMotor+CoreDataClass.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
+				1835C4F8228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift in Sources */,
 				A8299D59224FDEEB006E961F /* GrossMotor+CoreDataProperties.swift in Sources */,
 				A88BBFAA225A7E5100F9C0B4 /* Water+CoreDataClass.swift in Sources */,
 				A8576DF9224A6CDC00CBA907 /* GeneralNote+CoreDataClass.swift in Sources */,
@@ -1061,6 +1072,7 @@
 				189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
 				A8576E01224A6D6000CBA907 /* Secretion+CoreDataClass.swift in Sources */,
+				1835C4F6228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift in Sources */,
 				A8299D53224FD024006E961F /* FineMotor+CoreDataClass.swift in Sources */,
 				183CFCD3226F7C0300F7FF68 /* TapGestures.swift in Sources */,
 				A8576E26224A6F8000CBA907 /* Feces+CoreDataProperties.swift in Sources */,

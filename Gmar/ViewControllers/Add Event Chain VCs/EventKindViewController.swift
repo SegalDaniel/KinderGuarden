@@ -70,5 +70,10 @@ class EventKindViewController: MyViewController {
             vc.childID = self.childID
             vc.teacherID = self.teacherID
         }
+        else if segue.identifier == "developmentSegue"{
+            let vc = segue.destination as! DevelopmentalEventViewController
+            vc.childID = self.childID
+            vc.teacherID = self.teacherID
+        }
     }
 }

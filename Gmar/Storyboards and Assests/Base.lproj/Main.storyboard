@@ -1826,6 +1826,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="taT-TL-Fcx"/>
+                                                    <segue destination="TOp-2B-95c" kind="show" identifier="developmentSegue" id="b8q-qP-pH0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
@@ -1896,6 +1897,116 @@
             </objects>
             <point key="canvasLocation" x="1496" y="22"/>
         </scene>
+        <!--דיווח התפתחותי-->
+        <scene sceneID="RhV-NT-p5h">
+            <objects>
+                <viewController id="TOp-2B-95c" customClass="DevelopmentalEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ior-iU-tSc">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RY5-cz-Cj5">
+                                <rect key="frame" x="55.5" y="80" width="200.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="אישור">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="gqQ-8j-N6q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxH-Wd-Keq">
+                                <rect key="frame" x="278" y="80" width="778.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="שינוי זמן">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="ATz-eN-vjU"/>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="MWW-YT-Ews"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ly-Ax-BJ8">
+                                <rect key="frame" x="55.5" y="173.5" width="1001" height="650.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="developmentalCell" rowHeight="100" id="aFS-PQ-Phu" customClass="DevelopmentalEventTableViewCell" customModule="Gmar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1001" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFS-PQ-Phu" id="FdY-Yb-weW">
+                                            <rect key="frame" x="0.0" y="0.0" width="1001" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אירוע" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zec-aZ-reP">
+                                                    <rect key="frame" x="127" y="19" width="851" height="62"/>
+                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="28"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlI-GT-Ipa">
+                                                    <rect key="frame" x="23" y="19" width="62" height="62"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="PlI-GT-Ipa" secondAttribute="height" multiplier="1:1" id="IFZ-eA-IOI"/>
+                                                    </constraints>
+                                                    <state key="normal" image="check"/>
+                                                    <state key="highlighted" image="check-pressed"/>
+                                                    <connections>
+                                                        <action selector="checkBtnPressed:" destination="aFS-PQ-Phu" eventType="touchUpInside" id="PAf-N9-egl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PlI-GT-Ipa" firstAttribute="leading" secondItem="FdY-Yb-weW" secondAttribute="leadingMargin" constant="8" id="5I4-HF-pP1"/>
+                                                <constraint firstItem="zec-aZ-reP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PlI-GT-Ipa" secondAttribute="trailing" constant="8" symbolic="YES" id="DaN-tR-TNP"/>
+                                                <constraint firstItem="zec-aZ-reP" firstAttribute="width" secondItem="FdY-Yb-weW" secondAttribute="width" multiplier="0.85" id="TeR-Wo-JeP"/>
+                                                <constraint firstItem="PlI-GT-Ipa" firstAttribute="top" secondItem="FdY-Yb-weW" secondAttribute="topMargin" constant="8" id="bh0-k4-SQo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zec-aZ-reP" secondAttribute="bottom" constant="8" id="gAA-Dp-yqq"/>
+                                                <constraint firstItem="zec-aZ-reP" firstAttribute="top" secondItem="FdY-Yb-weW" secondAttribute="topMargin" constant="8" id="ovh-UZ-WBx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zec-aZ-reP" secondAttribute="trailing" constant="8" id="v0R-VF-N0C"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PlI-GT-Ipa" secondAttribute="bottom" constant="8" id="vAb-gM-e4u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="checkBtn" destination="PlI-GT-Ipa" id="5ui-SO-o2X"/>
+                                            <outlet property="eventLabal" destination="zec-aZ-reP" id="7wX-f6-qLa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="leading" secondItem="RY5-cz-Cj5" secondAttribute="trailing" constant="22" id="9Dz-eD-9X5"/>
+                            <constraint firstItem="Eya-OH-xG1" firstAttribute="bottom" secondItem="3ly-Ax-BJ8" secondAttribute="bottom" constant="10" id="Hz9-v9-zPG"/>
+                            <constraint firstItem="3ly-Ax-BJ8" firstAttribute="centerX" secondItem="Eya-OH-xG1" secondAttribute="centerX" id="OCp-st-GI6"/>
+                            <constraint firstItem="3ly-Ax-BJ8" firstAttribute="top" secondItem="yxH-Wd-Keq" secondAttribute="bottom" constant="10" id="U7M-Fl-lSp"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="centerY" secondItem="yxH-Wd-Keq" secondAttribute="centerY" id="UJF-6K-rGe"/>
+                            <constraint firstItem="3ly-Ax-BJ8" firstAttribute="width" secondItem="Ior-iU-tSc" secondAttribute="width" multiplier="0.9" id="Y4Q-Jr-nC3"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="top" secondItem="yxH-Wd-Keq" secondAttribute="top" id="YMs-Ff-ObT"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="trailing" secondItem="3ly-Ax-BJ8" secondAttribute="trailing" id="cuy-8m-nsB"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="top" secondItem="Eya-OH-xG1" secondAttribute="top" constant="10" id="gvt-wU-Qn3"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="height" secondItem="Ior-iU-tSc" secondAttribute="height" multiplier="0.1" id="ikq-CL-h8M"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="leading" secondItem="3ly-Ax-BJ8" secondAttribute="leading" id="m9A-Nv-Ypv"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="bottom" secondItem="yxH-Wd-Keq" secondAttribute="bottom" id="qgZ-dr-f39"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="width" secondItem="Ior-iU-tSc" secondAttribute="width" multiplier="0.7" id="rs3-eh-Gbm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Eya-OH-xG1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="דיווח התפתחותי" id="83K-Gg-CBw"/>
+                    <connections>
+                        <outlet property="confirmBtn" destination="RY5-cz-Cj5" id="rs5-EC-qk5"/>
+                        <outlet property="eventsTableView" destination="3ly-Ax-BJ8" id="Obn-5h-g3C"/>
+                        <outlet property="timeBtn" destination="yxH-Wd-Keq" id="VMm-Cc-Tlm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdS-eb-zAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1502.6978417266187" y="867.6258992805756"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="X3z-P2-vn4">
             <objects>
@@ -1922,6 +2033,8 @@
         <image name="048-baby-1" width="512" height="512"/>
         <image name="050-woman" width="512" height="512"/>
         <image name="abacus" width="512" height="512"/>
+        <image name="check" width="512" height="512"/>
+        <image name="check-pressed" width="512" height="512"/>
         <image name="cough" width="512" height="512"/>
         <image name="feeding" width="512" height="512"/>
         <image name="kindergarten" width="512" height="512"/>
