@@ -22,6 +22,7 @@
 		1835C4F6228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835C4F5228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift */; };
 		1835C4F8228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835C4F7228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift */; };
 		1835C4FA228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */; };
+		1835C4FD228FF98B00BF2AF2 /* FamilyReportEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835C4FC228FF98B00BF2AF2 /* FamilyReportEventViewController.swift */; };
 		183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCC226F7A3600F7FF68 /* AppColors.swift */; };
 		183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */; };
 		183CFCD1226F7B5C00F7FF68 /* StackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */; };
@@ -148,6 +149,7 @@
 		1835C4F5228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentalEventsDataSource.swift; sourceTree = "<group>"; };
 		1835C4F7228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentalEventViewController.swift; sourceTree = "<group>"; };
 		1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentalEventTableViewCell.swift; sourceTree = "<group>"; };
+		1835C4FC228FF98B00BF2AF2 /* FamilyReportEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyReportEventViewController.swift; sourceTree = "<group>"; };
 		183CFCCC226F7A3600F7FF68 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		183CFCCE226F7AA600F7FF68 /* DesignViewsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewsHelper.swift; sourceTree = "<group>"; };
 		183CFCD0226F7B5C00F7FF68 /* StackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackHelper.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				181467812267726B0036BFC9 /* GenericLiquid */,
 				18788797221D4C510047A935 /* MultiChoiseViewController.swift */,
 				1835C4F7228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift */,
+				1835C4FC228FF98B00BF2AF2 /* FamilyReportEventViewController.swift */,
 			);
 			path = "Add Event Chain VCs";
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */,
 				A868E9B72275A8CD000B3230 /* BasicEvent+CoreDataClass.swift in Sources */,
+				1835C4FD228FF98B00BF2AF2 /* FamilyReportEventViewController.swift in Sources */,
 				18586D6022730926004F219C /* KidCollectionViewCell.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,

@@ -29,4 +29,25 @@ class Enums{
         case tamal
         case attandance
     }
+    
+    public enum FamilyReport : Int{
+        case UNKNOWN = 0
+        case feever
+        case illness
+        case rash
+        case inflammation
+        case cough
+        case cooling
+        case no_eating
+        case continous_crying
+        case vaccine
+        case unpeace_sleeping
+        case tooth_growing
+        case moving_to_solid_food
+        case constipation
+        case moving_to_tamal_food
+        case switch_taml_kind
+        case medication
+        case other
+    }
 }

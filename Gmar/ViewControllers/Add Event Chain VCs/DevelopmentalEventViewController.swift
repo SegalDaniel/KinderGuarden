@@ -23,6 +23,7 @@ class DevelopmentalEventViewController: GenericVC {
         eventsTableView.delegate = self
         timeBtn.setTitle(currentDate(), for: .normal)
         Utility.addBorder(view: eventsTableView)
+        eventsTableView.allowsSelection = false
         initCheckedCells()
     }
     

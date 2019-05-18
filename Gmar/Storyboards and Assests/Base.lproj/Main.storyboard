@@ -1595,6 +1595,96 @@
             </objects>
             <point key="canvasLocation" x="2190" y="22"/>
         </scene>
+        <!--דיווח בן משפחה-->
+        <scene sceneID="DKv-Ja-gd9">
+            <objects>
+                <viewController id="6n1-r8-pYg" customClass="FamilyReportEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zJU-JE-AhH">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzA-yC-Gbh">
+                                <rect key="frame" x="55.5" y="80" width="200.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="אישור">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="1C1-8Z-rG6"/>
+                                    <action selector="confirmBtnClicked:" destination="6n1-r8-pYg" eventType="touchUpInside" id="EU5-ZI-2h6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZF-3x-Etd">
+                                <rect key="frame" x="278" y="80" width="778.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="שינוי זמן">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="G0y-3n-oVf"/>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="lZ9-Kb-7Di"/>
+                                    <action selector="timeBtnClicked:" destination="6n1-r8-pYg" eventType="touchUpInside" id="ych-u7-9NY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-YR-c71">
+                                <rect key="frame" x="55.5" y="203.5" width="1001" height="83.5"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="בחר נושא">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="eQU-sp-QZd"/>
+                                    <action selector="timeBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="sRd-kU-3Jq"/>
+                                    <action selector="topicBtnClicked:" destination="6n1-r8-pYg" eventType="touchUpInside" id="hXN-zA-4c3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מידע נוסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Jj-on-Vcq">
+                                <rect key="frame" x="55.5" y="315.5" width="1001" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="top" secondItem="tZF-3x-Etd" secondAttribute="top" id="6UL-cj-yhk"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="height" secondItem="Mxx-YR-c71" secondAttribute="height" id="6ym-Ac-qzd"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="height" secondItem="zJU-JE-AhH" secondAttribute="height" multiplier="0.1" id="858-AO-3An"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="leading" secondItem="KzA-yC-Gbh" secondAttribute="trailing" constant="22" id="968-r6-MQ5"/>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="centerY" secondItem="tZF-3x-Etd" secondAttribute="centerY" id="Cwa-7R-N88"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="width" secondItem="zJU-JE-AhH" secondAttribute="width" multiplier="0.7" id="DKv-5z-IrV"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mxx-YR-c71" secondAttribute="leading" id="HYP-Me-8TJ"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="top" secondItem="T0d-kh-ycw" secondAttribute="top" constant="10" id="IyV-rq-JSw"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="top" secondItem="Mxx-YR-c71" secondAttribute="bottom" constant="28.5" id="KCX-2i-n3U"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="trailing" secondItem="Mxx-YR-c71" secondAttribute="trailing" id="MMi-mz-KoB"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="top" secondItem="tZF-3x-Etd" secondAttribute="bottom" constant="40" id="Qks-PL-RnJ"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="centerX" secondItem="T0d-kh-ycw" secondAttribute="centerX" id="WVw-7J-TcN"/>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="leading" secondItem="Mxx-YR-c71" secondAttribute="leading" id="Xy0-2U-fKB"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mxx-YR-c71" secondAttribute="trailing" id="cHP-Fq-a2G"/>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="bottom" secondItem="tZF-3x-Etd" secondAttribute="bottom" id="dfJ-T4-cQD"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="height" secondItem="zJU-JE-AhH" secondAttribute="height" multiplier="0.1" id="h9m-xH-Brc"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="width" secondItem="Mxx-YR-c71" secondAttribute="width" id="mcW-S6-Rjg"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="width" secondItem="zJU-JE-AhH" secondAttribute="width" multiplier="0.9" id="wdc-Rb-HWR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T0d-kh-ycw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="דיווח בן משפחה" id="efD-tC-E2R"/>
+                    <connections>
+                        <outlet property="confirmBtn" destination="KzA-yC-Gbh" id="MCO-Z9-rQk"/>
+                        <outlet property="descTextField" destination="8Jj-on-Vcq" id="WYj-dw-bVr"/>
+                        <outlet property="timeBtn" destination="tZF-3x-Etd" id="NUY-6Q-hm3"/>
+                        <outlet property="topicBtn" destination="Mxx-YR-c71" id="T05-4D-UZ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHV-Sq-UzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="837"/>
+        </scene>
         <!--Title-->
         <scene sceneID="38g-Gj-137">
             <objects>
@@ -1838,6 +1928,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="B26-K6-4vc"/>
+                                                    <segue destination="6n1-r8-pYg" kind="show" identifier="familyReportSegue" id="tvZ-vj-mvw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
@@ -2005,7 +2096,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdS-eb-zAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502.6978417266187" y="867.6258992805756"/>
+            <point key="canvasLocation" x="1178" y="843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X3z-P2-vn4">
