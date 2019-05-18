@@ -14,8 +14,10 @@ public class BasicEvent: NSManagedObject {
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["eventType"] = eventType
-        json["eventID"] = eventID
+        json["eventID"] = child?.childID.hashValue
         json["eventDate"] = eventDate
+        json["level"] = level
+        //3 above with problem in json
         json["childID"] = child?.childID
         json["staffID"] = staff?.staffID
         return json

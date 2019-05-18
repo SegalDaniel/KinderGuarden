@@ -80,7 +80,7 @@ class ModelHttp{
             url = URL(string: "http://127.0.0.1:5000/events/SolidFoodEvent")!
             break
         case .feces:
-            url = URL(string: "http://127.0.0.1:5000/events/FecesEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/FecesEvent/newEvent")!
             break
         case .urine:
             url = URL(string: "http://127.0.0.1:5000/events/UrineEvent")!
@@ -108,6 +108,7 @@ class ModelHttp{
         let session = URLSession.shared
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = basicEvent.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
@@ -185,14 +186,36 @@ extension String : JSONSerializable {
         return "\"\(self)\""
     }
 }
+extension Int : JSONSerializable {
+    func toJSON() -> String? {
+        return "\(self)"
+    }
+}
+
+extension Double : JSONSerializable {
+    func toJSON() -> String? {
+        return "\(self)"
+    }
+}
+
 extension Dictionary : JSONSerializable {
     func toJSON() -> String? {
         var out : [String] = []
         for (k, v) in self {
-            if let json_element = v as? JSONSerializable, let string = json_element.toJSON() {
+            
+            if k as! String == "eventID"{
+                let numericString = "\(String(describing: v))"
+                out.append("\"\(k)\": \"\(numericString)\"")
+            }
+            else if let json_element = v as? JSONSerializable, let string = json_element.toJSON() {
                 out.append("\"\(k)\": \(string)")
             }
+            else {
+                let numericString = "\(String(describing: v))"
+                out.append("\"\(k)\": \"\(numericString)\"")
+            }
         }
+        //        out.append("\"level\": \"0\"")
         return "{\(out.joined(separator: ", "))}"
     }
 }
