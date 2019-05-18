@@ -17,7 +17,6 @@ public class BasicEvent: NSManagedObject {
         json["eventID"] = child?.childID.hashValue
         json["eventDate"] = eventDate
         json["level"] = level
-        //3 above with problem in json
         json["childID"] = child?.childID
         json["staffID"] = staff?.staffID
         return json

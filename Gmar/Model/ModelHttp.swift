@@ -71,34 +71,34 @@ class ModelHttp{
         var url=URL(string: "empty")!
         switch kind {
         case .sleep:
-            url = URL(string: "http://127.0.0.1:5000/events/SleepingEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/SleepingEvent/newEvent")!
             break
         case .water:
-            url = URL(string: "http://127.0.0.1:5000/events/WaterEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/WaterEvent/newEvent")!
             break
         case .solidFoods:
-            url = URL(string: "http://127.0.0.1:5000/events/SolidFoodEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/SolidFoodEvent/newEvent")!
             break
         case .feces:
             url = URL(string: "http://127.0.0.1:5000/events/FecesEvent/newEvent")!
             break
         case .urine:
-            url = URL(string: "http://127.0.0.1:5000/events/UrineEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/UrineEvent/newEvent")!
             break
         case .cough:
-            url = URL(string: "http://127.0.0.1:5000/events/CoughEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/CoughEvent/newEvent")!
             break
         case .hafrahsa:
-            url = URL(string: "http://127.0.0.1:5000/events/SecretionEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/SecretionEvent/newEvent")!
             break
         case .vomit:
-            url = URL(string: "http://127.0.0.1:5000/events/VomitusEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/VomitusEvent/newEvent")!
             break
         case .rash:
-            url = URL(string: "http://127.0.0.1:5000/events/RashEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/RashEvent/newEvent")!
             break
         case .feever:
-            url = URL(string: "http://127.0.0.1:5000/events/FeverEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/FeverEvent/newEvent")!
             break
             //add parasites medication and disease
         //add liquid food url
@@ -108,7 +108,7 @@ class ModelHttp{
         let session = URLSession.shared
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = basicEvent.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
@@ -215,7 +215,6 @@ extension Dictionary : JSONSerializable {
                 out.append("\"\(k)\": \"\(numericString)\"")
             }
         }
-        //        out.append("\"level\": \"0\"")
         return "{\(out.joined(separator: ", "))}"
     }
 }
