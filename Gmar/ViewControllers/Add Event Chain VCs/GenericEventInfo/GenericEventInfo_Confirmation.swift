@@ -212,17 +212,15 @@ extension GenericEventInfoViewController{
         //MARK: - Vomit
         case .vomit:
             let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
-            let properLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
             let type = typeLabel.text!
-            let proper = properLabel.text!
-            if type == "סוג" || proper == "חומרה"{
-                showUnselectedAlert(type: "סוג וחומרה", dismiss: loadingAlert)
+            if type == "סוג"{
+                showUnselectedAlert(type: "סוג", dismiss: loadingAlert)
                 return
             }
             if let child = child{
                 if let staff = staff{
                     let eventType:Int16 = Int16(Enums.BasicEvent.vomit.rawValue)
-                    let vomit = Vomitus(type: type, proper: proper, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                    let vomit = Vomitus(type: type, proper: "", eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                     Model.instance.sendToFB(basicEvent: vomit) { (err) in
                         self.sendToFBCallback(err, loadingAlert: loadingAlert)
                     }
@@ -233,18 +231,18 @@ extension GenericEventInfoViewController{
         case .hafrahsa:
             let typeLabel = self.labelStackView.arrangedSubviews[0] as! UILabel
             let areaLabel = self.labelStackView.arrangedSubviews[1] as! UILabel
-            let rankLabel = self.labelStackView.arrangedSubviews[2] as! UILabel
+            
             let type = typeLabel.text!
             let area = areaLabel.text!
-            let rank = rankLabel.text!
-            if type == "סוג" || area == "איזור" || rank == "חומרה"{
-                showUnselectedAlert(type: "סוג איזור וחומרה", dismiss: loadingAlert)
+            
+            if type == "סוג" || area == "איזור"{
+                showUnselectedAlert(type: "סוג איזור", dismiss: loadingAlert)
                 return
             }
             if let child = child{
                 if let staff = staff{
                     let eventType:Int16 = Int16(Enums.BasicEvent.hafrahsa.rawValue)
-                    let hafrasha = Secretion(type: type, area: area, rank: rank, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                    let hafrasha = Secretion(type: type, area: area, rank: "", eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                     Model.instance.sendToFB(basicEvent: hafrasha) { (err) in
                         self.sendToFBCallback(err, loadingAlert: loadingAlert)
                     }

@@ -68,7 +68,9 @@ class GenericEventInfoViewController: GenericVC {
             b.layer.opacity = 0.5
             borders.append(b)
         }
-       
+        if kind == .attandance{
+            borders[0].layer.borderColor = Utility.backCloverColor.cgColor
+        }
     }
     
     /*************************   user interface events **********************************************/
@@ -229,7 +231,6 @@ class GenericEventInfoViewController: GenericVC {
     func vomitViews(){
         titleItem.title = "דיווח הקאה"
         addStackForInfo(info: (1, ["סוג", "פליטה מוגברת", "הקאה"]))
-        addStackForInfo(info: (2, ["חומרה", "תקין", "לא תקין"]))
     }
     
     //MARK: - solid food
@@ -279,6 +280,5 @@ class GenericEventInfoViewController: GenericVC {
         titleItem.title = "דיווח הפרשה"
         addStackForInfo(info: (1, ["סוג", "דם", "מוגלה", "נזלת"]))
         addStackForInfo(info: (2, ["איזור", "עיניים", "אוזניים", "אף", "פה", "איבר מין", "שאר הגוף"]))
-        addStackForInfo(info: (3, ["חומרה", "תקין", "לא תקין"]))
     }
 }

@@ -6,9 +6,9 @@ target 'Gmar' do
   use_frameworks!
 
   # Pods for Gmar
- pod 'Firebase/Core'
- pod 'Firebase/Firestore'
- pod 'Firebase/Auth'
- pod 'Alamofire', '~> 5.0.0-beta.5'
- pod 'CropViewController'
+  #pod 'Firebase/Core'
+  #pod 'Firebase/Firestore'
+  #pod 'Firebase/Auth'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'CropViewController'
 end
