@@ -38,6 +38,12 @@
                                     <segue destination="WNC-8R-ZUY" kind="show" id="WXK-p6-9XV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אין התראות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DA-cK-ZCW">
+                                <rect key="frame" x="55.5" y="188" width="1001" height="41"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-Ff-ZfI">
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
                             </stackView>
@@ -63,7 +69,9 @@
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bg-dr-vG4"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RtX-Ff-ZfI" secondAttribute="leading" id="A1f-Ga-2vI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" symbolic="YES" id="A3u-Ib-lSz"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="trailing" secondItem="RtX-Ff-ZfI" secondAttribute="trailing" id="Dqg-Qa-BDo"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="H9b-h4-vQk"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.08" id="MaY-u3-VpM"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="NVk-DD-nE8"/>
@@ -71,17 +79,20 @@
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NzL-qI-jtj"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="top" secondItem="RtX-Ff-ZfI" secondAttribute="bottom" constant="20" id="PZh-zl-qHE"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Phw-ci-rem"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="top" secondItem="pa7-KP-ImI" secondAttribute="bottom" constant="21" id="VUO-ZP-fav"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WyU-DB-NwS"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" multiplier="1.6" id="ctT-st-Q7J"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="g1s-NG-Fh8"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="height" secondItem="O0Y-lF-Qkp" secondAttribute="height" id="k7V-ap-9kz"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mcQ-c1-3tW"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="r1t-Qa-TMt"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="centerX" secondItem="pa7-KP-ImI" secondAttribute="centerX" id="zov-k7-Fs0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="מסך ראשי" id="PSV-c2-h0Z"/>
                     <connections>
+                        <outlet property="alertsLabel" destination="2DA-cK-ZCW" id="f8F-BL-m0j"/>
                         <outlet property="kgSettingBtn" destination="O0Y-lF-Qkp" id="QJS-uH-fIx"/>
                         <outlet property="kidsInfoBtn" destination="bzQ-qU-Xzj" id="y6c-2K-pEj"/>
                         <outlet property="teachersStackView" destination="RtX-Ff-ZfI" id="qyb-U6-TwM"/>
@@ -2139,6 +2150,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="UhQ-lY-ajX"/>
         <segue reference="YN3-ln-FeL"/>
-        <segue reference="pBt-dH-qId"/>
+        <segue reference="t0f-p2-ivy"/>
     </inferredMetricsTieBreakers>
 </document>
