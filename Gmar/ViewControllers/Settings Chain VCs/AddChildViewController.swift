@@ -73,6 +73,7 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func nextScreenBtnClicked(_ sender: Any) {
+        self.view.endEditing(true)
         if childData["firstName"] == nil || childData["firstName"] as! String == ""{
             performAlert(with: "נא למלא שם פרטי בבקשה")
             return
@@ -103,12 +104,12 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
         }
         let number = childData["childID"] as! String
         if !number.isNumeric{
-            childData["childID"]=nil
+            childData["childID"] = nil
             performAlert(with: "תעודת הזהות חייבת להכיל מספרים בלבד")
             return
         }
         if !(number.count==9){
-            childData["childID"]=nil
+            childData["childID"] = nil
             performAlert(with: "תעודת הזהות חייבת להכיל 9 ספרות")
             return
         }
