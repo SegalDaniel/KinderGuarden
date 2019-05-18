@@ -38,6 +38,12 @@
                                     <segue destination="WNC-8R-ZUY" kind="show" id="WXK-p6-9XV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אין התראות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DA-cK-ZCW">
+                                <rect key="frame" x="55.5" y="188" width="1001" height="41"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-Ff-ZfI">
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
                             </stackView>
@@ -63,7 +69,9 @@
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bg-dr-vG4"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RtX-Ff-ZfI" secondAttribute="leading" id="A1f-Ga-2vI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" symbolic="YES" id="A3u-Ib-lSz"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="trailing" secondItem="RtX-Ff-ZfI" secondAttribute="trailing" id="Dqg-Qa-BDo"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="H9b-h4-vQk"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.08" id="MaY-u3-VpM"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="NVk-DD-nE8"/>
@@ -71,17 +79,20 @@
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NzL-qI-jtj"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="top" secondItem="RtX-Ff-ZfI" secondAttribute="bottom" constant="20" id="PZh-zl-qHE"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Phw-ci-rem"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="top" secondItem="pa7-KP-ImI" secondAttribute="bottom" constant="21" id="VUO-ZP-fav"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WyU-DB-NwS"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" multiplier="1.6" id="ctT-st-Q7J"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="g1s-NG-Fh8"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="height" secondItem="O0Y-lF-Qkp" secondAttribute="height" id="k7V-ap-9kz"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mcQ-c1-3tW"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="r1t-Qa-TMt"/>
+                            <constraint firstItem="2DA-cK-ZCW" firstAttribute="centerX" secondItem="pa7-KP-ImI" secondAttribute="centerX" id="zov-k7-Fs0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="מסך ראשי" id="PSV-c2-h0Z"/>
                     <connections>
+                        <outlet property="alertsLabel" destination="2DA-cK-ZCW" id="f8F-BL-m0j"/>
                         <outlet property="kgSettingBtn" destination="O0Y-lF-Qkp" id="QJS-uH-fIx"/>
                         <outlet property="kidsInfoBtn" destination="bzQ-qU-Xzj" id="y6c-2K-pEj"/>
                         <outlet property="teachersStackView" destination="RtX-Ff-ZfI" id="qyb-U6-TwM"/>
@@ -1595,6 +1606,96 @@
             </objects>
             <point key="canvasLocation" x="2190" y="22"/>
         </scene>
+        <!--דיווח בן משפחה-->
+        <scene sceneID="DKv-Ja-gd9">
+            <objects>
+                <viewController id="6n1-r8-pYg" customClass="FamilyReportEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zJU-JE-AhH">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzA-yC-Gbh">
+                                <rect key="frame" x="55.5" y="80" width="200.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="אישור">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="1C1-8Z-rG6"/>
+                                    <action selector="confirmBtnClicked:" destination="6n1-r8-pYg" eventType="touchUpInside" id="EU5-ZI-2h6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZF-3x-Etd">
+                                <rect key="frame" x="278" y="80" width="778.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="שינוי זמן">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="G0y-3n-oVf"/>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="lZ9-Kb-7Di"/>
+                                    <action selector="timeBtnClicked:" destination="6n1-r8-pYg" eventType="touchUpInside" id="ych-u7-9NY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-YR-c71">
+                                <rect key="frame" x="55.5" y="203.5" width="1001" height="83.5"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="בחר נושא">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="eQU-sp-QZd"/>
+                                    <action selector="timeBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="sRd-kU-3Jq"/>
+                                    <action selector="topicBtnClicked:" destination="6n1-r8-pYg" eventType="touchUpInside" id="hXN-zA-4c3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מידע נוסף" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Jj-on-Vcq">
+                                <rect key="frame" x="55.5" y="315.5" width="1001" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="top" secondItem="tZF-3x-Etd" secondAttribute="top" id="6UL-cj-yhk"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="height" secondItem="Mxx-YR-c71" secondAttribute="height" id="6ym-Ac-qzd"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="height" secondItem="zJU-JE-AhH" secondAttribute="height" multiplier="0.1" id="858-AO-3An"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="leading" secondItem="KzA-yC-Gbh" secondAttribute="trailing" constant="22" id="968-r6-MQ5"/>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="centerY" secondItem="tZF-3x-Etd" secondAttribute="centerY" id="Cwa-7R-N88"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="width" secondItem="zJU-JE-AhH" secondAttribute="width" multiplier="0.7" id="DKv-5z-IrV"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mxx-YR-c71" secondAttribute="leading" id="HYP-Me-8TJ"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="top" secondItem="T0d-kh-ycw" secondAttribute="top" constant="10" id="IyV-rq-JSw"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="top" secondItem="Mxx-YR-c71" secondAttribute="bottom" constant="28.5" id="KCX-2i-n3U"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="trailing" secondItem="Mxx-YR-c71" secondAttribute="trailing" id="MMi-mz-KoB"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="top" secondItem="tZF-3x-Etd" secondAttribute="bottom" constant="40" id="Qks-PL-RnJ"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="centerX" secondItem="T0d-kh-ycw" secondAttribute="centerX" id="WVw-7J-TcN"/>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="leading" secondItem="Mxx-YR-c71" secondAttribute="leading" id="Xy0-2U-fKB"/>
+                            <constraint firstItem="tZF-3x-Etd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mxx-YR-c71" secondAttribute="trailing" id="cHP-Fq-a2G"/>
+                            <constraint firstItem="KzA-yC-Gbh" firstAttribute="bottom" secondItem="tZF-3x-Etd" secondAttribute="bottom" id="dfJ-T4-cQD"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="height" secondItem="zJU-JE-AhH" secondAttribute="height" multiplier="0.1" id="h9m-xH-Brc"/>
+                            <constraint firstItem="8Jj-on-Vcq" firstAttribute="width" secondItem="Mxx-YR-c71" secondAttribute="width" id="mcW-S6-Rjg"/>
+                            <constraint firstItem="Mxx-YR-c71" firstAttribute="width" secondItem="zJU-JE-AhH" secondAttribute="width" multiplier="0.9" id="wdc-Rb-HWR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T0d-kh-ycw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="דיווח בן משפחה" id="efD-tC-E2R"/>
+                    <connections>
+                        <outlet property="confirmBtn" destination="KzA-yC-Gbh" id="MCO-Z9-rQk"/>
+                        <outlet property="descTextField" destination="8Jj-on-Vcq" id="WYj-dw-bVr"/>
+                        <outlet property="timeBtn" destination="tZF-3x-Etd" id="NUY-6Q-hm3"/>
+                        <outlet property="topicBtn" destination="Mxx-YR-c71" id="T05-4D-UZ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHV-Sq-UzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="837"/>
+        </scene>
         <!--Title-->
         <scene sceneID="38g-Gj-137">
             <objects>
@@ -1826,6 +1927,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="taT-TL-Fcx"/>
+                                                    <segue destination="TOp-2B-95c" kind="show" identifier="developmentSegue" id="b8q-qP-pH0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-oO-ugC">
@@ -1837,6 +1939,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="someEventClicked:" destination="Vyh-8f-1or" eventType="touchUpInside" id="B26-K6-4vc"/>
+                                                    <segue destination="6n1-r8-pYg" kind="show" identifier="familyReportSegue" id="tvZ-vj-mvw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-8S-NRg">
@@ -1896,6 +1999,116 @@
             </objects>
             <point key="canvasLocation" x="1496" y="22"/>
         </scene>
+        <!--דיווח התפתחותי-->
+        <scene sceneID="RhV-NT-p5h">
+            <objects>
+                <viewController id="TOp-2B-95c" customClass="DevelopmentalEventViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ior-iU-tSc">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RY5-cz-Cj5">
+                                <rect key="frame" x="55.5" y="80" width="200.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="אישור">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="gqQ-8j-N6q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxH-Wd-Keq">
+                                <rect key="frame" x="278" y="80" width="778.5" height="83.5"/>
+                                <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                <state key="normal" title="שינוי זמן">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeBtnClicked:" destination="TOp-2B-95c" eventType="touchUpInside" id="ATz-eN-vjU"/>
+                                    <action selector="timeBtnClicked:" destination="fEl-bo-HFl" eventType="touchUpInside" id="MWW-YT-Ews"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ly-Ax-BJ8">
+                                <rect key="frame" x="55.5" y="173.5" width="1001" height="650.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="developmentalCell" rowHeight="100" id="aFS-PQ-Phu" customClass="DevelopmentalEventTableViewCell" customModule="Gmar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1001" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFS-PQ-Phu" id="FdY-Yb-weW">
+                                            <rect key="frame" x="0.0" y="0.0" width="1001" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אירוע" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zec-aZ-reP">
+                                                    <rect key="frame" x="127" y="19" width="851" height="62"/>
+                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="28"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlI-GT-Ipa">
+                                                    <rect key="frame" x="23" y="19" width="62" height="62"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="PlI-GT-Ipa" secondAttribute="height" multiplier="1:1" id="IFZ-eA-IOI"/>
+                                                    </constraints>
+                                                    <state key="normal" image="check"/>
+                                                    <state key="highlighted" image="check-pressed"/>
+                                                    <connections>
+                                                        <action selector="checkBtnPressed:" destination="aFS-PQ-Phu" eventType="touchUpInside" id="PAf-N9-egl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PlI-GT-Ipa" firstAttribute="leading" secondItem="FdY-Yb-weW" secondAttribute="leadingMargin" constant="8" id="5I4-HF-pP1"/>
+                                                <constraint firstItem="zec-aZ-reP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PlI-GT-Ipa" secondAttribute="trailing" constant="8" symbolic="YES" id="DaN-tR-TNP"/>
+                                                <constraint firstItem="zec-aZ-reP" firstAttribute="width" secondItem="FdY-Yb-weW" secondAttribute="width" multiplier="0.85" id="TeR-Wo-JeP"/>
+                                                <constraint firstItem="PlI-GT-Ipa" firstAttribute="top" secondItem="FdY-Yb-weW" secondAttribute="topMargin" constant="8" id="bh0-k4-SQo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zec-aZ-reP" secondAttribute="bottom" constant="8" id="gAA-Dp-yqq"/>
+                                                <constraint firstItem="zec-aZ-reP" firstAttribute="top" secondItem="FdY-Yb-weW" secondAttribute="topMargin" constant="8" id="ovh-UZ-WBx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zec-aZ-reP" secondAttribute="trailing" constant="8" id="v0R-VF-N0C"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PlI-GT-Ipa" secondAttribute="bottom" constant="8" id="vAb-gM-e4u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="checkBtn" destination="PlI-GT-Ipa" id="5ui-SO-o2X"/>
+                                            <outlet property="eventLabal" destination="zec-aZ-reP" id="7wX-f6-qLa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="leading" secondItem="RY5-cz-Cj5" secondAttribute="trailing" constant="22" id="9Dz-eD-9X5"/>
+                            <constraint firstItem="Eya-OH-xG1" firstAttribute="bottom" secondItem="3ly-Ax-BJ8" secondAttribute="bottom" constant="10" id="Hz9-v9-zPG"/>
+                            <constraint firstItem="3ly-Ax-BJ8" firstAttribute="centerX" secondItem="Eya-OH-xG1" secondAttribute="centerX" id="OCp-st-GI6"/>
+                            <constraint firstItem="3ly-Ax-BJ8" firstAttribute="top" secondItem="yxH-Wd-Keq" secondAttribute="bottom" constant="10" id="U7M-Fl-lSp"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="centerY" secondItem="yxH-Wd-Keq" secondAttribute="centerY" id="UJF-6K-rGe"/>
+                            <constraint firstItem="3ly-Ax-BJ8" firstAttribute="width" secondItem="Ior-iU-tSc" secondAttribute="width" multiplier="0.9" id="Y4Q-Jr-nC3"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="top" secondItem="yxH-Wd-Keq" secondAttribute="top" id="YMs-Ff-ObT"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="trailing" secondItem="3ly-Ax-BJ8" secondAttribute="trailing" id="cuy-8m-nsB"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="top" secondItem="Eya-OH-xG1" secondAttribute="top" constant="10" id="gvt-wU-Qn3"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="height" secondItem="Ior-iU-tSc" secondAttribute="height" multiplier="0.1" id="ikq-CL-h8M"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="leading" secondItem="3ly-Ax-BJ8" secondAttribute="leading" id="m9A-Nv-Ypv"/>
+                            <constraint firstItem="RY5-cz-Cj5" firstAttribute="bottom" secondItem="yxH-Wd-Keq" secondAttribute="bottom" id="qgZ-dr-f39"/>
+                            <constraint firstItem="yxH-Wd-Keq" firstAttribute="width" secondItem="Ior-iU-tSc" secondAttribute="width" multiplier="0.7" id="rs3-eh-Gbm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Eya-OH-xG1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="דיווח התפתחותי" id="83K-Gg-CBw"/>
+                    <connections>
+                        <outlet property="confirmBtn" destination="RY5-cz-Cj5" id="rs5-EC-qk5"/>
+                        <outlet property="eventsTableView" destination="3ly-Ax-BJ8" id="Obn-5h-g3C"/>
+                        <outlet property="timeBtn" destination="yxH-Wd-Keq" id="VMm-Cc-Tlm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdS-eb-zAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="843"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="X3z-P2-vn4">
             <objects>
@@ -1922,6 +2135,8 @@
         <image name="048-baby-1" width="512" height="512"/>
         <image name="050-woman" width="512" height="512"/>
         <image name="abacus" width="512" height="512"/>
+        <image name="check" width="512" height="512"/>
+        <image name="check-pressed" width="512" height="512"/>
         <image name="cough" width="512" height="512"/>
         <image name="feeding" width="512" height="512"/>
         <image name="kindergarten" width="512" height="512"/>
@@ -1935,6 +2150,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="UhQ-lY-ajX"/>
         <segue reference="YN3-ln-FeL"/>
-        <segue reference="pBt-dH-qId"/>
+        <segue reference="t0f-p2-ivy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -47,7 +47,7 @@ class EventKindViewController: MyViewController {
                 print("\(btn.titleLabel?.text ?? "") clicked")
                 break
             case generalEventBtn:
-                print("\(btn.titleLabel?.text ?? "") clicked")
+                generalEventAlert()
                 break
             case futureAttEventBtn:
                 print("\(btn.titleLabel?.text ?? "") clicked")
@@ -59,7 +59,18 @@ class EventKindViewController: MyViewController {
         }
     }
     
-
+    func generalEventAlert(){
+        let alert = UIAlertController(title: "דיווח כללי", message: "נא להוסיף דיווח כללי לבני המשפחה", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "שמירה", style: .default, handler: { (action) in
+            //save the content of the alert
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "ביטול", style: .destructive, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addTextField(configurationHandler: nil)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     // MARK: - Navigation
 
@@ -67,6 +78,16 @@ class EventKindViewController: MyViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BasicEventSegue"{
             let vc = segue.destination as! BasicEventViewController
+            vc.childID = self.childID
+            vc.teacherID = self.teacherID
+        }
+        else if segue.identifier == "developmentSegue"{
+            let vc = segue.destination as! DevelopmentalEventViewController
+            vc.childID = self.childID
+            vc.teacherID = self.teacherID
+        }
+        else if segue.identifier == "familyReportSegue"{
+            let vc = segue.destination as! FamilyReportEventViewController
             vc.childID = self.childID
             vc.teacherID = self.teacherID
         }

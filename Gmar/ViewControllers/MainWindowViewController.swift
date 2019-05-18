@@ -14,6 +14,7 @@ class MainWindowViewController: MyViewController {
     @IBOutlet weak var kgSettingBtn: UIButton!
     @IBOutlet weak var teachersStackView: UIStackView!
     @IBOutlet weak var kidsInfoBtn: UIButton!
+    @IBOutlet weak var alertsLabel: UILabel!
     
     //MARK: - inits
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class MainWindowViewController: MyViewController {
         roundKidsInfoBtn()
         kgSettingBtn.layer.shadowColor = UIColor.clear.cgColor
         Utility.addShadow(view: kgSettingBtn.imageView!)
+        Utility.addBorder(view: alertsLabel)
     }
     
     override func viewWillAppear(_ animated: Bool) {
