@@ -134,6 +134,9 @@ class Model{
     func sendToFB(developmentEvent:DevelopmentalEvent, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
         callback(nil)
+//                modelHttp.sendChild(child: child) { (err) in
+//                    callack(err)
+//                }
     }
     
     func sendToFB(child:Child, callack:@escaping (Error?)->Void){
@@ -175,11 +178,17 @@ class Model{
     func sendToFB(report:FamilyReport, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
         callback(nil)
+//        modelHttp.sendFamilyReport(familyReport: report) { (err) in
+//            callback(err)
+//        }
     }
     
     func sendToFB(note:GeneralNote, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
         callback(nil)
+        modelHttp.sendGeneralNote(generalNote: note) { (err) in
+            callback(err)
+        }
     }
     
     

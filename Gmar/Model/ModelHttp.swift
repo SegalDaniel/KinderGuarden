@@ -130,9 +130,33 @@ class ModelHttp{
         task.resume()
     }
     
+   /* func sendDevelopmentEvent(developmentEvent:DevelopmentalEvent, callack:@escaping (Error?)->Void){
+        let session = URLSession.shared
+        let url = URL(string: "http://127.0.0.1:5000/Child/newChild")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let dic = developmentEvent.toJson()
+        let json = dic.toJSON()
+        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+        let jsonData = json?.data(using: .utf8)
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+        }
+        task.resume()
+    }*/
+    
     func sendAttandanceEvent(event:Attendance, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
-        let url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent")!
+        let url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent/newEvent")!
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         //        request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -163,6 +187,54 @@ class ModelHttp{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         let dic = staff.toJson()
+        let json = dic.toJSON()
+        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+        let jsonData = json?.data(using: .utf8)
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    func sendFamilyReport(familyReport:FamilyReport, callback: @escaping(Error?) -> Void){
+        let session = URLSession.shared
+        let url = URL(string: "http://127.0.0.1:5000/events/FamilyReportEvent/newEvent")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let dic = familyReport.toJson()
+        let json = dic.toJSON()
+        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+        let jsonData = json?.data(using: .utf8)
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    func sendGeneralNote(generalNote:GeneralNote, callback: @escaping(Error?) -> Void){
+        let session = URLSession.shared
+        let url = URL(string: "http://127.0.0.1:5000/events/GeneralNoteEvent/newEvent")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let dic = generalNote.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
@@ -210,8 +282,8 @@ extension Dictionary : JSONSerializable {
                 let numericString = "\(String(describing: v))"
                 out.append("\"\(k)\": \"\(numericString)\"")
             }
-            
-            
+                
+                
             else if let json_element = v as? JSONSerializable, let string = json_element.toJSON() {
                 out.append("\"\(k)\": \(string)")
             }
