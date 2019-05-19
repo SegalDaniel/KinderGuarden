@@ -89,8 +89,7 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
                         let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err.debugDescription, dissmissCallback: nil).getAlert()
                         self.present(alert, animated: true, completion: nil)
                     }
-                })
-                
+                })   
             }
         }
         loadingView.dismiss(animated: true, completion: nil)

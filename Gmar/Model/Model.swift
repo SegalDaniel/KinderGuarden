@@ -126,9 +126,9 @@ class Model{
          }
          callack(err)
          }*/
-        modelHttp.sendBasicEvent(basicEvent: basicEvent) { (err) in
-            callack(err)
-        }
+//        modelHttp.sendBasicEvent(basicEvent: basicEvent) { (err) in
+//            callack(err)
+//        }
     }
     
     func sendToFB(attandanceEvent:Attendance, callack:@escaping (Error?)->Void){
@@ -144,9 +144,9 @@ class Model{
          }
          callack(err)
          }*/
-        modelHttp.sendAttandanceEvent(event: attandanceEvent) { (err) in
-            callack(err)
-        }
+//        modelHttp.sendAttandanceEvent(event: attandanceEvent) { (err) in
+//            callack(err)
+//        }
     }
     
     
@@ -181,9 +181,9 @@ class Model{
          }
          callack(err)
          }*/
-        modelHttp.sendStaff(staff: staff) { (err) in
-            callack(err)
-        }
+//        modelHttp.sendStaff(staff: staff) { (err) in
+//            callack(err)
+//        }
     }
     
     /******************** Offline changes - Replace all comments for FireBase connection**********************/

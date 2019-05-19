@@ -36,11 +36,27 @@ public class Child: NSManagedObject {
         self.setValue(json["pickupHour"], forKey: "pickupHour")
         self.setValue(json["birthDate"], forKey: "birthDate")
         self.setValue(json["isAttend"], forKey: "isAttend")
-        //        if let attend = json["attendanceEvents"] as? [Attendance:Any]{
-        //            attend.forEach { (key,value) in
-        //                attendanceEvents?.adding(Attendance(json: value as! [String:Any]))
-        //            }
-        //        }
+        //its maybe not necessery, but if it we need to do it for all the event sand not only for the attendance event
+//        if let attend = json["attendanceEvents"] as? [Attendance:Any]{
+//            attend.forEach { (key,value) in
+//                attendanceEvents?.adding(Attendance(json: value as! [String:Any]))
+//            }
+//        }
+        if let events = json["developmentalEvents"] as? [DevelopmentalEvent:Any]{
+                events.forEach { (key, value) in
+                    developmentalEvents?.adding(DevelopmentalEvent(json: value as! [String:Any]))
+            }
+        }
+        if let events = json["familyReports"] as? [FamilyReport:Any]{
+            events.forEach { (key, value) in
+                familyReports?.adding(FamilyReport(json: value as! [String:Any]))
+            }
+        }
+        if let events = json["generalNotes"] as? [GeneralNote:Any]{
+            events.forEach { (key, value) in
+                generalNotes?.adding(GeneralNote(json: value as! [String:Any]))
+            }
+        }
     }
     
     func toJson() -> [String:Any] {
@@ -100,15 +116,6 @@ public class Child: NSManagedObject {
         })
         json["foodList"] = foodsJson
         
-//        var attJson:[String:Any] = [:]
-//        i = 0
-//        attendanceEvents?.forEach({ (obj) in
-//            let obj = obj as! Attendance
-//            attJson["\(i)"] = obj.toJson()
-//            i += 1
-//        })
-//        json["attendanceEvents"] = attJson
-        
         var basJson:[String:Any] = [:]
         i = 0
         basicEvents?.forEach({ (obj) in
@@ -126,6 +133,24 @@ public class Child: NSManagedObject {
             i += 1
         })
         json["developmentalEvents"] = devJson
+        
+        var familyReportsJson:[String:Any] = [:]
+        i = 0
+        familyReports?.forEach({ (obj) in
+            let obj = obj as! FamilyReport
+            familyReportsJson["\(i)"] = obj.toJson()
+            i += 1
+        })
+        json["familyReports"] = familyReportsJson
+        
+        var genNotesJson:[String:Any] = [:]
+        i = 0
+        generalNotes?.forEach({ (obj) in
+            let obj = obj as! GeneralNote
+            genNotesJson["\(i)"] = obj.toJson()
+            i += 1
+        })
+        json["generalNotes"] = genNotesJson
         
         return json
     }

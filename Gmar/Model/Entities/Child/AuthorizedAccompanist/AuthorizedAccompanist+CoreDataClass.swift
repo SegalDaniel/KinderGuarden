@@ -17,16 +17,16 @@ public class AuthorizedAccompanist: NSManagedObject {
         self.setValue(name, forKey: "name")
         self.setValue(phone, forKey: "phone")
         self.setValue(relation, forKey: "relation")
-        self.setValue(child, forKey: "child")
-        
     }
     
-    convenience  init(json:[String:Any]) {
+    convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.authorizedAccompanistEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["name"], forKey: "name")
         self.setValue(json["phone"], forKey: "phone")
         self.setValue(json["relation"], forKey: "relation")
-        
+        if let childJson = json["child"] as? [String:Any]{
+            self.setValue(childJson, forKey: "child")
+        }
     }
     
     
@@ -35,7 +35,7 @@ public class AuthorizedAccompanist: NSManagedObject {
         json["name"] = name
         json["phone"] = phone
         json["relation"] = relation
-        json["childID"] = child?.childID
+        json["child"] = child?.toJson()
         return json
         
     }

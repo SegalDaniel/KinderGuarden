@@ -40,6 +40,11 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
     func setImageAndDescription(type:Enums.BasicEvent){
         var image:UIImage?
         switch type {
+        case .attandance:
+            timeLabel.text?.append(" נוכחות")
+            image = UIImage(named: "alarm-clock")
+            let att = event as! Attendance
+            eventDescription = "\(att.type!)\n\(att.authorized?.name ?? "") \(att.authorized?.relation ?? "")\n"
         case .feces:
             timeLabel.text?.append(" צואה")
             image = UIImage(named: "poop")
@@ -98,7 +103,7 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             timeLabel.text?.append(" הקאה")
             image = UIImage(named: "vomit")
             let vom = event as! Vomitus
-            eventDescription = "\(vom.type!)\n\(vom.proper!)\n"
+            eventDescription = "\(vom.type!)\n"
             break
         case .cough:
             timeLabel.text?.append(" שיעול")

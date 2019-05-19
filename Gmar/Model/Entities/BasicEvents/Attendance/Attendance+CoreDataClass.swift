@@ -20,7 +20,7 @@ public class Attendance: BasicEvent {
         self.setValue(eventDate, forKey: "eventDate")
         self.setValue(child, forKey: "child")
         self.setValue(staff, forKey: "staff")
-        self.setValue(authorized, forKey: "authorizedAccompanist")
+        self.setValue(authorized, forKey: "authorized")
     }
     
     convenience init(json:[String:Any]) {

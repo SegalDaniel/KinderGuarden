@@ -48,12 +48,13 @@ extension GenericEventInfoViewController{
                     
                     
                     let authName:String = String(authLabel.text!.split(separator: " ")[1])
-//                    Model.instance.getAuthorized(authName: authName) { (auth) in
-//                        let event = Attendance(isLate: isLate, type: type, eventDate: eventDate, child: child, staff: staff, authorized: auth)
-//                        Model.instance.sendToFB(attandanceEvent: event, callack: { (err) in
-//                            self.sendToFBCallback(err, loadingAlert: loadingAlert)
-//                        })
-//                    }
+                    Model.instance.getAuthorized(authName: authName) { (auth) in
+                        let eventType:Int16 = Int16(Enums.BasicEvent.attandance.rawValue)
+                        let event = Attendance(type: type, isLate: isLate, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff, authorized: auth)
+                        Model.instance.sendToFB(attandanceEvent: event, callack: { (err) in
+                            self.sendToFBCallback(err, loadingAlert: loadingAlert)
+                        })
+                    }
                 }
             }
             break
