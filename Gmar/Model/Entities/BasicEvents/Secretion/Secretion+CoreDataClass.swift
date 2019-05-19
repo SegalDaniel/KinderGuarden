@@ -16,7 +16,6 @@ public class Secretion: BasicEvent {
         self.init(entity: Model.instance.secretionEntity, insertInto: Model.instance.managedContext)
         self.setValue(type, forKey: "type")
         self.setValue(area, forKey: "area")
-        self.setValue(rank, forKey: "rank")
         self.setValue(eventType, forKey: "eventType")
         self.setValue(eventDate, forKey: "eventDate")
         self.setValue(child, forKey: "child")
@@ -27,7 +26,6 @@ public class Secretion: BasicEvent {
         self.init(entity: Model.instance.secretionEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["type"], forKey: "type")
         self.setValue(json["area"], forKey: "area")
-        self.setValue(json["rank"], forKey: "rank")
         self.setValue(json["eventType"], forKey: "eventType")
         self.setValue(json["eventDate"], forKey: "eventDate")
         self.setValue(json["child"], forKey: "child")
@@ -39,7 +37,6 @@ public class Secretion: BasicEvent {
         var json = super.toJson()
         json["type"] = type
         json["area"] = area
-        json["rank"] = rank
         return json
         
     }

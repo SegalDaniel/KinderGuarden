@@ -79,6 +79,9 @@ class ModelHttp{
         case .solidFoods:
             url = URL(string: "http://127.0.0.1:5000/events/SolidFoodEvent/newEvent")!
             break
+        case .tamal, .milk:
+            url = URL(string: "http://127.0.0.1:5000/events/LiquidFoodEvent/newEvent")!
+            break
         case .feces:
             url = URL(string: "http://127.0.0.1:5000/events/FecesEvent/newEvent")!
             break
@@ -108,7 +111,7 @@ class ModelHttp{
         let session = URLSession.shared
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = basicEvent.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
@@ -207,6 +210,8 @@ extension Dictionary : JSONSerializable {
                 let numericString = "\(String(describing: v))"
                 out.append("\"\(k)\": \"\(numericString)\"")
             }
+            
+            
             else if let json_element = v as? JSONSerializable, let string = json_element.toJSON() {
                 out.append("\"\(k)\": \(string)")
             }

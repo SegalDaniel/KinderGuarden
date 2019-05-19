@@ -37,13 +37,13 @@ public class Staff: NSManagedObject {
         json["lastName"] = lastName
         json["image"] = image
         var i = 0
-        var attJson:[String:Any] = [:]
-        i = 0
-        attendanceEvents?.forEach({ (obj) in
-            let obj = obj as! Attendance
-            attJson["\(i)"] = obj.toJson()
-        })
-        json["attendanceEvents"] = attJson
+//        var attJson:[String:Any] = [:]
+//        i = 0
+//        attendanceEvents?.forEach({ (obj) in
+//            let obj = obj as! Attendance
+//            attJson["\(i)"] = obj.toJson()
+//        })
+//        json["attendanceEvents"] = attJson
         
         var basJson:[String:Any] = [:]
         i = 0
@@ -62,5 +62,5 @@ public class Staff: NSManagedObject {
         json["developmentalEvents"] = devJson
         return json
     }
-
+    
 }

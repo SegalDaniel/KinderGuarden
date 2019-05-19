@@ -100,14 +100,14 @@ public class Child: NSManagedObject {
         })
         json["foodList"] = foodsJson
         
-        var attJson:[String:Any] = [:]
-        i = 0
-        attendanceEvents?.forEach({ (obj) in
-            let obj = obj as! Attendance
-            attJson["\(i)"] = obj.toJson()
-            i += 1
-        })
-        json["attendanceEvents"] = attJson
+//        var attJson:[String:Any] = [:]
+//        i = 0
+//        attendanceEvents?.forEach({ (obj) in
+//            let obj = obj as! Attendance
+//            attJson["\(i)"] = obj.toJson()
+//            i += 1
+//        })
+//        json["attendanceEvents"] = attJson
         
         var basJson:[String:Any] = [:]
         i = 0

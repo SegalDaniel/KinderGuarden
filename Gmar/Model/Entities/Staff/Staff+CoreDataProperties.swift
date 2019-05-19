@@ -2,7 +2,7 @@
 //  Staff+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 28/03/2019.
+//  Created by Daniel Segal on 19/05/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -22,8 +22,9 @@ extension Staff {
     @NSManaged public var lastName: String?
     @NSManaged public var staffID: String?
     @NSManaged public var basicEvents: NSSet?
-    @NSManaged public var attendanceEvents: NSSet?
     @NSManaged public var developmentalEvents: NSSet?
+    @NSManaged public var familyReports: NSSet?
+    @NSManaged public var generalNotes: NSSet?
 
 }
 
@@ -44,23 +45,6 @@ extension Staff {
 
 }
 
-// MARK: Generated accessors for attendanceEvents
-extension Staff {
-
-    @objc(addAttendanceEventsObject:)
-    @NSManaged public func addToAttendanceEvents(_ value: Attendance)
-
-    @objc(removeAttendanceEventsObject:)
-    @NSManaged public func removeFromAttendanceEvents(_ value: Attendance)
-
-    @objc(addAttendanceEvents:)
-    @NSManaged public func addToAttendanceEvents(_ values: NSSet)
-
-    @objc(removeAttendanceEvents:)
-    @NSManaged public func removeFromAttendanceEvents(_ values: NSSet)
-
-}
-
 // MARK: Generated accessors for developmentalEvents
 extension Staff {
 
@@ -75,5 +59,39 @@ extension Staff {
 
     @objc(removeDevelopmentalEvents:)
     @NSManaged public func removeFromDevelopmentalEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for familyReports
+extension Staff {
+
+    @objc(addFamilyReportsObject:)
+    @NSManaged public func addToFamilyReports(_ value: FamilyReport)
+
+    @objc(removeFamilyReportsObject:)
+    @NSManaged public func removeFromFamilyReports(_ value: FamilyReport)
+
+    @objc(addFamilyReports:)
+    @NSManaged public func addToFamilyReports(_ values: NSSet)
+
+    @objc(removeFamilyReports:)
+    @NSManaged public func removeFromFamilyReports(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for generalNotes
+extension Staff {
+
+    @objc(addGeneralNotesObject:)
+    @NSManaged public func addToGeneralNotes(_ value: GeneralNote)
+
+    @objc(removeGeneralNotesObject:)
+    @NSManaged public func removeFromGeneralNotes(_ value: GeneralNote)
+
+    @objc(addGeneralNotes:)
+    @NSManaged public func addToGeneralNotes(_ values: NSSet)
+
+    @objc(removeGeneralNotes:)
+    @NSManaged public func removeFromGeneralNotes(_ values: NSSet)
 
 }

@@ -40,7 +40,7 @@ public class SolidFood: BasicEvent {
     override func toJson() -> [String:Any] {
         var json = super.toJson()
         json["mealType"] = mealType
-        json["mealInMenu"] = mealInMenu
+        json["mealInMenu"] = "mealInMenu"
         json["amount"] = amount
         json["consumedAmount"] = consumedAmount
         return json

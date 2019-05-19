@@ -31,6 +31,7 @@ class Model{
     let routineMedicationEtity:NSEntityDescription
     let foodEntity:NSEntityDescription
     let alertEntity:NSEntityDescription
+    let familyReportEntity:NSEntityDescription
     
     //MARK: - Basic Events Entities
     //    let basicEventEntity:NSEntityDescription
@@ -53,10 +54,7 @@ class Model{
     
     
     //MARK: - Development Events Entities
-    //    let developmentEventEntity:NSEntityDescription
-    let fineMotorEventEntity:NSEntityDescription
-    let grossMotorEventEntity:NSEntityDescription
-    let socialEventEntity:NSEntityDescription
+    let developmentEventEntity:NSEntityDescription
     
     //MARK: - init
     private init(){
@@ -82,14 +80,13 @@ class Model{
         secretionEntity = NSEntityDescription.entity(forEntityName: "Secretion", in: managedContext)!
         generalBehaviorEntity = NSEntityDescription.entity(forEntityName: "GeneralBehavior", in: managedContext)!
         generalNoteEntity = NSEntityDescription.entity(forEntityName: "GeneralNote", in: managedContext)!
-        fineMotorEventEntity = NSEntityDescription.entity(forEntityName: "FineMotor", in: managedContext)!
-        grossMotorEventEntity = NSEntityDescription.entity(forEntityName: "GrossMotor", in: managedContext)!
         allergenicEntity  = NSEntityDescription.entity(forEntityName: "Allergenic", in: managedContext)!
         chronicDiseaseEntity = NSEntityDescription.entity(forEntityName: "ChronicDisease", in: managedContext)!
         routineMedicationEtity = NSEntityDescription.entity(forEntityName: "RoutineMedication", in: managedContext)!
         foodEntity = NSEntityDescription.entity(forEntityName: "Food", in: managedContext)!
-        socialEventEntity = NSEntityDescription.entity(forEntityName: "Social", in: managedContext)!
         alertEntity = NSEntityDescription.entity(forEntityName: "Alert", in: managedContext)!
+        familyReportEntity = NSEntityDescription.entity(forEntityName: "FamilyReport", in: managedContext)!
+        developmentEventEntity = NSEntityDescription.entity(forEntityName: "DevelopmentalEvent", in: managedContext)!
         
     }
     /******************** Offline changes - Replace all comments for FireBase connection**********************/
@@ -147,9 +144,9 @@ class Model{
          }
          callack(err)
          }*/
-//        modelHttp.sendAttandanceEvent(event: attandanceEvent) { (err) in
-//            callack(err)
-//        }
+        modelHttp.sendAttandanceEvent(event: attandanceEvent) { (err) in
+            callack(err)
+        }
     }
     
     
@@ -166,9 +163,9 @@ class Model{
          }
          callack(err)
          }*/
-//        modelHttp.sendChild(child: child) { (err) in
-//            callack(err)
-//        }
+        //        modelHttp.sendChild(child: child) { (err) in
+        //            callack(err)
+        //        }
     }
     
     func sendToFB(staff:Staff, callack:@escaping (Error?)->Void){
@@ -184,9 +181,9 @@ class Model{
          }
          callack(err)
          }*/
-//        modelHttp.sendStaff(staff: staff) { (err) in
-//            callack(err)
-//        }
+        modelHttp.sendStaff(staff: staff) { (err) in
+            callack(err)
+        }
     }
     
     /******************** Offline changes - Replace all comments for FireBase connection**********************/

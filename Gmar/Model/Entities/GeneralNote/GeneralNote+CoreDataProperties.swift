@@ -2,7 +2,7 @@
 //  GeneralNote+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 26/03/2019.
+//  Created by Daniel Segal on 19/05/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,7 +17,10 @@ extension GeneralNote {
         return NSFetchRequest<GeneralNote>(entityName: "GeneralNote")
     }
 
+    @NSManaged public var eventDate: NSDate?
+    @NSManaged public var eventID: Int16
     @NSManaged public var details: String?
-    @NSManaged public var subject: String?
+    @NSManaged public var child: Child?
+    @NSManaged public var staff: Staff?
 
 }
