@@ -41,10 +41,10 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
         var image:UIImage?
         switch type {
         case .attandance:
-            timeLabel.text?.append(" נוכחות")
-            image = UIImage(named: "alarm-clock")
             let att = event as! Attendance
-            eventDescription = "\(att.type!)\n\(att.authorized?.name ?? "") \(att.authorized?.relation ?? "")\n"
+            timeLabel.text?.append(" \((att.type!))")
+            image = UIImage(named: "alarm-clock")
+            eventDescription = "\(att.type!)\n\(att.authorized?.relation ?? "") \(att.authorized?.name ?? "")\n"
         case .feces:
             timeLabel.text?.append(" צואה")
             image = UIImage(named: "poop")
