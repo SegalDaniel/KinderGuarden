@@ -178,9 +178,9 @@ class Model{
     func sendToFB(report:FamilyReport, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
         callback(nil)
-//        modelHttp.sendFamilyReport(familyReport: report) { (err) in
-//            callback(err)
-//        }
+        modelHttp.sendFamilyReport(familyReport: report) { (err) in
+            callback(err)
+        }
     }
     
     func sendToFB(note:GeneralNote, callback:@escaping (Error?) -> Void){

@@ -43,7 +43,7 @@ class FamilyReportEventViewController: GenericVC {
         let topic:String = topicBtn.title(for: .normal)!
         if topic != "בחר נושא"{
             let eventDate = getEventDate()
-            let eventID = eventDate.hashValue
+            let eventID = 0 //eventDate.hashValue
             let report = FamilyReport(topic: topic, details: descTextField.text ?? "", eventID: Int16(eventID), eventDate: eventDate, child: child, staff: staff)//not anough byte space
             Model.instance.sendToFB(report: report) { (err) in
                 loadingAlert.dismiss(animated: true) {
