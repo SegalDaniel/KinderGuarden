@@ -83,9 +83,9 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             break
         case .tamal:
             timeLabel.text?.append(" תמ״ל")
-            image = UIImage(named: "aby-bottle")
+            image = UIImage(named: "baby-bottle")
             let tamal = event as! LiquidFood
-            eventDescription = "\(tamal.mealType!)\n\(String(tamal.amount))\n"
+            eventDescription = "\(tamal.mealType!)\n\(String(tamal.consumedAmount!))\n"
             break
         case .rash:
             timeLabel.text?.append(" פריחה")

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventKindViewController: MyViewController {
+class EventKindViewController: GenericVC {
 
     //MARK: - Variables
     @IBOutlet weak var basicEventBtn: UIButton!
@@ -16,8 +16,8 @@ class EventKindViewController: MyViewController {
     @IBOutlet weak var familiyEventBtn: UIButton!
     @IBOutlet weak var generalEventBtn: UIButton!
     @IBOutlet weak var futureAttEventBtn: UIButton!
-    var childID:String?
-    var teacherID:String?
+    //var childID:String?
+    //var teacherID:String?
     
     //MARK: - inits
     override func viewDidLoad() {
@@ -63,7 +63,18 @@ class EventKindViewController: MyViewController {
         let alert = UIAlertController(title: "דיווח כללי", message: "נא להוסיף דיווח כללי לבני המשפחה", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "שמירה", style: .default, handler: { (action) in
             //save the content of the alert
-            alert.dismiss(animated: true, completion: nil)
+            if let details = alert.textFields?[0].text{
+                if details != ""{
+                    let date = self.getEventDate()
+                    let note = GeneralNote(details: details, eventID: 0, eventDate: date, child: self.child, staff: self.staff)
+                    Model.instance.sendToFB(note: note, callback: { (err) in
+                        alert.dismiss(animated: true, completion: nil)
+                    })
+                }
+                else{
+                    alert.dismiss(animated: true, completion: nil)
+                }
+            }
         }))
         alert.addAction(UIAlertAction(title: "ביטול", style: .destructive, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)

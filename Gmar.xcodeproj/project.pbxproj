@@ -49,6 +49,7 @@
 		1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4BE221B3FCD007682A8 /* RPicker.swift */; };
 		188C8E962291BD6900DF85B7 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C8E942291BD6900DF85B7 /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		188C8E972291BD6900DF85B7 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C8E952291BD6900DF85B7 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
+		188C8E9A2291D1C000DF85B7 /* DevelopEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C8E992291D1C000DF85B7 /* DevelopEventCollectionViewCell.swift */; };
 		18991FED22184C2800180600 /* SecularOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEC22184C2800180600 /* SecularOne-Regular.ttf */; };
 		18991FEF22184C3400180600 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */; };
 		18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18991FF022185E6600180600 /* TeacherAddEventViewController.swift */; };
@@ -172,6 +173,7 @@
 		1887F4BE221B3FCD007682A8 /* RPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPicker.swift; sourceTree = "<group>"; };
 		188C8E942291BD6900DF85B7 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		188C8E952291BD6900DF85B7 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		188C8E992291D1C000DF85B7 /* DevelopEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopEventCollectionViewCell.swift; sourceTree = "<group>"; };
 		18991FEC22184C2800180600 /* SecularOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SecularOne-Regular.ttf"; sourceTree = "<group>"; };
 		18991FEE22184C3400180600 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		18991FF022185E6600180600 /* TeacherAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAddEventViewController.swift; sourceTree = "<group>"; };
@@ -394,7 +396,7 @@
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
 				189B353F224289C600D33A6C /* Add New Child */,
 				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
-				18A25F3A2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift */,
+				188C8E982291D19B00DF85B7 /* Kids Info Views */,
 				18586D5F22730926004F219C /* KidCollectionViewCell.swift */,
 				1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */,
 			);
@@ -408,6 +410,15 @@
 				1806E46A2268D24400F9CCE3 /* MyViewController.swift */,
 			);
 			path = "Base ViewControllers";
+			sourceTree = "<group>";
+		};
+		188C8E982291D19B00DF85B7 /* Kids Info Views */ = {
+			isa = PBXGroup;
+			children = (
+				18A25F3A2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift */,
+				188C8E992291D1C000DF85B7 /* DevelopEventCollectionViewCell.swift */,
+			);
+			path = "Kids Info Views";
 			sourceTree = "<group>";
 		};
 		18991FEB22184C0600180600 /* Fonts */ = {
@@ -949,6 +960,7 @@
 				A872BE1922914FAF0078DC5F /* Child+CoreDataClass.swift in Sources */,
 				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,
 				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
+				188C8E9A2291D1C000DF85B7 /* DevelopEventCollectionViewCell.swift in Sources */,
 				183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */,
 				A872BE1122914C930078DC5F /* Attendance+CoreDataClass.swift in Sources */,
 				18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */,

@@ -51,7 +51,7 @@ extension GenericEventInfoViewController{
                     Model.instance.getAuthorized(authName: authName) { (auth) in
                         let eventType:Int16 = Int16(Enums.BasicEvent.attandance.rawValue)
                         let event = Attendance(type: type, isLate: isLate, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff, authorized: auth)
-                        Model.instance.sendToFB(attandanceEvent: event, callack: { (err) in
+                        Model.instance.sendToFB(basicEvent: event, callack: { (err) in
                             self.sendToFBCallback(err, loadingAlert: loadingAlert)
                         })
                     }

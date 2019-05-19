@@ -36,7 +36,32 @@ class FamilyReportEventViewController: GenericVC {
             self.timeBtn.setTitle(dateString, for: .normal)
         }
     }
+    
     @IBAction func confirmBtnClicked(_ sender: Any) {
+        let loadingAlert = Utility.getLoadingAlert()
+        self.present(loadingAlert, animated: true, completion: nil)
+        let topic:String = topicBtn.title(for: .normal)!
+        if topic != "בחר נושא"{
+            let eventDate = getEventDate()
+            let eventID = eventDate.hashValue
+            let report = FamilyReport(topic: topic, details: descTextField.text ?? "", eventID: Int16(eventID), eventDate: eventDate, child: child, staff: staff)
+            Model.instance.sendToFB(report: report) { (err) in
+                loadingAlert.dismiss(animated: true) {
+                    if err == nil{
+                        self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+                    }
+                    else{
+                        self.showErrorAlert(errorDescription: err!.localizedDescription)
+                    }
+                }
+            }
+        }
+        else{
+            let alert = SimpleAlert(_title: "רק רגע", _message: "נא למלא נושא לדיווח", dissmissCallback: nil).getAlert()
+            loadingAlert.dismiss(animated: true) {
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
 }

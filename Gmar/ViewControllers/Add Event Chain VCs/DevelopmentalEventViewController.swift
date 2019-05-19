@@ -50,6 +50,20 @@ class DevelopmentalEventViewController: GenericVC {
     }
     
     @IBAction func confirmBtnClicked(_ sender: Any) {
+        let loadingAlert = Utility.getLoadingAlert()
+        self.present(loadingAlert, animated: true, completion: nil)
+        let eventDate = getEventDate()
+        checkedCells.forEach { (type, exist) in
+            if exist{
+                let event = DevelopmentalEvent(eventType: Int16(type), eventDate: eventDate as NSDate, child: child, staff: staff)
+                Model.instance.sendToFB(developmentEvent: event, callback: { (err) in
+                    loadingAlert.dismiss(animated: true, completion: {
+                        self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+                    })
+                })
+            }
+        }
+        
     }
 
 }

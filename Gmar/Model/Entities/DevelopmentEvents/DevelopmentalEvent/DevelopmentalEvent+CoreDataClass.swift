@@ -12,18 +12,18 @@ import CoreData
 
 @objc(DevelopmentalEvent)
 public class DevelopmentalEvent: NSManagedObject {
-    convenience init(eventType:Int16, eventDate:String) {
+    convenience init(eventType:Int16, eventDate:NSDate, child:Child?, staff:Staff?) {
         self.init(entity: Model.instance.developmentEventEntity, insertInto: Model.instance.managedContext)
         self.setValue(eventType, forKey: "eventType")
         self.setValue(eventDate, forKey: "eventDate")
-
+        self.setValue(child, forKey: "child")
+        self.setValue(staff, forKey: "staff")
     }
 
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.developmentEventEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["eventType"], forKey: "eventType")
         self.setValue(json["eventDate"], forKey: "eventDate")
-
     }
     
     func toJson() -> [String:Any]{

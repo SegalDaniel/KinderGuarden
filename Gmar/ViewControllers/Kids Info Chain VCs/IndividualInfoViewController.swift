@@ -19,6 +19,7 @@ class IndividualInfoViewController: MyViewController {
     @IBOutlet weak var generalNoteLabel: UILabel!
     @IBOutlet weak var startDateBtn: UIButton!
     @IBOutlet weak var endDateBtn: UIButton!
+    let developDataSource = DevelopmentalEventsDataSource()
     var startDate:Date?
     var endDate:Date?
     var childID:String?
@@ -26,6 +27,11 @@ class IndividualInfoViewController: MyViewController {
     var basicEvents:[BasicEvent] = []{
         didSet{
             basicCollectionView.reloadData()
+        }
+    }
+    var developmentalEvents:[DevelopmentalEvent] = []{
+        didSet{
+            developCollectionView.reloadData()
         }
     }
     
@@ -62,6 +68,7 @@ class IndividualInfoViewController: MyViewController {
         if let id = childID{
             Model.instance.getChild(childID: id) { (child) in
                 self.child = child
+                self.loadGeneralNote()
                 self.titleItem.title = "מידע על \(child.firstName!)"
                 let image = Model.instance.loadImageFromDiskWith(fileName: child.childID!)
                 if let image = image{
@@ -71,11 +78,28 @@ class IndividualInfoViewController: MyViewController {
                     self.childImageView.image = UIImage(named: "047-baby-2")
                 }
             }
-            filterByDates()
+            filterEventsByDates()
         }
     }
     
-    func filterByDates(){
+    func loadGeneralNote(){
+        var notes:[GeneralNote] = []
+        if let child = child{
+            child.generalNotes?.forEach({ (obj) in
+                notes.append(obj as! GeneralNote)
+            })
+        }
+        notes = notes.filter({ (note) -> Bool in
+            let noteDate = note.eventDate! as Date
+            if  noteDate >= self.startDate! && noteDate <= self.endDate!{
+                return true
+            }
+            return false
+        })
+        generalNoteLabel.text = notes.first?.details ?? ""
+    }
+    
+    func filterEventsByDates(){
         Model.instance.getChildsBasicEventsFromCore(childID: self.childID!) { (events) in
             self.basicEvents = events.filter({ (event) -> Bool in
                 let eDate = event.eventDate! as Date
@@ -85,6 +109,16 @@ class IndividualInfoViewController: MyViewController {
                 return false
             })
             basicCollectionView.reloadData()
+        }
+        Model.instance.getChildsDevlopmentEventsFromCore(childID: self.childID!) { (events) in
+            self.developmentalEvents = events.filter({ (event) -> Bool in
+                let eDate = event.eventDate! as Date
+                if  eDate >= self.startDate! && eDate <= self.endDate!{
+                    return true
+                }
+                return false
+            })
+            developCollectionView.reloadData()
         }
     }
     
@@ -100,7 +134,8 @@ class IndividualInfoViewController: MyViewController {
                 let date = formatter.string(from: selectedDate)
                 self.startDate = DateAdmin.morningDate(date: selectedDate)
                 self.startDateBtn.setTitle("מ \(date)", for: .normal)
-                self.filterByDates()
+                self.filterEventsByDates()
+                self.loadGeneralNote()
             }
             break
         case endDateBtn:
@@ -108,7 +143,8 @@ class IndividualInfoViewController: MyViewController {
                 let date = formatter.string(from: selectedDate)
                 self.endDate = DateAdmin.eveningDate(date: selectedDate)
                 self.endDateBtn.setTitle("עד \(date)", for: .normal)
-                self.filterByDates()
+                self.filterEventsByDates()
+                self.loadGeneralNote()
             }
             break
         default:
@@ -120,14 +156,21 @@ class IndividualInfoViewController: MyViewController {
         startDate = DateAdmin.morningDate(date: Date())
         endDate = Date()
         initDatesBtns()
-        filterByDates()
+        filterEventsByDates()
+        loadGeneralNote()
     }
     
 }
 
 
 //MARK: - Collection View Datasource & Delegate
-extension IndividualInfoViewController: UICollectionViewDataSource, UICollectionViewDelegate, BasicEventCollectionViewCellDelegate{
+extension IndividualInfoViewController: UICollectionViewDataSource, UICollectionViewDelegate, BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate{
+    func cellTapped(event: DevelopmentalEvent, description: String) {
+        let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
+        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func cellTapped(event:BasicEvent, description: String) {
         let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
         let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
@@ -139,9 +182,7 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
         case basicCollectionView:
             return basicEvents.count
         case developCollectionView:
-            
-            break
-            
+            return developmentalEvents.count
         case logicCollectionView:
             
             break
@@ -152,23 +193,43 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "basicCell", for: indexPath)
         switch collectionView {
         case basicCollectionView:
-            let cell = cell as! BasicEventCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "basicCell", for: indexPath) as! BasicEventCollectionViewCell
             cell.event = basicEvents[indexPath.row]
             cell.delegate = self
             cell.awakeFromNib()
-            break
+            return cell
         case developCollectionView:
-            
-            break
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "developCell", for: indexPath) as! DevelopEventCollectionViewCell
+            let eventType = developmentalEvents[indexPath.row].eventType
+            let section = eventType / 100
+            let row = Int(eventType % 100)
+            switch section{
+            case 1:
+                cell.details = developDataSource.fineMotor[row]
+                break
+            case 2:
+                cell.details = developDataSource.grossMotor[row]
+                break
+            case 3:
+                cell.details = developDataSource.social[row]
+                break
+            case 4:
+                cell.details = developDataSource.language[row]
+                break
+            default: break
+            }
+            cell.event = developmentalEvents[indexPath.row]
+            cell.delegate = self
+            cell.awakeFromNib()
+            return cell
         case logicCollectionView:
             
             break
         default:
             break
         }
-        return cell
+        return UICollectionViewCell()
     }
 }

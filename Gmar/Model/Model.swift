@@ -131,24 +131,10 @@ class Model{
 //        }
     }
     
-    func sendToFB(attandanceEvent:Attendance, callack:@escaping (Error?)->Void){
+    func sendToFB(developmentEvent:DevelopmentalEvent, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
-        callack(nil)
-        /*modelFirebase.sendAttandanceEvent(event: attandanceEvent) { (err) in
-         if err == nil{
-         do{
-         try Model.instance.managedContext.save()
-         } catch let error as NSError{
-         print("Could not save. \(error), \(error.userInfo)")
-         }
-         }
-         callack(err)
-         }*/
-//        modelHttp.sendAttandanceEvent(event: attandanceEvent) { (err) in
-//            callack(err)
-//        }
+        callback(nil)
     }
-    
     
     func sendToFB(child:Child, callack:@escaping (Error?)->Void){
         saveToDB(callback: nil)
@@ -185,6 +171,18 @@ class Model{
 //            callack(err)
 //        }
     }
+    
+    func sendToFB(report:FamilyReport, callback:@escaping (Error?) -> Void){
+        saveToDB(callback: nil)
+        callback(nil)
+    }
+    
+    func sendToFB(note:GeneralNote, callback:@escaping (Error?) -> Void){
+        saveToDB(callback: nil)
+        callback(nil)
+    }
+    
+    
     
     /******************** Offline changes - Replace all comments for FireBase connection**********************/
     
@@ -296,6 +294,15 @@ class Model{
         beFetch.predicate = NSPredicate(format: "child.childID = %@", childID)
         let events = try! Model.instance.managedContext.fetch(beFetch)
         let e:[BasicEvent] = events as! [BasicEvent]
+        callback(e)
+    }
+    
+    //MARK: - DevelopmentalEvents methods
+    func getChildsDevlopmentEventsFromCore(childID:String, callback:([DevelopmentalEvent])->Void){
+        let beFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "DevelopmentalEvent")
+        beFetch.predicate = NSPredicate(format: "child.childID = %@", childID)
+        let events = try! Model.instance.managedContext.fetch(beFetch)
+        let e:[DevelopmentalEvent] = events as! [DevelopmentalEvent]
         callback(e)
     }
     

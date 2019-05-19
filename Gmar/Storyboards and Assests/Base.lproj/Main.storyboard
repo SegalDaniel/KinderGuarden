@@ -216,13 +216,13 @@
                                 <rect key="frame" x="20" y="387" width="1072" height="151.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sKe-qc-sSp">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="129" height="141.5"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basicCell" id="gRb-aO-YgB" customClass="BasicEventCollectionViewCell" customModule="Gmar" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="developCell" id="gRb-aO-YgB" customClass="DevelopEventCollectionViewCell" customModule="Gmar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="5" width="129" height="141.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -230,30 +230,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-Ya-YSA">
-                                                    <rect key="frame" x="8" y="110" width="113" height="23.5"/>
+                                                    <rect key="frame" x="8" y="108.5" width="113" height="25"/>
                                                     <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="17"/>
                                                     <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="phL-od-UuN">
-                                                    <rect key="frame" x="0.0" y="4" width="129" height="106"/>
-                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="תיאור האירוע" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP0-uh-Ylm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="108.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="phL-od-UuN" firstAttribute="leading" secondItem="gRb-aO-YgB" secondAttribute="leading" id="LC7-lu-OrX"/>
-                                            <constraint firstAttribute="trailing" secondItem="phL-od-UuN" secondAttribute="trailing" id="Opj-ua-D5V"/>
+                                            <constraint firstItem="sP0-uh-Ylm" firstAttribute="leading" secondItem="gRb-aO-YgB" secondAttribute="leading" id="1AN-n8-r94"/>
+                                            <constraint firstItem="sP0-uh-Ylm" firstAttribute="top" secondItem="gRb-aO-YgB" secondAttribute="top" id="MuP-X4-ORF"/>
+                                            <constraint firstItem="2e8-Ya-YSA" firstAttribute="top" secondItem="sP0-uh-Ylm" secondAttribute="bottom" id="Nt5-Bk-FPF"/>
                                             <constraint firstItem="2e8-Ya-YSA" firstAttribute="leading" secondItem="gRb-aO-YgB" secondAttribute="leadingMargin" id="Peq-F3-Zsj"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="2e8-Ya-YSA" secondAttribute="trailing" id="Ubl-rr-Ac2"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="2e8-Ya-YSA" secondAttribute="bottom" id="ZLE-CS-t7g"/>
-                                            <constraint firstItem="2e8-Ya-YSA" firstAttribute="top" secondItem="phL-od-UuN" secondAttribute="bottom" id="ame-yb-eaU"/>
-                                            <constraint firstItem="phL-od-UuN" firstAttribute="top" secondItem="gRb-aO-YgB" secondAttribute="top" constant="4" id="kU5-pm-D7g"/>
-                                            <constraint firstItem="phL-od-UuN" firstAttribute="height" secondItem="gRb-aO-YgB" secondAttribute="height" multiplier="0.75" id="w3S-x4-olQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="sP0-uh-Ylm" secondAttribute="trailing" id="ZsT-uH-9gX"/>
                                         </constraints>
                                         <size key="customSize" width="129" height="141.5"/>
                                         <connections>
-                                            <outlet property="mainImageView" destination="phL-od-UuN" id="jgo-tk-L3a"/>
-                                            <outlet property="timeLabel" destination="2e8-Ya-YSA" id="mcr-xk-qt7"/>
+                                            <outlet property="eventTextView" destination="sP0-uh-Ylm" id="XRb-FJ-cbB"/>
+                                            <outlet property="timeLabel" destination="2e8-Ya-YSA" id="u5G-B1-Xd2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2103,9 +2106,11 @@
                         <outlet property="confirmBtn" destination="RY5-cz-Cj5" id="rs5-EC-qk5"/>
                         <outlet property="eventsTableView" destination="3ly-Ax-BJ8" id="Obn-5h-g3C"/>
                         <outlet property="timeBtn" destination="yxH-Wd-Keq" id="VMm-Cc-Tlm"/>
+                        <segue destination="0UY-P6-sX7" kind="unwind" identifier="unwindToMainWindow" unwindAction="unwindToMainWindowWithSegue:" id="Vw8-2d-2kQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdS-eb-zAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0UY-P6-sX7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1178" y="843"/>
         </scene>
