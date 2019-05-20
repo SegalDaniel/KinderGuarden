@@ -15,8 +15,9 @@ class IndividualInfoViewController: MyViewController {
     @IBOutlet weak var basicCollectionView: UICollectionView!
     @IBOutlet weak var developCollectionView: UICollectionView!
     @IBOutlet weak var logicCollectionView: UICollectionView!
+    @IBOutlet weak var familyCollectionView: UICollectionView!
+    @IBOutlet weak var notesCollectionView: UICollectionView!
     @IBOutlet weak var titleItem: UINavigationItem!
-    @IBOutlet weak var generalNoteLabel: UILabel!
     @IBOutlet weak var startDateBtn: UIButton!
     @IBOutlet weak var endDateBtn: UIButton!
     let developDataSource = DevelopmentalEventsDataSource()
@@ -34,6 +35,16 @@ class IndividualInfoViewController: MyViewController {
             developCollectionView.reloadData()
         }
     }
+    var familyReports:[FamilyReport] = []{
+        didSet{
+            familyCollectionView.reloadData()
+        }
+    }
+    var generalNotes:[GeneralNote] = []{
+        didSet{
+            notesCollectionView.reloadData()
+        }
+    }
     
     //MARK: - inits
     override func viewDidLoad() {
@@ -41,11 +52,9 @@ class IndividualInfoViewController: MyViewController {
         startDate = DateAdmin.morningDate(date: Date())
         endDate = Date()
         initChildData()
-        initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView])
+        initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView, familyCollectionView, notesCollectionView])
         initDatesBtns()
         childImageView.layer.cornerRadius = 10
-        generalNoteLabel.layer.cornerRadius = 10
-        Utility.addBorder(view: generalNoteLabel)
     }
     
     func initDatesBtns(){
@@ -69,6 +78,7 @@ class IndividualInfoViewController: MyViewController {
             Model.instance.getChild(childID: id) { (child) in
                 self.child = child
                 self.loadGeneralNote()
+                self.loadFamilyReports()
                 self.titleItem.title = "מידע על \(child.firstName!)"
                 let image = Model.instance.loadImageFromDiskWith(fileName: child.childID!)
                 if let image = image{
@@ -82,21 +92,37 @@ class IndividualInfoViewController: MyViewController {
         }
     }
     
-    func loadGeneralNote(){
-        var notes:[GeneralNote] = []
+    //MARK: - Init data of child
+    func loadFamilyReports(){
+        familyReports = []
         if let child = child{
-            child.generalNotes?.forEach({ (obj) in
-                notes.append(obj as! GeneralNote)
+            child.familyReports?.forEach({ (obj) in
+                self.familyReports.append(obj as! FamilyReport)
+            })
+            self.familyReports = self.familyReports.filter({ (report) -> Bool in
+                let reportDate = report.eventDate! as Date
+                if  reportDate >= self.startDate! && reportDate <= self.endDate!{
+                    return true
+                }
+                return false
             })
         }
-        notes = notes.filter({ (note) -> Bool in
+    }
+    
+    func loadGeneralNote(){
+        generalNotes = []
+        if let child = child{
+            child.generalNotes?.forEach({ (obj) in
+                self.generalNotes.append(obj as! GeneralNote)
+            })
+        }
+        self.generalNotes = self.generalNotes.filter({ (note) -> Bool in
             let noteDate = note.eventDate! as Date
             if  noteDate >= self.startDate! && noteDate <= self.endDate!{
                 return true
             }
             return false
         })
-        generalNoteLabel.text = notes.first?.details ?? ""
     }
     
     func filterEventsByDates(){
@@ -136,6 +162,7 @@ class IndividualInfoViewController: MyViewController {
                 self.startDateBtn.setTitle("מ \(date)", for: .normal)
                 self.filterEventsByDates()
                 self.loadGeneralNote()
+                self.loadFamilyReports()
             }
             break
         case endDateBtn:
@@ -145,6 +172,7 @@ class IndividualInfoViewController: MyViewController {
                 self.endDateBtn.setTitle("עד \(date)", for: .normal)
                 self.filterEventsByDates()
                 self.loadGeneralNote()
+                self.loadFamilyReports()
             }
             break
         default:
@@ -158,25 +186,14 @@ class IndividualInfoViewController: MyViewController {
         initDatesBtns()
         filterEventsByDates()
         loadGeneralNote()
+        loadFamilyReports()
     }
     
 }
 
 
 //MARK: - Collection View Datasource & Delegate
-extension IndividualInfoViewController: UICollectionViewDataSource, UICollectionViewDelegate, BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate{
-    func cellTapped(event: DevelopmentalEvent, description: String) {
-        let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
-        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func cellTapped(event:BasicEvent, description: String) {
-        let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
-        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+extension IndividualInfoViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case basicCollectionView:
@@ -184,8 +201,11 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
         case developCollectionView:
             return developmentalEvents.count
         case logicCollectionView:
-            
-            break
+            return 0
+        case familyCollectionView:
+            return familyReports.count
+        case notesCollectionView:
+            return generalNotes.count
         default:
             break
         }
@@ -227,9 +247,48 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
         case logicCollectionView:
             
             break
+        case familyCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "familyCell", for: indexPath) as! FamilyReportCollectionViewCell
+            cell.report = familyReports[indexPath.row]
+            cell.delegate = self
+            cell.awakeFromNib()
+            return cell
+        case notesCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notesCell", for: indexPath) as! GeneralNoteCollectionViewCell
+            cell.note = generalNotes[indexPath.row]
+            cell.delegate = self
+            cell.awakeFromNib()
+            return cell
         default:
             break
         }
         return UICollectionViewCell()
+    }
+}
+
+//MARK: CollectionViewCells Delegate
+extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate, FamilyReportCollectionViewCellDelegate, GeneralNoteCollectionViewCellDelegate{
+    func cellTapped(note: GeneralNote, description: String) {
+        let time = DateAdmin.extractDateAndTime(date: note.eventDate! as Date, dateStyle: .short)
+        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func cellTapped(report: FamilyReport, description: String) {
+        let time = DateAdmin.extractDateAndTime(date: report.eventDate! as Date, dateStyle: .short)
+        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func cellTapped(event: DevelopmentalEvent, description: String) {
+        let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
+        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func cellTapped(event:BasicEvent, description: String) {
+        let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
+        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
     }
 }
