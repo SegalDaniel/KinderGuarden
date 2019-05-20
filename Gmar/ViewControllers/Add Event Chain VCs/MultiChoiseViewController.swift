@@ -9,11 +9,11 @@
 import UIKit
 
 class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableViewDataSource, MultiChoiseCellDelegate {
-
+    
     //MARk: - Variables
     @IBOutlet weak var kidsTableView: UITableView!
     var kids:[Child]?
-    @IBOutlet weak var confirmAllBtn: UIButton!
+    var staffID:String?
     
     //MARK: inits
     override func viewDidLoad() {
@@ -35,12 +35,40 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "MultiChoiseCell") as! MultiChoiseTableViewCell
         let kid = kids![indexPath.row]
         cell.data = "\(kid.firstName!) \(kid.lastName!)"
+        cell.child = kid
+        cell.indexPath = indexPath
         cell.delegate = self
         return cell
     }
     
-    func cellConfirmBtnClicked() {
-        
+    //Stil need to delete the row properly!
+    func cellConfirmBtnClicked(indexPath: IndexPath, child: Child, mealType: String, consumed: String, eventDate: Date, eventType: Int16, cell:MultiChoiseTableViewCell) {
+        cell.delegate = nil
+        let type = Enums.BasicEvent.init(rawValue: Int(eventType))!
+        Model.instance.getStaffByID(staffID: staffID!) { (staff) in
+            switch type {
+            case .solidFoods:
+                let solidFood = SolidFood(mealType: mealType, mealInMenu: nil, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                Model.instance.sendToFB(basicEvent: solidFood, callack: { (err) in
+                    self.kids?.remove(at: indexPath.row)
+                    self.kidsTableView.reloadData()
+                })
+                break
+            case .tamal, .milk:
+                let liquidFood = LiquidFood(mealType: mealType, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
+                Model.instance.sendToFB(basicEvent: liquidFood, callack: { (err) in
+                    self.kids?.remove(at: indexPath.row)
+                    self.kidsTableView.reloadData()
+                })
+                break
+            default: break
+            }
+        }
+    }
+    
+    func showUnselectedAlert(message: String) {
+        let alert = SimpleAlert(_title: "רק רגע", _message: message, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - buttons actions

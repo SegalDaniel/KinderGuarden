@@ -23,9 +23,12 @@ class MultiChoiseTableViewCell: UITableViewCell {
     @IBOutlet weak var foodDidntBtn: UIButton!
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var quantitySlider: UISlider!
+    var selectedDate:Date?
+    var selectedTime:String?
     var delegate:MultiChoiseCellDelegate?
-    
+    var indexPath:IndexPath?
     var foodBtns:[UIButton] = []
+    var child:Child?
     var data:String?{
         didSet{
             if let label = kidNameLabel{
@@ -41,6 +44,10 @@ class MultiChoiseTableViewCell: UITableViewCell {
         initChoise()
         initButtons(btns: [foodKindBtn, changeTimeBtn, confirmBtn, foodFinishedBtn, foodAboveHalfBtn, foodBelowHalfBtn, foodDidntBtn])
         confirmBtn.backgroundColor = Utility.backCloverColor
+        //let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(confirmLongPressed))
+        //confirmBtn.addGestureRecognizer(longGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(confirmLongPressed))
+        confirmBtn.addGestureRecognizer(tapGesture)
     }
     
     func initButtons(btns:[UIButton]){
@@ -74,25 +81,77 @@ class MultiChoiseTableViewCell: UITableViewCell {
     @IBAction func changeTimeBtnClicked(_ sender: Any) {
         DateAdmin.showDatePicker(timeStyle: .short, dateStyle: .none) { (dateString, time, date) in
             self.timeLabel.text = dateString
+            self.selectedDate = date
+            self.selectedTime = time
         }
     }
     
-    @IBAction func confirmBtnClicked(_ sender: Any) {
-        if let btn = sender as? UIButton{
-            if btn.tag == 0{
-                btn.tag = 1
-                btn.setTitle("ביטול", for: .normal)
-                btn.backgroundColor = Utility.btnSalmon
+    @IBAction func confirmLongPressed(_ sender: Any){
+        let kind = foodKindBtn.title(for: .normal)
+        let eventDate = getEventDate()
+        switch kind {
+        case "מנה מוצקה":
+            if let foodBtn = foodBtns.first(where: { (btn) -> Bool in
+                if btn.tag == 1 { return true }
+                else { return false}
+            }){
+                if let consumed = foodBtn.title(for: .normal){
+                    let eventType:Int16 = Int16(Enums.BasicEvent.solidFoods.rawValue)
+                    var mealType:String
+                    var eventHour:Int
+                    if let time = selectedTime{
+                        eventHour = Int(time.split(separator: ":")[0])!
+                    }
+                    else{
+                        let formatter1 = DateFormatter()
+                        formatter1.dateStyle = .none
+                        formatter1.timeStyle = .short
+                        let time = formatter1.string(from: Date())
+                        eventHour = Int(time.split(separator: ":")[0])!
+                    }
+                    if eventHour > 12{
+                        mealType = "ארוחת צהריים"
+                    }
+                    else{
+                        mealType = "ארוחת בוקר"
+                    }
+                    delegate?.cellConfirmBtnClicked(indexPath: indexPath!, child: child!, mealType: mealType, consumed: consumed, eventDate: eventDate, eventType: eventType, cell: self)
+                }
             }
             else{
-                btn.tag = 0
-                btn.setTitle("אישור", for: .normal)
-                btn.backgroundColor = Utility.backCloverColor
+                delegate?.showUnselectedAlert(message: "נא לבחור את כמות המזון שנאכלה")
             }
-            delegate?.cellConfirmBtnClicked()
+            break
+        case "חלב אם":
+            let eventType:Int16 = Int16(Enums.BasicEvent.tamal.rawValue)
+            let consumedTxt = sliderLabel.text!
+            var consumed:String
+            if consumedTxt == "כמות"{
+                delegate?.showUnselectedAlert(message: "נא לבחור את כמות המזון שנאכלה")
+            }
+            else{
+                consumed = "\(consumedTxt.split(separator: " ")[0])"
+                delegate?.cellConfirmBtnClicked(indexPath: indexPath!, child: child!, mealType: "tamal", consumed: consumed, eventDate: eventDate, eventType: eventType, cell: self)
+            }
+            break
+        case "תמ״ל":
+            let eventType:Int16 = Int16(Enums.BasicEvent.milk.rawValue)
+            let consumedTxt = sliderLabel.text!
+            var consumed:String
+            if consumedTxt == "כמות"{
+                delegate?.showUnselectedAlert(message: "נא לבחור את כמות המזון שנאכלה")
+            }
+            else{
+                consumed = "\(consumedTxt.split(separator: " ")[0])"
+                delegate?.cellConfirmBtnClicked(indexPath: indexPath!, child: child!, mealType: "millk", consumed: consumed, eventDate: eventDate, eventType: eventType, cell: self)
+            }
+            break
+        default:
+            break
         }
-        
     }
+    
+    
     
     //MARK: - Views intis
     func initLabels(labels:[UILabel]){
@@ -194,8 +253,20 @@ class MultiChoiseTableViewCell: UITableViewCell {
         }
     }
     
+    func getEventDate() -> Date{
+        var eventDate:Date
+        if selectedDate == nil{
+            eventDate = Date()
+        }
+        else{
+            eventDate = selectedDate!
+        }
+        return eventDate
+    }
+    
 }
 
 protocol MultiChoiseCellDelegate {
-    func cellConfirmBtnClicked()
+    func cellConfirmBtnClicked(indexPath:IndexPath, child:Child, mealType:String, consumed:String, eventDate:Date, eventType:Int16, cell:MultiChoiseTableViewCell)
+    func showUnselectedAlert(message:String)
 }

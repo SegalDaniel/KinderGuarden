@@ -61,7 +61,7 @@ class TeacherAddEventViewController: MyViewController {
         multiChooseBtn.addRadius(radius: 20)
         multiChooseBtn.addTag(tag: 1)
         multiChooseBtn.setImage(image: UIImage(named: "checklist")!)
-        //multiChooseBtn.addTarget(self, action: #selector(multiChoiseBtnClicked), for: .touchUpInside)
+        multiChooseBtn.addTarget(self, action: #selector(multiChoiseBtnClicked), for: .touchUpInside)
         multiChooseBtn.setBackgroundColor(color:Utility.btnSalmon)
     }
     
@@ -89,7 +89,8 @@ class TeacherAddEventViewController: MyViewController {
             vc.teacherID = self.teacherID
         }
         else if segue.identifier == "MultiChoose"{
-            
+            let vc = segue.destination as! MultiChoiseViewController
+            vc.staffID = self.teacherID
         }
         else if segue.identifier == "EventKind"{
             let vc = segue.destination as! EventKindViewController

@@ -73,7 +73,7 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             timeLabel.text?.append(" אוכל מוצק")
             image = UIImage(named: "022-food")
             let sol = event as! SolidFood
-            eventDescription = "\(sol.mealType!)\n\(String(sol.amount))\n"
+            eventDescription = "\(sol.mealType!)\n\(String(sol.consumedAmount!))\n"
             break
         case .milk:
             timeLabel.text?.append(" חלב")

@@ -270,6 +270,13 @@ class Model{
         callback(staff)
     }
     
+    func getStaffByID(staffID:String, callback:(Staff)->Void){
+        let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
+        staffFetch.predicate = NSPredicate(format: "staffID = %@", staffID)
+        let staffs:[Staff] = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
+        callback(staffs.first!)
+    }
+    
     func deleteStaffFromDB(staffID:String, callback:(NSError?)->Void){
         let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
         let staff = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]

@@ -1288,7 +1288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X3h-OX-nfT">
-                                <rect key="frame" x="28" y="90" width="1056" height="648"/>
+                                <rect key="frame" x="28" y="90" width="1056" height="724"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultiChoiseCell" rowHeight="100" id="hmc-pB-aXI" customClass="MultiChoiseTableViewCell" customModule="Gmar" customModuleProvider="target">
@@ -1390,16 +1390,13 @@
                                                         </slider>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQq-Wu-lYw">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="aQq-Wu-lYw">
                                                     <rect key="frame" x="15" y="5" width="105.5" height="89.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                                    <state key="normal" title="אישור">
+                                                    <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="23"/>
+                                                    <state key="normal" title="לחיצה ארוכה לאישור">
                                                         <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="confirmBtnClicked:" destination="hmc-pB-aXI" eventType="touchUpInside" id="MpH-mQ-cve"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך ושעה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-GE-3dT">
                                                     <rect key="frame" x="128.5" y="5" width="149.5" height="45"/>
@@ -1464,34 +1461,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUe-7k-KDl">
-                                <rect key="frame" x="28" y="758" width="211" height="56"/>
-                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
-                                <state key="normal" title="אישור דיווחים">
-                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="finalConfirmBtnClicked:" destination="W7p-xh-Fbn" eventType="touchUpInside" id="UdP-kW-u2U"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X3h-OX-nfT" firstAttribute="centerX" secondItem="hoe-b7-bjo" secondAttribute="centerX" id="06x-ce-Grx"/>
-                            <constraint firstItem="hoe-b7-bjo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LUe-7k-KDl" secondAttribute="trailing" symbolic="YES" id="IW4-fp-TLd"/>
                             <constraint firstItem="X3h-OX-nfT" firstAttribute="width" secondItem="KFd-hf-KQb" secondAttribute="width" multiplier="0.95" id="MDn-Iq-e2Q"/>
-                            <constraint firstItem="hoe-b7-bjo" firstAttribute="bottom" secondItem="LUe-7k-KDl" secondAttribute="bottom" constant="20" id="dxC-sr-ubX"/>
-                            <constraint firstItem="LUe-7k-KDl" firstAttribute="leading" secondItem="X3h-OX-nfT" secondAttribute="leading" id="ejV-PP-oub"/>
                             <constraint firstItem="X3h-OX-nfT" firstAttribute="top" secondItem="hoe-b7-bjo" secondAttribute="top" constant="20" id="mzS-cq-N6I"/>
-                            <constraint firstItem="LUe-7k-KDl" firstAttribute="width" secondItem="X3h-OX-nfT" secondAttribute="width" multiplier="0.2" id="oIi-pg-s8Q"/>
-                            <constraint firstItem="LUe-7k-KDl" firstAttribute="top" secondItem="X3h-OX-nfT" secondAttribute="bottom" constant="20" id="sdO-UP-rFB"/>
+                            <constraint firstItem="hoe-b7-bjo" firstAttribute="bottom" secondItem="X3h-OX-nfT" secondAttribute="bottom" constant="20" id="qa0-Pp-syb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hoe-b7-bjo"/>
                     </view>
                     <navigationItem key="navigationItem" title="האכלה מרובה" id="Yy1-Vi-lAe"/>
                     <connections>
-                        <outlet property="confirmAllBtn" destination="LUe-7k-KDl" id="E5H-DZ-xYX"/>
                         <outlet property="kidsTableView" destination="X3h-OX-nfT" id="u6r-hJ-gT4"/>
                         <segue destination="QIu-Qh-OXq" kind="unwind" identifier="unwindToMainWindow" unwindAction="unwindToMainWindowWithSegue:" id="la9-T0-lmX"/>
                     </connections>
