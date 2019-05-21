@@ -56,12 +56,7 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
                 let solidFood = SolidFood(mealType: mealType, mealInMenu: nil, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                 Model.instance.sendToFB(basicEvent: solidFood, callack: { (err) in
                     loadingAlert.dismiss(animated: true, completion: {
-                        print("deleting row \(indexPath.row)")
-                        self.kidsTableView.beginUpdates()
-                        self.kids?.remove(at: indexPath.row)
-                        self.kidsTableView.deleteRows(at: [indexPath], with: .left)
-                        self.kidsTableView.endUpdates()
-                        self.kidsTableView.reloadData()
+                        self.sendToFBCallback(indexPath: indexPath)
                     })
                 })
                 break
@@ -69,12 +64,7 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
                 let liquidFood = LiquidFood(mealType: mealType, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                 Model.instance.sendToFB(basicEvent: liquidFood, callack: { (err) in
                     loadingAlert.dismiss(animated: true, completion: {
-                        print("deleting row \(indexPath.row)")
-                        self.kidsTableView.beginUpdates()
-                        self.kids?.remove(at: indexPath.row)
-                        self.kidsTableView.deleteRows(at: [indexPath], with: .left)
-                        self.kidsTableView.endUpdates()
-                        self.kidsTableView.reloadData()
+                        self.sendToFBCallback(indexPath: indexPath)
                     })
                 })
                 break
@@ -83,6 +73,17 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
         }
         loadingAlert.dismiss(animated: true) {
             self.showUnselectedAlert(message: "לא התבצעה שמירה")
+        }
+    }
+    
+    func sendToFBCallback(indexPath:IndexPath){
+        kidsTableView.beginUpdates()
+        kids?.remove(at: indexPath.row)
+        kidsTableView.deleteRows(at: [indexPath], with: .left)
+        kidsTableView.endUpdates()
+        kidsTableView.reloadData()
+        if kids?.count == 0{
+            self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
         }
     }
     
