@@ -79,13 +79,13 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             timeLabel.text?.append(" חלב")
             image = UIImage(named: "feeder")
             let milk = event as! LiquidFood
-            eventDescription = "\(milk.mealType!)\n\(String(milk.amount))\n"
+            eventDescription = "חלב אם\n\(String(milk.consumedAmount!)) מ״ל\n"
             break
         case .tamal:
             timeLabel.text?.append(" תמ״ל")
             image = UIImage(named: "baby-bottle")
             let tamal = event as! LiquidFood
-            eventDescription = "\(tamal.mealType!)\n\(String(tamal.consumedAmount!))\n"
+            eventDescription = "תמ״ל\n\(String(tamal.consumedAmount!)) מ״ל\n"
             break
         case .rash:
             timeLabel.text?.append(" פריחה")

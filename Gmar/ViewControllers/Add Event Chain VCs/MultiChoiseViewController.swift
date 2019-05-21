@@ -61,6 +61,7 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
                         self.kids?.remove(at: indexPath.row)
                         self.kidsTableView.deleteRows(at: [indexPath], with: .left)
                         self.kidsTableView.endUpdates()
+                        self.kidsTableView.reloadData()
                     })
                 })
                 break
@@ -73,6 +74,7 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
                         self.kids?.remove(at: indexPath.row)
                         self.kidsTableView.deleteRows(at: [indexPath], with: .left)
                         self.kidsTableView.endUpdates()
+                        self.kidsTableView.reloadData()
                     })
                 })
                 break
