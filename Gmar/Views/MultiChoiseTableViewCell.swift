@@ -94,7 +94,7 @@ class MultiChoiseTableViewCell: UITableViewCell {
                 if btn.tag == 1 { return true }
                 else { return false}
             }){
-                if let consumed = foodBtn.title(for: .normal){
+                if let consumed = foodBtn.attributedTitle(for: .normal) {
                     let eventType:Int16 = Int16(Enums.BasicEvent.solidFoods.rawValue)
                     var mealType:String
                     var eventHour:Int
@@ -114,7 +114,7 @@ class MultiChoiseTableViewCell: UITableViewCell {
                     else{
                         mealType = "ארוחת בוקר"
                     }
-                    delegate?.cellConfirmBtnClicked(indexPath: indexPath!, child: child!, mealType: mealType, consumed: consumed, eventDate: eventDate, eventType: eventType, cell: self)
+                    delegate?.cellConfirmBtnClicked(indexPath: indexPath!, child: child!, mealType: mealType, consumed: consumed.string, eventDate: eventDate, eventType: eventType, cell: self)
                 }
             }
             else{

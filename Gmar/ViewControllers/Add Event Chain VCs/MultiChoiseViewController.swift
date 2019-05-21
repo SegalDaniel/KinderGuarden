@@ -88,12 +88,4 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
         let alert = SimpleAlert(_title: "רק רגע", _message: message, dissmissCallback: nil).getAlert()
         self.present(alert, animated: true, completion: nil)
     }
-    
-    //MARK: - buttons actions
-    @IBAction func finalConfirmBtnClicked(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
-    }
-    
-
-    
 }
