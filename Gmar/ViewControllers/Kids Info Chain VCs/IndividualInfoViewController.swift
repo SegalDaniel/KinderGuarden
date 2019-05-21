@@ -166,7 +166,7 @@ class IndividualInfoViewController: MyViewController {
             }
             break
         case endDateBtn:
-            RPicker.selectDate(title: "נא לבחור תאריך סיום", hideCancel: false, datePickerMode: .date, selectedDate: endDate, minDate: startDate, maxDate: Date()) { (selectedDate) in
+            RPicker.selectDate(title: "נא לבחור תאריך סיום", hideCancel: false, datePickerMode: .date, selectedDate: endDate, minDate: self.startDate!, maxDate: Date()) { (selectedDate) in
                 let date = formatter.string(from: selectedDate)
                 self.endDate = DateAdmin.eveningDate(date: selectedDate)
                 self.endDateBtn.setTitle("עד \(date)", for: .normal)

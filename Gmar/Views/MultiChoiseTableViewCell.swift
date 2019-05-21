@@ -37,6 +37,7 @@ class MultiChoiseTableViewCell: UITableViewCell {
         }
     }
     var foodKind:Int = 1
+    var pressed:Bool = false
     
     //MARK: - init
     override func awakeFromNib() {
@@ -44,10 +45,7 @@ class MultiChoiseTableViewCell: UITableViewCell {
         initChoise()
         initButtons(btns: [foodKindBtn, changeTimeBtn, confirmBtn, foodFinishedBtn, foodAboveHalfBtn, foodBelowHalfBtn, foodDidntBtn])
         confirmBtn.backgroundColor = Utility.backCloverColor
-        //let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(confirmLongPressed))
-        //confirmBtn.addGestureRecognizer(longGesture)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(confirmLongPressed))
-        confirmBtn.addGestureRecognizer(tapGesture)
+        confirmBtn.addTarget(self, action: #selector(confirmPressed), for: .touchUpInside)
     }
     
     func initButtons(btns:[UIButton]){
@@ -86,7 +84,8 @@ class MultiChoiseTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func confirmLongPressed(_ sender: Any){
+    //need more debugging
+    @IBAction func confirmPressed(_ sender: Any){
         let kind = foodKindBtn.title(for: .normal)
         let eventDate = getEventDate()
         switch kind {

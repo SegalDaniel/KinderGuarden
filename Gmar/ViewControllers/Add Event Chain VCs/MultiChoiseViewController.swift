@@ -41,28 +41,46 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        return []
+    }
+    
     //Stil need to delete the row properly!
     func cellConfirmBtnClicked(indexPath: IndexPath, child: Child, mealType: String, consumed: String, eventDate: Date, eventType: Int16, cell:MultiChoiseTableViewCell) {
-        cell.delegate = nil
+        let loadingAlert = Utility.getLoadingAlert()
+        self.present(loadingAlert, animated: true, completion: nil)
         let type = Enums.BasicEvent.init(rawValue: Int(eventType))!
         Model.instance.getStaffByID(staffID: staffID!) { (staff) in
             switch type {
             case .solidFoods:
                 let solidFood = SolidFood(mealType: mealType, mealInMenu: nil, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                 Model.instance.sendToFB(basicEvent: solidFood, callack: { (err) in
-                    self.kids?.remove(at: indexPath.row)
-                    self.kidsTableView.reloadData()
+                    loadingAlert.dismiss(animated: true, completion: {
+                        print("deleting row \(indexPath.row)")
+                        self.kidsTableView.beginUpdates()
+                        self.kids?.remove(at: indexPath.row)
+                        self.kidsTableView.deleteRows(at: [indexPath], with: .left)
+                        self.kidsTableView.endUpdates()
+                    })
                 })
                 break
             case .tamal, .milk:
                 let liquidFood = LiquidFood(mealType: mealType, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
                 Model.instance.sendToFB(basicEvent: liquidFood, callack: { (err) in
-                    self.kids?.remove(at: indexPath.row)
-                    self.kidsTableView.reloadData()
+                    loadingAlert.dismiss(animated: true, completion: {
+                        print("deleting row \(indexPath.row)")
+                        self.kidsTableView.beginUpdates()
+                        self.kids?.remove(at: indexPath.row)
+                        self.kidsTableView.deleteRows(at: [indexPath], with: .left)
+                        self.kidsTableView.endUpdates()
+                    })
                 })
                 break
             default: break
             }
+        }
+        loadingAlert.dismiss(animated: true) {
+            self.showUnselectedAlert(message: "לא התבצעה שמירה")
         }
     }
     

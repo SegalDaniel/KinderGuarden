@@ -52,30 +52,25 @@ class DateAdmin{
         let formatter = DateFormatter()
         formatter.dateStyle = dateStyle
         formatter.timeStyle = timeStyle
+
         return formatter.string(from: date)
     }
     
     static func morningDate(date:Date) -> Date{
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        let theDay = formatter.string(from: date)
-        formatter.dateFormat = "dd/MM/yy , HH:mm"
-        formatter.timeZone = TimeZone.current
-        let toFormat = "\(theDay) , 06:00"
-        let morning = formatter.date(from: toFormat)!
+        let calendar = NSCalendar.current
+        var components = DateComponents()
+        components.hour = 6
+        let dateAtMidnight = calendar.startOfDay(for: date)
+        let morning = calendar.date(byAdding: components, to: dateAtMidnight)!
         return morning
     }
     
     static func eveningDate(date:Date) -> Date{
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        let theDay = formatter.string(from: date)
-        formatter.dateFormat = "dd/MM/yy , HH:mm"
-        formatter.timeZone = TimeZone.current
-        let toFormat = "\(theDay) , 23:00"
-        let evening = formatter.date(from: toFormat)!
+        let calendar = NSCalendar.current
+        var components = DateComponents()
+        components.day = 1
+        let dateAtMidnight = calendar.startOfDay(for: date)
+        let evening = calendar.date(byAdding: components, to: dateAtMidnight)!
         return evening
     }
     
