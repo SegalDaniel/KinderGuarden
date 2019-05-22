@@ -71,10 +71,10 @@ class ModelHttp{
         var url=URL(string: "empty")!
         switch kind {
         case .sleep:
-            url = URL(string: "http://127.0.0.1:5000/events/SleepingEvent/newEvent")!
+            url = URL(string: "http://193.106.55.183/events/SleepingEvent/newEvent")!
             break
         case .water:
-            url = URL(string: "http://127.0.0.1:5000/events/WaterEvent/newEvent")!
+            url = URL(string: "http://193.106.55.183/events/WaterEvent/newEvent")!
             break
         case .solidFoods:
             url = URL(string: "http://127.0.0.1:5000/events/SolidFoodEvent/newEvent")!
@@ -101,7 +101,7 @@ class ModelHttp{
             url = URL(string: "http://127.0.0.1:5000/events/RashEvent/newEvent")!
             break
         case .feever:
-            url = URL(string: "http://127.0.0.1:5000/events/FeverEvent/newEvent")!
+            url = URL(string: "http://193.106.55.183/events/FeverEvent/newEvent")!
             break
             //add parasites medication and disease
         //add liquid food url
@@ -115,6 +115,7 @@ class ModelHttp{
         let dic = basicEvent.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+        let basicID = basicEvent.eventID
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {

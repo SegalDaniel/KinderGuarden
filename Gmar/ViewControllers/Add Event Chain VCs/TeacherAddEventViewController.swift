@@ -160,7 +160,7 @@ extension TeacherAddEventViewController: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kidCell", for: indexPath) as! KidCollectionViewCell
         cell.delegate = self
-        cell.child = kids![indexPath.row]
+        cell.child = kids![indexPath.row]   
         cell.awakeFromNib()
         return cell
     }
