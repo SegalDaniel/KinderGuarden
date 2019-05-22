@@ -59,7 +59,7 @@ class MyButtonView: UIView {
         contentView.backgroundColor = Utility.btnBackColor
         mainImageView.clipsToBounds = true
         mainButton.layer.zPosition = 1
-        mainLabel.clipsToBounds = true
+        //mainLabel.clipsToBounds = true
         mainButton.addTarget(self, action: #selector(removeShadow), for: .touchDown)
         mainButton.addTarget(self, action: #selector(reAddShadow), for: .touchDragExit)
         mainButton.addTarget(self, action: #selector(reAddShadow), for: .touchUpInside)

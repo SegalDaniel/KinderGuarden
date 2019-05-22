@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-lF-Qkp">
-                                <rect key="frame" x="20" y="78" width="89" height="89"/>
+                                <rect key="frame" x="20" y="78" width="66.5" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="height" multiplier="1:1" id="gEb-jS-BIj"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אין התראות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DA-cK-ZCW">
-                                <rect key="frame" x="55.5" y="188" width="1001" height="41"/>
+                                <rect key="frame" x="55.5" y="165.5" width="1001" height="41"/>
                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="28"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                                 <rect key="frame" x="55.5" y="265" width="1001" height="334"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-qU-Xzj">
-                                <rect key="frame" x="485" y="619" width="142" height="142"/>
+                                <rect key="frame" x="479.5" y="619" width="153" height="153.5"/>
                                 <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bzQ-qU-Xzj" secondAttribute="height" multiplier="1:1" id="w7p-8O-t7q"/>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_stroke" translatesAutoresizingMaskIntoConstraints="NO" id="pa7-KP-ImI">
-                                <rect key="frame" x="278" y="78" width="556" height="89"/>
+                                <rect key="frame" x="278" y="78" width="556" height="66.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,7 +73,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O0Y-lF-Qkp" secondAttribute="trailing" symbolic="YES" id="A3u-Ib-lSz"/>
                             <constraint firstItem="2DA-cK-ZCW" firstAttribute="trailing" secondItem="RtX-Ff-ZfI" secondAttribute="trailing" id="Dqg-Qa-BDo"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="H9b-h4-vQk"/>
-                            <constraint firstItem="O0Y-lF-Qkp" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.08" id="MaY-u3-VpM"/>
+                            <constraint firstItem="O0Y-lF-Qkp" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.06" id="MaY-u3-VpM"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="NVk-DD-nE8"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="centerY" secondItem="O0Y-lF-Qkp" secondAttribute="centerY" id="Ny9-b5-fHS"/>
                             <constraint firstItem="bzQ-qU-Xzj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NzL-qI-jtj"/>
@@ -81,7 +81,7 @@
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Phw-ci-rem"/>
                             <constraint firstItem="2DA-cK-ZCW" firstAttribute="top" secondItem="pa7-KP-ImI" secondAttribute="bottom" constant="21" id="VUO-ZP-fav"/>
                             <constraint firstItem="O0Y-lF-Qkp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WyU-DB-NwS"/>
-                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" multiplier="1.6" id="ctT-st-Q7J"/>
+                            <constraint firstItem="bzQ-qU-Xzj" firstAttribute="width" secondItem="O0Y-lF-Qkp" secondAttribute="width" multiplier="2.3" id="ctT-st-Q7J"/>
                             <constraint firstItem="RtX-Ff-ZfI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="g1s-NG-Fh8"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="height" secondItem="O0Y-lF-Qkp" secondAttribute="height" id="k7V-ap-9kz"/>
                             <constraint firstItem="pa7-KP-ImI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mcQ-c1-3tW"/>
@@ -1409,10 +1409,10 @@
                                                     <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal">
                                                         <attributedString key="attributedTitle">
-                                                            <fragment content="לחץ לאישור">
+                                                            <fragment content="אישור">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="22"/>
+                                                                    <font key="NSFont" size="26" name=".ArialHebrewDeskInterface"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>

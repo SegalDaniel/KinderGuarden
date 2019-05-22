@@ -94,7 +94,7 @@ class GenericDecisionViewController: GenericVC {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    /************************************************** Views Inits *******************************************************/
+    
     //MARK: - Views Inits
     func addToStackAndTarget(_ buttons:[MyButtonView]){
         buttons.forEach { (btn) in
