@@ -1326,7 +1326,7 @@
                                                                     <fragment content="סיים מנה">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="25" name="SecularOne-Regular"/>
+                                                                            <font key="NSFont" metaFont="system" size="25"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -1344,7 +1344,7 @@
                                                                     <fragment content="מעל חצי מנה">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="24" name="SecularOne-Regular"/>
+                                                                            <font key="NSFont" metaFont="system" size="24"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -1362,7 +1362,7 @@
                                                                     <fragment content="מתחת לחצי מנה">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="24" name="SecularOne-Regular"/>
+                                                                            <font key="NSFont" metaFont="system" size="24"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -1380,7 +1380,7 @@
                                                                     <fragment content="לא אכל">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="30" name="SecularOne-Regular"/>
+                                                                            <font key="NSFont" metaFont="system" size="30"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -1412,7 +1412,7 @@
                                                             <fragment content="לחץ לאישור">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="22" name="SecularOne-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="22"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -2121,9 +2121,11 @@
                         <outlet property="familiyEventBtn" destination="Khb-oO-ugC" id="mKU-sM-uvh"/>
                         <outlet property="futureAttEventBtn" destination="hUk-C0-t4z" id="T4Z-4R-jHX"/>
                         <outlet property="generalEventBtn" destination="eRh-8S-NRg" id="c87-pW-lox"/>
+                        <segue destination="pZI-2S-tkw" kind="unwind" identifier="unwindToMainWindow" unwindAction="unwindToMainWindowWithSegue:" id="VHJ-aS-2hu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTP-pO-O0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pZI-2S-tkw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1496" y="22"/>
         </scene>

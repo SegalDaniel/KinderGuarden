@@ -113,6 +113,11 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             performAlert(with: "תעודת הזהות חייבת להכיל 9 ספרות")
             return
         }
+        if number.first == "0"{
+            childData["childID"] = nil
+            performAlert(with: "תעודת הזהות אינה יכולה להתחיל בספרה 0")
+            return
+        }
         if prematureSegment.selectedSegmentIndex == 0{
             childData["isPremature"] = false
         }
