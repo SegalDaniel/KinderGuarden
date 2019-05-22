@@ -28,7 +28,18 @@ class MultiChoiseTableViewCell: UITableViewCell {
     var delegate:MultiChoiseCellDelegate?
     var indexPath:IndexPath?
     var foodBtns:[UIButton] = []
-    var child:Child?
+    var child:Child?{
+        didSet{
+            child?.foodList?.forEach({ (obj) in
+                let food = obj as! Food
+                if !availableFoods.contains(food.type!){
+                    availableFoods.append(food.type!)
+                }
+            })
+            toggleFoodKind()
+        }
+    }
+    var availableFoods:[String] = []
     var data:String?{
         didSet{
             if let label = kidNameLabel{
@@ -162,16 +173,24 @@ class MultiChoiseTableViewCell: UITableViewCell {
     }
     
     func toggleFoodKind(){
-        switch foodKind {
-        case 0:
+        switch availableFoods[foodKind] {
+        case "solid":
             hideSlider()
             showSolidBtns()
-            foodKind = (foodKind + 1) % 3
+            foodKindBtn.setTitle("מנה מוצקה", for: .normal)
+            foodKind = (foodKind + 1) % availableFoods.count
             break
-        case 1,2:
+        case "milk":
             hideSolidBtns()
             showSlider()
-            foodKind = (foodKind + 1) % 3
+            foodKindBtn.setTitle("חלב אם", for: .normal)
+            foodKind = (foodKind + 1) % availableFoods.count
+            break
+        case "tamal":
+            hideSolidBtns()
+            showSlider()
+            foodKindBtn.setTitle("תמ״ל", for: .normal)
+            foodKind = (foodKind + 1) % availableFoods.count
             break
         default:
             break
@@ -179,13 +198,12 @@ class MultiChoiseTableViewCell: UITableViewCell {
     }
     
     func initChoise(){
-        foodKind = 1
+        foodKind = 0
         foodBtns = [foodFinishedBtn, foodAboveHalfBtn, foodBelowHalfBtn, foodDidntBtn]
         for btn in foodBtns {
             btn.backgroundColor = Utility.btnGray
             btn.tag = 0
         }
-        foodKindBtn.setTitle("מנה מוצקה", for: .normal)
         kidNameLabel.text = data
         initLabels(labels: [kidNameLabel, timeLabel])
         foodKindBtn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -200,7 +218,6 @@ class MultiChoiseTableViewCell: UITableViewCell {
         foodAboveHalfBtn.isHidden = false
         foodBelowHalfBtn.isHidden = false
         foodDidntBtn.isHidden = false
-        
     }
     
     func hideSolidBtns(){
