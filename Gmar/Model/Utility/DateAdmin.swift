@@ -45,6 +45,10 @@ class DateAdmin{
             formatter.dateFormat = "HH:mm"
             time = formatter.date(from: from)
         }
+        if time == nil{
+            formatter.dateFormat = "h:mm a"
+            time = formatter.date(from: from)
+        }
         return time
     }
     

@@ -31,15 +31,25 @@ class TeacherAddEventViewController: MyViewController {
     func initViews(){
         if asKidsInfo || asAttandance{
             Model.instance.getAllChildsFromCore { (children) in
-                self.kids = children
+                self.kids = children.sorted(by: { (child1, child2) -> Bool in
+                    if child1.isAttend && !child2.isAttend{
+                        return true
+                    }
+                    return false
+                })
                 self.kidsCollectionView.reloadData()
             }
             topBtnsStack.isHidden = true
             NSLayoutConstraint(item: self.kidsCollectionView!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .topMargin, multiplier: 1, constant: 20).isActive = true
         }
         else {
-            Model.instance.getAllAttendedChildsFromCore { (children) in
-                self.kids = children
+            Model.instance.getAllChildsFromCore { (children) in
+                self.kids = children.sorted(by: { (child1, child2) -> Bool in
+                    if child1.isAttend && !child2.isAttend{
+                        return true
+                    }
+                    return false
+                })
                 self.kidsCollectionView.reloadData()
             }
             topBtnsInit()
@@ -160,7 +170,13 @@ extension TeacherAddEventViewController: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kidCell", for: indexPath) as! KidCollectionViewCell
         cell.delegate = self
-        cell.child = kids![indexPath.row]
+        let child = kids![indexPath.row]
+        cell.child = child
+        if !child.isAttend && !asAttandance && !asKidsInfo {
+            cell.kidButton.isEnabled = false
+            cell.kidButton.setBackgroundColor(color: UIColor.lightGray)
+            cell.layer.opacity = 0.5
+        }
         cell.awakeFromNib()
         return cell
     }
@@ -171,7 +187,7 @@ extension TeacherAddEventViewController: UICollectionViewDataSource, UICollectio
     }
     
     func kidsCollectionInit(){
-        let size = kidsCollectionView.frame.width / 3.5
+        let size = kidsCollectionView.frame.width / 4.5
         let spLayout = kidsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         spLayout.itemSize = CGSize(width: size, height: size)
         kidsCollectionView.semanticContentAttribute = UISemanticContentAttribute.forceRightToLeft
