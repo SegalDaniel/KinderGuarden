@@ -70,6 +70,9 @@ class ModelHttp{
         let kind:Enums.BasicEvent = Enums.BasicEvent(rawValue: Int(basicEvent.eventType))!
         var url=URL(string: "empty")!
         switch kind {
+        case .attandance:
+            url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent/newEvent")!
+            break
         case .sleep:
             url = URL(string: "http://193.106.55.183/events/SleepingEvent/newEvent")!
             break
@@ -104,7 +107,6 @@ class ModelHttp{
             url = URL(string: "http://193.106.55.183/events/FeverEvent/newEvent")!
             break
             //add parasites medication and disease
-        //add liquid food url
         default:
             break
         }
@@ -115,7 +117,6 @@ class ModelHttp{
         let dic = basicEvent.toJson()
         let json = dic.toJSON()
         //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
-        let basicID = basicEvent.eventID
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
@@ -131,57 +132,30 @@ class ModelHttp{
         task.resume()
     }
     
-   /* func sendDevelopmentEvent(developmentEvent:DevelopmentalEvent, callack:@escaping (Error?)->Void){
-        let session = URLSession.shared
-        let url = URL(string: "http://127.0.0.1:5000/Child/newChild")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let dic = developmentEvent.toJson()
-        let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
-        let jsonData = json?.data(using: .utf8)
-        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
-            if error != nil || data == nil {
-                print("Client error!")
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Server error!")
-                return
-            }
-        }
-        task.resume()
-    }*/
-    
-    func sendAttandanceEvent(event:Attendance, callback: @escaping(Error?) -> Void){
-        let session = URLSession.shared
-        let url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent/newEvent")!
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpMethod = "POST"
-        let dic = event.toJson()
-        let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
-        let jsonData = json?.data(using: .utf8)
-        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
-            if error != nil || data == nil {
-                print("Client error!")
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Server error!")
-                return
-            }
-        }
-        task.resume()
-    }
-    
-    
-    
+    /* func sendDevelopmentEvent(developmentEvent:DevelopmentalEvent, callack:@escaping (Error?)->Void){
+     let session = URLSession.shared
+     let url = URL(string: "http://127.0.0.1:5000/Child/newChild")!
+     var request = URLRequest(url: url)
+     request.httpMethod = "POST"
+     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+     let dic = developmentEvent.toJson()
+     let json = dic.toJSON()
+     //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+     let jsonData = json?.data(using: .utf8)
+     let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+     if error != nil || data == nil {
+     print("Client error!")
+     return
+     }
+     
+     guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+     print("Server error!")
+     return
+     }
+     }
+     task.resume()
+     }*/
+
     func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
         let url = URL(string: "http://127.0.0.1:5000/staff")!

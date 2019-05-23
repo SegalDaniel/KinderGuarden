@@ -37,9 +37,7 @@ public class Attendance: BasicEvent {
         var json = super.toJson()
         json["type"] = type
         json["isLate"] = isLate
-        json["authorizedAccompanist"] = authorized?.toJson()
+        json["authorizedId"] = authorized?.authorizeId
         return json
-        
     }
-
 }

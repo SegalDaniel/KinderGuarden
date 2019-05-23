@@ -12,8 +12,9 @@ import CoreData
 
 @objc(AuthorizedAccompanist)
 public class AuthorizedAccompanist: NSManagedObject {
-    convenience init(name:String, phone:String, relation:String){
+    convenience init(authorizeId:String, name:String, phone:String, relation:String){
         self.init(entity: Model.instance.authorizedAccompanistEntity, insertInto: Model.instance.managedContext)
+        self.setValue(authorizeId, forKey: "authorizeId")
         self.setValue(name, forKey: "name")
         self.setValue(phone, forKey: "phone")
         self.setValue(relation, forKey: "relation")
@@ -35,9 +36,9 @@ public class AuthorizedAccompanist: NSManagedObject {
         json["name"] = name
         json["phone"] = phone
         json["relation"] = relation
-        json["child"] = child?.toJson()
+        json["authorizedId"] = authorizeId
+        //        json["child"] = child?.toJson()
         return json
-        
     }
     
 }

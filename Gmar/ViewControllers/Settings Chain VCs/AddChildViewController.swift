@@ -285,8 +285,9 @@ class AddChildViewController: MyViewController, UITableViewDelegate, UITableView
             if let name = data["name"]{
                 if let phone = data["phone"]{
                     if let relation = data["relation"]{
+                        let authId: String = String(name.hashValue)
                         if name != "" && phone != ""{
-                            authAccomps.append(AuthorizedAccompanist(name: name, phone: phone, relation: relation))
+                            authAccomps.append(AuthorizedAccompanist(authorizeId:authId, name: name, phone: phone, relation: relation))
                         }
                     }
                     else {return}
