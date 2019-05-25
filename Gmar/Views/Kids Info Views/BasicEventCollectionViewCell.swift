@@ -121,7 +121,13 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             image = UIImage(named: "047-baby-2")
         }
         mainImageView.image = image
-        eventDescription.append("דווח על-ידי \(event!.staff!.firstName!) \(event!.staff!.lastName!)")
+        if let staff = event!.staff {
+            eventDescription.append("דווח על-ידי \(staff.firstName!) \(staff.lastName!)")
+        }
+        else{
+           eventDescription.append("דווח על-ידי משתמש שעזב")
+        }
+
     }
     
     @IBAction func tapped(_ sender: Any){
