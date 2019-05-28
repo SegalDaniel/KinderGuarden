@@ -191,8 +191,6 @@ class Model{
         }
     }
     
-    
-    
     /******************** Offline changes - Replace all comments for FireBase connection**********************/
     
     //MARK: - CoreData

@@ -125,8 +125,6 @@
 		A88BBFAF225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */; };
 		A88BBFB2225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */; };
 		A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */; };
-		A8DA55F8221876200043D580 /* Vomitus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA55F7221876200043D580 /* Vomitus.swift */; };
-		A8DF44E3221C78860071DF7D /* Fever.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF44E2221C78860071DF7D /* Fever.swift */; };
 		A8ED33832296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8ED33842296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
 		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
@@ -256,9 +254,6 @@
 		A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8DA55E922185A1E0043D580 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
-		A8DA55F7221876200043D580 /* Vomitus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vomitus.swift; sourceTree = "<group>"; };
-		A8DF44E2221C78860071DF7D /* Fever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fever.swift; sourceTree = "<group>"; };
 		A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -730,7 +725,6 @@
 			children = (
 				A8576E1B224A6F0200CBA907 /* Fever+CoreDataClass.swift */,
 				A8576E1C224A6F0200CBA907 /* Fever+CoreDataProperties.swift */,
-				A8DF44E2221C78860071DF7D /* Fever.swift */,
 			);
 			path = Fever;
 			sourceTree = "<group>";
@@ -740,7 +734,6 @@
 			children = (
 				A872BE1322914ED70078DC5F /* Staff+CoreDataClass.swift */,
 				A872BE1422914ED70078DC5F /* Staff+CoreDataProperties.swift */,
-				A8DA55E922185A1E0043D580 /* Staff.swift */,
 			);
 			path = Staff;
 			sourceTree = "<group>";
@@ -795,7 +788,6 @@
 			children = (
 				A872BDFE2290B9F00078DC5F /* Vomitus+CoreDataClass.swift */,
 				A872BDFF2290B9F00078DC5F /* Vomitus+CoreDataProperties.swift */,
-				A8DA55F7221876200043D580 /* Vomitus.swift */,
 			);
 			path = Vomitus;
 			sourceTree = "<group>";
@@ -959,7 +951,6 @@
 				A868E9AF2271125A000B3230 /* Alert+CoreDataClass.swift in Sources */,
 				1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */,
 				183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */,
-				A8DF44E3221C78860071DF7D /* Fever.swift in Sources */,
 				A872BE1622914ED70078DC5F /* Staff+CoreDataProperties.swift in Sources */,
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
@@ -974,7 +965,6 @@
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A872BE1922914FAF0078DC5F /* Child+CoreDataClass.swift in Sources */,
 				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,
-				A8DA55F8221876200043D580 /* Vomitus.swift in Sources */,
 				188C8E9A2291D1C000DF85B7 /* DevelopEventCollectionViewCell.swift in Sources */,
 				183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */,
 				A8ED33842296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
