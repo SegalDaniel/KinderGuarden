@@ -152,9 +152,9 @@ class Model{
          }
          callack(err)
          }*/
-        //        modelHttp.sendChild(child: child) { (err) in
-        //            callack(err)
-        //        }
+                modelHttp.sendChild(child: child) { (err) in
+                    callack(err)
+                }
     }
     
     func sendToFB(staff:Staff, callack:@escaping (Error?)->Void){

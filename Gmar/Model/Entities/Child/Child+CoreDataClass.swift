@@ -61,7 +61,7 @@ public class Child: NSManagedObject {
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
-        json["id"] = childID
+        json["childID"] = childID
         json["firstName"] = firstName
         json["lastName"] = lastName
         json["gender"] = gender
@@ -152,6 +152,14 @@ public class Child: NSManagedObject {
         })
         json["generalNotes"] = genNotesJson
         
+        var alertsJson:[String:Any] = [:]
+        i = 0
+        alerts?.forEach({ (obj) in
+            let obj = obj as! Alert
+            alertsJson["\(i)"] = obj.toJson()
+            i += 1
+        })
+        json["alerts"] = alertsJson
         return json
     }
     

@@ -74,10 +74,10 @@ class ModelHttp{
             url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent/newEvent")!
             break
         case .sleep:
-            url = URL(string: "http://193.106.55.183/events/SleepingEvent/newEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/SleepingEvent/newEvent")!
             break
         case .water:
-            url = URL(string: "http://193.106.55.183/events/WaterEvent/newEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/WaterEvent/newEvent")!
             break
         case .solidFoods:
             url = URL(string: "http://127.0.0.1:5000/events/SolidFoodEvent/newEvent")!
@@ -104,9 +104,9 @@ class ModelHttp{
             url = URL(string: "http://127.0.0.1:5000/events/RashEvent/newEvent")!
             break
         case .feever:
-            url = URL(string: "http://193.106.55.183/events/FeverEvent/newEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/FeverEvent/newEvent")!
             break
-            //add parasites medication and disease
+            //http://193.106.55.183
         default:
             break
         }
