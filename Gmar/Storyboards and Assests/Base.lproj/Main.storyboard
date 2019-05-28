@@ -553,8 +553,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-vA-vZS">
                                 <rect key="frame" x="55.5" y="243.5" width="1001" height="417"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJO-lA-JRY">
+                                        <rect key="frame" x="0.0" y="0.0" width="235.5" height="417"/>
+                                        <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
+                                        <state key="normal" title="מחיקה" image="delete">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="mfR-BC-9Fd" kind="show" id="TzP-ou-cF1"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS6-6l-kKL">
-                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="417"/>
+                                        <rect key="frame" x="255.5" y="0.0" width="235" height="417"/>
                                         <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                         <state key="normal" title="הגדרות הגן" image="kindergarten">
@@ -562,7 +573,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U04-kg-7wC">
-                                        <rect key="frame" x="340.5" y="0.0" width="320" height="417"/>
+                                        <rect key="frame" x="510.5" y="0.0" width="235" height="417"/>
                                         <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                         <state key="normal" title="הוסף איש צוות" image="teacher">
@@ -573,7 +584,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C28-0r-y6m">
-                                        <rect key="frame" x="680.5" y="0.0" width="320.5" height="417"/>
+                                        <rect key="frame" x="765.5" y="0.0" width="235.5" height="417"/>
                                         <color key="backgroundColor" red="0.1888804436" green="0.44014376399999999" blue="0.71375775340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="30"/>
                                         <state key="normal" title="הוסף ילד" image="001-baby-6">
@@ -600,11 +611,73 @@
                         <outlet property="KindergardenSettingBtn" destination="AS6-6l-kKL" id="71g-2N-zmb"/>
                         <outlet property="addChildBtn" destination="C28-0r-y6m" id="ZnS-iB-XlK"/>
                         <outlet property="addStaffBtn" destination="U04-kg-7wC" id="9M0-VI-1qk"/>
+                        <outlet property="deleteStaffKidBtn" destination="jJO-lA-JRY" id="xXb-dF-hPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7GX-cq-WCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-685" y="907"/>
+        </scene>
+        <!--מחיקת ילד  / איש צוות-->
+        <scene sceneID="slR-G5-n9I">
+            <objects>
+                <viewController id="mfR-BC-9Fd" customClass="DeleteViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8kC-Fo-vLG">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j9u-jV-fdM">
+                                <rect key="frame" x="0.0" y="80" width="1112" height="754"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="deleteCell" rowHeight="80" id="1WP-gx-TFl" customClass="DeleteTableViewCell" customModule="Gmar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1112" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1WP-gx-TFl" id="Nw5-it-jxT">
+                                            <rect key="frame" x="0.0" y="0.0" width="1112" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם  ושם משפחה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixo-Ko-j7T">
+                                                    <rect key="frame" x="23" y="19" width="1066" height="58"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="28"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ixo-Ko-j7T" firstAttribute="top" secondItem="Nw5-it-jxT" secondAttribute="topMargin" constant="8" id="I3f-Vw-dvA"/>
+                                                <constraint firstItem="Ixo-Ko-j7T" firstAttribute="bottom" secondItem="Nw5-it-jxT" secondAttribute="bottomMargin" constant="8" id="djO-9q-hG5"/>
+                                                <constraint firstItem="Ixo-Ko-j7T" firstAttribute="leading" secondItem="Nw5-it-jxT" secondAttribute="leadingMargin" constant="8" id="jzb-aE-6i6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ixo-Ko-j7T" secondAttribute="trailing" constant="8" id="pxK-zc-ueK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Ixo-Ko-j7T" id="A1j-C6-HUy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j9u-jV-fdM" firstAttribute="leading" secondItem="qEe-v3-fN4" secondAttribute="leading" id="74p-al-D9v"/>
+                            <constraint firstItem="qEe-v3-fN4" firstAttribute="bottom" secondItem="j9u-jV-fdM" secondAttribute="bottom" id="OAP-8u-NmB"/>
+                            <constraint firstItem="j9u-jV-fdM" firstAttribute="top" secondItem="qEe-v3-fN4" secondAttribute="top" constant="10" id="enD-ZE-RCe"/>
+                            <constraint firstItem="j9u-jV-fdM" firstAttribute="centerX" secondItem="8kC-Fo-vLG" secondAttribute="centerX" id="n3P-U4-jGr"/>
+                            <constraint firstItem="qEe-v3-fN4" firstAttribute="trailing" secondItem="j9u-jV-fdM" secondAttribute="trailing" id="oc4-RQ-7Ee"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qEe-v3-fN4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="מחיקת ילד  / איש צוות" id="F70-Hk-thg"/>
+                    <connections>
+                        <outlet property="deleteTableView" destination="j9u-jV-fdM" id="xoL-eV-zzy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1v-II-XsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1800" y="1684"/>
         </scene>
         <!--הוספת איש צוות-->
         <scene sceneID="2Be-ex-7h2">
@@ -2270,6 +2343,7 @@
         <image name="check" width="512" height="512"/>
         <image name="check-pressed" width="512" height="512"/>
         <image name="cough" width="512" height="512"/>
+        <image name="delete" width="512" height="512"/>
         <image name="feeding" width="512" height="512"/>
         <image name="kindergarten" width="512" height="512"/>
         <image name="logo_stroke" width="5296" height="860"/>

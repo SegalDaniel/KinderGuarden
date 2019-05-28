@@ -14,10 +14,11 @@ class SettingsViewController: MyViewController {
     @IBOutlet weak var addChildBtn: UIButton!
     @IBOutlet weak var addStaffBtn: UIButton!
     @IBOutlet weak var KindergardenSettingBtn: UIButton!
+    @IBOutlet weak var deleteStaffKidBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initViews(buttons:[addChildBtn, addStaffBtn, KindergardenSettingBtn])
+        initViews(buttons:[addChildBtn, addStaffBtn, KindergardenSettingBtn, deleteStaffKidBtn])
     }
     
     //MARK: - Init Views
