@@ -37,14 +37,6 @@ public class Staff: NSManagedObject {
         json["lastName"] = lastName
         json["image"] = image
         var i = 0
-//        var attJson:[String:Any] = [:]
-//        i = 0
-//        attendanceEvents?.forEach({ (obj) in
-//            let obj = obj as! Attendance
-//            attJson["\(i)"] = obj.toJson()
-//        })
-//        json["attendanceEvents"] = attJson
-        
         var basJson:[String:Any] = [:]
         i = 0
         basicEvents?.forEach({ (obj) in
@@ -60,6 +52,22 @@ public class Staff: NSManagedObject {
             devJson["\(i)"] = obj.toJson()
         })
         json["developmentalEvents"] = devJson
+        
+        var reportsJson:[String:Any] = [:]
+        i = 0
+        familyReports?.forEach({ (obj) in
+            let obj = obj as! FamilyReport
+            reportsJson["\(i)"] = obj.toJson()
+        })
+        json["familyReports"] = basJson
+        
+        var notesJson:[String:Any] = [:]
+        i = 0
+        generalNotes?.forEach({ (obj) in
+            let obj = obj as! GeneralNote
+            notesJson["\(i)"] = obj.toJson()
+        })
+        json["generalNotes"] = devJson
         return json
     }
     
