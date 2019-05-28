@@ -19,7 +19,7 @@ public class DevelopmentalEvent: NSManagedObject {
         self.setValue(child, forKey: "child")
         self.setValue(staff, forKey: "staff")
     }
-
+    
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.developmentEventEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["eventType"], forKey: "eventType")
@@ -29,11 +29,12 @@ public class DevelopmentalEvent: NSManagedObject {
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["eventType"] = eventType
+        json["eventID"] = child?.childID.hashValue
         json["eventDate"] = eventDate
         json["childID"] = child?.childID
         json["staffID"] = staff?.staffID
         return json
         
     }
-
+    
 }

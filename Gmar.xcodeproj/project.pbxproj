@@ -70,8 +70,6 @@
 		18DE415C226CBAC800314AA0 /* KidsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE415B226CBAC800314AA0 /* KidsInfoViewController.swift */; };
 		18DE415E226E391B00314AA0 /* IndividualInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE415D226E391B00314AA0 /* IndividualInfoViewController.swift */; };
 		18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */; };
-		A8287E5C224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5A224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift */; };
-		A8287E5D224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8287E5B224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift */; };
 		A8299D6922537FDD006E961F /* Allergenic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D6722537FDD006E961F /* Allergenic+CoreDataClass.swift */; };
 		A8299D6A22537FDD006E961F /* Allergenic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D6822537FDD006E961F /* Allergenic+CoreDataProperties.swift */; };
 		A8299D6E22538538006E961F /* ChronicDisease+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299D6C22538538006E961F /* ChronicDisease+CoreDataClass.swift */; };
@@ -97,6 +95,8 @@
 		A8576E26224A6F8000CBA907 /* Feces+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E24224A6F8000CBA907 /* Feces+CoreDataProperties.swift */; };
 		A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E33224A70DA00CBA907 /* Sleep+CoreDataClass.swift */; };
 		A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */; };
+		A86137C4229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86137C2229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataClass.swift */; };
+		A86137C5229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86137C3229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift */; };
 		A868E9AB227110CA000B3230 /* Cough+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9A9227110CA000B3230 /* Cough+CoreDataClass.swift */; };
 		A868E9AC227110CA000B3230 /* Cough+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9AA227110CA000B3230 /* Cough+CoreDataProperties.swift */; };
 		A868E9AF2271125A000B3230 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9AD2271125A000B3230 /* Alert+CoreDataClass.swift */; };
@@ -201,8 +201,6 @@
 		18DE415D226E391B00314AA0 /* IndividualInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualInfoViewController.swift; sourceTree = "<group>"; };
 		18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 		3F238E27AA9B72A30D32760F /* Pods-Gmar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gmar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gmar/Pods-Gmar.debug.xcconfig"; sourceTree = "<group>"; };
-		A8287E5A224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8287E5B224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8299D6722537FDD006E961F /* Allergenic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Allergenic+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8299D6822537FDD006E961F /* Allergenic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Allergenic+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8299D6C22538538006E961F /* ChronicDisease+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChronicDisease+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -228,6 +226,8 @@
 		A8576E24224A6F8000CBA907 /* Feces+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feces+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576E33224A70DA00CBA907 /* Sleep+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576E34224A70DA00CBA907 /* Sleep+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sleep+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A86137C2229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A86137C3229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A868E9A9227110CA000B3230 /* Cough+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cough+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A868E9AA227110CA000B3230 /* Cough+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cough+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A868E9AD2271125A000B3230 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -623,8 +623,8 @@
 		A8287E55224CD4A6000C64DD /* DevelopmentalEvent */ = {
 			isa = PBXGroup;
 			children = (
-				A8287E5A224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift */,
-				A8287E5B224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift */,
+				A86137C2229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataClass.swift */,
+				A86137C3229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift */,
 			);
 			path = DevelopmentalEvent;
 			sourceTree = "<group>";
@@ -985,6 +985,7 @@
 				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
 				A8576E09224A6DCA00CBA907 /* Disease+CoreDataClass.swift in Sources */,
 				A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */,
+				A86137C5229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift in Sources */,
 				A872BE052290BA5B0078DC5F /* Secretion+CoreDataProperties.swift in Sources */,
 				A8576E05224A6D9500CBA907 /* Parasites+CoreDataClass.swift in Sources */,
 				183CFCD5226F7C9700F7FF68 /* KeyboardMovment.swift in Sources */,
@@ -1013,7 +1014,6 @@
 				A868E9AB227110CA000B3230 /* Cough+CoreDataClass.swift in Sources */,
 				A8576E06224A6D9500CBA907 /* Parasites+CoreDataProperties.swift in Sources */,
 				188C8EA02292D9CD00DF85B7 /* AlertCollectionViewCell.swift in Sources */,
-				A8287E5D224CE2A9000C64DD /* DevelopmentalEvent+CoreDataProperties.swift in Sources */,
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8299D73225386E4006E961F /* RoutineMedication+CoreDataClass.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
@@ -1027,7 +1027,6 @@
 				A833C299228BE2B8003855FB /* ModelHttp.swift in Sources */,
 				18A25F3B2271AEAE009B6A6B /* BasicEventCollectionViewCell.swift in Sources */,
 				A88BBFA722576A9A00F9C0B4 /* Food+CoreDataProperties.swift in Sources */,
-				A8287E5C224CE2A9000C64DD /* DevelopmentalEvent+CoreDataClass.swift in Sources */,
 				188C8E9E2292D9B200DF85B7 /* GeneralNoteCollectionViewCell.swift in Sources */,
 				18586D6522731CB3004F219C /* MyButtonLandscapeView.swift in Sources */,
 				1887F4B2221AFE0E007682A8 /* PaddingLabel.swift in Sources */,
@@ -1038,6 +1037,7 @@
 				183CFCD7226F7CD800F7FF68 /* PhotosUtility.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
+				A86137C4229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataClass.swift in Sources */,
 				A872BE09229143070078DC5F /* FamilyReport+CoreDataClass.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
 				A88BBFAB225A7E5100F9C0B4 /* Water+CoreDataProperties.swift in Sources */,

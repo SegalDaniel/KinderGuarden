@@ -132,9 +132,9 @@ class ModelHttp{
         task.resume()
     }
     
-    /* func sendDevelopmentEvent(developmentEvent:DevelopmentalEvent, callack:@escaping (Error?)->Void){
+     func sendDevelopmentEvent(developmentEvent: DevelopmentalEvent, callack:@escaping (Error?)->Void){
      let session = URLSession.shared
-     let url = URL(string: "http://127.0.0.1:5000/Child/newChild")!
+     let url = URL(string: "http://127.0.0.1:5000/events/DevelopmentalEvent/newEvent")!
      var request = URLRequest(url: url)
      request.httpMethod = "POST"
      request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -154,7 +154,7 @@ class ModelHttp{
      }
      }
      task.resume()
-     }*/
+     }
 
     func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
