@@ -56,6 +56,9 @@ class Model{
     //MARK: - Development Events Entities
     let developmentEventEntity:NSEntityDescription
     
+    //MARK: - Alerts
+    let pulseAlertEntity:NSEntityDescription
+    
     //MARK: - init
     private init(){
         appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -87,6 +90,7 @@ class Model{
         alertEntity = NSEntityDescription.entity(forEntityName: "Alert", in: managedContext)!
         familyReportEntity = NSEntityDescription.entity(forEntityName: "FamilyReport", in: managedContext)!
         developmentEventEntity = NSEntityDescription.entity(forEntityName: "DevelopmentalEvent", in: managedContext)!
+        pulseAlertEntity = NSEntityDescription.entity(forEntityName: "PulseAlert", in: managedContext)!
         
     }
     /******************** Offline changes - Replace all comments for FireBase connection**********************/
@@ -170,9 +174,9 @@ class Model{
          }
          callack(err)
          }*/
-        //        modelHttp.sendStaff(staff: staff) { (err) in
-        //            callack(err)
-        //        }
+                modelHttp.sendStaff(staff: staff) { (err) in
+                    callack(err)
+                }
     }
     
     func sendToFB(report:FamilyReport, callback:@escaping (Error?) -> Void){
@@ -200,6 +204,22 @@ class Model{
         let childs = try! Model.instance.managedContext.fetch(childFetch)
         let c:[Child] = childs as! [Child]
         callback(c)
+//        let url = URL(string: "http://193.106.55.183/Child")!
+//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            guard let dataResponse = data,
+//                error == nil else {
+//                    print(error?.localizedDescription ?? "Response Error")
+//                    return }
+//            do{
+//                //here dataResponse received from a network request
+//                let jsonResponse = try JSONSerialization.jsonObject(with:
+//                    dataResponse, options: [])
+//                print(jsonResponse) //Response result
+//            } catch let parsingError {
+//                print("Error", parsingError)
+//            }
+//        }
+//        task.resume()
     }
     
     func getAllAttendedChildsFromCore(callback:([Child])->Void){

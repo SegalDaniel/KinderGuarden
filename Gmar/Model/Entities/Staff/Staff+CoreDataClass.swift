@@ -35,7 +35,7 @@ public class Staff: NSManagedObject {
         json["staffID"] = staffID
         json["firstName"] = firstName
         json["lastName"] = lastName
-        json["image"] = image
+        json["image"] = " "
         var i = 0
         var basJson:[String:Any] = [:]
         i = 0

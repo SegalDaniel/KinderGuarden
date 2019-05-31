@@ -25,8 +25,8 @@ public class Alert: NSManagedObject {
         self.init(entity: Model.instance.alertEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["alertDate"], forKey: "alertDate")
         self.setValue(json["level"], forKey: "level")
-        self.setValue(json["eventsLeading"], forKey: "eventsLeading")
-        self.setValue(json["actionNeeded"], forKey: "actionNeeded")
+        self.setValue(json["eventsLeading"], forKey: "responsibleEvents")
+        self.setValue(json["actionNeeded"], forKey: "action_needed")
     }
     
     func toJson() -> [String:Any] {

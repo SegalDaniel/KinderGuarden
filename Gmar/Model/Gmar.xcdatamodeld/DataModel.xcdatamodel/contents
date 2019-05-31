@@ -114,6 +114,10 @@
     <entity name="Parasites" representedClassName="Parasites" parentEntity="BasicEvent" syncable="YES">
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="PulseAlert" representedClassName="PulseAlert" syncable="YES">
+        <attribute name="alertDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="alertID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Rash" representedClassName="Rash" parentEntity="BasicEvent" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -179,6 +183,7 @@
         <element name="LiquidFood" positionX="-3819.66796875" positionY="611.32421875" width="128" height="90"/>
         <element name="Medication" positionX="-3408.0625" positionY="706.3203125" width="128" height="75"/>
         <element name="Parasites" positionX="-3818" positionY="749.4921875" width="128" height="60"/>
+        <element name="PulseAlert" positionX="-3780" positionY="252" width="128" height="75"/>
         <element name="Rash" positionX="-3405.8125" positionY="829.62109375" width="128" height="75"/>
         <element name="RoutineMedication" positionX="-3744" positionY="288" width="128" height="75"/>
         <element name="Secretion" positionX="-3819.26171875" positionY="843.44140625" width="128" height="75"/>

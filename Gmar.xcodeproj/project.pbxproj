@@ -125,6 +125,8 @@
 		A88BBFAF225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */; };
 		A88BBFB2225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */; };
 		A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */; };
+		A896494822A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */; };
+		A896494922A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */; };
 		A8ED33832296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8ED33842296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
 		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
@@ -254,6 +256,8 @@
 		A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 		183CFCDA226F7DAF00F7FF68 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A86137C622A148F600E74FC5 /* PulseAlert */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				A8C41472223EEED20072B0A8 /* Staff */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
@@ -693,6 +698,15 @@
 			path = Food;
 			sourceTree = "<group>";
 		};
+		A86137C622A148F600E74FC5 /* PulseAlert */ = {
+			isa = PBXGroup;
+			children = (
+				A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */,
+				A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */,
+			);
+			path = PulseAlert;
+			sourceTree = "<group>";
+		};
 		A868E9A822710ECB000B3230 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,7 +1012,9 @@
 				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
 				A872BE0A229143070078DC5F /* FamilyReport+CoreDataProperties.swift in Sources */,
 				A8576E1E224A6F0200CBA907 /* Fever+CoreDataProperties.swift in Sources */,
+				A896494822A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift in Sources */,
 				A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */,
+				A896494922A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift in Sources */,
 				A868E9AC227110CA000B3230 /* Cough+CoreDataProperties.swift in Sources */,
 				18C59D6D225CEE65003BD029 /* GenericEventInfo_Confirmation.swift in Sources */,
 				A868E9AB227110CA000B3230 /* Cough+CoreDataClass.swift in Sources */,
