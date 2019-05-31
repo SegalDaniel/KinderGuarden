@@ -99,8 +99,6 @@
 		A86137C5229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86137C3229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift */; };
 		A868E9AB227110CA000B3230 /* Cough+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9A9227110CA000B3230 /* Cough+CoreDataClass.swift */; };
 		A868E9AC227110CA000B3230 /* Cough+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9AA227110CA000B3230 /* Cough+CoreDataProperties.swift */; };
-		A868E9AF2271125A000B3230 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9AD2271125A000B3230 /* Alert+CoreDataClass.swift */; };
-		A868E9B02271125A000B3230 /* Alert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9AE2271125A000B3230 /* Alert+CoreDataProperties.swift */; };
 		A868E9B72275A8CD000B3230 /* BasicEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9B52275A8CD000B3230 /* BasicEvent+CoreDataClass.swift */; };
 		A868E9B82275A8CD000B3230 /* BasicEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A868E9B62275A8CD000B3230 /* BasicEvent+CoreDataProperties.swift */; };
 		A872BE002290B9F00078DC5F /* Vomitus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BDFE2290B9F00078DC5F /* Vomitus+CoreDataClass.swift */; };
@@ -127,6 +125,8 @@
 		A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */; };
 		A896494822A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */; };
 		A896494922A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */; };
+		A896494C22A179E80004FDE3 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */; };
+		A896494D22A179E80004FDE3 /* Alert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494B22A179E80004FDE3 /* Alert+CoreDataProperties.swift */; };
 		A8ED33832296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8ED33842296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
 		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
@@ -230,8 +230,6 @@
 		A86137C3229D1B0200E74FC5 /* DevelopmentalEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A868E9A9227110CA000B3230 /* Cough+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cough+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A868E9AA227110CA000B3230 /* Cough+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cough+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A868E9AD2271125A000B3230 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A868E9AE2271125A000B3230 /* Alert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A868E9B52275A8CD000B3230 /* BasicEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A868E9B62275A8CD000B3230 /* BasicEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A872BDFE2290B9F00078DC5F /* Vomitus+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -258,6 +256,8 @@
 		A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A896494B22A179E80004FDE3 /* Alert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -356,7 +356,6 @@
 		183CFCDA226F7DAF00F7FF68 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				A86137C622A148F600E74FC5 /* PulseAlert */,
 				1887F4B3221B14A2007682A8 /* Enums.swift */,
 				A8C41472223EEED20072B0A8 /* Staff */,
 				180CF31D223D5B8300A9DEF2 /* Child */,
@@ -364,6 +363,7 @@
 				A81F4F772246DE3A003FED63 /* GeneralNote */,
 				A8287E66224D5471000C64DD /* BasicEvents */,
 				A8287E67224D55C8000C64DD /* DevelopmentEvents */,
+				A86137C622A148F600E74FC5 /* PulseAlert */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -710,8 +710,8 @@
 		A868E9A822710ECB000B3230 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				A868E9AD2271125A000B3230 /* Alert+CoreDataClass.swift */,
-				A868E9AE2271125A000B3230 /* Alert+CoreDataProperties.swift */,
+				A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */,
+				A896494B22A179E80004FDE3 /* Alert+CoreDataProperties.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -962,7 +962,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A868E9AF2271125A000B3230 /* Alert+CoreDataClass.swift in Sources */,
+				A896494D22A179E80004FDE3 /* Alert+CoreDataProperties.swift in Sources */,
 				1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */,
 				183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */,
 				A872BE1622914ED70078DC5F /* Staff+CoreDataProperties.swift in Sources */,
@@ -1000,7 +1000,6 @@
 				A8ED33832296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */,
 				A8299D6922537FDD006E961F /* Allergenic+CoreDataClass.swift in Sources */,
 				A872BE042290BA5B0078DC5F /* Secretion+CoreDataClass.swift in Sources */,
-				A868E9B02271125A000B3230 /* Alert+CoreDataProperties.swift in Sources */,
 				188C8E9C2292C4AD00DF85B7 /* FamilyReportCollectionViewCell.swift in Sources */,
 				A8576E0D224A6E1500CBA907 /* Medication+CoreDataClass.swift in Sources */,
 				189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */,
@@ -1023,6 +1022,7 @@
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8299D73225386E4006E961F /* RoutineMedication+CoreDataClass.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
+				A896494C22A179E80004FDE3 /* Alert+CoreDataClass.swift in Sources */,
 				1835C4F8228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift in Sources */,
 				A88BBFAA225A7E5100F9C0B4 /* Water+CoreDataClass.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,

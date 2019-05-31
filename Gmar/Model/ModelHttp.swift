@@ -243,6 +243,25 @@ class ModelHttp{
         task.resume()
     }
     
+    func getlogicSystemAlert(callback:([Alert])->Void){
+        let url = URL(string: "http://193.106.55.183/alerts/DevelopmentalAlerts")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+                print(jsonResponse) //Response result
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
     func getDevelopmentalAlerts(callback:([Alert])->Void){
         let url = URL(string: "http://193.106.55.183/alerts/DevelopmentalAlerts")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in

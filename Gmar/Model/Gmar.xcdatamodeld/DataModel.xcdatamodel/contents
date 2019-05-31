@@ -5,6 +5,7 @@
         <attribute name="alertDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="eventsLeading" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="alerts" inverseEntity="Child" syncable="YES"/>
     </entity>
     <entity name="Allergenic" representedClassName="Allergenic" syncable="YES">
@@ -164,7 +165,7 @@
         <attribute name="consumedAmount" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alert" positionX="-3780" positionY="252" width="128" height="120"/>
+        <element name="Alert" positionX="-3780" positionY="252" width="128" height="135"/>
         <element name="Allergenic" positionX="-3762" positionY="270" width="128" height="75"/>
         <element name="Attendance" positionX="-3526.58203125" positionY="98.73046875" width="128" height="90"/>
         <element name="AuthorizedAccompanist" positionX="-3814.40234375" positionY="880.0078125" width="128" height="135"/>

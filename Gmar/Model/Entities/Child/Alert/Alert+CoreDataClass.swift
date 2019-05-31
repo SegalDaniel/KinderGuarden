@@ -2,7 +2,7 @@
 //  Alert+CoreDataClass.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 25/04/2019.
+//  Created by Daniel Segal on 31/05/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -24,6 +24,7 @@ public class Alert: NSManagedObject {
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.alertEntity, insertInto: Model.instance.managedContext)
         self.setValue(json["alertDate"], forKey: "alertDate")
+        self.setValue(json["type"], forKey: "type")
         self.setValue(json["level"], forKey: "level")
         self.setValue(json["eventsLeading"], forKey: "responsibleEvents")
         self.setValue(json["actionNeeded"], forKey: "action_needed")
@@ -32,11 +33,12 @@ public class Alert: NSManagedObject {
     func toJson() -> [String:Any] {
         var json = [String:Any]()
         json["alertDate"] = alertDate
+        json["type"] = type
         json["level"] = level
         json["eventsLeading"] = eventsLeading
         json["childID"] = child?.childID
         json["actionNeeded"] = actionNeeded
         return json
     }
-    
+
 }
