@@ -76,16 +76,18 @@ class IndividualInfoViewController: MyViewController {
     func initChildData(){
         if let id = childID{
             Model.instance.getChild(childID: id) { (child) in
-                self.child = child
-                self.loadGeneralNote()
-                self.loadFamilyReports()
-                self.titleItem.title = "מידע על \(child.firstName!)"
-                let image = Model.instance.loadImageFromDiskWith(fileName: child.childID!)
-                if let image = image{
-                    self.childImageView.image = image
-                }
-                else{
-                    self.childImageView.image = UIImage(named: "047-baby-2")
+                if let child = child{
+                    self.child = child
+                    self.loadGeneralNote()
+                    self.loadFamilyReports()
+                    self.titleItem.title = "מידע על \(child.firstName!)"
+                    let image = Model.instance.loadImageFromDiskWith(fileName: child.childID!)
+                    if let image = image{
+                        self.childImageView.image = image
+                    }
+                    else{
+                        self.childImageView.image = UIImage(named: "047-baby-2")
+                    }
                 }
             }
             filterEventsByDates()

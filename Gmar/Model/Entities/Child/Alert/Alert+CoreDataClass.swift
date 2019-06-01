@@ -23,15 +23,17 @@ public class Alert: NSManagedObject {
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.alertEntity, insertInto: Model.instance.managedContext)
-        let date = json["alertDate"] as! String
-        let d = DateAdmin.dateForAlert(date: date)
-        self.setValue(d, forKey: "alertDate")
-        self.setValue(Int16(json["type"] as! String), forKey: "type")
-        self.setValue(Int16(json["level"] as! String), forKey: "level")
-        self.setValue(json["eventsLeading"] as! String, forKey: "responsibleEvents")
-        self.setValue(json["actionNeeded"] as! String, forKey: "action_needed")
-        Model.instance.getChild(childID: json["actionNeeded"] as! String) { (child) in
+        Model.instance.getChild(childID: json["childID"] as! String) { (child) in
+            if let child = child{
+            let date = json["alertDate"] as! String
+            let d = DateAdmin.dateFromServer(date: date)
+            self.setValue(d, forKey: "alertDate")
+            self.setValue(Int16(truncating: json["type"] as! NSNumber), forKey: "type")
+            self.setValue(Int16(truncating: json["level"] as! NSNumber), forKey: "level")
+            self.setValue(json["responsibleEvents"] as! String, forKey: "eventsLeading")
+            self.setValue(json["actionNeeded"] as! String, forKey: "actionNeeded")
             self.child = child
+            }
         }
     }
     

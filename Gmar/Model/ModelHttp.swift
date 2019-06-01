@@ -11,7 +11,7 @@ import Foundation
 class ModelHttp{
     
     //MARK: - Child Methods
-    func sendChild(child:Child, callack:@escaping (Error?)->Void){
+    func sendChild(child:Child, callback:@escaping (Error?)->Void){
         let session = URLSession.shared
         let url = URL(string: "http://193.106.55.183/Child/newChild")! //http://193.106.55.183/Child/newChild
         var request = URLRequest(url: url)
@@ -23,15 +23,15 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                callack(error)
+                callback(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
-                callack(HttpError())
+                callback(HttpError())
                 return
             }
-            callack(nil)
+            callback(nil)
         }
         task.resume()
     }
@@ -60,7 +60,7 @@ class ModelHttp{
         var url=URL(string: "empty")!
         switch kind {
         case .attandance:
-            url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent/newEvent")!
+            url = URL(string: "http://193.106.55.183/events/AttendanceEvent/newEvent")!
             break
         case .sleep:
             url = URL(string: "http://193.106.55.183/events/SleepingEvent/newEvent")!
@@ -263,15 +263,20 @@ class ModelHttp{
                 let jsonArr = jsonResponse["Alert"]! as! NSArray
                 var alerts:[Alert] = []
                 jsonArr.forEach({ (jsonAlert) in
-                    alerts.append(Alert(json: jsonAlert as! [String:Any]))
+                    let alert = Alert(json: jsonAlert as! [String:Any])
+                    if alert.child != nil{
+                        alerts.append(alert)
+                    }
                 })
                 callback(alerts)
+                
             } catch let parsingError {
                 print("Error", parsingError)
             }
         }
         task.resume()
     }
+    
 
     func getPulseAlert(callback:([Alert])->Void){
         let url = URL(string: "http://193.106.55.183/alerts/alerts/PulseAlerts")! //change to one alert ar Server

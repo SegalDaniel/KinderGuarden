@@ -41,9 +41,6 @@ class KidsInfoViewController: MyViewController {
     }
     
     @IBAction func categoryBtnClicked(_ sender: Any){
-        Model.instance.getAlerts { (alerts) in
-            
-        }
     }
     // MARK: - Navigation
 

@@ -116,38 +116,36 @@ class Model{
      }
      */
     
-    func sendToFB(basicEvent:BasicEvent, callack:@escaping (Error?)->Void){
+    func sendToFB(basicEvent:BasicEvent, callback:@escaping (Error?)->Void){
         saveToDB(callback: nil)
         modelHttp.sendBasicEvent(basicEvent: basicEvent) { (err) in
-            callack(err)
+            callback(err)
         }
     }
     
     func sendToFB(developmentEvent:DevelopmentalEvent, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
-        callback(nil)
         modelHttp.sendDevelopmentEvent(developmentEvent: developmentEvent) { (err) in
             callback(err)
         }
     }
     
-    func sendToFB(child:Child, callack:@escaping (Error?)->Void){
+    func sendToFB(child:Child, callback:@escaping (Error?)->Void){
         saveToDB(callback: nil)
         modelHttp.sendChild(child: child) { (err) in
-            callack(err)
+            callback(err)
         }
     }
     
-    func sendToFB(staff:Staff, callack:@escaping (Error?)->Void){
+    func sendToFB(staff:Staff, callback:@escaping (Error?)->Void){
         saveToDB(callback: nil)
         modelHttp.sendStaff(staff: staff) { (err) in
-            callack(err)
+            callback(err)
         }
     }
     
     func sendToFB(report:FamilyReport, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
-        callback(nil)
         modelHttp.sendFamilyReport(familyReport: report) { (err) in
             callback(err)
         }
@@ -155,7 +153,6 @@ class Model{
     
     func sendToFB(note:GeneralNote, callback:@escaping (Error?) -> Void){
         saveToDB(callback: nil)
-        callback(nil)
         modelHttp.sendGeneralNote(generalNote: note) { (err) in
             callback(err)
         }
@@ -182,11 +179,11 @@ class Model{
         callback(filtered)
     }
     
-    func getChild(childID:String, callback:(Child)->Void){
+    func getChild(childID:String, callback:(Child?)->Void){
         let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
         childFetch.predicate = NSPredicate(format: "childID = %@", childID)
         let child:[Child] = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
-        callback(child.first!)
+        callback(child.first)
     }
     
     func deleteChildFromDB(childID:String, callback:(NSError?)->Void){
@@ -275,6 +272,28 @@ class Model{
     //MARK: - Alerts
     func getAlerts(callback: @escaping ([Alert]) -> Void){
         modelHttp.getAlerts(callback: callback)
+        deleteEmptyAlerts()
+        saveToDB(callback: nil)
+    }
+    
+    func deleteEmptyAlerts(){
+        let alertFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Alert")
+        let alerts = try! Model.instance.managedContext.fetch(alertFetch) as! [Alert]
+        let toDelete = alerts.filter { (alert) -> Bool in
+            if alert.child == nil {
+                return true
+            }
+            return false
+        }
+        toDelete.forEach { (alert) in
+            managedContext.delete(alert)
+        }
+    }
+    
+    func getAlertsFromCoreData(callback: @escaping ([Alert]) -> Void){
+        let alertFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Alert")
+        let alerts = try! Model.instance.managedContext.fetch(alertFetch) as! [Alert]
+        callback(alerts)
     }
     
     //MARK: - BasicEvents methods

@@ -139,25 +139,7 @@ extension TeacherAddEventViewController: UICollectionViewDataSource, UICollectio
     }
     
     func kidCellDragExit(child:Child){
-        let alert = UIAlertController(title: "האם ברצונך למחוק ילד זה?", message: "פעולה זו תהיה בלתי הפיכה", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "אישור", style: .default, handler: { (action) in
-            Model.instance.deleteChildFromDB(childID: child.childID!, callback: { (error) in
-                if error == nil{
-                    alert.dismiss(animated: true, completion: nil)
-                    self.present(SimpleAlert(_title: "נמחק בהצלחה", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: {
-                        self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
-                    })
-                }
-                else{
-                    alert.dismiss(animated: true, completion: nil)
-                    self.present(SimpleAlert(_title: "לא נמחק, נסה שנית", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: nil)
-                }
-            })
-        }))
-        alert.addAction(UIAlertAction(title: "ביטול", style: .cancel, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -171,6 +153,7 @@ extension TeacherAddEventViewController: UICollectionViewDataSource, UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kidCell", for: indexPath) as! KidCollectionViewCell
         cell.delegate = self
         let child = kids![indexPath.row]
+        print("child name: \(child.firstName!) \(child.lastName!) id: \(child.childID!)")
         cell.child = child
         if !child.isAttend && !asAttandance && !asKidsInfo {
             cell.kidButton.isEnabled = false

@@ -24,15 +24,17 @@ class MyViewController: UIViewController {
         navigationTitleFont()
         alertsListener = ModelNotification.immidiateAlert.observe(cb: { (alerts) in
             alerts.forEach({ (alert) in
-                self.alerts.append(SimpleAlert(_title: "התראה לפעולה מיידית!", _message: alert.actionNeeded!, dissmissCallback: self.showImmidiateAlert))
+                self.alerts.append(SimpleAlert(_title: "התראה לפעולה מיידית! \(alert.child!.firstName!) \(alert.child!.lastName!)", _message: alert.actionNeeded!, dissmissCallback: self.showImmidiateAlert))
             })
             self.showImmidiateAlert()
         })
     }
     
     func showImmidiateAlert(){
-        let toShow = alerts.removeFirst().getAlert()
-        self.present(toShow, animated: true, completion: nil)
+        if !alerts.isEmpty{
+            let toShow = alerts.removeFirst().getAlert()
+            self.present(toShow, animated: true, completion: nil)
+        }
     }
     
     //MARK: - Adjust views

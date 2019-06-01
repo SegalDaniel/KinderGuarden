@@ -26,9 +26,7 @@ public class Feces: BasicEvent {
     convenience  init(json:[String:Any]){
         self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
         let dateString = json["eventDate"] as! String
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-d HH:mm:ss ZZ"
-        let date = formatter.date(from: dateString)
+        self.setValue(DateAdmin.dateFromServer(date: dateString), forKey: "eventDate")
         self.setValue(json["color"] as! String, forKey: "color")
         self.setValue(json["texture"] as! String, forKey: "texture")
         self.setValue(json["amount"] as! String, forKey: "amount")

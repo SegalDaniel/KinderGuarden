@@ -68,8 +68,9 @@ class EventKindViewController: GenericVC {
                     let date = self.getEventDate()
                     let note = GeneralNote(details: details, eventID: 0, eventDate: date, child: self.child, staff: self.staff)
                     Model.instance.sendToFB(note: note, callback: { (err) in
-                        alert.dismiss(animated: true, completion: nil)
-                        self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+                        alert.dismiss(animated: true){
+                            self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+                        }
                     })
                 }
                 else{

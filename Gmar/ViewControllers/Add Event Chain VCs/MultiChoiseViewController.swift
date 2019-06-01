@@ -54,7 +54,7 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
             switch type {
             case .solidFoods:
                 let solidFood = SolidFood(mealType: mealType, mealInMenu: nil, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
-                Model.instance.sendToFB(basicEvent: solidFood, callack: { (err) in
+                Model.instance.sendToFB(basicEvent: solidFood, callback: { (err) in
                     loadingAlert.dismiss(animated: true, completion: {
                         self.sendToFBCallback(indexPath: indexPath)
                     })
@@ -62,7 +62,7 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
                 break
             case .tamal, .milk:
                 let liquidFood = LiquidFood(mealType: mealType, amount: nil, consumedAmount: consumed, eventType: eventType, eventDate: eventDate as NSDate, child: child, staff: staff)
-                Model.instance.sendToFB(basicEvent: liquidFood, callack: { (err) in
+                Model.instance.sendToFB(basicEvent: liquidFood, callback: { (err) in
                     loadingAlert.dismiss(animated: true, completion: {
                         self.sendToFBCallback(indexPath: indexPath)
                     })

@@ -16,12 +16,6 @@ class DateAdmin{
         return formatter.date(from: date)!
     }
     
-    static func dateForAlert(date:String) -> Date{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d/MM/YYYY, HH:mm:ss"
-        return formatter.date(from: date)!
-    }
-    
     static func currentDateEN(timeStyle:DateFormatter.Style = .medium, dateStyle:DateFormatter.Style = .short) -> String{
         let currentDateTime = Date()
         let formatter = DateFormatter()
