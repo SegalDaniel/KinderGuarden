@@ -118,18 +118,6 @@ class Model{
     
     func sendToFB(basicEvent:BasicEvent, callack:@escaping (Error?)->Void){
         saveToDB(callback: nil)
-        callack(nil)
-        /*
-         modelFirebase.sendBasicEvent(basicEvent: basicEvent) { (err) in
-         if err == nil{
-         do{
-         try Model.instance.managedContext.save()
-         } catch let error as NSError {
-         print("Could not save. \(error), \(error.userInfo)")
-         }
-         }
-         callack(err)
-         }*/
         modelHttp.sendBasicEvent(basicEvent: basicEvent) { (err) in
             callack(err)
         }
