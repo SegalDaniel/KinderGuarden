@@ -294,6 +294,11 @@ class Model{
         }
     }
     
+    //MARK: - Alerts
+    func getAlerts(callback: @escaping ([Alert]) -> Void){
+        modelHttp.getAlerts(callback: callback)
+    }
+    
     //MARK: - BasicEvents methods
     func getChildsBasicEventsFromCore(childID:String, callback:([BasicEvent])->Void){
         let beFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "BasicEvent")

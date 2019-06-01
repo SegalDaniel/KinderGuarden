@@ -191,8 +191,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                callback(HttpError())
                 return
             }
+            callback(nil)
         }
         task.resume()
     }
@@ -247,8 +249,8 @@ class ModelHttp{
         task.resume()
     }
     
-    func getAlerts(callback:([Alert])->Void){
-        let url = URL(string: "http://193.106.55.183/alerts")!
+    func getAlerts(callback:@escaping ([Alert])->Void){
+        let url = URL(string: "http://193.106.55.183/alerts/Alerts")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -257,8 +259,13 @@ class ModelHttp{
             do{
                 //here dataResponse received from a network request
                 let jsonResponse = try JSONSerialization.jsonObject(with:
-                    dataResponse, options: [])
-                print(jsonResponse) //Response result
+                    dataResponse, options: []) as! NSDictionary
+                let jsonArr = jsonResponse["Alert"]! as! NSArray
+                var alerts:[Alert] = []
+                jsonArr.forEach({ (jsonAlert) in
+                    alerts.append(Alert(json: jsonAlert as! [String:Any]))
+                })
+                callback(alerts)
             } catch let parsingError {
                 print("Error", parsingError)
             }
