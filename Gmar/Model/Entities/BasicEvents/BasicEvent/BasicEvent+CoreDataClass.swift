@@ -20,6 +20,5 @@ public class BasicEvent: NSManagedObject {
         json["childID"] = child?.childID
         json["staffID"] = staff?.staffID
         return json
-        
     }
 }
