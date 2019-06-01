@@ -10,6 +10,11 @@ import UIKit
 
 class MyViewController: UIViewController {
 
+    //MARK: - Variables
+    var alertsListener:NSObjectProtocol?
+    var alerts:[SimpleAlert] = []
+    
+    //MARK: - init
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Utility.BackgroundBlueColor
@@ -17,8 +22,20 @@ class MyViewController: UIViewController {
         findAllButtonsAndLabels(subviews: subviews)
         addHomeButton()
         navigationTitleFont()
+        alertsListener = ModelNotification.immidiateAlert.observe(cb: { (alerts) in
+            alerts.forEach({ (alert) in
+                self.alerts.append(SimpleAlert(_title: "התראה לפעולה מיידית!", _message: alert.actionNeeded!, dissmissCallback: self.showImmidiateAlert))
+            })
+            self.showImmidiateAlert()
+        })
     }
     
+    func showImmidiateAlert(){
+        let toShow = alerts.removeFirst().getAlert()
+        self.present(toShow, animated: true, completion: nil)
+    }
+    
+    //MARK: - Adjust views
     func navigationTitleFont(){
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: "SecularOne-Regular", size: 21)!]
