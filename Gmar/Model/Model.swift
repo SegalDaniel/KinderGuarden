@@ -118,18 +118,6 @@ class Model{
     
     func sendToFB(basicEvent:BasicEvent, callack:@escaping (Error?)->Void){
         saveToDB(callback: nil)
-        callack(nil)
-        /*
-         modelFirebase.sendBasicEvent(basicEvent: basicEvent) { (err) in
-         if err == nil{
-         do{
-         try Model.instance.managedContext.save()
-         } catch let error as NSError {
-         print("Could not save. \(error), \(error.userInfo)")
-         }
-         }
-         callack(err)
-         }*/
         modelHttp.sendBasicEvent(basicEvent: basicEvent) { (err) in
             callack(err)
         }
@@ -145,38 +133,16 @@ class Model{
     
     func sendToFB(child:Child, callack:@escaping (Error?)->Void){
         saveToDB(callback: nil)
-        callack(nil)
-        /*modelFirebase.sendChild(child: child) { (err) in
-         if err == nil{
-         do{
-         try Model.instance.managedContext.save()
-         } catch let error as NSError{
-         print("Could not save. \(error), \(error.userInfo)")
-         }
-         }
-         callack(err)
-         }*/
-                modelHttp.sendChild(child: child) { (err) in
-                    callack(err)
-                }
+        modelHttp.sendChild(child: child) { (err) in
+            callack(err)
+        }
     }
     
     func sendToFB(staff:Staff, callack:@escaping (Error?)->Void){
         saveToDB(callback: nil)
-        callack(nil)
-        /*modelFirebase.sendStaff(staff: staff) { (err) in
-         if err == nil{
-         do{
-         try Model.instance.managedContext.save()
-         } catch let error as NSError{
-         print("Could not save. \(error), \(error.userInfo)")
-         }
-         }
-         callack(err)
-         }*/
-                modelHttp.sendStaff(staff: staff) { (err) in
-                    callack(err)
-                }
+        modelHttp.sendStaff(staff: staff) { (err) in
+            callack(err)
+        }
     }
     
     func sendToFB(report:FamilyReport, callback:@escaping (Error?) -> Void){
@@ -421,6 +387,7 @@ class Model{
 class ModelNotification{
     //    static let usersListNotification = MyNotification<[User]>("app.GoldenHour.usersList")
     static let childAndStaffNotification = MyNotification<(Child, Staff)>("childAndStaffNotification")
+    static let immidiateAlert = MyNotification<([Alert])>("immidiateAlertNotification")
     
     class MyNotification<T>{
         let name:String

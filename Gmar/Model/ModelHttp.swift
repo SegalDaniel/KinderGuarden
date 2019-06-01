@@ -28,8 +28,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                callack(HttpError())
                 return
             }
+            callack(nil)
         }
         task.resume()
     }
@@ -111,8 +113,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                callback(HttpError())
                 return
             }
+            callback(nil)
         }
         task.resume()
     }
@@ -162,8 +166,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                callack(HttpError())
                 return
             }
+            callack(nil)
         }
         task.resume()
     }
@@ -208,8 +214,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                callback(HttpError())
                 return
             }
+            callback(nil)
         }
         task.resume()
     }
@@ -231,8 +239,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                callback(HttpError())
                 return
             }
+            callback(nil)
         }
         task.resume()
     }

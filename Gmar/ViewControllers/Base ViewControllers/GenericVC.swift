@@ -14,7 +14,7 @@ class GenericVC: MyViewController {
     let datePicker = UIDatePicker()
     var teacherID:String?
     var childID:String?
-    var eventObjectsListener:NSObjectProtocol?
+    var childAndStaffListener:NSObjectProtocol?
     var child:Child?
     var staff:Staff?
     var selectedTime:String?
@@ -22,7 +22,7 @@ class GenericVC: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventObjectsListener = ModelNotification.childAndStaffNotification.observe(cb: { (child, staff) in
+        childAndStaffListener = ModelNotification.childAndStaffNotification.observe(cb: { (child, staff) in
             self.child = child
             self.staff = staff
         })

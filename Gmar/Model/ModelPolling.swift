@@ -16,12 +16,11 @@ extension Model{
         let timer = DispatchSource.makeTimerSource(queue: queue)
         timer.schedule(deadline: .now(), repeating: .seconds(100), leeway: .seconds(1))
         timer.setEventHandler(handler: {
-            // Your code
+            // check if there are new alerts
+            self.modelHttp.getAlerts(callback: { (alerts) in
+                ModelNotification.immidiateAlert.notify(data: alerts)
+            })
         })
         timer.resume()
-    }
-    
-    func pollAlerts(){
-        
     }
 }

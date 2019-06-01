@@ -86,7 +86,7 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
                         self.performSegue(withIdentifier: "unwindToMain", sender: nil)
                     }
                     else{
-                        let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err.debugDescription, dissmissCallback: nil).getAlert()
+                        let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
                         self.present(alert, animated: true, completion: nil)
                     }
                 })   
