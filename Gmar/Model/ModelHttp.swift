@@ -113,10 +113,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
-//                callback(HttpError())
+                callback(HttpError())
                 return
             }
-//            callback(nil)
+            callback(nil)
         }
         task.resume()
     }

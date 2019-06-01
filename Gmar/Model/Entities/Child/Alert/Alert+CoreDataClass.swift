@@ -47,5 +47,12 @@ public class Alert: NSManagedObject {
         json["actionNeeded"] = actionNeeded
         return json
     }
+    
+    static func ==(lhs:Alert, rhs:Alert) -> Bool{
+        if lhs.child?.childID == rhs.child?.childID && lhs.alertDate == rhs.alertDate && lhs.actionNeeded == rhs.actionNeeded{
+            return true
+        }
+        return false
+    }
 
 }

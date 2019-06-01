@@ -30,7 +30,8 @@ public class Sleep: BasicEvent {
         self.setValue(json["sleepingScope"] as! String, forKey: "sleepingScope")
         eventType = 3
         let dateString = json["eventDate"] as! String
-        eventDate = DateAdmin.dateFromServer(date: dateString) as! NSDate
+        let eventDate = DateAdmin.dateFromServer(date: dateString)
+        self.setValue(eventDate, forKey: "eventDate")
     }
     
     

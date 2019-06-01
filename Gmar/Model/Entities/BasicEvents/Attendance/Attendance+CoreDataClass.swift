@@ -28,10 +28,10 @@ public class Attendance: BasicEvent {
         self.setValue(json["type"] as! Int, forKey: "type")
         self.setValue(json["isLate"] as! Bool, forKey: "isLate")
         self.setValue(json["sleepingScope"] as! String, forKey: "sleepingScope")
-        self.setValue(json["eventDate"], forKey: "eventDate")
         eventType = 16
         let dateString = json["eventDate"] as! String
-        DateAdmin.dateFromServer(date: dateString)
+        let date = DateAdmin.dateFromServer(date: dateString)
+        self.setValue(date, forKey: "eventDate")
     }
     
     

@@ -12,15 +12,26 @@ import UIKit
 extension Model{
     
     func startPolling() {
-        let queue = DispatchQueue.global(qos: .background)
-        let timer = DispatchSource.makeTimerSource(queue: queue)
-        timer.schedule(deadline: .now(), repeating: .seconds(100), leeway: .seconds(1))
-        timer.setEventHandler(handler: {
-            // check if there are new alerts
-            self.modelHttp.getAlerts(callback: { (alerts) in
-                ModelNotification.immidiateAlert.notify(data: alerts)
+        print("start polling")
+        DispatchQueue.global(qos: .background).async {
+            let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector:  #selector(self.poolAlerts), userInfo: nil, repeats: true)
+            let runLoop = RunLoop.current
+            runLoop.add(timer, forMode: .default)
+            runLoop.run()
+        }
+    }
+    
+    //still sending alerts that exist in core data
+    @objc func poolAlerts(){
+        print("pooling alerts")
+        self.modelHttp.getAlerts(callback: { (alerts) in
+            var newAlerts:[Alert] = []
+            alerts.forEach({ (alert) in
+                if self.isAlertExist(alert: alert){
+                    newAlerts.append(alert)
+                }
             })
+            ModelNotification.immidiateAlert.notify(data: newAlerts)
         })
-        timer.resume()
     }
 }

@@ -41,6 +41,7 @@ class KidsInfoViewController: MyViewController {
     }
     
     @IBAction func categoryBtnClicked(_ sender: Any){
+        Model.instance.deleteAllDataFromCore("Alert")
     }
     // MARK: - Navigation
 
