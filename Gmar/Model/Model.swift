@@ -200,26 +200,30 @@ class Model{
     //MARK: - CoreData
     //MARK: - child entity methods
     func getAllChildsFromCore(callback:([Child])->Void){
-        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
-        let childs = try! Model.instance.managedContext.fetch(childFetch)
-        let c:[Child] = childs as! [Child]
-        callback(c)
-//        let url = URL(string: "http://193.106.55.183/Child")!
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let dataResponse = data,
-//                error == nil else {
-//                    print(error?.localizedDescription ?? "Response Error")
-//                    return }
-//            do{
-//                //here dataResponse received from a network request
-//                let jsonResponse = try JSONSerialization.jsonObject(with:
-//                    dataResponse, options: [])
-//                print(jsonResponse) //Response result
-//            } catch let parsingError {
-//                print("Error", parsingError)
-//            }
-//        }
-//        task.resume()
+//        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+//        let childs = try! Model.instance.managedContext.fetch(childFetch)
+//        let c:[Child] = childs as! [Child]
+//        callback(c)
+        let url = URL(string: "http://193.106.55.183/Child")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+                //print(jsonResponse) //Response result
+                guard let jsonArray = jsonResponse as? [[String: Any]] else {
+                    return
+                }
+                print(jsonArray)
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
     }
     
     func getAllAttendedChildsFromCore(callback:([Child])->Void){
@@ -351,7 +355,6 @@ class Model{
         callback?(nil)
     }
     
-    
     func deleteAllDataFromCore(_ entity:String) {
         let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: entity))
         do {
@@ -444,8 +447,6 @@ class ModelNotification{
             count -= 1
             NotificationCenter.default.removeObserver(observer, name: nil, object: nil)
         }
-        
-        
     }
     
 }

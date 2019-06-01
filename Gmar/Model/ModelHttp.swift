@@ -19,7 +19,6 @@ class ModelHttp{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = child.toJson()
         let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
@@ -36,7 +35,6 @@ class ModelHttp{
     }
     
     func getChildren(callback:([Child])->Void){
-//        let session = URLSession.shared
         let url = URL(string: "http://193.106.55.183/Child")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
@@ -53,32 +51,6 @@ class ModelHttp{
             }
         }
         task.resume()
-//        let task = session.dataTask(with: url) { data, response, error in
-//
-//            if error != nil || data == nil {
-//                print("Client error!")
-//                return
-//            }
-//
-//            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-//                print("Server error!")
-//                return
-//            }
-//
-//            guard let mime = response.mimeType, mime == "application/json" else {
-//                print("Wrong MIME type!")
-//                return
-//            }
-//
-//            do {
-//                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-//                print(json)
-//            } catch {
-//                print("JSON error: \(error.localizedDescription)")
-//            }
-//        }
-//
-//        task.resume()
     }
     
     func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
@@ -121,7 +93,6 @@ class ModelHttp{
         case .feever:
             url = URL(string: "http://193.106.55.183/events/FeverEvent/newEvent")!
             break
-        //http://193.106.55.183
         default:
             break
         }
@@ -131,7 +102,6 @@ class ModelHttp{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = basicEvent.toJson()
         let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
@@ -147,6 +117,25 @@ class ModelHttp{
         task.resume()
     }
     
+    func getBasicEventsByID(childID:String, callback:(Child)->Void){
+        let url = URL(string: "http://193.106.55.183/events/" + String(childID.hashValue))!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+                print(jsonResponse) //Response result
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
     func sendDevelopmentEvent(developmentEvent: DevelopmentalEvent, callack:@escaping (Error?)->Void){
         let session = URLSession.shared
         let url = URL(string: "http://193.106.55.183/events/DevelopmentalEvent/newEvent")!
@@ -155,7 +144,6 @@ class ModelHttp{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = developmentEvent.toJson()
         let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
@@ -179,7 +167,6 @@ class ModelHttp{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = staff.toJson()
         let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
@@ -203,7 +190,6 @@ class ModelHttp{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = familyReport.toJson()
         let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
@@ -227,7 +213,6 @@ class ModelHttp{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let dic = generalNote.toJson()
         let json = dic.toJSON()
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         let jsonData = json?.data(using: .utf8)
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
@@ -243,8 +228,8 @@ class ModelHttp{
         task.resume()
     }
     
-    func getDevelopmentalAlerts(callback:([Alert])->Void){
-        let url = URL(string: "http://193.106.55.183/alerts/DevelopmentalAlerts")!
+    func getAlerts(callback:([Alert])->Void){
+        let url = URL(string: "http://193.106.55.183/alerts")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -261,9 +246,9 @@ class ModelHttp{
         }
         task.resume()
     }
-    
+
     func getPulseAlert(callback:([Alert])->Void){
-        let url = URL(string: "http://193.106.55.183/alerts/DevelopmentalAlerts")!
+        let url = URL(string: "http://193.106.55.183/alerts/alerts/PulseAlerts")! //change to one alert ar Server
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
