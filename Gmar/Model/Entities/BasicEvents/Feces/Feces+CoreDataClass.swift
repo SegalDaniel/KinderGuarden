@@ -26,13 +26,23 @@ public class Feces: BasicEvent {
     convenience  init(json:[String:Any]){
         self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
         let dateString = json["eventDate"] as! String
-        self.setValue(DateAdmin.dateFromServer(date: dateString), forKey: "eventDate")
+        eventDate = DateAdmin.dateFromServer(date: dateString) as! NSDate
         self.setValue(json["color"] as! String, forKey: "color")
         self.setValue(json["texture"] as! String, forKey: "texture")
         self.setValue(json["amount"] as! String, forKey: "amount")
         eventType = 1
-        self.setValue(json["childID"] as! String, forKey: "childID")
-        self.setValue(json["staffID"] as! String, forKey: "staffID")
+        
+        let childID:String = json["childID"] as! String
+        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+        childFetch.predicate = NSPredicate(format: "childID = %@", childID)
+        let child:[Child] = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
+        self.setValue(child, forKey: "child")
+        
+        let staffID:String = json["staffID"] as! String
+        let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
+        staffFetch.predicate = NSPredicate(format: "staffID = %@", childID)
+        let staff:[Staff] = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
+        self.setValue(staff, forKey: "staff")
     }
     
     
