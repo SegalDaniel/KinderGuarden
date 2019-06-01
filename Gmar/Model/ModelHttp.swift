@@ -58,7 +58,7 @@ class ModelHttp{
         var url=URL(string: "empty")!
         switch kind {
         case .attandance:
-            url = URL(string: "http://193.106.55.183/events/AttendanceEvent/newEvent")!
+            url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent/newEvent")!
             break
         case .sleep:
             url = URL(string: "http://193.106.55.183/events/SleepingEvent/newEvent")!
@@ -117,8 +117,8 @@ class ModelHttp{
         task.resume()
     }
     
-    func getBasicEventsByID(childID:String, callback:(Child)->Void){
-        let url = URL(string: "http://193.106.55.183/events/" + String(childID.hashValue))!
+    func getBasicEventsByID(childID:String){
+        let url = URL(string: "http://193.106.55.183/events/FecesEvents")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -126,9 +126,18 @@ class ModelHttp{
                     return }
             do{
                 //here dataResponse received from a network request
-                let jsonResponse = try JSONSerialization.jsonObject(with:
-                    dataResponse, options: [])
-                print(jsonResponse) //Response result
+                //                let jsonResponse = try JSONSerialization.jsonObject(with:
+                //                    dataResponse, options: [])
+                let jsonResponse = try JSONSerialization.jsonObject(with: dataResponse, options: []) as! NSDictionary
+                let jsonData = jsonResponse["fecesEvent"]! as! NSArray
+                let jData = jsonData[0] as! [String:Any]
+                
+                //Now get title value
+                let feces = Feces(json: jData)
+                
+                if jsonResponse != nil {
+                    print(jsonResponse)
+                }
             } catch let parsingError {
                 print("Error", parsingError)
             }

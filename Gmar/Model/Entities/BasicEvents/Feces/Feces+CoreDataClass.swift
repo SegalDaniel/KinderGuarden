@@ -23,15 +23,18 @@ public class Feces: BasicEvent {
         self.setValue(staff, forKey: "staff")
     }
     
-    convenience  init(json:[String:Any]) {
+    convenience  init(json:[String:Any]){
         self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["color"], forKey: "color")
-        self.setValue(json["texture"], forKey: "texture")
-        self.setValue(json["amount"], forKey: "amount")
-        self.setValue(json["eventType"], forKey: "eventType")
-        self.setValue(json["eventDate"], forKey: "eventDate")
-        self.setValue(json["child"], forKey: "child")
-        self.setValue(json["staff"], forKey: "staff")
+        let dateString = json["eventDate"] as! String
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-d HH:mm:ss ZZ"
+        let date = formatter.date(from: dateString)
+        self.setValue(json["color"] as! String, forKey: "color")
+        self.setValue(json["texture"] as! String, forKey: "texture")
+        self.setValue(json["amount"] as! String, forKey: "amount")
+        eventType = 1
+        self.setValue(json["childID"] as! String, forKey: "childID")
+        self.setValue(json["staffID"] as! String, forKey: "staffID")
     }
     
     

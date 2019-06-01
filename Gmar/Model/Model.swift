@@ -204,6 +204,8 @@ class Model{
         let childs = try! Model.instance.managedContext.fetch(childFetch)
         let c:[Child] = childs as! [Child]
         callback(c)
+            modelHttp.getBasicEventsByID(childID: "234234242")
+        
 //        let url = URL(string: "http://193.106.55.183/Child")!
 //        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 //            guard let dataResponse = data,
