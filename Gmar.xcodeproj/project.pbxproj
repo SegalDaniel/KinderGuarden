@@ -40,6 +40,7 @@
 		18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18788797221D4C510047A935 /* MultiChoiseViewController.swift */; };
 		1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */; };
 		1878879C221D7C260047A935 /* DateAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878879B221D7C260047A935 /* DateAdmin.swift */; };
+		1885E94122A2600C00B6FAE5 /* ModelPolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94022A2600C00B6FAE5 /* ModelPolling.swift */; };
 		1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A52219D0B5007682A8 /* EventKindViewController.swift */; };
 		1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */; };
 		1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */; };
@@ -169,6 +170,7 @@
 		18788797221D4C510047A935 /* MultiChoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiseViewController.swift; sourceTree = "<group>"; };
 		18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiseTableViewCell.swift; sourceTree = "<group>"; };
 		1878879B221D7C260047A935 /* DateAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAdmin.swift; sourceTree = "<group>"; };
+		1885E94022A2600C00B6FAE5 /* ModelPolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPolling.swift; sourceTree = "<group>"; };
 		1887F4A52219D0B5007682A8 /* EventKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKindViewController.swift; sourceTree = "<group>"; };
 		1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEventViewController.swift; sourceTree = "<group>"; };
 		1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDecisionViewController.swift; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 				A833C298228BE2B8003855FB /* ModelHttp.swift */,
 				180CF2FF223D44F300A9DEF2 /* Model.swift */,
 				180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */,
+				1885E94022A2600C00B6FAE5 /* ModelPolling.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -982,6 +985,7 @@
 				188C8E9A2291D1C000DF85B7 /* DevelopEventCollectionViewCell.swift in Sources */,
 				183CFCCD226F7A3600F7FF68 /* AppColors.swift in Sources */,
 				A8ED33842296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */,
+				1885E94122A2600C00B6FAE5 /* ModelPolling.swift in Sources */,
 				A872BE1122914C930078DC5F /* Attendance+CoreDataClass.swift in Sources */,
 				18146780226772640036BFC9 /* GenericLiquid_Confirmation.swift in Sources */,
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
