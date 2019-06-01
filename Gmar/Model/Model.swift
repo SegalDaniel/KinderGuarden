@@ -170,7 +170,7 @@ class Model{
         let childs = try! Model.instance.managedContext.fetch(childFetch)
         let c:[Child] = childs as! [Child]
         callback(c)
-//            modelHttp.getBasicEventsByID(childID: "234234242")
+        //modelHttp.getBasicEventsByID(childID: "234234242")
         
 //        let url = URL(string: "http://193.106.55.183/Child")!
 //        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -209,6 +209,12 @@ class Model{
         childFetch.predicate = NSPredicate(format: "childID = %@", childID)
         let child:[Child] = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
         callback(child.first!)
+    }
+    func getChild(childID:String) ->[Child]{
+        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
+        childFetch.predicate = NSPredicate(format: "childID = %@", childID)
+        let child:[Child] = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
+        return child
     }
     
     func deleteChildFromDB(childID:String, callback:(NSError?)->Void){

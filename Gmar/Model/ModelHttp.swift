@@ -60,7 +60,7 @@ class ModelHttp{
         var url=URL(string: "empty")!
         switch kind {
         case .attandance:
-            url = URL(string: "http://127.0.0.1:5000/events/AttendanceEvent/newEvent")!
+            url = URL(string: "http://193.106.55.183/events/AttendanceEvent/newEvent")!
             break
         case .sleep:
             url = URL(string: "http://193.106.55.183/events/SleepingEvent/newEvent")!
@@ -113,10 +113,10 @@ class ModelHttp{
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
-                callback(HttpError())
+//                callback(HttpError())
                 return
             }
-            callback(nil)
+//            callback(nil)
         }
         task.resume()
     }
@@ -129,16 +129,10 @@ class ModelHttp{
                     print(error?.localizedDescription ?? "Response Error")
                     return }
             do{
-                //here dataResponse received from a network request
-                //                let jsonResponse = try JSONSerialization.jsonObject(with:
-                //                    dataResponse, options: [])
                 let jsonResponse = try JSONSerialization.jsonObject(with: dataResponse, options: []) as! NSDictionary
                 let jsonData = jsonResponse["fecesEvent"]! as! NSArray
                 let jData = jsonData[0] as! [String:Any]
-                
-                //Now get title value
                 let feces = Feces(json: jData)
-                
                 if jsonResponse != nil {
                     print(jsonResponse)
                 }

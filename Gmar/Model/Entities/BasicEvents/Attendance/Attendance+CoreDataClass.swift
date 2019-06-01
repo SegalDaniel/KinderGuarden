@@ -25,11 +25,13 @@ public class Attendance: BasicEvent {
     
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.attendanceEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["type"], forKey: "type")
-        self.setValue(json["isLate"], forKey: "isLate")
-        self.setValue(json["sleepingScope"], forKey: "sleepingScope")
+        self.setValue(json["type"] as! Int, forKey: "type")
+        self.setValue(json["isLate"] as! Bool, forKey: "isLate")
+        self.setValue(json["sleepingScope"] as! String, forKey: "sleepingScope")
         self.setValue(json["eventDate"], forKey: "eventDate")
-        self.setValue(json["eventType"], forKey: "eventType")
+        eventType = 16
+        let dateString = json["eventDate"] as! String
+        DateAdmin.dateFromServer(date: dateString)
     }
     
     

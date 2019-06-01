@@ -26,9 +26,7 @@ public class Feces: BasicEvent {
     convenience  init(json:[String:Any]){
         self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
         let dateString = json["eventDate"] as! String
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-d HH:mm:ss ZZ"
-        let date = formatter.date(from: dateString)
+        eventDate = DateAdmin.dateFromServer(date: dateString) as! NSDate
         self.setValue(json["color"] as! String, forKey: "color")
         self.setValue(json["texture"] as! String, forKey: "texture")
         self.setValue(json["amount"] as! String, forKey: "amount")
@@ -42,8 +40,8 @@ public class Feces: BasicEvent {
         
         let staffID:String = json["staffID"] as! String
         let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
-        childFetch.predicate = NSPredicate(format: "staffID = %@", childID)
-        let staff:[Staff] = try! Model.instance.managedContext.fetch(childFetch) as! [Staff]
+        staffFetch.predicate = NSPredicate(format: "staffID = %@", childID)
+        let staff:[Staff] = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
         self.setValue(staff, forKey: "staff")
     }
     
