@@ -26,8 +26,6 @@ class BasicEventViewController: MyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initBtns([rashBtn, sleepBtn, feedingBtn, fecesBtn, coughBtn, feeverBtn, vomitBtn, hafrashaBtn])
-        
-        // Do any additional setup after loading the view.
     }
     
     func initBtns(_ buttons:[UIButton]){

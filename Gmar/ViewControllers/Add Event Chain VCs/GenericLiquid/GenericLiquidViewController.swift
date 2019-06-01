@@ -68,7 +68,7 @@ class GenericLiquidViewController: GenericVC {
     func waterSettings(){
         titleItem.title = "דיווח שתיית מים"
         quantitySlider.minimumValue = 0
-        quantitySlider.maximumValue = 25
+        quantitySlider.maximumValue = 10
         quantitySlider.setValue(12.5, animated: true)
     }
     
@@ -76,14 +76,14 @@ class GenericLiquidViewController: GenericVC {
     func milkSettings(){
         titleItem.title = "דיווח מאכל חלב אם"
         quantitySlider.minimumValue = 0
-        quantitySlider.maximumValue = 20
+        quantitySlider.maximumValue = 30
         quantitySlider.setValue(10, animated: true)
     }
     
     func tamalSettings(){
         titleItem.title = "דיווח מאכל תמ״ל"
         quantitySlider.minimumValue = 0
-        quantitySlider.maximumValue = 20
+        quantitySlider.maximumValue = 30
         quantitySlider.setValue(10, animated: true)
     }
     

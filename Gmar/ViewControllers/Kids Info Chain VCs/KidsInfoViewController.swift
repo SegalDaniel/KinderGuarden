@@ -31,6 +31,7 @@ class KidsInfoViewController: MyViewController {
         let kidsBtn = MyButtonView(frame: childOrCatStackView.frame, title: "לפי ילד", radius: 20, tag: 1, image: UIImage(named: "001-baby-6")!)
         let categoryBtn = MyButtonView(frame: childOrCatStackView.frame, title: "לפי קטגוריה", radius: 20, tag: 2, image: UIImage(named: "check-mark")!)
         kidsBtn.addTarget(self, action: #selector(kidsBtnClicked), for: .touchUpInside)
+        categoryBtn.addTarget(self, action: #selector(categoryBtnClicked), for: .touchUpInside)
         childOrCatStackView.addArrangedSubview(kidsBtn)
         childOrCatStackView.addArrangedSubview(categoryBtn)
     }
@@ -39,6 +40,11 @@ class KidsInfoViewController: MyViewController {
         self.performSegue(withIdentifier: "pickChild", sender: nil)
     }
     
+    @IBAction func categoryBtnClicked(_ sender: Any){
+        Model.instance.getAlerts { (alerts) in
+            
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

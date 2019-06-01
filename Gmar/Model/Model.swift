@@ -170,28 +170,6 @@ class Model{
         let childs = try! Model.instance.managedContext.fetch(childFetch)
         let c:[Child] = childs as! [Child]
         callback(c)
-            modelHttp.getBasicEventsByID(childID: "234234242")
-        
-//        let url = URL(string: "http://193.106.55.183/Child")!
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let dataResponse = data,
-//                error == nil else {
-//                    print(error?.localizedDescription ?? "Response Error")
-//                    return }
-//            do{
-//                //here dataResponse received from a network request
-//                let jsonResponse = try JSONSerialization.jsonObject(with:
-//                    dataResponse, options: [])
-//                //print(jsonResponse) //Response result
-//                guard let jsonArray = jsonResponse as? [[String: Any]] else {
-//                    return
-//                }
-//                print(jsonArray)
-//            } catch let parsingError {
-//                print("Error", parsingError)
-//            }
-//        }
-//        task.resume()
     }
     
     func getAllAttendedChildsFromCore(callback:([Child])->Void){
@@ -292,6 +270,11 @@ class Model{
         else{
             callback(NSError(domain: "no id found", code: 0, userInfo: nil))
         }
+    }
+    
+    //MARK: - Alerts
+    func getAlerts(callback: @escaping ([Alert]) -> Void){
+        modelHttp.getAlerts(callback: callback)
     }
     
     //MARK: - BasicEvents methods
