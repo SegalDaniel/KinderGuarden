@@ -23,7 +23,7 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                return
+                callack(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
@@ -106,7 +106,7 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                return
+                callback(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
@@ -148,7 +148,7 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                return
+                callack(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
@@ -171,7 +171,7 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                return
+                callback(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
@@ -194,7 +194,7 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                return
+                callback(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
@@ -217,7 +217,7 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                return
+                callback(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
