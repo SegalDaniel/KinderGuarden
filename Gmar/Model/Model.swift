@@ -58,6 +58,7 @@ class Model{
     
     //MARK: - Alerts
     let pulseAlertEntity:NSEntityDescription
+    var pulseAlertTimerLoop:Timer?
     
     //MARK: - init
     private init(){
@@ -313,6 +314,10 @@ class Model{
         }
     }
     
+    func getPulseAlert(callback: @escaping (String) -> Void){
+        modelHttp.getPulseAlert(callback: callback)
+    }
+    
     func deleteEmptyAlerts(){
         let alertFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Alert")
         let alerts = try! Model.instance.managedContext.fetch(alertFetch) as! [Alert]
@@ -427,6 +432,7 @@ class ModelNotification{
     //    static let usersListNotification = MyNotification<[User]>("app.GoldenHour.usersList")
     static let childAndStaffNotification = MyNotification<(Child, Staff)>("childAndStaffNotification")
     static let immidiateAlert = MyNotification<([Alert])>("immidiateAlertNotification")
+    static let pulseAlert = MyNotification<(String)>("pulseAlert")
     
     class MyNotification<T>{
         let name:String

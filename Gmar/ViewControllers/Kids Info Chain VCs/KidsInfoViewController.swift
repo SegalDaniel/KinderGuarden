@@ -29,19 +29,19 @@ class KidsInfoViewController: MyViewController {
     
     func initKidsOrCatBtns(){
         let kidsBtn = MyButtonView(frame: childOrCatStackView.frame, title: "לפי ילד", radius: 20, tag: 1, image: UIImage(named: "001-baby-6")!)
-        let categoryBtn = MyButtonView(frame: childOrCatStackView.frame, title: "לפי קטגוריה", radius: 20, tag: 2, image: UIImage(named: "check-mark")!)
+        let heartBtn = MyButtonView(frame: childOrCatStackView.frame, title: "מדידת דופק", radius: 20, tag: 2, image: UIImage(named: "047-baby-2")!)
         kidsBtn.addTarget(self, action: #selector(kidsBtnClicked), for: .touchUpInside)
-        categoryBtn.addTarget(self, action: #selector(categoryBtnClicked), for: .touchUpInside)
+        heartBtn.addTarget(self, action: #selector(heartBtnClicked), for: .touchUpInside)
         childOrCatStackView.addArrangedSubview(kidsBtn)
-        childOrCatStackView.addArrangedSubview(categoryBtn)
+        childOrCatStackView.addArrangedSubview(heartBtn)
     }
 
     @IBAction func kidsBtnClicked(_ sender: Any){
         self.performSegue(withIdentifier: "pickChild", sender: nil)
     }
     
-    @IBAction func categoryBtnClicked(_ sender: Any){
-        Model.instance.deleteAllDataFromCore("Alert")
+    @IBAction func heartBtnClicked(_ sender: Any){
+        self.performSegue(withIdentifier: "heartRateSegue", sender: nil)
     }
     // MARK: - Navigation
 

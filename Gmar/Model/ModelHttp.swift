@@ -279,7 +279,7 @@ class ModelHttp{
     }
     
 
-    func getPulseAlert(callback:([Alert])->Void){
+    func getPulseAlert(callback: @escaping (String)->Void){
         let url = URL(string: "http://193.106.55.183/alerts/alerts/PulseAlerts")! //change to one alert ar Server
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
@@ -289,8 +289,9 @@ class ModelHttp{
             do{
                 //here dataResponse received from a network request
                 let jsonResponse = try JSONSerialization.jsonObject(with:
-                    dataResponse, options: [])
-                print(jsonResponse) //Response result
+                    dataResponse, options: []) as! NSDictionary
+                let pulse = jsonResponse["pulse"]! as! String
+                callback(pulse)
             } catch let parsingError {
                 print("Error", parsingError)
             }

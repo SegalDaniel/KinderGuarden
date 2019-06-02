@@ -128,6 +128,7 @@
                     <connections>
                         <outlet property="childOrCatStackView" destination="Ozk-Qx-ldF" id="IZz-yo-G5d"/>
                         <segue destination="zXn-Fa-mkm" kind="show" identifier="pickChild" id="pBt-dH-qId"/>
+                        <segue destination="68K-R9-CJH" kind="show" identifier="heartRateSegue" id="ciV-OX-Lb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUl-Lv-HfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -542,7 +543,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taV-un-olV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="525.5395683453238" y="1685.611510791367"/>
+            <point key="canvasLocation" x="1149" y="1616"/>
+        </scene>
+        <!--מדידת דופק-->
+        <scene sceneID="Y6p-cP-5VK">
+            <objects>
+                <viewController id="68K-R9-CJH" customClass="HeartRateViewController" customModule="Gmar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZwZ-lc-dqw">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="047-baby-2" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-AM-MeJ">
+                                <rect key="frame" x="333.5" y="194.5" width="445" height="445"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Pu4-AM-MeJ" secondAttribute="height" multiplier="1:1" id="ZaO-Z9-qno"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="דופק" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-Im-k2o">
+                                <rect key="frame" x="333.5" y="735.5" width="445" height="48.5"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="40"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pu4-AM-MeJ" firstAttribute="centerY" secondItem="ZwZ-lc-dqw" secondAttribute="centerY" id="Fs6-cJ-lkW"/>
+                            <constraint firstItem="Pu4-AM-MeJ" firstAttribute="centerX" secondItem="ZwZ-lc-dqw" secondAttribute="centerX" id="O5S-0I-ByB"/>
+                            <constraint firstItem="Pu4-AM-MeJ" firstAttribute="width" secondItem="ZwZ-lc-dqw" secondAttribute="width" multiplier="0.4" id="ORW-tI-KbR"/>
+                            <constraint firstItem="dPd-Im-k2o" firstAttribute="leading" secondItem="Pu4-AM-MeJ" secondAttribute="leading" id="k0u-ZW-lr2"/>
+                            <constraint firstItem="8Gt-yF-Xqa" firstAttribute="bottom" secondItem="dPd-Im-k2o" secondAttribute="bottom" constant="50" id="mpx-eH-DWs"/>
+                            <constraint firstItem="dPd-Im-k2o" firstAttribute="trailing" secondItem="Pu4-AM-MeJ" secondAttribute="trailing" id="zq2-mh-2DS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Gt-yF-Xqa"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="מדידת דופק" id="Pet-G7-Nte"/>
+                    <connections>
+                        <outlet property="bpmLabel" destination="dPd-Im-k2o" id="Fre-ha-qXp"/>
+                        <outlet property="heartImageView" destination="Pu4-AM-MeJ" id="ZcC-eb-ltt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjp-Jc-cOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525.5395683453238" y="1615.8273381294964"/>
         </scene>
         <!--הגדרות-->
         <scene sceneID="eTm-rv-bZM">
@@ -2339,6 +2382,7 @@
         <image name="026-calendar" width="512" height="512"/>
         <image name="032-report" width="512" height="512"/>
         <image name="033-thermometer" width="512" height="512"/>
+        <image name="047-baby-2" width="512" height="512"/>
         <image name="048-baby-1" width="512" height="512"/>
         <image name="050-woman" width="512" height="512"/>
         <image name="abacus" width="512" height="512"/>
@@ -2358,6 +2402,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="UhQ-lY-ajX"/>
         <segue reference="YN3-ln-FeL"/>
-        <segue reference="t0f-p2-ivy"/>
+        <segue reference="pBt-dH-qId"/>
     </inferredMetricsTieBreakers>
 </document>

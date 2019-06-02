@@ -11,6 +11,7 @@ import UIKit
 
 extension Model{
     
+   //MARK: - Start & Stop polling
     func startPollingAlerts() {
         print("start polling alerts")
         DispatchQueue.global(qos: .background).async {
@@ -18,10 +19,28 @@ extension Model{
             let runLoop = RunLoop.current
             runLoop.add(timer, forMode: .default)
             runLoop.run()
+            
         }
     }
     
-    //still sending alerts that exist in core data
+    func startPollingPulseAlerts(){
+        print("start polling pulse alerts")
+        DispatchQueue.global(qos: .background).async {
+            self.pulseAlertTimerLoop = Timer.scheduledTimer(timeInterval: 1, target: self, selector:  #selector(self.poolPulseAlerts), userInfo: nil, repeats: true)
+            let runLoop = RunLoop.current
+            runLoop.add(self.pulseAlertTimerLoop!, forMode: .default)
+            runLoop.run()
+            
+        }
+    }
+    
+    func stopPulseAlertPolling() {
+        if let timer = pulseAlertTimerLoop{
+            timer.invalidate()
+        }
+    }
+    
+    //MARK: - Polling Jobs
     @objc func poolAlerts(){
         print("pooling alerts")
         var newAlerts:[Alert] = []
@@ -34,6 +53,13 @@ extension Model{
             if newAlerts.count > 0{
                 ModelNotification.immidiateAlert.notify(data: newAlerts)
             }
+        }
+    }
+    
+    @objc func poolPulseAlerts(){
+        print("pooling pulse alerts")
+        self.getPulseAlert { (pulse) in
+            ModelNotification.pulseAlert.notify(data: pulse)
         }
     }
 }
