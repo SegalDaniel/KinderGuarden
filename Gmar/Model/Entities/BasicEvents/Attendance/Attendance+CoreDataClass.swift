@@ -25,13 +25,15 @@ public class Attendance: BasicEvent {
     
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.attendanceEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["type"] as! Int, forKey: "type")
-        self.setValue(json["isLate"] as! Bool, forKey: "isLate")
-        self.setValue(json["sleepingScope"] as! String, forKey: "sleepingScope")
-        eventType = 16
-        let dateString = json["eventDate"] as! String
-        let date = DateAdmin.dateFromServer(date: dateString)
-        self.setValue(date, forKey: "eventDate")
+        BasicEvent.saveGlobals(event: self, json: json)
+        self.setValue(Int16(Enums.BasicEvent.attandance.rawValue), forKey: "eventType")
+        //self.setValue(json["isLate"] as! Bool?, forKey: "isLate")
+        self.setValue(json["type"] as! String, forKey: "type")
+        Model.instance.getAuthorizedByID(authID: json["authorized"] as! String) { (auth) in
+            if let auth = auth{
+                self.setValue(auth, forKey: "authorized")
+            }
+        }
     }
     
     
@@ -41,5 +43,10 @@ public class Attendance: BasicEvent {
         json["isLate"] = isLate
         json["authorizedID"] = authorized?.authorizeId
         return json
+    }
+    
+    static func ==(lhs:Attendance, rhs:[String:Any]) -> Bool{
+        let id = Int16(rhs["eventID"] as! String)
+        return lhs.eventID == id
     }
 }

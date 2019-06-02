@@ -44,6 +44,7 @@
 		1885E94322A270A200B6FAE5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94222A270A200B6FAE5 /* HttpError.swift */; };
 		1885E94622A3BA8500B6FAE5 /* ImmidiateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */; };
 		1885E94822A3F49600B6FAE5 /* HeartRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94722A3F49600B6FAE5 /* HeartRateViewController.swift */; };
+		1885E94A22A414BB00B6FAE5 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94922A414BB00B6FAE5 /* JsonParsing.swift */; };
 		1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A52219D0B5007682A8 /* EventKindViewController.swift */; };
 		1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */; };
 		1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */; };
@@ -177,6 +178,7 @@
 		1885E94222A270A200B6FAE5 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmidiateAlert.swift; sourceTree = "<group>"; };
 		1885E94722A3F49600B6FAE5 /* HeartRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateViewController.swift; sourceTree = "<group>"; };
+		1885E94922A414BB00B6FAE5 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 		1887F4A52219D0B5007682A8 /* EventKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKindViewController.swift; sourceTree = "<group>"; };
 		1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEventViewController.swift; sourceTree = "<group>"; };
 		1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDecisionViewController.swift; sourceTree = "<group>"; };
@@ -411,6 +413,17 @@
 				1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		1885E94B22A414C700B6FAE5 /* ModelHttp */ = {
+			isa = PBXGroup;
+			children = (
+				A833C298228BE2B8003855FB /* ModelHttp.swift */,
+				1885E94922A414BB00B6FAE5 /* JsonParsing.swift */,
+				1885E94022A2600C00B6FAE5 /* ModelPolling.swift */,
+				1885E94222A270A200B6FAE5 /* HttpError.swift */,
+			);
+			path = ModelHttp;
 			sourceTree = "<group>";
 		};
 		1887F4B0221AFDF8007682A8 /* Views */ = {
@@ -830,11 +843,9 @@
 				183CFCDA226F7DAF00F7FF68 /* Entities */,
 				183CFCCB226F7A2000F7FF68 /* Utility */,
 				180CF2FD223D427000A9DEF2 /* ModelFireBase.swift */,
-				A833C298228BE2B8003855FB /* ModelHttp.swift */,
+				1885E94B22A414C700B6FAE5 /* ModelHttp */,
 				180CF2FF223D44F300A9DEF2 /* Model.swift */,
 				180CF2F8223D3F9700A9DEF2 /* Gmar.xcdatamodeld */,
-				1885E94022A2600C00B6FAE5 /* ModelPolling.swift */,
-				1885E94222A270A200B6FAE5 /* HttpError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1082,6 +1093,7 @@
 				A88BBFA622576A9A00F9C0B4 /* Food+CoreDataClass.swift in Sources */,
 				A872BE1222914C930078DC5F /* Attendance+CoreDataProperties.swift in Sources */,
 				A8576E0E224A6E1500CBA907 /* Medication+CoreDataProperties.swift in Sources */,
+				1885E94A22A414BB00B6FAE5 /* JsonParsing.swift in Sources */,
 				18BFE193224651250084D766 /* Permissions.swift in Sources */,
 				18991FF122185E6600180600 /* TeacherAddEventViewController.swift in Sources */,
 				A8299D6F22538538006E961F /* ChronicDisease+CoreDataProperties.swift in Sources */,

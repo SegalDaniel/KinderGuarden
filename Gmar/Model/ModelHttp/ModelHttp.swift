@@ -55,6 +55,7 @@ class ModelHttp{
         task.resume()
     }
     
+    //MARK: - Basic Events
     func sendBasicEvent(basicEvent:BasicEvent, callback: @escaping(Error?) -> Void){
         let kind:Enums.BasicEvent = Enums.BasicEvent(rawValue: Int(basicEvent.eventType))!
         var url=URL(string: "empty")!
@@ -121,8 +122,8 @@ class ModelHttp{
         task.resume()
     }
     
-    func getBasicEventsByID(childID:String){
-        let url = URL(string: "http://193.106.55.183/events/FecesEvents")!
+    func getBasicEventsByID(childID:String, callback:@escaping ([BasicEvent]) -> Void){
+        let url = URL(string: "http://193.106.55.183/Child/GetEventsByChildID/\(childID)")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -130,12 +131,8 @@ class ModelHttp{
                     return }
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: dataResponse, options: []) as! NSDictionary
-                let jsonData = jsonResponse["fecesEvent"]! as! NSArray
-                let jData = jsonData[0] as! [String:Any]
-                let feces = Feces(json: jData)
-                if jsonResponse != nil {
-                    print(jsonResponse)
-                }
+                let att = jsonResponse["attendanceEvent"]! as! NSArray
+                self.parseAttandanceEvents(jsonArr: att)
             } catch let parsingError {
                 print("Error", parsingError)
             }
@@ -143,7 +140,9 @@ class ModelHttp{
         task.resume()
     }
     
-    func sendDevelopmentEvent(developmentEvent: DevelopmentalEvent, callack:@escaping (Error?)->Void){
+    
+    //MARK: - Developmental Events
+    func sendDevelopmentEvent(developmentEvent: DevelopmentalEvent, callback:@escaping (Error?) -> Void){
         let session = URLSession.shared
         let url = URL(string: "http://193.106.55.183/events/DevelopmentalEvent/newEvent")!
         var request = URLRequest(url: url)
@@ -155,19 +154,43 @@ class ModelHttp{
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
-                callack(error)
+                callback(error)
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
-                callack(HttpError())
+                callback(HttpError())
                 return
             }
-            callack(nil)
+            callback(nil)
         }
         task.resume()
     }
     
+    func getDevelopmentalEvents(childID:String, callback:@escaping ([DevelopmentalEvent]) -> Void){
+        let url = URL(string: "http://193.106.55.183/events/DevelopmentalEventByChildId/\(childID)")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: []) as! NSDictionary
+                let jsonArr = jsonResponse["developmentalEvent"]! as! NSArray
+                var events:[DevelopmentalEvent] = []
+                
+                callback(events)
+              
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
+    //MARK: - Staff
     func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
         let url = URL(string: "http://193.106.55.183/staff/newStaff")!
@@ -193,6 +216,8 @@ class ModelHttp{
         task.resume()
     }
     
+    
+    //MARK: - Family Report
     func sendFamilyReport(familyReport:FamilyReport, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
         let url = URL(string: "http://193.106.55.183/events/FamilyReportEvent/newEvent")!
@@ -218,6 +243,7 @@ class ModelHttp{
         task.resume()
     }
     
+    //MARK: - General Notes
     func sendGeneralNote(generalNote:GeneralNote, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
         let url = URL(string: "http://193.106.55.183/events/GeneralNoteEvent/newEvent")!
@@ -243,6 +269,7 @@ class ModelHttp{
         task.resume()
     }
     
+    //MARK: - Alerts
     func getAlerts(callback:@escaping ()->Void){
         let url = URL(string: "http://193.106.55.183/alerts/Alerts")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -280,7 +307,7 @@ class ModelHttp{
     
 
     func getPulseAlert(callback: @escaping (String)->Void){
-        let url = URL(string: "http://193.106.55.183/alerts/alerts/PulseAlerts")! //change to one alert ar Server
+        let url = URL(string: "http://193.106.55.183/alerts/PulseAlerts")! //change to one alert ar Server
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -290,8 +317,10 @@ class ModelHttp{
                 //here dataResponse received from a network request
                 let jsonResponse = try JSONSerialization.jsonObject(with:
                     dataResponse, options: []) as! NSDictionary
-                let pulse = jsonResponse["pulse"]! as! String
-                callback(pulse)
+                let pulseArr = jsonResponse["pulseAlert"]! as! NSArray
+                let pulseObj = pulseArr.firstObject as! NSDictionary
+                let pulse = Double(truncating: pulseObj["pulse"] as! NSNumber).rounded(toPlaces: 2)
+                callback(String(pulse))
             } catch let parsingError {
                 print("Error", parsingError)
             }
@@ -300,6 +329,7 @@ class ModelHttp{
     }
 }
 
+//MARK: - JSON
 protocol JSONSerializable {
     func toJSON() -> String?
 }
@@ -341,6 +371,7 @@ extension Dictionary : JSONSerializable {
     }
 }
 
+//MARK: - URL Session extension
 extension URLSession {
     func dataTask(with url: URL, result: @escaping (Result<(URLResponse, Data), Error>) -> Void) -> URLSessionDataTask {
         return dataTask(with: url) { (data, response, error) in

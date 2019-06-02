@@ -18,7 +18,9 @@ class HeartRateViewController: MyViewController {
         super.viewDidLoad()
         animateView(heartImageView, animate: true)
         pulseListener = ModelNotification.pulseAlert.observe(cb: { (pulse) in
-            self.bpmLabel.text = "דופק: \(pulse)"
+            DispatchQueue.main.async {
+                self.bpmLabel.text = "דופק: \(pulse)"
+            }
         })
     }
     

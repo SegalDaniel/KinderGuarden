@@ -35,6 +35,7 @@ extension Model{
     }
     
     func stopPulseAlertPolling() {
+        print("stop polling pulse alerts")
         if let timer = pulseAlertTimerLoop{
             timer.invalidate()
         }

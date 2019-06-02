@@ -160,6 +160,11 @@ class Model{
     }
     
     /******************** Offline changes - Replace all comments for FireBase connection**********************/
+    //MARK: - Server
+    func getBasicEventsFromServer(childID:String, callback:@escaping ([BasicEvent]) -> Void){
+        modelHttp.getBasicEventsByID(childID: childID, callback: callback)
+    }
+    
     
     //MARK: - CoreData
     //MARK: - child entity methods
@@ -257,6 +262,13 @@ class Model{
         callback(auth.first)
     }
     
+    func getAuthorizedByID(authID:String, callback:(AuthorizedAccompanist?)->Void){
+        let authFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "AuthorizedAccompanist")
+        authFetch.predicate = NSPredicate(format: "authorizeId = %@", authID)
+        let auth:[AuthorizedAccompanist] = try! Model.instance.managedContext.fetch(authFetch) as! [AuthorizedAccompanist]
+        callback(auth.first)
+    }
+    
     //MARK: - staff entity methods
     func getStaffFromDB(callback:@escaping ([Staff]) -> Void){
         let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
@@ -264,11 +276,11 @@ class Model{
         callback(staff)
     }
     
-    func getStaffByID(staffID:String, callback:(Staff)->Void){
+    func getStaffByID(staffID:String, callback:(Staff?)->Void){
         let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
         staffFetch.predicate = NSPredicate(format: "staffID = %@", staffID)
         let staffs:[Staff] = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
-        callback(staffs.first!)
+        callback(staffs.first)
     }
     
     func deleteStaffFromDB(staffID:String, callback:(NSError?)->Void){

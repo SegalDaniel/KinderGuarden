@@ -60,6 +60,9 @@ class IndividualInfoViewController: MyViewController {
         initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView, familyCollectionView, notesCollectionView])
         initDatesBtns()
         childImageView.layer.cornerRadius = 10
+        Model.instance.getBasicEventsFromServer(childID: child!.childID!) { (events) in
+            
+        }
     }
     
     func initDatesBtns(){
