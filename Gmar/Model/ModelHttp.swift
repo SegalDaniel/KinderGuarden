@@ -269,9 +269,7 @@ class ModelHttp{
                             alerts.append(Alert(json: jAlert))
                         }
                     })
-                    Model.instance.saveToDB(callback: { (err) in
-                        callback()
-                    })
+                    callback()
                 }) 
             } catch let parsingError {
                 print("Error", parsingError)

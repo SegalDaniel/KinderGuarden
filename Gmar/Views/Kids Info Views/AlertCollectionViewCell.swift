@@ -34,6 +34,19 @@ class AlertCollectionViewCell: UICollectionViewCell {
         let time = DateAdmin.extractDateAndTime(date: date as Date, dateStyle: .none)
         timeLabel.text = time
         alertTextView.text = "\(alert!.actionNeeded!)"
+        switch alert!.level {
+        case 1:
+            self.backgroundColor = Utility.backCloverColor
+            break
+        case 2:
+            self.backgroundColor = Utility.yellowColor
+            break
+        case 3:
+            self.backgroundColor = Utility.btnSalmon
+            break
+        default:
+            break
+        }
     }
     
     @IBAction func tapped(_ sender: Any){

@@ -333,18 +333,6 @@ class Model{
         callback(alerts)
     }
     
-    func isAlertExist(alert:Alert) -> Bool {
-        var exist = false
-        let alertFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Alert")
-        let alerts = try! Model.instance.managedContext.fetch(alertFetch) as! [Alert]
-        alerts.forEach { (oldAlert) in
-            if alert == oldAlert{
-                exist = true
-            }
-        }
-        return exist
-    }
-    
     //MARK: - BasicEvents methods
     func getChildsBasicEventsFromCore(childID:String, callback:([BasicEvent])->Void){
         let beFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "BasicEvent")

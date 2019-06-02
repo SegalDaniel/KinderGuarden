@@ -20,4 +20,5 @@ extension Utility{
     static let btnPink:UIColor = UIColor(red: 255/255, green: 133/255, blue: 255/255, alpha: 1)
     static let backCloverColor:UIColor = UIColor(red: 0/255, green: 143/255, blue: 0/255, alpha: 1)
     static let torquizeColor:UIColor = UIColor(red: 0/255, green: 253/255, blue: 255/255, alpha: 1)
+    static let yellowColor:UIColor = UIColor(red: 255/255, green: 212/255, blue: 121/255, alpha: 1)
 }

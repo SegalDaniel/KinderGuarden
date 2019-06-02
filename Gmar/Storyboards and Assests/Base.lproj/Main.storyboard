@@ -183,7 +183,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בסיסי" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUM-DA-veq">
-                                <rect key="frame" x="866" y="100" width="226" height="36.5"/>
+                                <rect key="frame" x="955" y="100" width="137" height="36.5"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -235,13 +235,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="התפתחותי" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itn-nm-UWT">
-                                <rect key="frame" x="866" y="342.5" width="226" height="36.5"/>
+                                <rect key="frame" x="955" y="342.5" width="137" height="36.5"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="התראות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjW-gI-vny">
-                                <rect key="frame" x="985.5" y="585" width="106.5" height="36.5"/>
+                                <rect key="frame" x="746" y="585" width="346" height="36.5"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -421,13 +421,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="R8P-mJ-2bp">
                                                             <rect key="frame" x="8" y="108.5" width="113" height="25"/>
                                                             <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="17"/>
-                                                            <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="תיאור האירוע" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFD-mW-21D">
                                                             <rect key="frame" x="0.0" y="0.0" width="129" height="108.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -464,13 +464,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="דיווחי בני משפחה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpj-ST-LPm">
-                                <rect key="frame" x="320" y="342.5" width="226" height="36.5"/>
+                                <rect key="frame" x="200" y="342.5" width="346" height="36.5"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כללי" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0e-A7-PI4">
-                                <rect key="frame" x="439.5" y="585" width="106.5" height="36.5"/>
+                                <rect key="frame" x="200" y="585" width="346" height="36.5"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="30"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -482,7 +482,7 @@
                             <constraint firstItem="gsz-lo-5JO" firstAttribute="leading" secondItem="KRP-Lz-BrL" secondAttribute="trailing" constant="100" id="1rb-Pl-Mtd"/>
                             <constraint firstItem="Itn-nm-UWT" firstAttribute="trailing" secondItem="OUM-DA-veq" secondAttribute="trailing" id="5Hc-cs-AmC"/>
                             <constraint firstItem="2ge-Lb-CNd" firstAttribute="trailing" secondItem="XfC-nY-rtv" secondAttribute="trailing" id="6Bs-yF-hEe"/>
-                            <constraint firstItem="S0e-A7-PI4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TAs-MW-1dN" secondAttribute="trailing" id="6DU-g0-ZV5"/>
+                            <constraint firstItem="S0e-A7-PI4" firstAttribute="trailing" secondItem="TAs-MW-1dN" secondAttribute="trailing" id="6DU-g0-ZV5"/>
                             <constraint firstItem="Itn-nm-UWT" firstAttribute="width" secondItem="OUM-DA-veq" secondAttribute="width" id="7J1-6K-weS"/>
                             <constraint firstItem="OUM-DA-veq" firstAttribute="top" secondItem="Hdl-ln-xVa" secondAttribute="top" constant="30" id="8tQ-G6-fFf"/>
                             <constraint firstItem="XfC-nY-rtv" firstAttribute="top" secondItem="Itn-nm-UWT" secondAttribute="bottom" constant="8" id="ALv-sG-Ojh"/>
@@ -498,15 +498,14 @@
                             <constraint firstItem="jjW-gI-vny" firstAttribute="trailing" secondItem="Itn-nm-UWT" secondAttribute="trailing" id="Gef-zl-ZdE"/>
                             <constraint firstItem="Cpj-ST-LPm" firstAttribute="centerY" secondItem="Itn-nm-UWT" secondAttribute="centerY" id="Gnc-0r-rTn"/>
                             <constraint firstItem="2ge-Lb-CNd" firstAttribute="leading" secondItem="XfC-nY-rtv" secondAttribute="leading" id="Gui-gG-bLe"/>
-                            <constraint firstItem="Cpj-ST-LPm" firstAttribute="width" secondItem="Itn-nm-UWT" secondAttribute="width" id="J4c-iK-2Ml"/>
                             <constraint firstItem="2ge-Lb-CNd" firstAttribute="height" secondItem="XfC-nY-rtv" secondAttribute="height" id="KfF-nd-FNW"/>
                             <constraint firstItem="XfC-nY-rtv" firstAttribute="leading" secondItem="KRP-Lz-BrL" secondAttribute="leading" id="LRb-gF-8FW"/>
                             <constraint firstItem="Hdl-ln-xVa" firstAttribute="trailing" secondItem="OUM-DA-veq" secondAttribute="trailing" constant="20" id="LUa-6d-30A"/>
                             <constraint firstItem="Hdl-ln-xVa" firstAttribute="trailing" secondItem="rC3-gE-6nH" secondAttribute="trailing" constant="20" id="Pdp-78-p3u"/>
-                            <constraint firstItem="Cpj-ST-LPm" firstAttribute="leading" secondItem="Hdl-ln-xVa" secondAttribute="leading" constant="320" id="SKV-yK-f1Z"/>
+                            <constraint firstItem="Cpj-ST-LPm" firstAttribute="leading" secondItem="Hdl-ln-xVa" secondAttribute="leading" constant="200" id="SKV-yK-f1Z"/>
                             <constraint firstItem="rC3-gE-6nH" firstAttribute="top" secondItem="OUM-DA-veq" secondAttribute="bottom" constant="8" id="THs-lv-LaO"/>
                             <constraint firstItem="4aM-eB-1Q8" firstAttribute="height" secondItem="LYj-Sn-kxI" secondAttribute="height" id="WQH-4l-qOl"/>
-                            <constraint firstItem="S0e-A7-PI4" firstAttribute="leading" secondItem="Hdl-ln-xVa" secondAttribute="leading" constant="439.5" id="WYC-2M-ifh"/>
+                            <constraint firstItem="S0e-A7-PI4" firstAttribute="leading" secondItem="Hdl-ln-xVa" secondAttribute="leading" constant="200" id="WYC-2M-ifh"/>
                             <constraint firstItem="XfC-nY-rtv" firstAttribute="trailing" secondItem="rC3-gE-6nH" secondAttribute="trailing" id="YRL-2K-9nV"/>
                             <constraint firstItem="S0e-A7-PI4" firstAttribute="height" secondItem="jjW-gI-vny" secondAttribute="height" id="aiR-LP-9Oh"/>
                             <constraint firstItem="gsz-lo-5JO" firstAttribute="centerY" secondItem="OUM-DA-veq" secondAttribute="centerY" id="g6V-8K-9EP"/>
@@ -516,14 +515,13 @@
                             <constraint firstItem="gsz-lo-5JO" firstAttribute="centerX" secondItem="Hdl-ln-xVa" secondAttribute="centerX" id="hxq-Np-tCw"/>
                             <constraint firstItem="rC3-gE-6nH" firstAttribute="bottom" secondItem="KRP-Lz-BrL" secondAttribute="bottom" id="j0w-BF-wFt"/>
                             <constraint firstItem="KRP-Lz-BrL" firstAttribute="width" secondItem="ybD-5L-itC" secondAttribute="width" multiplier="0.2" id="mkl-qr-V7i"/>
-                            <constraint firstItem="S0e-A7-PI4" firstAttribute="width" secondItem="jjW-gI-vny" secondAttribute="width" id="pJB-1g-oiI"/>
                             <constraint firstItem="jjW-gI-vny" firstAttribute="top" secondItem="XfC-nY-rtv" secondAttribute="bottom" constant="20" id="pOd-uI-WwI"/>
                             <constraint firstItem="D2J-Gh-mYH" firstAttribute="centerY" secondItem="LYj-Sn-kxI" secondAttribute="centerY" id="rxT-zU-21O"/>
                             <constraint firstItem="gsz-lo-5JO" firstAttribute="leading" secondItem="4aM-eB-1Q8" secondAttribute="trailing" constant="8" id="s0s-j3-6re"/>
                             <constraint firstItem="4aM-eB-1Q8" firstAttribute="leading" secondItem="KRP-Lz-BrL" secondAttribute="trailing" constant="8" id="srR-Z3-CjI"/>
+                            <constraint firstItem="jjW-gI-vny" firstAttribute="leading" secondItem="S0e-A7-PI4" secondAttribute="trailing" constant="200" id="vr2-a2-WtX"/>
                             <constraint firstItem="OUM-DA-veq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gsz-lo-5JO" secondAttribute="trailing" id="wJ9-Gg-to2"/>
-                            <constraint firstItem="Cpj-ST-LPm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zNc-TK-gKe" secondAttribute="trailing" id="xub-Mb-3wg"/>
-                            <constraint firstItem="jjW-gI-vny" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hdl-ln-xVa" secondAttribute="leading" symbolic="YES" id="yKp-hz-ZPd"/>
+                            <constraint firstItem="Cpj-ST-LPm" firstAttribute="trailing" secondItem="zNc-TK-gKe" secondAttribute="trailing" id="xub-Mb-3wg"/>
                             <constraint firstItem="KRP-Lz-BrL" firstAttribute="leading" secondItem="Hdl-ln-xVa" secondAttribute="leading" constant="20" id="yaO-yg-IXZ"/>
                             <constraint firstItem="Cpj-ST-LPm" firstAttribute="height" secondItem="Itn-nm-UWT" secondAttribute="height" id="zJg-zC-g3x"/>
                         </constraints>
