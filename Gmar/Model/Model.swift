@@ -298,6 +298,13 @@ class Model{
     }
     
     //MARK: - Alerts
+    func getAlertsByChildID(childID:String, callback: @escaping ([Alert]) -> Void){
+        let alertFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Alert")
+        alertFetch.predicate = NSPredicate(format: "child.childID = %@", childID)
+        let alerts = try! Model.instance.managedContext.fetch(alertFetch) as! [Alert]
+        callback(alerts)
+    }
+    
     func getAlerts(callback: @escaping ([Alert]) -> Void){
         modelHttp.getAlerts {
             self.saveToDB(callback: { (err) in

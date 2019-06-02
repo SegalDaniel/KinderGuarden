@@ -45,6 +45,11 @@ class IndividualInfoViewController: MyViewController {
             notesCollectionView.reloadData()
         }
     }
+    var childAlerts:[Alert] = []{
+        didSet{
+            logicCollectionView.reloadData()
+        }
+    }
     
     //MARK: - inits
     override func viewDidLoad() {
@@ -150,6 +155,19 @@ class IndividualInfoViewController: MyViewController {
         }
     }
     
+    func loadAlerts(){
+        Model.instance.getAlertsByChildID(childID: self.childID!) { (events) in
+            self.childAlerts = events.filter({ (event) -> Bool in
+                let eDate = event.alertDate! as Date
+                if  eDate >= self.startDate! && eDate <= self.endDate!{
+                    return true
+                }
+                return false
+            })
+            self.logicCollectionView.reloadData()
+        }
+    }
+    
     //MARK: - Buttons actions
     @IBAction func showDatePicker(_ sender: UIButton){
         let monthInsSeconds = 2629743.83
@@ -165,6 +183,7 @@ class IndividualInfoViewController: MyViewController {
                 self.filterEventsByDates()
                 self.loadGeneralNote()
                 self.loadFamilyReports()
+                self.loadAlerts()
             }
             break
         case endDateBtn:
@@ -175,6 +194,7 @@ class IndividualInfoViewController: MyViewController {
                 self.filterEventsByDates()
                 self.loadGeneralNote()
                 self.loadFamilyReports()
+                self.loadAlerts()
             }
             break
         default:
@@ -189,6 +209,7 @@ class IndividualInfoViewController: MyViewController {
         filterEventsByDates()
         loadGeneralNote()
         loadFamilyReports()
+        loadAlerts()
     }
     
 }
@@ -203,7 +224,7 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
         case developCollectionView:
             return developmentalEvents.count
         case logicCollectionView:
-            return 0
+            return childAlerts.count
         case familyCollectionView:
             return familyReports.count
         case notesCollectionView:
@@ -247,8 +268,11 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
             cell.awakeFromNib()
             return cell
         case logicCollectionView:
-            
-            break
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "logicCell", for: indexPath) as! AlertCollectionViewCell
+            cell.alert = childAlerts[indexPath.row]
+            cell.delegate = self
+            cell.awakeFromNib()
+            return cell
         case familyCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "familyCell", for: indexPath) as! FamilyReportCollectionViewCell
             cell.report = familyReports[indexPath.row]
@@ -269,7 +293,14 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
 }
 
 //MARK: CollectionViewCells Delegate
-extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate, FamilyReportCollectionViewCellDelegate, GeneralNoteCollectionViewCellDelegate{
+extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate, FamilyReportCollectionViewCellDelegate, GeneralNoteCollectionViewCellDelegate, AlertCollectionViewCellDelegate{
+    func cellTapped(alert: Alert, description: String) {
+        let time = DateAdmin.extractDateAndTime(date: alert.alertDate! as Date, dateStyle: .short)
+        
+        let alert = SimpleAlert(_title: time, _message: "\(description)\n\(alert.actionNeeded!)", dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func cellTapped(note: GeneralNote, description: String) {
         let time = DateAdmin.extractDateAndTime(date: note.eventDate! as Date, dateStyle: .short)
         let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()

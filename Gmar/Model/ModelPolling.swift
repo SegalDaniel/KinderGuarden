@@ -27,7 +27,7 @@ extension Model{
         var newAlerts:[Alert] = []
         self.getAlerts { (alerts) in
             alerts.forEach({ (alert) in
-                if alert.level != -1 || alert.level != Int16("-1"){
+                if (alert.level != -1 || alert.level != Int16("-1")) && (alert.type == 2 || alert.type == Int16("2")){
                     newAlerts.append(alert)
                 }
             })
