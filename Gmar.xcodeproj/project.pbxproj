@@ -42,6 +42,7 @@
 		1878879C221D7C260047A935 /* DateAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878879B221D7C260047A935 /* DateAdmin.swift */; };
 		1885E94122A2600C00B6FAE5 /* ModelPolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94022A2600C00B6FAE5 /* ModelPolling.swift */; };
 		1885E94322A270A200B6FAE5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94222A270A200B6FAE5 /* HttpError.swift */; };
+		1885E94622A3BA8500B6FAE5 /* ImmidiateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */; };
 		1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A52219D0B5007682A8 /* EventKindViewController.swift */; };
 		1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */; };
 		1887F4AD221ADF15007682A8 /* GenericDecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */; };
@@ -173,6 +174,7 @@
 		1878879B221D7C260047A935 /* DateAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAdmin.swift; sourceTree = "<group>"; };
 		1885E94022A2600C00B6FAE5 /* ModelPolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPolling.swift; sourceTree = "<group>"; };
 		1885E94222A270A200B6FAE5 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmidiateAlert.swift; sourceTree = "<group>"; };
 		1887F4A52219D0B5007682A8 /* EventKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKindViewController.swift; sourceTree = "<group>"; };
 		1887F4A72219DD2B007682A8 /* BasicEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicEventViewController.swift; sourceTree = "<group>"; };
 		1887F4AC221ADF15007682A8 /* GenericDecisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDecisionViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +402,15 @@
 			path = MyButton;
 			sourceTree = "<group>";
 		};
+		1885E94422A3BA6100B6FAE5 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
+				1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		1887F4B0221AFDF8007682A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,7 +421,7 @@
 				18516969229933EB00A4E929 /* DeleteTableViewCell.swift */,
 				18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */,
 				189B353F224289C600D33A6C /* Add New Child */,
-				18FA86FE224F6F8400CFA4ED /* SimpleAlert.swift */,
+				1885E94422A3BA6100B6FAE5 /* Alerts */,
 				188C8E982291D19B00DF85B7 /* Kids Info Views */,
 				18586D5F22730926004F219C /* KidCollectionViewCell.swift */,
 				1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */,
@@ -975,6 +986,7 @@
 				1887F4B9221B2A5A007682A8 /* GenericVC.swift in Sources */,
 				1887F4B6221B1E13007682A8 /* GenericLiquidViewController.swift in Sources */,
 				18DE415C226CBAC800314AA0 /* KidsInfoViewController.swift in Sources */,
+				1885E94622A3BA8500B6FAE5 /* ImmidiateAlert.swift in Sources */,
 				183CFCD9226F7D1700F7FF68 /* EdgeShadowLayer.swift in Sources */,
 				A868E9B82275A8CD000B3230 /* BasicEvent+CoreDataProperties.swift in Sources */,
 				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,

@@ -11,10 +11,10 @@ import UIKit
 
 extension Model{
     
-    func startPolling() {
-        print("start polling")
+    func startPollingAlerts() {
+        print("start polling alerts")
         DispatchQueue.global(qos: .background).async {
-            let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector:  #selector(self.poolAlerts), userInfo: nil, repeats: true)
+            let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector:  #selector(self.poolAlerts), userInfo: nil, repeats: true)
             let runLoop = RunLoop.current
             runLoop.add(timer, forMode: .default)
             runLoop.run()
@@ -24,14 +24,16 @@ extension Model{
     //still sending alerts that exist in core data
     @objc func poolAlerts(){
         print("pooling alerts")
-        self.modelHttp.getAlerts(callback: { (alerts) in
-            var newAlerts:[Alert] = []
+        var newAlerts:[Alert] = []
+        self.getAlerts { (alerts) in
             alerts.forEach({ (alert) in
-                if self.isAlertExist(alert: alert){
+                if alert.level != -1 || alert.level != Int16("-1"){
                     newAlerts.append(alert)
                 }
             })
-            ModelNotification.immidiateAlert.notify(data: newAlerts)
-        })
+            if newAlerts.count > 0{
+                ModelNotification.immidiateAlert.notify(data: newAlerts)
+            }
+        }
     }
 }

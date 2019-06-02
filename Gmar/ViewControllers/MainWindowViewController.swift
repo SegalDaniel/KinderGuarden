@@ -23,7 +23,7 @@ class MainWindowViewController: MyViewController {
         kgSettingBtn.layer.shadowColor = UIColor.clear.cgColor
         Utility.addShadow(view: kgSettingBtn.imageView!)
         Utility.addBorder(view: alertsLabel)
-        //Model.instance.startPolling()
+        Model.instance.startPollingAlerts()
     }
     
     override func viewWillAppear(_ animated: Bool) {

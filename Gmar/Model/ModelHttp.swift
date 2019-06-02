@@ -243,7 +243,7 @@ class ModelHttp{
         task.resume()
     }
     
-    func getAlerts(callback:@escaping ([Alert])->Void){
+    func getAlerts(callback:@escaping ()->Void){
         let url = URL(string: "http://193.106.55.183/alerts/Alerts")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
@@ -256,14 +256,23 @@ class ModelHttp{
                     dataResponse, options: []) as! NSDictionary
                 let jsonArr = jsonResponse["Alert"]! as! NSArray
                 var alerts:[Alert] = []
-                jsonArr.forEach({ (jsonAlert) in
-                    let alert = Alert(json: jsonAlert as! [String:Any])
-                    if alert.child != nil{
-                        alerts.append(alert)
-                    }
-                })
-                callback(alerts)
-                
+                Model.instance.getAlertsFromCoreData(callback: { (oldAlerts) in
+                    jsonArr.forEach({ (jsonAlert) in
+                        var exist = false
+                        let jAlert = jsonAlert as! [String:Any]
+                        oldAlerts.forEach({ (oldAlert) in
+                            if oldAlert == jAlert{
+                                exist = true
+                            }
+                        })
+                        if !exist{
+                            alerts.append(Alert(json: jAlert))
+                        }
+                    })
+                    Model.instance.saveToDB(callback: { (err) in
+                        callback()
+                    })
+                }) 
             } catch let parsingError {
                 print("Error", parsingError)
             }

@@ -299,9 +299,11 @@ class Model{
     
     //MARK: - Alerts
     func getAlerts(callback: @escaping ([Alert]) -> Void){
-        modelHttp.getAlerts(callback: callback)
-        deleteEmptyAlerts()
-        saveToDB(callback: nil)
+        modelHttp.getAlerts {
+            self.saveToDB(callback: { (err) in
+                self.getAlertsFromCoreData(callback: callback)
+            })
+        }
     }
     
     func deleteEmptyAlerts(){

@@ -12,7 +12,7 @@ class MyViewController: UIViewController {
 
     //MARK: - Variables
     var alertsListener:NSObjectProtocol?
-    var alerts:[SimpleAlert] = []
+    var alerts:[ImmidiateAlert] = []
     
     //MARK: - init
     override func viewDidLoad() {
@@ -22,16 +22,25 @@ class MyViewController: UIViewController {
         findAllButtonsAndLabels(subviews: subviews)
         addHomeButton()
         navigationTitleFont()
-        alertsListener = ModelNotification.immidiateAlert.observe(cb: { (alerts) in
-            alerts.forEach({ (alert) in
-                self.alerts.append(SimpleAlert(_title: "התראה לפעולה מיידית! \(alert.child!.firstName!) \(alert.child!.lastName!)", _message: alert.actionNeeded!, dissmissCallback: self.showImmidiateAlert))
+        alertsListener = ModelNotification.immidiateAlert.observe(cb: { (alertsListener) in
+            alertsListener.forEach({ (alert) in
+                let immAlert = ImmidiateAlert(alert:alert, dissmiss: self.showImmidiateAlert, done: self.showImmidiateAlert)
+                if !self.alerts.contains(where: { (immidiateAlert) -> Bool in
+                    return immAlert == immidiateAlert
+                }){
+                   self.alerts.append(immAlert)
+                }
+                
             })
+            print("self.alerts count: \(self.alerts.count)")
+            print("alertsListener count from listener: \(alertsListener.count)")
             self.showImmidiateAlert()
         })
     }
     
     func showImmidiateAlert(){
         if !alerts.isEmpty{
+            print("alerts of myVC cound: \(alerts.count)")
             let toShow = alerts.removeFirst().getAlert()
             self.present(toShow, animated: true, completion: nil)
         }
