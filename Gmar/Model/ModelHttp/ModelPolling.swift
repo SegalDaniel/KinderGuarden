@@ -58,7 +58,6 @@ extension Model{
     }
     
     @objc func poolPulseAlerts(){
-        print("pooling pulse alerts")
         self.getPulseAlert { (pulse) in
             ModelNotification.pulseAlert.notify(data: pulse)
         }

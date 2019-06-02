@@ -14,7 +14,7 @@ public class BasicEvent: NSManagedObject {
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["eventType"] = eventType
-        json["eventID"] = eventDate.hashValue
+        json["eventID"] = eventDate.hashValue % 100000000
         json["eventDate"] = eventDate
         json["level"] = level
         json["childID"] = child?.childID
@@ -32,12 +32,22 @@ public class BasicEvent: NSManagedObject {
                         event.setValue(eventDate, forKey: "eventDate")
                         event.setValue(child, forKey: "child")
                         event.setValue(staff, forKey: "staff")
-                        //level is missing in Server!
-                        //event.setValue(Int16(truncating: json["level"] as! NSNumber), forKey: "level")
-                        event.setValue(Int16(json["eventID"] as! String), forKey: "eventID")
+                        if let sLevel = json["level"] {
+                            event.setValue(Int16(truncating: sLevel as! NSNumber), forKey: "level")
+                        }
+                        let id = json["eventID"] as! String
+                        let intID = Int(id)! % 1000
+                        event.setValue(intID, forKey: "eventID")
                     }
                 }
             })
         }
+    }
+    
+    static func ==(lhs:BasicEvent, rhs:[String:Any]) -> Bool{
+        let id = Int(rhs["eventID"] as! String)! % 1000
+        let id2 = lhs.eventID
+        let b = id2 == id
+        return b
     }
 }

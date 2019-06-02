@@ -131,8 +131,8 @@ class ModelHttp{
                     return }
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: dataResponse, options: []) as! NSDictionary
-                let att = jsonResponse["attendanceEvent"]! as! NSArray
-                self.parseAttandanceEvents(jsonArr: att)
+                self.parseBasicEvent(jsonResponse: jsonResponse)
+                
             } catch let parsingError {
                 print("Error", parsingError)
             }
@@ -318,9 +318,10 @@ class ModelHttp{
                 let jsonResponse = try JSONSerialization.jsonObject(with:
                     dataResponse, options: []) as! NSDictionary
                 let pulseArr = jsonResponse["pulseAlert"]! as! NSArray
-                let pulseObj = pulseArr.firstObject as! NSDictionary
-                let pulse = Double(truncating: pulseObj["pulse"] as! NSNumber).rounded(toPlaces: 2)
-                callback(String(pulse))
+                if let pulseObj = pulseArr.firstObject as? NSDictionary{
+                    let pulse = Double(truncating: pulseObj["pulse"] as! NSNumber).rounded(toPlaces: 2)
+                    callback(String(pulse))
+                }
             } catch let parsingError {
                 print("Error", parsingError)
             }

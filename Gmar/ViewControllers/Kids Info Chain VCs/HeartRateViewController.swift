@@ -19,6 +19,19 @@ class HeartRateViewController: MyViewController {
         animateView(heartImageView, animate: true)
         pulseListener = ModelNotification.pulseAlert.observe(cb: { (pulse) in
             DispatchQueue.main.async {
+                let p = Double(pulse)!
+                if p < 40.0 && p > 20.0{
+                    self.bpmLabel.textColor = UIColor.orange
+                    self.animateViewEmergency(self.bpmLabel, animate: true)
+                }
+                else if p >= 0.0 && p <= 20.0{
+                    self.bpmLabel.textColor = UIColor.red
+                    self.animateViewEmergency(self.bpmLabel, animate: true)
+                }
+                else{
+                    self.bpmLabel.textColor = Utility.btnTextWhite
+                    self.animateViewEmergency(self.bpmLabel, animate: false)
+                }
                 self.bpmLabel.text = "דופק: \(pulse)"
             }
         })
@@ -42,6 +55,17 @@ class HeartRateViewController: MyViewController {
         else {
             self.view.layer.removeAllAnimations()
             UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseOut, .beginFromCurrentState, .allowUserInteraction], animations: { view.transform = CGAffineTransform.identity}, completion: nil)
+        }
+    }
+    
+    func animateViewEmergency(_ view: UIView, animate: Bool) {
+        if animate {
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
+                view.alpha = 0.0}, completion: nil)
+        }
+        else {
+            self.view.layer.removeAllAnimations()
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut, .beginFromCurrentState, .allowUserInteraction], animations: { view.alpha = 1.0}, completion: nil)
         }
     }
 }

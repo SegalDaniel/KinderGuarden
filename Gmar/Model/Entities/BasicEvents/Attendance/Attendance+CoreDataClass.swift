@@ -27,7 +27,7 @@ public class Attendance: BasicEvent {
         self.init(entity: Model.instance.attendanceEntity, insertInto: Model.instance.managedContext)
         BasicEvent.saveGlobals(event: self, json: json)
         self.setValue(Int16(Enums.BasicEvent.attandance.rawValue), forKey: "eventType")
-        //self.setValue(json["isLate"] as! Bool?, forKey: "isLate")
+        self.setValue(json["isLate"] as! Bool, forKey: "isLate")
         self.setValue(json["type"] as! String, forKey: "type")
         Model.instance.getAuthorizedByID(authID: json["authorized"] as! String) { (auth) in
             if let auth = auth{
@@ -45,8 +45,4 @@ public class Attendance: BasicEvent {
         return json
     }
     
-    static func ==(lhs:Attendance, rhs:[String:Any]) -> Bool{
-        let id = Int16(rhs["eventID"] as! String)
-        return lhs.eventID == id
-    }
 }
