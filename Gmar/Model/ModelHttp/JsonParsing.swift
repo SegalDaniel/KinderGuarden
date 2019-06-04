@@ -14,26 +14,41 @@ extension ModelHttp{
     func parseBasicEvent(jsonResponse:NSDictionary){
         let att = jsonResponse["attendanceEvent"]! as! NSArray
         self.parseAttandanceEvents(jsonArr: att)
+        let sle = jsonResponse["sleepEvent"]! as! NSArray
+        self.parseSleepEvents(jsonArr: sle)
+        let wat = jsonResponse["waterEvent"]! as! NSArray
+        self.parseWaterEvents(jsonArr: wat)
+        let sol = jsonResponse["solidFoodEvent"]! as! NSArray
+        self.parseSolidFoodEvents(jsonArr: sol)
+        let liq = jsonResponse["liquidFoodEvent"]! as! NSArray
+        self.parseLiquidFoodEvents(jsonArr: liq)
+        let fec = jsonResponse["fecesEvent"]! as! NSArray
+        self.parseFecesEvents(jsonArr: fec)
+        let uri = jsonResponse["urineEvent"]! as! NSArray
+        self.parseUrineEvents(jsonArr: uri)
         let cough = jsonResponse["coughEvent"]! as! NSArray
         self.parseCoughEvents(jsonArr: cough)
+        let sec = jsonResponse["secretionEvent"]! as! NSArray
+        self.parseSecretionEvents(jsonArr: sec)
+        let vom = jsonResponse["vomitusEvent"]! as! NSArray
+        self.parseVomitusEvents(jsonArr: vom)
+        let rash = jsonResponse["rashEvent"]! as! NSArray
+        self.parseRashEvents(jsonArr: rash)
+        let fev = jsonResponse["feverEvent"]! as! NSArray
+        self.parseFecesEvents(jsonArr: fev)
+        let dis = jsonResponse["diseaseEvent"]! as! NSArray
+        self.parseDiseaseEvents(jsonArr: dis)
+        let med = jsonResponse["medicationEvent"]! as! NSArray
+        self.parseMedicationEvents(jsonArr: med)
+        let par = jsonResponse["parasitesEvent"]! as! NSArray
+        self.parseParasitesEvents(jsonArr: par)
+        let genB = jsonResponse["generalBehaviorEvent"]! as! NSArray
+        self.parseGeneralBehaviorEvents(jsonArr: genB)
+        //let genN = jsonResponse["generalNoteEvent"]! as! NSArray
         //let dev = jsonResponse["developmentalEvent"]! as! NSArray
-       //let dis = jsonResponse["diseaseEvent"]! as! NSArray
-       //let fam = jsonResponse["familyReportEvent"]! as! NSArray
-       //let fec = jsonResponse["fecesEvent"]! as! NSArray
-       //let fev = jsonResponse["feverEvent"]! as! NSArray
-       //let genB = jsonResponse["generalBehaviorEvent"]! as! NSArray
-       //let genN = jsonResponse["generalNoteEvent"]! as! NSArray
-       //let med = jsonResponse["medicationEvent"]! as! NSArray
-       //let par = jsonResponse["parasitesEvent"]! as! NSArray
-       //let rash = jsonResponse["rashEvent"]! as! NSArray
-       //let sec = jsonResponse["secretionEvent"]! as! NSArray
-       //let sle = jsonResponse["sleepEvent"]! as! NSArray
-       //let sol = jsonResponse["solidFoodEvent"]! as! NSArray
-       //let uri = jsonResponse["urineEvent"]! as! NSArray
-       //let vom = jsonResponse["vomitusEvent"]! as! NSArray
-       //let wat = jsonResponse["waterEvent"]! as! NSArray
+        //let fam = jsonResponse["familyReportEvent"]! as! NSArray
     }
-
+    
     
     //MARK: - Attendance
     func parseAttandanceEvents(jsonArr:NSArray){
@@ -53,11 +68,119 @@ extension ModelHttp{
         }
     }
     
+    //MARK: - Sleep
+    func parseSleepEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Sleep] = []
+            let olds = fetch(entityName: "Sleep") as! [Sleep]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Sleep(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Water
+    func parseWaterEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Water] = []
+            let olds = fetch(entityName: "Water") as! [Water]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Water(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - SolidFood
+    func parseSolidFoodEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[SolidFood] = []
+            let olds = fetch(entityName: "SolidFood") as! [SolidFood]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(SolidFood(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - LiquidFood
+    func parseLiquidFoodEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[LiquidFood] = []
+            let olds = fetch(entityName: "LiquidFood") as! [LiquidFood]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(LiquidFood(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Feces
+    func parseFecesEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Feces] = []
+            let olds = fetch(entityName: "Feces") as! [Feces]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Feces(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Urine
+    func parseUrineEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Urine] = []
+            let olds = fetch(entityName: "Urine") as! [Urine]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Urine(json: jEvent))
+                }
+            }
+        }
+    }
+    
     //MARK: - Cough
     func parseCoughEvents(jsonArr:NSArray){
         if jsonArr.count > 0{
             var events:[Cough] = []
-            let olds = fetch(entityName: "Cough") as! [Attendance]
+            let olds = fetch(entityName: "Cough") as! [Cough]
             jsonArr.forEach { (jsonEvent) in
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
@@ -71,11 +194,83 @@ extension ModelHttp{
         }
     }
     
+    //MARK: - Secretion
+    func parseSecretionEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Secretion] = []
+            let olds = fetch(entityName: "Secretion") as! [Secretion]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Secretion(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Vomitus
+    func parseVomitusEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Vomitus] = []
+            let olds = fetch(entityName: "Vomitus") as! [Vomitus]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Vomitus(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Rash
+    func parseRashEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Rash] = []
+            let olds = fetch(entityName: "Rash") as! [Rash]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Rash(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Fever
+    func parseFeverEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Fever] = []
+            let olds = fetch(entityName: "Fever") as! [Fever]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Fever(json: jEvent))
+                }
+            }
+        }
+    }
+    
     //MARK: - Disease
     func parseDiseaseEvents(jsonArr:NSArray){
         if jsonArr.count > 0{
             var events:[Disease] = []
-            let olds = fetch(entityName: "Disease") as! [Attendance]
+            let olds = fetch(entityName: "Disease") as! [Disease]
             jsonArr.forEach { (jsonEvent) in
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
@@ -84,6 +279,60 @@ extension ModelHttp{
                 })
                 if !exist{
                     events.append(Disease(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Medication
+    func parseMedicationEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Medication] = []
+            let olds = fetch(entityName: "Medication") as! [Medication]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Medication(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Parasites
+    func parseParasitesEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[Parasites] = []
+            let olds = fetch(entityName: "Parasites") as! [Parasites]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(Parasites(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - GeneralBehavior
+    func parseGeneralBehaviorEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[GeneralBehavior] = []
+            let olds = fetch(entityName: "GeneralBehavior") as! [GeneralBehavior]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(GeneralBehavior(json: jEvent))
                 }
             }
         }
