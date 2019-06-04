@@ -25,25 +25,11 @@ public class Feces: BasicEvent {
     
     convenience  init(json:[String:Any]){
         self.init(entity: Model.instance.fecesEntity, insertInto: Model.instance.managedContext)
-        let dateString = json["eventDate"] as! String
-        let eventDate = DateAdmin.dateFromServer(date: dateString)
-        self.setValue(eventDate, forKey: "eventDate")
+        BasicEvent.saveGlobals(event: self, json: json)
+        self.setValue(Int16(Enums.BasicEvent.feces.rawValue), forKey: "eventType")
         self.setValue(json["color"] as! String, forKey: "color")
         self.setValue(json["texture"] as! String, forKey: "texture")
         self.setValue(json["amount"] as! String, forKey: "amount")
-        eventType = 1
-        
-        let childID:String = json["childID"] as! String
-        let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
-        childFetch.predicate = NSPredicate(format: "childID = %@", childID)
-        let child:[Child] = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
-        self.setValue(child, forKey: "child")
-        
-        let staffID:String = json["staffID"] as! String
-        let staffFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Staff")
-        staffFetch.predicate = NSPredicate(format: "staffID = %@", staffID)
-        let staff:[Staff] = try! Model.instance.managedContext.fetch(staffFetch) as! [Staff]
-        self.setValue(staff, forKey: "staff")
     }
     
     
@@ -53,7 +39,6 @@ public class Feces: BasicEvent {
         json["texture"] = texture
         json["amount"] = amount
         return json
-        
     }
     
 }

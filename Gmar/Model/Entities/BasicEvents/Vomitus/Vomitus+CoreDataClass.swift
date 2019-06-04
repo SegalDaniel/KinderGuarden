@@ -23,11 +23,9 @@ public class Vomitus: BasicEvent {
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.vomitusEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["type"], forKey: "type")
-        self.setValue(json["eventType"], forKey: "eventType")
-        self.setValue(json["eventDate"], forKey: "eventDate")
-        self.setValue(json["child"], forKey: "child")
-        self.setValue(json["staff"], forKey: "staff")
+        BasicEvent.saveGlobals(event: self, json: json)
+        self.setValue(Int16(Enums.BasicEvent.vomit.rawValue), forKey: "eventType")
+        self.setValue(json["type"] as! String, forKey: "type")
     }
     
     

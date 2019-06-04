@@ -24,12 +24,10 @@ public class Water: BasicEvent {
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.waterEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["amount"], forKey: "amount")
-        self.setValue(json["consumedAmount"], forKey: "consumedAmount")
-        self.setValue(json["eventType"], forKey: "eventType")
-        self.setValue(json["eventDate"], forKey: "eventDate")
-        self.setValue(json["child"], forKey: "child")
-        self.setValue(json["staff"], forKey: "staff")
+        BasicEvent.saveGlobals(event: self, json: json)
+        self.setValue(Int16(Enums.BasicEvent.water.rawValue), forKey: "eventType")
+        self.setValue(json["amount"] as! Int16, forKey: "amount")
+        self.setValue(json["consumedAmount"] as! String, forKey: "consumedAmount")
     }
     
     

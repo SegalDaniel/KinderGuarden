@@ -25,13 +25,11 @@ public class Urine: BasicEvent {
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.urineEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["color"], forKey: "color")
-        self.setValue(json["fragrance"], forKey: "fragrance")
-        self.setValue(json["amount"], forKey: "amount")
-        self.setValue(json["eventType"], forKey: "eventType")
-        self.setValue(json["eventDate"], forKey: "eventDate")
-        self.setValue(json["child"], forKey: "child")
-        self.setValue(json["staff"], forKey: "staff")
+        BasicEvent.saveGlobals(event: self, json: json)
+        self.setValue(Int16(Enums.BasicEvent.urine.rawValue), forKey: "eventType")
+        self.setValue(json["color"] as! String, forKey: "color")
+        self.setValue(json["amount"] as! String, forKey: "amount")
+        self.setValue(json["fragrance"] as! String, forKey: "fragrance")
     }
     
     

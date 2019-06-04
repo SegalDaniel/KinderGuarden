@@ -25,13 +25,11 @@ public class Sleep: BasicEvent {
     
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.sleepEntity, insertInto: Model.instance.managedContext)
+        BasicEvent.saveGlobals(event: self, json: json)
+        self.setValue(Int16(Enums.BasicEvent.sleep.rawValue), forKey: "eventType")
         self.setValue(json["type"] as! String, forKey: "type")
         self.setValue(json["allocatedTime"] as! String, forKey: "allocatedTime")
         self.setValue(json["sleepingScope"] as! String, forKey: "sleepingScope")
-        eventType = 3
-        let dateString = json["eventDate"] as! String
-        let eventDate = DateAdmin.dateFromServer(date: dateString)
-        self.setValue(eventDate, forKey: "eventDate")
     }
     
     
