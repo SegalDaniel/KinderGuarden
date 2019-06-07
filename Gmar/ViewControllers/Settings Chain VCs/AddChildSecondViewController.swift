@@ -82,6 +82,16 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
             
             //WHY IT DOESNT GO BACK TO HOME SCREEN???
             Model.instance.sendToFB(child: child) { (err) in
+                if err == nil{
+                    loadingView.dismiss(animated: true, completion: {
+                        self.unwindHome(self)
+                    })
+                }
+                else{
+                    let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
+                    self.present(alert, animated: true, completion: nil)
+                }
+                /*
                 loadingView.dismiss(animated: true, completion: {
                     if err == nil{
                         self.performSegue(withIdentifier: "unwindToMain", sender: nil)
@@ -90,7 +100,7 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
                         let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
                         self.present(alert, animated: true, completion: nil)
                     }
-                })
+                })*/
             }
         }
         loadingView.dismiss(animated: true, completion: nil)
