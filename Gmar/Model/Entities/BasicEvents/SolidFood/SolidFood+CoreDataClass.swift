@@ -29,7 +29,6 @@ public class SolidFood: BasicEvent {
         BasicEvent.saveGlobals(event: self, json: json)
         self.setValue(Int16(Enums.BasicEvent.solidFoods.rawValue), forKey: "eventType")
         let amount = json["amount"] as! String
-        //        self.setValue(json["amount"] as! Int, forKey: "amount")
         self.setValue(Int16(amount), forKey: "amount")
         self.setValue(json["consumedAmount"] as! String, forKey: "consumedAmount")
         self.setValue(json["mealType"] as! String, forKey: "mealType")

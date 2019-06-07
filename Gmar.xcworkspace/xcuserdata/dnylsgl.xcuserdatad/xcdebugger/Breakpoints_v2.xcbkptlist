@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/Model.swift"
-            timestampString = "581591657.080477"
+            timestampString = "581592156.658008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/Model.swift"
-            timestampString = "581591657.080543"
+            timestampString = "581592156.65808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/Model.swift"
-            timestampString = "581591657.080673"
+            timestampString = "581592156.658222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
@@ -294,11 +294,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/ModelHttp/ModelHttp.swift"
-            timestampString = "581591366.9314131"
+            timestampString = "581592156.658293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/ModelHttp/JsonParsing.swift"
-            timestampString = "581591657.0807869"
+            timestampString = "581592156.658753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -374,17 +374,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Gmar/Model/ModelHttp/JsonParsing.swift"
-            timestampString = "581591657.080842"
+            filePath = "Gmar/Model/Entities/BasicEvents/LiquidFood/LiquidFood+CoreDataClass.swift"
+            timestampString = "581592156.65882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "parseBasicEvent(jsonResponse:)"
-            landmarkType = "7">
+            startingLineNumber = "54"
+            endingLineNumber = "54">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -394,27 +392,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gmar/Model/ModelHttp/JsonParsing.swift"
-            timestampString = "581591657.080888"
+            timestampString = "581592156.658878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "parseBasicEvent(jsonResponse:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gmar/Model/Entities/BasicEvents/LiquidFood/LiquidFood+CoreDataClass.swift"
-            timestampString = "581591657.080936"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -26,12 +26,18 @@ public class LiquidFood: BasicEvent {
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.liquidFoodEntity, insertInto: Model.instance.managedContext)
         BasicEvent.saveGlobals(event: self, json: json)
-        self.setValue(Int16(Enums.BasicEvent.tamal.rawValue), forKey: "eventType")
         let amount = json["amount"] as! String
-        //        self.setValue(json["amount"] as! Int, forKey: "amount")
         self.setValue(Int16(amount), forKey: "amount")
         self.setValue(json["consumedAmount"] as! String, forKey: "consumedAmount")
         self.setValue(json["mealType"] as! String, forKey: "mealType")
+        let type = json["mealType"] as! String
+        if type == "tamal" {
+        self.setValue(Int16(Enums.BasicEvent.tamal.rawValue), forKey: "eventType")
+        }
+        else {
+            self.setValue(Int16(Enums.BasicEvent.milk.rawValue), forKey: "eventType")
+        }
+
     }
     
     

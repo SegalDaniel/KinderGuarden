@@ -22,8 +22,22 @@ public class DevelopmentalEvent: NSManagedObject {
     
     convenience init(json:[String:Any]) {
         self.init(entity: Model.instance.developmentEventEntity, insertInto: Model.instance.managedContext)
-        self.setValue(json["eventType"], forKey: "eventType")
-        self.setValue(json["eventDate"], forKey: "eventDate")
+        Model.instance.getChild(childID: json["childID"] as! String) { (child) in
+            Model.instance.getStaffByID(staffID: json["staffID"] as! String, callback: { (staff) in
+                if let child = child{
+                    if let staff = staff{
+                        let dateString = json["eventDate"] as! String
+                        let eventDate = DateAdmin.dateFromServer(date: dateString)
+                        self.setValue(eventDate, forKey: "eventDate")
+                        self.setValue(child, forKey: "child")
+                        self.setValue(staff, forKey: "staff")
+                        let id = json["eventID"] as! String
+                        //                        let intID = Int(id)! % 1000
+                        self.setValue(id, forKey: "eventID")
+                    }
+                }
+            })
+        }
     }
     
     func toJson() -> [String:Any]{
