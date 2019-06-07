@@ -60,9 +60,6 @@ class IndividualInfoViewController: MyViewController {
         initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView, familyCollectionView, notesCollectionView])
         initDatesBtns()
         childImageView.layer.cornerRadius = 10
-        Model.instance.getBasicEventsFromServer(childID: child!.childID!) { (events) in
-            
-        }
     }
     
     func initDatesBtns(){
@@ -88,6 +85,7 @@ class IndividualInfoViewController: MyViewController {
                     self.child = child
                     self.loadGeneralNote()
                     self.loadFamilyReports()
+                    self.loadAlerts()
                     self.titleItem.title = "מידע על \(child.firstName!)"
                     let image = Model.instance.loadImageFromDiskWith(fileName: child.childID!)
                     if let image = image{
@@ -363,6 +361,7 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     }
     
     func cellTapped(event:BasicEvent, description: String) {
+        print(event.eventID ?? "no ID")
         let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
         let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
         self.present(alert, animated: true, completion: nil)

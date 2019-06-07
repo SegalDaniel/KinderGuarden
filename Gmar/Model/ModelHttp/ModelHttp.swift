@@ -24,6 +24,7 @@ class ModelHttp{
             if error != nil || data == nil {
                 print("Client error!")
                 callback(error)
+                return
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {

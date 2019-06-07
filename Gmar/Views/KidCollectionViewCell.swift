@@ -40,6 +40,18 @@ class KidCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        kidButton.isEnabled = true
+        if let child = child{
+            if child.gender == "girl"{
+                kidButton.setBackgroundColor(color: Utility.btnPink)
+            }
+            else{
+                kidButton.setBackgroundColor(color: Utility.btnBackColor)
+            }
+        }
+    }
+    
     @IBAction func tapped(_ sender: Any){
         delegate?.kidCellTapped(child: child!)
     }

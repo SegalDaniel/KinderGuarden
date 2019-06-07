@@ -10,10 +10,19 @@ import Foundation
 
 class DateAdmin{
     
-    static func dateFromServer(date:String) -> Date?{
+    static func dateFromServer(date:String) -> Date{
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY-MM-d HH:mm:ss ZZ"
-        return formatter.date(from: date)
+        var d = formatter.date(from: date)
+        if d == nil{
+            formatter.dateFormat = "YYYY-MM-d HH:mm:ss"
+            d = formatter.date(from: date)
+        }
+        if d == nil{
+            formatter.dateFormat = "d/MM/YYYY HH:mm:ss ZZ"
+            d = formatter.date(from: date)
+        }
+        return d!
     }
     
     static func currentDateEN(timeStyle:DateFormatter.Style = .medium, dateStyle:DateFormatter.Style = .short) -> String{

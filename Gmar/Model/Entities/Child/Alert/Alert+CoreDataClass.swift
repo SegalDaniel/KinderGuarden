@@ -30,7 +30,7 @@ public class Alert: NSManagedObject {
             self.setValue(d, forKey: "alertDate")
             self.setValue(Int16(truncating: json["type"] as! NSNumber), forKey: "type")
             self.setValue(Int16(truncating: json["level"] as! NSNumber), forKey: "level")
-            self.setValue(json["responsibleEvents"] as! String, forKey: "eventsLeading")
+            //self.setValue(json["responsibleEvents"] as! String, forKey: "eventsLeading")
             self.setValue(json["actionNeeded"] as! String, forKey: "actionNeeded")
             self.child = child
             }
@@ -59,7 +59,7 @@ public class Alert: NSManagedObject {
         let action = rhs["actionNeeded"] as! String
         let childID = rhs["childID"] as! String
         let date = rhs["alertDate"] as! String
-        let d = DateAdmin.dateFromServer(date: date) as NSDate?
+        let d = DateAdmin.dateFromServer(date: date) as! NSDate
         if lhs.child?.childID == childID && lhs.alertDate == d && lhs.actionNeeded == action{
             return true
         }

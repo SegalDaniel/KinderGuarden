@@ -21,6 +21,7 @@ public class Attendance: BasicEvent {
         self.setValue(child, forKey: "child")
         self.setValue(staff, forKey: "staff")
         self.setValue(authorized, forKey: "authorized")
+        self.setValue(String(eventDate.hashValue + Int(eventType)), forKey: "eventID")
     }
     
     convenience init(json:[String:Any]) {

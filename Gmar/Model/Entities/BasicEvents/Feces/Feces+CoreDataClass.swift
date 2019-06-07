@@ -21,6 +21,9 @@ public class Feces: BasicEvent {
         self.setValue(eventDate, forKey: "eventDate")
         self.setValue(child, forKey: "child")
         self.setValue(staff, forKey: "staff")
+        let id = String(eventDate.hashValue + Int(eventType))
+        print(id)
+        self.setValue(id, forKey: "eventID")
     }
     
     convenience  init(json:[String:Any]){
