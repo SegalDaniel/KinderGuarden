@@ -48,6 +48,7 @@ extension ModelHttp{
         let dev = jsonResponse["developmentalEvent"]! as! NSArray
         self.parsedevelopmentalEvents(jsonArr: dev)
         //let fam = jsonResponse["familyReportEvent"]! as! NSArray
+        Model.instance.saveToDB(callback: nil)
     }
     
     
@@ -151,6 +152,11 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        Model.instance.managedContext.delete(old)
+                        Model.instance.saveToDB(callback: nil)
+                        exist = false
+                    }
                 })
                 if !exist{
                     events.append(Feces(json: jEvent))

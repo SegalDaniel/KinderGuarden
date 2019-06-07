@@ -14,7 +14,7 @@ public class BasicEvent: NSManagedObject {
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["eventType"] = eventType
-        json["eventID"] = String(eventDate.hashValue)
+        json["eventID"] = eventID
         json["eventDate"] = eventDate
         json["level"] = level
         json["childID"] = child?.childID
@@ -36,7 +36,6 @@ public class BasicEvent: NSManagedObject {
                             event.setValue(Int16(truncating: sLevel as! NSNumber), forKey: "level")
                         }
                         let id = json["eventID"] as! String
-//                        let intID = Int(id)! % 1000
                         event.setValue(id, forKey: "eventID")
                     }
                 }

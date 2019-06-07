@@ -18,6 +18,10 @@ class DateAdmin{
             formatter.dateFormat = "YYYY-MM-d HH:mm:ss"
             d = formatter.date(from: date)
         }
+        if d == nil{
+            formatter.dateFormat = "d/MM/YYYY HH:mm:ss ZZ"
+            d = formatter.date(from: date)
+        }
         return d!
     }
     

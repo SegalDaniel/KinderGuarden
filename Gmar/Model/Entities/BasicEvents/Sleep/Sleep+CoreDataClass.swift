@@ -21,6 +21,7 @@ public class Sleep: BasicEvent {
         self.setValue(eventDate, forKey: "eventDate")
         self.setValue(child, forKey: "child")
         self.setValue(staff, forKey: "staff")
+        self.setValue(String(eventDate.hashValue + Int(eventType)), forKey: "eventID")
     }
     
     convenience init(json:[String:Any]) {
