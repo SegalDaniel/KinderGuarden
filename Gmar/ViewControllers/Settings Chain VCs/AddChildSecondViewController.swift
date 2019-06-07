@@ -80,6 +80,7 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
                 Model.instance.saveImageToDisk(imageName: id, image: image)
             }
             
+            //WHY IT DOESNT GO BACK TO HOME SCREEN???
             Model.instance.sendToFB(child: child) { (err) in
                 loadingView.dismiss(animated: true, completion: {
                     if err == nil{

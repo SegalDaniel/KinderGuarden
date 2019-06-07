@@ -37,7 +37,6 @@ public class AuthorizedAccompanist: NSManagedObject {
         json["phone"] = phone
         json["relation"] = relation
         json["authorizedID"] = authorizeId
-        //        json["child"] = child?.toJson()
         return json
     }
     
