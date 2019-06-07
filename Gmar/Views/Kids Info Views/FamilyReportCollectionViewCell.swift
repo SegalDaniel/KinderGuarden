@@ -23,6 +23,11 @@ class FamilyReportCollectionViewCell: UICollectionViewCell {
         Utility.viewTapRecognizer(target: self, toBeTapped: reportTextView, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: timeLabel, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: self, action: #selector(tapped))
+        
+        Utility.viewPanRecognizer(target: self, toBeTapped: reportTextView, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: timeLabel, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: self, action: #selector(dragExit))
+        
         if report != nil{
             initEvent()
         }
@@ -47,10 +52,15 @@ class FamilyReportCollectionViewCell: UICollectionViewCell {
             self.reportTextView.layer.opacity = 1
         }
     }
+    
+    @IBAction func dragExit(_ sender: Any){
+        delegate?.cellDragExit(report: report!)
+    }
 }
 
 
 protocol FamilyReportCollectionViewCellDelegate {
     func cellTapped(report:FamilyReport, description:String)
+    func cellDragExit(report:FamilyReport)
 }
 

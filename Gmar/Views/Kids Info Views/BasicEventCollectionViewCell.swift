@@ -24,6 +24,11 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
         Utility.viewTapRecognizer(target: self, toBeTapped: mainImageView, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: timeLabel, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: self, action: #selector(tapped))
+        
+        Utility.viewPanRecognizer(target: self, toBeTapped: mainImageView, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: timeLabel, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: self, action: #selector(dragExit))
+        
         if event != nil{
             initEvent()
         }
@@ -141,8 +146,13 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             self.mainImageView.layer.opacity = 1
         }
     }
+    
+    @IBAction func dragExit(_ sender: Any){
+        delegate?.cellDragExit(event: event!)
+    }
 }
 
 protocol BasicEventCollectionViewCellDelegate {
     func cellTapped(event:BasicEvent, description:String)
+    func cellDragExit(event:BasicEvent)
 }

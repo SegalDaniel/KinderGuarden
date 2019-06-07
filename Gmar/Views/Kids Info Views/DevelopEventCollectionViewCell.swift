@@ -24,6 +24,11 @@ class DevelopEventCollectionViewCell: UICollectionViewCell {
         Utility.viewTapRecognizer(target: self, toBeTapped: eventTextView, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: timeLabel, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: self, action: #selector(tapped))
+        
+        Utility.viewPanRecognizer(target: self, toBeTapped: eventTextView, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: timeLabel, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: self, action: #selector(dragExit))
+        
         if event != nil{
             initEvent()
         }
@@ -39,7 +44,6 @@ class DevelopEventCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func tapped(_ sender: Any){
-        
         delegate?.cellTapped(event: event!, description: "\(details!)\nדווח על-ידי \(event!.staff!.firstName!) \(event!.staff!.lastName!)")
         self.layer.shadowOpacity = 0.0
         timeLabel.layer.opacity = 0.5
@@ -50,9 +54,14 @@ class DevelopEventCollectionViewCell: UICollectionViewCell {
             self.eventTextView.layer.opacity = 1
         }
     }
+    
+    @IBAction func dragExit(_ sender: Any){
+        delegate?.cellDragExit(event: event!)
+    }
 }
 
 
 protocol DevelopEventCollectionViewCellDelegate {
     func cellTapped(event:DevelopmentalEvent, description:String)
+    func cellDragExit(event: DevelopmentalEvent)
 }

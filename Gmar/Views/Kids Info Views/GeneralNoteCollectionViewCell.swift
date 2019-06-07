@@ -23,6 +23,10 @@ class GeneralNoteCollectionViewCell: UICollectionViewCell {
         Utility.viewTapRecognizer(target: self, toBeTapped: noteTextView, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: timeLabel, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: self, action: #selector(tapped))
+        
+        Utility.viewPanRecognizer(target: self, toBeTapped: noteTextView, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: timeLabel, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: self, action: #selector(dragExit))
         if note != nil{
             initEvent()
         }
@@ -47,9 +51,14 @@ class GeneralNoteCollectionViewCell: UICollectionViewCell {
             self.noteTextView.layer.opacity = 1
         }
     }
+    
+    @IBAction func dragExit(_ sender: Any){
+        delegate?.cellDragExit(note: note!)
+    }
 }
 
 
 protocol GeneralNoteCollectionViewCellDelegate {
     func cellTapped(note:GeneralNote, description:String)
+    func cellDragExit(note:GeneralNote)
 }
