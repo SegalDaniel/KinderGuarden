@@ -82,31 +82,17 @@ class AddChildSecondViewController: MyViewController, UITableViewDataSource, UIT
             
             //WHY IT DOESNT GO BACK TO HOME SCREEN???
             Model.instance.sendToFB(child: child) { (err) in
-                DispatchQueue.main.async {
-                    if err == nil{
-                        loadingView.dismiss(animated: true, completion: {
-                            self.performSegue(withIdentifier: "unwindToMain", sender: nil)
-                        }) 
-                    }
-                    else{
-                        let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                }
-                
-                /*
                 loadingView.dismiss(animated: true, completion: {
-                    if err == nil{
-                        self.performSegue(withIdentifier: "unwindToMain", sender: nil)
-                    }
-                    else{
+                    if err != nil{
                         let alert = SimpleAlert(_title: "רק רגע לפני שנמשיך", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
                         self.present(alert, animated: true, completion: nil)
                     }
-                })*/
+                    else{
+                        self.performSegue(withIdentifier: "exit", sender: nil)
+                    }
+                })
             }
         }
-        loadingView.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addCellBtnClicked(_ sender: UIButton) {

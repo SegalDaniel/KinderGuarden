@@ -1389,7 +1389,7 @@
                         <outlet property="diseasesTableView" destination="QWl-ou-4Bq" id="Qgh-in-4oE"/>
                         <outlet property="foodsTableView" destination="wsb-SY-C81" id="fkL-c0-BJM"/>
                         <outlet property="medicationsTableView" destination="5mV-3u-tv5" id="MiB-uv-Dfd"/>
-                        <segue destination="lMM-Lk-V51" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWindowWithSegue:" id="Bb1-Xa-CqP"/>
+                        <segue destination="lMM-Lk-V51" kind="unwind" identifier="exit" unwindAction="unwindToMainWindowWithSegue:" id="Bb1-Xa-CqP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3K6-14-vea" userLabel="First Responder" sceneMemberID="firstResponder"/>

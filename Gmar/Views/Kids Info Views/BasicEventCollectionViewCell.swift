@@ -40,6 +40,19 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
         let time = DateAdmin.extractDateAndTime(date: date as Date, dateStyle: .none)
         timeLabel.text = time
         setImageAndDescription(type: type)
+        switch event!.level {
+        case 1:
+            self.backgroundColor = Utility.backCloverColor
+            break
+        case 2:
+            self.backgroundColor = Utility.yellowColor
+            break
+        case 3:
+            self.backgroundColor = Utility.btnSalmon
+            break
+        default:
+            break
+        }
     }
     
     func setImageAndDescription(type:Enums.BasicEvent){
