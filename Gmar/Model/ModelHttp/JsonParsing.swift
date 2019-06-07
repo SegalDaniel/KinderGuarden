@@ -338,11 +338,11 @@ extension ModelHttp{
         }
     }
     
-    //MARK: - Attendance
+    //MARK: - Developmental
     func parsedevelopmentalEvents(jsonArr:NSArray){
         if jsonArr.count > 0{
             var events:[DevelopmentalEvent] = []
-            let olds = fetch(entityName: "DevelopmentalEvent") as! [DevelopmentalEvent]
+            let olds = fetchDev(entityName: "DevelopmentalEvent") as! [DevelopmentalEvent]
             jsonArr.forEach { (jsonEvent) in
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
@@ -359,5 +359,9 @@ extension ModelHttp{
     func fetch(entityName:String) -> [BasicEvent]?{
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         return try! Model.instance.managedContext.fetch(fetch) as! [BasicEvent]
+    }
+    func fetchDev(entityName:String) -> [DevelopmentalEvent]?{
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        return try! Model.instance.managedContext.fetch(fetch) as! [DevelopmentalEvent]
     }
 }
