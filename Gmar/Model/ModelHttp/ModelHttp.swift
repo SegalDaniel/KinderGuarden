@@ -281,27 +281,30 @@ class ModelHttp{
                 //here dataResponse received from a network request
                 let jsonResponse = try JSONSerialization.jsonObject(with:
                     dataResponse, options: []) as! NSDictionary
-                let jsonArr = jsonResponse["Alert"]! as! NSArray
-                var alerts:[Alert] = []
-                Model.instance.getAlertsFromCoreData(callback: { (oldAlerts) in
-                    jsonArr.forEach({ (jsonAlert) in
-                        var exist = false
-                        let jAlert = jsonAlert as! [String:Any]
-                        oldAlerts.forEach({ (oldAlert) in
-                            if oldAlert == jAlert{
-                                exist = true
+                if let jsonArr = jsonResponse["Alert"] as? NSArray{
+                    var alerts:[Alert] = []
+                    Model.instance.getAlertsFromCoreData(callback: { (oldAlerts) in
+                        jsonArr.forEach({ (jsonAlert) in
+                            var exist = false
+                            let jAlert = jsonAlert as! [String:Any]
+                            oldAlerts.forEach({ (oldAlert) in
+                                if oldAlert == jAlert{
+                                    exist = true
+                                }
+                            })
+                            if !exist{
+                                alerts.append(Alert(json: jAlert))
                             }
                         })
-                        if !exist{
-                            alerts.append(Alert(json: jAlert))
-                        }
+                        callback()
                     })
-                    callback()
-                }) 
+                }
             } catch let parsingError {
                 print("Error", parsingError)
             }
+            
         }
+        
         task.resume()
     }
     

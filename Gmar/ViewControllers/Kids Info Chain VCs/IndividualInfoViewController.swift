@@ -301,6 +301,7 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
         showDeleteALertView {
             Model.instance.managedContext.delete(event)
             Model.instance.saveToDB(callback: nil)
+            self.initChildData()
         }
     }
     
@@ -308,6 +309,7 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
         showDeleteALertView {
             Model.instance.managedContext.delete(event)
             Model.instance.saveToDB(callback: nil)
+            self.initChildData()
         }
     }
     
@@ -315,6 +317,7 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
         showDeleteALertView {
             Model.instance.managedContext.delete(report)
             Model.instance.saveToDB(callback: nil)
+            self.initChildData()
         }
     }
     
@@ -322,6 +325,7 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
         showDeleteALertView {
             Model.instance.managedContext.delete(note)
             Model.instance.saveToDB(callback: nil)
+            self.initChildData()
         }
     }
     
@@ -329,6 +333,7 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
         showDeleteALertView {
             Model.instance.managedContext.delete(alert)
             Model.instance.saveToDB(callback: nil)
+            self.initChildData()
         }
     }
     
