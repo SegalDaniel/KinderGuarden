@@ -19,12 +19,12 @@ class HeartRateViewController: MyViewController {
         animateView(heartImageView, animate: true)
         pulseListener = ModelNotification.pulseAlert.observe(cb: { (pulse) in
             DispatchQueue.main.async {
-                let p = Double(pulse)!
-                if p < 40.0 && p > 20.0{
+                let p = Int(pulse)!
+                if p < 40 && p > 20{
                     self.bpmLabel.textColor = UIColor.orange
                     self.animateViewEmergency(self.bpmLabel, animate: true)
                 }
-                else if p >= 0.0 && p <= 20.0{
+                else if p >= 0 && p <= 20{
                     self.bpmLabel.textColor = UIColor.red
                     self.animateViewEmergency(self.bpmLabel, animate: true)
                 }
