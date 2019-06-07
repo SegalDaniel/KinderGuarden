@@ -32,7 +32,6 @@ public class LiquidFood: BasicEvent {
         self.setValue(Int16(amount), forKey: "amount")
         self.setValue(json["consumedAmount"] as! String, forKey: "consumedAmount")
         self.setValue(json["mealType"] as! String, forKey: "mealType")
-        self.setValue(" ", forKey: "mealInMenu")
     }
     
     
@@ -44,5 +43,5 @@ public class LiquidFood: BasicEvent {
         return json
         
     }
-
+    
 }

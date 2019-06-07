@@ -86,6 +86,8 @@
 		A850810C22AA37AF00B057C1 /* BasicEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A850810A22AA37AF00B057C1 /* BasicEvent+CoreDataProperties.swift */; };
 		A850810F22AA584200B057C1 /* DevelopmentalEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A850810D22AA584200B057C1 /* DevelopmentalEvent+CoreDataClass.swift */; };
 		A850811022AA584200B057C1 /* DevelopmentalEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A850810E22AA584200B057C1 /* DevelopmentalEvent+CoreDataProperties.swift */; };
+		A850811322AA620500B057C1 /* LiquidFood+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A850811122AA620500B057C1 /* LiquidFood+CoreDataClass.swift */; };
+		A850811422AA620500B057C1 /* LiquidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A850811222AA620500B057C1 /* LiquidFood+CoreDataProperties.swift */; };
 		A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */; };
 		A8576DFE224A6D2700CBA907 /* GeneralBehavior+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576DFC224A6D2700CBA907 /* GeneralBehavior+CoreDataProperties.swift */; };
 		A8576E05224A6D9500CBA907 /* Parasites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8576E03224A6D9500CBA907 /* Parasites+CoreDataClass.swift */; };
@@ -126,8 +128,6 @@
 		A88BBFAB225A7E5100F9C0B4 /* Water+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFA9225A7E5100F9C0B4 /* Water+CoreDataProperties.swift */; };
 		A88BBFAE225A7EB900F9C0B4 /* SolidFood+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFAC225A7EB900F9C0B4 /* SolidFood+CoreDataClass.swift */; };
 		A88BBFAF225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */; };
-		A88BBFB2225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */; };
-		A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */; };
 		A896494822A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */; };
 		A896494922A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */; };
 		A896494C22A179E80004FDE3 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */; };
@@ -222,6 +222,8 @@
 		A850810A22AA37AF00B057C1 /* BasicEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A850810D22AA584200B057C1 /* DevelopmentalEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A850810E22AA584200B057C1 /* DevelopmentalEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevelopmentalEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A850811122AA620500B057C1 /* LiquidFood+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A850811222AA620500B057C1 /* LiquidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576DFB224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8576DFC224A6D2700CBA907 /* GeneralBehavior+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralBehavior+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8576E03224A6D9500CBA907 /* Parasites+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parasites+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -262,8 +264,6 @@
 		A88BBFA9225A7E5100F9C0B4 /* Water+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Water+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A88BBFAC225A7EB900F9C0B4 /* SolidFood+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidFood+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiquidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -786,8 +786,8 @@
 		A8C41477223EF1F70072B0A8 /* LiquidFood */ = {
 			isa = PBXGroup;
 			children = (
-				A88BBFB0225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift */,
-				A88BBFB1225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift */,
+				A850811122AA620500B057C1 /* LiquidFood+CoreDataClass.swift */,
+				A850811222AA620500B057C1 /* LiquidFood+CoreDataProperties.swift */,
 			);
 			path = LiquidFood;
 			sourceTree = "<group>";
@@ -1002,11 +1002,11 @@
 				18DE415C226CBAC800314AA0 /* KidsInfoViewController.swift in Sources */,
 				1885E94622A3BA8500B6FAE5 /* ImmidiateAlert.swift in Sources */,
 				183CFCD9226F7D1700F7FF68 /* EdgeShadowLayer.swift in Sources */,
-				A88BBFB3225A7F0E00F9C0B4 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1806E46B2268D24400F9CCE3 /* MyViewController.swift in Sources */,
 				1835C4FD228FF98B00BF2AF2 /* FamilyReportEventViewController.swift in Sources */,
 				18586D6022730926004F219C /* KidCollectionViewCell.swift in Sources */,
 				1885E94822A3F49600B6FAE5 /* HeartRateViewController.swift in Sources */,
+				A850811422AA620500B057C1 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A872BE1922914FAF0078DC5F /* Child+CoreDataClass.swift in Sources */,
 				1866066F226B597B006F20B0 /* MyButtonView.swift in Sources */,
@@ -1037,7 +1037,6 @@
 				189B354522428E8E00D33A6C /* DiasesMedTableViewCell.swift in Sources */,
 				A8299D6E22538538006E961F /* ChronicDisease+CoreDataClass.swift in Sources */,
 				1835C4FA228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift in Sources */,
-				A88BBFB2225A7F0E00F9C0B4 /* LiquidFood+CoreDataClass.swift in Sources */,
 				A88BBFAE225A7EB900F9C0B4 /* SolidFood+CoreDataClass.swift in Sources */,
 				A8576E21224A6F4C00CBA907 /* Urine+CoreDataClass.swift in Sources */,
 				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
@@ -1088,6 +1087,7 @@
 				18FA86FF224F6F8400CFA4ED /* SimpleAlert.swift in Sources */,
 				A8299D6A22537FDD006E961F /* Allergenic+CoreDataProperties.swift in Sources */,
 				A850810C22AA37AF00B057C1 /* BasicEvent+CoreDataProperties.swift in Sources */,
+				A850811322AA620500B057C1 /* LiquidFood+CoreDataClass.swift in Sources */,
 				A850810F22AA584200B057C1 /* DevelopmentalEvent+CoreDataClass.swift in Sources */,
 				A88BBFA622576A9A00F9C0B4 /* Food+CoreDataClass.swift in Sources */,
 				A872BE1222914C930078DC5F /* Attendance+CoreDataProperties.swift in Sources */,

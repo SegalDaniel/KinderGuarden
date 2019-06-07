@@ -20,8 +20,8 @@ extension ModelHttp{
         self.parseWaterEvents(jsonArr: wat)
         let sol = jsonResponse["solidFoodEvent"]! as! NSArray //works
         self.parseSolidFoodEvents(jsonArr: sol)
-//        let liq = jsonResponse["liquidFoodEvent"]! as! NSArray
-//        self.parseLiquidFoodEvents(jsonArr: liq)
+        let liq = jsonResponse["liquidFoodEvent"]! as! NSArray //works
+        self.parseLiquidFoodEvents(jsonArr: liq)
         let fec = jsonResponse["fecesEvent"]! as! NSArray //works
         self.parseFecesEvents(jsonArr: fec)
         let uri = jsonResponse["urineEvent"]! as! NSArray //works
@@ -46,6 +46,7 @@ extension ModelHttp{
 //        self.parseGeneralBehaviorEvents(jsonArr: genB)
         //let genN = jsonResponse["generalNoteEvent"]! as! NSArray
         let dev = jsonResponse["developmentalEvent"]! as! NSArray
+        self.parsedevelopmentalEvents(jsonArr: dev)
         //let fam = jsonResponse["familyReportEvent"]! as! NSArray
     }
     
@@ -342,7 +343,7 @@ extension ModelHttp{
     func parsedevelopmentalEvents(jsonArr:NSArray){
         if jsonArr.count > 0{
             var events:[DevelopmentalEvent] = []
-            let olds = fetchDev(entityName: "DevelopmentalEvent") as! [DevelopmentalEvent]
+            let olds = fetchDev(entityName: "DevelopmentalEvent") as [DevelopmentalEvent]
             jsonArr.forEach { (jsonEvent) in
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
@@ -360,7 +361,7 @@ extension ModelHttp{
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         return try! Model.instance.managedContext.fetch(fetch) as! [BasicEvent]
     }
-    func fetchDev(entityName:String) -> [DevelopmentalEvent]?{
+    func fetchDev(entityName:String) -> [DevelopmentalEvent]{
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         return try! Model.instance.managedContext.fetch(fetch) as! [DevelopmentalEvent]
     }

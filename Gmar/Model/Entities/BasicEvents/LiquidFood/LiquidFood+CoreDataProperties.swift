@@ -2,7 +2,7 @@
 //  LiquidFood+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 07/04/2019.
+//  Created by Daniel Segal on 07/06/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
