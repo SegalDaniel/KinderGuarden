@@ -36,8 +36,8 @@ public class BasicEvent: NSManagedObject {
                             event.setValue(Int16(truncating: sLevel as! NSNumber), forKey: "level")
                         }
                         let id = json["eventID"] as! String
-                        let intID = Int(id)! % 1000
-                        event.setValue(intID, forKey: "eventID")
+//                        let intID = Int(id)! % 1000
+                        event.setValue(id, forKey: "eventID")
                     }
                 }
             })
@@ -45,7 +45,7 @@ public class BasicEvent: NSManagedObject {
     }
     
     static func ==(lhs:BasicEvent, rhs:[String:Any]) -> Bool{
-        let id = Int(rhs["eventID"] as! String)! % 1000
+        let id = rhs["eventID"] as! String
         let id2 = lhs.eventID
         let b = id2 == id
         return b

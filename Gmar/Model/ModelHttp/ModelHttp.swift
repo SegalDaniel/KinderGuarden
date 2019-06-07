@@ -132,7 +132,7 @@ class ModelHttp{
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: dataResponse, options: []) as! NSDictionary
                 self.parseBasicEvent(jsonResponse: jsonResponse)
-                
+            
             } catch let parsingError {
                 print("Error", parsingError)
             }
