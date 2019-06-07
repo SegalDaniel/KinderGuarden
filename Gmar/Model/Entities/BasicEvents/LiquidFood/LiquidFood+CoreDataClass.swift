@@ -27,10 +27,12 @@ public class LiquidFood: BasicEvent {
         self.init(entity: Model.instance.liquidFoodEntity, insertInto: Model.instance.managedContext)
         BasicEvent.saveGlobals(event: self, json: json)
         self.setValue(Int16(Enums.BasicEvent.tamal.rawValue), forKey: "eventType")
-        self.setValue(json["amount"] as! Int16, forKey: "amount")
+        let amount = json["amount"] as! String
+        //        self.setValue(json["amount"] as! Int, forKey: "amount")
+        self.setValue(Int16(amount), forKey: "amount")
         self.setValue(json["consumedAmount"] as! String, forKey: "consumedAmount")
         self.setValue(json["mealType"] as! String, forKey: "mealType")
-        self.setValue(json["mealInMenu"] as! String, forKey: "mealInMenu")
+        self.setValue(" ", forKey: "mealInMenu")
     }
     
     

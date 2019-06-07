@@ -36,12 +36,12 @@ public class DevelopmentalEvent: NSManagedObject {
         return json
         
     }
-    /*
-    static func == (lhs:DevelopmentalEvent, rhs:[String:Any]) -> Bool{
-        let date
-        if lhs.eventID == Int16(rhs["eventID"] as! String){
-            
-        }
+    
+    static func ==(lhs:DevelopmentalEvent, rhs:[String:Any]) -> Bool{
+        let id = rhs["eventID"] as! String
+        let id2 = lhs.eventID
+        let b = id2 == id
+        return b
     }
-    */
+    
 }

@@ -2,7 +2,7 @@
 //  DevelopmentalEvent+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 28/05/2019.
+//  Created by Daniel Segal on 07/06/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -18,8 +18,8 @@ extension DevelopmentalEvent {
     }
 
     @NSManaged public var eventDate: NSDate?
+    @NSManaged public var eventID: String?
     @NSManaged public var eventType: Int16
-    @NSManaged public var eventID: Int16
     @NSManaged public var child: Child?
     @NSManaged public var staff: Staff?
 

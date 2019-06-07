@@ -14,38 +14,38 @@ extension ModelHttp{
     func parseBasicEvent(jsonResponse:NSDictionary){
         let att = jsonResponse["attendanceEvent"]! as! NSArray //works
         self.parseAttandanceEvents(jsonArr: att)
-        let sle = jsonResponse["sleepEvent"]! as! NSArray
+        let sle = jsonResponse["sleepEvent"]! as! NSArray //works
         self.parseSleepEvents(jsonArr: sle)
         let wat = jsonResponse["waterEvent"]! as! NSArray //works
         self.parseWaterEvents(jsonArr: wat)
-        let sol = jsonResponse["solidFoodEvent"]! as! NSArray
+        let sol = jsonResponse["solidFoodEvent"]! as! NSArray //works
         self.parseSolidFoodEvents(jsonArr: sol)
-        let liq = jsonResponse["liquidFoodEvent"]! as! NSArray
-        self.parseLiquidFoodEvents(jsonArr: liq)
+//        let liq = jsonResponse["liquidFoodEvent"]! as! NSArray
+//        self.parseLiquidFoodEvents(jsonArr: liq)
         let fec = jsonResponse["fecesEvent"]! as! NSArray //works
         self.parseFecesEvents(jsonArr: fec)
-        let uri = jsonResponse["urineEvent"]! as! NSArray
+        let uri = jsonResponse["urineEvent"]! as! NSArray //works
         self.parseUrineEvents(jsonArr: uri)
-        let cough = jsonResponse["coughEvent"]! as! NSArray
+        let cough = jsonResponse["coughEvent"]! as! NSArray //works
         self.parseCoughEvents(jsonArr: cough)
-        let sec = jsonResponse["secretionEvent"]! as! NSArray
+        let sec = jsonResponse["secretionEvent"]! as! NSArray //works
         self.parseSecretionEvents(jsonArr: sec)
-        let vom = jsonResponse["vomitusEvent"]! as! NSArray
+        let vom = jsonResponse["vomitusEvent"]! as! NSArray //works
         self.parseVomitusEvents(jsonArr: vom)
-        let rash = jsonResponse["rashEvent"]! as! NSArray
+        let rash = jsonResponse["rashEvent"]! as! NSArray //works
         self.parseRashEvents(jsonArr: rash)
-        let fev = jsonResponse["feverEvent"]! as! NSArray
-        self.parseFecesEvents(jsonArr: fev)
-        let dis = jsonResponse["diseaseEvent"]! as! NSArray
-        self.parseDiseaseEvents(jsonArr: dis)
-        let med = jsonResponse["medicationEvent"]! as! NSArray
-        self.parseMedicationEvents(jsonArr: med)
-        let par = jsonResponse["parasitesEvent"]! as! NSArray
-        self.parseParasitesEvents(jsonArr: par)
-        let genB = jsonResponse["generalBehaviorEvent"]! as! NSArray
-        self.parseGeneralBehaviorEvents(jsonArr: genB)
+        let fev = jsonResponse["feverEvent"]! as! NSArray //works
+        self.parseFeverEvents(jsonArr: fev)
+//        let dis = jsonResponse["diseaseEvent"]! as! NSArray
+//        self.parseDiseaseEvents(jsonArr: dis)
+//        let med = jsonResponse["medicationEvent"]! as! NSArray
+//        self.parseMedicationEvents(jsonArr: med)
+//        let par = jsonResponse["parasitesEvent"]! as! NSArray
+//        self.parseParasitesEvents(jsonArr: par)
+//        let genB = jsonResponse["generalBehaviorEvent"]! as! NSArray
+//        self.parseGeneralBehaviorEvents(jsonArr: genB)
         //let genN = jsonResponse["generalNoteEvent"]! as! NSArray
-        //let dev = jsonResponse["developmentalEvent"]! as! NSArray
+        let dev = jsonResponse["developmentalEvent"]! as! NSArray
         //let fam = jsonResponse["familyReportEvent"]! as! NSArray
     }
     
@@ -333,6 +333,24 @@ extension ModelHttp{
                 })
                 if !exist{
                     events.append(GeneralBehavior(json: jEvent))
+                }
+            }
+        }
+    }
+    
+    //MARK: - Attendance
+    func parsedevelopmentalEvents(jsonArr:NSArray){
+        if jsonArr.count > 0{
+            var events:[DevelopmentalEvent] = []
+            let olds = fetch(entityName: "DevelopmentalEvent") as! [DevelopmentalEvent]
+            jsonArr.forEach { (jsonEvent) in
+                let jEvent = jsonEvent as! [String:Any]
+                var exist = false
+                olds.forEach({ (old) in
+                    exist = old == jEvent
+                })
+                if !exist{
+                    events.append(DevelopmentalEvent(json: jEvent))
                 }
             }
         }
