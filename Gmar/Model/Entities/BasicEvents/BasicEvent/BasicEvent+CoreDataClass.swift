@@ -14,7 +14,7 @@ public class BasicEvent: NSManagedObject {
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["eventType"] = eventType
-        json["eventID"] = eventDate.hashValue % 100000000
+        json["eventID"] = String(eventDate.hashValue)
         json["eventDate"] = eventDate
         json["level"] = level
         json["childID"] = child?.childID

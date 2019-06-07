@@ -12,17 +12,17 @@ import CoreData
 extension ModelHttp{
     
     func parseBasicEvent(jsonResponse:NSDictionary){
-        let att = jsonResponse["attendanceEvent"]! as! NSArray
+        let att = jsonResponse["attendanceEvent"]! as! NSArray //works
         self.parseAttandanceEvents(jsonArr: att)
         let sle = jsonResponse["sleepEvent"]! as! NSArray
         self.parseSleepEvents(jsonArr: sle)
-        let wat = jsonResponse["waterEvent"]! as! NSArray
+        let wat = jsonResponse["waterEvent"]! as! NSArray //works
         self.parseWaterEvents(jsonArr: wat)
         let sol = jsonResponse["solidFoodEvent"]! as! NSArray
         self.parseSolidFoodEvents(jsonArr: sol)
         let liq = jsonResponse["liquidFoodEvent"]! as! NSArray
         self.parseLiquidFoodEvents(jsonArr: liq)
-        let fec = jsonResponse["fecesEvent"]! as! NSArray
+        let fec = jsonResponse["fecesEvent"]! as! NSArray //works
         self.parseFecesEvents(jsonArr: fec)
         let uri = jsonResponse["urineEvent"]! as! NSArray
         self.parseUrineEvents(jsonArr: uri)

@@ -26,7 +26,9 @@ public class Water: BasicEvent {
         self.init(entity: Model.instance.waterEntity, insertInto: Model.instance.managedContext)
         BasicEvent.saveGlobals(event: self, json: json)
         self.setValue(Int16(Enums.BasicEvent.water.rawValue), forKey: "eventType")
-        self.setValue(json["amount"] as! Int16, forKey: "amount")
+        let amount = json["amount"] as! String
+//        self.setValue(json["amount"] as! Int, forKey: "amount")
+        self.setValue(Int16(amount), forKey: "amount")
         self.setValue(json["consumedAmount"] as! String, forKey: "consumedAmount")
     }
     
