@@ -59,7 +59,7 @@ public class Alert: NSManagedObject {
         let action = rhs["actionNeeded"] as! String
         let childID = rhs["childID"] as! String
         let date = rhs["alertDate"] as! String
-        let d = DateAdmin.dateFromServer(date: date) as NSDate?
+        let d = DateAdmin.dateFromServer(date: date) as! NSDate
         if lhs.child?.childID == childID && lhs.alertDate == d && lhs.actionNeeded == action{
             return true
         }

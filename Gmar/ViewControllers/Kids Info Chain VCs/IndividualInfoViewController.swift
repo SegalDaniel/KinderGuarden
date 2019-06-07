@@ -88,6 +88,7 @@ class IndividualInfoViewController: MyViewController {
                     self.child = child
                     self.loadGeneralNote()
                     self.loadFamilyReports()
+                    self.loadAlerts()
                     self.titleItem.title = "מידע על \(child.firstName!)"
                     let image = Model.instance.loadImageFromDiskWith(fileName: child.childID!)
                     if let image = image{
