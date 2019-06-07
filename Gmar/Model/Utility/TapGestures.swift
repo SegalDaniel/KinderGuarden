@@ -22,4 +22,11 @@ extension Utility{
         toBeTapped.isUserInteractionEnabled = true
         toBeTapped.addGestureRecognizer(longPressRecognizer)
     }
+    
+    static func viewPanRecognizer(target: Any, toBeTapped:UIView, action:Selector){
+        let panRecognizer = UIPanGestureRecognizer(target: target, action: action)
+        panRecognizer.minimumNumberOfTouches = 2
+        toBeTapped.isUserInteractionEnabled = true
+        toBeTapped.addGestureRecognizer(panRecognizer)
+    }
 }

@@ -319,7 +319,7 @@ class ModelHttp{
                     dataResponse, options: []) as! NSDictionary
                 let pulseArr = jsonResponse["pulseAlert"]! as! NSArray
                 if let pulseObj = pulseArr.firstObject as? NSDictionary{
-                    let pulse = Double(truncating: pulseObj["pulse"] as! NSNumber).rounded(toPlaces: 2)
+                    let pulse = Int(truncating: pulseObj["pulse"] as! NSNumber)
                     callback(String(pulse))
                 }
             } catch let parsingError {

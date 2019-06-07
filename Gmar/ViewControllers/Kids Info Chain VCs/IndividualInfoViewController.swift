@@ -60,9 +60,9 @@ class IndividualInfoViewController: MyViewController {
         initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView, familyCollectionView, notesCollectionView])
         initDatesBtns()
         childImageView.layer.cornerRadius = 10
-        Model.instance.getBasicEventsFromServer(childID: child!.childID!) { (events) in
+        //Model.instance.getBasicEventsFromServer(childID: child!.childID!) { (events) in
             
-        }
+        //}
     }
     
     func initDatesBtns(){
@@ -297,6 +297,41 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
 
 //MARK: CollectionViewCells Delegate
 extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate, FamilyReportCollectionViewCellDelegate, GeneralNoteCollectionViewCellDelegate, AlertCollectionViewCellDelegate{
+    func cellDragExit(event: BasicEvent) {
+        showDeleteALertView {
+            Model.instance.managedContext.delete(event)
+            Model.instance.saveToDB(callback: nil)
+        }
+    }
+    
+    func cellDragExit(event: DevelopmentalEvent) {
+        showDeleteALertView {
+            Model.instance.managedContext.delete(event)
+            Model.instance.saveToDB(callback: nil)
+        }
+    }
+    
+    func cellDragExit(report: FamilyReport) {
+        showDeleteALertView {
+            Model.instance.managedContext.delete(report)
+            Model.instance.saveToDB(callback: nil)
+        }
+    }
+    
+    func cellDragExit(note: GeneralNote) {
+        showDeleteALertView {
+            Model.instance.managedContext.delete(note)
+            Model.instance.saveToDB(callback: nil)
+        }
+    }
+    
+    func cellDragExit(alert: Alert) {
+        showDeleteALertView {
+            Model.instance.managedContext.delete(alert)
+            Model.instance.saveToDB(callback: nil)
+        }
+    }
+    
     func cellTapped(alert: Alert, description: String) {
         let time = DateAdmin.extractDateAndTime(date: alert.alertDate! as Date, dateStyle: .short)
         
@@ -325,6 +360,17 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     func cellTapped(event:BasicEvent, description: String) {
         let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
         let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showDeleteALertView(callback:@escaping ()->Void){
+        let alert = UIAlertController(title: "רק רגע", message: "האם אתה בטוח שברצונך למחוק אירוע זה?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "מחק", style: .destructive, handler: { (action) in
+            callback()
+        }))
+        alert.addAction(UIAlertAction(title: "ביטול", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
         self.present(alert, animated: true, completion: nil)
     }
 }

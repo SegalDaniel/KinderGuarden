@@ -23,6 +23,11 @@ class AlertCollectionViewCell: UICollectionViewCell {
         Utility.viewTapRecognizer(target: self, toBeTapped: alertTextView, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: timeLabel, action: #selector(tapped))
         Utility.viewTapRecognizer(target: self, toBeTapped: self, action: #selector(tapped))
+        
+        Utility.viewPanRecognizer(target: self, toBeTapped: alertTextView, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: timeLabel, action: #selector(dragExit))
+        Utility.viewPanRecognizer(target: self, toBeTapped: self, action: #selector(dragExit))
+        
         if alert != nil{
             initEvent()
         }
@@ -66,8 +71,13 @@ class AlertCollectionViewCell: UICollectionViewCell {
             self.alertTextView.layer.opacity = 1
         }
     }
+    
+    @IBAction func dragExit(_ sender: Any){
+        delegate?.cellDragExit(alert: alert!)
+    }
 }
 
 protocol AlertCollectionViewCellDelegate {
     func cellTapped(alert:Alert, description:String)
+    func cellDragExit(alert:Alert)
 }
