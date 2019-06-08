@@ -10,7 +10,7 @@ import Foundation
 
 class ModelHttp{
     
-    let server = "http://127.0.0.1:5000"//"http://193.106.55.183"
+    let server = "http://193.106.55.183"
     
     //MARK: - Child Methods
     func sendChild(child:Child, callback:@escaping (Error?)->Void){
