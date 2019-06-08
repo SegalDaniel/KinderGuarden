@@ -243,6 +243,19 @@ class Model{
         else{
             callback(NSError(domain: "no id found", code: 0, userInfo: nil))
         }
+        let firstTodoEndpoint: String = "http://193.106.55.183/Child/GetEventsByChildID/\(childID)"
+        var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
+        firstTodoUrlRequest.httpMethod = "DELETE"
+        let session = URLSession.shared
+        let task = session.dataTask(with: firstTodoUrlRequest) {
+            (data, response, error) in
+            guard let _ = data else {
+                print("error calling DELETE on child")
+                return
+            }
+            print("DELETE ok")
+        }
+        task.resume()
     }
     
     func eventChildAndStaff(childID:String, staffID:String){
