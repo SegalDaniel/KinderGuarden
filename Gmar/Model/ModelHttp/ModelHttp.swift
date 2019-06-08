@@ -10,10 +10,12 @@ import Foundation
 
 class ModelHttp{
     
+    let server = "http://127.0.0.1:5000"//"http://193.106.55.183"
+    
     //MARK: - Child Methods
     func sendChild(child:Child, callback:@escaping (Error?)->Void){
         let session = URLSession.shared
-        let url = URL(string: "http://193.106.55.183/Child/newChild")! //http://193.106.55.183/Child/newChild
+        let url = URL(string: "\(server)/Child/newChild")! //http://193.106.55.183/Child/newChild
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -38,7 +40,7 @@ class ModelHttp{
     }
     
     func getChildren(callback:([Child])->Void){
-        let url = URL(string: "http://193.106.55.183/Child")!
+        let url = URL(string: "\(server)/Child")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -62,40 +64,40 @@ class ModelHttp{
         var url=URL(string: "empty")!
         switch kind {
         case .attandance:
-            url = URL(string: "http://193.106.55.183/events/AttendanceEvent/newEvent")!
+            url = URL(string: "\(server)/events/AttendanceEvent/newEvent")!
             break
         case .sleep:
-            url = URL(string: "http://193.106.55.183/events/SleepingEvent/newEvent")!
+            url = URL(string: "\(server)/events/SleepingEvent/newEvent")!
             break
         case .water:
-            url = URL(string: "http://193.106.55.183/events/WaterEvent/newEvent")!
+            url = URL(string: "\(server)/events/WaterEvent/newEvent")!
             break
         case .solidFoods:
-            url = URL(string: "http://193.106.55.183/events/SolidFoodEvent/newEvent")!
+            url = URL(string: "\(server)/events/SolidFoodEvent/newEvent")!
             break
         case .tamal, .milk:
-            url = URL(string: "http://193.106.55.183/events/LiquidFoodEvent/newEvent")!
+            url = URL(string: "\(server)/events/LiquidFoodEvent/newEvent")!
             break
         case .feces:
-            url = URL(string: "http://193.106.55.183/events/FecesEvent/newEvent")!
+            url = URL(string: "\(server)/events/FecesEvent/newEvent")!
             break
         case .urine:
-            url = URL(string: "http://193.106.55.183/events/UrineEvent/newEvent")!
+            url = URL(string: "\(server)/events/UrineEvent/newEvent")!
             break
         case .cough:
-            url = URL(string: "http://193.106.55.183/events/CoughEvent/newEvent")!
+            url = URL(string: "\(server)/events/CoughEvent/newEvent")!
             break
         case .hafrahsa:
-            url = URL(string: "http://193.106.55.183/events/SecretionEvent/newEvent")!
+            url = URL(string: "\(server)/events/SecretionEvent/newEvent")!
             break
         case .vomit:
-            url = URL(string: "http://193.106.55.183/events/VomitusEvent/newEvent")!
+            url = URL(string: "\(server)/events/VomitusEvent/newEvent")!
             break
         case .rash:
-            url = URL(string: "http://193.106.55.183/events/RashEvent/newEvent")!
+            url = URL(string: "\(server)/events/RashEvent/newEvent")!
             break
         case .feever:
-            url = URL(string: "http://193.106.55.183/events/FeverEvent/newEvent")!
+            url = URL(string: "\(server)/events/FeverEvent/newEvent")!
             break
         default:
             break
@@ -124,7 +126,7 @@ class ModelHttp{
     }
     
     func getBasicEventsByID(childID:String, callback:@escaping ([BasicEvent]) -> Void){
-        let url = URL(string: "http://193.106.55.183/Child/GetEventsByChildID/\(childID)")!
+        let url = URL(string: "\(server)/Child/GetEventsByChildID/\(childID)")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -145,7 +147,7 @@ class ModelHttp{
     //MARK: - Developmental Events
     func sendDevelopmentEvent(developmentEvent: DevelopmentalEvent, callback:@escaping (Error?) -> Void){
         let session = URLSession.shared
-        let url = URL(string: "http://193.106.55.183/events/DevelopmentalEvent/newEvent")!
+        let url = URL(string: "\(server)/events/DevelopmentalEvent/newEvent")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -169,7 +171,7 @@ class ModelHttp{
     }
     
     func getDevelopmentalEvents(childID:String, callback:@escaping ([DevelopmentalEvent]) -> Void){
-        let url = URL(string: "http://193.106.55.183/events/DevelopmentalEventByChildId/\(childID)")!
+        let url = URL(string: "\(server)/events/DevelopmentalEventByChildId/\(childID)")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -194,7 +196,7 @@ class ModelHttp{
     //MARK: - Staff
     func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
-        let url = URL(string: "http://193.106.55.183/staff/newStaff")!
+        let url = URL(string: "\(server)/staff/newStaff")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -221,7 +223,7 @@ class ModelHttp{
     //MARK: - Family Report
     func sendFamilyReport(familyReport:FamilyReport, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
-        let url = URL(string: "http://193.106.55.183/events/FamilyReportEvent/newEvent")!
+        let url = URL(string: "\(server)/events/FamilyReportEvent/newEvent")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -247,7 +249,7 @@ class ModelHttp{
     //MARK: - General Notes
     func sendGeneralNote(generalNote:GeneralNote, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
-        let url = URL(string: "http://193.106.55.183/events/GeneralNoteEvent/newEvent")!
+        let url = URL(string: "\(server)/events/GeneralNoteEvent/newEvent")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -272,7 +274,7 @@ class ModelHttp{
     
     //MARK: - Alerts
     func getAlerts(callback:@escaping ()->Void){
-        let url = URL(string: "http://193.106.55.183/alerts/Alerts")!
+        let url = URL(string: "\(server)/alerts/Alerts")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
@@ -289,12 +291,20 @@ class ModelHttp{
                             var exist = false
                             let jAlert = jsonAlert as! [String:Any]
                             oldAlerts.forEach({ (oldAlert) in
-                                if oldAlert == jAlert{
-                                    exist = true
-                                }
+                                exist = oldAlert == jAlert
                             })
                             if !exist{
-                                alerts.append(Alert(json: jAlert))
+                                Model.instance.getAllChildsFromCore(callback: { (childs) in
+                                    childs.forEach({ (child) in
+                                        if child.childID == (jAlert["childID"] as! String){
+                                            exist = true
+                                        }
+                                    })
+                                })
+                                if exist{
+                                    alerts.append(Alert(json: jAlert))
+                                    Model.instance.saveToDB(callback: nil)
+                                }
                             }
                         })
                         callback()
@@ -311,7 +321,7 @@ class ModelHttp{
     
 
     func getPulseAlert(callback: @escaping (String)->Void){
-        let url = URL(string: "http://193.106.55.183/alerts/PulseAlerts")! //change to one alert ar Server
+        let url = URL(string: "\(server)/alerts/PulseAlerts")! //change to one alert ar Server
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {

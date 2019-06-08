@@ -133,7 +133,7 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
             timeLabel.text?.append(" מים")
             image = UIImage(named: "water-glass")
             let water = event as! Water
-            eventDescription = "\(water.amount) מ״ל"
+            eventDescription = "\(water.consumedAmount!) מ״ל\n"
             break
         default:
             image = UIImage(named: "047-baby-2")

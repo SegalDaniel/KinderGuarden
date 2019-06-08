@@ -361,10 +361,12 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     }
     
     func cellTapped(event:BasicEvent, description: String) {
-        print(event.eventID ?? "no ID")
-        let time = DateAdmin.extractDateAndTime(date: event.eventDate! as Date, dateStyle: .short)
-        let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
-        self.present(alert, animated: true, completion: nil)
+        print("\(event.eventID ?? "no ID") level:\(event.level)")
+        if let date = event.eventDate{
+            let time = DateAdmin.extractDateAndTime(date: date as Date, dateStyle: .short)
+            let alert = SimpleAlert(_title: time, _message: description, dissmissCallback: nil).getAlert()
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func showDeleteALertView(callback:@escaping ()->Void){

@@ -77,14 +77,14 @@ class GenericLiquidViewController: GenericVC {
         titleItem.title = "דיווח מאכל חלב אם"
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 30
-        quantitySlider.setValue(10, animated: true)
+        quantitySlider.setValue(15, animated: true)
     }
     
     func tamalSettings(){
         titleItem.title = "דיווח מאכל תמ״ל"
         quantitySlider.minimumValue = 0
         quantitySlider.maximumValue = 30
-        quantitySlider.setValue(10, animated: true)
+        quantitySlider.setValue(15, animated: true)
     }
     
     //MARK: - feever

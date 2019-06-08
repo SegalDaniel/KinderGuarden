@@ -12,6 +12,7 @@ import CoreData
 
 @objc(Alert)
 public class Alert: NSManagedObject {
+    /*
     convenience init(alertDate:NSDate, level:Int16, eventsLeading:String, child:Child?, actionNeeded:String){
         self.init(entity: Model.instance.alertEntity, insertInto: Model.instance.managedContext)
         self.setValue(alertDate, forKey: "alertDate")
@@ -19,26 +20,29 @@ public class Alert: NSManagedObject {
         self.setValue(eventsLeading, forKey: "eventsLeading")
         self.setValue(actionNeeded, forKey: "actionNeeded")
         self.setValue(child, forKey: "child")
-    }
+    }*/
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.alertEntity, insertInto: Model.instance.managedContext)
         Model.instance.getChild(childID: json["childID"] as! String) { (child) in
             if let child = child{
-            let date = json["alertDate"] as! String
-            let d = DateAdmin.dateFromServer(date: date)
-            self.setValue(d, forKey: "alertDate")
-            self.setValue(Int16(truncating: json["type"] as! NSNumber), forKey: "type")
-            self.setValue(Int16(truncating: json["level"] as! NSNumber), forKey: "level")
-            //self.setValue(json["responsibleEvents"] as! String, forKey: "eventsLeading")
-            self.setValue(json["actionNeeded"] as! String, forKey: "actionNeeded")
-            self.child = child
+                let date = json["alertDate"] as! String
+                let d = DateAdmin.dateFromServer(date: date)
+                self.setValue(d, forKey: "alertDate")
+                self.setValue(Int16(truncating: json["type"] as! NSNumber), forKey: "type")
+                self.setValue(Int16(truncating: json["level"] as! NSNumber), forKey: "level")
+                //self.setValue(json["responsibleEvents"] as! String, forKey: "eventsLeading")
+                self.setValue(json["actionNeeded"] as! String, forKey: "actionNeeded")
+                self.setValue(json["alertID"] as! String, forKey: "alertID")
+                self.child = child
+                
             }
         }
     }
     
     func toJson() -> [String:Any] {
         var json = [String:Any]()
+        json["alertID"] = alertID
         json["alertDate"] = alertDate
         json["type"] = type
         json["level"] = level
@@ -49,21 +53,15 @@ public class Alert: NSManagedObject {
     }
     
     static func ==(lhs:Alert, rhs:Alert) -> Bool{
-        if lhs.child?.childID == rhs.child?.childID && lhs.alertDate == rhs.alertDate && lhs.actionNeeded == rhs.actionNeeded{
-            return true
+        if rhs.alertID == nil || rhs.alertID == nil{
+            return false
         }
-        return false
+        return rhs.alertID == lhs.alertID
     }
     
     static func ==(lhs:Alert, rhs:[String:Any]) -> Bool{
-        let action = rhs["actionNeeded"] as! String
-        let childID = rhs["childID"] as! String
-        let date = rhs["alertDate"] as! String
-        let d = DateAdmin.dateFromServer(date: date) as! NSDate
-        if lhs.child?.childID == childID && lhs.alertDate == d && lhs.actionNeeded == action{
-            return true
-        }
-        return false
+        let id = rhs["alertID"] as! String
+        return lhs.alertID == id
     }
-
+    
 }
