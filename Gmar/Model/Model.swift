@@ -173,28 +173,6 @@ class Model{
         let childs = try! Model.instance.managedContext.fetch(childFetch)
         let c:[Child] = childs as! [Child]
         callback(c)
-//        modelHttp.getBasicEventsByID(childID: "234234242")
-        
-//        let url = URL(string: "http://193.106.55.183/Child")!
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let dataResponse = data,
-//                error == nil else {
-//                    print(error?.localizedDescription ?? "Response Error")
-//                    return }
-//            do{
-//                //here dataResponse received from a network request
-//                let jsonResponse = try JSONSerialization.jsonObject(with:
-//                    dataResponse, options: [])
-//                //print(jsonResponse) //Response result
-//                guard let jsonArray = jsonResponse as? [[String: Any]] else {
-//                    return
-//                }
-//                print(jsonArray)
-//            } catch let parsingError {
-//                print("Error", parsingError)
-//            }
-//        }
-//        task.resume()
     }
     
     func getAllAttendedChildsFromCore(callback:([Child])->Void){
@@ -243,14 +221,16 @@ class Model{
         else{
             callback(NSError(domain: "no id found", code: 0, userInfo: nil))
         }
-        let firstTodoEndpoint: String = "http://193.106.55.183/Child/GetEventsByChildID/\(childID)"
+        let firstTodoEndpoint: String = "http://193.106.55.183/Child/\(childID)"
         var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
         firstTodoUrlRequest.httpMethod = "DELETE"
+        
         let session = URLSession.shared
+        
         let task = session.dataTask(with: firstTodoUrlRequest) {
             (data, response, error) in
             guard let _ = data else {
-                print("error calling DELETE on child")
+                print("error calling DELETE on Child")
                 return
             }
             print("DELETE ok")

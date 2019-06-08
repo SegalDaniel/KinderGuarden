@@ -199,7 +199,7 @@ class IndividualInfoViewController: MyViewController {
             }
             break
         default:
-           break
+            break
         }
     }
     
@@ -296,7 +296,66 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
 //MARK: CollectionViewCells Delegate
 extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate, FamilyReportCollectionViewCellDelegate, GeneralNoteCollectionViewCellDelegate, AlertCollectionViewCellDelegate{
     func cellDragExit(event: BasicEvent) {
+        let server = "http://193.106.55.183"
+        let eventID = event.eventID as! String
         showDeleteALertView {
+            let kind:Enums.BasicEvent = Enums.BasicEvent(rawValue: Int(event.eventType))!
+            var firstTodoEndpoint: String = "empty"
+            switch kind {
+            case .attandance:
+                firstTodoEndpoint = "\(server)/events/AttendanceEvent/\(eventID)"
+                break
+            case .sleep:
+                firstTodoEndpoint = "\(server)/events/SleepingEvent/\(eventID)"
+                break
+            case .water:
+                firstTodoEndpoint = "\(server)/events/WaterEvent/\(eventID)"
+                break
+            case .solidFoods:
+                firstTodoEndpoint = "\(server)/events/SolidFoodEvent/\(eventID)"
+                break
+            case .tamal, .milk:
+                firstTodoEndpoint = "\(server)/events/LiquidFoodEvent/\(eventID)"
+                break
+            case .feces:
+                firstTodoEndpoint = "\(server)/events/FecesEvent/\(eventID)"
+                break
+            case .urine:
+                firstTodoEndpoint = "\(server)/events/UrineEvent/\(eventID)"
+                break
+            case .cough:
+                firstTodoEndpoint = "\(server)/events/CoughEvent/\(eventID)"
+                break
+            case .hafrahsa:
+                firstTodoEndpoint = "\(server)/events/SecretionEvent/\(eventID)"
+                break
+            case .vomit:
+                firstTodoEndpoint = "\(server)/events/VomitusEvent/\(eventID)"
+                break
+            case .rash:
+                firstTodoEndpoint = "\(server)/events/RashEvent/\(eventID)"
+                break
+            case .feever:
+                firstTodoEndpoint = "\(server)/events/FeverEvent/\(eventID)"
+                break
+            default:
+                break
+            }
+            var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
+            firstTodoUrlRequest.httpMethod = "DELETE"
+            
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: firstTodoUrlRequest) {
+                (data, response, error) in
+                guard let _ = data else {
+                    print("error calling DELETE on Child")
+                    return
+                }
+                print("DELETE ok")
+            }
+            task.resume()
+            
             Model.instance.managedContext.delete(event)
             Model.instance.saveToDB(callback: nil)
             self.initChildData()
