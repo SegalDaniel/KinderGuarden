@@ -80,6 +80,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Sleep(json: jEvent))
@@ -98,6 +102,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Water(json: jEvent))
@@ -116,6 +124,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(SolidFood(json: jEvent))
@@ -134,6 +146,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(LiquidFood(json: jEvent))
@@ -153,9 +169,8 @@ extension ModelHttp{
                 olds.forEach({ (old) in
                     exist = old == jEvent
                     if exist{
-                        Model.instance.managedContext.delete(old)
-                        Model.instance.saveToDB(callback: nil)
-                        exist = false
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
                     }
                 })
                 if !exist{
@@ -175,6 +190,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Urine(json: jEvent))
@@ -193,6 +212,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Cough(json: jEvent))
@@ -211,6 +234,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Secretion(json: jEvent))
@@ -229,6 +256,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Vomitus(json: jEvent))
@@ -247,6 +278,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Rash(json: jEvent))
@@ -265,6 +300,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Fever(json: jEvent))
@@ -283,6 +322,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Disease(json: jEvent))
@@ -301,6 +344,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Medication(json: jEvent))
@@ -319,6 +366,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(Parasites(json: jEvent))
@@ -337,6 +388,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(GeneralBehavior(json: jEvent))
@@ -355,6 +410,10 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
+                    if exist{
+                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
+                        try? Model.instance.managedContext.save()
+                    }
                 })
                 if !exist{
                     events.append(DevelopmentalEvent(json: jEvent))
@@ -362,7 +421,7 @@ extension ModelHttp{
             }
         }
     }
-    
+   
     func fetch(entityName:String) -> [BasicEvent]?{
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         return try! Model.instance.managedContext.fetch(fetch) as! [BasicEvent]

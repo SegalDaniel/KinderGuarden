@@ -40,6 +40,8 @@
 		18788798221D4C510047A935 /* MultiChoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18788797221D4C510047A935 /* MultiChoiseViewController.swift */; };
 		1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */; };
 		1878879C221D7C260047A935 /* DateAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878879B221D7C260047A935 /* DateAdmin.swift */; };
+		187C34C122ABB6FC009A06D4 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C34BF22ABB6FC009A06D4 /* Alert+CoreDataClass.swift */; };
+		187C34C222ABB6FC009A06D4 /* Alert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C34C022ABB6FC009A06D4 /* Alert+CoreDataProperties.swift */; };
 		1885E94122A2600C00B6FAE5 /* ModelPolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94022A2600C00B6FAE5 /* ModelPolling.swift */; };
 		1885E94322A270A200B6FAE5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94222A270A200B6FAE5 /* HttpError.swift */; };
 		1885E94622A3BA8500B6FAE5 /* ImmidiateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */; };
@@ -130,8 +132,6 @@
 		A88BBFAF225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */; };
 		A896494822A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */; };
 		A896494922A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */; };
-		A896494C22A179E80004FDE3 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */; };
-		A896494D22A179E80004FDE3 /* Alert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896494B22A179E80004FDE3 /* Alert+CoreDataProperties.swift */; };
 		A8ED33832296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */; };
 		A8ED33842296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */; };
 		A8F7F381221888CB00F21DAD /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7F380221888CB00F21DAD /* Utility.swift */; };
@@ -174,6 +174,8 @@
 		18788797221D4C510047A935 /* MultiChoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiseViewController.swift; sourceTree = "<group>"; };
 		18788799221D54E90047A935 /* MultiChoiseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiseTableViewCell.swift; sourceTree = "<group>"; };
 		1878879B221D7C260047A935 /* DateAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAdmin.swift; sourceTree = "<group>"; };
+		187C34BF22ABB6FC009A06D4 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
+		187C34C022ABB6FC009A06D4 /* Alert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1885E94022A2600C00B6FAE5 /* ModelPolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPolling.swift; sourceTree = "<group>"; };
 		1885E94222A270A200B6FAE5 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmidiateAlert.swift; sourceTree = "<group>"; };
@@ -266,8 +268,6 @@
 		A88BBFAD225A7EB900F9C0B4 /* SolidFood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidFood+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A896494622A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A896494722A14BD40004FDE3 /* PulseAlert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PulseAlert+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A896494B22A179E80004FDE3 /* Alert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8ED33812296861D008E4688 /* AuthorizedAccompanist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8ED33822296861D008E4688 /* AuthorizedAccompanist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizedAccompanist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8F7F380221888CB00F21DAD /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -741,8 +741,8 @@
 		A868E9A822710ECB000B3230 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				A896494A22A179E80004FDE3 /* Alert+CoreDataClass.swift */,
-				A896494B22A179E80004FDE3 /* Alert+CoreDataProperties.swift */,
+				187C34BF22ABB6FC009A06D4 /* Alert+CoreDataClass.swift */,
+				187C34C022ABB6FC009A06D4 /* Alert+CoreDataProperties.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -993,7 +993,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A896494D22A179E80004FDE3 /* Alert+CoreDataProperties.swift in Sources */,
 				1878879A221D54E90047A935 /* MultiChoiseTableViewCell.swift in Sources */,
 				183CFCCF226F7AA600F7FF68 /* DesignViewsHelper.swift in Sources */,
 				A872BE1622914ED70078DC5F /* Staff+CoreDataProperties.swift in Sources */,
@@ -1006,6 +1005,7 @@
 				1835C4FD228FF98B00BF2AF2 /* FamilyReportEventViewController.swift in Sources */,
 				18586D6022730926004F219C /* KidCollectionViewCell.swift in Sources */,
 				1885E94822A3F49600B6FAE5 /* HeartRateViewController.swift in Sources */,
+				187C34C122ABB6FC009A06D4 /* Alert+CoreDataClass.swift in Sources */,
 				A850811422AA620500B057C1 /* LiquidFood+CoreDataProperties.swift in Sources */,
 				1818B1DA21E0E905006E1B39 /* MainWindowViewController.swift in Sources */,
 				A872BE1922914FAF0078DC5F /* Child+CoreDataClass.swift in Sources */,
@@ -1054,11 +1054,11 @@
 				1887F4AF221AE93A007682A8 /* GenericEventInfoViewController.swift in Sources */,
 				A8299D73225386E4006E961F /* RoutineMedication+CoreDataClass.swift in Sources */,
 				A8F7F381221888CB00F21DAD /* Utility.swift in Sources */,
-				A896494C22A179E80004FDE3 /* Alert+CoreDataClass.swift in Sources */,
 				1835C4F8228EDC0600BF2AF2 /* DevelopmentalEventViewController.swift in Sources */,
 				A88BBFAA225A7E5100F9C0B4 /* Water+CoreDataClass.swift in Sources */,
 				1887F4B4221B14A2007682A8 /* Enums.swift in Sources */,
 				A8576E36224A70DA00CBA907 /* Sleep+CoreDataProperties.swift in Sources */,
+				187C34C222ABB6FC009A06D4 /* Alert+CoreDataProperties.swift in Sources */,
 				A872BE0D229149FC0078DC5F /* GeneralNote+CoreDataClass.swift in Sources */,
 				A8299D74225386E4006E961F /* RoutineMedication+CoreDataProperties.swift in Sources */,
 				1818B1D821E0E905006E1B39 /* AppDelegate.swift in Sources */,

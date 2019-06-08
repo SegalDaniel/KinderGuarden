@@ -15,7 +15,7 @@ extension Model{
     func startPollingAlerts() {
         print("start polling alerts")
         DispatchQueue.global(qos: .background).async {
-            let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector:  #selector(self.poolAlerts), userInfo: nil, repeats: true)
+            let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector:  #selector(self.poolAlerts), userInfo: nil, repeats: true)
             let runLoop = RunLoop.current
             runLoop.add(timer, forMode: .default)
             runLoop.run()
@@ -29,6 +29,17 @@ extension Model{
             self.pulseAlertTimerLoop = Timer.scheduledTimer(timeInterval: 1, target: self, selector:  #selector(self.poolPulseAlerts), userInfo: nil, repeats: true)
             let runLoop = RunLoop.current
             runLoop.add(self.pulseAlertTimerLoop!, forMode: .default)
+            runLoop.run()
+            
+        }
+    }
+    
+    func startPollingBasicEvents(){
+        print("start polling Basic Events")
+        DispatchQueue.global(qos: .background).async {
+            let timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector:  #selector(self.poolBasicEvents), userInfo: nil, repeats: true)
+            let runLoop = RunLoop.current
+            runLoop.add(timer, forMode: .default)
             runLoop.run()
             
         }
@@ -60,6 +71,14 @@ extension Model{
     @objc func poolPulseAlerts(){
         self.getPulseAlert { (pulse) in
             ModelNotification.pulseAlert.notify(data: pulse)
+        }
+    }
+    
+    @objc func poolBasicEvents(){
+        Model.instance.getAllChildsFromCore { (childs) in
+            childs.forEach({ (child) in
+                self.getBasicEventsFromServer(childID: child.childID!, callback: { (events) in })
+            })
         }
     }
 }
