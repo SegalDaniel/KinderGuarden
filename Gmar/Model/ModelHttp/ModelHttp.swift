@@ -405,7 +405,6 @@ class ModelHttp{
                                 })
                                 if exist{
                                     alerts.append(Alert(json: jAlert))
-                                    Model.instance.saveToDB(callback: nil)
                                 }
                             }
                         })

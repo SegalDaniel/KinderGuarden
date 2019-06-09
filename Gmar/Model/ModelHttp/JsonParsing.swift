@@ -51,7 +51,6 @@ extension ModelHttp{
         self.parsedevelopmentalEvents(jsonArr: dev)
 
         //let fam = jsonResponse["familyReportEvent"]! as! NSArray
-        Model.instance.saveToDB(callback: nil)
     }
     
     

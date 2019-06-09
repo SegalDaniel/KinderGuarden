@@ -331,7 +331,6 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     func cellDragExit(report: FamilyReport) {
         showDeleteALertView {
             Model.instance.managedContext.delete(report)
-            Model.instance.saveToDB(callback: nil)
             self.initChildData()
         }
     }
@@ -339,7 +338,6 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     func cellDragExit(note: GeneralNote) {
         showDeleteALertView {
             Model.instance.managedContext.delete(note)
-            Model.instance.saveToDB(callback: nil)
             self.initChildData()
         }
     }

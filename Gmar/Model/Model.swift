@@ -118,42 +118,36 @@ class Model{
      */
     
     func sendToFB(basicEvent:BasicEvent, callback:@escaping (Error?)->Void){
-        saveToDB(callback: nil)
         modelHttp.sendBasicEvent(basicEvent: basicEvent) { (err) in
             callback(err)
         }
     }
     
     func sendToFB(developmentEvent:DevelopmentalEvent, callback:@escaping (Error?) -> Void){
-        saveToDB(callback: nil)
         modelHttp.sendDevelopmentEvent(developmentEvent: developmentEvent) { (err) in
             callback(err)
         }
     }
     
     func sendToFB(child:Child, callback:@escaping (Error?)->Void){
-        saveToDB(callback: nil)
         modelHttp.sendChild(child: child) { (err) in
             callback(err)
         }
     }
     
     func sendToFB(staff:Staff, callback:@escaping (Error?)->Void){
-        saveToDB(callback: nil)
         modelHttp.sendStaff(staff: staff) { (err) in
             callback(err)
         }
     }
     
     func sendToFB(report:FamilyReport, callback:@escaping (Error?) -> Void){
-        saveToDB(callback: nil)
         modelHttp.sendFamilyReport(familyReport: report) { (err) in
             callback(err)
         }
     }
     
     func sendToFB(note:GeneralNote, callback:@escaping (Error?) -> Void){
-        saveToDB(callback: nil)
         modelHttp.sendGeneralNote(generalNote: note) { (err) in
             callback(err)
         }
@@ -335,9 +329,7 @@ class Model{
     
     func getAlerts(callback: @escaping ([Alert]) -> Void){
         modelHttp.getAlerts {
-            self.saveToDB(callback: { (err) in
-                self.getAlertsFromCoreData(callback: callback)
-            })
+            self.getAlertsFromCoreData(callback: callback)
         }
     }
     
@@ -353,7 +345,6 @@ class Model{
         modelHttp.deleteAlert(alert: alert) { (err) in
             if err == nil{
                 self.managedContext.delete(alert)
-                self.saveToDB(callback: nil)
             }
             callback(err)
         }
@@ -378,7 +369,6 @@ class Model{
         modelHttp.deleteBasicEvent(eventID: event.eventID!, kind: Enums.BasicEvent(rawValue: Int(event.eventType))!) { (err) in
             if err == nil{
                 self.managedContext.delete(event)
-                self.saveToDB(callback: nil)
             }
             callback(err)
         }
@@ -397,7 +387,6 @@ class Model{
         modelHttp.deleteDevelopmentalEvent(event: event) { (err) in
             if err == nil{
                 self.managedContext.delete(event)
-                self.saveToDB(callback: nil)
             }
             callback(err)
         }
