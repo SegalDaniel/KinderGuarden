@@ -43,12 +43,18 @@ class AlertCollectionViewCell: UICollectionViewCell {
             switch alert.level {
             case 1, -1:
                 self.backgroundColor = Utility.backCloverColor
+                self.alertTextView.textColor = Utility.btnTextWhite
+                self.timeLabel.textColor = Utility.btnTextWhite
                 break
             case 2:
                 self.backgroundColor = Utility.yellowColor
+                self.alertTextView.textColor = UIColor.darkGray
+                self.timeLabel.textColor = UIColor.darkGray
                 break
             case 3:
                 self.backgroundColor = Utility.btnSalmon
+                self.alertTextView.textColor = UIColor.darkGray
+                self.timeLabel.textColor = UIColor.darkGray
                 break
             default:
                 break

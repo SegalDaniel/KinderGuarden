@@ -43,12 +43,15 @@ class BasicEventCollectionViewCell: UICollectionViewCell {
         switch event!.level {
         case 1:
             self.backgroundColor = Utility.backCloverColor
+            self.timeLabel.textColor = Utility.btnTextWhite
             break
         case 2:
             self.backgroundColor = Utility.yellowColor
+            self.timeLabel.textColor = UIColor.darkGray
             break
         case 3:
             self.backgroundColor = Utility.btnSalmon
+            self.timeLabel.textColor = UIColor.darkGray
             break
         default:
             break
