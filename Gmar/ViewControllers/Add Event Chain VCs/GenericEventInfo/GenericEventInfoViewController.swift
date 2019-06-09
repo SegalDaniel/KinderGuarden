@@ -99,9 +99,18 @@ class GenericEventInfoViewController: GenericVC {
                 for view in buttonStackView.subviews{
                     view.removeFromSuperview()
                 }
+                let oldIsOn = isOn
                 feecesAddMissing(row: row)
                 borders = []
                 addStacksBorders()
+                data.forEach { (oldRow, value) in
+                    if oldIsOn["pee"] != nil && oldIsOn["pee"]!{
+                        self.borders[oldRow+2].layer.borderColor = Utility.backCloverColor.cgColor
+                    }
+                    else{
+                        self.borders[oldRow].layer.borderColor = Utility.backCloverColor.cgColor
+                    }
+                }
             }
         }
     }

@@ -39,33 +39,6 @@ class MainWindowViewController: MyViewController {
         }
     }
     
-    @IBAction func teacherButtonDragExit(_ sender: Any){
-        if let btn = sender as? UIButton{
-            let staffID = "\(btn.tag)"
-            let alert = UIAlertController(title: "האם ברצונך למחוק משתמש זה?", message: "פעולה זו תהיה בלתי הפיכה", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "אישור", style: .default, handler: { (action) in
-                Model.instance.deleteStaffFromDB(staffID: staffID, callback: { (error) in
-                    if error == nil{
-                        alert.dismiss(animated: true, completion: nil)
-                        self.present(SimpleAlert(_title: "נמחק בהצלחה", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: {
-                            Model.instance.getStaffFromDB { (staff) in
-                                self.initStaffViews(staff: staff)
-                            }
-                        })
-                    }
-                    else{
-                        alert.dismiss(animated: true, completion: nil)
-                        self.present(SimpleAlert(_title: "לא נמחק, נסה שנית", _message: "", dissmissCallback: nil).getAlert(), animated: true, completion: nil)
-                    }
-                })
-            }))
-            alert.addAction(UIAlertAction(title: "ביטול", style: .cancel, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
     @IBAction func kidsInfoClicked(_ sender: Any) {
         
     }
@@ -100,7 +73,6 @@ class MainWindowViewController: MyViewController {
         btn.setImage(image: image)
         btn.setTitle(title: name)
         btn.addTarget(self, action: #selector(teacherButtonClicked), for: .touchUpInside)
-        btn.addTarget(self, action: #selector(teacherButtonDragExit), for: .touchDragExit)
         teachersStackView.addArrangedSubview(btn)
     }
 
@@ -116,20 +88,4 @@ class MainWindowViewController: MyViewController {
             vc.teacherID = "\(tID)"
         }
     }
-    
-    //********************Testing Method********************//
-//    func testDBs(){
-//        let child = Child(childID: "203037346", name: "zach", gender: "male", lastName: "bachar", age: "27", birthDate: "9.3.92", image: nil)
-//        Model.instance.addChild(child: child) { (err) in
-//            if err == nil{
-//                Model.instance.getAllChildsFromCore { (childs) in
-//                    Model.instance.getChild(childID: childs.first!.childID!, callback: { (err, childFB) in
-//                        print(childFB!.name!)
-//                    })
-//                }
-//            }
-//        }
-//    }
 }
-
-
