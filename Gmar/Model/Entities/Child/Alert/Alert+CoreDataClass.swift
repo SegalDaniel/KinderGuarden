@@ -12,15 +12,6 @@ import CoreData
 
 @objc(Alert)
 public class Alert: NSManagedObject {
-    /*
-    convenience init(alertDate:NSDate, level:Int16, eventsLeading:String, child:Child?, actionNeeded:String){
-        self.init(entity: Model.instance.alertEntity, insertInto: Model.instance.managedContext)
-        self.setValue(alertDate, forKey: "alertDate")
-        self.setValue(level, forKey: "level")
-        self.setValue(eventsLeading, forKey: "eventsLeading")
-        self.setValue(actionNeeded, forKey: "actionNeeded")
-        self.setValue(child, forKey: "child")
-    }*/
     
     convenience  init(json:[String:Any]) {
         self.init(entity: Model.instance.alertEntity, insertInto: Model.instance.managedContext)

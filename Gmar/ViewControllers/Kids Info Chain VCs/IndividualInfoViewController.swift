@@ -55,7 +55,7 @@ class IndividualInfoViewController: MyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startDate = DateAdmin.morningDate(date: Date())
-        endDate = Date()
+        endDate = DateAdmin.eveningDate(date: Date())
         initChildData()
         initCollections(collections: [basicCollectionView, developCollectionView, logicCollectionView, familyCollectionView, notesCollectionView])
         initDatesBtns()
@@ -205,7 +205,7 @@ class IndividualInfoViewController: MyViewController {
     
     @IBAction func todayBtnPressed(_ sender: Any) {
         startDate = DateAdmin.morningDate(date: Date())
-        endDate = Date()
+        endDate = DateAdmin.eveningDate(date: Date())
         initDatesBtns()
         filterEventsByDates()
         loadGeneralNote()
@@ -342,7 +342,6 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     
     func cellTapped(alert: Alert, description: String) {
         let time = DateAdmin.extractDateAndTime(date: alert.alertDate! as Date, dateStyle: .short)
-        
         let alert = SimpleAlert(_title: time, _message: "\(description)\n\(alert.actionNeeded!)", dissmissCallback: nil).getAlert()
         self.present(alert, animated: true, completion: nil)
     }

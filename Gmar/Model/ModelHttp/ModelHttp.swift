@@ -395,9 +395,7 @@ class ModelHttp{
             } catch let parsingError {
                 print("Error", parsingError)
             }
-            
         }
-        
         task.resume()
     }
     
