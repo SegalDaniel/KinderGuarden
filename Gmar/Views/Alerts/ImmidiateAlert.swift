@@ -14,9 +14,9 @@ class ImmidiateAlert{
     private let alertController:UIAlertController
     let alert:Alert
     
-    init(alert:Alert, dissmiss:(()->Void)?, done:(()->Void)?){
+    init(alert:Alert, dissmiss:(()->Void)?, done:(()->Void)?, title:String = "התראה לפעולה מיידית!"){
         self.alert = alert
-        alertController = UIAlertController(title: "התראה לפעולה מיידית! \(alert.child!.firstName!) \(alert.child!.lastName!)", message: alert.actionNeeded!, preferredStyle: .alert)
+        alertController = UIAlertController(title: title + " \(alert.child!.firstName!) \(alert.child!.lastName!)", message: alert.actionNeeded!, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "דחה", style: .destructive, handler: { (action) in
             if let cb = dissmiss{
                 cb()

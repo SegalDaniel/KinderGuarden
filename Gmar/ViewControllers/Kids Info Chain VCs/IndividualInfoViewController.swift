@@ -361,9 +361,17 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     }
     
     func cellTapped(alert: Alert, description: String) {
-        let time = DateAdmin.extractDateAndTime(date: alert.alertDate! as Date, dateStyle: .short)
-        let alert = SimpleAlert(_title: time, _message: "\(description)\n\(alert.actionNeeded!)", dissmissCallback: nil).getAlert()
-        self.present(alert, animated: true, completion: nil)
+        var alertControler:UIAlertController
+        if alert.level != -1{
+            alertControler = ImmidiateAlert(alert: alert, dissmiss: nil, done: {
+                self.loadAlerts()
+            }, title: "").getAlert()
+        }
+        else{
+            let time = DateAdmin.extractDateAndTime(date: alert.alertDate! as Date, dateStyle: .short)
+            alertControler = SimpleAlert(_title: time, _message: "\(description)\n\(alert.actionNeeded!)", dissmissCallback: nil).getAlert()
+        }
+        self.present(alertControler, animated: true, completion: nil)
     }
     
     func cellTapped(note: GeneralNote, description: String) {

@@ -64,7 +64,9 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
+                    if old == jEvent{
+                        exist = true
+                    }
                 })
                 if !exist{
                     events.append(Attendance(json: jEvent))
@@ -82,8 +84,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -104,8 +106,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -126,8 +128,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -148,8 +150,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -170,8 +172,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -192,8 +194,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -214,8 +216,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -236,8 +238,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -258,8 +260,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -280,8 +282,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -302,8 +304,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -324,8 +326,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -346,8 +348,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -368,8 +370,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }
@@ -390,8 +392,8 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
-                    if exist{
+                    if old == jEvent{
+                        exist = true
                         old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
                         try? Model.instance.managedContext.save()
                     }

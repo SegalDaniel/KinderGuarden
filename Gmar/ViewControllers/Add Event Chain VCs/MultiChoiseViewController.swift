@@ -71,9 +71,9 @@ class MultiChoiseViewController: MyViewController, UITableViewDelegate, UITableV
             default: break
             }
         }
-        loadingAlert.dismiss(animated: true) {
-            self.showUnselectedAlert(message: "לא התבצעה שמירה")
-        }
+//        loadingAlert.dismiss(animated: true) {
+//            self.showUnselectedAlert(message: "לא התבצעה שמירה")
+//        }
     }
     
     func sendToFBCallback(indexPath:IndexPath){
