@@ -112,7 +112,7 @@ extension DeleteViewController: UITableViewDelegate, UITableViewDataSource{
             case 1:
                 Model.instance.deleteStaffFromDB(staffID: self.staff[indexPath.row].staffID!, callback: { (err) in
                     loading.dismiss(animated: true, completion: {
-                        self.kids.remove(at: indexPath.row)
+                        self.staff.remove(at: indexPath.row)
                         DispatchQueue.main.async {
                             tableView.deleteRows(at: [indexPath], with: .automatic)
                             tableView.endUpdates()
