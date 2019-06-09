@@ -18,6 +18,7 @@ public class DevelopmentalEvent: NSManagedObject {
         self.setValue(eventDate, forKey: "eventDate")
         self.setValue(child, forKey: "child")
         self.setValue(staff, forKey: "staff")
+        self.setValue(String(eventDate.hashValue + Int(eventType)), forKey: "eventID")
     }
     
     convenience init(json:[String:Any]) {
@@ -32,7 +33,6 @@ public class DevelopmentalEvent: NSManagedObject {
                         self.setValue(child, forKey: "child")
                         self.setValue(staff, forKey: "staff")
                         let id = json["eventID"] as! String
-                        //                        let intID = Int(id)! % 1000
                         self.setValue(id, forKey: "eventID")
                     }
                 }
@@ -43,7 +43,7 @@ public class DevelopmentalEvent: NSManagedObject {
     func toJson() -> [String:Any]{
         var json = [String:Any]()
         json["eventType"] = eventType
-        json["eventID"] = child?.childID.hashValue
+        json["eventID"] = eventID
         json["eventDate"] = eventDate
         json["childID"] = child?.childID
         json["staffID"] = staff?.staffID

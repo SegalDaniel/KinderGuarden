@@ -198,7 +198,7 @@ class Model{
         return child
     }
     
-    func deleteChildFromDB(childID:String, callback:(NSError?)->Void){
+    func deleteChildFromDB(childID:String, callback:@escaping (NSError?)->Void){
         let childFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Child")
         let child = try! Model.instance.managedContext.fetch(childFetch) as! [Child]
         let toDelete = child.filter { (member) -> Bool in
@@ -208,34 +208,56 @@ class Model{
             return false
         }
         if let obj = toDelete.first {
-            managedContext.delete(obj)
-            removeImageFromDisk(imageName: obj.childID!)
-            do{
-                try Model.instance.managedContext.save()
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
-                callback(error)
+            modelHttp.deleteChild(childID: obj.childID!) { (err) in
+                if err == nil{
+                    obj.basicEvents?.forEach({ (event) in
+                        if let event = event as? BasicEvent{
+                            self.managedContext.delete(event)
+                        }
+                    })
+                    obj.authorized?.forEach({ (auth) in
+                        if let auth = auth as? AuthorizedAccompanist{
+                            self.managedContext.delete(auth)
+                        }
+                    })
+                    obj.alerts?.forEach({ (alrt) in
+                        if let alrt = alrt as? Alert{
+                            self.managedContext.delete(alrt)
+                        }
+                    })
+                    obj.generalNotes?.forEach({ (note) in
+                        if let note = note as? GeneralNote{
+                            self.managedContext.delete(note)
+                        }
+                    })
+                    obj.familyReports?.forEach({ (rprt) in
+                        if let rprt = rprt as? FamilyReport{
+                            self.managedContext.delete(rprt)
+                        }
+                    })
+                    obj.developmentalEvents?.forEach({ (event) in
+                        if let event = event as? DevelopmentalEvent{
+                            self.managedContext.delete(event)
+                        }
+                    })
+                    self.removeImageFromDisk(imageName: obj.childID!)
+                    do{
+                        try Model.instance.managedContext.save()
+                    } catch let error as NSError {
+                        print("Could not save. \(error), \(error.userInfo)")
+                        callback(error)
+                    }
+                     self.managedContext.delete(obj)
+                    callback(nil)
+                    return
+                }
+                callback(NSError(domain: "server error", code: 0, userInfo: nil))
             }
-            callback(nil)
         }
         else{
             callback(NSError(domain: "no id found", code: 0, userInfo: nil))
         }
-        let firstTodoEndpoint: String = "http://193.106.55.183/Child/\(childID)"
-        var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
-        firstTodoUrlRequest.httpMethod = "DELETE"
         
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: firstTodoUrlRequest) {
-            (data, response, error) in
-            guard let _ = data else {
-                print("error calling DELETE on Child")
-                return
-            }
-            print("DELETE ok")
-        }
-        task.resume()
     }
     
     func eventChildAndStaff(childID:String, staffID:String){
@@ -350,6 +372,16 @@ class Model{
         let events = try! Model.instance.managedContext.fetch(beFetch)
         let e:[BasicEvent] = events as! [BasicEvent]
         callback(e)
+    }
+    
+    func deleteBasicEvent(event:BasicEvent, callback:@escaping (Error?)->Void){
+        modelHttp.deleteBasicEvent(eventID: event.eventID!, kind: Enums.BasicEvent(rawValue: Int(event.eventType))!) { (err) in
+            if err == nil{
+                self.managedContext.delete(event)
+                self.saveToDB(callback: nil)
+            }
+            callback(err)
+        }
     }
     
     //MARK: - DevelopmentalEvents methods

@@ -410,10 +410,6 @@ extension ModelHttp{
                 var exist = false
                 olds.forEach({ (old) in
                     exist = old == jEvent
-                    if exist{
-                        old.setValue(Int16(truncating: jEvent["level"] as! NSNumber), forKey: "level")
-                        try? Model.instance.managedContext.save()
-                    }
                 })
                 if !exist{
                     events.append(DevelopmentalEvent(json: jEvent))

@@ -11,7 +11,7 @@ import Foundation
 class ModelHttp{
     
     let server = "http://193.106.55.183"
-    //"http://193.106.55.183"
+    
     
     //MARK: - Child Methods
     func sendChild(child:Child, callback:@escaping (Error?)->Void){
@@ -55,6 +55,26 @@ class ModelHttp{
             } catch let parsingError {
                 print("Error", parsingError)
             }
+        }
+        task.resume()
+    }
+    
+    func deleteChild(childID:String, callback:@escaping (Error?)->Void){
+        let firstTodoEndpoint: String = "http://193.106.55.183/Child/\(childID)"
+        var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
+        firstTodoUrlRequest.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: firstTodoUrlRequest) {
+            (data, response, error) in
+            guard let _ = data else {
+                print("error calling DELETE on Child")
+                callback(HttpError())
+                return
+            }
+            print("DELETE ok")
+            callback(nil)
         }
         task.resume()
     }
@@ -144,6 +164,65 @@ class ModelHttp{
         task.resume()
     }
     
+    func deleteBasicEvent(eventID:String, kind:Enums.BasicEvent, callback:@escaping (Error?) -> Void){
+        var firstTodoEndpoint: String = "empty"
+        switch kind {
+        case .attandance:
+            firstTodoEndpoint = "\(server)/events/AttendanceEvent/\(eventID)"
+            break
+        case .sleep:
+            firstTodoEndpoint = "\(server)/events/SleepingEvent/\(eventID)"
+            break
+        case .water:
+            firstTodoEndpoint = "\(server)/events/WaterEvent/\(eventID)"
+            break
+        case .solidFoods:
+            firstTodoEndpoint = "\(server)/events/SolidFoodEvent/\(eventID)"
+            break
+        case .tamal, .milk:
+            firstTodoEndpoint = "\(server)/events/LiquidFoodEvent/\(eventID)"
+            break
+        case .feces:
+            firstTodoEndpoint = "\(server)/events/FecesEvent/\(eventID)"
+            break
+        case .urine:
+            firstTodoEndpoint = "\(server)/events/UrineEvent/\(eventID)"
+            break
+        case .cough:
+            firstTodoEndpoint = "\(server)/events/CoughEvent/\(eventID)"
+            break
+        case .hafrahsa:
+            firstTodoEndpoint = "\(server)/events/SecretionEvent/\(eventID)"
+            break
+        case .vomit:
+            firstTodoEndpoint = "\(server)/events/VomitusEvent/\(eventID)"
+            break
+        case .rash:
+            firstTodoEndpoint = "\(server)/events/RashEvent/\(eventID)"
+            break
+        case .feever:
+            firstTodoEndpoint = "\(server)/events/FeverEvent/\(eventID)"
+            break
+        default:
+            break
+        }
+        var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
+        firstTodoUrlRequest.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: firstTodoUrlRequest) {
+            (data, response, error) in
+            guard let _ = data else {
+                print("error calling DELETE on Child")
+                callback(HttpError())
+                return
+            }
+            print("DELETE ok")
+            callback(nil)
+        }
+        task.resume()
+    }
     
     //MARK: - Developmental Events
     func sendDevelopmentEvent(developmentEvent: DevelopmentalEvent, callback:@escaping (Error?) -> Void){

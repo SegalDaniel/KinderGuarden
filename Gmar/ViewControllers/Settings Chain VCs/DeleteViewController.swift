@@ -94,25 +94,36 @@ extension DeleteViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "מחק") { (action, indexPath) in
+            let loading = Utility.getLoadingAlert(message: "מוחק..")
+            self.present(loading, animated: true, completion: nil)
             tableView.beginUpdates()
             switch indexPath.section{
             case 0:
                 Model.instance.deleteChildFromDB(childID: self.kids[indexPath.row].childID!, callback: { (err) in
-                    self.kids.remove(at: indexPath.row)
+                    loading.dismiss(animated: true, completion: {
+                        self.kids.remove(at: indexPath.row)
+                        DispatchQueue.main.async {
+                            tableView.deleteRows(at: [indexPath], with: .automatic)
+                            tableView.endUpdates()
+                        }
+                    })
                 })
                 break
             case 1:
                 Model.instance.deleteStaffFromDB(staffID: self.staff[indexPath.row].staffID!, callback: { (err) in
-                    self.staff.remove(at: indexPath.row)
+                    loading.dismiss(animated: true, completion: {
+                        self.kids.remove(at: indexPath.row)
+                        DispatchQueue.main.async {
+                            tableView.deleteRows(at: [indexPath], with: .automatic)
+                            tableView.endUpdates()
+                        }
+                    })
                 })
                 break
             default:
                 break
             }
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
         }
-        
         return [delete]
     }
 }
