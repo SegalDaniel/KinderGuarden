@@ -47,8 +47,8 @@ extension ModelHttp{
         //let genN = jsonResponse["generalNoteEvent"]! as! NSArray
         
         //creates multiple events
-//        let dev = jsonResponse["developmentalEvent"]! as! NSArray
-//        self.parsedevelopmentalEvents(jsonArr: dev)
+        let dev = jsonResponse["developmentalEvent"]! as! NSArray
+        self.parsedevelopmentalEvents(jsonArr: dev)
 
         //let fam = jsonResponse["familyReportEvent"]! as! NSArray
         Model.instance.saveToDB(callback: nil)
@@ -412,7 +412,9 @@ extension ModelHttp{
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false
                 olds.forEach({ (old) in
-                    exist = old == jEvent
+                    if old == jEvent{
+                        exist = true
+                    }
                 })
                 if !exist{
                     events.append(DevelopmentalEvent(json: jEvent))

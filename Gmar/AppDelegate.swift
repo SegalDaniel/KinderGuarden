@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Model.instance.startPollingAlerts()
         Model.instance.startPollingBasicEvents()
         Model.instance.getAlerts { (alerts) in }
-        //Model.instance.deleteAllDataFromCore("DevelopmentalEvent")
+        
         /******************** Offline changes - Replace all comments for FireBase connection**********************/
         /*
          FirebaseApp.configure()

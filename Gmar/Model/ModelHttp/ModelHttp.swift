@@ -371,7 +371,9 @@ class ModelHttp{
                             var exist = false
                             let jAlert = jsonAlert as! [String:Any]
                             oldAlerts.forEach({ (oldAlert) in
-                                exist = oldAlert == jAlert
+                                if oldAlert == jAlert{
+                                    exist = true
+                                }
                             })
                             if !exist{
                                 Model.instance.getAllChildsFromCore(callback: { (childs) in
