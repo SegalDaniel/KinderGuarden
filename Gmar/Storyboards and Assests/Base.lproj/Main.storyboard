@@ -553,34 +553,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="047-baby-2" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-AM-MeJ">
-                                <rect key="frame" x="333.5" y="194.5" width="445" height="445"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Pu4-AM-MeJ" secondAttribute="height" multiplier="1:1" id="ZaO-Z9-qno"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="דופק" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-Im-k2o">
-                                <rect key="frame" x="333.5" y="735.5" width="445" height="48.5"/>
-                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="40"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-Q6-qFT">
+                                <rect key="frame" x="55.5" y="160" width="1001" height="584"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="heartRateCell" rowHeight="150" id="kSP-iV-ex7" customClass="HeartRateTableViewCell" customModule="Gmar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1001" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kSP-iV-ex7" id="HZB-PE-opX">
+                                            <rect key="frame" x="0.0" y="0.0" width="1001" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="דופק" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGt-2N-vIm">
+                                                    <rect key="frame" x="458" y="19" width="428" height="112"/>
+                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="28"/>
+                                                    <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="047-baby-2" translatesAutoresizingMaskIntoConstraints="NO" id="fr2-do-JrB">
+                                                    <rect key="frame" x="363" y="37.5" width="75" height="74.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="fr2-do-JrB" secondAttribute="height" multiplier="1:1" id="kgK-mh-Byh"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bGt-2N-vIm" firstAttribute="leading" secondItem="fr2-do-JrB" secondAttribute="trailing" constant="20" id="7Fd-P7-Adi"/>
+                                                <constraint firstItem="fr2-do-JrB" firstAttribute="centerY" secondItem="HZB-PE-opX" secondAttribute="centerY" id="7xG-PE-47V"/>
+                                                <constraint firstItem="fr2-do-JrB" firstAttribute="height" secondItem="HZB-PE-opX" secondAttribute="height" multiplier="0.5" id="St6-cb-Enc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bGt-2N-vIm" secondAttribute="trailing" constant="100" id="a0P-Rn-fWG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bGt-2N-vIm" secondAttribute="bottom" constant="8" id="gbQ-26-swG"/>
+                                                <constraint firstItem="bGt-2N-vIm" firstAttribute="top" secondItem="HZB-PE-opX" secondAttribute="topMargin" constant="8" id="x0a-xS-QyP"/>
+                                                <constraint firstItem="fr2-do-JrB" firstAttribute="centerX" secondItem="HZB-PE-opX" secondAttribute="centerX" constant="-100" id="y99-91-yDT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="heartImageView" destination="fr2-do-JrB" id="a7u-aL-Vqc"/>
+                                            <outlet property="pulseLabel" destination="bGt-2N-vIm" id="JUW-4r-Hq1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מספר משתתפים:  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmQ-BF-r4Q">
+                                <rect key="frame" x="55.5" y="78" width="1001" height="74"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="28"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Pu4-AM-MeJ" firstAttribute="centerY" secondItem="ZwZ-lc-dqw" secondAttribute="centerY" id="Fs6-cJ-lkW"/>
-                            <constraint firstItem="Pu4-AM-MeJ" firstAttribute="centerX" secondItem="ZwZ-lc-dqw" secondAttribute="centerX" id="O5S-0I-ByB"/>
-                            <constraint firstItem="Pu4-AM-MeJ" firstAttribute="width" secondItem="ZwZ-lc-dqw" secondAttribute="width" multiplier="0.4" id="ORW-tI-KbR"/>
-                            <constraint firstItem="dPd-Im-k2o" firstAttribute="leading" secondItem="Pu4-AM-MeJ" secondAttribute="leading" id="k0u-ZW-lr2"/>
-                            <constraint firstItem="8Gt-yF-Xqa" firstAttribute="bottom" secondItem="dPd-Im-k2o" secondAttribute="bottom" constant="50" id="mpx-eH-DWs"/>
-                            <constraint firstItem="dPd-Im-k2o" firstAttribute="trailing" secondItem="Pu4-AM-MeJ" secondAttribute="trailing" id="zq2-mh-2DS"/>
+                            <constraint firstItem="Wee-Q6-qFT" firstAttribute="height" secondItem="ZwZ-lc-dqw" secondAttribute="height" multiplier="0.7" id="9uV-gC-G1N"/>
+                            <constraint firstItem="Wee-Q6-qFT" firstAttribute="centerY" secondItem="8Gt-yF-Xqa" secondAttribute="centerY" id="Rp9-RZ-WFe"/>
+                            <constraint firstItem="Wee-Q6-qFT" firstAttribute="centerX" secondItem="8Gt-yF-Xqa" secondAttribute="centerX" id="SXE-a6-Lwy"/>
+                            <constraint firstItem="YmQ-BF-r4Q" firstAttribute="top" secondItem="8Gt-yF-Xqa" secondAttribute="top" constant="8" id="YXy-Yj-h8D"/>
+                            <constraint firstItem="Wee-Q6-qFT" firstAttribute="top" secondItem="YmQ-BF-r4Q" secondAttribute="bottom" constant="8" id="Z3D-Ym-Q9o"/>
+                            <constraint firstItem="YmQ-BF-r4Q" firstAttribute="leading" secondItem="Wee-Q6-qFT" secondAttribute="leading" id="adk-XK-AHT"/>
+                            <constraint firstItem="Wee-Q6-qFT" firstAttribute="width" secondItem="ZwZ-lc-dqw" secondAttribute="width" multiplier="0.9" id="b8A-t4-U4u"/>
+                            <constraint firstItem="YmQ-BF-r4Q" firstAttribute="trailing" secondItem="Wee-Q6-qFT" secondAttribute="trailing" id="c8B-Iv-tEL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Gt-yF-Xqa"/>
                     </view>
                     <navigationItem key="navigationItem" title="מדידת דופק" id="Pet-G7-Nte"/>
                     <connections>
-                        <outlet property="bpmLabel" destination="dPd-Im-k2o" id="Fre-ha-qXp"/>
-                        <outlet property="heartImageView" destination="Pu4-AM-MeJ" id="ZcC-eb-ltt"/>
+                        <outlet property="participantsLabel" destination="YmQ-BF-r4Q" id="i8V-jy-PpZ"/>
+                        <outlet property="pulsesTableView" destination="Wee-Q6-qFT" id="KDe-rx-em2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mjp-Jc-cOK" userLabel="First Responder" sceneMemberID="firstResponder"/>

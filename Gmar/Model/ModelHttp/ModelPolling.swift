@@ -26,7 +26,7 @@ extension Model{
     func startPollingPulseAlerts(){
         print("start polling pulse alerts")
         DispatchQueue.global(qos: .background).async {
-            self.pulseAlertTimerLoop = Timer.scheduledTimer(timeInterval: 1, target: self, selector:  #selector(self.poolPulseAlerts), userInfo: nil, repeats: true)
+            self.pulseAlertTimerLoop = Timer.scheduledTimer(timeInterval: 1, target: self, selector:  #selector(self.poolMultiPulseAlerts), userInfo: nil, repeats: true)
             let runLoop = RunLoop.current
             runLoop.add(self.pulseAlertTimerLoop!, forMode: .default)
             runLoop.run()
@@ -71,6 +71,15 @@ extension Model{
     @objc func poolPulseAlerts(){
         self.getPulseAlert { (pulse) in
             ModelNotification.pulseAlert.notify(data: pulse)
+        }
+    }
+    
+    @objc func poolMultiPulseAlerts(){
+        self.getMultiPulseAlerts { (count, pulses) in
+            let arr = pulses.map({ (pulse) -> Int in
+                return Int(truncating: pulse as! NSNumber)
+            })
+            ModelNotification.multiPulseAlerts.notify(data: (count, arr))
         }
     }
     

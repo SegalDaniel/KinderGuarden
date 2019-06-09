@@ -443,6 +443,30 @@ class ModelHttp{
         task.resume()
     }
     
+    func getMultiplePulseAlerts(callback: @escaping (Int, NSArray)->Void){
+        let url = URL(string: "\(server)/alerts/MultiplePulseAlerts")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: []) as! NSDictionary
+                let pulseArr = jsonResponse["multiplePulseAlert"]! as! NSArray
+                if let pulseObj = pulseArr.firstObject as? NSDictionary{
+                    let count = Int(truncating: pulseObj["amount"] as! NSNumber)
+                    let pulses = pulseObj["pulses"] as! NSArray
+                    callback(count, pulses)
+                }
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
     func deleteAlert(alert:Alert, callback:@escaping (Error?)->Void){
         let firstTodoEndpoint: String = "http://193.106.55.183/alerts/\(alert.alertID!)"
         var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)

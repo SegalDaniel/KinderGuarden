@@ -9,30 +9,23 @@
 import UIKit
 
 class HeartRateViewController: MyViewController {
-
-    @IBOutlet weak var heartImageView: UIImageView!
-    @IBOutlet weak var bpmLabel: UILabel!
+    
+    @IBOutlet weak var participantsLabel: UILabel!
+    @IBOutlet weak var pulsesTableView: UITableView!
     var pulseListener:NSObjectProtocol?
+    var pulses:[Int] = []
+    var pulsesCount:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animateView(heartImageView, animate: true)
-        pulseListener = ModelNotification.pulseAlert.observe(cb: { (pulse) in
+        pulsesTableView.dataSource = self
+        pulsesTableView.delegate = self
+        pulseListener = ModelNotification.multiPulseAlerts.observe(cb: { (count, pulses) in
             DispatchQueue.main.async {
-                let p = Int(pulse)!
-                if p < 40 && p > 20{
-                    self.bpmLabel.textColor = UIColor.orange
-                    self.animateViewEmergency(self.bpmLabel, animate: true)
-                }
-                else if p >= 0 && p <= 20{
-                    self.bpmLabel.textColor = UIColor.red
-                    self.animateViewEmergency(self.bpmLabel, animate: true)
-                }
-                else{
-                    self.bpmLabel.textColor = Utility.btnTextWhite
-                    self.animateViewEmergency(self.bpmLabel, animate: false)
-                }
-                self.bpmLabel.text = "דופק: \(pulse)"
+                self.pulses = pulses
+                self.pulsesCount = count
+                self.pulsesTableView.reloadData()
+                self.participantsLabel.text = "מספר משתתפים: \(count)"
             }
         })
     }
@@ -46,14 +39,46 @@ class HeartRateViewController: MyViewController {
         super.viewWillDisappear(animated)
         Model.instance.stopPulseAlertPolling()
     }
+}
+
+extension HeartRateViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pulsesCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "heartRateCell") as! HeartRateTableViewCell
+        cell.pulseLabel.text = "דופק \(pulses[indexPath.row])"
+        if !cell.animated{
+            animateView(cell.heartImageView, animate: true)
+            cell.animated = true
+        }
+        adjustPulseLabel(p: pulses[indexPath.row], pulseLabel: cell.pulseLabel)
+        return cell
+    }
+    
+    func adjustPulseLabel(p:Int, pulseLabel:UILabel){
+        if p < 40 && p > 20{
+            pulseLabel.textColor = UIColor.orange
+            self.animateViewEmergency(pulseLabel, animate: true)
+        }
+        else if p >= 0 && p <= 20{
+            pulseLabel.textColor = UIColor.red
+            self.animateViewEmergency(pulseLabel, animate: true)
+        }
+        else{
+            pulseLabel.textColor = Utility.btnTextWhite
+            self.animateViewEmergency(pulseLabel, animate: false)
+        }
+    }
     
     func animateView(_ view: UIView, animate: Bool) {
         if animate {
             UIView.animate(withDuration: 1.0, delay: 0, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
-                            view.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)}, completion: nil)
+                view.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)}, completion: nil)
         }
         else {
-            self.view.layer.removeAllAnimations()
+            view.layer.removeAllAnimations()
             UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseOut, .beginFromCurrentState, .allowUserInteraction], animations: { view.transform = CGAffineTransform.identity}, completion: nil)
         }
     }
@@ -64,7 +89,7 @@ class HeartRateViewController: MyViewController {
                 view.alpha = 0.0}, completion: nil)
         }
         else {
-            self.view.layer.removeAllAnimations()
+            view.layer.removeAllAnimations()
             UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut, .beginFromCurrentState, .allowUserInteraction], animations: { view.alpha = 1.0}, completion: nil)
         }
     }

@@ -345,6 +345,10 @@ class Model{
         modelHttp.getPulseAlert(callback: callback)
     }
     
+    func getMultiPulseAlerts(callback: @escaping (Int, NSArray) -> Void){
+        modelHttp.getMultiplePulseAlerts(callback: callback)
+    }
+    
     func deleteAlert(alert:Alert, callback:@escaping (Error?)->Void){
         modelHttp.deleteAlert(alert: alert) { (err) in
             if err == nil{
@@ -477,6 +481,7 @@ class ModelNotification{
     static let childAndStaffNotification = MyNotification<(Child, Staff)>("childAndStaffNotification")
     static let immidiateAlert = MyNotification<([Alert])>("immidiateAlertNotification")
     static let pulseAlert = MyNotification<(String)>("pulseAlert")
+    static let multiPulseAlerts = MyNotification<(Int, [Int])>("multiPulseAlerts")
     
     class MyNotification<T>{
         let name:String

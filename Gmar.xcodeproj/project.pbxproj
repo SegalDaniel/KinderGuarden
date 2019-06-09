@@ -42,6 +42,7 @@
 		1878879C221D7C260047A935 /* DateAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878879B221D7C260047A935 /* DateAdmin.swift */; };
 		187C34C122ABB6FC009A06D4 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C34BF22ABB6FC009A06D4 /* Alert+CoreDataClass.swift */; };
 		187C34C222ABB6FC009A06D4 /* Alert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C34C022ABB6FC009A06D4 /* Alert+CoreDataProperties.swift */; };
+		1881529922AD3F0A00EC8B3B /* HeartRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881529822AD3F0A00EC8B3B /* HeartRateTableViewCell.swift */; };
 		1885E94122A2600C00B6FAE5 /* ModelPolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94022A2600C00B6FAE5 /* ModelPolling.swift */; };
 		1885E94322A270A200B6FAE5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94222A270A200B6FAE5 /* HttpError.swift */; };
 		1885E94622A3BA8500B6FAE5 /* ImmidiateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */; };
@@ -176,6 +177,7 @@
 		1878879B221D7C260047A935 /* DateAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAdmin.swift; sourceTree = "<group>"; };
 		187C34BF22ABB6FC009A06D4 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
 		187C34C022ABB6FC009A06D4 /* Alert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1881529822AD3F0A00EC8B3B /* HeartRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTableViewCell.swift; sourceTree = "<group>"; };
 		1885E94022A2600C00B6FAE5 /* ModelPolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPolling.swift; sourceTree = "<group>"; };
 		1885E94222A270A200B6FAE5 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmidiateAlert.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				188C8E982291D19B00DF85B7 /* Kids Info Views */,
 				18586D5F22730926004F219C /* KidCollectionViewCell.swift */,
 				1835C4F9228EDC7D00BF2AF2 /* DevelopmentalEventTableViewCell.swift */,
+				1881529822AD3F0A00EC8B3B /* HeartRateTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1019,6 +1022,7 @@
 				1878879C221D7C260047A935 /* DateAdmin.swift in Sources */,
 				A872BE1A22914FAF0078DC5F /* Child+CoreDataProperties.swift in Sources */,
 				180CF2FA223D3F9700A9DEF2 /* Gmar.xcdatamodeld in Sources */,
+				1881529922AD3F0A00EC8B3B /* HeartRateTableViewCell.swift in Sources */,
 				A8576E09224A6DCA00CBA907 /* Disease+CoreDataClass.swift in Sources */,
 				A8576DFD224A6D2700CBA907 /* GeneralBehavior+CoreDataClass.swift in Sources */,
 				A872BE052290BA5B0078DC5F /* Secretion+CoreDataProperties.swift in Sources */,
