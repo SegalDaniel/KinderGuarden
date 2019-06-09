@@ -44,7 +44,11 @@ class DevelopEventCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func tapped(_ sender: Any){
-        delegate?.cellTapped(event: event!, description: "\(details!)\nדווח על-ידי \(event!.staff!.firstName!) \(event!.staff!.lastName!)")
+        if let event = event{
+            if let details = details{
+                delegate?.cellTapped(event: event, description: "\(details)\nדווח על-ידי \(event.staff!.firstName!) \(event.staff!.lastName!)")
+            }
+        }
         self.layer.shadowOpacity = 0.0
         timeLabel.layer.opacity = 0.5
         eventTextView.layer.opacity = 0.5

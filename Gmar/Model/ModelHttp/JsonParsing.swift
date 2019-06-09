@@ -45,8 +45,11 @@ extension ModelHttp{
 //        let genB = jsonResponse["generalBehaviorEvent"]! as! NSArray
 //        self.parseGeneralBehaviorEvents(jsonArr: genB)
         //let genN = jsonResponse["generalNoteEvent"]! as! NSArray
-        let dev = jsonResponse["developmentalEvent"]! as! NSArray
-        self.parsedevelopmentalEvents(jsonArr: dev)
+        
+        //creates multiple events
+//        let dev = jsonResponse["developmentalEvent"]! as! NSArray
+//        self.parsedevelopmentalEvents(jsonArr: dev)
+
         //let fam = jsonResponse["familyReportEvent"]! as! NSArray
         Model.instance.saveToDB(callback: nil)
     }
@@ -400,11 +403,11 @@ extension ModelHttp{
         }
     }
     
-    //MARK: - Developmental
+    //MARK: - Developmental - creates multiple events!
     func parsedevelopmentalEvents(jsonArr:NSArray){
         if jsonArr.count > 0{
             var events:[DevelopmentalEvent] = []
-            let olds = fetchDev(entityName: "DevelopmentalEvent") as [DevelopmentalEvent]
+            let olds = fetchDev(entityName: "DevelopmentalEvent")
             jsonArr.forEach { (jsonEvent) in
                 let jEvent = jsonEvent as! [String:Any]
                 var exist = false

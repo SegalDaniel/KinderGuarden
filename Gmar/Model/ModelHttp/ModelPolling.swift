@@ -37,7 +37,7 @@ extension Model{
     func startPollingBasicEvents(){
         print("start polling Basic Events")
         DispatchQueue.global(qos: .background).async {
-            let timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector:  #selector(self.poolBasicEvents), userInfo: nil, repeats: true)
+            let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector:  #selector(self.poolBasicEvents), userInfo: nil, repeats: true)
             let runLoop = RunLoop.current
             runLoop.add(timer, forMode: .default)
             runLoop.run()

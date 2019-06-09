@@ -57,13 +57,20 @@ class DevelopmentalEventViewController: GenericVC {
             if exist{
                 let event = DevelopmentalEvent(eventType: Int16(type), eventDate: eventDate as NSDate, child: child, staff: staff)
                 Model.instance.sendToFB(developmentEvent: event, callback: { (err) in
-                    loadingAlert.dismiss(animated: true, completion: {
-                        self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
-                    })
+                    if err != nil{
+                        let alert = SimpleAlert(_title: "רק רגע", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
+                        loadingAlert.dismiss(animated: true, completion: {
+                            self.present(alert, animated: true, completion: nil)
+                            return
+                        })
+                    }
+                    
                 })
             }
         }
-        
+        loadingAlert.dismiss(animated: true, completion: {
+            self.performSegue(withIdentifier: "unwindToMainWindow", sender: nil)
+        })
     }
 
 }

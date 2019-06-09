@@ -34,6 +34,7 @@ public class DevelopmentalEvent: NSManagedObject {
                         self.setValue(staff, forKey: "staff")
                         let id = json["eventID"] as! String
                         self.setValue(id, forKey: "eventID")
+                        self.setValue(Int16(truncating: json["eventType"] as! NSNumber), forKey: "eventType")
                     }
                 }
             })
