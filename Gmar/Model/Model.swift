@@ -345,17 +345,13 @@ class Model{
         modelHttp.getPulseAlert(callback: callback)
     }
     
-    func deleteEmptyAlerts(){
-        let alertFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Alert")
-        let alerts = try! Model.instance.managedContext.fetch(alertFetch) as! [Alert]
-        let toDelete = alerts.filter { (alert) -> Bool in
-            if alert.child == nil {
-                return true
+    func deleteAlert(alert:Alert, callback:@escaping (Error?)->Void){
+        modelHttp.deleteAlert(alert: alert) { (err) in
+            if err == nil{
+                self.managedContext.delete(alert)
+                self.saveToDB(callback: nil)
             }
-            return false
-        }
-        toDelete.forEach { (alert) in
-            managedContext.delete(alert)
+            callback(err)
         }
     }
     
@@ -392,6 +388,17 @@ class Model{
         let e:[DevelopmentalEvent] = events as! [DevelopmentalEvent]
         callback(e)
     }
+    
+    func deleteDevEvent(event:DevelopmentalEvent, callback:@escaping (Error?)->Void){
+        modelHttp.deleteDevelopmentalEvent(event: event) { (err) in
+            if err == nil{
+                self.managedContext.delete(event)
+                self.saveToDB(callback: nil)
+            }
+            callback(err)
+        }
+    }
+    
     
     //MARK: - CoreData global methods
     func saveToDB(callback:((NSError?)->Void)?){

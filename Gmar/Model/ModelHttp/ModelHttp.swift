@@ -273,6 +273,26 @@ class ModelHttp{
         task.resume()
     }
     
+    func deleteDevelopmentalEvent(event:DevelopmentalEvent, callback:@escaping (Error?)->Void){
+        let firstTodoEndpoint: String = "http://193.106.55.183/events/DevelopmentalEvent/\(event.eventID!)"
+        var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
+        firstTodoUrlRequest.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: firstTodoUrlRequest) {
+            (data, response, error) in
+            guard let _ = data else {
+                print("error calling DELETE on Dev Event")
+                callback(HttpError())
+                return
+            }
+            print("DELETE ok")
+            callback(nil)
+        }
+        task.resume()
+    }
+    
     //MARK: - Staff
     func sendStaff(staff:Staff, callback: @escaping(Error?) -> Void){
         let session = URLSession.shared
@@ -419,6 +439,26 @@ class ModelHttp{
             } catch let parsingError {
                 print("Error", parsingError)
             }
+        }
+        task.resume()
+    }
+    
+    func deleteAlert(alert:Alert, callback:@escaping (Error?)->Void){
+        let firstTodoEndpoint: String = "http://193.106.55.183/alerts/\(alert.alertID!)"
+        var firstTodoUrlRequest = URLRequest(url: URL(string: firstTodoEndpoint)!)
+        firstTodoUrlRequest.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: firstTodoUrlRequest) {
+            (data, response, error) in
+            guard let _ = data else {
+                print("error calling DELETE on Alert")
+                callback(HttpError())
+                return
+            }
+            print("DELETE ok")
+            callback(nil)
         }
         task.resume()
     }

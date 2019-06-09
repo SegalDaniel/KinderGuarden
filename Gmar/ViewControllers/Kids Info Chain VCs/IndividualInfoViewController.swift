@@ -297,12 +297,16 @@ extension IndividualInfoViewController: UICollectionViewDataSource, UICollection
 extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, DevelopEventCollectionViewCellDelegate, FamilyReportCollectionViewCellDelegate, GeneralNoteCollectionViewCellDelegate, AlertCollectionViewCellDelegate{
     func cellDragExit(event: BasicEvent) {
         showDeleteALertView {
+            let loading = Utility.getLoadingAlert(message: "מוחק..")
+            self.present(loading, animated: true, completion: nil)
             Model.instance.deleteBasicEvent(event: event, callback: { (err) in
-                if err != nil{
-                    let alert = SimpleAlert(_title: "שגיאה", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
-                    self.present(alert, animated: true, completion: nil)
-                }
-                self.initChildData()
+                loading.dismiss(animated: true, completion: {
+                    if err != nil{
+                        let alert = SimpleAlert(_title: "שגיאה", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    self.initChildData()
+                })
             })
             
         }
@@ -310,9 +314,17 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     
     func cellDragExit(event: DevelopmentalEvent) {
         showDeleteALertView {
-            Model.instance.managedContext.delete(event)
-            Model.instance.saveToDB(callback: nil)
-            self.initChildData()
+            let loading = Utility.getLoadingAlert(message: "מוחק..")
+            self.present(loading, animated: true, completion: nil)
+            Model.instance.deleteDevEvent(event: event, callback: { (err) in
+                loading.dismiss(animated: true, completion: {
+                    if err != nil{
+                        let alert = SimpleAlert(_title: "שגיאה", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    self.initChildData()
+                })
+            })
         }
     }
     
@@ -334,9 +346,17 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     
     func cellDragExit(alert: Alert) {
         showDeleteALertView {
-            Model.instance.managedContext.delete(alert)
-            Model.instance.saveToDB(callback: nil)
-            self.initChildData()
+            let loading = Utility.getLoadingAlert(message: "מוחק..")
+            self.present(loading, animated: true, completion: nil)
+            Model.instance.deleteAlert(alert: alert, callback: { (err) in
+                loading.dismiss(animated: true, completion: {
+                    if err != nil{
+                        let alert = SimpleAlert(_title: "שגיאה", _message: err!.localizedDescription, dissmissCallback: nil).getAlert()
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    self.initChildData()
+                })
+            })
         }
     }
     
