@@ -12,7 +12,7 @@ import CoreData
 
 @objc(FamilyReport)
 public class FamilyReport: NSManagedObject {
-    convenience init(topic:String, details:String, eventID:Int16, eventDate:Date, child:Child?, staff:Staff?){
+    convenience init(topic:String, details:String, eventID:String, eventDate:Date, child:Child?, staff:Staff?){
         self.init(entity: Model.instance.familyReportEntity, insertInto: Model.instance.managedContext)
         self.setValue(topic, forKey: "topic")
         self.setValue(details, forKey: "details")

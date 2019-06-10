@@ -76,7 +76,7 @@
     <entity name="FamilyReport" representedClassName="FamilyReport" syncable="YES">
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="eventID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="eventID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topic" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="familyReports" inverseEntity="Child" syncable="YES"/>
         <relationship name="staff" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Staff" inverseName="familyReports" inverseEntity="Staff" syncable="YES"/>

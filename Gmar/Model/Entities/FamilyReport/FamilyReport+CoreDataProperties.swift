@@ -2,7 +2,7 @@
 //  FamilyReport+CoreDataProperties.swift
 //  Gmar
 //
-//  Created by Daniel Segal on 19/05/2019.
+//  Created by Zach Bachar on 10/06/2019.
 //  Copyright © 2019 Final Project. All rights reserved.
 //
 //
@@ -17,10 +17,10 @@ extension FamilyReport {
         return NSFetchRequest<FamilyReport>(entityName: "FamilyReport")
     }
 
-    @NSManaged public var eventDate: NSDate?
-    @NSManaged public var eventID: Int16
-    @NSManaged public var topic: String?
     @NSManaged public var details: String?
+    @NSManaged public var eventDate: NSDate?
+    @NSManaged public var eventID: String?
+    @NSManaged public var topic: String?
     @NSManaged public var child: Child?
     @NSManaged public var staff: Staff?
 

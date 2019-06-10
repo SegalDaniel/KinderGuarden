@@ -43,6 +43,8 @@
 		187C34C122ABB6FC009A06D4 /* Alert+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C34BF22ABB6FC009A06D4 /* Alert+CoreDataClass.swift */; };
 		187C34C222ABB6FC009A06D4 /* Alert+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C34C022ABB6FC009A06D4 /* Alert+CoreDataProperties.swift */; };
 		1881529922AD3F0A00EC8B3B /* HeartRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881529822AD3F0A00EC8B3B /* HeartRateTableViewCell.swift */; };
+		1881529C22AECBA100EC8B3B /* FamilyReport+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881529A22AECBA100EC8B3B /* FamilyReport+CoreDataClass.swift */; };
+		1881529D22AECBA100EC8B3B /* FamilyReport+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881529B22AECBA100EC8B3B /* FamilyReport+CoreDataProperties.swift */; };
 		1885E94122A2600C00B6FAE5 /* ModelPolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94022A2600C00B6FAE5 /* ModelPolling.swift */; };
 		1885E94322A270A200B6FAE5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94222A270A200B6FAE5 /* HttpError.swift */; };
 		1885E94622A3BA8500B6FAE5 /* ImmidiateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */; };
@@ -115,8 +117,6 @@
 		A872BE012290B9F00078DC5F /* Vomitus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BDFF2290B9F00078DC5F /* Vomitus+CoreDataProperties.swift */; };
 		A872BE042290BA5B0078DC5F /* Secretion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BE022290BA5B0078DC5F /* Secretion+CoreDataClass.swift */; };
 		A872BE052290BA5B0078DC5F /* Secretion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BE032290BA5B0078DC5F /* Secretion+CoreDataProperties.swift */; };
-		A872BE09229143070078DC5F /* FamilyReport+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BE07229143070078DC5F /* FamilyReport+CoreDataClass.swift */; };
-		A872BE0A229143070078DC5F /* FamilyReport+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BE08229143070078DC5F /* FamilyReport+CoreDataProperties.swift */; };
 		A872BE0D229149FC0078DC5F /* GeneralNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BE0B229149FC0078DC5F /* GeneralNote+CoreDataClass.swift */; };
 		A872BE0E229149FC0078DC5F /* GeneralNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BE0C229149FC0078DC5F /* GeneralNote+CoreDataProperties.swift */; };
 		A872BE1122914C930078DC5F /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872BE0F22914C930078DC5F /* Attendance+CoreDataClass.swift */; };
@@ -178,6 +178,8 @@
 		187C34BF22ABB6FC009A06D4 /* Alert+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataClass.swift"; sourceTree = "<group>"; };
 		187C34C022ABB6FC009A06D4 /* Alert+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1881529822AD3F0A00EC8B3B /* HeartRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTableViewCell.swift; sourceTree = "<group>"; };
+		1881529A22AECBA100EC8B3B /* FamilyReport+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyReport+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1881529B22AECBA100EC8B3B /* FamilyReport+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyReport+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1885E94022A2600C00B6FAE5 /* ModelPolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPolling.swift; sourceTree = "<group>"; };
 		1885E94222A270A200B6FAE5 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		1885E94522A3BA8500B6FAE5 /* ImmidiateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmidiateAlert.swift; sourceTree = "<group>"; };
@@ -252,8 +254,6 @@
 		A872BDFF2290B9F00078DC5F /* Vomitus+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vomitus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A872BE022290BA5B0078DC5F /* Secretion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secretion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A872BE032290BA5B0078DC5F /* Secretion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secretion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A872BE07229143070078DC5F /* FamilyReport+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyReport+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A872BE08229143070078DC5F /* FamilyReport+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyReport+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A872BE0B229149FC0078DC5F /* GeneralNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A872BE0C229149FC0078DC5F /* GeneralNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A872BE0F22914C930078DC5F /* Attendance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -753,8 +753,8 @@
 		A872BE06229141630078DC5F /* FamilyReport */ = {
 			isa = PBXGroup;
 			children = (
-				A872BE07229143070078DC5F /* FamilyReport+CoreDataClass.swift */,
-				A872BE08229143070078DC5F /* FamilyReport+CoreDataProperties.swift */,
+				1881529A22AECBA100EC8B3B /* FamilyReport+CoreDataClass.swift */,
+				1881529B22AECBA100EC8B3B /* FamilyReport+CoreDataProperties.swift */,
 			);
 			path = FamilyReport;
 			sourceTree = "<group>";
@@ -1045,7 +1045,6 @@
 				A8576E21224A6F4C00CBA907 /* Urine+CoreDataClass.swift in Sources */,
 				189B353C224263CD00D33A6C /* ChildPickerTableViewCell.swift in Sources */,
 				1885E94322A270A200B6FAE5 /* HttpError.swift in Sources */,
-				A872BE0A229143070078DC5F /* FamilyReport+CoreDataProperties.swift in Sources */,
 				A8576E1E224A6F0200CBA907 /* Fever+CoreDataProperties.swift in Sources */,
 				A896494822A14BD40004FDE3 /* PulseAlert+CoreDataClass.swift in Sources */,
 				A8576E35224A70DA00CBA907 /* Sleep+CoreDataClass.swift in Sources */,
@@ -1078,8 +1077,8 @@
 				18DE415E226E391B00314AA0 /* IndividualInfoViewController.swift in Sources */,
 				183CFCD7226F7CD800F7FF68 /* PhotosUtility.swift in Sources */,
 				1887F4A82219DD2B007682A8 /* BasicEventViewController.swift in Sources */,
+				1881529D22AECBA100EC8B3B /* FamilyReport+CoreDataProperties.swift in Sources */,
 				180CF2FE223D427000A9DEF2 /* ModelFireBase.swift in Sources */,
-				A872BE09229143070078DC5F /* FamilyReport+CoreDataClass.swift in Sources */,
 				1887F4BF221B3FCD007682A8 /* RPicker.swift in Sources */,
 				A88BBFAB225A7E5100F9C0B4 /* Water+CoreDataProperties.swift in Sources */,
 				A8576E11224A6E4C00CBA907 /* Rash+CoreDataClass.swift in Sources */,
@@ -1109,6 +1108,7 @@
 				A872BE012290B9F00078DC5F /* Vomitus+CoreDataProperties.swift in Sources */,
 				189B353A22423DE600D33A6C /* AddChildViewController.swift in Sources */,
 				1851696A229933EB00A4E929 /* DeleteTableViewCell.swift in Sources */,
+				1881529C22AECBA100EC8B3B /* FamilyReport+CoreDataClass.swift in Sources */,
 				1887F4A62219D0B5007682A8 /* EventKindViewController.swift in Sources */,
 				1835C4F6228EC4A900BF2AF2 /* DevelopmentalEventsDataSource.swift in Sources */,
 				183CFCD3226F7C0300F7FF68 /* TapGestures.swift in Sources */,
