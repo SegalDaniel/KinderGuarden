@@ -360,7 +360,7 @@ extension IndividualInfoViewController: BasicEventCollectionViewCellDelegate, De
     
     func cellTapped(alert: Alert, description: String) {
         var alertControler:UIAlertController
-        if alert.level != -1{
+        if alert.level != -1 && alert.type != 1{
             alertControler = ImmidiateAlert(alert: alert, dissmiss: nil, done: {
                 self.loadAlerts()
             }, title: "").getAlert()
